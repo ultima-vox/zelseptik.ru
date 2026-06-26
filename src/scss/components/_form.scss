@@ -1,0 +1,9 @@
+.site-form { display: grid; gap: var(--space-md); padding: var(--space-lg); border: 1px solid var(--color-border-soft); border-radius: var(--radius-xl); background: var(--color-bg-base); }
+.site-form__row { display: grid; gap: var(--space-xs); }
+.site-form__label { color: var(--color-text-main); font-weight: var(--font-weight-semibold); }
+.site-form__input, .site-form__textarea, .site-form__select { width: 100%; min-height: 46px; padding: var(--space-sm) var(--space-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-bg-base); color: var(--color-text-main); }
+.site-form__textarea { min-height: 120px; resize: vertical; }
+.site-form__input:focus, .site-form__textarea:focus, .site-form__select:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 4px rgba(35,164,85,.1); }
+.site-form__label-check { display: flex; align-items: flex-start; gap: var(--space-xs); color: var(--color-text-muted); font-size: var(--font-size-sm); }
+.site-form__checkbox, .site-form__radio { accent-color: var(--color-primary); }
+.site-form__error { color: #b42318; font-size: var(--font-size-sm); }

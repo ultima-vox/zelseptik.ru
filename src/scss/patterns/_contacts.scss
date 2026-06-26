@@ -1,0 +1,6 @@
+.contacts-legal { margin-top: var(--space-xl); padding-top: var(--space-xl); border-top: 1px solid var(--color-border-soft); }
+.contacts-legal__title { margin: 0 0 var(--space-md); font-size: var(--font-size-lg); }
+.contacts-legal__list { display: grid; gap: var(--space-sm); margin: 0; }
+.contacts-legal__row { display: flex; justify-content: space-between; gap: var(--space-lg); font-size: var(--font-size-sm); }
+.contacts-legal__row dt { color: var(--color-text-muted); }
+.contacts-legal__row dd { margin: 0; font-weight: 600; text-align: right; }

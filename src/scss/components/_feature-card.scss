@@ -1,0 +1,6 @@
+@use '../abstracts/mixins' as *;
+.feature-card { @include card-base; padding: var(--space-xl); border-radius: var(--radius-xl); }
+.feature-card--soft { position: relative; overflow: hidden; border-color: var(--color-success-border); background: var(--color-primary-soft); }
+.feature-card__icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; margin-bottom: var(--space-md); border-radius: var(--radius-md); background: var(--color-primary-soft); color: var(--color-primary); }
+.feature-card__title { margin: 0 0 var(--space-sm); font-size: var(--font-size-xl); line-height: var(--line-height-heading); }
+.feature-card__text { color: var(--color-text-muted); line-height: var(--line-height-base); }
