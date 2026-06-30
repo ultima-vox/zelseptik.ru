@@ -1,0 +1,18 @@
+/* ========================================================================== 
+   PATTERN: FAQ LIST
+   Vertical composition for FAQ items.
+   ========================================================================== */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.faq-list--compact {
+  gap: var(--space-sm);
+}
+
+.faq-list__item {
+  min-width: 0;
+}
