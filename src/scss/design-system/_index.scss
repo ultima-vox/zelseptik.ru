@@ -1,0 +1,8 @@
+/* ========================================================================== 
+   DESIGN SYSTEM ENTRYPOINT
+   New isolated design-system layer. Do not put page-specific or legacy
+   selectors here.
+   ========================================================================== */
+
+@forward 'foundation';
+@forward 'primitives';
