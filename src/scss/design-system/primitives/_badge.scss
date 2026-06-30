@@ -1,0 +1,58 @@
+/* ========================================================================== 
+   PRIMITIVE: BADGE
+   Neutral label/status primitive.
+   ========================================================================== */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  max-width: 100%;
+  gap: var(--space-2xs);
+  padding: var(--space-2xs) var(--space-sm);
+  border: 1px solid var(--color-success-border);
+  border-radius: var(--radius-full);
+  background: var(--color-primary-soft);
+  color: var(--color-primary-hover);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: 1;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.badge--dark {
+  border-color: rgba(74, 222, 128, .25);
+  background: rgba(74, 222, 128, .12);
+  color: var(--color-success);
+}
+
+.badge--outline {
+  border-color: var(--color-border-strong);
+  background: transparent;
+  color: var(--color-text-muted);
+}
+
+.badge--success {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+  color: var(--color-text-inverse);
+}
+
+.badge--warning {
+  border-color: var(--color-warning-border);
+  background: var(--color-warning-bg);
+  color: #854d0e;
+}
+
+.badge--error {
+  border-color: var(--color-error-border);
+  background: var(--color-error-bg);
+  color: #991b1b;
+}
+
+.badge--info {
+  border-color: var(--color-info-border);
+  background: var(--color-info-bg);
+  color: var(--color-info);
+}
