@@ -1,0 +1,43 @@
+/* ========================================================================== 
+   PATTERN: SECTION HEADER
+   Reusable section intro composition.
+   ========================================================================== */
+
+.section-header {
+  max-width: 760px;
+  margin: 0 auto var(--space-2xl);
+  text-align: center;
+}
+
+.section-header--left {
+  margin-inline: 0;
+  text-align: left;
+}
+
+.section-header--wide {
+  max-width: 960px;
+}
+
+.section-header .badge,
+.section-header__badge {
+  margin-bottom: var(--space-md);
+}
+
+.section-header__title {
+  margin: 0;
+  font-size: clamp(1.75rem, 3vw, var(--font-size-3xl));
+  line-height: var(--line-height-heading);
+  letter-spacing: -.03em;
+}
+
+.section-header__text {
+  max-width: 680px;
+  margin: var(--space-md) auto 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-base);
+}
+
+.section-header--left .section-header__text {
+  margin-inline: 0;
+}

@@ -1,0 +1,14 @@
+/* ========================================================================== 
+   SEMANTIC COMPONENT LAYER
+   Business-aware reusable components built on primitives.
+   No page-specific patterns and no legacy selectors here.
+   ========================================================================== */
+
+@forward 'feature-card';
+@forward 'process-card';
+@forward 'catalog-card';
+@forward 'calculator-card';
+@forward 'faq-item';
+@forward 'review-card';
+@forward 'contact-card';
+@forward 'article-card';

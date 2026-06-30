@@ -1,0 +1,8 @@
+/* ========================================================================== 
+   DESIGN SYSTEM FOUNDATION
+   Bridge to the global foundation files. This keeps the new design-system
+   directory isolated without duplicating tokens and mixins.
+   ========================================================================== */
+
+@forward '../../abstracts/tokens';
+@forward '../../abstracts/mixins';

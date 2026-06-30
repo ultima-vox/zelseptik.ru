@@ -1,0 +1,55 @@
+@use '../../abstracts/mixins' as *;
+
+/* ========================================================================== 
+   SEMANTIC: FEATURE CARD
+   For benefits, service facts, contacts and informational highlights.
+   ========================================================================== */
+
+.feature-card {
+  @include card-base;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: var(--space-xl);
+  border-radius: var(--radius-xl);
+}
+
+.feature-card--interactive {
+  @include card-interactive;
+}
+
+.feature-card--soft {
+  position: relative;
+  overflow: hidden;
+  border-color: var(--color-success-border);
+  background: var(--color-primary-soft);
+}
+
+.feature-card__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: var(--space-md);
+  border-radius: var(--radius-md);
+  background: var(--color-primary-soft);
+  color: var(--color-primary);
+}
+
+.feature-card__title {
+  margin: 0 0 var(--space-sm);
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-heading);
+}
+
+.feature-card__text {
+  margin: 0;
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}
+
+.feature-card__footer {
+  margin-top: auto;
+  padding-top: var(--space-lg);
+}
