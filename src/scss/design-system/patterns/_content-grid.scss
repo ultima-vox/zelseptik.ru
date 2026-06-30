@@ -1,0 +1,40 @@
+/* ========================================================================== 
+   PATTERN: CONTENT GRID
+   Generic responsive composition for feature/process/article/review cards.
+   ========================================================================== */
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.content-grid--compact {
+  gap: var(--space-md);
+}
+
+.content-grid--loose {
+  gap: var(--space-xl);
+}
+
+.content-grid__item {
+  min-width: 0;
+}
+
+@media (min-width: 768px) {
+  .content-grid--2,
+  .content-grid--3,
+  .content-grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .content-grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .content-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
