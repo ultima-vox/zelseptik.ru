@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЗелСептик — HTML Style Guide & Design System Showcase v1.3</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@400;600;700&family=Unbounded:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design-system2.css">
+</head>
+<body>
+
+    <aside class="ds-sidebar">
+        <div class="ds-sidebar-logo">
+            <span class="ds-logo-text">ЗелСептик</span>
+            <span class="ds-version-tag">v1.3 Release</span>
+        </div>
+        <nav class="ds-nav">
+            <a href="#colors" class="ds-nav-link">01. Цветовая система</a>
+            <a href="#typography" class="ds-nav-link">02. Типографика & Шрифты</a>
+            <a href="#premium-slogan" class="ds-nav-link">03. Premium Slogan System</a>
+            <a href="#tokens" class="ds-nav-link">04. Системные токены</a>
+            <a href="#signature" class="ds-nav-link">05. Brand Signature Elements</a>
+            <a href="#gradients" class="ds-nav-link">06. Второстепенные градиенты</a>
+            <a href="#catalog" class="ds-nav-link">07. Эволюция карточки v1.3</a>
+            <a href="#components" class="ds-nav-link">08. Библиотека компонентов</a>
+            <a href="#governance" class="ds-nav-link">09. Custom.css Governance</a>
+        </nav>
+    </aside>
+
+    <main class="ds-main-content">
+
+        <header class="ds-hero-banner grid-blueprint">
+            <div class="hero-offer__tag">Frontend Standards & Visual Guide</div>
+            <h1 class="text-gradient-primary">Showcase Дизайн-Системы</h1>
+            <p>Живой интерактивный инструмент разработки экосистемы ЗелСептик. Все компоненты ниже отрендерены на базе реального продакшн-кода.</p>
+        </header>
+
+        <section id="colors" class="ds-section">
+            <div class="ds-section-header">
+                <h2>01. Цветовая система (Color Palette)</h2>
+                <p>Использование фиксированных токенов цвета из <code>tokens.css</code>. Случайные оттенки запрещены.</p>
+            </div>
+
+            <div class="ds-visual-grid ds-cols-4">
+                <div class="ds-color-swatch">
+                    <div class="ds-swatch-view ds-swatch--primary"></div>
+                    <div class="ds-swatch-meta">
+                        <strong>Primary</strong>
+                        <code>--color-primary</code>
+                        <span>#23a455</span>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-swatch-view ds-swatch--primary-hover"></div>
+                    <div class="ds-swatch-meta">
+                        <strong>Primary Hover</strong>
+                        <code>--color-primary-hover</code>
+                        <span>#1c8a45</span>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-swatch-view ds-swatch--primary-soft"></div>
+                    <div class="ds-swatch-meta">
+                        <strong>Primary Soft</strong>
+                        <code>--color-primary-soft</code>
+                        <span>#eaf6ee</span>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-swatch-view ds-swatch--text-main"></div>
+                    <div class="ds-swatch-meta">
+                        <strong>Text Main</strong>
+                        <code>--color-text-main</code>
+                        <span>#1a1f26</span>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-swatch-view ds-swatch--text-muted"></div>
+                    <div class="ds-swatch-meta">
+                        <strong>Text Muted</strong>
+                        <code>--color-text-muted</code>
+                        <span>#626c7a</span>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-swatch-view ds-swatch--bg-page"></div>
+                    <div class="ds-swatch-meta">
+                        <strong>Background</strong>
+                        <code>--color-bg-page</code>
+                        <span>#f8fafc</span>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-swatch-view ds-swatch--surface"></div>
+                    <div class="ds-swatch-meta">
+                        <strong>Surface</strong>
+                        <code>--color-surface</code>
+                        <span>#ffffff</span>
+                    </div>
+                </div>
+                <div class="ds-color-swatch">
+                    <div class="ds-swatch-view ds-swatch--border"></div>
+                    <div class="ds-swatch-meta">
+                        <strong>Border</strong>
+                        <code>--color-border</code>
+                        <span>#e2e8f0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ds-rules-split">
+                <div class="ds-rule-box ds-do">
+                    <h4>ПРАВИЛА ПРИМЕНЕНИЯ (DO)</h4>
+                    <ul>
+                        <li>Зеленый <code>Primary</code> — только для кнопок действия, цен и активных состояний фильтров.</li>
+                        <li>Фон <code>Surface</code> используется для обособления контентных плит (карточки, калькулятор) на общем фоне страницы.</li>
+                    </ul>
+                </div>
+                <div class="ds-rule-box ds-dont">
+                    <h4>ЗАПРЕТЫ (DON'T)</h4>
+                    <ul>
+                        <li>Запрещено красить плашки в оранжевый или любые другие цвета, отсутствующие в схеме ядра.</li>
+                        <li>Запрещено использовать чистый черный (#000) для текстов параграфов.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="typography" class="ds-section">
+            <div class="ds-section-header">
+                <h2>02. Типографика & Шрифтовая матрица</h2>
+                <p>Разрешены только три гарнитуры: Inter, Unbounded, Onest. Любые технические или monospace-шрифты полностью удалены.</p>
+            </div>
+
+            <div class="ds-display-box">
+                <div class="ds-typography-row">
+                    <div class="ds-type-label">H1 (Unbounded)</div>
+                    <div class="ds-type-render">
+                        <h1 class="ds-m-0">Инженерные септики</h1>
+                    </div>
+                </div>
+                <div class="ds-typography-row">
+                    <div class="ds-type-label">H2 (Unbounded)</div>
+                    <div class="ds-type-render">
+                        <h2 class="ds-m-0">Каталог оборудования</h2>
+                    </div>
+                </div>
+                <div class="ds-typography-row">
+                    <div class="ds-type-label">H3 (Inter)</div>
+                    <div class="ds-type-render">
+                        <h3 class="ds-m-0">Модификация Топас 5 Пр</h3>
+                    </div>
+                </div>
+                <div class="ds-typography-row">
+                    <div class="ds-type-label">Lead (Inter)</div>
+                    <div class="ds-type-render">
+                        <p class="ds-lead-text">Профессиональный подбор автономной канализации, быстрая доставка и монтаж за 1 день.</p>
+                    </div>
+                </div>
+                <div class="ds-typography-row">
+                    <div class="ds-type-label">Body (Inter)</div>
+                    <div class="ds-type-render">
+                        <p class="ds-body-demo-text">Станция глубокой биологической очистки подходит для загородных домов и дач с постоянным проживанием.</p>
+                    </div>
+                </div>
+                <div class="ds-typography-row">
+                    <div class="ds-type-label">Small (Inter/Onest Фолбек)</div>
+                    <div class="ds-type-render">
+                        <span class="ds-small-demo-text">* Финальная стоимость монтажа определяется инженером при выезде на объект.</span>
+                    </div>
+                </div>
+                <div class="ds-typography-row">
+                    <div class="ds-type-label">Logo (Onest)</div>
+                    <div class="ds-type-render">
+                        <span class="ds-logo-demo-text">ЗелСептик</span>
+                    </div>
+                </div>
+                <div class="ds-typography-row">
+                    <div class="ds-type-label">Badge (Inter)</div>
+                    <div class="ds-type-render">
+                        <span class="catalog-card__badge">Хит продаж</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ds-code-wrapper">
+                <div class="ds-code-header">Переменные семейства шрифтов в tokens.css</div>
+                <pre><code>--font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+--font-family-heading: "Unbounded", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+--font-family-logo: "Onest", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;</code></pre>
+            </div>
+        </section>
+
+        <section id="premium-slogan" class="ds-section">
+            <div class="ds-section-header">
+                <h2>03. Premium Slogan System</h2>
+                <p>Фирменный стилеобразующий элемент верхнего уровня, отражающий бескомпромиссный инженерный характер бренда на dev.zelseptik.ru.</p>
+            </div>
+
+            <div class="ds-display-box ds-p-xl grid-blueprint">
+                <div class="premium-slogan">«Чистота без компромиссов»</div>
+                <h1 class="ds-mt-sm">Автономные очистные сооружения Топас</h1>
+            </div>
+
+            <div class="ds-rules-split">
+                <div class="ds-rule-box ds-do">
+                    <h4>ПРАВИЛА ИСПОЛЬЗОВАНИЯ (DO)</h4>
+                    <ul>
+                        <li>Размещать исключительно над заголовками H1 в секции Hero или в крупных сквозных блоках CTA.</li>
+                        <li>Текст лозунга должен быть коротким и емким (строго от 2 до 4 слов).</li>
+                        <li>Словоформа обязана содержать канонические кавычки-ёлочки.</li>
+                    </ul>
+                </div>
+                <div class="ds-rule-box ds-dont">
+                    <h4>КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО (DON'T)</h4>
+                    <ul>
+                        <li>Запрещено интегрировать компонент внутрь карточек товаров или списков каталога.</li>
+                        <li>Запрещено использовать класс в главных или второстепенных меню навигации.</li>
+                        <li>Запрещено применять стилистику для длинных информационных предложений.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ds-code-wrapper ds-margin-top">
+                <div class="ds-code-header">HTML-разметка компонента .premium-slogan</div>
+                <pre><code>&lt;div class="premium-slogan"&gt;«Чистота без компромиссов»&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section id="tokens" class="ds-section">
+            <div class="ds-section-header">
+                <h2>04. Системные токены (Scales)</h2>
+                <p>Математически выверенные шкалы отступов, радиусов, теней и слоев интерфейса.</p>
+            </div>
+
+            <div class="ds-visual-grid ds-cols-2">
+                <div class="ds-interactive-card">
+                    <h3>Spacing Scale (Отступы)</h3>
+                    <div class="ds-spacing-visual">
+                        <div class="ds-space-item ds-s-xs"></div><span>4px (--space-xs)</span>
+                        <div class="ds-space-item ds-s-sm"></div><span>8px (--space-sm)</span>
+                        <div class="ds-space-item ds-s-md"></div><span>16px (--space-md)</span>
+                        <div class="ds-space-item ds-s-lg"></div><span>24px (--space-lg)</span>
+                        <div class="ds-space-item ds-s-xl"></div><span>32px (--space-xl)</span>
+                    </div>
+                </div>
+
+                <div class="ds-interactive-card">
+                    <h3>Radius & Shadow Scales</h3>
+                    <div class="ds-flex-row">
+                        <div class="ds-radius-demo ds-r-light">
+                            <code>--radius-sm</code> (4px)<br>
+                            <code>--shadow-light</code>
+                        </div>
+                        <div class="ds-radius-demo ds-r-hover">
+                            <code>--radius-md</code> (12px)<br>
+                            <code>--shadow-hover</code>
+                        </div>
+                        <div class="ds-radius-demo ds-r-pill">
+                            <code>--radius-pill</code> (100px)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ds-code-wrapper ds-margin-top">
+                <div class="ds-code-header">Дополнительные архитектурные масштабы в tokens.css</div>
+                <pre><code>--container-width: 1200px;  /* Максимальная ширина .container */
+--z-index-header: 500;      /* Слой фиксации .site-header */
+--z-index-modal: 1000;      /* Слой всплывающего окна .modal-window */
+--transition-fast: 0.2s ease-in-out; /* Отклик ховеров */</code></pre>
+            </div>
+        </section>
+
+        <section id="signature" class="ds-section">
+            <div class="ds-section-header">
+                <h2>05. Brand Signature Elements</h2>
+                <p>Ключевые визуальные маркеры, формирующие строгий инженерный характер интерфейса.</p>
+            </div>
+
+            <div class="ds-visual-grid ds-cols-3">
+                <div class="ds-signature-box grid-blueprint">
+                    <div class="ds-sig-tag">Элемент 01</div>
+                    <h4>grid-blueprint</h4>
+                    <p>Инженерная координатная подложка для промо-блоков и Hero.</p>
+                </div>
+
+                <div class="ds-signature-box">
+                    <div class="ds-sig-tag">Элемент 02</div>
+                    <div class="ds-py-md">
+                        <div class="hero-offer__tag">Официальный дилер Топас</div>
+                    </div>
+                    <h4>hero-offer__tag</h4>
+                    <p>Компактный маркер статуса над главными заголовками.</p>
+                </div>
+
+                <div class="ds-signature-box">
+                    <div class="ds-sig-tag">Элемент 03</div>
+                    <div class="ds-price-accent-demo">
+                        142 500 ₽
+                    </div>
+                    <h4>Зелёный акцент</h4>
+                    <p>Строгое точечное конверсионное выделение прайсов и кнопок.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="gradients" class="ds-section">
+            <div class="ds-section-header">
+                <h2>06. Второстепенные градиенты (Secondary Accent System)</h2>
+                <p>Статус градиентов понижен. Они используются исключительно как дополнительные акценты в редких случаях.</p>
+            </div>
+
+            <div class="ds-display-box">
+                <div class="ds-gradient-item">
+                    <span class="ds-class-name">.text-gradient-primary</span>
+                    <h2 class="text-gradient-primary ds-m-0">С монтажом за 1 день</h2>
+                </div>
+                <div class="ds-gradient-item">
+                    <span class="ds-class-name">.text-gradient-eco</span>
+                    <h3 class="text-gradient-eco ds-m-0">Безопасность для песчаных грунтов</h3>
+                </div>
+                <div class="ds-gradient-item">
+                    <span class="ds-class-name">.text-gradient-dark</span>
+                    <h2 class="text-gradient-dark ds-m-0">Инженерные стандарты</h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="ds-section">
+            <div class="ds-section-header">
+                <h2>07. Карточка каталога (Стандарт v1.3)</h2>
+                <p>Полное переосмысление медиа-зоны. Бейдж вместимости пользователей интегрирован в правый нижний угол фотографии. Оранжевый цвет запрещен.</p>
+            </div>
+
+            <div class="ds-catalog-showcase-split">
+                <div class="ds-card-render-zone">
+                    
+                    <div class="catalog-card">
+                        <div class="catalog-card__badges-row">
+                            <span class="catalog-card__badge">Выбор инженеров</span>
+                        </div>
+                        
+                        <div class="catalog-card__media-zone">
+                            <div class="catalog-card__image-mock">
+                                <svg width="120" height="150" viewBox="0 0 100 120" fill="none" stroke="var(--color-primary)" stroke-width="1.5">
+                                    <rect x="15" y="20" width="70" height="90" rx="3" />
+                                    <path d="M15 45 H85 M15 70 H85 M50 20 V110" stroke-dasharray="2 2" />
+                                    <circle cx="35" cy="32" r="6" fill="var(--color-primary-soft)" />
+                                    <rect x="60" y="80" width="15" height="20" fill="var(--color-primary)" opacity="0.2"/>
+                                </svg>
+                            </div>
+                            <span class="catalog-card__people-badge">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                до 5 чел.
+                            </span>
+                        </div>
+                        
+                        <h3 class="catalog-card__title">Топас 5 Пр</h3>
+                        <p class="catalog-card__desc">Модификация со встроенным дренажным насосом для принудительного отведения очищенной воды. Идеально для глины и высоких грунтовых вод.</p>
+                        
+                        <div class="catalog-card__specs">
+                            <div class="catalog-card__spec-item">
+                                <span>Производительность:</span>
+                                <strong>1000 л/сутки</strong>
+                            </div>
+                            <div class="catalog-card__spec-item">
+                                <span>Залповый сброс:</span>
+                                <strong>250 л</strong>
+                            </div>
+                            <div class="catalog-card__spec-item">
+                                <span>Тип сброса:</span>
+                                <strong>Принудительный</strong>
+                            </div>
+                            <div class="catalog-card__spec-item">
+                                <span>Очистка стоков:</span>
+                                <strong>до 98%</strong>
+                            </div>
+                        </div>
+                        
+                        <div class="catalog-card__price-row">
+                            <span class="catalog-card__price">142 500 ₽</span>
+                        </div>
+                        
+                        <div class="catalog-card__actions">
+                            <button class="btn-primary">Заказать монтаж</button>
+                            <a href="#" class="catalog-card__secondary-action">Подробнее о модели</a>
+                        </div>
+                    </div>
+                    </div>
+
+                <div class="ds-card-specs-zone">
+                    <h3>Спецификация полей карточки</h3>
+                    <table class="ds-table-specs">
+                        <thead>
+                            <tr><th>Класс / Элемент</th><th>Статус</th><th>Регламент</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><code>.catalog-card__badge</code></td><td>Опционально</td><td>Разрешено только: Хит, Новинка, Выбор инженеров.</td></tr>
+                            <tr><td><code>.catalog-card__media-zone</code></td><td>Обязательно</td><td>Высота 160px, относительное позиционирование.</td></tr>
+                            <tr><td><code>.catalog-card__people-badge</code></td><td>Обязательно</td><td>Нижний правый угол, темный фон, SVG, шрифт Inter/Onest.</td></tr>
+                            <tr><td><code>.catalog-card__title</code></td><td>Обязательно</td><td>Заголовок H3, шрифт Inter, жирность 600.</td></tr>
+                            <tr><td><code>.catalog-card__desc</code></td><td>Обязательно</td><td>Лимит 3 строки через line-clamp, цвет стальной серый.</td></tr>
+                            <tr><td><code>.catalog-card__specs</code></td><td>Обязательно</td><td>Производительность, Залповый сброс, Сброс, Очистка.</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="ds-badge-alert">
+                        <strong>Критическое изменение:</strong> Старая схема <code>[Хит] [до 5 чел]</code> в шапке карточки упразднена и запрещена к реализации. Количественный бейдж теперь жестко принадлежит медиа-зоне.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="components" class="ds-section">
+            <div class="ds-section-header">
+                <h2>08. Библиотека компонентов (Component Library)</h2>
+                <p>Живые системные узлы интерфейса проекта, извлеченные из стилей макетов.</p>
+            </div>
+
+            <div class="ds-visual-grid ds-cols-2">
+                <div class="ds-interactive-card">
+                    <h3>site-header & site-nav (Шапка и Навигация)</h3>
+                    <header class="site-header">
+                        <div class="header-logo">ЗелСептик</div>
+                        <nav class="site-nav">
+                            <a href="#" class="nav-link nav-link--active">Каталог</a>
+                            <a href="#" class="nav-link">Монтаж</a>
+                            <a href="#" class="nav-link">Цены</a>
+                        </nav>
+                        <div class="header-phone">+7 (495) 123-45-67</div>
+                    </header>
+                </div>
+
+                <div class="ds-interactive-card">
+                    <h3>btn-primary (Интерактивные состояния кнопок)</h3>
+                    <div class="ds-flex-row">
+                        <button class="btn-primary">Основная кнопка</button>
+                        <button class="btn-primary" disabled>Кнопка заблокирована</button>
+                    </div>
+                </div>
+
+                <div class="ds-interactive-card">
+                    <h3>breadcrumbs (Хлебные крошки)</h3>
+                    <nav class="breadcrumbs">
+                        <a href="#" class="breadcrumbs__item">Главная</a>
+                        <span class="breadcrumbs__divider">/</span>
+                        <a href="#" class="breadcrumbs__item">Каталог</a>
+                        <span class="breadcrumbs__divider">/</span>
+                        <span class="breadcrumbs__item breadcrumbs__item--current">Топас 5</span>
+                    </nav>
+                </div>
+
+                <div class="ds-interactive-card">
+                    <h3>form-group (Поля ввода)</h3>
+                    <div class="form-group">
+                        <label class="form-label">Номер телефона для связи</label>
+                        <input type="tel" class="form-input" placeholder="+7 (999) 000-00-00">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="governance" class="ds-section">
+            <div class="ds-section-header">
+                <h2>09. Custom.css Governance</h2>
+                <p>Регламент расширения кодовой базы. Защита системного ядра от несанкционированных мутаций стилей.</p>
+            </div>
+
+            <div class="ds-visual-grid ds-cols-2">
+                <div class="ds-interactive-card ds-b-primary">
+                    <h4>РАЗРЕШЕНО ДОБАВЛЯТЬ В CUSTOM.CSS</h4>
+                    <p class="ds-gov-text">Специфичные стили для временных маркетинговых баннеров акций, уникальные точечные css-анимации появления блоков, микронастройки внешних отступов (margin-bottom) для конкретных посадочных страниц.</p>
+                </div>
+                <div class="ds-interactive-card ds-b-danger">
+                    <h4>КАТЕГОРИЧЕСКИ ТАБУИРОВАНО</h4>
+                    <p class="ds-gov-text">Запрещено переопределять базовые токены цвета, размеров и радиусов. Запрещено использовать инлайн-стили <code>style=""</code> в разметке страниц. Запрещено использовать префикс документации <code>ds-*</code> в коде боевого сайта.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

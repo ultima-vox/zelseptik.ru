@@ -1,0 +1,206 @@
+/* Extracted from original site CSS: footer.css */
+
+/* COMPREHENSIVE FOOTER AREA */
+.site-footer {
+  background-color: #0b0f19;
+  color: #94a3b8;
+  padding: var(--space-4xl) 0 var(--space-xl);
+  border-top: 1px solid #1e293b;
+  position: relative;
+}
+
+.site-footer__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.4);
+}
+
+@media (min-width: 768px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-footer__grid {
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--space-xl);
+  }
+}
+
+/* Brand info */
+.site-footer__brand-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .site-footer__brand-col {
+    grid-column: span 4;
+  }
+}
+
+.site-footer__logo-title {
+  color: var(--color-bg-base) !important;
+}
+
+.site-footer__desc {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+  max-width: 320px;
+}
+
+.site-footer__address {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+}
+
+.site-footer__address-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #22c55e;
+  border-radius: var(--radius-full);
+  animation: pulsePing 1.5s infinite ease-in-out;
+}
+
+/* Footer menus */
+.site-footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+@media (min-width: 1024px) {
+  .site-footer__col--nav { grid-column: span 3; }
+  .site-footer__col--brands { grid-column: span 3; }
+  .site-footer__col--contacts { grid-column: span 2; }
+}
+
+.site-footer__col-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-bg-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.site-footer__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  list-style: none;
+  font-size: var(--font-size-sm);
+}
+
+.site-footer__link:hover {
+  color: var(--color-bg-base);
+}
+
+.site-footer__phone {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-extra-bold);
+  color: var(--color-bg-base);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.site-footer__phone::before {
+    content: "\1F4DE";
+    font-size: 1rem;
+    color: var(--color-bg-base);
+}
+.site-footer__phone:hover {
+  color: var(--color-primary);
+}
+
+.site-footer__contacts-desc {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+}
+
+.site-footer__btn-callback {
+  width: 100%;
+  padding: 0.625rem;
+  background-color: #1e293b;
+  color: var(--color-bg-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.site-footer__btn-callback:hover {
+  background-color: #334155;
+}
+
+/* Footer Bottom */
+.site-footer__bottom {
+  padding-top: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .site-footer__bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}
+
+.site-footer__seo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  max-width: 768px;
+}
+
+.site-footer__seo-title {
+  font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-bold);
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.site-footer__seo-desc {
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-base);
+  color: #475569;
+}
+
+.site-footer__requisites {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--font-size-2xs);
+  color: #475569;
+  line-height: var(--line-height-base);
+}
+
+@media (min-width: 768px) {
+  .site-footer__requisites {
+    text-align: right;
+  }
+}
+.form-message {
+  margin-top: 12px;
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.form-message--success {
+  color: #16a34a;
+}
+
+.form-message--error {
+  color: #dc2626;
+}
+

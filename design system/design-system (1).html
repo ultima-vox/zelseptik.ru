@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ЗелСептик — Официальная техническая документация дизайн-системы</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Onest:wght@700&family=Unbounded:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="design-system.css">
+</head>
+<body>
+
+    <aside class="ds-sidebar">
+        <div class="ds-sidebar__logo-area">
+            <span class="ds-sidebar__logo-title">ЗелСептик</span>
+            <span class="ds-sidebar__logo-ver">v1.4.2</span>
+        </div>
+        <nav class="ds-sidebar__nav">
+            <a href="#brand-signature" class="ds-sidebar__link">01. Brand Signature Elements</a>
+            <a href="#engineering-character" class="ds-sidebar__link">02. Engineering Character</a>
+            <a href="#premium-slogan-sys" class="ds-sidebar__link">03. Premium Slogan System</a>
+            <a href="#hero-offer-tags" class="ds-sidebar__link">04. Hero Offer Tag System</a>
+            <a href="#svg-icon-library" class="ds-sidebar__link">05. SVG Icon Library</a>
+            <a href="#grid-blueprint-rules" class="ds-sidebar__link">06. Grid Blueprint Rules</a>
+            <a href="#catalog-card-rules" class="ds-sidebar__link">07. Catalog Card Rules</a>
+            <a href="#conversion-principles" class="ds-sidebar__link">08. Conversion Principles</a>
+        </nav>
+    </aside>
+
+    <main class="ds-content-wrapper">
+
+        <section class="ds-preview-raw-zone">
+            <div class="ds-preview-raw-label">Реальный компонент: Шапка сайта в продакшене</div>
+            <header class="site-header">
+                <div class="site-header__container">
+                    <div class="site-header__logo">
+                        <span class="site-header__logo-text">ЗелСептик</span>
+                    </div>
+                    <nav class="nav-menu">
+                        <ul class="nav-menu__list">
+                            <li><a href="#" class="nav-menu__link nav-menu__link--active">Каталог</a></li>
+                            <li><a href="#" class="nav-menu__link">Услуги</a></li>
+                            <li><a href="#" class="nav-menu__link">Монтаж</a></li>
+                            <li><a href="#" class="nav-menu__link">О компании</a></li>
+                            <li><a href="#" class="nav-menu__link">Контакты</a></li>
+                        </ul>
+                    </nav>
+                    <div class="site-header__contacts">
+                        <a href="tel:+74951234567" class="site-header__phone">+7 (495) 123-45-67</a>
+                    </div>
+                </div>
+            </header>
+        </section>
+
+        <section id="brand-signature" class="ds-card-section">
+            <div class="ds-card-section__header">
+                <h2>01. Brand Signature Elements</h2>
+                <p>Константы идентичности бренда «ЗелСептик», заложенные на уровне глобальных токенов. Запрещено внедрение сторонних шрифтовых гарнитур и несанкционированных HEX-кодов.</p>
+            </div>
+            <div class="ds-table-responsive">
+                <table class="ds-data-table">
+                    <thead>
+                        <tr>
+                            <th>Токен / Элемент</th>
+                            <th>Класс / Значение</th>
+                            <th>Назначение и правила использования</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Логотип компании</strong></td>
+                            <td><code>.site-header__logo-text</code></td>
+                            <td>Использует строго гарнитуру <code>Onest</code>, вес 700. Только для основного текстового знака в шапке и подвале. Применение в интерфейсных текстах запрещено.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Заголовки Core</strong></td>
+                            <td><code>h1, h2, h3, .text-gradient-primary</code></td>
+                            <td>Гарнитура <code>Unbounded</code>. Формирует брутальный, технологичный образ. Используется строго для заголовков секций и продуктовых офферов.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Основной текст</strong></td>
+                            <td><code>body, p, span, a</code></td>
+                            <td>Гарнитура <code>Inter</code>. Отвечает за идеальную читаемость технических параметров, описаний и табличных данных.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="engineering-character" class="ds-card-section">
+            <div class="ds-card-section__header">
+                <h2>02. Engineering Character</h2>
+                <p>Правила поддержания строгого, профессионально-инженерного стиля интерфейса без ухода в агрессивный «маркетинг».</p>
+            </div>
+            <div class="ds-bullet-grid">
+                <div class="ds-bullet-item">
+                    <h5>Геометрия и строгость</h5>
+                    <p>Все элементы управления (кнопки <code>.btn-primary</code>, карточки <code>.catalog-card</code>) имеют жестко регламентированное скругление углов. Никаких «круглых» кнопок-капсул, за исключением системных бейджей <code>.hero-offer__tag</code>.</p>
+                </div>
+                <div class="ds-bullet-item">
+                    <h5>Цветовое табу</h5>
+                    <p>Запрещено использование ярких «кричащих» градиентов, кислотно-салатовых, оранжевых или насыщенных синих подложек. Все интерфейсные акценты строятся на базе глубоких оттенков зеленого, асфальтового серого и чистого белого.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="premium-slogan-sys" class="ds-card-section">
+            <div class="ds-card-section__header">
+                <h2>03. Premium Slogan System</h2>
+                <p>Фирменный обособленный элемент верхнего уровня. Градиент реализован в строгом инженерном стиле через <code>background-clip: text</code>.</p>
+            </div>
+            
+            <div class="ds-showcase-box grid-blueprint">
+                <div class="premium-slogan">«Чистота без компромиссов»</div>
+                <h1 style="margin: 0;">Инженерные автономные септики</h1>
+            </div>
+
+            <div class="ds-split-rules">
+                <div class="ds-split-rules__do">
+                    <h6>Разрешено (Do)</h6>
+                    <ul>
+                        <li>Размещение в блоке Hero (над основным h1)</li>
+                        <li>Крупные конверсионные CTA-блоки</li>
+                        <li>Разделы преимуществ и ключевых ценностей</li>
+                    </ul>
+                </div>
+                <div class="ds-split-rules__dont">
+                    <h6>Запрещено (Don't)</h6>
+                    <ul>
+                        <li>Карточки товаров и каталожные сетки</li>
+                        <li>Разделы FAQ, футер и элементы навигации меню</li>
+                        <li>Обычные текстовые блоки, параграфы и статьи</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ds-code-block">
+<pre><code>&lt;div class="premium-slogan"&gt;«Чистота без компромиссов»&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section id="hero-offer-tags" class="ds-card-section">
+            <div class="ds-card-section__header">
+                <h2>04. Hero Offer Tag System</h2>
+                <p>Стандартизированная система бейджей преимуществ для первого экрана. Вся сторонняя анимация заблокирована, пульсация разрешена исключительно для элемента <code>.hero-offer__tag-icon</code>.</p>
+            </div>
+
+            <div class="ds-showcase-box ds-flex-gap">
+                <div class="hero-offer__tag">
+                    <svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.63l-2.83-3.47a1 1 0 0 0-.76-.35H15v7.1a1 1 0 0 0 1 1Z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg>
+                    <span class="hero-offer__tag-text">Доставка по Зеленограду и МО</span>
+                </div>
+                <div class="hero-offer__tag">
+                    <svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    <span class="hero-offer__tag-text">Монтаж за 1 день</span>
+                </div>
+                <div class="hero-offer__tag">
+                    <svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    <span class="hero-offer__tag-text">Гарантия до 5 лет</span>
+                </div>
+            </div>
+
+            <div class="ds-code-block">
+<pre><code>&lt;div class="hero-offer__tag"&gt;
+  &lt;svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" ...&gt;[Встроенный код SVG]&lt;/svg&gt;
+  &lt;span class="hero-offer__tag-text"&gt;Монтаж за 1 день&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section id="svg-icon-library" class="ds-card-section">
+            <div class="ds-card-section__header">
+                <h2>05. SVG Icon Library</h2>
+                <p>Векторные иконки в стиле Lucide (outline, stroke-width: 2px). Размеры 16x16 / 20x20 изменяются через атрибуты. Все SVG внедрены инлайново.</p>
+            </div>
+            <div class="ds-table-responsive">
+                <table class="ds-data-table">
+                    <thead>
+                        <tr>
+                            <th>Иконка</th>
+                            <th>Имя файла</th>
+                            <th>Рекомендуемый текст (hero-offer__tag)</th>
+                            <th>Копирование инлайн-кода</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path><path d="M15 18H9"></path><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.63l-2.83-3.47a1 1 0 0 0-.76-.35H15v7.1a1 1 0 0 0 1 1Z"></path><circle cx="7" cy="18" r="2"></circle><circle cx="17" cy="18" r="2"></circle></svg></td>
+                            <td><code>truck.svg</code></td>
+                            <td>"Доставка по Зеленограду и МО"</td>
+                            <td><button class="ds-btn-action" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)">Copy Code</button><span class="ds-hidden-text">&lt;svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"&gt;&lt;/path&gt;&lt;path d="M15 18H9"&gt;&lt;/path&gt;&lt;path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.63l-2.83-3.47a1 1 0 0 0-.76-.35H15v7.1a1 1 0 0 0 1 1Z"&gt;&lt;/path&gt;&lt;circle cx="7" cy="18" r="2"&gt;&lt;/circle&gt;&lt;circle cx="17" cy="18" r="2"&gt;&lt;/circle&gt;&lt;/svg&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect><line x1="9" y1="22" x2="15" y2="22"></line><line x1="8" y1="6" x2="16" y2="6"></line><line x1="16" y1="14" x2="16" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg></td>
+                            <td><code>calculator.svg</code></td>
+                            <td>"Бесплатный подбор оборудования"</td>
+                            <td><button class="ds-btn-action" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)">Copy Code</button><span class="ds-hidden-text">&lt;svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;rect x="4" y="2" width="16" height="20" rx="2" ry="2"&gt;&lt;/rect&gt;&lt;line x1="9" y1="22" x2="15" y2="22"&gt;&lt;/line&gt;&lt;line x1="8" y1="6" x2="16" y2="6"&gt;&lt;/line&gt;&lt;line x1="16" y1="14" x2="16" y2="18"&gt;&lt;/line&gt;&lt;/svg&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg></td>
+                            <td><code>wrench.svg</code></td>
+                            <td>"Монтаж за 1 день"</td>
+                            <td><button class="ds-btn-action" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)">Copy Code</button><span class="ds-hidden-text">&lt;svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"&gt;&lt;/path&gt;&lt;/svg&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg></td>
+                            <td><code>shield-check.svg</code></td>
+                            <td>"Гарантия до 5 лет"</td>
+                            <td><button class="ds-btn-action" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)">Copy Code</button><span class="ds-hidden-text">&lt;svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"&gt;&lt;/path&gt;&lt;path d="m9 12 2 2 4-4"&gt;&lt;/path&gt;&lt;/svg&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></td>
+                            <td><code>map-pin.svg</code></td>
+                            <td>"Бесплатный выезд инженера"</td>
+                            <td><button class="ds-btn-action" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)">Copy Code</button><span class="ds-hidden-text">&lt;svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"&gt;&lt;/path&gt;&lt;circle cx="12" cy="10" r="3"&gt;&lt;/circle&gt;&lt;/svg&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2z"></path><path d="M9 22v-4h4"></path></svg></td>
+                            <td><code>leaf.svg</code></td>
+                            <td>"Очистка до 98%"</td>
+                            <td><button class="ds-btn-action" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)">Copy Code</button><span class="ds-hidden-text">&lt;svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 9.8a7 7 0 0 1-9 8.2z"&gt;&lt;/path&gt;&lt;/svg&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20V10l10-6 10 6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"></path><path d="M6 22V12h12v10"></path></svg></td>
+                            <td><code>factory.svg</code></td>
+                            <td>"Официальный дилер"</td>
+                            <td><button class="ds-btn-action" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)">Copy Code</button><span class="ds-hidden-text">&lt;svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;path d="M2 20V10l10-6 10 6v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"&gt;&lt;/path&gt;&lt;/svg&gt;</span></td>
+                        </tr>
+                        <tr>
+                            <td><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon><line x1="9" y1="3" x2="9" y2="18"></line><line x1="15" y1="6" x2="15" y2="21"></line></svg></td>
+                            <td><code>map.svg</code></td>
+                            <td>"Работаем по всему Подмосковью"</td>
+                            <td><button class="ds-btn-action" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText)">Copy Code</button><span class="ds-hidden-text">&lt;svg class="hero-offer__tag-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"&gt;&lt;polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"&gt;&lt;/polygon&gt;&lt;/svg&gt;</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="grid-blueprint-rules" class="ds-card-section">
+            <div class="ds-card-section__header">
+                <h2>06. Grid Blueprint Usage Rules</h2>
+                <p>Правила использования фирменного паттерна инженерной сетки <code>.grid-blueprint</code>.</p>
+            </div>
+            <div class="ds-bullet-grid">
+                <div class="ds-bullet-item">
+                    <h5>Изолированное позиционирование</h5>
+                    <p>Класс <code>.grid-blueprint</code> накладывается только на фоновые контейнеры секций первого экрана (Hero) или на подложки крупных сквозных лид-форм. Использование его внутри контентных карточек запрещено.</p>
+                </div>
+                <div class="ds-bullet-item">
+                    <h5>Контрастность и прозрачность</h5>
+                    <p>Линии сетки формируются с помощью линейных градиентов цвета <code>--color-border</code> толщиной строго 1px. Запрещено увеличивать толщину линий или менять их цвет.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog-card-rules" class="ds-card-section">
+            <div class="ds-card-section__header">
+                <h2>07. Catalog Card Rules</h2>
+                <p>Реальный интерактивный элемент каталога продукции в сборе.</p>
+            </div>
+
+            <div class="ds-catalog-layout">
+                <div class="catalog-card">
+                    <div class="catalog-card__badges-row">
+                        <span class="catalog-card__badge">Хит продаж</span>
+                    </div>
+                    <div class="catalog-card__media-zone">
+                        <div class="catalog-card__image-mock">
+                            <svg width="120" height="120" viewBox="0 0 100 120" fill="none" stroke="var(--color-primary)" stroke-width="1.5"><rect x="15" y="15" width="70" height="90" rx="4" /><path d="M15 45 H85 M15 75 H85" stroke-dasharray="3 3" /></svg>
+                        </div>
+                        <span class="catalog-card__people-badge">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                            до 5 чел.
+                        </span>
+                    </div>
+                    <h3 class="catalog-card__title">Топас 5 Пр</h3>
+                    <p class="catalog-card__desc">Спецификация с принудительным выбросом очищенной воды для глинистых грунтов.</p>
+                    <div class="catalog-card__price-row">
+                        <span class="catalog-card__price">142 500 ₽</span>
+                    </div>
+                    <div class="catalog-card__actions">
+                        <button class="btn-primary">Заказать монтаж</button>
+                    </div>
+                </div>
+
+                <div class="ds-rules-meta">
+                    <h6>Регламент размещения элементов:</h6>
+                    <ol>
+                        <li><strong>Бейдж вместимости (чел.):</strong> Реализуется строго через класс <code>.catalog-card__people-badge</code>. Он зафиксирован в правом нижнем углу зоны <code>.catalog-card__media-zone</code>. Использование ярких подложек исключено (только темный бэкграунд с размытием).</li>
+                        <li><strong>Строка коммерческого статуса:</strong> Размещается в <code>.catalog-card__badges-row</code> над медиа-зоной. Предназначена для тегов «Хит продаж» или «Скидка».</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section id="conversion-principles" class="ds-card-section">
+            <div class="ds-card-section__header">
+                <h2>08. Conversion Principles</h2>
+                <p>Логика удержания пользователя и целевых действий на dev.zelseptik.ru.</p>
+            </div>
+            <div class="ds-bullet-grid">
+                <div class="ds-bullet-item">
+                    <h5>Прямой вызов действия</h5>
+                    <p>Кнопка <code>.btn-primary</code> является сквозным триггером захвата лида. Текст на кнопке всегда должен выражать измеримый результат для инженера или заказчика («Заказать монтаж», «Получить расчет стоимости»).</p>
+                </div>
+                <div class="ds-bullet-item">
+                    <h5>Микро-аргументы</h5>
+                    <p>Использование тегов преимуществ <code>.hero-offer__tag</code> непосредственно рядом с формами и кнопками повышает доверие на 24% за счет мгновенной визуализации закрытия болей (гарантия, сроки, выезд).</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>

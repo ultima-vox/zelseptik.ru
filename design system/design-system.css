@@ -1,0 +1,366 @@
+/* ==========================================================================
+   1. CORE TOKENS (ЗЕРКАЛО TOKENS.CSS С САЙТА)
+   ========================================================================== */
+:root {
+    /* Цветовая палитра */
+    --color-primary: #23a455;
+    --color-primary-hover: #1c8a45;
+    --color-primary-soft: #eaf6ee;
+    --color-text-main: #1a1f26;
+    --color-text-muted: #626c7a;
+    --color-bg-page: #f8fafc;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-bg-dark: #0f1319;
+    
+    /* Шрифтовые константы */
+    --font-family-base: "Inter", system-ui, sans-serif;
+    --font-family-heading: "Unbounded", system-ui, sans-serif;
+    --font-family-logo: "Onest", system-ui, sans-serif;
+
+    /* Сетка и отступы */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 64px;
+
+    /* Радиусы скругления */
+    --radius-sm: 4px;
+    --radius-md: 12px;
+    --radius-pill: 100px;
+    
+    /* Параметры интерфейса */
+    --transition-fast: 0.2s ease-in-out;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 15px rgba(0, 0, 0, 0.04);
+}
+
+/* ==========================================================================
+   2. BASE & TYPOGRAPHY SYSTEM (БАЗОВЫЕ ПРАВИЛА САЙТА)
+   ========================================================================== */
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+body { 
+    font-family: var(--font-family-base); 
+    color: var(--color-text-main); 
+    background: var(--color-bg-page); 
+    line-height: 1.5; 
+}
+
+h1, h2, h3 { 
+    font-family: var(--font-family-heading); 
+    color: var(--color-text-main); 
+    font-weight: 700;
+}
+h1 { font-size: 34px; line-height: 1.2; }
+h2 { font-size: 22px; line-height: 1.3; }
+h3 { font-size: 18px; line-height: 1.4; }
+
+p { font-size: 14px; color: var(--color-text-main); }
+.ds-text-lead { font-size: 16px; font-weight: 500; color: var(--color-text-main); }
+
+/* ==========================================================================
+   3. BRAND SIGNATURE & REAL PRODUCTION COMPONENTS
+   ========================================================================== */
+
+/* Чертежный паттерн */
+.grid-blueprint {
+    background-color: var(--color-surface);
+    background-image: linear-gradient(var(--color-border) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+    background-size: 20px 20px;
+}
+
+/* Изменяемый элемент Premium Slogan (Реконструкция градиента по изображение_2.png) */
+.premium-slogan {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: var(--font-family-base);
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #008b43 0%, #0054a6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: var(--space-md);
+}
+.premium-slogan::after {
+    content: '';
+    display: block;
+    width: 44px;
+    height: 3px;
+    background-color: #008b43;
+    margin-top: var(--space-sm);
+}
+
+/* Бейджи преимуществ первого экрана */
+.hero-offer__tag {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-family: var(--font-family-base);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px var(--space-md);
+    border-radius: var(--radius-pill);
+    border: 1px solid rgba(35, 164, 85, 0.15);
+    white-space: nowrap;
+}
+.hero-offer__tag-icon {
+    flex-shrink: 0;
+    color: var(--color-primary);
+    display: inline-block;
+}
+
+/* Строгая анимация пульсации иконки */
+@keyframes iconPulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.12); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+@media (prefers-reduced-motion: no-preference) {
+    .hero-offer__tag-icon {
+        animation: iconPulse 2.5s infinite ease-in-out;
+    }
+}
+
+/* Компонент шапки сайта: .site-header */
+.site-header {
+    width: 100%;
+    background-color: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-md) 0;
+}
+.site-header__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.site-header__logo-text {
+    font-family: var(--font-family-logo);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--color-text-main);
+}
+.nav-menu__list {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
+    list-style: none;
+}
+.nav-menu__link {
+    font-family: var(--font-family-base);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+.nav-menu__link:hover,
+.nav-menu__link--active {
+    color: var(--color-primary);
+}
+.site-header__phone {
+    font-family: var(--font-family-base);
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--color-text-main);
+    text-decoration: none;
+}
+
+/* Хлебные крошки: .breadcrumbs */
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    font-size: 13px;
+    color: var(--color-text-muted);
+    padding: var(--space-md) 0;
+}
+.breadcrumbs a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+.breadcrumbs a::after {
+    content: '/';
+    color: var(--color-border);
+    margin-left: var(--space-sm);
+    display: inline-block;
+}
+
+/* Универсальная кнопка: .btn-primary */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border: none;
+    padding: 12px var(--space-md);
+    font-family: var(--font-family-base);
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background-color var(--transition-fast);
+    width: 100%;
+    text-align: center;
+}
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+
+/* Компонент: .catalog-card */
+.catalog-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--space-lg);
+    width: 100%;
+    max-width: 315px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-sm);
+}
+.catalog-card__badges-row {
+    margin-bottom: var(--space-sm);
+    min-height: 20px;
+}
+.catalog-card__badge {
+    background-color: var(--color-primary-soft);
+    color: var(--color-primary);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px var(--space-sm);
+    border-radius: var(--radius-pill);
+}
+.catalog-card__media-zone {
+    height: 160px;
+    background-color: var(--color-bg-page);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    margin-bottom: var(--space-md);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.catalog-card__people-badge {
+    position: absolute;
+    right: var(--space-sm);
+    bottom: var(--space-sm);
+    background-color: rgba(26, 31, 38, 0.88);
+    color: #ffffff;
+    font-family: var(--font-family-base);
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px var(--space-sm);
+    border-radius: var(--radius-sm);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    backdrop-filter: blur(4px);
+}
+.catalog-card__title {
+    font-family: var(--font-family-base);
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+}
+.catalog-card__desc {
+    font-family: var(--font-family-base);
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+    line-height: 1.4;
+}
+.catalog-card__price-row {
+    margin-bottom: var(--space-md);
+    margin-top: auto;
+}
+.catalog-card__price {
+    font-family: var(--font-family-base);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* ==========================================================================
+   4. ДИЗАЙН-СИСТЕМА ИЗОЛИРОВАННАЯ ОБОЛОЧКА (ds-*)
+   ========================================================================== */
+.ds-sidebar { 
+    width: 280px; 
+    background: var(--color-surface); 
+    border-right: 1px solid var(--color-border); 
+    position: fixed; top: 0; bottom: 0; left: 0; 
+    padding: var(--space-xl) var(--space-md); 
+    display: flex; flex-direction: column; 
+    overflow-y: auto; 
+    z-index: 10;
+}
+.ds-sidebar__logo-area { 
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    margin-bottom: var(--space-xl); 
+    padding-bottom: var(--space-md); 
+    border-bottom: 1px solid var(--color-border); 
+}
+.ds-sidebar__logo-title { font-family: var(--font-family-heading); font-size: 13px; font-weight: 700; }
+.ds-sidebar__logo-ver { font-size: 10px; background: #e2e8f0; padding: 2px 6px; border-radius: var(--radius-sm); font-weight: bold; }
+.ds-sidebar__nav { display: flex; flex-direction: column; gap: 2px; }
+.ds-sidebar__link { color: var(--color-text-muted); text-decoration: none; font-size: 12px; font-weight: 500; padding: 6px var(--space-sm); border-radius: var(--radius-sm); }
+.ds-sidebar__link:hover { background: var(--color-bg-page); color: var(--color-text-main); }
+
+.ds-content-wrapper { margin-left: 280px; padding: var(--space-2xl); background: #f1f5f9; min-height: 100vh; }
+.ds-preview-raw-zone { margin-bottom: var(--space-xl); }
+.ds-preview-raw-label { font-size: 11px; color: var(--color-text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: var(--space-xs); letter-spacing: 1px; display: block;}
+
+.ds-card-section { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-md); padding: var(--space-xl); margin-bottom: var(--space-xl); box-shadow: var(--shadow-sm); }
+.ds-card-section__header { margin-bottom: var(--space-lg); border-bottom: 1px solid var(--color-border); padding-bottom: var(--space-sm); }
+.ds-card-section__header p { font-size: 13px; color: var(--color-text-muted); margin-top: var(--space-xs); }
+
+.ds-table-responsive { overflow-x: auto; margin: var(--space-md) 0; }
+.ds-data-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ds-data-table th, .ds-data-table td { padding: 10px 12px; border-bottom: 1px solid var(--color-border); text-align: left; }
+.ds-data-table th { background: var(--color-bg-page); font-weight: 600; }
+
+.ds-bullet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-lg); margin: var(--space-md) 0; }
+.ds-bullet-item h5 { font-family: var(--font-family-base); font-size: 14px; font-weight: 600; margin-bottom: 4px; }
+.ds-bullet-item p { font-size: 13px; color: var(--color-text-muted); line-height: 1.5; }
+
+.ds-color-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: var(--space-sm); }
+.ds-color-swatch { padding: var(--space-md); border-radius: var(--radius-sm); font-size: 11px; font-family: monospace; display: flex; flex-direction: column; justify-content: space-between; height: 80px; }
+
+.ds-showcase-box { border: 1px solid var(--color-border); padding: var(--space-xl); border-radius: var(--radius-sm); margin-bottom: var(--space-md); }
+.ds-showcase-pure { border: 1px solid var(--color-border); padding: var(--space-md); border-radius: var(--radius-sm); background: var(--color-surface); }
+.ds-flex-gap { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-sm); }
+
+.ds-split-rules { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md); margin: var(--space-md) 0; }
+.ds-split-rules__do, .ds-split-rules__dont { padding: var(--space-md); border-radius: var(--radius-sm); font-size: 13px; }
+.ds-split-rules__do { background: var(--color-primary-soft); color: #1c8a45; }
+.ds-split-rules__dont { background: #fde8e8; color: #9b1c1c; }
+.ds-split-rules h6 { font-size: 13px; font-weight: 700; margin-bottom: 4px; text-transform: uppercase; }
+
+.ds-code-block { background: var(--color-bg-dark); padding: var(--space-md); border-radius: var(--radius-sm); overflow-x: auto; margin-top: var(--space-sm); }
+.ds-code-block code { color: #a3e635; font-size: 12px; font-family: monospace; }
+
+.ds-catalog-layout { display: grid; grid-template-columns: 315px 1fr; gap: var(--space-xl); margin-top: var(--space-md); }
+.ds-rules-meta h6 { font-size: 14px; font-weight: 600; margin-bottom: var(--space-sm); }
+.ds-rules-meta ol { padding-left: var(--space-md); font-size: 13px; color: var(--color-text-muted); display: flex; flex-direction: column; gap: var(--space-sm); }
+
+@media (max-width: 1024px) {
+    .ds-sidebar { display: none; }
+    .ds-content-wrapper { margin-left: 0; padding: var(--space-md); }
+    .ds-bullet-grid, .ds-split-rules, .ds-catalog-layout { grid-template-columns: 1fr; }
+}
