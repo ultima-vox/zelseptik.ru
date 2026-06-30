@@ -1,0 +1,56 @@
+@use '../../abstracts/mixins' as *;
+
+/* ========================================================================== 
+   PRIMITIVE: CARD
+   Neutral content container primitive. Semantic cards extend this layer.
+   ========================================================================== */
+
+.card {
+  @include card-base;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+}
+
+.card--interactive {
+  @include card-interactive;
+}
+
+.card--soft {
+  border-color: var(--color-success-border);
+  background: var(--color-primary-soft);
+}
+
+.card--dark {
+  border-color: rgba(148, 163, 184, .16);
+  background: var(--color-secondary);
+  color: var(--color-text-inverse);
+}
+
+.card__header,
+.card__body,
+.card__footer {
+  padding: var(--space-lg);
+}
+
+.card__header + .card__body,
+.card__body + .card__footer {
+  border-top: 1px solid var(--color-border-soft);
+}
+
+.card__title {
+  margin: 0;
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-heading);
+}
+
+.card__text {
+  margin: var(--space-sm) 0 0;
+  color: var(--color-text-muted);
+  line-height: var(--line-height-base);
+}
+
+.card--dark .card__text {
+  color: rgba(255, 255, 255, .72);
+}
