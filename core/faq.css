@@ -1,3 +1,5 @@
+﻿/* ===== core/faq.css ===== */
+
 /* Extracted from original site CSS: faq.css */
 
 /* FAQ ACCORDION SECTION */
@@ -125,5 +127,4 @@
 .faq-item__author-info strong {
   color: var(--color-text-main);
 }
-
 

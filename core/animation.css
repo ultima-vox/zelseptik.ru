@@ -1,0 +1,33 @@
+﻿/* ===== core/animation.css ===== */
+
+/* ==========================================================================
+   ANIMATIONS
+   ========================================================================== */
+
+@keyframes ping {
+  75%,
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes hero-tag-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: .65;
+    transform: scale(1.12);
+  }
+}
+

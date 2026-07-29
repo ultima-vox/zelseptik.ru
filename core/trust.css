@@ -1,3 +1,5 @@
+﻿/* ===== core/trust.css ===== */
+
 /* Extracted from original site CSS: trust.css */
 
 /* SERTIFIED PARTNERS / TRUST BAR */
@@ -19,6 +21,9 @@
 
 .trust-bar__partners {
   display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   grid-template-columns: repeat(2, 1fr);
   gap: var(--space-lg);
   align-items: center;
@@ -151,5 +156,4 @@
   font-weight: var(--font-weight-bold);
   color: #475569;
 }
-
 

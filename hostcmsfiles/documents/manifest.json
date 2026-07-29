@@ -1,0 +1,275 @@
+[
+    {
+        "id":  1,
+        "name":  "Главная страница",
+        "template_id":  2,
+        "datetime":  "2026-04-09 20:05:54",
+        "file":  "1.html"
+    },
+    {
+        "id":  5,
+        "name":  "Траст бар",
+        "template_id":  2,
+        "datetime":  "2026-06-15 11:23:54",
+        "file":  "5.html"
+    },
+    {
+        "id":  6,
+        "name":  "Почему выбирают нас",
+        "template_id":  2,
+        "datetime":  "2026-06-14 23:36:36",
+        "file":  "6.html"
+    },
+    {
+        "id":  7,
+        "name":  " FINAL HIGH-CONVERTING CALL TO ACTION SECTION",
+        "template_id":  2,
+        "datetime":  "2026-06-15 18:35:35",
+        "file":  "7.html"
+    },
+    {
+        "id":  8,
+        "name":  "Сотрудничество с нами",
+        "template_id":  1,
+        "datetime":  "2026-06-25 14:33:04",
+        "file":  "8.html"
+    },
+    {
+        "id":  9,
+        "name":  "Как работаем",
+        "template_id":  1,
+        "datetime":  "2026-06-25 14:33:39",
+        "file":  "9.html"
+    },
+    {
+        "id":  10,
+        "name":  "Услуги",
+        "template_id":  1,
+        "datetime":  "2021-12-15 14:42:15",
+        "file":  "10.html"
+    },
+    {
+        "id":  11,
+        "name":  "Доставка",
+        "template_id":  4,
+        "datetime":  "2026-07-02 20:48:28",
+        "file":  "11.html"
+    },
+    {
+        "id":  12,
+        "name":  "Контакты",
+        "template_id":  6,
+        "datetime":  "2026-06-25 14:18:07",
+        "file":  "12.html"
+    },
+    {
+        "id":  13,
+        "name":  "О нас",
+        "template_id":  7,
+        "datetime":  "2026-06-25 14:31:32",
+        "file":  "13.html"
+    },
+    {
+        "id":  14,
+        "name":  "О компании",
+        "template_id":  7,
+        "datetime":  "2021-12-22 10:21:27",
+        "file":  "14.html"
+    },
+    {
+        "id":  15,
+        "name":  "Преимущества",
+        "template_id":  1,
+        "datetime":  "2026-06-25 14:36:57",
+        "file":  "15.html"
+    },
+    {
+        "id":  16,
+        "name":  "Политика конфиденциальности",
+        "template_id":  1,
+        "datetime":  "2022-08-25 11:46:03",
+        "file":  "16.html"
+    },
+    {
+        "id":  17,
+        "name":  "Акция",
+        "template_id":  4,
+        "datetime":  "2026-06-29 15:36:06",
+        "file":  "17.html"
+    },
+    {
+        "id":  18,
+        "name":  "Логотип",
+        "template_id":  1,
+        "datetime":  "2022-07-27 15:37:17",
+        "file":  "18.html"
+    },
+    {
+        "id":  19,
+        "name":  "CTA",
+        "template_id":  1,
+        "datetime":  "2026-07-08 12:54:16",
+        "file":  "19.html"
+    },
+    {
+        "id":  20,
+        "name":  "Соц навигация верх",
+        "template_id":  1,
+        "datetime":  "2022-12-27 10:07:09",
+        "file":  "20.html"
+    },
+    {
+        "id":  25,
+        "name":  "Стоимость монтажа",
+        "template_id":  1,
+        "datetime":  "2022-08-17 15:29:48",
+        "file":  "25.html"
+    },
+    {
+        "id":  26,
+        "name":  "Цены",
+        "template_id":  1,
+        "datetime":  "2022-08-29 08:49:29",
+        "file":  "26.html"
+    },
+    {
+        "id":  27,
+        "name":  "Работы и материалы, включенные в монтаж «под ключ» (Септик)",
+        "template_id":  1,
+        "datetime":  "2022-08-24 10:12:24",
+        "file":  "27.html"
+    },
+    {
+        "id":  28,
+        "name":  "Свяжитесь с нами (зеленый фон)",
+        "template_id":  1,
+        "datetime":  "2022-08-29 09:15:46",
+        "file":  "28.html"
+    },
+    {
+        "id":  29,
+        "name":  "Квиз (?)",
+        "template_id":  1,
+        "datetime":  "2022-08-29 13:11:09",
+        "file":  "29.html"
+    },
+    {
+        "id":  30,
+        "name":  "Текст для города",
+        "template_id":  14,
+        "datetime":  "2022-09-06 11:16:51",
+        "file":  "30.html"
+    },
+    {
+        "id":  38,
+        "name":  "Как проходит монтаж септика под ключ",
+        "template_id":  1,
+        "datetime":  "2026-06-14 23:38:50",
+        "file":  "38.html"
+    },
+    {
+        "id":  41,
+        "name":  "Быстрый расчёт логистики",
+        "template_id":  1,
+        "datetime":  "2026-06-14 15:30:36",
+        "file":  "41.html"
+    },
+    {
+        "id":  43,
+        "name":  "Контакты 1",
+        "template_id":  1,
+        "datetime":  "2026-06-25 14:14:05",
+        "file":  "43.html"
+    },
+    {
+        "id":  2,
+        "name":  "Ошибка 403",
+        "template_id":  1,
+        "datetime":  "2022-08-22 13:10:22",
+        "file":  "2.html"
+    },
+    {
+        "id":  3,
+        "name":  "Ошибка 404",
+        "template_id":  1,
+        "datetime":  "2022-08-22 12:21:44",
+        "file":  "3.html"
+    },
+    {
+        "id":  4,
+        "name":  "Сайт отключен",
+        "template_id":  1,
+        "datetime":  "2022-08-22 13:12:53",
+        "file":  "4.html"
+    },
+    {
+        "id":  31,
+        "name":  "Подбор септика",
+        "template_id":  1,
+        "datetime":  "2026-06-14 20:25:33",
+        "file":  "31.html"
+    },
+    {
+        "id":  32,
+        "name":  "Калькулятор",
+        "template_id":  1,
+        "datetime":  "2026-06-14 20:26:02",
+        "file":  "32.html"
+    },
+    {
+        "id":  33,
+        "name":  "Самый верх - выезд инженера",
+        "template_id":  1,
+        "datetime":  "2026-06-14 16:11:35",
+        "file":  "33.html"
+    },
+    {
+        "id":  34,
+        "name":  "Лого в футер",
+        "template_id":  1,
+        "datetime":  "2026-06-14 19:48:52",
+        "file":  "34.html"
+    },
+    {
+        "id":  35,
+        "name":  "footer самый неиз",
+        "template_id":  1,
+        "datetime":  "2026-05-31 20:01:03",
+        "file":  "35.html"
+    },
+    {
+        "id":  36,
+        "name":  "Связаться с нами футер",
+        "template_id":  1,
+        "datetime":  "2026-06-14 19:57:22",
+        "file":  "36.html"
+    },
+    {
+        "id":  37,
+        "name":  "Подбор септика по типу грунта",
+        "template_id":  1,
+        "datetime":  "2026-06-14 23:33:55",
+        "file":  "37.html"
+    },
+    {
+        "id":  39,
+        "name":  "Как проходит доставка (4 шага)",
+        "template_id":  1,
+        "datetime":  "2026-06-29 15:12:09",
+        "file":  "39.html"
+    },
+    {
+        "id":  40,
+        "name":  "Что входит в доставку + Когда бесплатно",
+        "template_id":  1,
+        "datetime":  "2026-06-29 15:15:08",
+        "file":  "40.html"
+    },
+    {
+        "id":  42,
+        "name":  "Быстрый расчёт логистики",
+        "template_id":  1,
+        "datetime":  "2026-06-29 15:15:47",
+        "file":  "42.html"
+    }
+]

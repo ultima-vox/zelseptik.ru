@@ -1,0 +1,114 @@
+<div class="container">
+<div class="section-title-block"><span class="section-title-block__tag">Важнейший фактор надежности</span>
+<h2 class="section-title-block__title">Подбор септика по типу грунта</h2>
+<p class="section-title-block__desc">Тип грунта влияет на способ водоотведения, подготовку котлована и состав монтажных работ. Рекомендация уточняется после осмотра участка.</p>
+</div>
+<!-- Soil Selector Tabs -->
+<div class="soil-section__tabs js-soil-tabs" role="tablist" aria-label="Тип грунта">
+<button type="button" class="soil-section__tab" id="soil-tab-sand" role="tab" aria-controls="soil-panel-sand" aria-selected="false" tabindex="-1" data-soil="sand"><span class="soil-section__tab-label">Песок / Супесь</span><span class="soil-section__tab-desc">Высокая фильтрация</span></button>
+<button type="button" class="soil-section__tab soil-section__tab--active" id="soil-tab-loam" role="tab" aria-controls="soil-panel-loam" aria-selected="true" data-soil="loam"><span class="soil-section__tab-label">Суглинок</span><span class="soil-section__tab-desc">Средняя фильтрация</span></button>
+<button type="button" class="soil-section__tab" id="soil-tab-clay" role="tab" aria-controls="soil-panel-clay" aria-selected="false" tabindex="-1" data-soil="clay"><span class="soil-section__tab-label">Глина</span><span class="soil-section__tab-desc">Низкая фильтрация</span></button>
+<button type="button" class="soil-section__tab" id="soil-tab-floating" role="tab" aria-controls="soil-panel-floating" aria-selected="false" tabindex="-1" data-soil="floating"><span class="soil-section__tab-label">Плывун</span><span class="soil-section__tab-desc">Водонасыщенный грунт</span></button>
+<button type="button" class="soil-section__tab" id="soil-tab-high-ugv" role="tab" aria-controls="soil-panel-high-ugv" aria-selected="false" tabindex="-1" data-soil="high_ugv"><span class="soil-section__tab-label">Высокий УГВ</span><span class="soil-section__tab-desc">Вода близко к поверхности</span></button>
+</div>
+<!-- Advisor Recommendation Card -->
+<div class="soil-section__card">
+<div class="soil-section__card-grid"><!-- Left recommendation details (Toggled via CSS) -->
+<div class="soil-section__details">
+<div class="soil-section__tag"><span>ПРЕДВАРИТЕЛЬНАЯ РЕКОМЕНДАЦИЯ</span></div>
+<!-- Sand -->
+<div class="soil-section__details-content js-soil-content" id="soil-panel-sand" role="tabpanel" aria-labelledby="soil-tab-sand" data-soil="sand" hidden="hidden">
+<h3 class="soil-section__rec-title">Песчаные грунты и супесь</h3>
+<p class="soil-section__rec-desc">Песчаные грунты обычно лучше пропускают воду, но схема отвода зависит также от уровня грунтовых вод и рельефа.</p>
+<ul class="soil-section__bullets">
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Проверяем допустимость почвенной фильтрации и расположение точки отвода.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Возможность самотечного отвода проверяется по рельефу и уровню воды.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Способ подготовки котлована выбираем после оценки устойчивости стенок.</span></li>
+</ul>
+</div>
+<!-- Loam (Default Active) -->
+<div class="soil-section__details-content soil-section__details-content--active js-soil-content" id="soil-panel-loam" role="tabpanel" aria-labelledby="soil-tab-loam" data-soil="loam">
+<h3 class="soil-section__rec-title">Суглинистые почвы</h3>
+<p class="soil-section__rec-desc">Суглинок умеренно впитывает воду, но имеет свойство задерживать влагу при весеннем паводке. Требует взвешенного подхода.</p>
+<ul class="soil-section__bullets">
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Проверяем фильтрацию, сезонное переувлажнение и доступную точку отвода воды.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Самотечную или насосную схему выбираем по отметкам рельефа.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Материал обратной засыпки определяем по инструкции выбранной модели.</span></li>
+</ul>
+</div>
+<!-- Clay -->
+<div class="soil-section__details-content js-soil-content" id="soil-panel-clay" role="tabpanel" aria-labelledby="soil-tab-clay" data-soil="clay" hidden="hidden">
+<h3 class="soil-section__rec-title">Глина и тяжёлая глина</h3>
+<p class="soil-section__rec-desc">Глинистые грунты обычно имеют низкую фильтрацию. Это ограничивает варианты почвенного отвода воды.</p>
+<ul class="soil-section__bullets">
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Проверяем необходимость насосного отвода и доступное место выпуска воды.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Точку отвода воды выбирают с учётом рельефа, границ участка и местных условий.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Способ разработки котлована определяем после обследования участка.</span></li>
+</ul>
+</div>
+<!-- Floating -->
+<div class="soil-section__details-content js-soil-content" id="soil-panel-floating" role="tabpanel" aria-labelledby="soil-tab-floating" data-soil="floating" hidden="hidden">
+<h3 class="soil-section__rec-title">Плывун и водонасыщенный грунт</h3>
+<p class="soil-section__rec-desc">Водонасыщенный подвижный грунт влияет на подготовку котлована, выбор корпуса и способ фиксации станции.</p>
+<ul class="soil-section__bullets">
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Модель и способ фиксации выбираются после оценки грунта и уровня воды.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Способ укрепления котлована выбирается по фактическому состоянию грунта.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Защиту от смещения выполняют по проекту и инструкции производителя.</span></li>
+</ul>
+</div>
+<!-- High UGV -->
+<div class="soil-section__details-content js-soil-content" id="soil-panel-high-ugv" role="tabpanel" aria-labelledby="soil-tab-high-ugv" data-soil="high_ugv" hidden="hidden">
+<h3 class="soil-section__rec-title">Высокий уровень грунтовых вод</h3>
+<p class="soil-section__rec-desc">Высокий уровень воды влияет на выбор корпуса, способ фиксации и схему отвода очищенной воды.</p>
+<ul class="soil-section__bullets">
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Проверяем необходимость насосной камеры и доступную точку отвода.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Корпус и способ фиксации выбираем по условиям участка и инструкции производителя.</span></li>
+<li class="soil-section__bullet"><span class="soil-section__bullet-dot"></span> <span>Дополнительное оборудование подбирается по модели станции и условиям эксплуатации.</span></li>
+</ul>
+</div>
+<!-- Action Callout -->
+<div class="soil-section__rec-footer"><button type="button" class="btn btn--primary soil-section__btn js-btn-callback" data-title="Осмотр участка">Заказать осмотр участка</button> <span class="soil-section__sub-tip">Финальная схема определяется после осмотра</span></div>
+</div>
+<!-- Right recommendation schematic block -->
+<div class="soil-section__schematic">
+<h4 class="soil-section__schematic-title">Типовой монтаж в разрезе</h4>
+<div class="soil-section__svg-box"><svg viewBox="0 0 300 180" class="soil-section__svg" role="img" aria-labelledby="soil-schematic-title"><title id="soil-schematic-title">Типовая схема монтажа септика</title>
+ <!-- Ground top -->
+ <rect x="0" y="80" width="300" height="100" fill="#E2E8F0"></rect>
+ <rect x="0" y="80" width="300" height="12" fill="#86EFAC"></rect>
+ 
+ <!-- House partial -->
+ <rect x="0" y="10" width="60" height="70" fill="#1E293B"></rect>
+ <polygon points="0,10 60,10 30,0" fill="#0F172A"></polygon>
+ <line x1="40" y1="80" x2="120" y2="115" stroke="#DC2626"></line>
+ <text x="5" y="95" fill="#DC2626">Вывод дома</text>
+
+ <!-- Septic tank body -->
+ <rect x="110" y="70" width="80" height="90" rx="6" fill="#047857"></rect>
+ <rect x="115" y="75" width="70" height="80" rx="4" fill="#059669"></rect>
+ 
+ <!-- Internal chambers -->
+ <line x1="138" y1="75" x2="138" y2="155" stroke="#047857"></line>
+ <line x1="162" y1="75" x2="162" y2="155" stroke="#047857"></line>
+ 
+ <!-- Bubbles in central chamber -->
+ <circle cx="150" cy="110" r="2" fill="#E0F2FE"></circle>
+ <circle cx="152" cy="118" r="3" fill="#E0F2FE"></circle>
+ <circle cx="147" cy="128" r="2.5" fill="#E0F2FE"></circle>
+ 
+ <!-- Labels -->
+ <text x="125" y="65" fill="#047857">СЕПТИК</text>
+ <text x="134" y="172" fill="#475569">Засыпка ЦПС</text>
+
+ <!-- Outlet pipe -->
+ <line x1="185" y1="105" x2="250" y2="120" stroke="#3B82F6"></line>
+ 
+ <!-- Discharge point -->
+ <circle cx="255" cy="123" r="10" fill="#EFF6FF" stroke="#3B82F6"></circle>
+ <text x="238" y="140" fill="#1D4ED8">Отвод очищенной воды</text>
+ </svg></div>
+<div class="soil-section__schematic-footer"><span>Типовая схема</span> <span>Параметры уточняются на участке</span></div>
+</div>
+</div>
+</div>
+</div>

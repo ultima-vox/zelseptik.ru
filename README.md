@@ -1,68 +1,59 @@
 # ЗЕЛСЕПТИК Frontend Workspace
 
-Production-ready workspace для Design System v2.
+Design System v2 и deploy-source для сайта ЗЕЛСЕПТИК на HostCMS.
 
-## Setup
+## Быстрый старт
 
 ```powershell
 npm install
+npm run build
+npm run lint
+```
+
+Сборка создаёт:
+
+```text
+dist/css/app.min.css
+dist/css/runtime.css
+dist/js/app.js
+dist/js/modules/*
+dist/js/utils/*
+```
+
+Для разработки SCSS:
+
+```powershell
 npm run dev
 ```
 
-## Команды
-
-| Команда | Что делает |
-| --- | --- |
-| `npm run dev` | Watch-сборка SCSS в `dist/css/app.css` с source map |
-| `npm run build` | Продакшен-сборка в `dist/css/app.min.css` (compressed) |
-| `npm run build:dev` | Разовая expanded-сборка в `dist/css/app.css` |
-| `npm run lint` | `stylelint` по SCSS + `eslint` по JS |
-| `npm run lint:fix` | То же с автоисправлением |
-| `npm run format` | `prettier` по всему проекту |
-| `npm run clean` | Удаляет собранный CSS |
-
-`dist/` не хранится в git — собирается локально и на деплое.
-
-## Подключение в HostCMS
-
-```html
-<link rel="stylesheet" href="/dist/css/app.min.css">
-```
-
-JS-бандл `dist/js/app.js` пока не собирается: модули в `src/js/` — заглушки,
-сборщика для них нет. Подключать `<script src="/dist/js/app.js">` рано.
-
-## Структура SCSS
-
-Порядок загрузки в `src/scss/main.scss` = порядок каскада. Менять нельзя без
-проверки сайта.
+## Структура
 
 ```text
-abstracts/      токены и миксины (foundation)
-base/           reset, типографика, rich content
-layouts/        контейнеры, секции, сетки страниц
-design-system/  primitives -> semantic -> patterns
-components/     только то, чего нет в design-system
-patterns/       только то, чего нет в design-system
-pages/          пострановые оверрайды
-legacy/         маппинг текущей вёрстки HostCMS, всегда последним
+src/scss/                 исходники Design System v2
+core/                     точный baseline активного CSS на dev
+src/js/                   модульный frontend JS
+hostcmsfiles/xsl/         рабочие XSL-шаблоны HostCMS
+templates/template1/      основной HostCMS-шаблон и runtime JS
+templates/template2/      шаблон главной страницы
+script.js                 текущий корневой runtime JS HostCMS
+docs/                     правила компонентов и интеграции
 ```
 
-Каждый слой подключается через свой `_index.scss`. Это нужно, чтобы файлы с
-одинаковым именем в разных слоях (`patterns/product`, `pages/product`) не
-конфликтовали по namespace у `@use`.
+Файлы HostCMS импортированы с `dev.zelseptik.ru` как baseline. Сначала изменения делаются и проверяются в Git. На dev загружается только проверенный diff.
 
 ## Правила
 
 1. Не переименовывать существующие классы без необходимости.
 2. Новые страницы собирать из универсальных компонентов.
-3. `catalog-card` используется только для товаров.
-4. Информационные карточки — `feature-card`.
-5. Этапы — `process-card`.
-6. CTA на всём сайте — только `cta`.
-7. JS-хуки — только через `js-*` или `data-*`.
-8. Название компании всегда: ЗЕЛСЕПТИК.
-9. Компонент, который уже есть в `design-system/`, не переопределять в
-   `components/` или `patterns/` — только в `legacy/` и только как маппинг.
-10. Медиазапросы — префиксным синтаксисом (`min-width`), не range (`width >=`):
-    range не поддерживается Safari до 16.4 и ломает вёрстку целиком.
+3. `catalog-card` использовать только для товаров.
+4. Информационные карточки собирать через `feature-card`.
+5. Этапы собирать через `process-card`.
+6. Общий CTA собирать через `cta`.
+7. JS-хуки задавать через `js-*` или `data-*`.
+8. Название компании всегда писать `ЗЕЛСЕПТИК`.
+9. Слоган компании: `Чистота без компромиссов`.
+10. Компонент из `design-system/` не переопределять в `components/` или `patterns/`; совместимость держать в `legacy/`.
+11. Медиазапросы писать через `min-width`/`max-width`, без range-синтаксиса.
+12. Не добавлять неподтверждённые цены, гарантии, сроки, отзывы и счётчики.
+
+Подробности интеграции: [docs/hostcms-deployment.md](docs/hostcms-deployment.md).

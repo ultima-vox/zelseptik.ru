@@ -1,3 +1,5 @@
+/* ===== core/footer.css ===== */
+
 /* Extracted from original site CSS: footer.css */
 
 /* COMPREHENSIVE FOOTER AREA */
@@ -99,8 +101,12 @@
   font-size: var(--font-size-sm);
 }
 
+.site-footer__link {
+  color: var(--color-text-muted);
+}
+
 .site-footer__link:hover {
-  color: var(--color-bg-base);
+  color: var(--color-accent);
 }
 
 .site-footer__phone {
@@ -196,6 +202,10 @@
   font-weight: var(--font-weight-semibold);
 }
 
+.form-message:empty {
+  display: none;
+}
+
 .form-message--success {
   color: #16a34a;
 }
@@ -203,4 +213,3 @@
 .form-message--error {
   color: #dc2626;
 }
-

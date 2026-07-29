@@ -1,3 +1,13 @@
 node_modules/
 dist/
+hostcms/
+*.private.php
+templates/*
+!templates/template1/
+templates/template1/*
+!templates/template1/template.htm
+!templates/template1/script.js
+!templates/template2/
+templates/template2/*
+!templates/template2/template.htm
 .DS_Store

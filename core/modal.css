@@ -1,3 +1,5 @@
+﻿/* ===== core/modal.css ===== */
+
 /* Extracted from original site CSS: modal.css */
 
 /* MODAL BEM STYLING */
@@ -257,5 +259,4 @@
 .modal__success-btn:hover {
   background-color: var(--color-primary-hover);
 }
-
 

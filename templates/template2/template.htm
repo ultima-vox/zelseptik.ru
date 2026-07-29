@@ -1,0 +1,293 @@
+<section id="hero" class="hero hero--blueprint hero--media">
+  <div class="hero__media" aria-hidden="true">
+    <img
+      class="hero__media-image"
+      src="/assets/images/HaRdM-tCqcE.jpg"
+      alt=""
+      width="2048"
+      height="1371"
+      fetchpriority="high"
+    />
+  </div>
+
+  <div class="container hero__container">
+    <div class="hero__grid">
+      <div class="hero__content">
+        <span class="badge hero__eyebrow">Инженерный подбор для участка</span>
+        <span class="premium-slogan">Чистота без компромиссов</span>
+        <h1 class="hero__title">Автономная канализация под ключ в Зеленограде и Московской области</h1>
+        <p class="hero__text">Подберём станцию по числу жителей, режиму использования, грунту и способу отвода воды. До выезда покажем предварительный расчёт, после осмотра участка зафиксируем состав работ.</p>
+
+        <ul class="hero__proof-list" aria-label="Что входит в работу">
+          <li class="hero__proof-item">Подбор оборудования под условия участка</li>
+          <li class="hero__proof-item">Расчёт монтажа и необходимых материалов</li>
+          <li class="hero__proof-item">Монтаж, запуск и дальнейшее обслуживание</li>
+        </ul>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#hero-selector">Подобрать решение</a>
+          <button class="btn btn--secondary js-btn-callback" type="button" data-title="Вызвать инженера">Вызвать инженера</button>
+        </div>
+      </div>
+
+      <aside class="hero__aside" id="hero-selector" aria-labelledby="hero-selector-title">
+        <form class="calculator-card" action="/septiki/" method="get">
+          <input type="hidden" name="filter" value="1" />
+
+          <div class="calculator-card__header">
+            <div>
+              <span class="badge badge--outline">Подбор за 30 секунд</span>
+              <h2 class="calculator-card__title" id="hero-selector-title">Ответьте на 3 вопроса</h2>
+              <p class="calculator-card__subtitle">Покажем подходящие модели без длинного технического фильтра.</p>
+            </div>
+          </div>
+
+          <fieldset class="calculator-card__group" data-range-filter="">
+            <legend class="calculator-card__label">Сколько человек будет пользоваться канализацией?</legend>
+            <input type="hidden" name="property_6_from" data-range-filter-input="from" disabled="disabled" />
+            <input type="hidden" name="property_6_to" data-range-filter-input="to" disabled="disabled" />
+            <div class="calculator-card__options calculator-card__options--4">
+              <label class="calculator-card__choice">
+                <input class="calculator-card__choice-input" type="radio" name="people_range" value="2-3" data-range-filter-option="" data-range-from="2" data-range-to="3" required="required" />
+                <span class="calculator-card__choice-label">2–3</span>
+              </label>
+              <label class="calculator-card__choice">
+                <input class="calculator-card__choice-input" type="radio" name="people_range" value="4-5" data-range-filter-option="" data-range-from="4" data-range-to="5" />
+                <span class="calculator-card__choice-label">4–5</span>
+              </label>
+              <label class="calculator-card__choice">
+                <input class="calculator-card__choice-input" type="radio" name="people_range" value="6-8" data-range-filter-option="" data-range-from="6" data-range-to="8" />
+                <span class="calculator-card__choice-label">6–8</span>
+              </label>
+              <label class="calculator-card__choice">
+                <input class="calculator-card__choice-input" type="radio" name="people_range" value="9+" data-range-filter-option="" data-range-from="9" data-range-to="" />
+                <span class="calculator-card__choice-label">9+</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="calculator-card__group" data-exclusive-filter="">
+            <legend class="calculator-card__label">Как используется дом?</legend>
+            <input type="hidden" name="property_10" value="1" data-exclusive-filter-input="property_10" disabled="disabled" />
+            <input type="hidden" name="property_11" value="1" data-exclusive-filter-input="property_11" disabled="disabled" />
+            <div class="calculator-card__options">
+              <label class="calculator-card__choice">
+                <input class="calculator-card__choice-input" type="radio" name="usage_type" value="dacha" data-exclusive-filter-option="property_10" required="required" />
+                <span class="calculator-card__choice-label">Сезонно</span>
+              </label>
+              <label class="calculator-card__choice">
+                <input class="calculator-card__choice-input" type="radio" name="usage_type" value="permanent" data-exclusive-filter-option="property_11" />
+                <span class="calculator-card__choice-label">Постоянно</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="calculator-card__group" data-exclusive-filter="">
+            <legend class="calculator-card__label">Как отводить очищенную воду?</legend>
+            <input type="hidden" name="property_3" value="1" data-exclusive-filter-input="property_3" disabled="disabled" />
+            <input type="hidden" name="property_2" value="1" data-exclusive-filter-input="property_2" disabled="disabled" />
+            <div class="calculator-card__options calculator-card__options--3">
+              <label class="calculator-card__choice">
+                <input class="calculator-card__choice-input" type="radio" name="drain_type" value="gravity" data-exclusive-filter-option="property_3" />
+                <span class="calculator-card__choice-label">Самотёк</span>
+              </label>
+              <label class="calculator-card__choice">
+                <input class="calculator-card__choice-input" type="radio" name="drain_type" value="forced" data-exclusive-filter-option="property_2" />
+                <span class="calculator-card__choice-label">Насос</span>
+              </label>
+              <label class="calculator-card__choice">
+                <input class="calculator-card__choice-input" type="radio" name="drain_type" value="unknown" data-exclusive-filter-option="" checked="checked" />
+                <span class="calculator-card__choice-label">Не знаю</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <button class="btn btn--primary btn--full" type="submit">Показать подходящие модели</button>
+          <p class="calculator-card__row-tip">Инженер уточнит грунт, уровень воды и перепад высот перед финальной сметой.</p>
+        </form>
+      </aside>
+    </div>
+  </div>
+</section>
+<!-- SERTIFIED PARTNERS / TRUST BAR -->
+        <section class="trust-bar">
+<?php 
+Core_Entity::factory('Document', '5')->Document_Versions->getCurrent()->execute();	
+?>
+</section>
+<section id="catalog" class="catalog-section">
+<?php
+	if (Core::moduleIsActive('shop')) {
+	    
+    $Shop_Controller_Show = new Shop_Controller_Show(
+				Core_Entity::factory('Shop', 1)
+			);
+			$Shop_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('МагазинКаталогТоваровНаГлавной')
+				)
+				->groupsMode('all')
+				->itemsProperties(TRUE)
+				->groupsProperties(TRUE)
+				->itemsForbiddenTags(array('text'))
+				->group(false)
+				->limit(999);
+// Ajax upload items
+if (!is_null(Core_Array::getRequest('ajaxLoadItems')))
+{
+    $xslName = Core_Entity::factory('Xsl')->getByName('МагазинКаталогТоваровНаГлавной');
+
+    ob_start();
+
+    $Shop_Controller_Show
+        ->xsl(
+            Core_Entity::factory('Xsl')->getByName($xslName)
+        );
+
+        $Shop_Controller_Show->addEntity(
+            Core::factory('Core_Xml_Entity')
+                ->name('ajax')
+                ->value(1)
+        );
+
+        $Shop_Controller_Show->show();
+
+    Core::showJson(ob_get_clean());
+}				
+
+$Shop_Controller_Show
+		->shopGroups()
+		->queryBuilder()
+		->clearOrderBy()
+		->orderBy('RAND()');
+
+ $Shop_Controller_Show->show();
+
+}
+?>
+</section>
+<!-- INTERACTIVE SOIL ADVISOR -->
+<section id="soil-advisor" class="soil-section">
+    <?php
+        Core_Entity::factory('Document', '37')->Document_Versions->getCurrent()->execute();	
+    ?>
+</section>
+    <?php
+        Core_Page::instance()->execute(); 
+    ?>
+    <!-- TURNKEY WORK STAGES -->
+<section class="stages-section">
+<?php
+ Core_Entity::factory('Document', '38')->Document_Versions->getCurrent()->execute();
+ ?>
+</section>
+<!-- FINISHED CASE STUDIES & REVIEWS -->
+<section id="cases" class="cases-section">
+    <?php
+        if (Core::moduleIsActive('informationsystem'))
+		{
+			$Informationsystem_Controller_Show = new Informationsystem_Controller_Show(
+				Core_Entity::factory('Informationsystem', 7)
+			);
+
+		/*	$Informationsystem_Controller_Show
+				->informationsystemItems()
+				->queryBuilder()
+				->clearOrderBy()
+				->orderBy('RAND()'); */
+
+			$Informationsystem_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('СписокУслугНаГлавной')
+				)
+				->groupsMode('none')
+				->itemsProperties(TRUE)
+				//->itemsForbiddenTags(array('text'))
+				->group(FALSE)
+				->limit(3);
+	$Informationsystem_Controller_Show
+		->informationsystemItems()
+		->queryBuilder()
+		->clearOrderBy()
+		->orderBy('RAND()');
+
+    $Informationsystem_Controller_Show->show();
+		} 
+		?>
+ </section>
+<!-- GEOGRAPHY & REGIONAL MAP -->
+<section id="geography" class="geography-section"> 
+		<?php
+if (Core::moduleIsActive('informationsystem'))
+		{
+			$Informationsystem_Controller_Show = new Informationsystem_Controller_Show(
+				Core_Entity::factory('Informationsystem', 4)
+			);
+
+		/*	$Informationsystem_Controller_Show
+				->informationsystemItems()
+				->queryBuilder()
+				->clearOrderBy()
+				->orderBy('RAND()'); */
+
+			$Informationsystem_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('СписокРайоныОбслуживанияНаГлавной')
+				)
+				->groupsMode('none')
+				->itemsProperties(TRUE)
+				//->itemsForbiddenTags(array('text'))
+				->group(FALSE)
+				->limit(10);
+			$Informationsystem_Controller_Show
+		->informationsystemItems()
+		->queryBuilder()
+		->clearOrderBy()
+		->orderBy('sorting', 'ASC');
+
+    $Informationsystem_Controller_Show->show();
+		  
+		}
+?>
+</section>
+<!-- INTERACTIVE FAQ ACCORDION -->
+<section id="faq" class="faq-section">
+    <?php
+        if (Core::moduleIsActive('informationsystem'))
+		{
+			$Informationsystem_Controller_Show = new Informationsystem_Controller_Show(
+				Core_Entity::factory('Informationsystem', 6)
+			);
+
+		/*	$Informationsystem_Controller_Show
+				->informationsystemItems()
+				->queryBuilder()
+				->clearOrderBy()
+				->orderBy('RAND()'); */
+
+			$Informationsystem_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('СписокВопросовНаГлавной')
+				)
+				->groupsMode('none')
+				->itemsProperties(TRUE)
+				//->itemsForbiddenTags(array('text'))
+				->group(FALSE)
+				->limit(3);
+	$Informationsystem_Controller_Show
+		->informationsystemItems()
+		->queryBuilder()
+		->clearOrderBy()
+		->orderBy('RAND()');
+
+    $Informationsystem_Controller_Show->show();
+		} 
+		?>        
+ </section>
+ <!-- FINAL HIGH-CONVERTING CALL TO ACTION SECTION -->
+ <section class="cta-section">
+          <div class="cta-section__bg-overlay grid-blueprint"></div>
+     <?php 
+    Core_Entity::factory('Document', '7')->Document_Versions->getCurrent()->execute();	
+        ?>
+         </section>

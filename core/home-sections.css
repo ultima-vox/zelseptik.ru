@@ -1,3 +1,5 @@
+﻿/* ===== core/home-sections.css ===== */
+
 /* Extracted from original site CSS: home-sections.css */
 
 /* INTERACTIVE SOIL ADVISOR */
@@ -248,6 +250,9 @@
 
 .why-section__grid {
   display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   grid-template-columns: 1fr;
   gap: var(--space-lg);
 }
@@ -366,6 +371,9 @@
 
 .stages-section__grid {
   display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
   grid-template-columns: 1fr;
   gap: var(--space-2xl);
   position: relative;
@@ -1178,5 +1186,4 @@
   display: block;
   margin-top: 1px;
 }
-
 
