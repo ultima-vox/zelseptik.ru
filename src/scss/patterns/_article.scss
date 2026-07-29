@@ -1,3 +1,14 @@
-.article { max-width: 860px; margin-inline: auto; }
-.article__lead { color: var(--color-text-muted); font-size: var(--font-size-md); line-height: var(--line-height-loose); }
-.article__content { margin-top: var(--space-xl); }
+.article {
+  max-width: 860px;
+  margin-inline: auto;
+}
+
+.article__lead {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-loose);
+}
+
+.article__content {
+  margin-top: var(--space-xl);
+}

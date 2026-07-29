@@ -1,0 +1,13 @@
+/* ==========================================================================
+   PROJECT COMPONENT LAYER
+   Components that have no design-system equivalent yet. Anything covered by
+   src/scss/design-system/ must NOT be redefined here.
+   ========================================================================== */
+
+@forward 'tabs';
+@forward 'dropdown';
+@forward 'accordion';
+@forward 'modal';
+@forward 'map';
+@forward 'pagination';
+@forward 'table';

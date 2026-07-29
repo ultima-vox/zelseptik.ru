@@ -33,6 +33,7 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
+
   @include interactive-transition;
 }
 
@@ -53,7 +54,7 @@
 @mixin button-dark {
   color: var(--color-text-inverse);
   background: var(--color-secondary-hover);
-  border-color: rgba(148, 163, 184, .2);
+  border-color: rgb(148 163 184 / 20%);
 }
 
 @mixin button-accent {
@@ -85,7 +86,10 @@
   padding: 0 !important;
   margin: -1px !important;
   overflow: hidden !important;
+
+  /* stylelint-disable-next-line property-no-deprecated -- fallback for browsers without clip-path */
   clip: rect(0, 0, 0, 0) !important;
+  clip-path: inset(50%) !important;
   white-space: nowrap !important;
   border: 0 !important;
 }

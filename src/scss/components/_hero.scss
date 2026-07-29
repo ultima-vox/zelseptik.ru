@@ -1,9 +1,0 @@
-.hero-section { position: relative; overflow: hidden; padding-block: var(--space-2xl); background: var(--color-bg-base); }
-.hero-section__grid { display: grid; grid-template-columns: 1fr; gap: var(--space-xl); align-items: center; }
-.hero-offer { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-lg); }
-.hero-offer__title { max-width: 840px; font-size: clamp(2.25rem, 5vw, var(--font-size-4xl)); line-height: var(--line-height-tight); letter-spacing: -.045em; }
-.hero-offer__subtitle { max-width: 680px; color: var(--color-text-muted); font-size: var(--font-size-md); line-height: var(--line-height-loose); }
-.hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-md); }
-.hero-offer__microtrust { display: inline-flex; align-items: center; gap: var(--space-xs); color: var(--color-text-muted); font-size: var(--font-size-sm); }
-.hero-offer__microtrust-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary); }
-@media (min-width: 1024px) { .hero-section__grid { grid-template-columns: 7fr 5fr; gap: var(--space-2xl); } }
