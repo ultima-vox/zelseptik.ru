@@ -2,24 +2,25 @@
   "name": "zelseptik-frontend-workspace",
   "version": "2.0.0",
   "private": true,
+  "type": "module",
   "description": "Design System v2 frontend workspace for ЗЕЛСЕПТИК / HostCMS",
   "scripts": {
     "dev": "sass src/scss/main.scss dist/css/app.css --watch --style=expanded --source-map",
     "build": "sass src/scss/main.scss dist/css/app.min.css --style=compressed --no-source-map",
     "build:dev": "sass src/scss/main.scss dist/css/app.css --style=expanded --source-map",
     "lint:scss": "stylelint \"src/scss/**/*.scss\"",
-    "lint:js": "eslint src/js/**/*.js",
+    "lint:js": "eslint \"src/js/**/*.js\" \"scripts/**/*.mjs\" eslint.config.js",
     "lint": "npm run lint:scss && npm run lint:js",
-    "lint:fix": "stylelint \"src/scss/**/*.scss\" --fix && eslint src/js/**/*.js --fix",
-    "format": "prettier --write \"**/*.{scss,js,json,md,html}\"",
+    "lint:fix": "npm run lint:scss -- --fix && npm run lint:js -- --fix",
+    "format": "prettier --write \"**/*.{scss,js,mjs,json,md,html}\"",
     "clean": "node scripts/clean.mjs"
   },
   "devDependencies": {
-    "@eslint/js": "latest",
-    "eslint": "latest",
-    "prettier": "latest",
-    "sass": "latest",
-    "stylelint": "latest",
-    "stylelint-config-standard-scss": "latest"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "prettier": "^3.9.6",
+    "sass": "^1.102.0",
+    "stylelint": "^17.14.1",
+    "stylelint-config-standard-scss": "^17.0.0"
   }
 }
