@@ -18,14 +18,18 @@
 
 		<div class="container">
 
-			<xsl:value-of select="description" disable-output-escaping="yes"/>
+			<div class="section-title-block">
+				<span class="section-title-block__tag">Рядом с вами</span>
+				<h2 class="section-title-block__title">Районы обслуживания в Зеленограде и Московской области</h2>
+				<p class="section-title-block__desc">Выберите населённый пункт, чтобы посмотреть направление работ и обсудить выезд специалиста.</p>
+			</div>
 
 			<div class="geography-section__grid">
 
 				<div class="geography-section__list-box">
-					<h4 class="geography-section__list-title">
+					<p class="geography-section__list-title">
 						Выберите ваш населенный пункт:
-					</h4>
+					</p>
 					<ul class="geography-section__list js-geography-list">
 						<xsl:apply-templates select="informationsystem_item" mode="geo-button"/>
 					</ul>
@@ -33,6 +37,19 @@
 
 				<div class="geography-section__details-box js-geography-details-box">
 					<xsl:apply-templates select="informationsystem_item" mode="geo-panel"/>
+					<div class="geography-map">
+						<h3 class="geography-map__title">Карта района обслуживания</h3>
+						<div class="geography-map__container">
+							<div id="zelseptik-map" class="geography-map__iframe"></div>
+							<div class="geography-map__legend">
+								<div class="geography-map__legend-pulse"></div>
+								<div>
+									<span class="geography-map__legend-title">ЗЕЛСЕПТИК</span>
+									<span class="geography-map__legend-desc">г. Зеленоград, ул. Летчицы Тарасовой, к. 2024</span>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 
 			</div>
@@ -41,8 +58,10 @@
 
 	</xsl:template>
 	<xsl:template match="informationsystem_item" mode="geo-button">
-		<li class="geography-section__item">
+		<li class="geography-section__item" role="presentation">
 			<button type="button">
+				<xsl:attribute name="id">geo-tab-<xsl:value-of select="@id"/></xsl:attribute>
+				<xsl:attribute name="aria-controls">geo-panel-<xsl:value-of select="@id"/></xsl:attribute>
 				<xsl:attribute name="class">
 					<xsl:text>geography-section__city-btn js-geo-btn js-geo-tab</xsl:text>
 					<xsl:if test="position() = 1">
@@ -74,20 +93,8 @@
 					</span>
 
 					<span class="geography-section__city-btn-districts">
-						<xsl:value-of select="substring(normalize-space(description), 1, 50)" disable-output-escaping="yes"/><xsl:text>...</xsl:text>
-					</span>
-				</div>
-
-				<div class="geography-section__city-btn-badge-box">
-					<span class="geography-section__city-btn-badge">
-						<xsl:choose>
-							<xsl:when test="position() = 1">
-								<xsl:text>100 км</xsl:text>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:text>50 км</xsl:text>
-							</xsl:otherwise>
-						</xsl:choose>
+						<xsl:value-of select="substring(normalize-space(description), 1, 50)"/>
+						<xsl:if test="string-length(normalize-space(description)) &gt; 50"><xsl:text>...</xsl:text></xsl:if>
 					</span>
 				</div>
 			</button>
@@ -96,6 +103,8 @@
 
 	<xsl:template match="informationsystem_item" mode="geo-panel">
 		<div>
+			<xsl:attribute name="id">geo-panel-<xsl:value-of select="@id"/></xsl:attribute>
+			<xsl:attribute name="aria-labelledby">geo-tab-<xsl:value-of select="@id"/></xsl:attribute>
 			<xsl:attribute name="class">
 				<xsl:text>geography-details js-geography-details js-geo-panel</xsl:text>
 				<xsl:if test="position() = 1">
@@ -120,65 +129,20 @@
 						<xsl:value-of select="name"/>
 					</h3>
 
-					<p class="geography-details__sub">
+					<div class="geography-details__sub">
 						<xsl:value-of select="description" disable-output-escaping="yes"/>
-					</p>
+					</div>
 				</div>
-
-				<span class="geography-details__badge">
-					<xsl:text>Сдано объектов: 142</xsl:text>
-				</span>
 			</div>
 
 			<div class="geography-details__advice">
-				<h5 class="geography-details__advice-title">
-					<xsl:text>Совет инженера:</xsl:text>
-				</h5>
-
-				<p class="geography-details__advice-text">
-					<xsl:text>Рекомендуется бесплатный выезд инженера для оценки грунта, уровня грунтовых вод и точки сброса очищенной воды.</xsl:text>
-				</p>
-			</div>
-
-			<div class="geography-map">
-				<h4 class="geography-map__title">
-					<xsl:text>Карта района обслуживания:</xsl:text>
+				<h4 class="geography-details__advice-title">
+					<xsl:text>Перед выездом уточним:</xsl:text>
 				</h4>
 
-				<div class="geography-map__container">
-					<xsl:if test="position() = 1">
-						<div id="zelseptik-map" class="geography-map__iframe"></div>
-					</xsl:if>
-
-					<div class="geography-map__overlay">
-						<div>
-							<xsl:attribute name="class">
-								<xsl:text>geography-map__circle </xsl:text>
-								<xsl:choose>
-									<xsl:when test="position() = 1">
-										<xsl:text>geography-map__circle--100km</xsl:text>
-									</xsl:when>
-									<xsl:otherwise>
-										<xsl:text>geography-map__circle--50km</xsl:text>
-									</xsl:otherwise>
-								</xsl:choose>
-							</xsl:attribute>
-
-							<span class="geography-map__circle-label">
-								<xsl:text>Радиус обслуживания </xsl:text>
-
-							</span>
-						</div>
-					</div>
-
-					<div class="geography-map__legend">
-						<div class="geography-map__legend-pulse"></div>
-						<div>
-							<span class="geography-map__legend-title">Склад и офис ЗелСептик</span>
-							<span class="geography-map__legend-desc">г. Зеленоград, ул. Летчицы Тарасовой, к. 2024</span>
-						</div>
-					</div>
-				</div>
+				<p class="geography-details__advice-text">
+					<xsl:text>Адрес, задачу, модель станции и доступ к участку. Необходимость осмотра определит специалист.</xsl:text>
+				</p>
 			</div>
 		</div>
 	</xsl:template>

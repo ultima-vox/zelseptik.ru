@@ -26,20 +26,29 @@ XSL `55` отвечает за каталог и штатные GET-параме
 Сначала запускать без `--apply`, затем с `--apply` и отдельным `--backup`:
 
 ```bash
-php sync-hostcms-documents.php \
+php scripts/sync-hostcms-documents.php \
   --root=/var/www/zelseptik/data/www/dev.zelseptik.ru \
   --source=/path/to/documents \
-  --backup=/path/to/backup
+  --ids=36 \
+  --manifest=/path/to/preflight.json
 
-php sync-hostcms-documents.php \
+php scripts/sync-hostcms-documents.php \
   --root=/var/www/zelseptik/data/www/dev.zelseptik.ru \
   --source=/path/to/documents \
+  --ids=36 \
+  --expected=/path/to/preflight.json \
   --backup=/path/to/backup \
+  --environment=dev.zelseptik.ru \
   --apply
 ```
 
-Скрипт ограничен документами `5, 6, 7, 37, 38`, сохраняет исходный HTML и
+Скрипт ограничен документами `5, 6, 7, 36, 37, 38`, сохраняет исходный HTML и
 SHA-256 manifest до изменения БД.
+
+Rollback документа выполняется тем же двухшаговым процессом: использовать HTML-файл
+из backup как `--source`, создать новый preflight manifest, затем применить его в новый
+backup-каталог. Скрипт не нормализует HTML и восстанавливает backup побайтово. После
+rollback сверить SHA-256 с `before_sha256` исходного manifest.
 
 ## Порядок изменения
 

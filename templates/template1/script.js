@@ -386,10 +386,32 @@
     const section = $('#cases');
     if (!section) return;
 
+    section.classList.add('cases-section--enhanced');
+
     const tabs = $$('.js-case-tab', section);
     const cards = $$('.js-case-card', section);
 
     if (!tabs.length || !cards.length) return;
+
+    const tabList = $('.js-cases-tabs', section);
+    if (tabList) {
+      tabList.setAttribute('role', 'tablist');
+      tabList.setAttribute('aria-label', 'Примеры выполненных работ');
+    }
+
+    tabs.forEach(function (tab) {
+      const index = tab.getAttribute('data-index');
+      tab.setAttribute('role', 'tab');
+      tab.id = 'case-tab-' + index;
+      tab.setAttribute('aria-controls', 'case-panel-' + index);
+    });
+
+    cards.forEach(function (card) {
+      const index = card.getAttribute('data-index');
+      card.setAttribute('role', 'tabpanel');
+      card.id = 'case-panel-' + index;
+      card.setAttribute('aria-labelledby', 'case-tab-' + index);
+    });
 
     function activate(index) {
       if (!index) return;
@@ -398,20 +420,38 @@
         const active = tab.getAttribute('data-index') === index;
 
         tab.classList.toggle('cases-section__tab--active', active);
-        tab.setAttribute('aria-pressed', active ? 'true' : 'false');
+        tab.setAttribute('aria-selected', active ? 'true' : 'false');
+        tab.setAttribute('tabindex', active ? '0' : '-1');
       });
 
       cards.forEach(function (card) {
         const active = card.getAttribute('data-index') === index;
 
         card.classList.toggle('cases-section__card--active', active);
-        card.style.display = active ? '' : 'none';
+        card.hidden = !active;
       });
     }
 
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
         activate(tab.getAttribute('data-index'));
+      });
+
+      tab.addEventListener('keydown', function (event) {
+        if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+
+        event.preventDefault();
+
+        const currentIndex = tabs.indexOf(tab);
+        let nextIndex = currentIndex;
+
+        if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % tabs.length;
+        if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = tabs.length - 1;
+
+        activate(tabs[nextIndex].getAttribute('data-index'));
+        tabs[nextIndex].focus();
       });
     });
 
@@ -1105,6 +1145,7 @@ function initFaqAccordion() {
     if (content) {
       content.style.maxHeight = '0';
       content.style.opacity = '0';
+      content.hidden = true;
     }
   }
 
@@ -1119,6 +1160,7 @@ function initFaqAccordion() {
     }
 
     if (content) {
+      content.hidden = false;
       content.style.maxHeight = content.scrollHeight + 'px';
       content.style.opacity = '1';
     }
@@ -1309,8 +1351,8 @@ document.addEventListener('click', function (event) {
   const YMAPS_API_KEY = '6c6c6163-4626-4999-8d2b-68492bbb570f';
 
   let map = null;
-  let isLoading = false;
-  let isLoaded = false;
+  let mapLoadPromise = null;
+  let mapCreatePromise = null;
   let pendingCity = 'Зеленоград';
 
   const geoCache = {
@@ -1331,65 +1373,86 @@ document.addEventListener('click', function (event) {
   }
 
   function loadMapScript() {
-    if (window.ymaps3 || isLoaded) return Promise.resolve();
-    if (isLoading) return Promise.resolve();
+    if (window.ymaps3) {
+      return Promise.resolve(window.ymaps3.ready).then(function () {
+        return window.ymaps3;
+      });
+    }
+    if (mapLoadPromise) return mapLoadPromise;
 
-    isLoading = true;
-
-    return new Promise(function (resolve, reject) {
+    mapLoadPromise = new Promise(function (resolve, reject) {
       const script = document.createElement('script');
 
       script.src = 'https://api-maps.yandex.ru/v3/?apikey=' +
         encodeURIComponent(YMAPS_API_KEY) +
         '&lang=ru_RU';
 
-      script.onload = function () {
-        isLoading = false;
-        isLoaded = true;
-        resolve();
+      script.onload = async function () {
+        try {
+          await window.ymaps3.ready;
+          resolve(window.ymaps3);
+        } catch (error) {
+          mapLoadPromise = null;
+          reject(error);
+        }
       };
 
       script.onerror = function () {
-        isLoading = false;
+        mapLoadPromise = null;
         reject(new Error('Yandex Maps API load failed'));
       };
 
       document.head.appendChild(script);
     });
+
+    return mapLoadPromise;
   }
 
   async function createMap() {
     const mapContainer = document.getElementById('zelseptik-map');
-    if (!mapContainer || map) return;
+    if (!mapContainer || map) return map;
+    if (mapCreatePromise) return mapCreatePromise;
 
-    await loadMapScript();
-    await ymaps3.ready;
+    mapCreatePromise = (async function () {
+      try {
+        const mapsApi = await loadMapScript();
+        const { YMap, YMapDefaultSchemeLayer } = mapsApi;
 
-    const { YMap, YMapDefaultSchemeLayer } = ymaps3;
+        map = new YMap(
+          mapContainer,
+          {
+            location: {
+              center: geoCache[pendingCity],
+              zoom: getCityZoom(pendingCity)
+            },
+            behaviors: []
+          },
+          [new YMapDefaultSchemeLayer({})]
+        );
 
-    map = new YMap(
-      mapContainer,
-      {
-        location: {
-          center: geoCache[pendingCity],
-          zoom: getCityZoom(pendingCity)
-        },
-        behaviors: []
-      },
-      [
-        new YMapDefaultSchemeLayer({})
-      ]
-    );
+        return map;
+      } catch (error) {
+        mapContainer.textContent = 'Карта временно недоступна. Адрес и район выезда уточнит специалист.';
+        mapContainer.classList.add('geography-map__iframe--fallback');
+        return null;
+      } finally {
+        mapCreatePromise = null;
+      }
+    })();
+
+    return mapCreatePromise;
   }
 
   async function setMapLocation(city) {
+    if (!geoCache[city]) return;
+
     pendingCity = city;
 
     if (!map) {
       await createMap();
     }
 
-    if (!map || !geoCache[city]) return;
+    if (!map) return;
 
     map.update({
       location: {
@@ -1404,16 +1467,69 @@ document.addEventListener('click', function (event) {
     const section = document.getElementById('geography');
     if (!section) return;
 
-    section.querySelectorAll('.js-geo-btn, .js-geo-tab').forEach(function (button) {
+    section.classList.add('geography-section--enhanced');
+
+    const buttons = Array.from(section.querySelectorAll('.js-geo-btn, .js-geo-tab'));
+    const panels = Array.from(section.querySelectorAll('.js-geo-panel'));
+    const tabList = section.querySelector('.js-geography-list');
+
+    if (tabList) {
+      tabList.setAttribute('role', 'tablist');
+      tabList.setAttribute('aria-label', 'Населённые пункты');
+    }
+
+    buttons.forEach(function (button) {
+      button.setAttribute('role', 'tab');
+    });
+
+    panels.forEach(function (panel) {
+      panel.setAttribute('role', 'tabpanel');
+    });
+
+    function activate(button) {
+      const city = button.getAttribute('data-city');
+      if (!city) return;
+
+      buttons.forEach(function (item) {
+        const active = item === button;
+
+        item.classList.toggle('geography-section__city-btn--active', active);
+        item.setAttribute('aria-selected', active ? 'true' : 'false');
+        item.setAttribute('tabindex', active ? '0' : '-1');
+      });
+
+      panels.forEach(function (panel) {
+        const active = panel.getAttribute('data-city') === city;
+
+        panel.classList.toggle('geography-details--active', active);
+        panel.hidden = !active;
+      });
+
+      setMapLocation(city);
+    }
+
+    buttons.forEach(function (button) {
       button.addEventListener('click', function () {
-        const city = button.getAttribute('data-city');
-        if (!city) return;
+        activate(button);
+      });
 
-        section.querySelectorAll('.js-geo-btn, .js-geo-tab').forEach(function (btn) {
-          btn.classList.toggle('geography-section__city-btn--active', btn === button);
-        });
+      button.addEventListener('keydown', function (event) {
+        if (!['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
 
-        setMapLocation(city);
+        event.preventDefault();
+
+        const currentIndex = buttons.indexOf(button);
+        let nextIndex = currentIndex;
+
+        if (event.key === 'ArrowDown') nextIndex = (currentIndex + 1) % buttons.length;
+        if (event.key === 'ArrowUp') nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+        if (event.key === 'ArrowRight') nextIndex = (currentIndex + 1) % buttons.length;
+        if (event.key === 'ArrowLeft') nextIndex = (currentIndex - 1 + buttons.length) % buttons.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = buttons.length - 1;
+
+        activate(buttons[nextIndex]);
+        buttons[nextIndex].focus();
       });
     });
   }

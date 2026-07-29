@@ -30,17 +30,10 @@
 
 	<xsl:template match="informationsystem_item" mode="button">
 
-		<button data-index="{@id}">
+		<button data-index="{@id}" type="button">
 			<xsl:attribute name="class">
 				<xsl:text>cases-section__tab js-case-tab</xsl:text>
-				<xsl:choose>
-					<xsl:when test="position() = 1">
-						<xsl:text> cases-section__tab cases-section__tab--active js-case-tab</xsl:text>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:text> cases-section__tab js-case-tab</xsl:text>
-					</xsl:otherwise>
-				</xsl:choose>
+				<xsl:if test="position() = 1"><xsl:text> cases-section__tab--active</xsl:text></xsl:if>
 			</xsl:attribute>
 			<xsl:value-of select="name"/>
 		</button>
@@ -54,7 +47,7 @@
 				<xsl:text>cases-section__card js-case-card</xsl:text>
 
 				<xsl:if test="position() = 1">
-					<xsl:text>cases-section__card js-case-card cases-section__card--active</xsl:text>
+					<xsl:text> cases-section__card--active</xsl:text>
 				</xsl:if>
 			</xsl:attribute>
 
@@ -62,9 +55,7 @@
 				<div class="cases-section__media">
 					<div class="cases-section__img-box">
 						<img alt="{name}" class="cases-section__img" decoding="async" loading="lazy" src="{dir}{image_large}" />
-						<div class="cases-section__badge">
-							✓ Работа выполнена под ключ
-						</div>
+						<div class="cases-section__badge">Выполненный монтаж</div>
 					</div>
 					<div class="cases-section__specs">
 						<div class="cases-section__spec-item"><span class="cases-section__spec-label">
@@ -113,7 +104,7 @@
 						<div class="cases-section__quote-header">
 							<span class="cases-section__quote-sign">“</span>
 							<h3 class="cases-section__quote-title">
-							Полноценный монтаж за <xsl:value-of select="property_value[tag_name='time']/value"/> часов в сложных условиях</h3>
+							Монтаж станции за <xsl:value-of select="property_value[tag_name='time']/value"/> часов</h3>
 						</div>
 						<div class="cases-section__quote-text"><xsl:value-of select="property_value[tag_name='quote-text']/value"/></div>
 					</xsl:if>
@@ -126,15 +117,15 @@
 								<h4 class="cases-section__client-name">
 									<xsl:value-of select="property_value[tag_name='client']/value"/>
 								</h4>
-							<span class="cases-section__client-status">Реальный заказчик, проверенная сделка</span></div>
+							<span class="cases-section__client-status">Отзыв о выполненной работе</span></div>
 						</div>
 					</xsl:if>
 					<xsl:if test="property_value[tag_name='price']/value !=''">
 						<div class="cases-section__footer">
 							<div class="cases-section__price-box"><span class="cases-section__price-label">Итоговая стоимость:</span>
 								<span class="cases-section__price-value">
-							<xsl:value-of select="format-number(property_value[tag_name='price']/value, '# ##0', 'ru')"/><xsl:text> ₽ под ключ</xsl:text></span></div>
-							<button class="cases-section__btn js-btn-case-cta" data-model="{property_value[tag_name='station']/value}">Хочу такой же монтаж!</button>
+								<xsl:value-of select="format-number(property_value[tag_name='price']/value, '# ##0', 'ru')"/><xsl:text> ₽</xsl:text></span></div>
+							<button type="button" class="cases-section__btn js-btn-case-cta" data-model="{property_value[tag_name='station']/value}">Рассчитать похожий монтаж</button>
 						</div>
 					</xsl:if>
 				</div>

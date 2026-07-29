@@ -35,64 +35,61 @@
 			</div>
 		</xsl:if>
 
-		<xsl:value-of disable-output-escaping="yes" select="description"/>
+		<div class="section-title-block">
+			<span class="section-title-block__tag">Часто задаваемые вопросы</span>
+			<h2 class="section-title-block__title">Коротко о заказе и монтаже</h2>
+			<p class="section-title-block__desc">Условия по конкретному участку, модели и адресу специалист подтвердит при расчёте.</p>
+		</div>
 
-		<div class="faq-section__accordion js-faq-accordion">
+		<div class="faq-section__accordion">
 			<xsl:apply-templates select="informationsystem_item"/>
 		</div>
 
 	</xsl:template>
 
 	<xsl:template match="informationsystem_item">
-		<div>
-			<xsl:attribute name="class">
-				<xsl:text>faq-item js-faq-item</xsl:text>
-				<xsl:if test="position() = 1">
-					<xsl:text> faq-item--open</xsl:text>
-				</xsl:if>
-			</xsl:attribute>
+		<details class="faq-item">
+			<xsl:if test="position() = 1"><xsl:attribute name="open">open</xsl:attribute></xsl:if>
 
-			<button class="faq-item__header js-faq-header" type="button">
-				<xsl:attribute name="data-index">
-					<xsl:value-of select="position() - 1"/>
-				</xsl:attribute>
-
-				<xsl:attribute name="aria-expanded">
-					<xsl:choose>
-						<xsl:when test="position() = 1">true</xsl:when>
-						<xsl:otherwise>false</xsl:otherwise>
-					</xsl:choose>
-				</xsl:attribute>
+			<summary class="faq-item__header">
 
 				<span class="faq-item__question">
 					<xsl:value-of select="name"/>
 				</span>
 
-				<span class="faq-item__icon">▼</span>
-			</button>
+				<span class="faq-item__icon" aria-hidden="true">▼</span>
+			</summary>
 
 			<div class="faq-item__content">
-				<xsl:if test="position() = 1">
-					<xsl:attribute name="style">max-height: 400px; opacity: 1;</xsl:attribute>
-				</xsl:if>
-
 				<div class="faq-item__content-inner">
 					<div class="faq-item__answer">
-						<xsl:value-of disable-output-escaping="yes" select="description"/>
-					</div>
-
-					<div class="faq-item__author">
-						<div class="faq-item__author-avatar">Р</div>
-
-						<span class="faq-item__author-info">
-							<xsl:text>Ответил: </xsl:text>
-							<strong>Роман Б.</strong>
-							<xsl:text>, шеф-монтажник «ЗЕЛСЕПТИК»</xsl:text>
-						</span>
+						<xsl:choose>
+							<xsl:when test="@id = 168">
+								<p>Доступные способы и порядок оплаты указываются в договоре или счёте. Менеджер подтвердит условия для выбранного оборудования и работ.</p>
+							</xsl:when>
+							<xsl:when test="@id = 169">
+								<p>Стоимость и срок доставки зависят от адреса, модели станции и состава заказа. Расчёт логистики выполняется по этим данным.</p>
+							</xsl:when>
+							<xsl:when test="@id = 170">
+								<p>Гарантийные условия зависят от производителя оборудования и состава выполненных работ. Конкретные сроки фиксируются в договоре и передаваемых документах.</p>
+							</xsl:when>
+							<xsl:when test="@id = 171">
+								<p>Для высокого уровня грунтовых вод подбирают герметичную станцию и подходящий способ отвода очищенной воды. Решение уточняют по условиям участка.</p>
+							</xsl:when>
+							<xsl:when test="@id = 172">
+								<p>Состав монтажа зависит от модели станции, глубины подводящей трубы, грунта, уровня воды и способа отвода. Плановая смета формируется по результатам расчёта.</p>
+							</xsl:when>
+							<xsl:when test="@id = 173">
+								<p>Учитываем число жителей, режим проживания, залповый сброс, грунт, уровень воды и точку отвода. После этого сравниваем подходящие модели и состав монтажа.</p>
+							</xsl:when>
+							<xsl:otherwise>
+								<p>Условия по конкретному участку и оборудованию специалист уточнит при расчёте.</p>
+							</xsl:otherwise>
+						</xsl:choose>
 					</div>
 				</div>
 			</div>
-		</div>
+		</details>
 	</xsl:template>
 
 </xsl:stylesheet>
