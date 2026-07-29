@@ -84,7 +84,7 @@ function zs_build_message(array $post): string
         'service' => 'Услуга',
         'model' => 'Модель',
         'page_url' => 'Страница',
-        'bonus' => 'Выбранный подарок',
+        'bonus' => 'Задача клиента',
         'form_type' => 'Форма',
         'page_url'  => 'Страница',
         'form_type' => 'Тип заявки'
@@ -737,67 +737,6 @@ body {
         </div>
       </div>
 
-      <!-- MODAL 2: ESTIMATE REQUEST DIALOG
-      <div class="modal js-modal-estimate">
-        <div class="modal__backdrop js-modal-backdrop"></div>
-        <div class="modal__dialog modal__dialog--large">
-          <button class="modal__close js-modal-close">
-            ✕
-          </button>
-          <div class="modal__header">
-            <h3 class="modal__title">
-              % <span class="js-modal-title-text">Заявка на расчет</span>
-            </h3>
-            <p class="modal__subtitle">Мы зафиксируем за вашим номером спецпредложение, подготовим подробную смету и перезвоним.</p>
-          </div>
-
-          <div class="modal__rec-box js-modal-rec-box">
-            <!-- Dynamically populated by JS -
-          </div>
-
-          <form class="modal__form js-modal-form" method="post">
-              <input type="hidden" name="form_type" value="">
-            <div class="modal__input-group">
-              <label for="modal-estimate-name" class="modal__label">Ваше имя:</label>
-              <input 
-                type="text"
-                name="name"
-                placeholder="Константин" 
-                class="modal__input js-modal-input-name"
-              />
-            </div>
-
-            <div class="modal__input-group">
-              <label for="modal-estimate-phone" class="modal__label">Номер телефона: <span>*</span></label>
-              <input 
-                type="tel" 
-                name="phone"
-                placeholder="+7 (999) 120-34-56" 
-                required 
-                class="modal__input js-modal-input-phone"
-              />
-            </div>
-
-            <div class="modal__input-group">
-              <label class="modal__label">Выберите подарок к заказу:</label>
-              <select class="modal__select js-modal-select-bonus">
-                <option>Скидка 10% на монтаж под ключ</option>
-                <option>Аварийная сигнализация в подарок</option>
-                <option>Бесплатная доставка до 50 км от Зеленограда</option>
-                <option>Бесплатное первое ТО через 6 месяцев</option>
-              </select>
-            </div>
-
-            <button type="submit" class="modal__submit">
-              <span>Рассчитать точную смету с подарком</span>
-              <span style="font-size: 14px;">➔</span>
-            </button>
-          </form>
-          <p class="modal__disclaimer">🔒 Нажимая кнопку, вы даете согласие на обработку своих персональных данных.</p>
-        </div>
-      </div> -->
-
-
 <div class="modal js-lead-modal hidden" aria-hidden="true">
   <div class="modal__backdrop js-modal-backdrop"></div>
 
@@ -806,12 +745,11 @@ body {
 
     <div class="modal__header">
       <h3 class="modal__title" id="lead-modal-title">
-        <span class="modal__title-icon icon icon-percent" aria-hidden="true"></span>
         <span class="js-modal-title-text">Заявка на расчет</span>
       </h3>
 
       <p class="modal__subtitle">
-        Мы зафиксируем за вашим номером спецпредложение, подготовим подробную смету и перезвоним.
+        Оставьте контакты. Специалист уточнит задачу и подготовит расчёт.
       </p>
     </div>
 
@@ -833,13 +771,13 @@ body {
       </div>
 
       <div class="modal__input-group">
-        <label for="lead-modal-bonus" class="modal__label">Выберите подарок к заказу:</label>
+        <label for="lead-modal-bonus" class="modal__label">Что нужно рассчитать:</label>
 
         <select id="lead-modal-bonus" name="bonus" class="modal__select js-modal-select-bonus">
-          <option value="Скидка 10% на монтаж под ключ">Скидка 10% на монтаж под ключ</option>
-          <option value="Аварийная сигнализация в подарок">Аварийная сигнализация в подарок</option>
-          <option value="Бесплатная доставка до 50 км от Зеленограда">Бесплатная доставка до 50 км от Зеленограда</option>
-          <option value="Бесплатное первое ТО через 6 месяцев">Бесплатное первое ТО через 6 месяцев</option>
+          <option value="Оборудование и монтаж">Оборудование и монтаж</option>
+          <option value="Только оборудование">Только оборудование</option>
+          <option value="Только монтаж">Только монтаж</option>
+          <option value="Обслуживание или ремонт">Обслуживание или ремонт</option>
         </select>
       </div>
 
