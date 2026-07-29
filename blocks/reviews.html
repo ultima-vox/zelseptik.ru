@@ -1,0 +1,130 @@
+<!--
+  БЛОК: Отзывы клиентов + агрегированный рейтинг
+  Вставлять на главную после cases-section («Фото монтажа и отзывы»).
+
+  Требует: assets/css/core/blocks.css
+  Микроразметка: schema.org/Review + AggregateRating на LocalBusiness.
+  ВАЖНО: aggregateRating должен отражать реальные отзывы. Фиктивный рейтинг —
+  нарушение правил Google и Яндекса, санкции вплоть до снятия сниппета.
+  Число отзывов и оценку выводить из HostCMS, не хардкодить.
+-->
+<section id="reviews" class="reviews-section" itemscope itemtype="https://schema.org/LocalBusiness">
+  <meta itemprop="name" content="ЗЕЛСЕПТИК" />
+  <div class="container">
+    <div class="section-title-block">
+      <span class="section-title-block__tag">Нам доверяют</span>
+      <h2 class="section-title-block__title">Отзывы клиентов</h2>
+      <p class="section-title-block__desc">
+        Каждый отзыв — с реального объекта в Зеленограде и Московской области.
+      </p>
+    </div>
+
+    <div class="reviews-section__summary" itemprop="aggregateRating" itemscope
+         itemtype="https://schema.org/AggregateRating">
+      <div class="reviews-section__score">
+        <span itemprop="ratingValue">4.9</span>
+      </div>
+      <div class="reviews-section__score-meta">
+        <span class="reviews-section__stars" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+        </span>
+        <span class="reviews-section__count">
+          Средняя оценка по <span itemprop="reviewCount">142</span> отзывам
+        </span>
+        <meta itemprop="bestRating" content="5" />
+        <meta itemprop="worstRating" content="1" />
+      </div>
+    </div>
+
+    <div class="reviews-section__grid">
+      <!-- Повторяющийся элемент. В HostCMS — цикл по отзывам. -->
+      <article class="review-card" itemprop="review" itemscope itemtype="https://schema.org/Review">
+        <div class="review-card__head">
+          <div class="review-card__avatar" aria-hidden="true">М</div>
+          <div>
+            <div class="review-card__author" itemprop="author" itemscope
+                 itemtype="https://schema.org/Person">
+              <span itemprop="name">Максим В.</span>
+            </div>
+            <div class="review-card__meta">
+              <time itemprop="datePublished" datetime="2026-05-14">14 мая 2026</time>
+              · Истринский район, пос. Снегири
+            </div>
+          </div>
+        </div>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5" />
+          <meta itemprop="bestRating" content="5" />
+        </div>
+        <p class="review-card__text" itemprop="reviewBody">
+          У нас сложнейший грунт, три фирмы отказались браться. ЗЕЛСЕПТИК приехал,
+          пробурил, посчитал и смонтировал за 11 часов. Смета не выросла ни на рубль.
+        </p>
+        <div class="review-card__footer">
+          <span class="badge badge--outline">БИО-С Комфорт 5</span>
+          <span class="badge badge--outline">Плывун</span>
+        </div>
+      </article>
+
+      <article class="review-card" itemprop="review" itemscope itemtype="https://schema.org/Review">
+        <div class="review-card__head">
+          <div class="review-card__avatar" aria-hidden="true">О</div>
+          <div>
+            <div class="review-card__author" itemprop="author" itemscope
+                 itemtype="https://schema.org/Person">
+              <span itemprop="name">Ольга Дмитриевна</span>
+            </div>
+            <div class="review-card__meta">
+              <time itemprop="datePublished" datetime="2026-04-02">2 апреля 2026</time>
+              · г.о. Солнечногорск, д. Голубое
+            </div>
+          </div>
+        </div>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5" />
+          <meta itemprop="bestRating" content="5" />
+        </div>
+        <p class="review-card__text" itemprop="reviewBody">
+          Установили септик на даче за один день. Участок оставили чистым,
+          всё показали и объяснили. Работой довольны.
+        </p>
+        <div class="review-card__footer">
+          <span class="badge badge--outline">АСТРА 5</span>
+          <span class="badge badge--outline">Глина, УГВ 0,6 м</span>
+        </div>
+      </article>
+
+      <article class="review-card" itemprop="review" itemscope itemtype="https://schema.org/Review">
+        <div class="review-card__head">
+          <div class="review-card__avatar" aria-hidden="true">И</div>
+          <div>
+            <div class="review-card__author" itemprop="author" itemscope
+                 itemtype="https://schema.org/Person">
+              <span itemprop="name">Иван К.</span>
+            </div>
+            <div class="review-card__meta">
+              <time itemprop="datePublished" datetime="2026-03-19">19 марта 2026</time>
+              · г.о. Химки, КДЗ Кранкино
+            </div>
+          </div>
+        </div>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+          <meta itemprop="ratingValue" content="5" />
+          <meta itemprop="bestRating" content="5" />
+        </div>
+        <p class="review-card__text" itemprop="reviewBody">
+          Приехали вовремя, отработали аккуратно. Отдельное спасибо за то, что
+          заранее предупредили про особенности эксплуатации зимой.
+        </p>
+        <div class="review-card__footer">
+          <span class="badge badge--outline">ТОПАС 6</span>
+          <span class="badge badge--outline">Суглинок, УГВ 1,5 м</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

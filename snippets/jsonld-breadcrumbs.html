@@ -1,0 +1,42 @@
+<!--
+  JSON-LD: BreadcrumbList
+  Вставлять на всех внутренних страницах (не на главной).
+
+  В вёрстке уже есть класс .breadcrumbs (components.css) и микроразметка
+  ItemList/ListItem в меню. Отдельный BreadcrumbList нужен для хлебных крошек
+  страницы — он управляет тем, как путь показывается в выдаче вместо URL.
+
+  Ниже — пример для карточки товара. В HostCMS выводить циклом по уровням
+  текущего раздела; position нумеровать с 1 без пропусков.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Главная",
+      "item": "https://zelseptik.ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Септики",
+      "item": "https://zelseptik.ru/septiki/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "БИОДЕКА",
+      "item": "https://zelseptik.ru/septiki/biodeka/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "БИОДЕКА 10 С-800"
+    }
+  ]
+}
+</script>

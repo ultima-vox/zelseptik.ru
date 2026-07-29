@@ -1,6 +1,0 @@
-.content { color: var(--color-text-main); line-height: var(--line-height-base); }
-.content > * + * { margin-top: var(--space-md); }
-.content ul, .content ol { padding-left: 1.25rem; }
-.content li + li { margin-top: var(--space-xs); }
-.content table { width: 100%; border-collapse: collapse; }
-.content th, .content td { padding: var(--space-sm); border: 1px solid var(--color-border); }

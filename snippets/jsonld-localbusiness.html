@@ -1,0 +1,97 @@
+<!--
+  JSON-LD: LocalBusiness + Organization
+  Вставлять один раз, перед </body> на всех страницах.
+
+  Сейчас на сайте нет ни одного блока ld+json — только микроразметка
+  Product/Offer в карточках. Для локального бизнеса это главный пробел:
+  без LocalBusiness сайт не попадает в расширенные локальные сниппеты.
+
+  ПЕРЕД ПУБЛИКАЦИЕЙ ПРОВЕРИТЬ:
+  - geo-координаты подставить реальные (сейчас — центр Зеленограда)
+  - telephone: в шапке +7 499 964-69-68, в подвале +7 495 120-34-56.
+    Один из них, скорее всего, плейсхолдер. Разметку делать по боевому.
+  - aggregateRating оставлять ТОЛЬКО если отзывы реально опубликованы
+    на странице (см. blocks/reviews.html). Иначе — удалить блок целиком.
+-->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "@id": "https://zelseptik.ru/#organization",
+  "name": "ЗЕЛСЕПТИК",
+  "legalName": "ИП Бурлик Роман Петрович",
+  "description": "Продажа, подбор, доставка и монтаж автономных канализаций и септиков под ключ в Зеленограде и Московской области.",
+  "url": "https://zelseptik.ru/",
+  "logo": "https://zelseptik.ru/assets/images/logo.svg",
+  "image": "https://zelseptik.ru/assets/images/og-cover.jpg",
+  "telephone": "+7-499-964-69-68",
+  "priceRange": "89900-250000 RUB",
+  "taxID": "712701283437",
+  "vatID": "712701283437",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ул. Летчицы Тарасовой, корпус 2024",
+    "addressLocality": "Зеленоград",
+    "addressRegion": "Москва",
+    "addressCountry": "RU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 55.9825,
+    "longitude": 37.1814
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday",
+        "Friday", "Saturday", "Sunday"
+      ],
+      "opens": "08:00",
+      "closes": "21:00"
+    }
+  ],
+  "areaServed": [
+    { "@type": "City", "name": "Зеленоград" },
+    { "@type": "City", "name": "Москва" },
+    { "@type": "City", "name": "Истра" },
+    { "@type": "City", "name": "Солнечногорск" },
+    { "@type": "City", "name": "Химки" },
+    { "@type": "City", "name": "Клин" },
+    { "@type": "City", "name": "Волоколамск" },
+    { "@type": "City", "name": "Звенигород" },
+    { "@type": "City", "name": "Красногорск" },
+    { "@type": "City", "name": "Долгопрудный" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Услуги ЗЕЛСЕПТИК",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Монтаж септика под ключ",
+          "url": "https://zelseptik.ru/montazh-septikov/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Обслуживание септиков",
+          "url": "https://zelseptik.ru/obsluzhivanie-septikov/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Ремонт септиков",
+          "url": "https://zelseptik.ru/remont-septikov/"
+        }
+      }
+    ]
+  }
+}
+</script>

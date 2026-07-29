@@ -1,2 +1,0 @@
-.catalog-layout { display: grid; grid-template-columns: 1fr; gap: var(--space-xl); align-items: start; }
-@media (min-width: 1200px) { .catalog-layout { grid-template-columns: 300px minmax(0, 1fr); } }

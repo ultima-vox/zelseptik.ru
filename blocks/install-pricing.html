@@ -1,0 +1,84 @@
+<!--
+  БЛОК: Цены на монтаж под ключ
+  Вставлять на главную после stages-section (после «Как проходит монтаж»),
+  а также на /montazh-septikov/.
+
+  Требует: assets/css/core/blocks.css
+  Цены — плейсхолдеры из старого сайта (24 000 – 40 000 ₽). Заменить на
+  реальный прайс или вывести циклом HostCMS.
+-->
+<section id="install-pricing" class="install-pricing">
+  <div class="container">
+    <div class="section-title-block">
+      <span class="section-title-block__tag">Прозрачная смета</span>
+      <h2 class="section-title-block__title">Сколько стоит монтаж септика</h2>
+      <p class="section-title-block__desc">
+        Цена монтажа зависит только от объёма станции и типа отвода воды.
+        Смета фиксируется договором и не меняется в процессе работ.
+      </p>
+    </div>
+
+    <div class="install-pricing__wrap">
+      <table class="install-pricing__table">
+        <caption class="visually-hidden">Стоимость монтажа септика под ключ</caption>
+        <thead>
+          <tr>
+            <th scope="col">Станция</th>
+            <th scope="col">Проживающих</th>
+            <th scope="col">Самотёчный отвод</th>
+            <th scope="col">Принудительный отвод</th>
+            <th scope="col">Срок</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="install-pricing__name">До 3 м³/сут</td>
+            <td>2–3 человека</td>
+            <td class="install-pricing__price">24 000 ₽</td>
+            <td class="install-pricing__price">29 000 ₽</td>
+            <td class="install-pricing__note">1 день</td>
+          </tr>
+          <tr class="install-pricing__row--featured">
+            <td class="install-pricing__name">До 5 м³/сут</td>
+            <td>4–5 человек</td>
+            <td class="install-pricing__price">28 000 ₽</td>
+            <td class="install-pricing__price">32 000 ₽</td>
+            <td class="install-pricing__note">1 день</td>
+          </tr>
+          <tr>
+            <td class="install-pricing__name">До 8 м³/сут</td>
+            <td>6–8 человек</td>
+            <td class="install-pricing__price">32 000 ₽</td>
+            <td class="install-pricing__price">36 000 ₽</td>
+            <td class="install-pricing__note">1–2 дня</td>
+          </tr>
+          <tr>
+            <td class="install-pricing__name">До 15 м³/сут</td>
+            <td>9–15 человек</td>
+            <td class="install-pricing__price">38 000 ₽</td>
+            <td class="install-pricing__price">44 000 ₽</td>
+            <td class="install-pricing__note">2 дня</td>
+          </tr>
+          <tr>
+            <td class="install-pricing__name">От 15 м³/сут</td>
+            <td>15+ человек</td>
+            <td class="install-pricing__price" colspan="2">от 48 000 ₽ — по проекту</td>
+            <td class="install-pricing__note">по расчёту</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="install-pricing__footer">
+      <p class="install-pricing__disclaimer">
+        В стоимость входит: разработка котлована, установка и обсыпка станции,
+        подключение трубопровода, пусконаладка и сдача работ по акту.
+        Земляные работы в грунтах с УГВ выше 0,8 м рассчитываются после замера.
+      </p>
+      <button type="button" class="btn btn--primary js-btn-estimate"
+              data-title="Расчёт стоимости монтажа">
+        Получить точную смету
+      </button>
+    </div>
+  </div>
+</section>

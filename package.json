@@ -1,25 +1,21 @@
 {
-  "name": "zelseptik-frontend-workspace",
-  "version": "2.0.0",
+  "name": "zelseptik-frontend",
+  "version": "3.0.0",
   "private": true,
-  "description": "Design System v2 frontend workspace for ЗЕЛСЕПТИК / HostCMS",
+  "type": "module",
+  "description": "Frontend-исходники сайта ЗЕЛСЕПТИК (HostCMS). Зеркало боевых путей: assets/css/core, templates/template1.",
   "scripts": {
-    "dev": "sass src/scss/main.scss dist/css/app.css --watch --style=expanded --source-map",
-    "build": "sass src/scss/main.scss dist/css/app.min.css --style=compressed --no-source-map",
-    "build:dev": "sass src/scss/main.scss dist/css/app.css --style=expanded --source-map",
-    "lint:scss": "stylelint \"src/scss/**/*.scss\"",
-    "lint:js": "eslint src/js/**/*.js",
-    "lint": "npm run lint:scss && npm run lint:js",
-    "lint:fix": "stylelint \"src/scss/**/*.scss\" --fix && eslint src/js/**/*.js --fix",
-    "format": "prettier --write \"**/*.{scss,js,json,md,html}\"",
-    "clean": "node scripts/clean.mjs"
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "lint:js": "eslint templates/**/*.js",
+    "lint": "npm run lint:css && npm run lint:js",
+    "lint:fix": "stylelint \"assets/css/**/*.css\" --fix && eslint templates/**/*.js --fix",
+    "format": "prettier --write \"**/*.{css,js,json,md,html}\""
   },
   "devDependencies": {
-    "@eslint/js": "latest",
-    "eslint": "latest",
-    "prettier": "latest",
-    "sass": "latest",
-    "stylelint": "latest",
-    "stylelint-config-standard-scss": "latest"
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^16.0.0",
+    "stylelint-config-standard": "^36.0.0"
   }
 }

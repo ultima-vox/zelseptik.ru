@@ -1,0 +1,62 @@
+<!--
+  БЛОК: Рассрочка и оплата частями
+  Вставлять на главную между install-pricing и cta-section.
+
+  Требует: assets/css/core/blocks.css
+
+  ВАЖНО — перед публикацией:
+  1. Условия и суммы платежей должны совпадать с действующим договором
+     с банком-партнёром. Числа ниже — плейсхолдеры.
+  2. Слово «рассрочка» без указания банка и полной стоимости — риск претензий
+     ФАС по ст. 28 ФЗ «О рекламе». Указывать партнёра и полные условия.
+  3. Названия банков-партнёров подставить реальные либо убрать строку partners.
+-->
+<section id="financing" class="financing-section">
+  <div class="container">
+    <div class="section-title-block">
+      <span class="section-title-block__tag">Удобная оплата</span>
+      <h2 class="section-title-block__title">Рассрочка без переплаты</h2>
+      <p class="section-title-block__desc">
+        Ставим септик сейчас, платите равными частями. Предоплата 0 ₽,
+        решение банка — за 5 минут прямо на участке.
+      </p>
+    </div>
+
+    <div class="financing-section__grid">
+      <div class="financing-card">
+        <div class="financing-card__term">6 месяцев</div>
+        <div class="financing-card__payment">от 20 300 ₽ / мес</div>
+        <p class="financing-card__note">
+          Без первоначального взноса. Переплата 0 % по программе партнёра.
+        </p>
+      </div>
+
+      <div class="financing-card financing-card--featured">
+        <div class="financing-card__term">12 месяцев</div>
+        <div class="financing-card__payment">от 10 200 ₽ / мес</div>
+        <p class="financing-card__note">
+          Самый частый выбор. Переплата 0 % по программе партнёра.
+        </p>
+      </div>
+
+      <div class="financing-card">
+        <div class="financing-card__term">24 месяца</div>
+        <div class="financing-card__payment">от 5 400 ₽ / мес</div>
+        <p class="financing-card__note">
+          Для станций от 150 000 ₽. Условия уточняются при одобрении.
+        </p>
+      </div>
+    </div>
+
+    <div class="financing-section__partners">
+      <span>Партнёры программы: банк-партнёр 1, банк-партнёр 2</span>
+    </div>
+
+    <div class="cta-surface__actions" style="justify-content:center;margin-top:var(--space-2xl)">
+      <button type="button" class="btn btn--secondary btn--lg js-btn-estimate"
+              data-title="Рассрочка на септик">
+        Рассчитать платёж
+      </button>
+    </div>
+  </div>
+</section>

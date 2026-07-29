@@ -1,0 +1,88 @@
+<!--
+  БЛОК: Полезные статьи
+  Вставлять на главную перед cta-section, а также в подвал внутренних страниц.
+
+  Требует: assets/css/core/blocks.css
+  В HostCMS — вывод 3 последних материалов информационной системы.
+
+  ВАЖНО: раздел статей на dev пока отсутствует. Перед публикацией блока
+  завести раздел (например /stati/) и наполнить, иначе ссылки дадут 404 —
+  как уже происходит с /montazh-septikov/ и /privacy-policy/.
+-->
+<section id="articles" class="articles-section">
+  <div class="container">
+    <div class="section-title-block">
+      <span class="section-title-block__tag">База знаний</span>
+      <h2 class="section-title-block__title">Полезные статьи инженера</h2>
+      <p class="section-title-block__desc">
+        Разбираем на практике то, о чём чаще всего спрашивают на замере.
+      </p>
+    </div>
+
+    <div class="articles-section__grid">
+      <!-- Повторяющийся элемент. В HostCMS — цикл по информационным элементам. -->
+      <article class="article-card">
+        <a class="article-card__media" href="/stati/kak-vybrat-septik-po-gruntu/">
+          <img src="/assets/images/articles/soil.jpg" width="640" height="360" loading="lazy"
+               decoding="async" alt="Инженер бурит скважину для определения типа грунта" />
+        </a>
+        <div class="article-card__body">
+          <div class="article-card__meta">
+            <time datetime="2026-06-11">11 июня 2026</time>
+            <span>·</span>
+            <span>6 мин</span>
+          </div>
+          <h3 class="article-card__title">
+            <a href="/stati/kak-vybrat-septik-po-gruntu/">Как выбрать септик по типу грунта</a>
+          </h3>
+          <p class="article-card__excerpt">
+            Плывун, глина и суглинок требуют разных решений по отводу воды.
+            Показываем, как определить грунт на участке до покупки станции.
+          </p>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <a class="article-card__media" href="/stati/ugv-i-septik/">
+          <img src="/assets/images/articles/ugv.jpg" width="640" height="360" loading="lazy"
+               decoding="async" alt="Котлован с высоким уровнем грунтовых вод" />
+        </a>
+        <div class="article-card__body">
+          <div class="article-card__meta">
+            <time datetime="2026-05-28">28 мая 2026</time>
+            <span>·</span>
+            <span>8 мин</span>
+          </div>
+          <h3 class="article-card__title">
+            <a href="/stati/ugv-i-septik/">Высокие грунтовые воды: что делать</a>
+          </h3>
+          <p class="article-card__excerpt">
+            Якорение, обсыпка ЦПС и колодец с насосом. Разбираем, во сколько
+            обходится монтаж при УГВ выше 0,8 метра.
+          </p>
+        </div>
+      </article>
+
+      <article class="article-card">
+        <a class="article-card__media" href="/stati/konservacziya-septika-na-zimu/">
+          <img src="/assets/images/articles/winter.jpg" width="640" height="360" loading="lazy"
+               decoding="async" alt="Консервация септика перед зимним сезоном" />
+        </a>
+        <div class="article-card__body">
+          <div class="article-card__meta">
+            <time datetime="2026-05-04">4 мая 2026</time>
+            <span>·</span>
+            <span>5 мин</span>
+          </div>
+          <h3 class="article-card__title">
+            <a href="/stati/konservacziya-septika-na-zimu/">Консервация септика на зиму</a>
+          </h3>
+          <p class="article-card__excerpt">
+            Пошаговая инструкция для сезонных дач: что отключить, что оставить
+            и почему нельзя откачивать станцию полностью.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

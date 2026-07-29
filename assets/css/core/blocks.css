@@ -1,0 +1,499 @@
+/* ===== core/blocks.css ===== */
+
+/* Новые блоки главной. Подключать после home-sections.css.
+   Классы и токены — из существующей системы, новых переменных не вводится. */
+
+/* ==========================================================================
+   INSTALL PRICING — таблица цен на монтаж
+   ========================================================================== */
+.install-pricing {
+  padding: var(--space-4xl) 0;
+  background-color: var(--color-bg-base);
+}
+
+.install-pricing__wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-bg-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.install-pricing__table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.install-pricing__table th,
+.install-pricing__table td {
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.install-pricing__table thead th {
+  background-color: var(--color-bg-page);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xs);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}
+
+.install-pricing__table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.install-pricing__table tbody tr:hover {
+  background-color: var(--color-primary-soft);
+}
+
+.install-pricing__row--featured {
+  background-color: var(--color-primary-soft);
+}
+
+.install-pricing__name {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-main);
+}
+
+.install-pricing__price {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-md);
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+}
+
+.install-pricing__note {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-xs);
+}
+
+.install-pricing__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+}
+
+.install-pricing__disclaimer {
+  max-width: 62ch;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   REVIEWS — отзывы клиентов с рейтингом
+   ========================================================================== */
+.reviews-section {
+  padding: var(--space-4xl) 0;
+  background-color: var(--color-bg-page);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.reviews-section__summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  max-width: 720px;
+  margin: 0 auto var(--space-2xl);
+  padding: var(--space-lg) var(--space-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-bg-base);
+  box-shadow: var(--shadow-sm);
+}
+
+.reviews-section__score {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+  line-height: 1;
+  color: var(--color-primary-dark);
+}
+
+.reviews-section__score-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xs);
+}
+
+.reviews-section__count {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.reviews-section__stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #f5a524;
+}
+
+.reviews-section__stars svg {
+  width: 18px;
+  height: 18px;
+  fill: currentcolor;
+}
+
+.reviews-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .reviews-section__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .reviews-section__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-bg-base);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.review-card:hover {
+  box-shadow: var(--shadow-premium);
+  transform: translateY(-2px);
+}
+
+.review-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.review-card__avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-primary-soft);
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
+}
+
+.review-card__author {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-main);
+}
+
+.review-card__meta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.review-card__text {
+  flex: 1;
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-base);
+}
+
+.review-card__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+/* ==========================================================================
+   COMPARE TABLE — сравнение моделей
+   ========================================================================== */
+.compare-table-section {
+  padding: var(--space-4xl) 0;
+  background-color: var(--color-bg-base);
+}
+
+.compare-table__wrap {
+  overflow-x: auto;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.compare-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.compare-table th,
+.compare-table td {
+  padding: var(--space-md) var(--space-lg);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.compare-table thead th {
+  background-color: var(--color-bg-page);
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.compare-table__col-label {
+  text-align: left;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-main);
+  white-space: nowrap;
+}
+
+.compare-table__col--best {
+  background-color: var(--color-primary-soft);
+}
+
+.compare-table thead .compare-table__col--best {
+  background-color: var(--color-primary-soft-strong);
+  color: var(--color-primary-deep);
+}
+
+.compare-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.compare-table__yes {
+  color: var(--color-success);
+  font-weight: var(--font-weight-bold);
+}
+
+.compare-table__no {
+  color: var(--color-text-muted);
+}
+
+.compare-table__price {
+  font-family: var(--font-family-heading);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary-dark);
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   ARTICLES — блог / полезные материалы
+   ========================================================================== */
+.articles-section {
+  padding: var(--space-4xl) 0;
+  background-color: var(--color-bg-page);
+  border-top: 1px solid var(--color-border);
+}
+
+.articles-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .articles-section__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.article-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  background-color: var(--color-bg-base);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.article-card:hover {
+  box-shadow: var(--shadow-premium);
+  transform: translateY(-2px);
+}
+
+.article-card__media {
+  display: block;
+  aspect-ratio: 16 / 9;
+  background-color: var(--color-bg-muted);
+}
+
+.article-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-lg);
+}
+
+.article-card__meta {
+  display: flex;
+  gap: var(--space-sm);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.article-card__title {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-heading);
+  color: var(--color-text-main);
+}
+
+.article-card__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.article-card__title a:hover {
+  color: var(--color-primary-dark);
+}
+
+.article-card__excerpt {
+  flex: 1;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   FINANCING — рассрочка и оплата частями
+   ========================================================================== */
+.financing-section {
+  padding: var(--space-4xl) 0;
+  background: var(--gradient-brand, var(--color-primary-deep));
+  color: var(--color-text-inverse);
+}
+
+.financing-section .section-title-block__title,
+.financing-section .section-title-block__desc {
+  color: var(--color-text-inverse);
+}
+
+.financing-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+@media (min-width: 768px) {
+  .financing-section__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.financing-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-xl);
+  border: 1px solid rgba(255, 255, 255, .18);
+  border-radius: var(--radius-2xl);
+  background-color: rgba(255, 255, 255, .08);
+}
+
+.financing-card--featured {
+  border-color: rgba(255, 255, 255, .5);
+  background-color: rgba(255, 255, 255, .16);
+  box-shadow: var(--shadow-glow-soft);
+}
+
+.financing-card__term {
+  font-family: var(--font-family-heading);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-black);
+  line-height: 1;
+}
+
+.financing-card__payment {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+.financing-card__note {
+  font-size: var(--font-size-xs);
+  opacity: .8;
+}
+
+.financing-section__partners {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: var(--space-2xl);
+  font-size: var(--font-size-xs);
+  opacity: .85;
+}
+
+/* ==========================================================================
+   A11Y — skip link и визуально скрытый текст (на dev отсутствуют)
+   ========================================================================== */
+.visually-hidden:not(:focus, :active) {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: var(--z-tooltip);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  background-color: var(--color-primary-dark);
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-semibold);
+}
+
+.skip-link:focus {
+  left: var(--space-md);
+  top: var(--space-md);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .review-card,
+  .article-card {
+    transition: none;
+  }
+
+  .review-card:hover,
+  .article-card:hover {
+    transform: none;
+  }
+}

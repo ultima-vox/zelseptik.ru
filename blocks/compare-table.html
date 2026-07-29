@@ -1,0 +1,104 @@
+<!--
+  БЛОК: Сравнительная таблица моделей
+  Вставлять на главную после catalog-section, либо на /septiki/.
+
+  Требует: assets/css/core/blocks.css
+  Данные — плейсхолдеры. В HostCMS выводить циклом по товарам с признаком
+  «показывать в сравнении».
+
+  ПРИМЕЧАНИЕ: в репозитории есть готовый comparison.css (compare-tray) —
+  плавающая панель «добавить к сравнению». Разметки под неё нет ни на одной
+  странице сайта, JS её тоже не использует. Этот блок — статическая таблица,
+  она не заменяет compare-tray.
+-->
+<section id="compare" class="compare-table-section">
+  <div class="container">
+    <div class="section-title-block">
+      <span class="section-title-block__tag">Помогаем выбрать</span>
+      <h2 class="section-title-block__title">Сравнение популярных моделей</h2>
+      <p class="section-title-block__desc">
+        Три станции, которые чаще всего ставим в Зеленограде и МО.
+        Отличаются способом отвода воды и требованиями к обслуживанию.
+      </p>
+    </div>
+
+    <div class="compare-table__wrap">
+      <table class="compare-table">
+        <caption class="visually-hidden">Сравнение характеристик септиков</caption>
+        <thead>
+          <tr>
+            <th scope="col" class="compare-table__col-label">Характеристика</th>
+            <th scope="col">ТОПАС 5</th>
+            <th scope="col" class="compare-table__col--best">АСТРА 5</th>
+            <th scope="col">БИО-С Комфорт 5</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" class="compare-table__col-label">Производительность</th>
+            <td>1,0 м³/сут</td>
+            <td class="compare-table__col--best">1,0 м³/сут</td>
+            <td>1,0 м³/сут</td>
+          </tr>
+          <tr>
+            <th scope="row" class="compare-table__col-label">Залповый сброс</th>
+            <td>220 л</td>
+            <td class="compare-table__col--best">250 л</td>
+            <td>240 л</td>
+          </tr>
+          <tr>
+            <th scope="row" class="compare-table__col-label">Степень очистки</th>
+            <td>98 %</td>
+            <td class="compare-table__col--best">98 %</td>
+            <td>98 %</td>
+          </tr>
+          <tr>
+            <th scope="row" class="compare-table__col-label">Работа при высоком УГВ</th>
+            <td class="compare-table__yes">да</td>
+            <td class="compare-table__col--best compare-table__yes">да</td>
+            <td class="compare-table__yes">да</td>
+          </tr>
+          <tr>
+            <th scope="row" class="compare-table__col-label">Самотёчный отвод</th>
+            <td class="compare-table__yes">да</td>
+            <td class="compare-table__col--best compare-table__yes">да</td>
+            <td class="compare-table__no">нет</td>
+          </tr>
+          <tr>
+            <th scope="row" class="compare-table__col-label">Энергопотребление</th>
+            <td>1,5 кВт·ч/сут</td>
+            <td class="compare-table__col--best">1,4 кВт·ч/сут</td>
+            <td>1,6 кВт·ч/сут</td>
+          </tr>
+          <tr>
+            <th scope="row" class="compare-table__col-label">Гарантия завода</th>
+            <td>1 год</td>
+            <td class="compare-table__col--best">1 год</td>
+            <td>2 года</td>
+          </tr>
+          <tr>
+            <th scope="row" class="compare-table__col-label">Цена с монтажом</th>
+            <td class="compare-table__price">131 900 ₽</td>
+            <td class="compare-table__col--best compare-table__price">122 000 ₽</td>
+            <td class="compare-table__price">145 000 ₽</td>
+          </tr>
+          <tr>
+            <th scope="row" class="compare-table__col-label">&nbsp;</th>
+            <td>
+              <button type="button" class="btn btn--outline btn--sm js-btn-estimate"
+                      data-title="Расчёт: ТОПАС 5">Рассчитать</button>
+            </td>
+            <td class="compare-table__col--best">
+              <button type="button" class="btn btn--primary btn--sm js-btn-estimate"
+                      data-title="Расчёт: АСТРА 5">Рассчитать</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn--outline btn--sm js-btn-estimate"
+                      data-title="Расчёт: БИО-С Комфорт 5">Рассчитать</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

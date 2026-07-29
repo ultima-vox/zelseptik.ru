@@ -1,6 +1,0 @@
-.grid-blueprint { position: relative; overflow: hidden; background: var(--color-bg-base); }
-.grid-blueprint::before { content: ''; position: absolute; inset: 0; pointer-events: none; background-image: linear-gradient(var(--color-border-soft) 1px, transparent 1px), linear-gradient(90deg, var(--color-border-soft) 1px, transparent 1px); background-size: 24px 24px; opacity: .45; }
-.grid-blueprint__grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: var(--space-xl); align-items: center; }
-.grid-blueprint__content { max-width: 780px; }
-.grid-blueprint__aside { min-width: 0; }
-@media (min-width: 1024px) { .grid-blueprint__grid { grid-template-columns: 7fr 5fr; gap: var(--space-2xl); } }
