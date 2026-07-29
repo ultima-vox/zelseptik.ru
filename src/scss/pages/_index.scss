@@ -1,0 +1,13 @@
+/* ==========================================================================
+   PAGE LAYER
+   Page-specific overrides only. Prefer components and patterns.
+   ========================================================================== */
+
+@forward 'home';
+@forward 'catalog';
+@forward 'product';
+@forward 'about';
+@forward 'contacts';
+@forward 'delivery';
+@forward 'service';
+@forward 'article-page';

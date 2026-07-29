@@ -1,6 +1,33 @@
-*, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: var(--font-family-base); color: var(--color-text-main); background: var(--color-bg-page); }
-img, svg { max-width: 100%; height: auto; }
-a { color: inherit; }
-button, input, textarea, select { font: inherit; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-family-base);
+  color: var(--color-text-main);
+  background: var(--color-bg-page);
+}
+
+img,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}

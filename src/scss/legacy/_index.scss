@@ -1,0 +1,8 @@
+/* ==========================================================================
+   LEGACY LAYER
+   Compatibility mapping for the current HostCMS markup. Always loaded last so
+   it can win over the design system where the old HTML still needs it.
+   ========================================================================== */
+
+@forward 'aliases';
+@forward 'inner-pages';

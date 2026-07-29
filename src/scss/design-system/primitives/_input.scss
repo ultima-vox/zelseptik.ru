@@ -18,6 +18,7 @@
   font-family: var(--font-family-base);
   font-size: var(--font-size-base);
   line-height: 1.35;
+
   @include interactive-transition;
 }
 
@@ -36,7 +37,7 @@
 .select:focus,
 .textarea:focus {
   border-color: var(--color-border-focus);
-  box-shadow: 0 0 0 3px rgba(35, 164, 85, .12);
+  box-shadow: 0 0 0 3px rgb(35 164 85 / 12%);
   outline: 0;
 }
 
@@ -46,7 +47,7 @@
   cursor: not-allowed;
   background: var(--color-bg-disabled);
   color: var(--color-text-muted);
-  opacity: .75;
+  opacity: 0.75;
 }
 
 .textarea {
