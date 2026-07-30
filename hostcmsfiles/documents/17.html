@@ -118,8 +118,9 @@
 <h3 class="cta-card__title">Оставить заявку</h3>
 <p class="cta-card__subtitle">Перезвоним и уточним детали участка.</p>
 </div>
-<form class="cta-card__form" action="/promotion/" method="post">
-<div class="cta-card__input-group"><label class="cta-card__label" for="promotion-name">Ваше имя</label> <input class="cta-card__input" id="promotion-name" type="text" autocomplete="name"></div>
+<form class="cta-card__form js-cta-form" action="/promotion/" method="post">
+<input type="hidden" name="form_type" value="Акция: септик с монтажом">
+<div class="cta-card__input-group"><label class="cta-card__label" for="promotion-name">Ваше имя</label> <input class="cta-card__input" id="promotion-name" type="text" name="name" autocomplete="name"></div>
 <div class="cta-card__input-group"><label class="cta-card__label" for="promotion-phone"> Телефон <span>*</span> </label> <input class="cta-card__input" id="promotion-phone" type="tel" name="phone" autocomplete="tel" required=""></div>
 <div class="cta-card__input-group"><label class="cta-card__label" for="promotion-message">Комментарий</label> <textarea class="cta-card__input" id="promotion-message" name="message" rows="4"></textarea></div>
 <button class="cta-card__submit" type="submit"> Отправить заявку </button>
