@@ -50,13 +50,13 @@
 			<div class="catalog-controls__status">
 			<span class="catalog-controls__shown">Показано моделей: <span class="js-catalog-count">12</span></span><span class="catalog-controls__tip">* Листайте кнопками или свайпом пальца</span></div>
 			<div class="catalog-controls__btns">
-				<button aria-label="Предыдущий экран" class="catalog-controls__arrow js-catalog-prev">
+				<button type="button" aria-label="Предыдущий экран" class="catalog-controls__arrow js-catalog-prev">
 					<svg aria-hidden="true" class="lucide lucide-chevron-left w-4 h-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 						<path d="m15 18-6-6 6-6"></path>
 					</svg>
 				</button>
 				<span class="catalog-controls__indicator js-catalog-indicator">1<!-- --> / <!-- -->3</span>
-				<button aria-label="Следующий экран" class="catalog-controls__arrow js-catalog-next">
+				<button type="button" aria-label="Следующий экран" class="catalog-controls__arrow js-catalog-next">
 					<svg aria-hidden="true" class="lucide lucide-chevron-right w-4 h-4" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 						<path d="m9 18 6-6-6-6"></path>
 					</svg>
@@ -83,8 +83,8 @@
 					</p>
 				</div>
 			</div>
-			<button class="catalog-advice__btn js-btn-callback" data-title="Бесплатный выезд инженера">
-				Вызвать инженера бесплатно
+			<button type="button" class="catalog-advice__btn js-btn-callback" data-title="Консультация инженера">
+				Обсудить задачу с инженером
 			</button>
 		</div>
 	</div>
@@ -505,7 +505,7 @@
 <br/>
 <div class="propertyInput">
 <input type="radio" name="property_{@id}" value="0" id="id_prop_radio_{@id}_0"></input>
-<label for="id_prop_radio_{@id}_0">&labelAnyOption;</label>
+<label for="id_prop_radio_{@id}_0">Любое</label>
 <xsl:apply-templates select="list/list_item"/>
 </div>
 </xsl:when>
@@ -530,7 +530,7 @@
 <!-- Отображение полей "от и до" -->
 <xsl:when test="filter = 6">
 <br/>
-&labelFrom; <input type="text" name="property_{@id}_from" size="2" value="{/shop/*[name()=$nodename_from]}"/> &labelTo; <input type="text" name="property_{@id}_to" size="2" value="{/shop/*[name()=$nodename_to]}"/>
+от <input type="text" name="property_{@id}_from" size="2" value="{/shop/*[name()=$nodename_from]}"/> до <input type="text" name="property_{@id}_to" size="2" value="{/shop/*[name()=$nodename_to]}"/>
 </xsl:when>
 <!-- Отображаем список с множественным выбором-->
 <xsl:when test="filter = 7">
@@ -579,7 +579,7 @@
 <br/>
 <div class="propertyInput">
 <input type="radio" name="property_{@id}" value="0" id="id_prop_radio_{@id}_0"></input>
-<label for="id_prop_radio_{@id}_0">&labelAnyOption;</label>
+<label for="id_prop_radio_{@id}_0">Любое</label>
 <xsl:apply-templates select="list/list_item"/>
 </div>
 </xsl:when>
@@ -604,7 +604,7 @@
 <!-- Отображение полей "от и до" -->
 <xsl:when test="filter = 6">
 <br/>
-&labelFrom; <input type="text" name="property_{@id}_from" size="2" value="{/shop/*[name()=$nodename_from]}"/> &labelTo; <input type="text" name="property_{@id}_to" size="2" value="{/shop/*[name()=$nodename_to]}"/>
+от <input type="text" name="property_{@id}_from" size="2" value="{/shop/*[name()=$nodename_from]}"/> до <input type="text" name="property_{@id}_to" size="2" value="{/shop/*[name()=$nodename_to]}"/>
 </xsl:when>
 <!-- Отображаем список с множественным выбором-->
 <xsl:when test="filter = 7">

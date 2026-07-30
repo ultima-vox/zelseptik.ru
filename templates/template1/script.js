@@ -467,6 +467,7 @@
 function initModal() {
   const callbackModal = $('.js-modal-callback');
   const leadModal = $('.js-lead-modal');
+  let modalReturnFocus = null;
 
   function setInput(modal, name, value) {
     if (!modal) return;
@@ -512,19 +513,32 @@ function initModal() {
       setContext(modal, options.contextHtml);
     }
 
+    modalReturnFocus = document.activeElement;
     modal.classList.add('modal--open');
     modal.classList.remove('hidden');
     modal.setAttribute('aria-hidden', 'false');
     document.body.classList.add('vanilla-scroll-lock');
+
+    window.requestAnimationFrame(function () {
+      const focusTarget = modal.querySelector('input:not([type="hidden"]), select, textarea') ||
+        modal.querySelector('button, a[href]');
+      if (focusTarget) focusTarget.focus();
+    });
   }
 
   function closeModal(modal) {
-    if (!modal) return;
+    if (!modal || !modal.classList.contains('modal--open')) return;
 
     modal.classList.remove('modal--open');
     modal.classList.add('hidden');
     modal.setAttribute('aria-hidden', 'true');
     document.body.classList.remove('vanilla-scroll-lock');
+
+    if (modalReturnFocus && typeof modalReturnFocus.focus === 'function') {
+      modalReturnFocus.focus();
+    }
+
+    modalReturnFocus = null;
   }
 
   document.addEventListener('click', function (event) {
@@ -614,10 +628,33 @@ openModal(leadModal, title, {
   });
 
   document.addEventListener('keydown', function (event) {
+    const openModalElement = document.querySelector('.modal.modal--open');
+    if (!openModalElement) return;
+
+    if (event.key === 'Tab') {
+      const focusable = Array.from(openModalElement.querySelectorAll(
+        'a[href], button:not([disabled]), input:not([disabled]):not([type="hidden"]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      ));
+
+      if (focusable.length) {
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+
+      return;
+    }
+
     if (event.key !== 'Escape') return;
 
-    closeModal(callbackModal);
-    closeModal(leadModal);
+    closeModal(openModalElement);
   });
 }
 
