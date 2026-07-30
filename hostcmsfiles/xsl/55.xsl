@@ -77,8 +77,8 @@
 										<span>моделей в каталоге</span>
 									</div>
 									<div class="stats-strip__item">
-										<strong>0 ₽</strong>
-										<span>выезд инженера</span>
+										<strong>3 шага</strong>
+										<span>до подходящей модели</span>
 									</div>
 									<div class="stats-strip__item">
 										<strong>1-2 дня</strong>
