@@ -711,9 +711,11 @@ body {
               <label for="modal-callback-name" class="modal__label">Ваше имя:</label>
               <input 
                 type="text" 
+                id="modal-callback-name"
                 placeholder="Константин" 
                 class="modal__input js-modal-input-name"
                 name="name"
+                autocomplete="name"
               />
             </div>
 
@@ -721,10 +723,13 @@ body {
               <label for="modal-callback-phone" class="modal__label">Номер телефона: <span>*</span></label>
               <input 
                 type="tel" 
+                id="modal-callback-phone"
                 name="phone"
                 placeholder="+7 (999) 120-34-56" 
                 required 
                 class="modal__input js-modal-input-phone"
+                inputmode="tel"
+                autocomplete="tel"
               />
             </div>
 

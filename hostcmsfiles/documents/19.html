@@ -21,8 +21,9 @@
 <h3 class="cta-card__title">Получить расчёт</h3>
 <p class="cta-card__subtitle">Оставьте телефон — инженер свяжется и уточнит условия участка.</p>
 </div>
-<form class="site-form cta-card__form" action="#">
-<div class="cta-card__input-group"><label class="cta-card__label" for="cta-name">Ваше имя</label> <input class="cta-card__input" id="cta-name" placeholder="Алексей" type="text"></div>
+<form class="site-form cta-card__form js-cta-form" method="post">
+<input type="hidden" name="form_type" value="Расчёт септика">
+<div class="cta-card__input-group"><label class="cta-card__label" for="cta-name">Ваше имя</label> <input class="cta-card__input" id="cta-name" name="name" placeholder="Алексей" type="text" autocomplete="name"></div>
 <div class="cta-card__input-group"><label class="cta-card__label" for="cta-phone">Номер телефона <span>*</span></label> <input class="cta-card__input" id="cta-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" maxlength="18" required=""></div>
 <button class="cta-card__submit" type="submit"> Рассчитать септик </button></form>
 <p class="cta-card__disclaimer">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
