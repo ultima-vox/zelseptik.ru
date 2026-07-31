@@ -5,4 +5,4 @@ const parts = await Promise.all(
   files.map(async (file) => (await readFile(file, 'utf8')).replace(/^\uFEFF/, '')),
 );
 
-await writeFile('dist/css/style.min.css', `${parts.join('\n')}\n`);
+await writeFile('dist/css/style.min.css', `@charset "UTF-8";\n${parts.join('\n')}\n`);

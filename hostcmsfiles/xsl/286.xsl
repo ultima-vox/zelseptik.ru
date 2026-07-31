@@ -14,6 +14,29 @@
 
 	<xsl:variable name="n" select="number(3)"/>
 
+	<xsl:template name="strip-html">
+		<xsl:param name="text"/>
+		<xsl:choose>
+			<xsl:when test="contains($text, '&lt;')">
+				<xsl:value-of select="substring-before($text, '&lt;')"/>
+				<xsl:variable name="afterOpen" select="substring-after($text, '&lt;')"/>
+				<xsl:choose>
+					<xsl:when test="contains($afterOpen, '&gt;')">
+						<xsl:call-template name="strip-html">
+							<xsl:with-param name="text" select="substring-after($afterOpen, '&gt;')"/>
+						</xsl:call-template>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="$afterOpen"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="$text"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:template>
+
 	<xsl:template match="/informationsystem">
 
 		<div class="container">
@@ -58,6 +81,12 @@
 
 	</xsl:template>
 	<xsl:template match="informationsystem_item" mode="geo-button">
+		<xsl:variable name="cleanDescription">
+			<xsl:call-template name="strip-html">
+				<xsl:with-param name="text" select="description"/>
+			</xsl:call-template>
+		</xsl:variable>
+
 		<li class="geography-section__item" role="presentation">
 			<button type="button">
 				<xsl:attribute name="id">geo-tab-<xsl:value-of select="@id"/></xsl:attribute>
@@ -93,8 +122,8 @@
 					</span>
 
 					<span class="geography-section__city-btn-districts">
-						<xsl:value-of select="substring(normalize-space(description), 1, 50)"/>
-						<xsl:if test="string-length(normalize-space(description)) &gt; 50"><xsl:text>...</xsl:text></xsl:if>
+						<xsl:value-of select="substring(normalize-space(string($cleanDescription)), 1, 50)"/>
+						<xsl:if test="string-length(normalize-space(string($cleanDescription))) &gt; 50"><xsl:text>...</xsl:text></xsl:if>
 					</span>
 				</div>
 			</button>
