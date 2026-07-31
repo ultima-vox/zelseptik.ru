@@ -122,7 +122,10 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
-  display: inline-block;
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin-top: var(--space-md);
   margin-bottom: var(--space-2xs);
 }
 
