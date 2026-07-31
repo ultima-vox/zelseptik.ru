@@ -594,10 +594,20 @@ openModal(leadModal, title, {
     if (estimateTrigger) {
       event.preventDefault();
 
+      const calculatorModel = $('.js-calc-rec');
+      const calculatorTotal = $('.js-calc-turnkey');
+      const model = calculatorModel ? calculatorModel.textContent.trim() : '';
+      const total = calculatorTotal ? calculatorTotal.textContent.trim() : '';
+
       openModal(
         leadModal,
         estimateTrigger.getAttribute('data-title') || 'Получить расчет стоимости',
         {
+          model: model,
+          comment:
+            'Предварительный расчёт с главной страницы. ' +
+            'Модель: ' + (model || 'уточняется') + '. ' +
+            'Итого под ключ: ' + (total || 'после осмотра') + '.',
           contextHtml: buildCalculatorContextHtml()
         }
       );

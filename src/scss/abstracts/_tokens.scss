@@ -59,11 +59,26 @@
   --gradient-brand: linear-gradient(
     135deg,
     var(--color-primary) 0%,
-    var(--color-primary-hover) 100%
+    var(--color-primary-hover) 55%,
+    var(--color-primary-dark) 100%
   );
-  --gradient-eco: linear-gradient(135deg, var(--color-primary) 0%, #1abc9c 100%);
-  --gradient-dark: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-bg-dark) 100%);
-  --gradient-slogan: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+  --gradient-eco: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-hover) 45%, #0f766e 100%);
+  --gradient-premium: linear-gradient(135deg, var(--color-primary) 0%, #15803d 35%, #0f766e 100%);
+  --gradient-deep: linear-gradient(135deg, #022c22 0%, #064e3b 60%, #020617 100%);
+  --gradient-engineering-cta:
+    radial-gradient(circle at 12% 12%, rgb(35 164 85 / 14%) 0, rgb(35 164 85 / 0%) 28%),
+    radial-gradient(circle at 88% 82%, rgb(15 118 110 / 20%) 0, rgb(15 118 110 / 0%) 34%),
+    linear-gradient(135deg, var(--color-secondary) 0%, #141b22 48%, #123228 100%);
+  --gradient-soft-page: linear-gradient(
+    135deg,
+    rgb(35 164 85 / 8%) 0%,
+    rgb(15 118 110 / 8%) 48%,
+    rgb(248 250 252 / 0%) 100%
+  );
+
+  /* Compatibility aliases. Prefer semantic gradient tokens above. */
+  --gradient-dark: var(--gradient-deep);
+  --gradient-slogan: var(--gradient-premium);
 
   /* TYPOGRAPHY: families */
   --font-family-base: 'Inter', system-ui, -apple-system, 'Segoe UI', roboto, arial, sans-serif;

@@ -1,4 +1,77 @@
-<section id="hero" class="hero hero--blueprint hero--media">
+<?php
+$zsCalculatorInstallPrice = 25000;
+$zsCalculatorRanges = array(
+  array('label' => '2–3', 'capacity' => 3, 'tip' => 'Компактное решение для дачи или небольшой семьи.'),
+  array('label' => '4–5', 'capacity' => 5, 'tip' => 'Базовый вариант для постоянного проживания семьи.'),
+  array('label' => '6–8', 'capacity' => 8, 'tip' => 'Запас производительности для большого дома и нескольких санузлов.'),
+  array('label' => '9+', 'capacity' => 10, 'tip' => 'Решение для большого дома, гостевого блока или двух семей.')
+);
+$zsCalculatorModels = array();
+
+if (Core::moduleIsActive('shop'))
+{
+  try
+  {
+    $oDatabase = Core_DataBase::instance();
+
+    foreach ($zsCalculatorRanges as $aRange)
+    {
+      $iCapacity = intval($aRange['capacity']);
+      $aRow = $oDatabase
+        ->setQueryType(0)
+        ->query(
+          "SELECT `shop_items`.`id`, `shop_items`.`name`, `property_value_ints`.`value` AS `capacity` " .
+          "FROM `shop_items` " .
+          "INNER JOIN `property_value_ints` ON `property_value_ints`.`entity_id` = `shop_items`.`id` " .
+          "AND `property_value_ints`.`property_id` = 6 " .
+          "WHERE `shop_items`.`shop_id` = 1 " .
+          "AND `shop_items`.`active` = 1 " .
+          "AND `shop_items`.`deleted` = 0 " .
+          "AND `shop_items`.`shortcut_id` = 0 " .
+          "AND `shop_items`.`price` > 0 " .
+          "AND `property_value_ints`.`value` >= {$iCapacity} " .
+          "ORDER BY `shop_items`.`price` ASC, `shop_items`.`sorting` ASC, `shop_items`.`id` ASC " .
+          "LIMIT 1"
+        )
+        ->asAssoc()
+        ->current();
+
+      if (!is_array($aRow))
+      {
+        continue;
+      }
+
+      $oShopItem = Core_Entity::factory('Shop_Item', intval($aRow['id']));
+      $aPrices = $oShopItem->getPrices();
+      $fEquipmentPrice = floatval($aPrices['price_discount']);
+      $fPerformance = 0;
+
+      foreach ($oShopItem->getPropertyValues(TRUE, array(4)) as $oPropertyValue)
+      {
+        $fPerformance = floatval($oPropertyValue->value);
+        break;
+      }
+
+      if ($fEquipmentPrice <= 0)
+      {
+        continue;
+      }
+
+      $aRange['name'] = $oShopItem->name;
+      $aRange['price'] = intval(round($fEquipmentPrice));
+      $aRange['performance'] = $fPerformance > 0
+        ? number_format($fPerformance, 0, ',', ' ') . ' л/сутки'
+        : 'Уточняется';
+      $zsCalculatorModels[] = $aRange;
+    }
+  }
+  catch (Exception $oException)
+  {
+    $zsCalculatorModels = array();
+  }
+}
+?>
+<section id="hero" class="section hero-section grid-blueprint">
   <div class="hero__media" aria-hidden="true">
     <img
       class="hero__media-image"
@@ -10,13 +83,13 @@
     />
   </div>
 
-  <div class="container hero__container">
-    <div class="hero__grid">
-      <div class="hero__content">
-        <span class="badge hero__eyebrow">Инженерный подбор для участка</span>
-        <span class="premium-slogan">Чистота без компромиссов</span>
-        <h1 class="hero__title">Автономная канализация под ключ в Зеленограде и Московской области</h1>
-        <p class="hero__text">Подберём станцию по числу жителей, режиму использования, грунту и способу отвода воды. До выезда покажем предварительный расчёт, после осмотра участка зафиксируем состав работ.</p>
+  <div class="container">
+    <div class="grid-blueprint__grid">
+      <div class="grid-blueprint__content">
+        <div class="hero-offer__tag"><span>Инженерный подбор для участка</span></div>
+        <div class="premium-slogan"><span>Чистота без компромиссов</span></div>
+        <h1 class="hero-offer__title">Автономная канализация под ключ в Зеленограде и Московской области</h1>
+        <p class="hero-offer__subtitle">Подберём станцию по числу жителей, режиму использования, грунту и способу отвода воды. До выезда покажем предварительный расчёт, после осмотра участка зафиксируем состав работ.</p>
 
         <ul class="hero__proof-list" aria-label="Что входит в работу">
           <li class="hero__proof-item">Подбор оборудования под условия участка</li>
@@ -30,81 +103,72 @@
         </div>
       </div>
 
-      <aside class="hero__aside" id="hero-selector" aria-labelledby="hero-selector-title">
-        <form class="calculator-card" action="/septiki/" method="get">
-          <input type="hidden" name="filter" value="1" />
-
+      <aside class="grid-blueprint__aside" id="hero-selector" aria-labelledby="hero-selector-title">
+        <?php if (count($zsCalculatorModels)) { ?>
+        <?php $aInitialModel = $zsCalculatorModels[0]; ?>
+        <div class="calculator-card" data-calculator-card="" data-install-price="<?php echo $zsCalculatorInstallPrice ?>">
           <div class="calculator-card__header">
             <div>
-              <span class="badge badge--outline">Подбор за 30 секунд</span>
-              <h2 class="calculator-card__title" id="hero-selector-title">Ответьте на 3 вопроса</h2>
-              <p class="calculator-card__subtitle">Покажем подходящие модели без длинного технического фильтра.</p>
+              <span class="calculator-card__badge">Расчёт за 1 минуту</span>
+              <h2 class="calculator-card__title" id="hero-selector-title">Инженерный калькулятор</h2>
+              <p class="calculator-card__subtitle">Выберите число пользователей — покажем модель и базовую стоимость под ключ.</p>
             </div>
           </div>
 
-          <fieldset class="calculator-card__group" data-range-filter="">
-            <legend class="calculator-card__label">Сколько человек будет пользоваться канализацией?</legend>
-            <input type="hidden" name="property_6_from" data-range-filter-input="from" disabled="disabled" />
-            <input type="hidden" name="property_6_to" data-range-filter-input="to" disabled="disabled" />
+          <div class="calculator-card__group">
+            <span class="calculator-card__label">Сколько человек пользуются канализацией?</span>
             <div class="calculator-card__options calculator-card__options--4">
-              <label class="calculator-card__choice">
-                <input class="calculator-card__choice-input" type="radio" name="people_range" value="2-3" data-range-filter-option="" data-range-from="2" data-range-to="3" required="required" />
-                <span class="calculator-card__choice-label">2–3</span>
-              </label>
-              <label class="calculator-card__choice">
-                <input class="calculator-card__choice-input" type="radio" name="people_range" value="4-5" data-range-filter-option="" data-range-from="4" data-range-to="5" />
-                <span class="calculator-card__choice-label">4–5</span>
-              </label>
-              <label class="calculator-card__choice">
-                <input class="calculator-card__choice-input" type="radio" name="people_range" value="6-8" data-range-filter-option="" data-range-from="6" data-range-to="8" />
-                <span class="calculator-card__choice-label">6–8</span>
-              </label>
-              <label class="calculator-card__choice">
-                <input class="calculator-card__choice-input" type="radio" name="people_range" value="9+" data-range-filter-option="" data-range-from="9" data-range-to="" />
-                <span class="calculator-card__choice-label">9+</span>
-              </label>
+              <?php foreach ($zsCalculatorModels as $iModelIndex => $aModel) { ?>
+              <button
+                class="calculator-card__option<?php echo $iModelIndex === 0 ? ' calculator-card__option--active' : '' ?>"
+                type="button"
+                data-calculator-option=""
+                data-model-name="<?php echo htmlspecialchars($aModel['name'], ENT_QUOTES, SITE_CODING) ?>"
+                data-equipment-price="<?php echo intval($aModel['price']) ?>"
+                data-performance="<?php echo htmlspecialchars($aModel['performance'], ENT_QUOTES, SITE_CODING) ?>"
+                data-tip="<?php echo htmlspecialchars($aModel['tip'], ENT_QUOTES, SITE_CODING) ?>"
+                aria-pressed="<?php echo $iModelIndex === 0 ? 'true' : 'false' ?>"
+              ><?php echo htmlspecialchars($aModel['label'], ENT_QUOTES, SITE_CODING) ?> чел.</button>
+              <?php } ?>
             </div>
-          </fieldset>
+          </div>
 
-          <fieldset class="calculator-card__group" data-exclusive-filter="">
-            <legend class="calculator-card__label">Как используется дом?</legend>
-            <input type="hidden" name="property_10" value="1" data-exclusive-filter-input="property_10" disabled="disabled" />
-            <input type="hidden" name="property_11" value="1" data-exclusive-filter-input="property_11" disabled="disabled" />
-            <div class="calculator-card__options">
-              <label class="calculator-card__choice">
-                <input class="calculator-card__choice-input" type="radio" name="usage_type" value="dacha" data-exclusive-filter-option="property_10" required="required" />
-                <span class="calculator-card__choice-label">Сезонно</span>
-              </label>
-              <label class="calculator-card__choice">
-                <input class="calculator-card__choice-input" type="radio" name="usage_type" value="permanent" data-exclusive-filter-option="property_11" />
-                <span class="calculator-card__choice-label">Постоянно</span>
-              </label>
+          <div class="calculator-card__display" aria-live="polite">
+            <div class="calculator-card__row">
+              <span class="calculator-card__row-label">Рекомендуемая модель:</span>
+              <span class="calculator-card__row-value js-calc-rec" data-calculator-model=""><?php echo htmlspecialchars($aInitialModel['name'], ENT_QUOTES, SITE_CODING) ?></span>
             </div>
-          </fieldset>
-
-          <fieldset class="calculator-card__group" data-exclusive-filter="">
-            <legend class="calculator-card__label">Как отводить очищенную воду?</legend>
-            <input type="hidden" name="property_3" value="1" data-exclusive-filter-input="property_3" disabled="disabled" />
-            <input type="hidden" name="property_2" value="1" data-exclusive-filter-input="property_2" disabled="disabled" />
-            <div class="calculator-card__options calculator-card__options--3">
-              <label class="calculator-card__choice">
-                <input class="calculator-card__choice-input" type="radio" name="drain_type" value="gravity" data-exclusive-filter-option="property_3" />
-                <span class="calculator-card__choice-label">Самотёк</span>
-              </label>
-              <label class="calculator-card__choice">
-                <input class="calculator-card__choice-input" type="radio" name="drain_type" value="forced" data-exclusive-filter-option="property_2" />
-                <span class="calculator-card__choice-label">Насос</span>
-              </label>
-              <label class="calculator-card__choice">
-                <input class="calculator-card__choice-input" type="radio" name="drain_type" value="unknown" data-exclusive-filter-option="" checked="checked" />
-                <span class="calculator-card__choice-label">Не знаю</span>
-              </label>
+            <div class="calculator-card__row">
+              <span class="calculator-card__row-label">Производительность:</span>
+              <span class="calculator-card__row-value js-calc-volume" data-calculator-performance=""><?php echo htmlspecialchars($aInitialModel['performance'], ENT_QUOTES, SITE_CODING) ?></span>
             </div>
-          </fieldset>
+            <div class="calculator-card__divider"></div>
+            <div class="calculator-card__row">
+              <span class="calculator-card__row-label">Оборудование:</span>
+              <span class="calculator-card__row-value js-calc-equipment" data-calculator-equipment=""><?php echo number_format($aInitialModel['price'], 0, ',', ' ') ?> ₽</span>
+            </div>
+            <div class="calculator-card__row">
+              <span class="calculator-card__row-label">Стандартный монтаж:</span>
+              <span class="calculator-card__row-value js-calc-install" data-calculator-install=""><?php echo number_format($zsCalculatorInstallPrice, 0, ',', ' ') ?> ₽</span>
+            </div>
+            <div class="calculator-card__divider"></div>
+            <div class="calculator-card__row calculator-card__row--total">
+              <span class="calculator-card__row-label">Итого под ключ:</span>
+              <span class="calculator-card__total-price js-calc-turnkey" data-calculator-total=""><?php echo number_format($aInitialModel['price'] + $zsCalculatorInstallPrice, 0, ',', ' ') ?> ₽</span>
+            </div>
+            <p class="calculator-card__row-tip" data-calculator-tip=""><?php echo htmlspecialchars($aInitialModel['tip'], ENT_QUOTES, SITE_CODING) ?></p>
+          </div>
 
-          <button class="btn btn--primary btn--full" type="submit">Показать подходящие модели</button>
-          <p class="calculator-card__row-tip">Инженер уточнит грунт, уровень воды и перепад высот перед финальной сметой.</p>
-        </form>
+          <button class="btn btn--primary btn--full js-btn-estimate" type="button">Получить точный расчёт</button>
+          <p class="calculator-card__note">Базовый расчёт. Грунт, глубина подводящей трубы и дополнительные работы уточняются после осмотра.</p>
+        </div>
+        <?php } else { ?>
+        <div class="calculator-card">
+          <h2 class="calculator-card__title" id="hero-selector-title">Подбор модели</h2>
+          <p class="calculator-card__subtitle">Каталог временно обновляется. Инженер подберёт модель и проверит смету.</p>
+          <button class="btn btn--primary btn--full js-btn-callback" type="button" data-title="Подбор септика">Получить подбор</button>
+        </div>
+        <?php } ?>
       </aside>
     </div>
   </div>
