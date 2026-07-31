@@ -129,6 +129,7 @@
 
 <xsl:template match="shop_item" >
 <xsl:variable name="shop_id" select="/shop/@id"/>
+<div class="product-page" itemscope="" itemtype="https://schema.org/Product">
 <section class="hero-section grid-blueprint">
 	<div class="container">
 		<div class="hero-section__grid">
@@ -137,7 +138,7 @@
 			</xsl:if>
 			<div class="hero-offer">
 				<div class="product-summary__badges">
-					<span class="badge">Монтаж за 1 день</span>
+					<span class="badge">Монтаж под ключ</span>
 					<xsl:if test="shop_producer/name != ''">
 						<span class="badge badge--outline">
 							<xsl:value-of select="shop_producer/name"/>
@@ -145,9 +146,9 @@
 					</xsl:if>
 				</div>
 				<div class="hero-offer__title-block">
-					<div class="premium-slogan"><xsl:value-of select="name"/> под ключ за 1 день</div>
+					<div class="premium-slogan">Инженерный подбор и монтаж</div>
 					<h1 class="hero-offer__title hero-offer__title-2xl" itemprop="name" hostcms:id="{@id}" hostcms:field="name" hostcms:entity="shop_item">
-						<xsl:text>Септик </xsl:text>
+						<xsl:if test="$shop_id = 1"><xsl:text>Септик </xsl:text></xsl:if>
 						<xsl:value-of select="name"/>
 					</h1>
 				</div>
@@ -208,16 +209,16 @@
 									</xsl:when>
 
 									<xsl:when test="discount != 0">
-										<strong class="catalog-card__price-actual">
-											<xsl:apply-templates select="/shop/shop_currency/code">
-												<xsl:with-param name="value" select="price"/>
-											</xsl:apply-templates>
-										</strong>
 										<span class="catalog-card__price-original">
 											<xsl:apply-templates select="/shop/shop_currency/code">
 												<xsl:with-param name="value" select="price + discount"/>
 											</xsl:apply-templates>
 										</span>
+										<strong class="catalog-card__price-actual">
+											<xsl:apply-templates select="/shop/shop_currency/code">
+												<xsl:with-param name="value" select="price"/>
+											</xsl:apply-templates>
+										</strong>
 									</xsl:when>
 
 									<xsl:otherwise>
@@ -315,7 +316,7 @@
 							</div>
 						</xsl:if>
 						<div class="catalog-card__actions">
-							<button class="btn btn--primary btn--full js-btn-callback" type="button" data-toggle="modal" data-target="#productModal{@id}" data-description="{name}">
+							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}">
 								Получить смету
 							</button>
 							<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>
@@ -404,7 +405,7 @@
 						</div>
 
 						<div class="cta-card__form">
-							<button class="btn btn--primary btn--full js-btn-callback" type="button" data-toggle="modal" data-target="#productModal{@id}" data-description="{name}">
+							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}">
 								Рассчитать монтаж
 							</button>
 							<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>
@@ -415,6 +416,7 @@
 		</div>
 	</section>
 </xsl:if>
+</div>
 </xsl:template>
 
 <xsl:template match="associated/shop_item | modifications/shop_item" mode="product-modification-link">
