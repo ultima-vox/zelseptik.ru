@@ -23,7 +23,7 @@ $sExpected = isset($aOptions['expected']) ? realpath($aOptions['expected']) : FA
 $sBackup = isset($aOptions['backup']) ? $aOptions['backup'] : FALSE;
 $sEnvironment = isset($aOptions['environment']) ? trim($aOptions['environment']) : '';
 $bApply = array_key_exists('apply', $aOptions);
-$aAllowedDocumentIds = array(5, 6, 7, 17, 19, 33, 34, 36, 37, 38);
+$aAllowedDocumentIds = array(5, 6, 7, 17, 19, 31, 33, 34, 36, 37, 38);
 $aDocumentIds = array_values(array_unique(array_filter(array_map('intval', explode(',', strval($aOptions['ids'] ?? ''))))));
 
 function zs_sync_fail($sMessage)

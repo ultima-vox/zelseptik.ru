@@ -22,6 +22,16 @@ XSL `55` отвечает за каталог и штатные GET-параме
 `hostcmsfiles/documents/*.html` — snapshot документов из БД. Эти файлы не копируются
 на сервер напрямую. Импорт документа требует backup текущей строки, сверки ID и отдельного smoke-test.
 
+Если документ изменён в админке HostCMS, сначала выгрузить его read-only скриптом:
+
+```bash
+php scripts/export-hostcms-documents.php \
+  --root=/var/www/zelseptik/data/www/dev.zelseptik.ru \
+  --output=/path/to/export \
+  --ids=31 \
+  --manifest=/path/to/export-manifest.json
+```
+
 Для документов главной используется CLI-скрипт `scripts/sync-hostcms-documents.php`.
 Сначала запускать без `--apply`, затем с `--apply` и отдельным `--backup`:
 
@@ -42,7 +52,7 @@ php scripts/sync-hostcms-documents.php \
   --apply
 ```
 
-Скрипт ограничен документами `5, 6, 7, 17, 19, 33, 34, 36, 37, 38`, сохраняет исходный HTML и
+Скрипт ограничен документами `5, 6, 7, 17, 19, 31, 33, 34, 36, 37, 38`, сохраняет исходный HTML и
 SHA-256 manifest до изменения БД.
 
 Rollback документа выполняется тем же двухшаговым процессом: использовать HTML-файл
