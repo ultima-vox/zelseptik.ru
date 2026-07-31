@@ -41,6 +41,7 @@
   --color-bg-disabled: #e2e8f0;
   --color-bg-dark: #0f1319;
   --color-surface: var(--color-bg-base);
+  --color-badge-bg: var(--color-primary-soft);
 
   /* ==========================================================================
      COLORS: text

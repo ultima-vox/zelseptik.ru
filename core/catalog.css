@@ -694,6 +694,8 @@
   max-width: none;
   padding: var(--space-lg);
   justify-content: flex-start;
+  height: auto;
+  align-self: start;
   border-color: var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-xs);
@@ -846,7 +848,7 @@
 }
 
 .catalog-card__footer {
-  margin-top: auto;
+  margin-top: 0;
   padding: 0;
   border-top: 0;
 }
@@ -879,8 +881,20 @@
 }
 
 .catalog-card__price-row {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  align-items: baseline;
   gap: var(--space-sm);
   margin-bottom: var(--space-md);
+}
+
+.catalog-card__price-row > [itemprop='offers'] {
+  min-width: 0;
+  justify-self: end;
+}
+
+.catalog-card__price-label {
+  white-space: nowrap;
 }
 
 .catalog-card__price-box {
@@ -899,7 +913,8 @@
 }
 
 .catalog-card__price-actual {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
+  white-space: nowrap;
 }
 
 .catalog-card__price {
