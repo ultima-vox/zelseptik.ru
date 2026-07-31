@@ -356,15 +356,13 @@ body {
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
     <?php
-        Core_Page::instance()->showCss();
-        $runtimeCssVersion = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/css/runtime.min.css') ?: 1;
-        $appCssVersion = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/css/app.min.css') ?: 1;
+        Core_Page::instance()
+            ->prependCss('/assets/css/style.min.css')
+            ->showCss();
     ?>
-    <link rel="stylesheet" href="/assets/css/runtime.min.css?v=<?php echo $runtimeCssVersion ?>">
-    <link rel="stylesheet" href="/assets/css/app.min.css?v=<?php echo $appCssVersion ?>">
 
     <script async="async" defer="defer" src="https://www.google.com/recaptcha/api.js?render=6LeGBsogAAAAACm0d6v7meUZwgPegL4J7V2CvsVD"></script>
-    <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7L7EBFG3BE"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-7L7EBFG3BE"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}

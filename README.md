@@ -13,7 +13,7 @@ npm run lint
 Сборка создаёт:
 
 ```text
-dist/css/app.min.css
+dist/css/style.min.css
 dist/css/runtime.css
 dist/js/app.js
 dist/js/modules/*
