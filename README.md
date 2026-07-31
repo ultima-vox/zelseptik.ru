@@ -14,6 +14,7 @@ npm run lint
 
 ```text
 dist/css/style.min.css
+dist/css/critical.min.css
 dist/css/runtime.css
 dist/js/app.js
 dist/js/modules/*

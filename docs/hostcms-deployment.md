@@ -12,11 +12,14 @@ Git-репозиторий хранит редактируемые версии 
 | `templates/template*/style.css` | `/templates/template*/style.css` |
 | `script.js` | `/script.js` |
 | `dist/css/style.min.css` | `/assets/css/style.min.css` |
+| `dist/css/critical.min.css` | `/assets/css/critical.min.css` |
 | `dist/js/` | `/assets/js/` |
 
 XSL `55` отвечает за каталог и штатные GET-параметры фильтра HostCMS. Его бизнес-логику нельзя заменять клиентской фильтрацией.
 
 `core/*.css` хранит точный runtime baseline dev. `dist/css/app.min.css` содержит новую ДС. `npm run build` собирает оба промежуточных слоя в единый production-файл `dist/css/style.min.css` в порядке `runtime -> app`, поэтому HostCMS подключает только один CSS-файл.
+
+`dist/css/critical.min.css` содержит только первый экран: базовые tokens, typography/layout, header, hero, кнопки и calculator. HostCMS подключает его перед полным `style.min.css`.
 
 `hostcmsfiles/documents/*.html` — snapshot документов из БД. Эти файлы не копируются
 на сервер напрямую. Импорт документа требует backup текущей строки, сверки ID и отдельного smoke-test.

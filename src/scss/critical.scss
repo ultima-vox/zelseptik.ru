@@ -1,0 +1,11 @@
+/* Critical first-screen overrides. Runtime header/hero CSS is merged at build time. */
+
+@use 'abstracts/tokens';
+@use 'abstracts/mixins';
+@use 'base/reset';
+@use 'base/typography';
+@use 'layouts/container';
+@use 'layouts/grid-blueprint';
+@use 'design-system/primitives/button';
+@use 'design-system/semantic/calculator-card';
+@use 'design-system/patterns/brand-markers';

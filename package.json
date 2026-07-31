@@ -7,9 +7,10 @@
   "scripts": {
     "dev": "sass src/scss/main.scss dist/css/app.css --watch --style=expanded --source-map",
     "build": "npm run build:css && npm run build:js",
-    "build:css": "npm run build:runtime && npm run build:app && npm run build:style",
+    "build:css": "npm run build:runtime && npm run build:app && npm run build:critical && npm run build:style",
     "build:runtime": "node scripts/build-runtime-css.mjs && sass dist/css/runtime.css dist/css/runtime.min.css --style=compressed --no-source-map",
     "build:app": "sass src/scss/main.scss dist/css/app.min.css --style=compressed --no-source-map",
+    "build:critical": "sass src/scss/critical.scss dist/css/critical-app.min.css --style=compressed --no-source-map && node scripts/build-critical-css.mjs && sass dist/css/critical.css dist/css/critical.min.css --style=compressed --no-source-map",
     "build:style": "node scripts/build-style-css.mjs",
     "build:dev": "npm run build:css:dev && npm run build:js",
     "build:css:dev": "sass src/scss/main.scss dist/css/app.css --style=expanded --source-map",
