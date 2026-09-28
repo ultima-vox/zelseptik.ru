@@ -8,7 +8,7 @@
 
 ## Основной репозиторий
 
-`ultima-vox/zelseptik.ru` выбран как единственный репозиторий для дальнейших изменений сайта. Ветка `codex/hostcms-baseline-homepage` содержит импортированный снимок HostCMS и исходники CSS/JS; текущая `main` пока содержит только frontend workspace. Настоящая ветка создана поверх HostCMS baseline. Перенос в `main` возможен после проверки снимка против dev и ревью. Не считать один лишь Git-снимок точным состоянием работающего сервера.
+`ultima-vox/zelseptik.ru` выбран как единственный репозиторий для дальнейших изменений сайта. Ветка `codex/hostcms-baseline-homepage` содержит импортированный снимок HostCMS и исходники CSS/JS; текущая `main` пока содержит только frontend workspace. Настоящая ветка создана поверх HostCMS baseline. Пользователь сообщил 28.09.2026, что файлы с dev уже перенесены на production. Перенос baseline в `main` возможен после сверки снимка с production и dev и ревью. Сам факт переноса не подтверждает совпадение файлов и данных БД с Git.
 
 Репозиторий `Full-Design-System` служит историческим источником дизайн-системы и отдельных шаблонов, а пустой `zelseptik` не используется как источник кода. Правила сверки — в [SOURCE_INVENTORY.md](SOURCE_INVENTORY.md).
 
@@ -33,7 +33,7 @@
 
 | Область | Путь в этой ветке | Статус |
 | --- | --- | --- |
-| Активный серверный CSS на дату экспорта | `core/*.css` | снимок; сверить с dev |
+| Серверный CSS на дату экспорта с dev | `core/*.css` | снимок; сверить с production и dev |
 | Новая дизайн-система | `src/scss/`, `docs/` | исходники и правила; не считать автоматически подключёнными к dev |
 | Основной шаблон HostCMS | `templates/template1/template.htm` | снимок; сверить с dev |
 | Главная | `templates/template2/template.htm`, `hostcmsfiles/documents/` | шаблон и снимки документов из БД |
@@ -43,4 +43,4 @@
 
 ## Следующее действие
 
-Сначала выполнить [HOSTCMS_ARCHITECTURE.md](HOSTCMS_ARCHITECTURE.md) и этапы 0–2 из [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). До сверки не переносить XSL или шаблоны из `Full-Design-System` поверх более полного HostCMS baseline.
+Сначала выполнить [HOSTCMS_ARCHITECTURE.md](HOSTCMS_ARCHITECTURE.md) и этапы 0–2 из [IMPLEMENTATION_PLAN.md](IMPLEMENTATION_PLAN.md). До сверки production, dev и Git не переносить XSL или шаблоны из `Full-Design-System` поверх более полного HostCMS baseline.
