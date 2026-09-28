@@ -58,3 +58,7 @@ docs/                     правила компонентов и интегр�
 12. Не добавлять неподтверждённые цены, гарантии, сроки, отзывы и счётчики.
 
 Подробности интеграции: [docs/hostcms-deployment.md](docs/hostcms-deployment.md).
+
+## ЗЕЛСЕПТИК 2.0
+
+Единый контекст модернизации: [docs/PROJECT_CONTEXT.md](docs/PROJECT_CONTEXT.md). Полное пользовательское ТЗ: [docs/ZELSEPTIK_2_0_TZ.md](docs/ZELSEPTIK_2_0_TZ.md). Карта исходных репозиториев и расхождений: [docs/SOURCE_INVENTORY.md](docs/SOURCE_INVENTORY.md). Подтверждённые факты HostCMS и план проверки: [docs/HOSTCMS_ARCHITECTURE.md](docs/HOSTCMS_ARCHITECTURE.md), [docs/IMPLEMENTATION_PLAN.md](docs/IMPLEMENTATION_PLAN.md).
