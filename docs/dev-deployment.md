@@ -16,8 +16,9 @@ Already deployed files are accepted. Absence of a required directory aborts.
 Read-only run 37314881595 found the current main template differs from the original
 backup (SHA-256 696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb8979de8a).
 For this exact version, the workflow preserves all current bytes and inserts only
-the information-pages.css call into the single existing fileTimestamp/runtime/app/
-showCss chain. It does not overwrite the main template from the older repository.
+the information-pages.css call immediately before the single active chained
+showCss() call. Other existing CSS calls are preserved; commented examples are
+excluded. It does not overwrite the main template from the older repository.
 A changed hash or missing/ambiguous anchor aborts. The narrowly patched form is
 recognized on subsequent runs; no force option is added.
 

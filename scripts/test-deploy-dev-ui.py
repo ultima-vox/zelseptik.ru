@@ -146,6 +146,24 @@ class DeploymentTests(unittest.TestCase):
                 self.execute('deploy')
         self.assertEqual(self.ftp.writes, [])
 
+    def test_current_css_chain_can_differ_and_commented_calls_are_ignored(self):
+        current = (b"<?php\n$controller->css('/existing.css')\n\t->showCss();\n"
+                   b"// ->showCss();\n// ->css('/example.css')\n")
+        self.ftp.files[module.TEMPLATE1] = current
+        with patch.object(module, 'DEV_TEMPLATE1_SHA', module.digest(current)):
+            self.execute('deploy')
+        patched = self.ftp.files[module.TEMPLATE1]
+        self.assertEqual(patched.replace(
+            b"\t->css('/assets/css/information-pages.css')\n", b'', 1), current)
+
+    def test_multiple_active_css_calls_are_rejected(self):
+        current = b'    ->showCss();\n    ->showCss();\n'
+        self.ftp.files[module.TEMPLATE1] = current
+        with patch.object(module, 'DEV_TEMPLATE1_SHA', module.digest(current)):
+            with self.assertRaises(RuntimeError):
+                self.execute('deploy')
+        self.assertEqual(self.ftp.writes, [])
+
 
 if __name__ == '__main__':
     unittest.main()
