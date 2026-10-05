@@ -146,3 +146,38 @@
   outline: 2px solid var(--color-primary);
   outline-offset: -2px;
 }
+
+/* Delivery hero: scope by its existing accessible label, preserving CMS HTML.
+   Runtime grid--2 uses auto minimums; long NBSP-linked headings widen tracks.
+   Stack the main columns until both the offer and 2x2 cards have enough room. */
+.hero-section .grid-blueprint__grid:has(> .grid-blueprint__aside[aria-label="Ключевые условия доставки"]) {
+  grid-template-columns: minmax(0, 1fr);
+  align-items: start;
+}
+
+.hero-section .grid-blueprint__aside[aria-label="Ключевые условия доставки"] > .grid--2 {
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+}
+
+.hero-section .grid-blueprint__aside[aria-label="Ключевые условия доставки"] .feature-card {
+  min-width: 0;
+  padding: var(--space-lg);
+  overflow-wrap: anywhere;
+}
+
+.hero-section .grid-blueprint__aside[aria-label="Ключевые условия доставки"] .feature-card__title {
+  font-size: var(--font-size-lg);
+}
+
+@media (min-width: 768px) {
+  .hero-section .grid-blueprint__aside[aria-label="Ключевые условия доставки"] > .grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-section .grid-blueprint__grid:has(> .grid-blueprint__aside[aria-label="Ключевые условия доставки"]) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
