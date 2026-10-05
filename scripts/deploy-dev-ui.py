@@ -22,6 +22,7 @@ FILES = (
     'templates/template1/template.htm',
 )
 MAX_BYTES = 4 * 1024 * 1024
+BACKUP_DIRECTORY = '.ui-deploy-backups'
 TEMPLATE1 = 'templates/template1/template.htm'
 # Actual dev hash observed by the read-only run 37314881595.
 DEV_TEMPLATE1_SHA = '696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb8979de8a'
@@ -141,11 +142,13 @@ def deploy(ftp, source, mode):
         print('All eight files already match; no writes.')
         return
     encrypted = encrypted_backup(before)
+    print('Step: prepare dedicated dev UI backup directory', flush=True)
     ftp.cwd('/')
     names = {item.rstrip('/').rsplit('/', 1)[-1] for item in ftp.nlst()}
-    if '.codex-backups' not in names:
-        ftp.mkd('.codex-backups')
-    backup_path = '.codex-backups/service-ui-' + uuid.uuid4().hex + '.tar.gz.enc'
+    if BACKUP_DIRECTORY not in names:
+        ftp.mkd(BACKUP_DIRECTORY)
+    backup_path = BACKUP_DIRECTORY + '/service-ui-' + uuid.uuid4().hex + '.tar.gz.enc'
+    print('Step: upload and read back encrypted backup in', BACKUP_DIRECTORY, flush=True)
     write_remote(ftp, backup_path, encrypted)
     print('Verified encrypted backup:', backup_path, 'sha256:', digest(encrypted))
     # Check again after the backup, before starting any replacement.
@@ -207,6 +210,11 @@ if __name__ == '__main__':
     try:
         main()
     except Exception as error:
-        # Never log server replies or subprocess arguments containing credentials.
-        print('Stopped:', str(error) if type(error) is RuntimeError else type(error).__name__)
+        # Permission replies identify the rejected operation; never expose passwords
+        # or subprocess command arguments. GitHub also masks the repository secret.
+        if isinstance(error, (RuntimeError, ftplib.error_perm, ftplib.error_temp)):
+            message = str(error).replace(os.environ.get('DEV_FTP_PASSWORD') or '\0', '[redacted]')
+            print('Stopped:', message.replace('\r', ' ').replace('\n', ' '))
+        else:
+            print('Stopped:', type(error).__name__)
         raise SystemExit(1)

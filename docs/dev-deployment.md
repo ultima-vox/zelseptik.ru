@@ -25,7 +25,11 @@ recognized on subsequent runs; no force option is added.
 Before any replacement a gzip tar backup is encrypted with OpenSSL AES-256-CBC,
 PBKDF2-HMAC-SHA256, 200000 iterations, a random salt, using the FTP password at the
 time of deployment. Decryption is checked locally; the encrypted backup is uploaded
-under `.codex-backups/` and downloaded again for byte verification. Its path and
+under `.ui-deploy-backups/` and downloaded again for byte verification. The dedicated
+folder is created by this FTP account, rather than reusing an older staging backup
+folder that may have a different owner. If creation or writing is forbidden, the
+workflow stops without replacing site files and reports the FTP permission reply.
+It never changes server ownership or permissions. Its path and
 SHA-256 appear in the run log. Plaintext source backups are never uploaded or logged.
 Keep that password for recovery even if the FTP password later changes. CBC provides
 confidentiality, not authenticated encryption; retain the logged ciphertext hash.
