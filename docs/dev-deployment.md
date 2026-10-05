@@ -5,15 +5,15 @@ isolated dev FTP account: 92.63.102.79:21, zelseptik, root /. It uses the existi
 repository secret `DEV_FTP_PASSWORD`. No production credentials are accepted.
 
 The source is pinned to reviewed content-layout commit
-`0c4906e6a3c8cb46287425a6a80d516892ea56ed` (PR #12), based on the first UI
-stage (PR #6). No other repository files, archive exports or database rows are deployed.
+`9f2c67284445a153c4228d21113a0739e4b4f680` (PR #14), based on the content
+container follow-up (PR #12) and first UI stage (PR #6). No other repository files, archive exports or database rows are deployed.
 The eight paths are explicitly listed in `scripts/deploy-dev-ui.py`.
 
 Run Actions → Deploy dev UI → Run workflow. `inspect` reads current file hashes
 without writes. `deploy` performs the same checks, backs up the actual current dev
 files, then uploads the stage. Any source drift aborts; there is no force option.
-Already deployed files are accepted. The two exact previous-stage hashes for
-information-pages.css and XSL 4 are accepted for this update; unknown edits abort.
+Already deployed files are accepted. Exact previous-stage hashes for information-pages.css (initial and content-layout
+versions) and XSL 4 are accepted for this update; unknown edits abort.
 After the successful initial deployment, only these two UI files need replacing. Absence of a required directory aborts.
 
 Read-only run 37314881595 found the current main template differs from the original
@@ -81,3 +81,17 @@ The dev main template after the narrow CSS insertion has SHA-256
 `75c23f701730c078768fad3095da3cedbdec932994736ec439772b91b4073b26`.
 Browser inspection confirmed the service hero and transformed price table; the
 container and step-grid follow-up still awaits deployment and visual acceptance.
+
+## Delivery hero CSS follow-up
+
+Current dev DOM confirms runtime CSS overrides grid--2 with repeat(2, 1fr).
+NBSP-linked headings expand intrinsic track widths, producing unequal cards.
+The existing delivery aside label scopes a CSS override: minmax(0, 1fr) tracks,
+token-based card padding/title size, top alignment, stacked main columns below
+1280px and equal columns above. Card grid: one column below 768px, two above.
+The CSS is loaded after runtime through the existing information-pages.css call.
+No CMS documents, entities, URLs, global grid rules or templates are edited.
+Parent-grid scoping uses :has(); check the supported modern browsers during QA.
+This follow-up is prepared, not yet visually accepted or deployed. Run the latest
+main workflow once the previous queued deployment finishes. If the content-layout
+follow-up is already installed, only CSS is uploaded; otherwise XSL 4 is also updated.
