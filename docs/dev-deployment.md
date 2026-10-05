@@ -1,0 +1,57 @@
+# Deploy to isolated dev
+
+`Deploy dev UI` is a manual workflow. Its only destination is the user's confirmed
+isolated dev FTP account: 92.63.102.79:21, zelseptik, root /. It uses the existing
+repository secret `DEV_FTP_PASSWORD`. No production credentials are accepted.
+
+The source is pinned to UI stage commit `61f15b82affa6ace7bf67c4ad48b86894a50ab97`
+(PR #6). No other repository files, archive exports or database rows are deployed.
+The eight paths are explicitly listed in `scripts/deploy-dev-ui.py`.
+
+Run Actions → Deploy dev UI → Run workflow. `inspect` reads current file hashes
+without writes. `deploy` performs the same checks, backs up the actual current dev
+files, then uploads the stage. Any source drift aborts; there is no force option.
+Already deployed files are accepted. Absence of a required directory aborts.
+
+Before any replacement a gzip tar backup is encrypted with OpenSSL AES-256-CBC,
+PBKDF2-HMAC-SHA256, 200000 iterations, a random salt, using the FTP password at the
+time of deployment. Decryption is checked locally; the encrypted backup is uploaded
+under `.codex-backups/` and downloaded again for byte verification. Its path and
+SHA-256 appear in the run log. Plaintext source backups are never uploaded or logged.
+Keep that password for recovery even if the FTP password later changes. CBC provides
+confidentiality, not authenticated encryption; retain the logged ciphertext hash.
+
+An upload failure triggers a best-effort rollback of attempted replacements. If the
+connection is lost, automatic rollback may fail. FTP replacements are sequential,
+not an atomic transaction, and a page request during an upload may see a partial
+file. Each upload is read back and verified. Do not edit these files concurrently.
+The existing FTP service transmits credentials and files without TLS.
+
+To recover manually, download the exact encrypted backup named in the run log via
+FTP. Check its SHA-256 against the log, then on a trusted machine run:
+
+```sh
+openssl enc -d -aes-256-cbc -pbkdf2 -iter 200000 -md sha256 \
+  -in service-ui-BACKUP-ID.tar.gz.enc -out service-ui-backup.tar.gz
+```
+
+OpenSSL prompts for the original deployment password. Extract the backup privately.
+Restore its listed files to the corresponding existing paths on dev. `manifest.json`
+records absent files; remove a newly deployed file only if that manifest marks its
+original absent. Do not place the plaintext backup in the website root or repository.
+
+HostCMS integration preserves existing template IDs 1/3 and XSL IDs 4/13, information
+systems and shops. File-backed template paths are documented by HostCMS:
+https://www.hostcms.ru/documentation/modules/template/template/
+https://www.hostcms.ru/documentation/modules/xsl/
+The site's `templates/template3/script.js` is an existing custom resource; it is not
+claimed to be the standard HostCMS JavaScript tab file (`javascript.js`). Production
+styles and CMS metadata are not changed. No undocumented CMS API is invoked.
+
+A successful FTP upload is not browser or CMS acceptance. Check services, a service
+detail, a shared-XSL article, montage/service/repair and the six approved pages at
+375/768/1024/1440 px. Confirm asset loading and actual existing form processing.
+CMS/OPcache may retain previous output; the workflow does not invent a cache-clearing
+API or purge cache folders. If the page still uses old code, use the existing CMS
+administration/server process to diagnose it. Root cleanup is a separate operation;
+this workflow does not move or delete unrelated files.
