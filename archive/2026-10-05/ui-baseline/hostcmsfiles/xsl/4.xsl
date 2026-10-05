@@ -13,73 +13,95 @@
 		<xsl:apply-templates select="/informationsystem"/>
 	</xsl:template>
 	<xsl:template match="/informationsystem">
-        <div class="information-detail page-legacy-content">
-            <section class="section hero-section grid-blueprint">
-                <div class="container">
-                    <nav class="breadcrumbs" aria-label="Хлебные крошки">
-                        <ol class="breadcrumbs__list">
-                            <li><a href="/">Главная</a></li>
-                            <xsl:choose>
-                                <xsl:when test="group != 0">
-                                    <xsl:apply-templates select=".//informationsystem_group[@id=current()/group]" mode="breadCrumbs"/>
-                                </xsl:when>
-                                <xsl:otherwise><li><a href="{url}"><xsl:value-of select="name"/></a></li></xsl:otherwise>
-                            </xsl:choose>
-                            <li><span aria-current="page"><xsl:value-of select="informationsystem_item/name"/></span></li>
-                        </ol>
-                    </nav>
-                    <div class="grid-blueprint__grid">
-                        <div class="grid-blueprint__content">
-                            <h1 class="hero-offer__title" hostcms:id="{informationsystem_item/@id}" hostcms:field="name" hostcms:entity="informationsystem_item">
-                                <xsl:choose>
-                                    <xsl:when test="informationsystem_item/property_value[tag_name='seo-h1']/value != ''"><xsl:value-of select="informationsystem_item/property_value[tag_name='seo-h1']/value"/></xsl:when>
-                                    <xsl:otherwise><xsl:value-of select="informationsystem_item/name"/></xsl:otherwise>
-                                </xsl:choose>
-                            </h1>
-                            <div class="hero-offer__subtitle"><xsl:value-of select="informationsystem_item/description" disable-output-escaping="yes"/></div>
-                            <xsl:if test="informationsystem_item/property_value[tag_name='main-inf']/value != ''">
-                                <ul class="information-detail__benefits">
-                                    <xsl:for-each select="informationsystem_item/property_value[tag_name='main-inf'][position() &lt; 4]"><li><xsl:value-of select="value"/></li></xsl:for-each>
-                                </ul>
-                            </xsl:if>
-                            <xsl:if test="informationsystem_item/image_large != '' or informationsystem_item/image_small != ''">
-                                <img class="information-detail__image" alt="{informationsystem_item/name}">
-                                    <xsl:attribute name="src"><xsl:value-of select="informationsystem_item/dir"/><xsl:choose><xsl:when test="informationsystem_item/image_large != ''"><xsl:value-of select="informationsystem_item/image_large"/></xsl:when><xsl:otherwise><xsl:value-of select="informationsystem_item/image_small"/></xsl:otherwise></xsl:choose></xsl:attribute>
-                                </img>
-                            </xsl:if>
-                        </div>
-                        <aside class="grid-blueprint__aside" aria-label="Консультация по услуге">
-                            <div class="cta-card">
-                                <div class="cta-card__header">
-                                    <h2 class="cta-card__title">Обсудить услугу с инженером</h2>
-                                    <p class="cta-card__subtitle">Оставьте телефон — уточним условия участка и состав работ.</p>
-                                </div>
-                                <form class="site-form cta-card__form form-submit" method="post" data-lead-form="">
-                                    <input type="hidden" name="_zs_action" value="lead"/>
-                                    <input type="hidden" name="form_type" value="Консультация: {informationsystem_item/name}"/>
-                                    <input type="hidden" name="link" value="{informationsystem_item/name}"/>
-                                    <input type="hidden" name="city_service" value="1"/>
-                                    <input type="hidden" name="g-recaptcha-response"/>
-                                    <div class="cta-card__input-group">
-                                        <label class="cta-card__label" for="service-name-{informationsystem_item/@id}">Ваше имя</label>
-                                        <input class="cta-card__input" id="service-name-{informationsystem_item/@id}" name="name" type="text" autocomplete="name" placeholder="Как к вам обращаться"/>
-                                    </div>
-                                    <div class="cta-card__input-group">
-                                        <label class="cta-card__label" for="service-phone-{informationsystem_item/@id}">Номер телефона <span>*</span></label>
-                                        <input class="cta-card__input phone_mask" id="service-phone-{informationsystem_item/@id}" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 (___) ___-__-__" maxlength="18" required=""/>
-                                    </div>
-                                    <button class="cta-card__submit" type="submit">Получить консультацию</button>
-                                    <div class="form-message js-form-message" role="status" aria-live="polite"></div>
-                                </form>
-                                <p class="cta-card__disclaimer">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
-                            </div>
-                        </aside>
-                    </div>
-                </div>
-            </section>
-            <xsl:apply-templates select="informationsystem_item"/>
-        </div>
-    </xsl:template>
+		<div class="section area-main area-main_form">
+			<div class="page-bl">
+				<xsl:if test="group = 0">
+					<ol class="breadcrumbs__list" itemscope="" itemtype="http://schema.org/BreadcrumbList">
+						<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span></a><meta itemprop="position" content="1"/></li>
+						<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="{url}" itemprop="item"><span itemprop="name"><xsl:value-of select="name"/></span></a>
+						<meta itemprop="position" content="2"/></li>
+						<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
+							<span itemprop="name"><xsl:value-of select="/informationsystem/informationsystem_item/name"/></span>
+							<meta itemprop="item" content="{/informationsystem/informationsystem_item/url}" />
+							<meta itemprop="position" content="3" />
+						</li>
+					</ol>
+				</xsl:if>
+				<xsl:if test="group != 0">
+					<ol class="breadcrumbs__list">
+						<li><a href="/">Главная</a></li>
+						<xsl:apply-templates select=".//informationsystem_group[@id=$group]" mode="breadCrumbs"/>
+					</ol>
+				</xsl:if>
+				<div class="box-main box-main_form" style="background-image:url('{/informationsystem/informationsystem_item/dir}{/informationsystem/informationsystem_item/image_large}');">
+					<div class="banner-form">
+						<div class="banner-form__info">
+							<h1 class="h-1" hostcms:id="{@id}" hostcms:field="name" hostcms:entity="/informationsystem/informationsystem_item">
+								<xsl:choose>
+									<xsl:when test="/informationsystem/informationsystem_item/property_value[tag_name='seo-h1']/value !=''">
+										<xsl:value-of select="/informationsystem/informationsystem_item/property_value[tag_name='seo-h1']/value"/>
+									</xsl:when>
+									<xsl:otherwise>
+										<xsl:value-of select="/informationsystem/informationsystem_item/name"/>
+									</xsl:otherwise>
+								</xsl:choose>
+							</h1>
+
+							<xsl:value-of select="/informationsystem/informationsystem_item/description" disable-output-escaping="yes" />
+
+
+							<xsl:if test="/informationsystem/informationsystem_item/property_value[tag_name='main-inf']/value !=''">
+								<ul class="main-inf">
+									<xsl:for-each select="/informationsystem/informationsystem_item/property_value[tag_name='main-inf'][position() &lt; 4]">
+
+										<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="{value}"/>
+											<xsl:value-of select="value"/>
+										</li>
+
+									</xsl:for-each>
+								</ul>
+							</xsl:if>
+
+						</div>
+						<div class="banner-form__form">
+							<form class="new-form form-submit">
+								<p class="new-form__title">Свяжемся с вами и дадим подробную консультацию</p>
+								<p class="new-form__description new-form__description_tablet">Перезваниваем быстро, в течение 15 минут</p>
+								<div class="new-form__box">
+									<input class="new-form__input" type="text" name="name" autocomplete="off" placeholder="Ваше имя" />
+									<input class="phone_mask new-form__input" type="tel" minlength="15" name="phone" required="" autocomplete="off" placeholder="Ваш телефон" />
+									<input type="hidden" name="link" value="{/informationsystem/informationsystem_item/name}" />
+									<input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response" />
+									<p class="new-form__description new-form__description_desktop">Перезваниваем быстро, в течение 15 минут</p>
+									<input class="btn new-form__btn" type="submit" value="ОТПРАВИТЬ" name="city_service"/>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+				<xsl:if test="/informationsystem/informationsystem_item/property_value[tag_name='main-inf']/value !=''">
+					<div class="mobile-bl">	<ul class="main-inf">
+							<xsl:for-each select="/informationsystem/informationsystem_item/property_value[tag_name='main-inf'][position() &lt; 4]">
+
+								<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="{value}"/>
+									<xsl:value-of select="value"/>
+								</li>
+
+							</xsl:for-each>
+					</ul></div>
+				</xsl:if>
+			</div>
+		</div>
+		<xsl:apply-templates select="/informationsystem/informationsystem_item"/>
+		<script>
+			<xsl:comment>
+				<xsl:text disable-output-escaping="yes">
+<![CDATA[
+					document.addEventListener ( "DOMContentLoaded", () => {var swiper=new Swiper ('#swiper-price. swiper',{slidesPerView:'auto',spaceBetween:0,centeredSlides:false,loop:false,scrollbar:{el:'#swiper-price. swiper-scrollbar',draggable:true,},});});	]]>
+				</xsl:text>
+			</xsl:comment>
+		</script>
+	</xsl:template>
 
 	<xsl:template match="/informationsystem/informationsystem_item">
 		<!-- Content_Section Start>

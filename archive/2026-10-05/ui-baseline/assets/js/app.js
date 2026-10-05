@@ -6,9 +6,6 @@ import { initForms } from './modules/form.js';
 import { initCatalog } from './modules/catalog.js';
 import { initCalculator } from './modules/calculator.js';
 
-import { initInformationTables } from './modules/information.js';
-
-initInformationTables();
 initAccordions();
 initTabs();
 initModals();

@@ -28,7 +28,7 @@ python3 scripts/verify-baseline.py
 ```
 
 На Windows можно использовать `py -3 scripts/verify-baseline.py`.
-Проверка сверяет контрольные суммы рабочего снимка и архива, относительные импорты JS и зависимости XSL.
+Проверка сверяет контрольные суммы неизменённых файлов и сохранённых оригиналов изменённых файлов, относительные импорты JS и зависимости XSL. Оригиналы UI-изменений перечислены в `docs/ui-originals.json`.
 
 ## Статус сборки и внедрения
 
@@ -44,3 +44,5 @@ package.json и документация сохранены в архиве. Н�
 Правила интеграции: [docs/hostcms-integration.md](docs/hostcms-integration.md).
 План UI: [docs/ui-unification.md](docs/ui-unification.md).
 Результаты сверки: [docs/repository-audit.md](docs/repository-audit.md).
+
+Первый этап UI услуг: [docs/service-ui-stage.md](docs/service-ui-stage.md).

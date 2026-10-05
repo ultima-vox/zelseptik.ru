@@ -1,0 +1,39 @@
+{
+  "files": [
+    {
+      "path": "hostcmsfiles/xsl/4.xsl",
+      "original_path": "archive/2026-10-05/ui-baseline/hostcmsfiles/xsl/4.xsl",
+      "sha256": "5e335a20c825c75332f50dd96f40beca99af85d3510fc11fc590530141cdc613"
+    },
+    {
+      "path": "hostcmsfiles/xsl/13.xsl",
+      "original_path": "archive/2026-10-05/ui-baseline/hostcmsfiles/xsl/13.xsl",
+      "sha256": "bdda144ee8569edd5554b7b21388db2867ae516d552ab38ab76de1fece9c9461"
+    },
+    {
+      "path": "templates/template3/template.htm",
+      "original_path": "archive/2026-10-05/ui-baseline/templates/template3/template.htm",
+      "sha256": "4411c64ca2079139de5f4f472917c3aa50036dd0504bd2c4caa552bc12dc4954"
+    },
+    {
+      "path": "templates/template3/script.js",
+      "original_path": "archive/2026-10-05/ui-baseline/templates/template3/script.js",
+      "sha256": "860f6fa05cb0eba21a990b2079eca868c26148887d4addeb7c308ec45c05168d"
+    },
+    {
+      "path": "templates/template1/template.htm",
+      "original_path": "archive/2026-10-05/ui-baseline/templates/template1/template.htm",
+      "sha256": "eade4b39922bbcb097d3660501daf653babcfa445eb22fd937871a611d9df0ea"
+    },
+    {
+      "path": "assets/js/app.js",
+      "original_path": "archive/2026-10-05/ui-baseline/assets/js/app.js",
+      "sha256": "34923504fb9ed0520c5e5bae857eb61afcff4bc2b10cfe98a1fd6fc248da1ed2"
+    },
+    {
+      "path": "scripts/verify-baseline.py",
+      "original_path": "archive/2026-10-05/ui-baseline/scripts/verify-baseline.py",
+      "sha256": "9f88bdcef5f96dcf6beaf90c4f382e59aa9e8a04a7b18d43d4578b87d2dd5c02"
+    }
+  ]
+}

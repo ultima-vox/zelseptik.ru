@@ -17,7 +17,7 @@
 
 	<xsl:template match="/informationsystem">
 		<xsl:variable name="seo-h1" select="/informationsystem/seo-h1"/>
-		<div class="page-services"><section class="area-category no-bg">
+		<section class="area-category no-bg">
 			<div class="page-bl">
 
 				<!-- Store parent id in a variable -->
@@ -43,7 +43,7 @@
 							<li><a href="/">Главная</a></li>
 							<xsl:apply-templates select=".//informationsystem_group[@id=$group]" mode="breadCrumbs"/>
 						</ol>
-						<h1 class="h-2"><xsl:value-of select=".//informationsystem_group[@id=$group]/name"/></h1>
+						<h2 class="h-2"> <xsl:value-of select=".//informationsystem_group[@id=$group]/name"/></h2>
 					</xsl:if>
 				</div>
 
@@ -53,7 +53,7 @@
 				<xsl:if test="count(tag) = 0 and count(.//informationsystem_group[parent_id=$group]) &gt; 0">
 					<div class="quiz_parent">
 						<div class="category-row fl-row no-bg quiz-hide-bl">
-							<xsl:apply-templates select=".//informationsystem_group[parent_id=$group]" mode="groups"/>
+							<xsl:apply-templates select=".//informationsystem_group[parent_id=$group][position() mod $n = 1]" mode="groups"/>
 						</div>
 					</div>
 				</xsl:if>
@@ -185,7 +185,7 @@
 				</div>
 
 			</div>
-		</section></div>
+		</section>
 	</xsl:template>
 
 	<!-- Show property item -->
@@ -239,16 +239,18 @@
 	<!-- Subgroups Template -->
 	<xsl:template match="informationsystem_group" mode="groups">
 
-		<!-- One card per selected subgroup; do not include unrelated siblings. -->
+		<xsl:for-each select=". | following-sibling::informationsystem_group[position() &lt; $n]">
 			<div class="col">
 				<a class="category-bl" href="{url}">
 					<span class="bg type2">
-					<xsl:if test="image_small != ''"><img src="{dir}{image_small}" alt="" loading="lazy"/></xsl:if></span>
+					<img src="{dir}{image_small}" alt="{name}"/></span>
 					<h3 class="h-3">
-						<xsl:value-of select="name"/>
+						<span class="h-3_desktop"><xsl:value-of select="name"/></span>
+						<span class="h-3_mobile"><xsl:value-of select="name"/></span>
 
 				</h3></a>
 			</div>
+		</xsl:for-each>
 
 	</xsl:template>
 
@@ -257,9 +259,10 @@
 		<!-- Text representation of a date -->
 		<div class="col">
 			<a class="category-bl" href="{url}">
-				<span class="bg type2"><xsl:if test="image_small != ''"><img src="{dir}{image_small}" alt="" loading="lazy"/></xsl:if></span>
+				<span class="bg type2"><img src="{dir}{image_small}" alt="{name}" title="{name}"/></span>
 				<h3 class="h-3">
-					<xsl:value-of select="name"/>
+					<span class="h-3_desktop"><xsl:value-of select="name"/></span>
+					<span class="h-3_mobile"><xsl:value-of select="name"/></span>
 
 				</h3>
 			</a>
