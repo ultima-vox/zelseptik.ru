@@ -21,6 +21,9 @@ FILES = (
     'templates/template1/template.htm',
 )
 MAX_BYTES = 4 * 1024 * 1024
+TEMPLATE1 = 'templates/template1/template.htm'
+# Actual dev hash observed by the read-only run 37314881595.
+DEV_TEMPLATE1_SHA = '696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb8979de8a'
 
 
 def digest(data):
@@ -52,6 +55,35 @@ def write_remote(ftp, path, data):
         raise RuntimeError('Uploaded bytes differ: ' + path)
 
 
+def patch_current_template(current, original_sha):
+    """Add only one known CSS call; preserve all current dev PHP and settings."""
+    if current is None:
+        raise RuntimeError('Main dev template is missing')
+    accepted = {original_sha, DEV_TEMPLATE1_SHA}
+    css_call = b"        ->css('/assets/css/information-pages.css')"
+    anchors = []
+    for newline in (b'\r\n', b'\n'):
+        anchor = newline.join((b'        ->fileTimestamp(TRUE)',
+                               b"        ->prependCss('/assets/css/runtime.min.css')",
+                               b"        ->prependCss('/assets/css/app.min.css')",
+                               b'        ->showCss();'))
+        replacement = anchor.replace(newline + b'        ->showCss();',
+                                     newline + css_call + newline + b'        ->showCss();')
+        anchors.append((anchor, replacement, newline))
+    if digest(current) in accepted:
+        matches = [(anchor, replacement) for anchor, replacement, _ in anchors
+                   if current.count(anchor) == 1]
+        if len(matches) != 1 or b'/assets/css/information-pages.css' in current:
+            raise RuntimeError('Main template CSS anchor is ambiguous; no replacement')
+        return current.replace(*matches[0], 1)
+    for anchor, replacement, _ in anchors:
+        if current.count(replacement) == 1:
+            restored = current.replace(replacement, anchor, 1)
+            if digest(restored) in accepted:
+                return current  # already patched, with all dev settings intact
+    raise RuntimeError('Main template changed since inspection; requires review')
+
+
 def plan(ftp, source):
     originals = {
         item['path']: item['sha256']
@@ -59,15 +91,17 @@ def plan(ftp, source):
     }
     before, target, changed, drift = {}, {}, [], []
     for path in FILES:
+        before[path] = read_remote(ftp, path)
         target[path] = (source / path).read_bytes()
+        if path == TEMPLATE1:
+            target[path] = patch_current_template(before[path], originals[path])
         if len(target[path]) > MAX_BYTES:
             raise RuntimeError('Local file exceeds limit: ' + path)
-        before[path] = read_remote(ftp, path)
         current = digest(before[path])
         expected = originals.get(path, 'absent')
         wanted = digest(target[path])
         status = 'already deployed' if current == wanted else 'ready'
-        if current not in (expected, wanted):
+        if path != TEMPLATE1 and current not in (expected, wanted):
             status = 'DRIFT: requires review'
             drift.append(path)
         elif current != wanted:
