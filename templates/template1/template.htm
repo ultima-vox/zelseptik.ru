@@ -1,0 +1,863 @@
+<?php
+/**
+ * HostCMS template bootstrap.
+ * Оптимизировано:
+ * - единая отправка заявок;
+ * - единая проверка reCAPTCHA;
+ * - единый JSON-ответ;
+ * - убраны var_dump/debug и дублирующиеся блоки;
+ * - исправлены явные опечатки from-домена zelsptik.ru -> zelseptik.ru.
+ */
+
+if (!defined('ZS_RECAPTCHA_SECRET')) {
+    define('ZS_RECAPTCHA_SECRET', (string) getenv('ZS_RECAPTCHA_SECRET'));
+}
+
+const ZS_RECAPTCHA_MIN_SCORE = 0.6;
+
+function zs_post_all(): array
+{
+    return $_POST ?? [];
+}
+
+function zs_json_response(bool $status, string $message = 'ok'): void
+{
+    header('Content-Type: application/json; charset=utf-8');
+
+    echo json_encode([
+        'status' => $status,
+        'result' => $status ? 'success' : 'error',
+        'message' => $message,
+    ], JSON_UNESCAPED_UNICODE);
+
+    exit();
+}
+
+function zs_verify_recaptcha(): bool
+{
+    $token = trim((string) ($_POST['g-recaptcha-response'] ?? ''));
+
+    if ($token === '') {
+        return false;
+    }
+
+    $http = Core_Http::instance('curl')
+        ->clear()
+        ->method('POST')
+        ->url('https://www.google.com/recaptcha/api/siteverify')
+        ->data('secret', ZS_RECAPTCHA_SECRET)
+        ->data('response', $token)
+        ->execute();
+
+    $answer = json_decode($http->getDecompressedBody(), true);
+
+    return !empty($answer['success'])
+        && isset($answer['score'])
+        && (float) $answer['score'] >= ZS_RECAPTCHA_MIN_SCORE;
+}
+
+function zs_format_value($value): string
+{
+    if (is_array($value)) {
+        return implode(', ', array_filter(array_map('trim', $value)));
+    }
+
+    return trim((string) $value);
+}
+
+function zs_build_message(array $post): string
+{
+    $skip = [
+        '_zs_action',
+        'g-recaptcha-response',
+        //'form_type',
+        'submit',
+        'send',
+    ];
+
+    $labels = [
+        'name' => 'Имя',
+        'nname' => 'Имя',
+        'phone' => 'Телефон',
+        'email' => 'Email',
+        'message' => 'Сообщение',
+        'comment' => 'Комментарий',
+        'service' => 'Услуга',
+        'model' => 'Модель',
+        'page_url' => 'Страница',
+        'bonus' => 'Задача клиента',
+        'form_type' => 'Форма',
+        'page_url'  => 'Страница',
+        'form_type' => 'Тип заявки'
+    ];
+
+    $lines = [];
+
+    foreach ($post as $key => $value) {
+        if (in_array($key, $skip, true)) {
+            continue;
+        }
+
+        $value = zs_format_value($value);
+
+        if ($value === '') {
+            continue;
+        }
+
+        $label = $labels[$key] ?? $key;
+        $lines[] = $label . ': ' . $value;
+    }
+
+    return implode("\r\n\r\n", $lines);
+}
+
+function zs_has_valid_phone(array $post): bool
+{
+    $phone = preg_replace('/\D+/', '', (string) ($post['phone'] ?? ''));
+
+    return (bool) preg_match('/^[78]\d{10}$/', $phone);
+}
+
+function zs_handle_any_form(): void
+{
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        return;
+    }
+
+    // Only ZELSEPTIK lead forms belong to this mail handler. HostCMS also uses
+    // POST for comments, quizzes and filter previews; those requests must keep
+    // flowing to their native controllers.
+    if (($_POST['_zs_action'] ?? '') !== 'lead') {
+        return;
+    }
+
+    if (!zs_has_valid_phone($_POST)) {
+        zs_json_response(false, 'invalid_phone');
+    }
+
+    if (!zs_verify_recaptcha()) {
+        zs_json_response(false, 'recaptcha_failed');
+    }
+
+    $subject = 'Заявка с сайта zelseptik.ru';
+
+    if (!empty($_POST['form_type'])) {
+        $subject .= ' — ' . trim((string) $_POST['form_type']);
+    }
+
+    Core_Mail::instance()
+        ->to('rz300@ya.ru')
+        //->to('info@zelseptik.ru')
+        ->from('no-reply@zelseptik.ru')
+        ->subject($subject)
+        ->message(zs_build_message($_POST))
+        ->contentType('text/plain')
+        ->send();
+
+    zs_json_response(true, 'ok');
+}
+
+zs_handle_any_form();
+
+function zs_is_paged_listing(): bool
+{
+    $object = Core_Page::instance()->object;
+
+    if (!is_object($object) || empty($object->page)) {
+        return false;
+    }
+
+    return $object instanceof Shop_Controller_Show
+        || $object instanceof Informationsystem_Controller_Show;
+}
+
+function zs_has_noncanonical_query(): bool
+{
+    foreach (array_keys($_GET ?? []) as $name) {
+        if (
+            in_array($name, ['filter', 'sorting', 'price_from', 'price_to', 'producer_id', 'on_page'], true)
+            || strpos($name, 'property_') === 0
+        ) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function zs_is_bot(): bool
+{
+    $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+
+    if ($userAgent === '') {
+        return false;
+    }
+
+    $bots = [
+        'rambler', 'googlebot', 'aport', 'yahoo', 'msnbot', 'turtle', 'mail.ru',
+        'omsktele', 'yetibot', 'picsearch', 'sape.bot', 'sape_context',
+        'gigabot', 'snapbot', 'alexa.com', 'megadownload.net', 'askpeter.info',
+        'igde.ru', 'ask.com', 'qwartabot', 'yanga.co.uk', 'scoutjet',
+        'similarpages', 'oozbot', 'shrinktheweb.com', 'aboutusbot',
+        'followsite.com', 'dataparksearch', 'google-sitemaps',
+        'appEngine-google', 'feedfetcher-google', 'liveinternet.ru',
+        'xml-sitemaps.com', 'agama', 'metadatalabs.com', 'h1.hrn.ru',
+        'googlealert.com', 'seo-rus.com', 'yaDirectBot', 'yandeG', 'yandex',
+        'Copyscape.com', 'AdsBot-Google', 'domaintools.com', 'Nigma.ru',
+        'bing.com', 'dotnetdotcom'
+    ];
+
+    return (bool) preg_match('/' . implode('|', array_map('preg_quote', $bots)) . '/i', $userAgent);
+}
+
+$siteAlias = Core_Entity::factory('Site', CURRENT_SITE)->getCurrentAlias()->name;
+$requestHost = strtolower((string) ($_SERVER['HTTP_HOST'] ?? $siteAlias));
+$requestHost = preg_replace('/:\d+$/', '', $requestHost);
+
+$currentUrl = 'https://' . $requestHost . ($_SERVER['REQUEST_URI'] ?? '/');
+$canonicalPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+$canonicalUrl = 'https://zelseptik.ru' . $canonicalPath;
+$isDevelopmentHost = $requestHost === 'dev.zelseptik.ru';
+$defaultImage = 'https://' . $siteAlias . '/assets/images/logo.svg';
+
+$ldURL = $currentUrl;
+$ldLogo = $defaultImage;
+
+$ldAddressCity = 'Москва';
+$ldAddressIndex = '124575';
+$ldAddressAddress = 'Зеленоград, корпус 2024';
+$ldName = 'Септики и автономные канализации с установкой под ключ - ЗЕЛСЕПТИК';
+$ldDescription = '⭐⭐⭐⭐⭐ Наша компания предлагает купить септики в Москве на официальном сайте ЗЕЛСЕПТИК. Здесь вы можете ознакомиться с актуальным прайс-листом и стоимостью установки.';
+$ldPhone = '8 499 964 6968';
+$ldEmail = 'zelceptik@yandex.ru';
+?>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+   <meta charset="<?php echo SITE_CODING?>">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport" />
+    <title><?php Core_Page::instance()->showTitle()?></title>
+    <meta name="description" content="<?php Core_Page::instance()->showDescription()?>" />
+    <meta name="keywords" content="<?php Core_Page::instance()->showKeywords()?>" />
+    <meta name="yandex-verification" content="cf61ec67fb43d80a" />
+    <meta name="DC.title" content="<?php Core_Page::instance()->showTitle()?>" />
+    <meta name="DC.description" content="<?php Core_Page::instance()->showDescription()?>" />
+    <meta name="DC.subject" content="<?php Core_Page::instance()->showKeywords()?>" />
+    <meta name="DC.format" content="text/html" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="<?php Core_Page::instance()->showTitle(); ?>" />
+    <meta property="og:description" content="<?php Core_Page::instance()->showDescription(); ?>" />
+    <meta property="og:url" content="<?php echo htmlspecialchars($currentUrl, ENT_QUOTES, SITE_CODING); ?>" />
+    <meta property="og:image" content="<?php echo htmlspecialchars($defaultImage, ENT_QUOTES, SITE_CODING); ?>" />
+    <meta name="format-detection" content="telephone=no">
+    <link rel="canonical" href="<?php echo htmlspecialchars($canonicalUrl, ENT_QUOTES, SITE_CODING); ?>" />
+
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Onest:wght@400;600;750;800&amp;family=Unbounded:wght@400;600;700;800&amp;display=swap" media="print" onload="this.media='all'" rel="stylesheet" />
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Onest:wght@400;600;750;800&amp;family=Unbounded:wght@400;600;700;800&amp;display=swap" rel="stylesheet" />
+    </noscript>
+
+    <script>window.yaContextCb=window.yaContextCb||[]</script>
+    <script src="https://yandex.ru/ads/system/context.js" async></script>
+
+    <?php if ($isDevelopmentHost) { ?>
+        <meta name="robots" content="noindex, nofollow">
+    <?php } elseif (zs_is_paged_listing() || zs_has_noncanonical_query()) { ?>
+        <meta name="robots" content="noindex, follow">
+    <?php } else { ?>
+        <meta name="robots" content="index, follow">
+    <?php } ?>
+
+    <!--style data-critical-css="true">
+  :root {
+    --color-bg-page: #f8fafc;
+    --color-text-main: #0f172a;
+    --color-bg-base: #ffffff;
+    --color-border-soft: rgba(226, 232, 240, 0.8);
+    --font-family-base: "Inter", system-ui, sans-serif;
+    --space-xl: 2rem;
+    --space-3xl: 4rem;
+    --radius-xl: 20px;
+    --shadow-md: 0 8px 20px rgba(15, 23, 42, 0.08);
+    --z-header: 300;
+    --transition-base: 0.25s ease;
+  }
+
+  /* critical CSS дальше */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-bg-page);
+  color: var(--color-text-main);
+  font-family: var(--font-family-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+  width: 100%;
+  border-bottom: 1px solid var(--color-border-soft);
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: background-color var(--transition-base),
+              border-color var(--transition-base),
+              box-shadow var(--transition-base),
+              backdrop-filter var(--transition-base);
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+  }
+}
+
+.calculator-card,
+.hero-calculator {
+  background-color: var(--color-bg-base);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  transition: border-color var(--transition-base),
+              box-shadow var(--transition-base);
+}
+
+.grid-blueprint {
+  background-size: 24px 24px;
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+}
+
+.premium-slogan {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+    </style-->
+
+    <link rel="icon" sizes="any" href="/assets/favicon/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <?php
+        Core_Page::instance()
+        ->fileTimestamp(TRUE)
+        ->prependCss('/assets/css/runtime.min.css')
+        ->prependCss('/assets/css/app.min.css')
+        ->showCss();
+//        $runtimeCssVersion = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/css/runtime.min.css') ?: 1;
+//        $appCssVersion = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/css/app.min.css') ?: 1;
+    ?>
+    <!--link rel="stylesheet" href="/assets/css/runtime.min.css?v=<?php //echo $runtimeCssVersion ?>">
+    <link rel="stylesheet" href="/assets/css/app.min.css?v=<?php //echo $appCssVersion ?>"-->
+
+    <script async="async" defer="defer" src="https://www.google.com/recaptcha/api.js?render=6LeGBsogAAAAACm0d6v7meUZwgPegL4J7V2CvsVD"></script>
+    <script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-7L7EBFG3BE"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-7L7EBFG3BE');
+    </script>
+</head>
+<body>
+   <?php
+        $oSwitcher = new Kad_Admin_Switcher();
+        $oSwitcher->execute();
+    // STICKY UPPER BAR WITH LIVE COUNTERS 
+        Core_Entity::factory('Document', '33')->Document_Versions->getCurrent()->execute();
+    ?>
+    <header class="site-header js-site-header">
+        <div class="site-header__container container">
+         <!-- Logo and brand -->
+          <a href="/" class="logo js-logo">
+            <div class="logo__icon-box">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 367.77 390.82" aria-hidden="true">
+                        <defs><style>.cls-1{fill:#096;}</style></defs>
+                        <g><g><path class="cls-1" d="M217.34,23.67l-19.75-18.33c-7.67-7.12-19.54-7.12-27.21,0L45.51,121.19,0,163.57v207.24c0,11.05,8.95,20,20,20h25.51v-206.74L184.11,54.69l138.15,129.28v161.34h-190.65l.99-119.58h101.58v45.52h-59.29v44.51h104.8v-135.54H87.1v35.51l-1,130.33h.01v44.76h281.66v-228.6L217.34,23.67Z"></path></g></g>
+                    </svg>
+            </div>
+            <div>
+              <div class="logo__title">
+                ЗЕЛ<span>СЕПТИК</span>
+              </div>
+              <div class="logo__sub">
+                Чистота без компромиссов
+              </div>
+            </div>
+          </a>  
+          <!-- Desktop Navigation Menu (Semantic ul/li) -->
+          <nav class="nav-menu" aria-label="Основная навигация">
+            <?php
+                $Structure_Controller_Show = new Structure_Controller_Show(
+                    Core_Entity::factory('Site', CURRENT_SITE));
+
+                $oCatalogMenu = Core::factory('Core_Xml_Entity')
+                    ->name('catalog_menu')
+                    ->addEntity(
+                        Core::factory('Core_Xml_Entity')
+                            ->name('title')
+                            ->value('Каталог')
+                    );
+
+                $aCatalogShops = array(
+                    1 => array('hint' => 'модели и бренды'),
+                    3 => array('hint' => 'для скважин'),
+                    5 => array('hint' => 'готовые решения')
+                );
+
+                foreach ($aCatalogShops as $iShopId => $aShopConfig)
+                {
+                    $oShop = Core_Entity::factory('Shop', $iShopId);
+
+                    if ($oShop->id)
+                    {
+                        !isset($iCatalogRootStructureId)
+                            && $iCatalogRootStructureId = $oShop->structure_id;
+
+                        $oCatalogMenu->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('shop')
+                                ->addEntity(
+                                    Core::factory('Core_Xml_Entity')
+                                        ->name('id')
+                                        ->value($oShop->id)
+                                )
+                                ->addEntity(
+                                    Core::factory('Core_Xml_Entity')
+                                        ->name('name')
+                                        ->value($oShop->name)
+                                )
+                                ->addEntity(
+                                    Core::factory('Core_Xml_Entity')
+                                        ->name('hint')
+                                        ->value($aShopConfig['hint'])
+                                )
+                                ->addEntity(
+                                    Core::factory('Core_Xml_Entity')
+                                        ->name('link')
+                                        ->value($oShop->Structure->getPath())
+                                )
+                        );
+                    }
+                }
+
+                isset($iCatalogRootStructureId)
+                    && $oCatalogMenu->addEntity(
+                        Core::factory('Core_Xml_Entity')
+                            ->name('root_structure_id')
+                            ->value($iCatalogRootStructureId)
+                    );
+
+                $oServicesMenu = Core::factory('Core_Xml_Entity')
+                    ->name('services_menu')
+                    ->addEntity(
+                        Core::factory('Core_Xml_Entity')
+                            ->name('title')
+                            ->value('Услуги')
+                    );
+
+                $aServicesInformationsystems = array(3, 7, 8, 9);
+
+                foreach ($aServicesInformationsystems as $iInformationsystemId)
+                {
+                    $oInformationsystem = Core_Entity::factory('Informationsystem', $iInformationsystemId);
+
+                    if ($oInformationsystem->id)
+                    {
+                        !isset($sServicesRootLink)
+                            && $sServicesRootLink = $oInformationsystem->Structure->getPath();
+
+                        $oServicesSection = Core::factory('Core_Xml_Entity')
+                            ->name('section')
+                            ->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('name')
+                                    ->value($oInformationsystem->name)
+                            )
+                            ->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('link')
+                                    ->value($oInformationsystem->Structure->getPath())
+                            );
+
+                        $oInformationsystem_Items = $oInformationsystem->Informationsystem_Items;
+                        $oInformationsystem_Items
+                            ->queryBuilder()
+                            ->where('informationsystem_items.active', '=', 1)
+                            ->clearOrderBy()
+                            ->orderBy('informationsystem_items.sorting')
+                            ->orderBy('informationsystem_items.name');
+
+                        $aInformationsystem_Items = $oInformationsystem_Items->findAll(FALSE);
+
+                        foreach ($aInformationsystem_Items as $oInformationsystem_Item)
+                        {
+                            $oServicesSection->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('item')
+                                    ->addEntity(
+                                        Core::factory('Core_Xml_Entity')
+                                            ->name('name')
+                                            ->value($oInformationsystem_Item->name)
+                                    )
+                                    ->addEntity(
+                                        Core::factory('Core_Xml_Entity')
+                                            ->name('link')
+                                            ->value($oInformationsystem->Structure->getPath() . $oInformationsystem_Item->getPath())
+                                    )
+                            );
+                        }
+
+                        $oServicesMenu->addEntity($oServicesSection);
+                    }
+                }
+
+                isset($sServicesRootLink)
+                    && $oServicesMenu->addEntity(
+                        Core::factory('Core_Xml_Entity')
+                            ->name('link')
+                            ->value($sServicesRootLink)
+                    );
+
+                $Structure_Controller_Show
+                    ->addEntity($oCatalogMenu)
+                    ->addEntity($oServicesMenu)
+                    ->xsl(
+                    Core_Entity::factory('Xsl')->getByName('ВерхнееМеню')
+                )
+                    ->menu(1)
+                    ->showShopGroups(TRUE)
+                    ->showInformationsystemGroups(TRUE)
+                    ->show();
+                ?> 
+          </nav>
+          
+          <!-- Right side: Contact info & CTA -->
+          <div class="site-header__actions">
+            <div class="site-header__contacts">
+              <a href="tel:+74999646968" class="site-header__phone">
+                <span class="icon icon--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.84.55 2.8.68A2 2 0 0 1 22 16.92z"/></svg></span>
+                <span>+7 (499) 964-69-68</span>
+              </a>
+              <span class="site-header__location">Зеленоград и Подмосковье</span>
+            </div>
+            
+            <button type="button" class="site-header__btn-callback js-btn-callback" data-title="Обратный звонок">
+              Заказать звонок
+            </button>
+
+            <!-- Mobile menu toggle -->
+            <button class="site-header__burger js-burger" type="button" aria-label="Открыть мобильное меню" aria-expanded="false" aria-controls="mobile-navigation">
+              <span class="icon icon--md" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></span>
+            </button>
+          </div>
+        </div>
+    </header>
+    <div class="mobile-drawer js-mobile-drawer" aria-hidden="true">
+        <div class="mobile-drawer__backdrop js-mobile-drawer-backdrop"></div>
+        
+        <div class="mobile-drawer__dialog" id="mobile-navigation" role="dialog" aria-modal="true" aria-label="Меню сайта">
+          <div>
+            <div class="mobile-drawer__header">
+              <span class="mobile-drawer__title">
+                <span class="mobile-drawer__title-dot"></span>
+                ЗЕЛСЕПТИК
+              </span>
+              <button class="mobile-drawer__close js-mobile-drawer-close" type="button" aria-label="Закрыть мобильное меню">
+                <span class="icon icon--md" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></span>
+              </button>
+            </div>
+
+            <!-- Prominent Mobile Tap-to-Call Widget -->
+            <div class="mobile-drawer__call-widget">
+              <span class="mobile-drawer__call-label">Срочный вызов инженера:</span>
+              <a href="tel:+74999646968" class="mobile-drawer__call-link">
+                <div class="mobile-drawer__call-icon-box">
+                  <span class="icon icon--md" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.84.55 2.8.68A2 2 0 0 1 22 16.92z"/></svg></span>
+                </div>
+                +7 (499) 964-69-68
+              </a>
+              <span class="mobile-drawer__call-desc">Зеленоград и вся Московская область</span>
+            </div>
+
+            <!-- Dynamically generated mobile links -->
+            <nav class="mobile-drawer__nav" aria-label="Мобильная навигация">
+              <ul class="mobile-drawer__list js-mobile-drawer-list">
+                               <?php
+                $Structure_Controller_Show = new Structure_Controller_Show(
+                    Core_Entity::factory('Site', CURRENT_SITE));
+
+                $Structure_Controller_Show->xsl(
+                    Core_Entity::factory('Xsl')->getByName('ВерхнееМенюМобильное')
+                )
+                    ->addEntity($oCatalogMenu)
+                    ->addEntity($oServicesMenu)
+                    ->menu(1)
+                    ->showShopGroups(TRUE)
+                    ->showInformationsystemGroups(TRUE)
+                    ->show();
+                ?>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Mobile drawer footer -->
+          <div class="mobile-drawer__footer">
+            <div class="mobile-drawer__footer-phone">
+              <span class="icon icon--sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.8a2 2 0 0 1-.45 2.11L8.07 9.9a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.32 1.84.55 2.8.68A2 2 0 0 1 22 16.92z"/></svg></span>
+              <span>+7 (499) 964-69-68</span>
+            </div>
+            <span class="mobile-drawer__footer-address">г. Зеленоград, ул. Летчицы Тарасовой, корпус 2024</span>
+            <button type="button" class="mobile-drawer__btn js-btn-callback" data-title="Обратный звонок">
+              Обратный звонок
+            </button>
+          </div>
+        </div>
+      </div>
+      <main>
+        <?php
+            $oPage = Core_Page::instance();
+            $oPageObject = $oPage->object;
+
+            if ($oPageObject instanceof Shop_Controller_Show) {
+                $oPageObject->seoFilters(TRUE);
+
+                // HostCMS changes root group 0 to FALSE when subgroups are enabled,
+                // then skips its standard SEO-filter XML block. Add root filters now.
+                if ($oPageObject->group === 0) {
+                    $oShop_Filter_Seos = $oPageObject->getEntity()->Shop_Filter_Seos;
+                    $oShop_Filter_Seos->queryBuilder()
+                        ->select('shop_filter_seos.*')
+                        ->where('shop_filter_seos.active', '=', 1)
+                        ->where('shop_filter_seos.shop_group_id', '=', 0);
+
+                    $aShop_Filter_Seos = $oShop_Filter_Seos->findAll(FALSE);
+
+                    if (count($aShop_Filter_Seos)) {
+                        $oPageObject->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('shop_filter_seos')
+                                ->addEntities($aShop_Filter_Seos)
+                        );
+                    }
+                }
+            }
+
+            $oPage->execute();
+        ?>  
+      </main>
+      
+      
+      <!-- COMPREHENSIVE FOOTER AREA -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="site-footer__grid">
+  <div class="site-footer__brand-col">
+    <?php Core_Entity::factory('Document', '34')->Document_Versions->getCurrent()->execute(); ?>
+  </div>
+
+  <div class="site-footer__col site-footer__col--nav">
+    <h4 class="site-footer__col-title">Разделы сайта</h4>
+    <ul class="site-footer__list js-footer-nav-list"><?php
+    $Structure_Controller_Show = new Structure_Controller_Show(
+      Core_Entity::factory('Site', CURRENT_SITE)
+    );
+
+    $Structure_Controller_Show->xsl(
+      Core_Entity::factory('Xsl')->getByName('НижнееМеню')
+    )
+      ->menu(1)
+      ->showShopGroups(false)
+      ->showInformationsystemGroups(false)
+      ->show();
+    ?></ul>
+  </div>
+
+  <div class="site-footer__col site-footer__col--brands">
+    <h4 class="site-footer__col-title">Популярное</h4>
+  <ul class="site-footer__list">
+    <li><a class="site-footer__link" href="/services/montazh-septikov/">Монтаж септиков</a></li>
+    <li><a class="site-footer__link" href="/obsluzhivanie-septikov/">Обслуживание</a></li>
+    <li><a class="site-footer__link" href="/remont-septikov/">Ремонт септиков</a></li>
+    <li><a class="site-footer__link" href="/septiki/topas/">ТОПАС</a></li>
+    <li><a class="site-footer__link" href="/septiki/yunilos-astra/">АСТРА</a></li>
+    <li><a class="site-footer__link" href="/septiki/lotos/">ЛОТОС</a></li>
+  </ul>
+  </div>
+
+  <div class="site-footer__col site-footer__col--contacts">
+    <?php Core_Entity::factory('Document', '36')->Document_Versions->getCurrent()->execute(); ?>
+  </div>
+</div>
+            <div class="site-footer__bottom">
+                <div class="site-footer__seo">
+                    <h5 class="site-footer__seo-title">Информационное примечание для клиентов компании ЗЕЛСЕПТИК</h5>
+                 <p class="site-footer__seo-desc">
+                    Все цены на автономные канализации (септики) и сопутствующие монтажные работы указаны с учетом текущих акций и дилерских скидок. Информация на сайте не является публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса РФ. Подбор оборудования производится индивидуально с учетом гидрогеологических условий, типа грунта (глина, песок, суглинок, плывун), перепада высот на участке и суточного объема водоотведения.
+                    </p>
+                </div>
+                <div class="site-footer__requisites">
+                    <span>&copy; 2014 — <?php echo date("Y")?> ИП Бурлик Роман Петрович</span>
+                    <span>ОРГНИП 321710000062482 | ИНН 712701283437</span>
+                    <span>Все права защищены. Копирование материалов запрещено.</span>
+                    <span><a href="https://zeldesign.ru" target="_blank" rel="nofollow">iD</a> | <a href="https://www.hostcms.ru" target="_blank" rel="noopener nofollow">HostCMS</a></span>
+                </div>
+            </div> 
+        </div>
+    </footer>
+      <!-- MODAL 1: CALLBACK REQUEST DIALOG -->
+      <div class="modal js-modal-callback hidden" aria-hidden="true">
+        <div class="modal__backdrop js-modal-backdrop"></div>
+        <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="callback-modal-title">
+          <button type="button" class="modal__close js-modal-close" aria-label="Закрыть окно">
+            ✕
+          </button>
+          <div class="modal__header">
+            <h3 class="modal__title" id="callback-modal-title">
+              <span class="js-modal-title-text">Обратный звонок</span>
+            </h3>
+            <p class="modal__subtitle">Оставьте контактный телефон. Специалист свяжется с вами в рабочее время.</p>
+          </div>
+
+          <form class="modal__form js-modal-form" method="post" data-lead-form="">
+              <input type="hidden" name="_zs_action" value="lead">
+              <input type="hidden" name="form_type" value="">
+            <div class="modal__input-group">
+              <label for="modal-callback-name" class="modal__label">Ваше имя:</label>
+              <input 
+                type="text" 
+                id="modal-callback-name"
+                placeholder="Константин" 
+                class="modal__input js-modal-input-name"
+                name="name"
+                autocomplete="name"
+              />
+            </div>
+
+            <div class="modal__input-group">
+              <label for="modal-callback-phone" class="modal__label">Номер телефона: <span>*</span></label>
+              <input 
+                type="tel" 
+                id="modal-callback-phone"
+                name="phone"
+                placeholder="+7 (999) 120-34-56" 
+                required 
+                class="modal__input js-modal-input-phone"
+                inputmode="tel"
+                autocomplete="tel"
+              />
+            </div>
+
+            <button type="submit" class="modal__submit">
+              <span>Заказать консультацию</span>
+              <span style="font-size: 14px;">➔</span>
+            </button>
+          </form>
+          <p class="modal__disclaimer">Отправляя форму, вы соглашаетесь на обработку персональных данных.</p>
+        </div>
+      </div>
+
+<div class="modal js-lead-modal hidden" aria-hidden="true">
+  <div class="modal__backdrop js-modal-backdrop"></div>
+
+  <div class="modal__dialog modal__dialog--large" role="dialog" aria-modal="true" aria-labelledby="lead-modal-title">
+    <button type="button" class="modal__close js-modal-close" aria-label="Закрыть окно">✕</button>
+
+    <div class="modal__header">
+      <h3 class="modal__title" id="lead-modal-title">
+        <span class="js-modal-title-text">Заявка на расчет</span>
+      </h3>
+
+      <p class="modal__subtitle">
+        Оставьте контакты. Специалист уточнит задачу и подготовит расчёт.
+      </p>
+    </div>
+
+    <div class="modal__rec-box js-modal-rec-box hidden"></div>
+
+    <form class="modal__form js-modal-form" method="post" data-lead-form="">
+      <input type="hidden" name="_zs_action" value="lead">
+      <input type="hidden" name="form_type" value="">
+      <input type="hidden" name="model" value="">
+      <input type="hidden" name="comment" value="">
+
+      <div class="modal__input-group">
+        <label for="lead-modal-name" class="modal__label">Ваше имя:</label>
+        <input type="text" id="lead-modal-name" name="name" placeholder="Иван" class="modal__input">
+      </div>
+
+      <div class="modal__input-group">
+        <label for="lead-modal-phone" class="modal__label">Номер телефона: <span>*</span></label>
+        <input type="tel" id="lead-modal-phone" name="phone" placeholder="+7 (999) 120-34-56" required class="modal__input">
+      </div>
+
+      <div class="modal__input-group">
+        <label for="lead-modal-bonus" class="modal__label">Что нужно рассчитать:</label>
+
+        <select id="lead-modal-bonus" name="bonus" class="modal__select js-modal-select-bonus">
+          <option value="Оборудование и монтаж">Оборудование и монтаж</option>
+          <option value="Только оборудование">Только оборудование</option>
+          <option value="Только монтаж">Только монтаж</option>
+          <option value="Обслуживание или ремонт">Обслуживание или ремонт</option>
+        </select>
+      </div>
+
+      <button type="submit" class="modal__submit">
+        <span>Отправить заявку</span>
+        <span class="modal__submit-arrow">➔</span>
+      </button>
+    </form>
+
+    <p class="modal__privacy">
+      ✓ Нажимая кнопку, вы даете согласие на обработку своих персональных данных.
+    </p>
+  </div>
+</div>
+
+
+<?php
+    $appJsVersion = @filemtime($_SERVER['DOCUMENT_ROOT'] . '/assets/js/app.js') ?: 1;
+?>
+<script type="module" src="/assets/js/app.js?v=<?php echo $appJsVersion ?>"></script>
+
+<?php
+    Core_Page::instance()
+    ->showJs('defer');
+?>
+
+
+<script>
+<?php if (!zs_is_bot()) { ?>
+window.addEventListener('load', function () {
+  setTimeout(function () {
+    var script = document.createElement('script');
+    script.defer = true;
+    script.src = '//cdn-rtb.sape.ru/rtb-b/js/381/2/122381.js';
+    document.head.appendChild(script);
+  }, 3000);
+});
+<?php } ?>
+</script>
+</body>
+</html>

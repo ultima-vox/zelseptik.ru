@@ -1,0 +1,4 @@
+.grid-blueprint::before
+{
+    z-index: 1;
+}
