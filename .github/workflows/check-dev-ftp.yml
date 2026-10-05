@@ -1,0 +1,41 @@
+name: Check dev FTP
+on:
+  workflow_dispatch:
+permissions: {}
+concurrency:
+  group: dev-ftp
+  cancel-in-progress: false
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check login and passive directory listing
+        env:
+          DEV_FTP_PASSWORD: ${{ secrets.DEV_FTP_PASSWORD }}
+        run: |
+          python3 - <<'PY'
+          import ftplib
+          import os
+          import sys
+
+          password = os.environ.get("DEV_FTP_PASSWORD")
+          if not password:
+              sys.exit("Set repository secret DEV_FTP_PASSWORD first.")
+          ftp = ftplib.FTP(timeout=30)
+          try:
+              ftp.connect("92.63.102.79", 21)
+              ftp.login("zelseptik", password)
+              ftp.set_pasv(True)
+              ftp.cwd("/")
+              print("FTP login successful; root:", ftp.pwd())
+              print("Root entries (read-only):")
+              for entry in sorted(ftp.nlst()):
+                  print(ascii(entry))
+              ftp.quit()
+          except Exception as error:
+              print("FTP check failed:", type(error).__name__)
+              sys.exit(1)
+          finally:
+              ftp.close()
+          PY
