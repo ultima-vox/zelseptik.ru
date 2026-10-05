@@ -13,6 +13,14 @@ without writes. `deploy` performs the same checks, backs up the actual current d
 files, then uploads the stage. Any source drift aborts; there is no force option.
 Already deployed files are accepted. Absence of a required directory aborts.
 
+Read-only run 37314881595 found the current main template differs from the original
+backup (SHA-256 696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb8979de8a).
+For this exact version, the workflow preserves all current bytes and inserts only
+the information-pages.css call into the single existing fileTimestamp/runtime/app/
+showCss chain. It does not overwrite the main template from the older repository.
+A changed hash or missing/ambiguous anchor aborts. The narrowly patched form is
+recognized on subsequent runs; no force option is added.
+
 Before any replacement a gzip tar backup is encrypted with OpenSSL AES-256-CBC,
 PBKDF2-HMAC-SHA256, 200000 iterations, a random salt, using the FTP password at the
 time of deployment. Decryption is checked locally; the encrypted backup is uploaded

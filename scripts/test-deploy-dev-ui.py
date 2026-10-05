@@ -59,6 +59,12 @@ class DeploymentTests(unittest.TestCase):
             target.write_bytes(('new ' + path).encode())
             if index >= 2:
                 self.before[path] = ('old ' + path).encode()
+                if path == module.TEMPLATE1:
+                    self.before[path] = (b'dev settings must remain\r\n'
+                        b'        ->fileTimestamp(TRUE)\r\n'
+                        b"        ->prependCss('/assets/css/runtime.min.css')\r\n"
+                        b"        ->prependCss('/assets/css/app.min.css')\r\n"
+                        b'        ->showCss();\r\n')
                 originals.append({'path': path, 'sha256': module.digest(self.before[path])})
         (self.source / 'docs').mkdir()
         (self.source / 'docs/ui-originals.json').write_text(json.dumps({'files': originals}))
@@ -83,7 +89,11 @@ class DeploymentTests(unittest.TestCase):
         self.assertTrue(self.ftp.writes[0].startswith('.codex-backups/'))
         self.assertEqual(self.ftp.writes[1:], list(module.FILES))
         for path in module.FILES:
-            self.assertEqual(self.ftp.files[path], (self.source / path).read_bytes())
+            if path == module.TEMPLATE1:
+                self.assertIn(b'dev settings must remain', self.ftp.files[path])
+                self.assertEqual(self.ftp.files[path].count(b'/assets/css/information-pages.css'), 1)
+            else:
+                self.assertEqual(self.ftp.files[path], (self.source / path).read_bytes())
         self.ftp.writes.clear()
         self.execute('deploy')
         self.assertEqual(self.ftp.writes, [])
@@ -114,6 +124,27 @@ class DeploymentTests(unittest.TestCase):
             manifest = json.load(archive.extractfile('manifest.json'))
             self.assertFalse(manifest[module.FILES[0]]['present'])
             self.assertEqual(archive.extractfile(module.FILES[2]).read(), b'old source')
+
+    def test_known_dev_template_is_patched_without_overwriting_other_changes(self):
+        current = self.before[module.TEMPLATE1] + b'additional current dev configuration'
+        self.ftp.files[module.TEMPLATE1] = current
+        with patch.object(module, 'DEV_TEMPLATE1_SHA', module.digest(current)):
+            self.execute('deploy')
+            deployed = self.ftp.files[module.TEMPLATE1]
+            self.assertIn(b'additional current dev configuration', deployed)
+            self.assertEqual(deployed.replace(
+                b"        ->css('/assets/css/information-pages.css')\r\n", b'', 1), current)
+            self.ftp.writes.clear()
+            self.execute('deploy')
+            self.assertEqual(self.ftp.writes, [])
+
+    def test_known_hash_with_missing_anchor_is_rejected(self):
+        current = b'changed layout without expected CSS chain'
+        self.ftp.files[module.TEMPLATE1] = current
+        with patch.object(module, 'DEV_TEMPLATE1_SHA', module.digest(current)):
+            with self.assertRaises(RuntimeError):
+                self.execute('deploy')
+        self.assertEqual(self.ftp.writes, [])
 
 
 if __name__ == '__main__':
