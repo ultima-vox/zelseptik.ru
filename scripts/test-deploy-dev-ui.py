@@ -87,7 +87,7 @@ class DeploymentTests(unittest.TestCase):
     def test_verified_previous_stage_can_be_updated(self):
         path = 'assets/css/information-pages.css'
         self.ftp.files[path] = b'previous verified UI stage'
-        with patch.dict(module.PREVIOUS_STAGE_HASHES, {path: module.digest(self.ftp.files[path])}):
+        with patch.dict(module.PREVIOUS_STAGE_HASHES, {path: (module.digest(self.ftp.files[path]),)}):
             self.execute('deploy')
         self.assertEqual(self.ftp.files[path], (self.source / path).read_bytes())
 

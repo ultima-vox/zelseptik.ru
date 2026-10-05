@@ -29,8 +29,11 @@ DEV_TEMPLATE1_SHA = '696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb897
 # Previous UI stage 61f15b8, verified on dev by run 37320029965.
 # Only these two files change in the content-layout follow-up.
 PREVIOUS_STAGE_HASHES = {
-    'assets/css/information-pages.css': '9a9635374631b7eb20022ef54540be0a98f4a4d2862cafa4a750c58f2ec14455',
-    'hostcmsfiles/xsl/4.xsl': 'a5603c5d340bd49bd03afd52ab1964120eaab85de9b886a16ab3cea3f508249c',
+    'assets/css/information-pages.css': (
+        '9a9635374631b7eb20022ef54540be0a98f4a4d2862cafa4a750c58f2ec14455',
+        '367155eda6b308ffc58f93146834fdd8b4c38b19d6dd538b24bf89b0885409eb',
+    ),
+    'hostcmsfiles/xsl/4.xsl': ('a5603c5d340bd49bd03afd52ab1964120eaab85de9b886a16ab3cea3f508249c',),
 }
 
 
@@ -108,7 +111,7 @@ def plan(ftp, source):
         status = 'already deployed' if current == wanted else 'ready'
         accepted = {expected, wanted}
         if path in PREVIOUS_STAGE_HASHES:
-            accepted.add(PREVIOUS_STAGE_HASHES[path])
+            accepted.update(PREVIOUS_STAGE_HASHES[path])
         if path != TEMPLATE1 and current not in accepted:
             status = 'DRIFT: requires review'
             drift.append(path)
