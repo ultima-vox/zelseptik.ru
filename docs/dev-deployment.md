@@ -4,14 +4,17 @@
 isolated dev FTP account: 92.63.102.79:21, zelseptik, root /. It uses the existing
 repository secret `DEV_FTP_PASSWORD`. No production credentials are accepted.
 
-The source is pinned to UI stage commit `61f15b82affa6ace7bf67c4ad48b86894a50ab97`
-(PR #6). No other repository files, archive exports or database rows are deployed.
+The source is pinned to reviewed content-layout commit
+`0c4906e6a3c8cb46287425a6a80d516892ea56ed` (PR #12), based on the first UI
+stage (PR #6). No other repository files, archive exports or database rows are deployed.
 The eight paths are explicitly listed in `scripts/deploy-dev-ui.py`.
 
 Run Actions → Deploy dev UI → Run workflow. `inspect` reads current file hashes
 without writes. `deploy` performs the same checks, backs up the actual current dev
 files, then uploads the stage. Any source drift aborts; there is no force option.
-Already deployed files are accepted. Absence of a required directory aborts.
+Already deployed files are accepted. The two exact previous-stage hashes for
+information-pages.css and XSL 4 are accepted for this update; unknown edits abort.
+After the successful initial deployment, only these two UI files need replacing. Absence of a required directory aborts.
 
 Read-only run 37314881595 found the current main template differs from the original
 backup (SHA-256 696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb8979de8a).
@@ -68,3 +71,13 @@ CMS/OPcache may retain previous output; the workflow does not invent a cache-cle
 API or purge cache folders. If the page still uses old code, use the existing CMS
 administration/server process to diagnose it. Root cleanup is a separate operation;
 this workflow does not move or delete unrelated files.
+
+## Verified initial deployment
+
+Run 37320029965 on 2026-10-05 successfully uploaded and verified all eight files.
+Backup: `.ui-deploy-backups/service-ui-a8206fa8fc2e482ebc34c81c378b9fad.tar.gz.enc`,
+SHA-256 `eb13027c65d5820370bdce6c903653d0577c8397f87fa503b44aa484a82ac451`.
+The dev main template after the narrow CSS insertion has SHA-256
+`75c23f701730c078768fad3095da3cedbdec932994736ec439772b91b4073b26`.
+Browser inspection confirmed the service hero and transformed price table; the
+container and step-grid follow-up still awaits deployment and visual acceptance.
