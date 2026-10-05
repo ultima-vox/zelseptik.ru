@@ -388,95 +388,353 @@
 							<xsl:otherwise>
 								<xsl:attribute name="class">thumbs inactive</xsl:attribute>
 								<span id="comment_likes_{@id}"><xsl:value-of select="rate/@likes" /></span>
-								<sp…6449 tokens truncated…0443пам с первым экраном. Старые классы
-`area-text`, `page-bl`, `txt`, `punkt-fl-row`, `fl-row`, `col`, `punkt-bl` сохранены.
-Блок этапов использует одну колонку на мобильном экране, две от 768 px и четыре
-от 1024 px; подписи и изображения поступают из прежнего HTML инфосистемы.
-Абзацы и списки ограничены существующим `--container-narrow`, таблицы сохраняют
-доступную ширину контейнера. Общие стили сайта не переопределяются.
-Первый экран применяется ко всем разделам с общим XSL 4, включая статьи; XSL 280
-городов в этом этапе не изменяется.
+								<span class="inner_thumbs">
+									<a alt="&labelLike;"></a>
+									<span class="rate" id="comment_rate_{@id}"><xsl:value-of select="rate" /></span>
+									<a alt="&labelDislike;"></a>
+								</span>
+								<span id="comment_dislikes_{@id}"><xsl:value-of select="rate/@dislikes" /></span>
+							</xsl:otherwise>
+						</xsl:choose>
+					</span>
+				</xsl:if>
 
-Форма имеет видимые подписи, автозаполнение, телефонный тип поля и область результата.
-Она использует существующий `data-lead-form` и обработчик в макете 1:
-`_zs_action=lead`, reCAPTCHA, `form_type` с названием услуги, `link` и прежнее поле
-`city_service`. Никакой новый обработчик или API не создаётся. Обещание обратного
-звонка за 15 минут заменено нейтральным пояснением без нового обещания сроков.
+				<img src="/images/calendar.png" /> <span><xsl:value-of select="datetime"/></span>
 
-Старый блок цены состоит из таблицы названий и независимых колонок Swiper.
-Модуль `information.js` объединяет их в таблицу с заголовками столбцов и строк;
-цены и ссылки берёт из текущей HTML-разметки CMS. На узком экране прокручивается
-только таблица. Если количество строк не совпадает, отсутствует заголовок или
-есть объединённые ячейки, источник остаётся целым. Без JS остаётся исходный блок.
-Некорректные и повторные вызовы `new Swiper('#swiper-price. swiper', ...)` убраны.
+				<xsl:if test="/informationsystem/show_add_comments/node()
+					and ((/informationsystem/show_add_comments = 1 and /informationsystem/siteuser_id > 0)
+					or /informationsystem/show_add_comments = 2)">
+				<span class="red" onclick="$('.comment_reply').hide('slow');$('#cr_{@id}').toggle('slow')">&labelReply;</span></xsl:if>
 
-В макете 3 исправлено присваивание `$iItem = 157`: квиз вызывается только при
-`$iItem === 157` (существующий элемент «Подбор септиков»), переменные инициализированы.
-Текущий runtime CSS скрывает `.area-quiz-new`, поэтому видимый квиз на странице
-подбора этим исправлением не восстанавливается. UX самого подбора — отдельная задача.
+				<span class="red"><a href="{/informationsystem/informationsystem_item/url}#comment{@id}" title="&labelCommentLink;">#</a></span>
+			</p>
+		</div>
 
-## Изменения для переноса
+		<!-- Only for authorized users -->
+		<xsl:if test="/informationsystem/show_add_comments/node() and ((/informationsystem/show_add_comments = 1 and /informationsystem/siteuser_id > 0) or /informationsystem/show_add_comments = 2)">
+			<div class="comment_reply" id="cr_{@id}">
+				<xsl:call-template name="AddCommentForm">
+					<xsl:with-param name="id" select="@id"/>
+				</xsl:call-template>
+			</div>
+		</xsl:if>
 
-| Файл | Существующая запись / назначение |
-| --- | --- |
-| `hostcmsfiles/xsl/13.xsl` | XSL 13 «СписокУслуг» |
-| `hostcmsfiles/xsl/4.xsl` | XSL 4 «ВыводЕдиницыИнформационнойСистемы» |
-| `templates/template3/template.htm` | Макет 3, условие квиза |
-| `templates/template3/script.js` | Макет 3, удаление некорректного инициализатора |
-| `templates/template1/template.htm` | Макет 1, подключение дополнительного CSS через `css()` перед `showCss()` |
-| `assets/css/information-pages.css` | Только адаптация инфосистем и фокус карточок; производственные bundles сохранены |
-| `assets/js/modules/information.js`, `assets/js/app.js` | Обработка существующей таблицы, импорт в текущий модуль приложения |
+		<!-- Child Reviews -->
+		<xsl:if test="count(comment)">
+			<div class="comment_sub">
+				<xsl:apply-templates select="comment"/>
+			</div>
+		</xsl:if>
+	</xsl:if>
+</xsl:template>
 
-ID, контроллеры, магазины, инфосистемы и свойства не заменяются. Для подключения
-CSS использован [официальный способ HostCMS](https://www.hostcms.ru/documentation/step-by-step/templates/template/).
-Оригиналы изменённых исходников сохранены в `archive/2026-10-05/ui-baseline/` и
-учтены в `docs/ui-originals.json`. Это источник для отката; архив на сервер не переносить.
+<!-- AddCommentForm Template -->
+<xsl:template name="AddCommentForm">
+	<xsl:param name="id" select="0"/>
 
-## Проверено
 
-- `python scripts/verify-baseline.py`: оригиналы и действующие неизменённые CSS/JS.
-- `python scripts/check-information-ui.py` (lxml): XML/XSL-преобразование, H1,
-  фильтрация групп, пагинация, ссылки, сохранение CMS-текста, хлебные крошки,
-  резервные заголовки и изображения, поля формы.
-- `node --input-type=module --check` для изменённых JS.
-- `tests/information-tables.cjs` (jsdom): соответствие цены строке услуги,
-  сохранение ссылок и ID, семантика, повторная инициализация, неполные данные,
-  отсутствие изменений за пределами `.information-detail`.
-- Проверена аналогичная таблица из публичного текста элемента 187 в бекапе.
+	<xsl:variable name="subject">
+		<xsl:if test="/informationsystem/comment/parent_id/node() and /informationsystem/comment/parent_id/node() and /informationsystem/comment/parent_id= $id">
+			<xsl:value-of select="/informationsystem/comment/subject"/>
+		</xsl:if>
+	</xsl:variable>
+	<xsl:variable name="email">
+		<xsl:if test="/informationsystem/comment/email/node() and /informationsystem/comment/parent_id/node() and /informationsystem/comment/parent_id= $id">
+			<xsl:value-of select="/informationsystem/comment/email"/>
+		</xsl:if>
+	</xsl:variable>
+	<xsl:variable name="phone">
+		<xsl:if test="/informationsystem/comment/phone/node() and /informationsystem/comment/parent_id/node() and /informationsystem/comment/parent_id= $id">
+			<xsl:value-of select="/informationsystem/comment/phone"/>
+		</xsl:if>
+	</xsl:variable>
+	<xsl:variable name="text">
+		<xsl:if test="/informationsystem/comment/text/node() and /informationsystem/comment/parent_id/node() and /informationsystem/comment/parent_id= $id">
+			<xsl:value-of select="/informationsystem/comment/text"/>
+		</xsl:if>
+	</xsl:variable>
+	<xsl:variable name="name">
+		<xsl:if test="/informationsystem/comment/author/node() and /informationsystem/comment/parent_id/node() and /informationsystem/comment/parent_id= $id">
+			<xsl:value-of select="/informationsystem/comment/author"/>
+		</xsl:if>
+	</xsl:variable>
 
-Для запуска DOM-теста установите jsdom в отдельный временный каталог:
+	<div class="comment">
 
-```sh
-npm install --prefix /tmp/zelseptik-ui-check --no-audit --no-fund jsdom
-NODE_PATH=/tmp/zelseptik-ui-check/node_modules node tests/information-tables.cjs
-```
+		<form action="{/informationsystem/informationsystem_item/url}" name="comment_form_0{$id}" method="post">
+			<!-- Only for unauthorized users -->
+			<xsl:if test="/informationsystem/siteuser_id = 0">
 
-## Проверка на dev и оставшаяся приёмка
+				<div class="row">
+					<div class="caption">&labelCommentName;</div>
+					<div class="field">
+						<input type="text" size="70" name="author" value="{$name}"/>
+					</div>
+				</div>
 
-Первый этап из коммита `61f15b82affa6ace7bf67c4ad48b86894a50ab97` установлен
-на изолированный dev. Успешный запуск Actions: `37320029965`, восемь файлов
-сверены после загрузки, сохранена зашифрованная резервная копия.
-Макет 1 на dev сохранён целиком: в фактическую версию добавлено только подключение
-CSS, поэтому её хеш отличается от экспортированной версии в этой ветке.
+				<div class="row">
+					<div class="caption">&labelCommentEmail;</div>
+					<div class="field">
+						<input id="email{$id}" type="text" size="70" name="email" value="{$email}" />
+						<div id="error_email{$id}"></div>
+					</div>
+				</div>
 
-На странице `/montazh-septika/montazh-septika-topas/` браузер подтвердил новый
-первый экран, форму и преобразованную таблицу: 6 строк, 8 заголовочных ячеек.
-Проверка выявила отсутствие контейнера у старого содержимого и сетки этапов;
-описанное выше исправление подготовлено отдельно и ещё требует установки.
-Заявки не отправлялись. Мобильная визуальная приёмка не выполнена.
+				<div class="row">
+					<div class="caption">&labelCommentPhone;</div>
+					<div class="field">
+						<input type="text" size="70" name="phone" value="{$phone}"/>
+					</div>
+				</div>
+			</xsl:if>
 
-После установки исправления проверить на dev:
+			<div class="row">
+				<div class="caption">&labelCommentSubject;</div>
+				<div class="field">
+					<input type="text" size="70" name="subject" value="{$subject}"/>
+				</div>
+			</div>
 
-1. `/services/`, подбор, одна обычная услуга, монтаж/обслуживание/ремонт и статья,
-   использующие XSL 4; случаи с группой и без фото.
-2. Ширины 375, 768, 1024, 1440 px: переносы H1, форма, изображение, контент,
-   горизонтальная прокрутка внутри таблицы и отсутствие прокрутки всей страницы.
-3. Реальную отправку тестовой заявки: услуга в письме, валидация, reCAPTCHA,
-   успешный и ошибочный результат. В этой среде заявки не отправлялись.
-4. Шесть утверждённых страниц после добавления CSS и JS: новый CSS ограничен
-   отдельными селекторами, а модуль таблиц — `.information-detail`, но сравнение
-   скриншотов ещё требуется.
-5. Перенести только перечисленные изменения через обычный процесс работы с CMS,
-   проверить сброс её кеша и версионирование ресурсов; не разворачивать экспорт целиком.
+			<div class="row">
+				<div class="caption">&labelCommentText;</div>
+				<div class="field">
+					<textarea name="text" cols="68" rows="5" class="mceEditor"><xsl:value-of select="$text"/></textarea>
+				</div>
+			</div>
 
-Этот этап не считается завершением унификации всего сайта и не опубликован на production.
+			<div class="row">
+				<div class="caption">&labelGrade;</div>
+				<div class="field stars">
+					<select name="grade">
+						<option value="1">Poor</option>
+						<option value="2">Fair</option>
+						<option value="3">Average</option>
+						<option value="4">Good</option>
+						<option value="5">Excellent</option>
+					</select>
+				</div>
+			</div>
+
+			<!-- Showing captcha -->
+			<xsl:if test="//captcha_id != 0 and /informationsystem/siteuser_id = 0">
+				<div class="row">
+					<div class="caption"></div>
+					<div class="field">
+						<img id="comment_{$id}" class="captcha" src="/captcha.php?id={//captcha_id}{$id}&amp;height=30&amp;width=100" title="&labelCaptchaId;" name="captcha"/>
+
+						<div class="captcha">
+							<img src="/images/refresh.png" /> <span onclick="$('#comment_{$id}').updateCaptcha('{//captcha_id}{$id}', 30); return false">&labelUpdateCaptcha;</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="caption">
+						&labelCaptchaId;<sup><font color="red">*</font></sup>
+					</div>
+					<div class="field">
+						<input type="hidden" name="captcha_id" value="{//captcha_id}{$id}"/>
+						<input type="text" name="captcha" size="15"/>
+					</div>
+				</div>
+			</xsl:if>
+
+			<xsl:if test="$id != 0">
+				<input type="hidden" name="parent_id" value="{$id}"/>
+			</xsl:if>
+
+			<div class="row">
+				<div class="caption"></div>
+				<div class="field">
+					<input id="submit_email{$id}" type="submit" name="add_comment" value="&labelPublish;" class="button" />
+				</div>
+			</div>
+		</form>
+	</div>
+</xsl:template>
+
+<!-- Show property item -->
+<xsl:template match="property_value">
+	<xsl:variable name="property_id" select="property_id" />
+	<xsl:variable name="property" select="/informationsystem/informationsystem_item_properties/property[@id=$property_id]" />
+	<tr>
+		<th>
+			<xsl:value-of select="$property/name"/>
+		</th>
+		<td>
+			<xsl:choose>
+				<xsl:when test="$property/type = 2">
+					<a href="{/informationsystem/informationsystem_item/dir}{file}">&labelDownloadFile;</a>
+				</xsl:when>
+				<xsl:when test="$property/type = 5">
+					<a href="{informationsystem_item/url}"><xsl:value-of select="informationsystem_item/name"/></a>
+				</xsl:when>
+				<xsl:when test="$property/type = 7">
+					<input type="checkbox" disabled="disabled">
+						<xsl:if test="value = 1">
+							<xsl:attribute name="checked">checked</xsl:attribute>
+						</xsl:if>
+					</input>
+				</xsl:when>
+				<xsl:when test="$property/type = 12">
+					<a href="{shop_item/url}"><xsl:value-of select="shop_item/name"/></a>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:value-of disable-output-escaping="yes" select="value"/>
+				</xsl:otherwise>
+			</xsl:choose>
+		</td>
+	</tr>
+</xsl:template>
+
+<!-- Pagination -->
+<xsl:template name="for">
+	<xsl:param name="i" select="0"/>
+	<xsl:param name="prefix">page</xsl:param>
+	<xsl:param name="link"/>
+	<xsl:param name="limit"/>
+	<xsl:param name="page"/>
+	<xsl:param name="items_count"/>
+	<xsl:param name="visible_pages"/>
+
+	<xsl:variable name="n" select="$items_count div $limit"/>
+
+	<!-- Store in the variable $group ID of the current group -->
+	<xsl:variable name="group" select="/informationsystem/group"/>
+
+	<!-- Links before current -->
+	<xsl:variable name="pre_count_page">
+		<xsl:choose>
+			<xsl:when test="$page &gt; ($n - (round($visible_pages div 2) - 1))">
+				<xsl:value-of select="$visible_pages - ($n - $page)"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:value-of select="round($visible_pages div 2) - 1"/>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+
+	<!-- Links after current -->
+	<xsl:variable name="post_count_page">
+		<xsl:choose>
+			<xsl:when test="0 &gt; $page - (round($visible_pages div 2) - 1)">
+				<xsl:value-of select="$visible_pages - $page"/>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:choose>
+					<xsl:when test="round($visible_pages div 2) = ($visible_pages div 2)">
+						<xsl:value-of select="$visible_pages div 2"/>
+					</xsl:when>
+					<xsl:otherwise>
+						<xsl:value-of select="round($visible_pages div 2) - 1"/>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:otherwise>
+		</xsl:choose>
+	</xsl:variable>
+
+	<xsl:if test="$items_count &gt; $limit and $n &gt; $i">
+		<!-- Pagination item -->
+		<xsl:if test="$i != $page">
+			<!-- Определяем адрес тэга -->
+			<xsl:variable name="tag_link">
+				<xsl:choose>
+
+					<xsl:when test="count(/informationsystem/tag)">tag/<xsl:value-of select="/informationsystem/tag/urlencode"/>/</xsl:when>
+
+					<xsl:otherwise></xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+
+			<!-- Set $link variable -->
+			<xsl:variable name="number_link">
+
+				<xsl:choose>
+
+					<xsl:when test="$i != 0">
+					<xsl:value-of select="$prefix"/>-<xsl:value-of select="$i + 1"/>/</xsl:when>
+
+					<xsl:otherwise></xsl:otherwise>
+				</xsl:choose>
+			</xsl:variable>
+
+			<!-- First pagination item -->
+			<xsl:if test="$page - $pre_count_page &gt; 0 and $i = 0">
+				<a href="{$link}" class="page_link" style="text-decoration: none;">←</a>
+			</xsl:if>
+
+			<xsl:choose>
+				<xsl:when test="$i &gt;= ($page - $pre_count_page) and ($page + $post_count_page) &gt;= $i">
+
+					<!-- Pagination item -->
+					<a href="{$link}{$tag_link}{$number_link}" class="page_link">
+						<xsl:value-of select="$i + 1"/>
+					</a>
+				</xsl:when>
+				<xsl:otherwise></xsl:otherwise>
+			</xsl:choose>
+
+			<!-- Last pagination item -->
+			<xsl:if test="$i+1 &gt;= $n and $n &gt; ($page + 1 + $post_count_page)">
+				<xsl:choose>
+					<xsl:when test="$n &gt; round($n)">
+						<!-- Last pagination item -->
+						<a href="{$link}{$prefix}-{round($n+1)}/" class="page_link" style="text-decoration: none;">→</a>
+					</xsl:when>
+					<xsl:otherwise>
+						<a href="{$link}{$prefix}-{round($n)}/" class="page_link" style="text-decoration: none;">→</a>
+					</xsl:otherwise>
+				</xsl:choose>
+			</xsl:if>
+		</xsl:if>
+
+		<!-- Current pagination item -->
+		<xsl:if test="$i = $page">
+			<span class="current">
+				<xsl:value-of select="$i+1"/>
+			</span>
+		</xsl:if>
+
+		<!-- Recursive Template -->
+		<xsl:call-template name="for">
+			<xsl:with-param name="i" select="$i + 1"/>
+			<xsl:with-param name="prefix" select="$prefix"/>
+			<xsl:with-param name="link" select="$link"/>
+			<xsl:with-param name="limit" select="$limit"/>
+			<xsl:with-param name="page" select="$page"/>
+			<xsl:with-param name="items_count" select="$items_count"/>
+			<xsl:with-param name="visible_pages" select="$visible_pages"/>
+		</xsl:call-template>
+	</xsl:if>
+</xsl:template>
+
+<!-- Declension of the numerals -->
+<xsl:template name="declension">
+
+	<xsl:param name="number" select="number"/>
+
+	<!-- Nominative case / Именительный падеж -->
+	<xsl:variable name="nominative"><xsl:text>&labelNominative;</xsl:text></xsl:variable>
+
+	<!-- Genitive singular / Родительный падеж, единственное число -->
+	<xsl:variable name="genitive_singular"><xsl:text>&labelGenitiveSingular;</xsl:text></xsl:variable>
+
+	<xsl:variable name="genitive_plural"><xsl:text>&labelGenitivePlural;</xsl:text></xsl:variable>
+	<xsl:variable name="last_digit"><xsl:value-of select="$number mod 10"/></xsl:variable>
+	<xsl:variable name="last_two_digits"><xsl:value-of select="$number mod 100"/></xsl:variable>
+
+	<xsl:choose>
+		<xsl:when test="$last_digit = 1 and $last_two_digits != 11">
+			<xsl:value-of select="$nominative"/>
+		</xsl:when>
+		<xsl:when test="$last_digit = 2 and $last_two_digits != 12
+			or $last_digit = 3 and $last_two_digits != 13
+			or $last_digit = 4 and $last_two_digits != 14">
+			<xsl:value-of select="$genitive_singular"/>
+		</xsl:when>
+		<xsl:otherwise>
+			<xsl:value-of select="$genitive_plural"/>
+		</xsl:otherwise>
+	</xsl:choose>
+</xsl:template>
+</xsl:stylesheet>

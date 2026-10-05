@@ -30,6 +30,10 @@ def check():
     assert detail.xpath('//h1')[0].text == 'Подбор под условия участка'
     assert detail.xpath('//a[@href="/contacts/"]')
     assert 'Исходный текст CMS' in detail.text_content()
+    body = detail.xpath('//div[@class="information-detail__body container"]')[0]
+    assert body.xpath('./section[@class="section area-text"]/div[@class="page-bl"]/div[@class="txt"]/h2')[0].text == 'Состав работ'
+    assert body.xpath('.//a/@href') == ['/contacts/']
+    assert not body.xpath('.//form | .//h1 | .//nav')
     assert detail.xpath('//img[@class="information-detail__image"]/@src') == ['/images/service.jpg']
     form = detail.xpath('//form[@data-lead-form]')[0]
     assert form.get('method') == 'post'
