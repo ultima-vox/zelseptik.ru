@@ -34,6 +34,84 @@
   min-height: 48px;
 }
 
+/* Keep the existing CMS HTML inside the same container as the hero.
+   These rules do not affect approved pages or the global CTA/footer. */
+.information-detail__body {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.information-detail__body .txt > :is(p, ul, ol, blockquote) {
+  max-width: var(--container-narrow);
+}
+
+.information-detail__body .txt :is(ul, ol) {
+  margin-block: var(--space-lg);
+  padding-left: var(--space-lg);
+}
+
+.information-detail__body .txt ul {
+  list-style: disc;
+}
+
+.information-detail__body .txt ol {
+  list-style: decimal;
+}
+
+.information-detail__body .txt li + li {
+  margin-top: var(--space-sm);
+}
+
+.information-detail__body .txt img {
+  max-width: 100%;
+  height: auto;
+}
+
+.information-detail__body .punkt-fl-row > .fl-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.information-detail__body .punkt-fl-row > .fl-row > .col {
+  width: auto;
+  min-width: 0;
+}
+
+.information-detail__body .punkt-bl {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  height: 100%;
+  padding: var(--space-lg);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-xl);
+  background: var(--color-bg-base);
+}
+
+.information-detail__body .punkt-bl > img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.information-detail__body .punkt-bl > p {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .information-detail__body .punkt-fl-row > .fl-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .information-detail__body .punkt-fl-row > .fl-row {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 .information-detail .tbl-wrap > p {
   padding-inline: var(--space-lg);
 }

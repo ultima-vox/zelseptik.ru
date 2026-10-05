@@ -77,7 +77,9 @@
                     </div>
                 </div>
             </section>
-            <xsl:apply-templates select="informationsystem_item"/>
+            <div class="information-detail__body container">
+                <xsl:apply-templates select="informationsystem_item"/>
+            </div>
         </div>
     </xsl:template>
 
