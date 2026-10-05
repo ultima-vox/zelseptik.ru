@@ -6,6 +6,7 @@ import io
 import json
 import os
 from pathlib import Path
+import re
 import subprocess
 import tarfile
 import uuid
@@ -60,27 +61,24 @@ def patch_current_template(current, original_sha):
     if current is None:
         raise RuntimeError('Main dev template is missing')
     accepted = {original_sha, DEV_TEMPLATE1_SHA}
-    css_call = b"        ->css('/assets/css/information-pages.css')"
-    anchors = []
-    for newline in (b'\r\n', b'\n'):
-        anchor = newline.join((b'        ->fileTimestamp(TRUE)',
-                               b"        ->prependCss('/assets/css/runtime.min.css')",
-                               b"        ->prependCss('/assets/css/app.min.css')",
-                               b'        ->showCss();'))
-        replacement = anchor.replace(newline + b'        ->showCss();',
-                                     newline + css_call + newline + b'        ->showCss();')
-        anchors.append((anchor, replacement, newline))
+    css_call = b"->css('/assets/css/information-pages.css')"
+    # Match an active chained call on its own line, excluding commented examples.
+    pattern = rb'(?m)^([ \t]*)->showCss\(\);[ \t]*(\r?\n|$)'
     if digest(current) in accepted:
-        matches = [(anchor, replacement) for anchor, replacement, _ in anchors
-                   if current.count(anchor) == 1]
+        matches = list(re.finditer(pattern, current))
         if len(matches) != 1 or b'/assets/css/information-pages.css' in current:
             raise RuntimeError('Main template CSS anchor is ambiguous; no replacement')
-        return current.replace(*matches[0], 1)
-    for anchor, replacement, _ in anchors:
-        if current.count(replacement) == 1:
-            restored = current.replace(replacement, anchor, 1)
-            if digest(restored) in accepted:
-                return current  # already patched, with all dev settings intact
+        match = matches[0]
+        newline = match.group(2) or b'\n'
+        insertion = match.group(1) + css_call + newline
+        return current[:match.start()] + insertion + current[match.start():]
+    installed = rb"(?m)^[ \t]*->css\('/assets/css/information-pages\.css'\)\r?\n"
+    inserted = list(re.finditer(installed, current))
+    if len(inserted) == 1:
+        match = inserted[0]
+        restored = current[:match.start()] + current[match.end():]
+        if digest(restored) in accepted and patch_current_template(restored, original_sha) == current:
+            return current
     raise RuntimeError('Main template changed since inspection; requires review')
 
 
