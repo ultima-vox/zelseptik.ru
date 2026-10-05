@@ -239,9 +239,6 @@ $Structure_Controller_Breadcrumbs
     ->showProperties(true)
     ->show();
 */	
-$iGroup = 0;
-$iItem = 0;
-
 if (is_object(Core_Page::instance()->object)
 && get_class(Core_Page::instance()->object) == 'Informationsystem_Controller_Show')
 {
@@ -252,7 +249,7 @@ if (is_object(Core_Page::instance()->object)
 
 Core_Page::instance()->execute();
 
-if (Core::moduleIsActive('shop') && $iItem === 157) {
+if (Core::moduleIsActive('shop') && $iItem = 157) {
 	    
     $Shop_Controller_Show = new Shop_Controller_Show(
 				Core_Entity::factory('Shop', 1)

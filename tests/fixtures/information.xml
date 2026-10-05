@@ -1,0 +1,14 @@
+<informationsystem id="3">
+  <name>Услуги</name><url>/services/</url><group>0</group><page>0</page><limit>8</limit><total>17</total>
+  <ОтображатьСсылкиНаСледующиеСтраницы>1</ОтображатьСсылкиНаСледующиеСтраницы>
+  <informationsystem_group id="10"><parent_id>0</parent_id><name>Монтаж</name><url>/services/montazh/</url><dir>/images/</dir><image_small>montazh.jpg</image_small></informationsystem_group>
+  <informationsystem_group id="11"><parent_id>10</parent_id><name>Дочерняя группа</name><url>/services/montazh/child/</url></informationsystem_group>
+  <informationsystem_group id="12"><parent_id>0</parent_id><name>Сервис</name><url>/services/servis/</url></informationsystem_group>
+  <informationsystem_item id="157">
+    <name>Подбор септика</name><url>/services/podbor-septikov/</url><dir>/images/</dir><image_large>service.jpg</image_large><image_small>service-small.jpg</image_small>
+    <description>&lt;p&gt;Описание услуги из CMS.&lt;/p&gt;</description>
+    <text>&lt;section class="section area-text"&gt;&lt;div class="page-bl"&gt;&lt;div class="txt"&gt;&lt;h2&gt;Состав работ&lt;/h2&gt;&lt;p&gt;Исходный текст CMS и &lt;a href="/contacts/"&gt;контакты&lt;/a&gt;.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;</text>
+    <property_value><tag_name>seo-h1</tag_name><value>Подбор под условия участка</value></property_value>
+    <property_value><tag_name>main-inf</tag_name><value>Существующее преимущество</value></property_value>
+  </informationsystem_item>
+</informationsystem>
