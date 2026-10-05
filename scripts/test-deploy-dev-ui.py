@@ -86,7 +86,7 @@ class DeploymentTests(unittest.TestCase):
 
     def test_verified_backup_precedes_uploads_and_rerun_is_noop(self):
         self.execute('deploy')
-        self.assertTrue(self.ftp.writes[0].startswith('.codex-backups/'))
+        self.assertTrue(self.ftp.writes[0].startswith(module.BACKUP_DIRECTORY + '/'))
         self.assertEqual(self.ftp.writes[1:], list(module.FILES))
         for path in module.FILES:
             if path == module.TEMPLATE1:
@@ -99,7 +99,7 @@ class DeploymentTests(unittest.TestCase):
         self.assertEqual(self.ftp.writes, [])
 
     def test_corrupted_backup_prevents_replacements(self):
-        self.ftp.corrupt_once = '.codex-backups/'
+        self.ftp.corrupt_once = module.BACKUP_DIRECTORY + '/'
         with self.assertRaises(RuntimeError):
             self.execute('deploy')
         self.assertEqual(len(self.ftp.writes), 1)
@@ -163,6 +163,13 @@ class DeploymentTests(unittest.TestCase):
             with self.assertRaises(RuntimeError):
                 self.execute('deploy')
         self.assertEqual(self.ftp.writes, [])
+
+    def test_backup_directory_permission_failure_prevents_site_writes(self):
+        with patch.object(self.ftp, 'mkd', side_effect=module.ftplib.error_perm('550 Permission denied')):
+            with self.assertRaises(module.ftplib.error_perm):
+                self.execute('deploy')
+        self.assertEqual(self.ftp.writes, [])
+        self.assertEqual(self.ftp.files, self.before)
 
 
 if __name__ == '__main__':
