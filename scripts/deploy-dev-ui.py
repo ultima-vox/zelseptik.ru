@@ -23,6 +23,7 @@ FILES = (
     'hostcmsfiles/xsl/55.xsl',
     'hostcmsfiles/xsl/56.xsl',
     'hostcmsfiles/xsl/83.xsl',
+    'hostcmsfiles/xsl/278.xsl',
     'hostcmsfiles/xsl/279.xsl',
     'hostcmsfiles/xsl/280.xsl',
     'hostcmsfiles/xsl/281.xsl',
@@ -37,12 +38,14 @@ TEMPLATE1 = 'templates/template1/template.htm'
 DEV_TEMPLATE1_SHA = '696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb8979de8a'
 # Accept only the original files and previously verified UI stage bytes.
 PREVIOUS_STAGE_HASHES = {
+    'hostcmsfiles/xsl/279.xsl': ('2aaf791defe33c951137a0ed36dca87c033a8f6b0ba18019d27fb44476a90ab0',),
+    'hostcmsfiles/xsl/56.xsl': ('3ee467693f502bb3651319860a4042a08862b7440cd58c562d14643f80c59f50',),
     'hostcmsfiles/xsl/3.xsl': ('4a2cffc4ea4a2454f4e4c7f2efdf2e35d09efad91da815cc0bad1d8e1856a6f4',),
     'hostcmsfiles/xsl/13.xsl': ('c95108ada8a35ff2d629056a56407495b88ccd56606d0de5c89d09cc0496b145',),
     'templates/template1/script.js': (
         '2a9a6601fbb7c8f707161054c77d0e7c68bc581ca803c4c30dcd1418dba8a78e',
         '2ee0e3c5c2bc6cec8f72685cfff11ead7da3af88cc737485f7d85a15a782508b','a31020470633ee8b2a1447eda2eaa592a4bfd973fa76a98bce72c546724ed9bc',),
-    'assets/css/information-pages.css': (
+    'assets/css/information-pages.css': ('5c9e786221ab15351790c9753d15d30c283c414fe7c43d8565bad54c217f1d01', 
         '1f94af1d8fd4eb5ed1efacd21c46c56002c4f76fb9066fdb496474c8a5c3b364',
         '1034471b69cd3d4bd7e022308147caeeb2db3549d78780339a5bdadc488e895c',
         'fe025c1621f558f670d92bfab3aa79c4db74544734284d0d85a234f431a2f6f9',
@@ -66,12 +69,12 @@ PREVIOUS_STAGE_HASHES = {
         '399fbaa155b4fbe6968c2074c14274d35646bcb7f47b15b83b884d0f7590c9af',
         '974965842bec5e026148921a738ee6e2c6dde55346428939dbca9c75cfed640b',
     ),
-    'assets/js/modules/information.js': (
+    'assets/js/modules/information.js': ('cc0ebc1607098b11889c228149bf4d683ccf9cc2a373fe33d83a178f3f47ba2c', 
         'd1dc4b46b1c34f1aec1404549705fc673821836e1926d17e6046925a70bcd577',
         '8a705a84334c9ec4d357b334e516cfbce16387a11beaa0cc22923afaf471bd78','6bb7cb69d9c2d8153c7cb5a39c1ca350e8e1194cf741580e7f90e8635f9d338b', '12509feaec8470ffaa7f04c6fb29521cdd36bf786ea4285b1ce780aa6618a912'),
     'hostcmsfiles/xsl/282.xsl': ('d871b02aaaa510baf35532751c2a491dc3a251e910257dc27eba6f12cb326cd8',),
-    'hostcmsfiles/xsl/280.xsl': ('62839148c05974d4cde9531040e51843f0d78fdb5efe8ef3ab30a0ce3236b2ba',),
-    'assets/js/app.js': (
+    'hostcmsfiles/xsl/280.xsl': ('351360e6273af8506c15ca6280619ea520e5a4a283fe55ace7d1574e274dd89a', '62839148c05974d4cde9531040e51843f0d78fdb5efe8ef3ab30a0ce3236b2ba',),
+    'assets/js/app.js': ('1f4faa2974f39594b91a49f0e5361b18b95618017645be8e0ded46145474cbf6', 
         '14a2f34e39b04e2d2156eafdbeb6ff177bd6d29ec84f0836d4a771b29a46ca0e',
         '4cd8c5ee3a74cd47d3175b19e5190479c9e627e5c316bbab6278a0f2ac6edb95','356800bf1963a6f0fb9341bd9562c12a7f0856f5fe59ab8a867b8bd7d1b2be00', '932a8628510a464c302a84a96ab09498ce6992f7923aad81cce2662af0d3873b'),
 }
@@ -191,7 +194,7 @@ def deploy(ftp, source, mode):
         print('Inspection complete; no writes.')
         return
     if not changed:
-        print('All eight files already match; no writes.')
+        print('All allowlisted files already match; no writes.')
         return
     encrypted = encrypted_backup(before)
     print('Step: prepare dedicated dev UI backup directory', flush=True)
