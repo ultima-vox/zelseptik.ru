@@ -922,3 +922,14 @@ html[data-information-view="error"] main > .area-404 img {
   -webkit-text-fill-color: #b9e8ff;
 }
 .hero-section.grid-blueprint .premium-slogan::after { background-color: #b9e8ff; }
+.hero-section.grid-blueprint .product-summary__badges .badge,
+.catalog-hero.grid-blueprint .grid-blueprint__content > .badge {
+  background: #e0edfc;
+  border-color: #e0edfc;
+  color: #063169;
+}
+.hero-section.grid-blueprint .product-summary__badges .badge--outline {
+  background: transparent;
+  border-color: #8dbde9;
+  color: #e0edfc;
+}
