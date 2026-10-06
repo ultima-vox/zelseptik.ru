@@ -40,13 +40,16 @@ PREVIOUS_STAGE_HASHES = {
         '9a9635374631b7eb20022ef54540be0a98f4a4d2862cafa4a750c58f2ec14455',
         '367155eda6b308ffc58f93146834fdd8b4c38b19d6dd538b24bf89b0885409eb',
         '3006e4d042dff5eddb296775056f73885c9052c1b4421de3922789a70a70f5df',
+        '21675724534e19f7b86bb2a027f96ccdbd7f050beddd19a5af1fa2ea2508d262',
     ),
     'hostcmsfiles/xsl/4.xsl': (
         'a5603c5d340bd49bd03afd52ab1964120eaab85de9b886a16ab3cea3f508249c',
         '399fbaa155b4fbe6968c2074c14274d35646bcb7f47b15b83b884d0f7590c9af',
     ),
-    'assets/js/modules/information.js': ('6bb7cb69d9c2d8153c7cb5a39c1ca350e8e1194cf741580e7f90e8635f9d338b',),
-    'assets/js/app.js': ('356800bf1963a6f0fb9341bd9562c12a7f0856f5fe59ab8a867b8bd7d1b2be00',),
+    'assets/js/modules/information.js': ('6bb7cb69d9c2d8153c7cb5a39c1ca350e8e1194cf741580e7f90e8635f9d338b', '12509feaec8470ffaa7f04c6fb29521cdd36bf786ea4285b1ce780aa6618a912'),
+    'hostcmsfiles/xsl/282.xsl': ('d871b02aaaa510baf35532751c2a491dc3a251e910257dc27eba6f12cb326cd8',),
+    'hostcmsfiles/xsl/280.xsl': ('62839148c05974d4cde9531040e51843f0d78fdb5efe8ef3ab30a0ce3236b2ba',),
+    'assets/js/app.js': ('356800bf1963a6f0fb9341bd9562c12a7f0856f5fe59ab8a867b8bd7d1b2be00', '932a8628510a464c302a84a96ab09498ce6992f7923aad81cce2662af0d3873b'),
 }
 
 
