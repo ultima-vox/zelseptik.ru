@@ -36,4 +36,22 @@ for path in ["/modules/core/sitemap.php", "/hostcmsfiles/lib/lib_29/lib_config_2
         print("catalog_heading",s.count('<h1 class="h-2">Каталог продукции:</h1>'))
 ftp.cwd('/hostcmsfiles/logs')
 print('log_inventory',ftp.nlst()[-10:])
+path='/hostcmsfiles/logs/06_10_2026.log.csv'
+size=ftp.size(path)
+logbuf=io.BytesIO()
+ftp.retrbinary('RETR '+path,logbuf.write,rest=max(0,size-1000000))
+log=logbuf.getvalue().decode('utf-8',errors='replace')
+for line in log.splitlines():
+    if re.search(r'sitemap|Core_Out|filePath',line,re.I):
+        properties=re.findall(r'(?:property|свойств[ао])[^<\n;]{0,100}',line,re.I)
+        # Only public class/method names and allowlisted error classifications.
+        print('sitemap_log',{'classes':re.findall(r'Core_[A-Za-z_]+(?:::|->)[A-Za-z_]+',line)[:15],
+            'filePath': 'filePath' in line,
+            'property_missing':bool(re.search(r'property.*?(not exist|not found|undefined)',line,re.I)),
+            'file_missing':bool(re.search(r'(file.*?(not exist|not found)|No such file)',line,re.I)),
+            'permission_denied':'Permission denied' in line,
+            'null_byte': 'null byte' in line,
+            'exception_type':re.findall(r'(?:Core_Exception|[A-Za-z_]+Exception)',line)[:5],
+            'source_lines':re.findall(r'sitemap.php.{0,12}?([0-9]{2,4})',line)[:5]})
+
 ftp.quit()
