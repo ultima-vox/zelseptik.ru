@@ -18,6 +18,14 @@ FILES = (
     'templates/template3/script.js',
     'hostcmsfiles/xsl/13.xsl',
     'hostcmsfiles/xsl/4.xsl',
+    'hostcmsfiles/xsl/3.xsl',
+    'hostcmsfiles/xsl/55.xsl',
+    'hostcmsfiles/xsl/56.xsl',
+    'hostcmsfiles/xsl/83.xsl',
+    'hostcmsfiles/xsl/279.xsl',
+    'hostcmsfiles/xsl/280.xsl',
+    'hostcmsfiles/xsl/281.xsl',
+    'hostcmsfiles/xsl/282.xsl',
     'templates/template3/template.htm',
     'templates/template1/template.htm',
 )
@@ -26,14 +34,19 @@ BACKUP_DIRECTORY = '.ui-deploy-backups'
 TEMPLATE1 = 'templates/template1/template.htm'
 # Actual dev hash observed by the read-only run 37314881595.
 DEV_TEMPLATE1_SHA = '696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb8979de8a'
-# Previous UI stage 61f15b8, verified on dev by run 37320029965.
-# Only these two files change in the content-layout follow-up.
+# Accept only the original files and previously verified UI stage bytes.
 PREVIOUS_STAGE_HASHES = {
     'assets/css/information-pages.css': (
         '9a9635374631b7eb20022ef54540be0a98f4a4d2862cafa4a750c58f2ec14455',
         '367155eda6b308ffc58f93146834fdd8b4c38b19d6dd538b24bf89b0885409eb',
+        '3006e4d042dff5eddb296775056f73885c9052c1b4421de3922789a70a70f5df',
     ),
-    'hostcmsfiles/xsl/4.xsl': ('a5603c5d340bd49bd03afd52ab1964120eaab85de9b886a16ab3cea3f508249c',),
+    'hostcmsfiles/xsl/4.xsl': (
+        'a5603c5d340bd49bd03afd52ab1964120eaab85de9b886a16ab3cea3f508249c',
+        '399fbaa155b4fbe6968c2074c14274d35646bcb7f47b15b83b884d0f7590c9af',
+    ),
+    'assets/js/modules/information.js': ('6bb7cb69d9c2d8153c7cb5a39c1ca350e8e1194cf741580e7f90e8635f9d338b',),
+    'assets/js/app.js': ('356800bf1963a6f0fb9341bd9562c12a7f0856f5fe59ab8a867b8bd7d1b2be00',),
 }
 
 
