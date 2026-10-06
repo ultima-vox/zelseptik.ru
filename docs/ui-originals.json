@@ -74,6 +74,11 @@
       "path": "hostcmsfiles/xsl/3.xsl",
       "original_path": "archive/2026-10-06/ui-baseline/hostcmsfiles/xsl/3.xsl",
       "sha256": "2628f57195215f98d15bd68fcad042cddb5ec99be3bc53f8de73e041413c62cc"
+    },
+    {
+      "path": "templates/template1/script.js",
+      "original_path": "archive/2026-10-06/ui-baseline/templates/template1/script.js",
+      "sha256": "6b599373aa94e396a2e9288509448c2da81753905a37a23a83251a55235eef19"
     }
   ]
 }

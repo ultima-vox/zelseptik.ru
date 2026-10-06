@@ -36,7 +36,11 @@ def check():
     assert body.xpath('./section[@class="section area-text"]/div[@class="page-bl"]/div[@class="txt"]/h2')[0].text == 'Состав работ'
     assert body.xpath('.//a/@href') == ['/contacts/']
     assert not body.xpath('.//form | .//h1 | .//nav')
-    assert detail.xpath('//img[@class="information-detail__image"]/@src') == ['/images/service.jpg']
+    assert detail.xpath('//img[@class="hero__media-image"]/@src') == ['/images/service.jpg']
+    hero = detail.xpath('//section[contains(@class, "hero-section")]')[0]
+    assert hero[0].get('class') == 'hero__media'
+    assert hero[1].get('class') == 'container'
+    assert not detail.xpath('//img[@class="information-detail__image"]')
     form = detail.xpath('//form[@data-lead-form]')[0]
     assert form.get('method') == 'post'
     assert form.xpath('.//input[@name="_zs_action"]/@value') == ['lead']
@@ -58,9 +62,9 @@ def check():
     item.find('property_value/value').text = ''
     fallback = transform(4, xml)
     assert fallback.xpath('//h1')[0].text == 'Подбор септика'
-    assert fallback.xpath('//img[@class="information-detail__image"]/@src') == ['/images/service-small.jpg']
+    assert fallback.xpath('//img[@class="hero__media-image"]/@src') == ['/images/service-small.jpg']
     item.find('image_small').text = ''
-    assert not transform(4, xml).xpath('//img[@class="information-detail__image"]')
+    assert not transform(4, xml).xpath('//img[@class="hero__media-image"]')
     xml.getroot().set('id', '2')
     article = transform(4, xml)
     assert not article.xpath('//aside | //form')

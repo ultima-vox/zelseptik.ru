@@ -219,7 +219,7 @@
     });
 
     function getCardsPerPage() {
-      return window.innerWidth < 768 ? 1 : (window.innerWidth < 1024 ? 2 : 4);
+      return window.innerWidth < 768 ? 2 : 4;
     }
 
     function getTotalPages() {
@@ -278,7 +278,7 @@
   page = ((nextPage % totalPages) + totalPages) % totalPages;
 
   track.scrollTo({
-    left: page * ((slides[0].offsetWidth || track.clientWidth) + 24) * perPage,
+    left: page * track.clientWidth,
     behavior: 'smooth'
   });
 
@@ -303,7 +303,7 @@
       if (!firstSlide) return;
 
       const slideWidth = firstSlide.offsetWidth || 1;
-      const newPage = Math.round(track.scrollLeft / ((slideWidth + 24) * perPage));
+      const newPage = Math.round(track.scrollLeft / (slideWidth * perPage));
 
       if (newPage !== page) {
         page = Math.max(0, Math.min(newPage, getTotalPages() - 1));

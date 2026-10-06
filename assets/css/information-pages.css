@@ -723,3 +723,144 @@ html[data-information-view="error"] main > .area-404 img {
   color: var(--color-text-main);
   font-weight: var(--font-weight-medium);
 }
+
+/* Keep navigation at the viewport edge without changing document flow. */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-header);
+}
+
+/* Decorative photography sits below the blueprint and readable content. */
+.hero-section > .hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-section > .hero__media .hero__media-image {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  border-radius: 0;
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(.9) contrast(.85);
+}
+.hero-section > .hero__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,255,255,.62));
+}
+.hero-section.grid-blueprint::before {
+  z-index: 1;
+}
+.hero-section > .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Notices stay below navigation; preserve the CMS text and close handler. */
+.alert-fz {
+  position: fixed !important;
+  top: auto !important;
+  bottom: var(--space-md) !important;
+  left: var(--space-md) !important;
+  right: auto !important;
+  width: min(520px, calc(100% - 32px)) !important;
+  max-height: min(220px, 35vh);
+  margin: 0 !important;
+  padding: 16px 52px 16px 20px !important;
+  overflow-y: auto;
+  background: var(--color-bg-base) !important;
+  color: var(--color-text-main) !important;
+  border: 1px solid var(--color-border-base);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  font-size: 12px;
+  line-height: 1.5;
+  z-index: var(--z-overlay);
+}
+.alert-fz p {
+  color: inherit;
+}
+.alert-fz .alert-fz-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+}
+
+@media (max-width: 1023px) {
+  .geography-section__grid,
+  .geography-section__list-box,
+  .geography-section__details-box {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .geography-section__list-box {
+    display: block;
+    overflow: visible;
+    padding-right: 0;
+  }
+  .geography-section__list {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+  .geography-section__item,
+  .geography-section__city-btn,
+  .geography-section__city-btn > div {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  .geography-section__city-btn-name,
+  .geography-section__city-btn-districts {
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+  .geography-details__header {
+    flex-wrap: wrap;
+  }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .geography-section__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 767px) {
+  .hero-section > .hero__media::after {
+    background: rgba(255,255,255,.84);
+  }
+  #catalog .catalog-carousel,
+  #catalog .catalog-carousel__track,
+  #catalog .catalog-carousel__slide,
+  #catalog .catalog-card {
+    min-width: 0;
+  }
+  #catalog .catalog-controls,
+  #catalog .catalog-controls__status,
+  .hero__actions {
+    flex-wrap: wrap;
+  }
+  #catalog .catalog-card__spec-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-xs);
+  }
+  #catalog .catalog-card__spec-label,
+  #catalog .catalog-card__spec-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
