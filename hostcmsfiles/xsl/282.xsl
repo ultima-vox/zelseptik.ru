@@ -90,7 +90,10 @@
 					</div>
 				</div-->
 				<div class="quiz_overlay">
-					<form class="quiz-slider form-quiz" id="form_quiz" method="post" action="./" enctype="multipart/form-data">
+					<form class="quiz-slider form-quiz" id="form_quiz" method="post" action="./" enctype="multipart/form-data" data-lead-form="">
+<input type="hidden" name="_zs_action" value="lead"/>
+<input type="hidden" name="form_type" value="Подбор септика: квиз"/>
+<input type="hidden" name="g-recaptcha-response"/>
 						<div class="swiper-box sw-quiz" id="sw-quiz24">
 							<div class="swiper swiper-container-horizontal swiper-container-autoheight">
 								<div class="swiper-wrapper">
@@ -516,7 +519,7 @@
 												<div class="center">
 													<div class="h-2">Супер! Уже начинаем считать
 													</div>
-													<p>Оставьте контакты и выберите удобный способ для обратной связи. Звонить не будем, если не выберете пункт "телефон"
+													<p>Оставьте телефон и выберите удобный способ связи. Выбранный способ передадим инженеру.
 													</p>
 												</div>
 												<div class="quiz-form">
@@ -595,7 +598,7 @@
 											<div class="quiz-farea">
 												<div class="center">
 													<div class="h-2">Все расскажем</div>
-													<p>Оставьте контакты и выберите удобный способ для связи. Звонить не будем, если не выберете пункт "телефон"</p>
+													<p>Оставьте телефон и выберите удобный способ связи. Выбранный способ передадим инженеру.</p>
 												</div>
 												<div class="quiz-form">
 													<div class="inp-bl">

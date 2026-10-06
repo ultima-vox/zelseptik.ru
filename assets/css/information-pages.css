@@ -462,6 +462,15 @@ html[data-information-view="error"] main > .area-404 img {
   margin-bottom: var(--space-md);
 }
 
+.area-quiz-new .quiz-box {
+  margin: 0;
+  height: 100%;
+}
+
+.area-quiz-new .quiz-row {
+  margin-block: var(--space-lg);
+}
+
 .area-quiz-new .proc-row,
 .area-quiz-new .quiz-inf,
 .area-quiz-new .sw-btns-bl,

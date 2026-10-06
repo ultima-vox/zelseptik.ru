@@ -29,7 +29,8 @@ for source, row in originals.items():
 for path in (ROOT / 'assets/js').rglob('*.js'):
     text = path.read_text(encoding='utf-8')
     for reference in re.findall(r"(?:from\s*|import\s*)['\"]([^'\"]+)['\"]", text):
-        if reference.startswith('.') and not (path.parent / reference).resolve().is_file():
+        dependency = reference.split('?', 1)[0].split('#', 1)[0]
+        if reference.startswith('.') and not (path.parent / dependency).resolve().is_file():
             errors.append(f'Missing JS import: {path.relative_to(ROOT)} -> {reference}')
 
 for path in (ROOT / 'hostcmsfiles/xsl').glob('*.xsl'):

@@ -96,11 +96,19 @@ export function initInformationQuiz(scope = document) {
     let index = 0;
     let direct = false;
     const originalDisabled = new Map();
+    const comments = new Map();
+    const submitButtons = Array.from(form.querySelectorAll('button[type="submit"]'));
+    const submitButton = submitButtons[0];
+    submitButtons.slice(1).forEach((button) => button.remove());
     slides.forEach((slide) => {
       slide.querySelectorAll('.quiz-form input').forEach((input) => {
         originalDisabled.set(input, input.disabled);
         if (input.type !== 'hidden' && !input.getAttribute('aria-label')) {
           input.setAttribute('aria-label', input.placeholder || input.name);
+        }
+        if (input.name === 'comment') {
+          comments.set(slide, input);
+          input.removeAttribute('name');
         }
       });
       slide.querySelectorAll('.quiz-sbmts .num').forEach((label) => {
@@ -121,9 +129,29 @@ export function initInformationQuiz(scope = document) {
     error.setAttribute('role', 'status');
     error.hidden = true;
     form.append(error);
+    const summary = document.createElement('input');
+    summary.type = 'hidden';
+    summary.name = 'comment';
+    form.append(summary);
+    form.addEventListener('submit', () => {
+      const active = direct && consultation ? consultation : steps[index];
+      const lines = direct ? ['Запрос консультации'] : questions.map((step) => {
+        const title = step.querySelector('.h-2')?.textContent.trim() || '';
+        const answers = Array.from(step.querySelectorAll('.quiz-chk input:checked')).map((input) => input.value);
+        return `${title}: ${answers.join(', ')}`;
+      });
+      const feedback = active.querySelector('input[name="feddback"]:checked');
+      if (feedback) lines.push(`Способ связи: ${feedback.value}`);
+      const comment = comments.get(active)?.value.trim();
+      if (comment) lines.push(`Комментарий: ${comment}`);
+      summary.value = lines.join('\n');
+    });
 
     function show(focus = false) {
       const active = direct && consultation ? consultation : steps[index];
+      const contact = active.querySelector('.quiz-form');
+      if (contact && submitButton) contact.append(submitButton);
+      if (submitButton) submitButton.disabled = !contact;
       slides.forEach((slide) => {
         slide.hidden = slide !== active;
         slide.querySelectorAll('.quiz-form input').forEach((input) => {

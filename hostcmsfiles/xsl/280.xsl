@@ -101,7 +101,7 @@
 					</xsl:if-->
 				</div>
 			</div>
-			<a class="btn w-btn" href="#w-popup-01">Связаться с ЗелСептик</a>
+			<a class="btn w-btn btn--primary js-btn-callback" href="#w-popup-01">Связаться с ЗелСептик</a>
 
 
 			<!-- Выводим сообщение -->
