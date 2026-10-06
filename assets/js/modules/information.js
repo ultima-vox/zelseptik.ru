@@ -304,7 +304,13 @@ export function initInformationSections(scope = document) {
       });
       nav.append(list);
       const firstSection = Array.from(content.children).find((node) => node.hasAttribute('data-service-section'));
-      content.insertBefore(nav, firstSection);
+      const layout = scope.createElement('div');
+      layout.className = 'information-service-layout';
+      const panels = scope.createElement('div');
+      panels.className = 'information-service-panels';
+      content.insertBefore(layout, firstSection);
+      layout.append(nav, panels);
+      Array.from(content.children).filter((node) => node.hasAttribute('data-service-section')).forEach((section) => panels.append(section));
     }
   });
 }
