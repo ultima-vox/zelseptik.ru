@@ -682,7 +682,7 @@ html[data-information-view="error"] main > .area-404 img {
 }
 
 /* HostCMS emits both named items and plain li in its existing lists. */
-.breadcrumbs__list {
+:is(.breadcrumbs__list, ul.breadcrumbs, .breadcrumbs-section ul.breadcrumbs) {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -695,31 +695,31 @@ html[data-information-view="error"] main > .area-404 img {
   line-height: 1.5;
   color: var(--color-text-muted);
 }
-.breadcrumbs__list > li {
+:is(.breadcrumbs__list, ul.breadcrumbs, .breadcrumbs-section ul.breadcrumbs) > li {
   display: inline-flex;
   align-items: baseline;
   gap: var(--space-sm);
   min-width: 0;
   overflow-wrap: anywhere;
 }
-.breadcrumbs__list > li:not(:last-child)::after {
+:is(.breadcrumbs__list, ul.breadcrumbs, .breadcrumbs-section ul.breadcrumbs) > li:not(:last-child)::after {
   content: "/";
   flex-shrink: 0;
   color: var(--color-text-muted);
   font-weight: var(--font-weight-regular);
 }
-.breadcrumbs__list > li:last-child::after {
+:is(.breadcrumbs__list, ul.breadcrumbs, .breadcrumbs-section ul.breadcrumbs) > li:last-child::after {
   content: none;
 }
-.breadcrumbs__list a {
+:is(.breadcrumbs__list, ul.breadcrumbs, .breadcrumbs-section ul.breadcrumbs) a {
   color: var(--color-text-muted);
   text-decoration: none;
 }
-.breadcrumbs__list a:hover {
+:is(.breadcrumbs__list, ul.breadcrumbs, .breadcrumbs-section ul.breadcrumbs) a:hover {
   color: var(--color-primary-hover);
   text-decoration: underline;
 }
-.breadcrumbs__list > li:last-child {
+:is(.breadcrumbs__list, ul.breadcrumbs, .breadcrumbs-section ul.breadcrumbs) > li:last-child {
   color: var(--color-text-main);
   font-weight: var(--font-weight-medium);
 }
