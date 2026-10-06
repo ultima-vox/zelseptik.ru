@@ -40,8 +40,10 @@ PREVIOUS_STAGE_HASHES = {
     'hostcmsfiles/xsl/3.xsl': ('4a2cffc4ea4a2454f4e4c7f2efdf2e35d09efad91da815cc0bad1d8e1856a6f4',),
     'hostcmsfiles/xsl/13.xsl': ('c95108ada8a35ff2d629056a56407495b88ccd56606d0de5c89d09cc0496b145',),
     'templates/template1/script.js': (
+        '2a9a6601fbb7c8f707161054c77d0e7c68bc581ca803c4c30dcd1418dba8a78e',
         '2ee0e3c5c2bc6cec8f72685cfff11ead7da3af88cc737485f7d85a15a782508b','a31020470633ee8b2a1447eda2eaa592a4bfd973fa76a98bce72c546724ed9bc',),
     'assets/css/information-pages.css': (
+        '1034471b69cd3d4bd7e022308147caeeb2db3549d78780339a5bdadc488e895c',
         'fe025c1621f558f670d92bfab3aa79c4db74544734284d0d85a234f431a2f6f9',
         '79cce5223bdbc35caa4a29578e67ea1f068113c5a2bc238417f62cfb996d8dcf',
         '922b0d10f47469ac980709e6103375c5a8509a106f11a12b3b4792581e317aaa',
