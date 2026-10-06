@@ -990,3 +990,6 @@ html[data-information-view="error"] main > .area-404 img {
   .information-service-content .information-price-table tbody td { display: flex; flex-wrap: wrap; gap: 8px; justify-content: space-between; }
   .information-service-content .information-price-table tbody td::before { content: attr(data-label); color: #52645B; font-size: 14px; font-weight: 400; }
 }
+.information-service-content [data-service-section] .text-inf { padding: 24px; margin-block: 16px; border: 1px solid #DCE8E1; border-radius: 16px; background: #E5EFE9; }
+.information-service-content [data-service-section] .text-inf > img[src$="/point1.svg"] { width: 32px; height: 32px; object-fit: contain; filter: grayscale(1); opacity: .65; }
+.information-service-content [data-service-section] li::marker { color: #007A53; }
