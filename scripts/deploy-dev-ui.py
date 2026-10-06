@@ -37,8 +37,12 @@ TEMPLATE1 = 'templates/template1/template.htm'
 DEV_TEMPLATE1_SHA = '696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb8979de8a'
 # Accept only the original files and previously verified UI stage bytes.
 PREVIOUS_STAGE_HASHES = {
-    'templates/template1/script.js': ('a31020470633ee8b2a1447eda2eaa592a4bfd973fa76a98bce72c546724ed9bc',),
+    'hostcmsfiles/xsl/3.xsl': ('4a2cffc4ea4a2454f4e4c7f2efdf2e35d09efad91da815cc0bad1d8e1856a6f4',),
+    'hostcmsfiles/xsl/13.xsl': ('c95108ada8a35ff2d629056a56407495b88ccd56606d0de5c89d09cc0496b145',),
+    'templates/template1/script.js': (
+        '2ee0e3c5c2bc6cec8f72685cfff11ead7da3af88cc737485f7d85a15a782508b','a31020470633ee8b2a1447eda2eaa592a4bfd973fa76a98bce72c546724ed9bc',),
     'assets/css/information-pages.css': (
+        '2b65382dda571413a6adb4f36648166042debb705b45bc6ee6dd6f2ecf1d0cf9',
         '9a9635374631b7eb20022ef54540be0a98f4a4d2862cafa4a750c58f2ec14455',
         '367155eda6b308ffc58f93146834fdd8b4c38b19d6dd538b24bf89b0885409eb',
         '3006e4d042dff5eddb296775056f73885c9052c1b4421de3922789a70a70f5df',
