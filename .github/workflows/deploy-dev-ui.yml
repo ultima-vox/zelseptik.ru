@@ -31,7 +31,7 @@ jobs:
       - name: Check out reviewed UI stage
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
-          ref: 65df0ac39166d07c3ab8b25252c4d78a04cc57fd
+          ref: f54a1ff900c339cbc55ca2f44f3b9464842de3d3
           path: ui-source
           persist-credentials: false
       - name: Test backup and rollback behavior

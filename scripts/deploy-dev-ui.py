@@ -42,6 +42,7 @@ PREVIOUS_STAGE_HASHES = {
     'templates/template1/script.js': (
         '2ee0e3c5c2bc6cec8f72685cfff11ead7da3af88cc737485f7d85a15a782508b','a31020470633ee8b2a1447eda2eaa592a4bfd973fa76a98bce72c546724ed9bc',),
     'assets/css/information-pages.css': (
+        '79cce5223bdbc35caa4a29578e67ea1f068113c5a2bc238417f62cfb996d8dcf',
         '922b0d10f47469ac980709e6103375c5a8509a106f11a12b3b4792581e317aaa',
         'eb4e8c7670a45415a659e4ee669740e004f514f52fc0f888b4cdd64dc1119f61',
         'afe15f3e1a655caa27c4f329a9fd9a1ba231654670457d815c1532fae489dc7f',
@@ -61,10 +62,12 @@ PREVIOUS_STAGE_HASHES = {
         '399fbaa155b4fbe6968c2074c14274d35646bcb7f47b15b83b884d0f7590c9af',
         '974965842bec5e026148921a738ee6e2c6dde55346428939dbca9c75cfed640b',
     ),
-    'assets/js/modules/information.js': ('6bb7cb69d9c2d8153c7cb5a39c1ca350e8e1194cf741580e7f90e8635f9d338b', '12509feaec8470ffaa7f04c6fb29521cdd36bf786ea4285b1ce780aa6618a912'),
+    'assets/js/modules/information.js': (
+        '8a705a84334c9ec4d357b334e516cfbce16387a11beaa0cc22923afaf471bd78','6bb7cb69d9c2d8153c7cb5a39c1ca350e8e1194cf741580e7f90e8635f9d338b', '12509feaec8470ffaa7f04c6fb29521cdd36bf786ea4285b1ce780aa6618a912'),
     'hostcmsfiles/xsl/282.xsl': ('d871b02aaaa510baf35532751c2a491dc3a251e910257dc27eba6f12cb326cd8',),
     'hostcmsfiles/xsl/280.xsl': ('62839148c05974d4cde9531040e51843f0d78fdb5efe8ef3ab30a0ce3236b2ba',),
-    'assets/js/app.js': ('356800bf1963a6f0fb9341bd9562c12a7f0856f5fe59ab8a867b8bd7d1b2be00', '932a8628510a464c302a84a96ab09498ce6992f7923aad81cce2662af0d3873b'),
+    'assets/js/app.js': (
+        '4cd8c5ee3a74cd47d3175b19e5190479c9e627e5c316bbab6278a0f2ac6edb95','356800bf1963a6f0fb9341bd9562c12a7f0856f5fe59ab8a867b8bd7d1b2be00', '932a8628510a464c302a84a96ab09498ce6992f7923aad81cce2662af0d3873b'),
 }
 
 
