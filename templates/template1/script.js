@@ -1673,3 +1673,34 @@ document.addEventListener('click', function (event) {
     initLazyMap();
   });
 })();
+
+// Dismiss the notice without recording cookie consent.
+(function () {
+  'use strict';
+  const storageKey = 'zelseptik:cookie-notice-dismissed:v1';
+  function initCookieNotice() {
+    document.querySelectorAll('.alert-fz').forEach(function (notice) {
+      if (notice.hasAttribute('data-cookie-close-ready')) return;
+      notice.setAttribute('data-cookie-close-ready', '');
+      try {
+        if (window.localStorage.getItem(storageKey) === '1') { notice.hidden = true; return; }
+      } catch (_) { /* Closing still works when storage is unavailable. */ }
+      let close = notice.querySelector('button.alert-fz-close');
+      if (!close) {
+        close = document.createElement('button');
+        close.className = 'alert-fz-close';
+        close.textContent = '\u00d7';
+        notice.append(close);
+      }
+      close.type = 'button';
+      close.setAttribute('aria-label', '\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435 \u043e cookie');
+      close.addEventListener('click', function (event) {
+        event.preventDefault();
+        notice.hidden = true;
+        try { window.localStorage.setItem(storageKey, '1'); } catch (_) {}
+      });
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCookieNotice);
+  else initCookieNotice();
+})();

@@ -993,3 +993,23 @@ html[data-information-view="error"] main > .area-404 img {
 .information-service-content [data-service-section] .text-inf { padding: 24px; margin-block: 16px; border: 1px solid #DCE8E1; border-radius: 16px; background: #E5EFE9; }
 .information-service-content [data-service-section] .text-inf > img[src$="/point1.svg"] { width: 32px; height: 32px; object-fit: contain; filter: grayscale(1); opacity: .65; }
 .information-service-content [data-service-section] li::marker { color: #007A53; }
+
+.alert-fz[hidden] { display: none !important; }
+.alert-fz .alert-fz-close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px; padding: 0; border: 1px solid #DCE8E1;
+  border-radius: 12px; background: #E5EFE9; color: #214B3F;
+  font: 28px/1 Arial, sans-serif; cursor: pointer;
+}
+.alert-fz .alert-fz-close:hover { background: #D3E5DA; }
+.alert-fz .alert-fz-close:focus-visible { outline: 2px solid #009966; outline-offset: 2px; }
+
+.hero-section.grid-blueprint .information-detail__benefits {
+  color: #E8F1EB; font-family: var(--font-family-base); font-size: 16px;
+  font-weight: 500; line-height: 1.6; gap: 12px; padding-left: 22px;
+}
+.hero-section.grid-blueprint .information-detail__benefits li { color: inherit; }
+.hero-section.grid-blueprint .information-detail__benefits li::marker { color: #AED0BF; }
+.hero-section.grid-blueprint .grid-blueprint__content > .hero-offer__subtitle {
+  font-family: var(--font-family-base); font-weight: 400; line-height: 1.65; color: #D8E7DF;
+}
