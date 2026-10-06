@@ -24,6 +24,7 @@ const { JSDOM } = require('jsdom');
   const rd=region.window.document,answer=rd.querySelector('.q-body'),lead=rd.querySelector('form');
   initInformationPages(rd);
   const {initInformationTables}=await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+  global.document=rd;
   initInformationTables(rd);
   assert.equal(rd.querySelector('details .faq-item__answer'),answer);
   assert.equal(rd.querySelector('form'),lead);
