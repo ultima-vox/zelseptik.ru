@@ -5,7 +5,7 @@
       "entity": "Structure",
       "id": 1,
       "path": "/",
-      "status": "draft_only_public_values_unchanged",
+      "status": "saved_and_verified",
       "original": {
         "seo_title": "Септик для дома и дачи - Автономная канализация под ключ в Москве.",
         "seo_description": "Септики под ключ для частного дома и дачи, с доставкой и установкой в Москве, Московской области. Автономные канализацию для дачи, дома в компании ЗелСетик."
@@ -14,7 +14,29 @@
         "seo_title": "Септики в Зеленограде и Московской области — ЗЕЛСЕПТИК",
         "seo_description": "Подбор и продажа септиков для дома и дачи в Зеленограде и Московской области. Доставка, монтаж, обслуживание и ремонт. Получите расчёт для вашего участка."
       },
-      "note": "HostCMS showed a saved draft. Apply/save did not produce a verified public change; browser credential observation guard and pending overlay blocked further CMS work. Both / and /?seo_check=20261006 returned original metadata."
+      "note": "Saved through existing HostCMS SEO form on dev; verified public title and description on 2026-10-06 23:15 Europe/Moscow."
+    },
+    {
+      "entity": "Structure",
+      "id": 36,
+      "path": "/septiki/price/",
+      "status": "saved_and_verified",
+      "original": {
+        "seo_title": "Цены на септики популярных производителей",
+        "seo_description": "Цены на септики популярных производителей от компании ЗелСептик в Москве и Московской области."
+      },
+      "new": {
+        "seo_title": "Цены на септики — прайс-лист в Зеленограде и МО | ЗЕЛСЕПТИК",
+        "seo_description": "Прайс-лист септиков для дома и дачи: сравните модели и цены. Доставка и монтаж в Зеленограде и Московской области. Уточните стоимость выбранной комплектации."
+      },
+      "note": "Saved through existing Structure SEO fields; lib 11 configuration restores nonempty title/description for Structure 36 after parseUrl, before HTML head. Public HTTP 200 and exact metadata verified; catalog metadata unchanged."
     }
-  ]
+  ],
+  "price_handler": {
+    "file": "hostcmsfiles/lib/lib_11/lib_config_11.php",
+    "original": "archive/2026-10-06/seo-baseline/hostcmsfiles/lib/lib_11/lib_config_11.php",
+    "original_sha256": "02906e6140491d6bc7ed81d43243326211aac5562db0cf29feaa49bfac404217",
+    "scope": "Structure 36 only",
+    "lib_11_body": "Original code restored; no body change remains."
+  }
 }
