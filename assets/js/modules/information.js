@@ -61,6 +61,32 @@ export function initInformationPages(scope = document) {
   const path = scope.defaultView?.location.pathname || '';
   const view = {'/politika-konfidencialnosti/': 'legal', '/map/': 'map', '/404/': 'error'}[path];
   if (view) scope.documentElement.setAttribute('data-information-view', view);
+  // HostCMS renders the same error document at the requested URL, not just /404/.
+  const error = scope.querySelector('main > .area-404');
+  if (error) {
+    scope.documentElement.setAttribute('data-information-view', 'error');
+    const heading = error.querySelector('.txt > .h-2');
+    if (heading && heading.tagName !== 'H1') {
+      const title = scope.createElement('h1');
+      title.className = 'hero-offer__title';
+      title.textContent = 'Страница не найдена';
+      heading.replaceWith(title);
+    }
+    error.querySelector('.brdk')?.classList.add('breadcrumbs__list');
+    const home = error.querySelector('.err404__txt a[href="/"]');
+    home?.classList.add('btn', 'btn--primary');
+  }
+  // The CMS document below the city listing already contains a catalog heading.
+  // Keep it as a section heading when the regional template supplies the page H1.
+  if (scope.querySelector('.regional-catalog-hero h1')) {
+    const duplicate = scope.querySelector('main > .area-catalog h1');
+    if (duplicate) {
+      const heading = scope.createElement('h2');
+      for (const attribute of duplicate.attributes) heading.setAttribute(attribute.name, attribute.value);
+      heading.append(...Array.from(duplicate.childNodes));
+      duplicate.replaceWith(heading);
+    }
+  }
   const contexts = [
     ['/kessony/', 'Подберём кессон для вашей скважины', 'Поможем выбрать кессон и уточнить состав работ по установке.', 'Рассчитать кессон', ['Подбор кессона', 'Предварительную смету установки', 'Уточнение условий участка', 'Ответ по срокам и гарантии']],
     ['/pogreba/', 'Подберём погреб для вашего участка', 'Поможем выбрать погреб и уточнить условия доставки и установки.', 'Рассчитать погреб', ['Подбор погреба', 'Предварительную смету установки', 'Уточнение условий участка', 'Ответ по срокам и гарантии']],

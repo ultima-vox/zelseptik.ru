@@ -15,7 +15,8 @@
 	<xsl:variable name="n" select="number(3)"/>
 
 	<xsl:template match="/informationsystem">
-		<section class="area-category no-bg page-services">
+		<section class="hero-section grid-blueprint information-category-hero regional-catalog-hero"><div class="container"><div class="hero-offer"><div class="premium-slogan">Подбор, доставка и монтаж</div><h1 class="hero-offer__title"><xsl:choose><xsl:when test="count(tag)">Каталог септиков: <xsl:value-of select="tag/name"/></xsl:when><xsl:otherwise>Септики в Московской области</xsl:otherwise></xsl:choose></h1><p class="hero-offer__subtitle">Выберите город или подходящую модель. Поможем подобрать автономную канализацию под условия вашего участка.</p><a class="btn btn--primary js-btn-callback" href="#w-popup-01">Подобрать септик</a></div></div></section>
+<section class="area-category no-bg page-services">
 			<div class="page-bl">
 
 				<!-- Store parent id in a variable -->

@@ -1,0 +1,24 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const { JSDOM } = require('jsdom');
+(async () => {
+  const source = fs.readFileSync(require('node:path').join(__dirname, '../assets/js/modules/information.js'), 'utf8');
+  const { initInformationPages } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+  const dom = new JSDOM('<main><section class="area-404"><div class="txt"><ol class="brdk"><li><a href="/">Главная</a></li><li>404</li></ol><div class="h-2">Вот это да!</div></div><div class="err404__txt"><p>Перейти на <a href="/">главную</a></p></div></section></main>', {url:'https://dev.zelseptik.ru/absent/'});
+  const d = dom.window.document; const link = d.querySelector('.err404__txt a');
+  initInformationPages(d);
+  assert.equal(d.documentElement.dataset.informationView, 'error');
+  assert.equal(d.querySelector('h1').textContent, 'Страница не найдена');
+  assert.ok(d.querySelector('.breadcrumbs__list'));
+  assert.equal(d.querySelector('.err404__txt a'), link);
+  assert.ok(link.classList.contains('btn--primary'));
+  const once=d.body.innerHTML; initInformationPages(d); assert.equal(d.body.innerHTML,once);
+  const valid=new JSDOM('<main><h1>Товар 404</h1></main>', {url:'https://dev.zelseptik.ru/catalog/'});
+  initInformationPages(valid.window.document); assert.equal(valid.window.document.documentElement.dataset.informationView,undefined);
+  const catalog=new JSDOM('<main><section class="regional-catalog-hero"><h1>Септики</h1></section><section class="area-catalog"><h1 class="h-2">Каталог продукции</h1><form><input name="filter"></form></section></main>');
+  const form=catalog.window.document.querySelector('form'); initInformationPages(catalog.window.document);
+  assert.equal(catalog.window.document.querySelectorAll('h1').length,1);
+  assert.equal(catalog.window.document.querySelector('.area-catalog h2').textContent,'Каталог продукции');
+  assert.equal(catalog.window.document.querySelector('form'),form);
+  console.log('Real error route, valid-page isolation, idempotence and CMS section preservation passed.');
+})().catch(e=>{console.error(e);process.exit(1);});

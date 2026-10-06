@@ -27,7 +27,7 @@
 		<div class="reload_catalog " style="position: relative;">
 
 
-			<div class="catalog-row fl-row">
+			<div class="catalog-row fl-row regional-catalog-grid">
 				<xsl:apply-templates select="shop_item" />
 			</div>
 
@@ -74,358 +74,138 @@
 </xsl:template>
 <!-- Шаблон для товара -->
 <xsl:template match="shop_item">
-	<!--xsl:choose>
+		<div class="col catalog__item"><article class="catalog-card" itemscope="" itemtype="http://schema.org/Product">
 
-	<xsl:when test="position() = 2 and /shop/@id != 6">
-		<div class="col big" itemscope="" itemtype="https://schema.org/Product">
-			<div class="cat-banner">
-				<a href="{url}" class="img">
-					<img itemprop="image" src="{dir}{image_large}" alt="{name}" loading="lazy" class="lazyload"/>
-				</a>
-				<div class="txt">
-					<h3 class="h-3">
-						<xsl:choose>
-							<xsl:when test="/shop/@id = 1">
-								<a href="{url}"><span itemprop="name">Септик <xsl:value-of select="name"/></span></a>
-							</xsl:when>
-							<xsl:when test="/shop/@id = 5">
-								<a href="{url}"><span itemprop="name">Погреб <xsl:value-of select="name"/></span></a>
-							</xsl:when>
-							<xsl:otherwise><a href="{url}"><span itemprop="name"><xsl:value-of select="name"/></span></a></xsl:otherwise>
-						</xsl:choose>
-					</h3>
-					<div class="bann-coment">
-						<xsl:value-of select="description" disable-output-escaping="yes"/>
-					</div>
-					<div class="btns-row">
-						<p><a class="btn" href="{url}">
-								<span itemprop="offers" itemtype="https://schema.org/Offer" itemscope="">
-									<xsl:choose>
-										<xsl:when test="price = 0">
-											Под заказ
-										</xsl:when>
-										<xsl:otherwise>
-											Купить за
-											<xsl:apply-templates select="/shop/shop_currency/code">
-												<xsl:with-param name="value" select="price" />
-											</xsl:apply-templates>
-											<meta itemprop="price" content="{price}" />
-											<meta itemprop="priceCurrency" content="RUB" />
-											<link itemprop="availability" href="http://schema.org/InStock"/>
-										</xsl:otherwise>
-									</xsl:choose>
-								</span>
-						</a></p>
-					</div>
-				</div>
+			<div class="catalog-card__badges-row">
+				<xsl:choose>
+					<xsl:when test="property_value[tag_name='best']/value = 1">
+						<span class="catalog-card__badge">Выбор инженеров</span>
+					</xsl:when>
+					<xsl:when test="property_value[tag_name='spec']/value = 1">
+						<span class="catalog-card__badge">Новинка</span>
+					</xsl:when>
+					<xsl:when test="property_value[tag_name='sale']/value = 1">
+						<span class="catalog-card__badge">Хит продаж</span>
+					</xsl:when>
+				</xsl:choose>
 			</div>
-		</div>
-	</xsl:when>
-	<xsl:otherwise>
-		<div class="col catalog__item" itemscope="" itemtype="https://schema.org/Product">
-			<div class="pr-small">
-				<div class="img">
-					<a href="{url}">
-						<xsl:choose><xsl:when test="image_large != ''">
-								<img itemprop="image" width="152" height="152" src="{dir}{image_large}" alt="{name}" loading="lazy" class="lazyload"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<img width="152" height="152" src="{dir}{image_small}" alt="{name}" loading="lazy" class="lazyload"/>
-							</xsl:otherwise>
-						</xsl:choose>
-					</a>
-					<xsl:if test="discount != 0">
-						<div class="i-row"><span><xsl:apply-templates select="shop_discount"/>%</span></div>
-					</xsl:if>
-				</div>
 
-
-				<div class="pr-body-row">
-					<div class="pr-body-col">
-						<div class="txt">
-							<h3 class="h-5">
-								<xsl:choose>
-									<xsl:when test="/shop/@id = 1">
-										<a href="{url}"><span itemprop="name">Септик <xsl:value-of select="name"/></span></a>
-									</xsl:when>
-									<xsl:when test="/shop/@id = 5">
-										<a href="{url}"><span itemprop="name">Погреб <xsl:value-of select="name"/></span></a>
-									</xsl:when>
-									<xsl:otherwise><a href="{url}"><span itemprop="name"><xsl:value-of select="name"/></span></a></xsl:otherwise>
-								</xsl:choose>
-							</h3>
-							<div class="mobile-bl">
-								<div class="modific-sbm">Модификации <span class="ico"></span></div>
-							</div>
-							<ul itemprop="description">
-								<li>Кол-во пользователей (до) – 2;</li>
-								<li>Объем залпового сброса (л) – 120;</li>
-								<li>Способ водоотведения – Самотеком;</li>
-							</ul>
-							<xsl:value-of select="description" disable-output-escaping="yes"/>
-						</div>
-						<div class="modific-bl">
-							<xsl:if test="/shop/@id = 1">
-								<h6 class="tabs-h">Модификация:
-									<div class="i-btn">
-										<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM11.258 5.95746C11.258 4.26376 9.72769 3.55566 8.17335 3.55566C6.69151 3.55566 5.33174 4.59967 5.33203 5.77774C5.33203 6.25793 5.69683 6.51022 6.12181 6.51022C6.66959 6.51022 6.83106 6.167 7.00373 5.79998C7.20215 5.37825 7.41534 4.92508 8.24642 4.92508C8.97545 4.92508 9.4116 5.30946 9.4116 5.95774C9.4116 6.51806 8.93076 6.88508 8.42657 7.26991C7.87095 7.69401 7.28699 8.13973 7.28699 8.88962C7.28699 9.274 7.54204 9.6941 8.06416 9.6941C8.63512 9.6941 8.74993 9.39477 8.87418 9.07082C8.92435 8.93999 8.97607 8.80516 9.05999 8.68439C9.1771 8.5143 9.42327 8.34091 9.71006 8.1389C10.3749 7.67065 11.258 7.04863 11.258 5.95746ZM9.1087 11.4592C9.1087 10.9178 8.6585 10.4739 8.11288 10.4739C7.5664 10.4739 7.11677 10.9181 7.11677 11.4592C7.11677 12.0012 7.5664 12.4446 8.11288 12.4446C8.65936 12.4446 9.1087 12.0006 9.1087 11.4592Z" fill="#009CD9" />
-										</svg>
-										<span>Пр — с принудительным выбросом стоков. Его устанавливают при высоких грунтовых водах или выбросе стоков в канаву. Стандарт/Миди/Лонг — различают по длине горловины. Миди и Лонг, удлиненные, нужны, если стоковая труба выходит глубже 60 см от уровня земли.</span>
-									</div>
-								</h6>
-								<div class="tabs-row">
-									<ul>
-										<xsl:choose>
-											<xsl:when test="property_value[tag_name='nopr']/value = 1">
-												<li class="modification_load active">
-													<span class="name">Самотечный</span>
-												</li>
-												<li class="modification_load">
-													<span class="name">Принудительный</span>
-												</li>
-											</xsl:when>
-											<xsl:otherwise>
-												<li class="modification_load">
-													<span class="name">Самотечный</span>
-												</li>
-												<li class="modification_load active">
-													<span class="name">Принудительный</span>
-												</li>
-											</xsl:otherwise>
-										</xsl:choose>
-
-
-									</ul>
-								<span class="line"></span></div>
-							</xsl:if>
-							<xsl:if test="/shop/@id = 1 or /shop/@id = 6">
-								<div class="tabs-row">
-									<ul>
-										<xsl:choose>
-											<xsl:when test="property_value[tag_name='long']/value = 1">
-												<li class="modification_load ">
-													<span class="name">Стандарт</span>
-												</li>
-												<li class="modification_load active" >
-													<span class="name">Лонг</span>
-												</li>
-											</xsl:when>
-											<xsl:when test="property_value[tag_name='midi']/value = 1">
-												<li class="modification_load ">
-													<span class="name">Стандарт</span>
-												</li>
-												<li class="modification_load active" >
-													<span class="name">Миди</span>
-												</li>
-											</xsl:when>
-											<xsl:otherwise>
-												<li class="modification_load  active">
-													<span class="name">Стандарт</span>
-												</li>
-												<li class="modification_load" >
-													<span class="name">Лонг</span>
-												</li>
-											</xsl:otherwise>
-										</xsl:choose>
-									</ul>
-								<span class="line" style="width: 50%; left: 0%;"></span></div>
-							</xsl:if>
-						</div>
-					</div>
-					<div class="btns-row">
-						<p><a class="btn" href="{url}">
-								<span itemprop="offers" itemtype="https://schema.org/Offer" itemscope="">
-									<xsl:choose>
-										<xsl:when test="price = 0">
-											Под заказ
-										</xsl:when>
-										<xsl:when test="discount != 0">
-											<span class="old">
-												<xsl:apply-templates select="/shop/shop_currency/code">
-													<xsl:with-param name="value" select="price + discount" />
-												</xsl:apply-templates>
-											</span>
-											<xsl:apply-templates select="/shop/shop_currency/code">
-												<xsl:with-param name="value" select="price" />
-											</xsl:apply-templates>
-										</xsl:when>
-										<xsl:otherwise>
-											<xsl:apply-templates select="/shop/shop_currency/code">
-												<xsl:with-param name="value" select="price" />
-											</xsl:apply-templates>
-											<meta itemprop="price" content="{price}" />
-											<meta itemprop="priceCurrency" content="RUB" />
-											<link itemprop="availability" href="http://schema.org/InStock"/>
-										</xsl:otherwise>
-									</xsl:choose>
-								</span>
-						</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</xsl:otherwise>
-</xsl:choose-->
-<div class="col catalog__item" itemscope="" itemtype="https://schema.org/Product">
-	<div class="pr-small">
-		<div class="img">
-			<a href="{url}">
-				<xsl:choose><xsl:when test="image_large != ''">
-						<img itemprop="image" width="152" height="152" src="{dir}{image_large}" alt="{name}" loading="lazy" class="lazyload"/>
+			<div class="catalog-card__media">
+				<xsl:choose>
+					<xsl:when test="image_large != ''">
+						<img class="catalog-card__img" src="{dir}{image_large}" decoding="async" loading="lazy" alt="{name}" />
+						<meta itemprop="image" content="{dir}{image_large}" />
 					</xsl:when>
 					<xsl:otherwise>
-						<img width="152" height="152" src="{dir}{image_small}" alt="{name}" loading="lazy" class="lazyload"/>
+						<img class="catalog-card__img" src="/images/no-image.png" alt="{name}" title="{name}" itemprop="image" decoding="async" loading="lazy"/>
 					</xsl:otherwise>
 				</xsl:choose>
-			</a>
-			<xsl:if test="discount != 0">
-				<div class="i-row"><span><xsl:apply-templates select="shop_discount"/>%</span></div>
-			</xsl:if>
-		</div>
 
-
-		<div class="pr-body-row">
-			<div class="pr-body-col">
-				<div class="txt">
-					<h3 class="h-5">
-						<xsl:choose>
-							<xsl:when test="/shop/@id = 1">
-								<a href="{url}"><span itemprop="name"><xsl:value-of select="name"/></span></a>
-							</xsl:when>
-							<xsl:when test="/shop/@id = 5">
-								<a href="{url}"><span itemprop="name">Погреб <xsl:value-of select="name"/></span></a>
-							</xsl:when>
-							<xsl:otherwise><a href="{url}"><span itemprop="name"><xsl:value-of select="name"/></span></a></xsl:otherwise>
-						</xsl:choose>
-					</h3>
-					<!--div class="mobile-bl">
-					<div class="modific-sbm">Модификации <span class="ico"></span></div>
-				</div-->
-				<ul itemprop="description">
-					<xsl:if test="property_value[tag_name='men']/value != ''">
-						<li>Кол-во пользователей (до) – <xsl:value-of select="property_value[tag_name='men']/value"/>;</li>
-					</xsl:if>
-					<xsl:if test="property_value[tag_name='men']/value != ''">
-						<li>Объем залпового сброса (л) – 120;</li>
-					</xsl:if>
-					<xsl:if test="property_value[tag_name='nopr']/value = 1">
-						<li>Способ водоотведения – Самотеком;</li>
-					</xsl:if>
-					<xsl:if test="property_value[tag_name='pr']/value = 1">
-						<li>Способ водоотведения – Принудительный;</li>
-					</xsl:if>
-				</ul>
-				<!--xsl:value-of select="description" disable-output-escaping="yes"/-->
+				<xsl:if test="property_value[tag_name='men']/value != ''">
+					<div class="catalog-card__capacity">
+						<svg aria-hidden="true" fill="none" height="16" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg">
+							<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+							<path d="M16 3.128a4 4 0 0 1 0 7.744"></path>
+							<path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+							<circle cx="9" cy="7" r="4"></circle>
+						</svg>
+						<span>до <xsl:value-of select="property_value[tag_name='men']/value"/> чел.</span>
+					</div>
+				</xsl:if>
 			</div>
-			<div class="modific-bl">
-				<xsl:if test="/shop/@id = 1">
-					<h6 class="tabs-h">Модификация:
-						<span class="i-btn">
-							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM11.258 5.95746C11.258 4.26376 9.72769 3.55566 8.17335 3.55566C6.69151 3.55566 5.33174 4.59967 5.33203 5.77774C5.33203 6.25793 5.69683 6.51022 6.12181 6.51022C6.66959 6.51022 6.83106 6.167 7.00373 5.79998C7.20215 5.37825 7.41534 4.92508 8.24642 4.92508C8.97545 4.92508 9.4116 5.30946 9.4116 5.95774C9.4116 6.51806 8.93076 6.88508 8.42657 7.26991C7.87095 7.69401 7.28699 8.13973 7.28699 8.88962C7.28699 9.274 7.54204 9.6941 8.06416 9.6941C8.63512 9.6941 8.74993 9.39477 8.87418 9.07082C8.92435 8.93999 8.97607 8.80516 9.05999 8.68439C9.1771 8.5143 9.42327 8.34091 9.71006 8.1389C10.3749 7.67065 11.258 7.04863 11.258 5.95746ZM9.1087 11.4592C9.1087 10.9178 8.6585 10.4739 8.11288 10.4739C7.5664 10.4739 7.11677 10.9181 7.11677 11.4592C7.11677 12.0012 7.5664 12.4446 8.11288 12.4446C8.65936 12.4446 9.1087 12.0006 9.1087 11.4592Z" fill="#009CD9" />
-							</svg>
-							<span>Пр — с принудительным выбросом стоков. Его устанавливают при высоких грунтовых водах или выбросе стоков в канаву. Стандарт/Миди/Лонг — различают по длине горловины. Миди и Лонг, удлиненные, нужны, если стоковая труба выходит глубже 60 см от уровня земли.</span>
-						</span>
-					</h6>
-					<div class="tabs-row">
-						<ul>
+
+			<div class="catalog-card__body">
+				<h3 class="catalog-card__title" itemprop="name">
+					<a href="{url}"><xsl:value-of select="name"/></a>
+				</h3>
+
+
+				<div class="catalog-card__specs">
+					<xsl:if test="property_value[tag_name='performance']/value != ''">
+						<div class="catalog-card__spec-row">
+							<span class="catalog-card__spec-label">Производительность:</span>
+							<span class="catalog-card__spec-value">
+								<xsl:value-of select="property_value[tag_name='performance']/value"/> л/сутки
+							</span>
+						</div>
+					</xsl:if>
+
+					<xsl:if test="property_value[tag_name='zalp']/value != '' and property_value[tag_name='zalp']/value != 0">
+						<div class="catalog-card__spec-row">
+							<span class="catalog-card__spec-label">Залповый сброс:</span>
+							<span class="catalog-card__spec-value">
+								<xsl:value-of select="property_value[tag_name='zalp']/value"/> л
+							</span>
+						</div>
+					</xsl:if>
+
+					<div class="catalog-card__spec-row">
+						<span class="catalog-card__spec-label">Тип сброса:</span>
+						<span class="catalog-card__spec-value">
 							<xsl:choose>
-								<xsl:when test="property_value[tag_name='nopr']/value = 1">
-									<li class="modification_load active">
-										<span class="name">Самотечный</span>
-									</li>
-									<!--li class="modification_load">
-									<span class="name">Принудительный</span>
-								</li-->
+								<xsl:when test="property_value[tag_name='nopr']/value = 1">Самотечный</xsl:when>
+								<xsl:otherwise>Принудительный</xsl:otherwise>
+							</xsl:choose>
+						</span>
+					</div>
+
+<div class="catalog-card__spec-row"><span class="catalog-card__spec-label">Модификация:</span><span class="catalog-card__spec-value"><xsl:choose><xsl:when test="property_value[tag_name='long']/value = 1">Лонг</xsl:when><xsl:when test="property_value[tag_name='midi']/value = 1">Миди</xsl:when><xsl:otherwise>Стандарт</xsl:otherwise></xsl:choose></span></div>
+				</div>
+			</div>
+
+			<div class="catalog-card__footer">
+				<div class="catalog-card__price-row">
+					<span class="catalog-card__price-label">Цена от:</span>
+
+					<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+						<xsl:choose>
+							<xsl:when test="price = 0 or  price =''">
+								<span class="catalog-card__price-actual">Под заказ</span>
 							</xsl:when>
+
+							<xsl:when test="discount != 0">
+								<span class="catalog-card__price-original">
+									<xsl:apply-templates select="/shop/shop_currency/code">
+										<xsl:with-param name="value" select="price + discount" />
+									</xsl:apply-templates>
+								</span>
+
+								<span class="catalog-card__price-actual">
+									<xsl:apply-templates select="/shop/shop_currency/code">
+										<xsl:with-param name="value" select="price" />
+									</xsl:apply-templates>
+								</span>
+
+								<meta itemprop="price" content="{price}" />
+								<meta itemprop="priceCurrency" content="RUB" />
+								<link itemprop="availability" href="http://schema.org/InStock"/>
+							</xsl:when>
+
 							<xsl:otherwise>
-								<!--li class="modification_load">
-								<span class="name">Самотечный</span>
-							</li-->
-							<li class="modification_load active">
-								<span class="name">Принудительный</span>
-							</li>
-						</xsl:otherwise>
-					</xsl:choose>
+								<span class="catalog-card__price-actual">
+									<xsl:apply-templates select="/shop/shop_currency/code">
+										<xsl:with-param name="value" select="price" />
+									</xsl:apply-templates>
+								</span>
 
+								<meta itemprop="price" content="{price}" />
+								<meta itemprop="priceCurrency" content="RUB" />
+								<link itemprop="availability" href="http://schema.org/InStock"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</div>
+				</div>
 
-				</ul>
-			<span class="line"></span></div>
-		</xsl:if>
-		<xsl:if test="/shop/@id = 1 or /shop/@id = 6">
-			<div class="tabs-row">
-				<ul>
-					<xsl:choose>
-						<xsl:when test="property_value[tag_name='long']/value = 1">
-							<!--li class="modification_load ">
-							<span class="name">Стандарт</span>
-						</li-->
-						<li class="modification_load active" >
-							<span class="name">Лонг</span>
-						</li>
-					</xsl:when>
-					<xsl:when test="property_value[tag_name='midi']/value = 1">
-						<!--li class="modification_load ">
-						<span class="name">Стандарт</span>
-					</li-->
-					<li class="modification_load active" >
-						<span class="name">Миди</span>
-					</li>
-				</xsl:when>
-				<xsl:otherwise>
-					<li class="modification_load  active">
-						<span class="name">Стандарт</span>
-					</li>
-					<!--li class="modification_load" >
-					<span class="name">Лонг</span>
-				</li-->
-			</xsl:otherwise>
-		</xsl:choose>
-	</ul>
-<span class="line" style="width: 50%; left: 0%;"></span></div>
-</xsl:if>
-</div>
-</div>
-<div class="btns-row">
-<p><a class="btn" href="{url}">
-<span itemprop="offers" itemtype="https://schema.org/Offer" itemscope="">
-	<xsl:choose>
-		<xsl:when test="price = 0">
-			Под заказ
-		</xsl:when>
-		<xsl:when test="discount != 0">
-			<span class="old">
-				<xsl:apply-templates select="/shop/shop_currency/code">
-					<xsl:with-param name="value" select="price + discount" />
-				</xsl:apply-templates>
-			</span>
-			<xsl:apply-templates select="/shop/shop_currency/code">
-				<xsl:with-param name="value" select="price" />
-			</xsl:apply-templates>
-			<meta itemprop="price" content="{price}" />
-			<meta itemprop="priceCurrency" content="RUB" />
-			<link itemprop="availability" href="http://schema.org/InStock"/>
-		</xsl:when>
-		<xsl:otherwise>
-			<xsl:apply-templates select="/shop/shop_currency/code">
-				<xsl:with-param name="value" select="price" />
-			</xsl:apply-templates>
-			<meta itemprop="price" content="{price}" />
-			<meta itemprop="priceCurrency" content="RUB" />
-			<link itemprop="availability" href="http://schema.org/InStock"/>
-		</xsl:otherwise>
-	</xsl:choose>
-</span>
-</a></p>
-</div>
-</div>
-</div>
-</div>
-<!--xsl:if test="position() mod 3 = 0 and position() != last()">
-<span class="table_row"></span>
-</xsl:if-->
-</xsl:template>
+				<div class="catalog-card__actions">
+					<button class="btn btn--primary btn--full js-catalog-order" data-name="{name}" type="button">
+						Заказать монтаж
+					</button>
+					<a href="{url}" class="link link--muted link--center"><xsl:choose><xsl:when test="/shop/@id = 6">Подробнее об обслуживании</xsl:when><xsl:otherwise>Подробнее о модели</xsl:otherwise></xsl:choose></a>
+				</div>
+			</div>
+
+		</article></div>
+	</xsl:template>
 <xsl:template match="shop_discount">
 <xsl:value-of select="round(percent)"/>
 </xsl:template>

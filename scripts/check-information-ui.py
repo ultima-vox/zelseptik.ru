@@ -85,6 +85,27 @@ def check():
     assert not quiz.xpath('//script')
     assert quiz.xpath('//form[@id="form_quiz"]/@method') == ['post']
     assert quiz.xpath('//input[@name="count"]/@value') == ['1-6', '7-9', '10-15', '16-50', '50+', 'Другое']
+    regional = transform(280, xml)
+    assert regional.xpath('//div[contains(@class,"grid-blueprint")]//h1')
+    region_list = transform(279, xml)
+    assert len(region_list.xpath('//h1')) == 1
+    shop.getroot().set('id', '1')
+    item = etree.SubElement(shop.getroot(), 'shop_item', id='42')
+    for tag, value in [('name','CMS model'),('url','/septiki/cms-model/'),('dir','/images/'),('image_large','model.jpg'),('price','6000'),('discount','1000')]:
+        etree.SubElement(item,tag).text=value
+    currency=etree.SubElement(shop.getroot(),'shop_currency'); etree.SubElement(currency,'code').text='RUB'
+    prop=etree.SubElement(item,'property_value'); etree.SubElement(prop,'tag_name').text='long'; etree.SubElement(prop,'value').text='1'
+    cards=transform(278,shop)
+    assert len(cards.xpath('//article[@class="catalog-card"]')) == 1
+    assert not cards.xpath('//div[@class="pr-small"]')
+    assert cards.xpath('//a[@href="/septiki/cms-model/"]')
+    assert cards.xpath('//meta[@itemprop="price"]/@content') == ['6000']
+    assert 'Лонг' in cards.text_content()
+    shop.getroot().set('id','6')
+    service=transform(56,shop)
+    assert 'Стоимость обслуживания от' in service.text_content()
+    assert 'Плановое обслуживание и ремонт' in service.text_content()
+    assert 'Цена оборудования от' not in service.text_content()
     print('OK: list/group pagination, unique cards, CMS content, breadcrumbs, SEO/image fallback, lead form contract.')
 
 if __name__ == '__main__':

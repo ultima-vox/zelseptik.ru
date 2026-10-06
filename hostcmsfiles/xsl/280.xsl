@@ -15,8 +15,9 @@
 
 	<xsl:template match="informationsystem">
 		<xsl:variable name="group" select="informationsystem_group_id"/>
-		<div class="information-detail information-detail--regional"><div class="section area-main">
-			<div class="page-bl">
+		<div class="information-detail information-detail--regional"><div class="section area-main hero-section grid-blueprint">
+<xsl:if test="informationsystem_item/image_large != ''"><div class="hero__media" aria-hidden="true"><img class="hero__media-image" src="{informationsystem_item/dir}{informationsystem_item/image_large}" alt="" decoding="async"/></div></xsl:if>
+			<div class="page-bl container">
 				<ol class="breadcrumbs__list" itemscope="" itemtype="http://schema.org/BreadcrumbList">
 					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
 						<a itemprop="item" href="/">
@@ -52,92 +53,14 @@
 		</div>
 	</div>
 </xsl:template>
-	<xsl:template match="/informationsystem/informationsystem_item">
-
-		<!-- Получаем ID родительской группы и записываем в переменную $group -->
-		<xsl:variable name="group" select="informationsystem_group_id"/>
-
-
-		<!--div class="box-main" style="background-image:url('{dir}{image_large}');"-->
-		<div class="box-main" >
-			<div class="txt">
-				<!-- Путь к группе -->
-
-				<xsl:choose>
-					<xsl:when test="property_value[tag_name='seo-h1']/value !=''">
-						<h1 class="h-1" hostcms:id="{@id}" hostcms:field="name" hostcms:entity="informationsystem_item">	<xsl:value-of select="property_value[tag_name='seo-h1']/value"/></h1>
-					</xsl:when>
-					<xsl:otherwise><h1 class="h-1" hostcms:id="{@id}" hostcms:field="name" hostcms:entity="informationsystem_item"><xsl:value-of select="name"/></h1></xsl:otherwise>
-				</xsl:choose>
-				<div class="fl-row">
-					<div class="col">
-						<h3>Только комплексное изготовление под ключ!</h3>
-
-						<xsl:if test="description !=''">
-							<xsl:value-of select="description" disable-output-escaping="yes"/>
-						</xsl:if>
-						<xsl:if test="/informationsystem/message/node()">
-							<xsl:value-of disable-output-escaping="yes" select="/informationsystem/message"/>
-						</xsl:if>
-					</div>
-					<div class="desktop-bl col">
-						<ul class="main-inf">
-							<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="Собственное производство"/>Собственное производство</li>
-							<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="Большой выбор продукции"/>Большой выбор продукции</li>
-							<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="Рассрочка и кредит"/>Рассрочка и кредит</li>
-						</ul>
-						<!--xsl:if test="property_value[tag_name='main-inf']/value !=''">
-						<ul class="main-inf">
-
-							<xsl:for-each select="property_value[tag_name='main-inf'][position() &lt; 4]">
-
-								<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="{value}"/>
-									<xsl:value-of select="value"/>
-								</li>
-
-							</xsl:for-each>
-
-						</ul>
-					</xsl:if-->
-				</div>
-			</div>
-			<a class="btn w-btn btn--primary js-btn-callback" href="#w-popup-01">Связаться с ЗелСептик</a>
-
-
-			<!-- Выводим сообщение -->
-		</div>
-		<!--xsl:if test="property_value[tag_name='main-inf']/value !=''">
-		<div class="mobile-bl">
-			<ul class="main-inf">
-				<xsl:for-each select="property_value[tag_name='main-inf'][position() &lt; 4]">
-
-					<li><img src="/templates/template1/images/icons/point-bg.svg" alt="{value}" loading="lazy" class="lazyload"/>
-						<xsl:value-of select="value"/>
-					</li>
-
-				</xsl:for-each>
-			</ul>
-		</div>
-	</xsl:if-->
-</div>
-<xsl:if test="property_value[tag_name='main-inf']/value !=''">
-	<div class="mobile-bl">
-		<!--ul class="main-inf">
-		<xsl:for-each select="property_value[tag_name='main-inf'][position() &lt; 4]">
-
-			<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="{value}"/>
-				<xsl:value-of select="value"/>
-			</li>
-
-		</xsl:for-each>
-	</ul-->
-	<ul class="main-inf">
-		<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="Собственное производство" />Собственное производство</li>
-		<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="Большой выбор продукции"/>Большой выбор продукции</li>
-		<li><img src="/templates/template1/images/icons/point-bg.svg" loading="lazy" class="lazyload" alt="Рассрочка и кредит"/>Рассрочка и кредит</li>
-	</ul>
-</div>
-</xsl:if>
+<xsl:template match="/informationsystem/informationsystem_item">
+<div class="box-main"><div class="txt hero-offer">
+<div class="premium-slogan">Подбор, доставка и монтаж</div>
+<xsl:choose><xsl:when test="property_value[tag_name='seo-h1']/value != ''"><h1 class="hero-offer__title" hostcms:id="{@id}" hostcms:field="name" hostcms:entity="informationsystem_item"><xsl:value-of select="property_value[tag_name='seo-h1']/value"/></h1></xsl:when><xsl:otherwise><h1 class="hero-offer__title" hostcms:id="{@id}" hostcms:field="name" hostcms:entity="informationsystem_item"><xsl:value-of select="name"/></h1></xsl:otherwise></xsl:choose>
+<div class="hero-offer__subtitle"><xsl:if test="description != ''"><xsl:value-of select="description" disable-output-escaping="yes"/></xsl:if></div>
+<xsl:if test="/informationsystem/message/node()"><xsl:value-of select="/informationsystem/message" disable-output-escaping="yes"/></xsl:if>
+<div class="hero-offer__actions"><a class="btn btn--primary js-btn-callback" href="#w-popup-01">Связаться с ЗелСептик</a></div>
+</div></div>
 <!-- <div class="area-text bg">
 <div class="page-bl">
 <div class="txt">

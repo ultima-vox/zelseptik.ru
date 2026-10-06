@@ -138,7 +138,7 @@
 			</xsl:if>
 			<div class="hero-offer">
 				<div class="product-summary__badges">
-					<span class="badge">Монтаж под ключ</span>
+					<span class="badge"><xsl:choose><xsl:when test="$shop_id = 6">Сервис септиков</xsl:when><xsl:otherwise>Монтаж под ключ</xsl:otherwise></xsl:choose></span>
 					<xsl:if test="shop_producer/name != ''">
 						<span class="badge badge--outline">
 							<xsl:value-of select="shop_producer/name"/>
@@ -146,7 +146,7 @@
 					</xsl:if>
 				</div>
 				<div class="hero-offer__title-block">
-					<div class="premium-slogan">Инженерный подбор и монтаж</div>
+					<div class="premium-slogan"><xsl:choose><xsl:when test="$shop_id = 6">Плановое обслуживание и ремонт</xsl:when><xsl:otherwise>Инженерный подбор и монтаж</xsl:otherwise></xsl:choose></div>
 					<h1 class="hero-offer__title hero-offer__title-2xl" itemprop="name" hostcms:id="{@id}" hostcms:field="name" hostcms:entity="shop_item">
 						<xsl:if test="$shop_id = 1"><xsl:text>Септик </xsl:text></xsl:if>
 						<xsl:value-of select="name"/>
@@ -200,7 +200,7 @@
 				<article class="catalog-card" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
 					<div class="catalog-card__body">
 						<div class="catalog-card__price">
-							<span class="catalog-card__price-label">Цена оборудования от</span>
+							<span class="catalog-card__price-label"><xsl:choose><xsl:when test="$shop_id = 6">Стоимость обслуживания от</xsl:when><xsl:otherwise>Цена оборудования от</xsl:otherwise></xsl:choose></span>
 
 							<div class="catalog-card__price-row">
 								<xsl:choose>
