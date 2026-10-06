@@ -1,0 +1,20 @@
+{
+  "environment": "dev.zelseptik.ru",
+  "changes": [
+    {
+      "entity": "Structure",
+      "id": 1,
+      "path": "/",
+      "status": "draft_only_public_values_unchanged",
+      "original": {
+        "seo_title": "Септик для дома и дачи - Автономная канализация под ключ в Москве.",
+        "seo_description": "Септики под ключ для частного дома и дачи, с доставкой и установкой в Москве, Московской области. Автономные канализацию для дачи, дома в компании ЗелСетик."
+      },
+      "new": {
+        "seo_title": "Септики в Зеленограде и Московской области — ЗЕЛСЕПТИК",
+        "seo_description": "Подбор и продажа септиков для дома и дачи в Зеленограде и Московской области. Доставка, монтаж, обслуживание и ремонт. Получите расчёт для вашего участка."
+      },
+      "note": "HostCMS showed a saved draft. Apply/save did not produce a verified public change; browser credential observation guard and pending overlay blocked further CMS work. Both / and /?seo_check=20261006 returned original metadata."
+    }
+  ]
+}
