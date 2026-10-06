@@ -42,6 +42,7 @@ PREVIOUS_STAGE_HASHES = {
     'templates/template1/script.js': (
         '2ee0e3c5c2bc6cec8f72685cfff11ead7da3af88cc737485f7d85a15a782508b','a31020470633ee8b2a1447eda2eaa592a4bfd973fa76a98bce72c546724ed9bc',),
     'assets/css/information-pages.css': (
+        '922b0d10f47469ac980709e6103375c5a8509a106f11a12b3b4792581e317aaa',
         'eb4e8c7670a45415a659e4ee669740e004f514f52fc0f888b4cdd64dc1119f61',
         'afe15f3e1a655caa27c4f329a9fd9a1ba231654670457d815c1532fae489dc7f',
         '2b65382dda571413a6adb4f36648166042debb705b45bc6ee6dd6f2ecf1d0cf9',
