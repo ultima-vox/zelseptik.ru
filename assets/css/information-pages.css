@@ -1,5 +1,19 @@
 /* Adapt existing approved components to informationsystem detail pages.
    The production bundles remain the source of tokens and component styling. */
+/* The shared desktop menu must fit its container without shrinking the logo. */
+@media (min-width: 1024px) {
+  .site-header .logo {
+    flex-shrink: 0;
+  }
+  .site-header .site-header__container,
+  .site-header .nav-menu__list {
+    gap: var(--space-md);
+  }
+  .site-header .nav-menu__link {
+    font-size: var(--font-size-md);
+  }
+}
+
 .information-detail .hero-offer__title {
   overflow-wrap: anywhere;
 }
