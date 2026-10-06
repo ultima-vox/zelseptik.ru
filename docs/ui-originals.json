@@ -34,6 +34,46 @@
       "path": "scripts/verify-baseline.py",
       "original_path": "archive/2026-10-05/ui-baseline/scripts/verify-baseline.py",
       "sha256": "9f88bdcef5f96dcf6beaf90c4f382e59aa9e8a04a7b18d43d4578b87d2dd5c02"
+    },
+    {
+      "path": "hostcmsfiles/xsl/282.xsl",
+      "original_path": "archive/2026-10-06/ui-baseline/hostcmsfiles/xsl/282.xsl",
+      "sha256": "324e6dd36a77a9caf4a83fe3679528a803121b718a8a78ede735b67af2f18daa"
+    },
+    {
+      "path": "hostcmsfiles/xsl/55.xsl",
+      "original_path": "archive/2026-10-06/ui-baseline/hostcmsfiles/xsl/55.xsl",
+      "sha256": "28af0c97bc8de051fe32fb5b061fdd591d9bcea883bb8bf213324ae667cc3d91"
+    },
+    {
+      "path": "hostcmsfiles/xsl/56.xsl",
+      "original_path": "archive/2026-10-06/ui-baseline/hostcmsfiles/xsl/56.xsl",
+      "sha256": "790cc4483d1d02e46ba53e38a7b16e02c8fa791a15e8b52e85d76d23c7959aa3"
+    },
+    {
+      "path": "hostcmsfiles/xsl/83.xsl",
+      "original_path": "archive/2026-10-06/ui-baseline/hostcmsfiles/xsl/83.xsl",
+      "sha256": "52efe78906d26a2fd1231d19d5cb23eee26ee4181b556f4316509ab97b61645a"
+    },
+    {
+      "path": "hostcmsfiles/xsl/280.xsl",
+      "original_path": "archive/2026-10-06/ui-baseline/hostcmsfiles/xsl/280.xsl",
+      "sha256": "bda39973a82dda7ab93e0b260faba44d3b5d40026f2c2a7ea66a2a93320d8567"
+    },
+    {
+      "path": "hostcmsfiles/xsl/279.xsl",
+      "original_path": "archive/2026-10-06/ui-baseline/hostcmsfiles/xsl/279.xsl",
+      "sha256": "2923232a7466417fc25d87160d170e7bc90098e680d5abe066a55e5a385b2e1f"
+    },
+    {
+      "path": "hostcmsfiles/xsl/281.xsl",
+      "original_path": "archive/2026-10-06/ui-baseline/hostcmsfiles/xsl/281.xsl",
+      "sha256": "1047cf45b0a72239e8823f24e68b78d7ed999745600e70d1bf6501922c581311"
+    },
+    {
+      "path": "hostcmsfiles/xsl/3.xsl",
+      "original_path": "archive/2026-10-06/ui-baseline/hostcmsfiles/xsl/3.xsl",
+      "sha256": "2628f57195215f98d15bd68fcad042cddb5ec99be3bc53f8de73e041413c62cc"
     }
   ]
 }

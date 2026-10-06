@@ -333,7 +333,7 @@
 		<div class="container">
 			<header class="section-header">
 				<span class="badge">Информация</span>
-				<h2 class="section-header__title"><xsl:choose><xsl:when test="/shop/@id = 6">Об услуге</xsl:when><xsl:otherwise>О модели <xsl:value-of select="name"/></xsl:otherwise></xsl:choose></h2>
+				<h2 class="section-header__title">О модели <xsl:value-of select="name"/></h2>
 			</header>
 
 			<div class="info-split">

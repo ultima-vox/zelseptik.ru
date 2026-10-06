@@ -15,7 +15,7 @@
 	<xsl:variable name="n" select="number(3)"/>
 
 	<xsl:template match="/informationsystem">
-		<section class="area-category no-bg page-services">
+		<section class="area-category no-bg">
 			<div class="page-bl">
 
 				<!-- Store parent id in a variable -->

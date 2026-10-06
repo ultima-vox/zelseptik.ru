@@ -14,6 +14,7 @@
 	</xsl:template>
 	<xsl:template match="/informationsystem">
         <div class="information-detail page-legacy-content">
+            <xsl:if test="@id = 2"><xsl:attribute name="class">information-detail page-legacy-content information-detail--article</xsl:attribute></xsl:if>
             <section class="section hero-section grid-blueprint">
                 <div class="container">
                     <nav class="breadcrumbs" aria-label="Хлебные крошки">
@@ -48,6 +49,7 @@
                                 </img>
                             </xsl:if>
                         </div>
+                        <xsl:if test="@id != 2">
                         <aside class="grid-blueprint__aside" aria-label="Консультация по услуге">
                             <div class="cta-card">
                                 <div class="cta-card__header">
@@ -74,6 +76,7 @@
                                 <p class="cta-card__disclaimer">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
                             </div>
                         </aside>
+                        </xsl:if>
                     </div>
                 </div>
             </section>

@@ -15,7 +15,7 @@
 
 	<xsl:template match="informationsystem">
 		<xsl:variable name="group" select="informationsystem_group_id"/>
-		<div class="information-detail information-detail--regional"><div class="section area-main">
+		<div class="section area-main">
 			<div class="page-bl">
 				<ol class="breadcrumbs__list" itemscope="" itemtype="http://schema.org/BreadcrumbList">
 					<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem">
@@ -50,8 +50,7 @@
 				<xsl:if test="/informationsystem/informationsystem_item !=''"><xsl:apply-templates select="/informationsystem/informationsystem_item" mode="text"/></xsl:if>
 			</div>
 		</div>
-	</div>
-</xsl:template>
+	</xsl:template>
 	<xsl:template match="/informationsystem/informationsystem_item">
 
 		<!-- Получаем ID родительской группы и записываем в переменную $group -->
@@ -59,7 +58,7 @@
 
 
 		<!--div class="box-main" style="background-image:url('{dir}{image_large}');"-->
-		<div class="box-main" >
+		<div class="box-main" style="background-image:url('/assets/images/banners/montazh-septika.jpeg');">
 			<div class="txt">
 				<!-- Путь к группе -->
 

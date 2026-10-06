@@ -9,7 +9,6 @@
 	<xsl:decimal-format name="my" decimal-separator="," grouping-separator=" "/>
 	<!-- МагазинПрайс -->
 	<xsl:template match="/shop">
-<section class="section information-prices container"><h1 class="section-header__title">Прайс-лист септиков</h1>
 		<!--xsl:apply-templates select="/shop/shop_item[shop_group_id = 0]"/-->
 
 		<xsl:apply-templates select="//shop_group" mode="table">
@@ -85,8 +84,7 @@
 				</xsl:text>
 			</xsl:comment>
 		</script>
-	</section>
-</xsl:template>
+	</xsl:template>
 
 	<xsl:template match="shop_group">
 		<xsl:variable name="id"><xsl:value-of select="@id"/></xsl:variable>

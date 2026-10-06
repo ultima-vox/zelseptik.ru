@@ -274,7 +274,7 @@
 							</xsl:if>
 						</div>
 						<div class="txt">
-							<xsl:if test="/informationsystem/@id = 2"><span class="date">
+							<span class="date">
 								<xsl:value-of select="substring-before(date, '.')"/>
 								<xsl:variable name="month_year" select="substring-after(date, '.')"/>
 								<xsl:variable name="month" select="substring-before($month_year, '.')"/>
@@ -292,7 +292,7 @@
 									<xsl:when test="$month = 11"> &labelMonth11; </xsl:when>
 									<xsl:otherwise> &labelMonth12; </xsl:otherwise>
 								</xsl:choose>
-							<xsl:value-of select="substring-after($month_year, '.')"/></span></xsl:if>
+							<xsl:value-of select="substring-after($month_year, '.')"/></span>
 
 
 							<div class="h-3">

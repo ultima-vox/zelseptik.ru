@@ -9,6 +9,8 @@ class LocalLanguages(etree.Resolver):
     def resolve(self, url, pubid, context):
         if url.startswith('lang://'):
             return self.resolve_filename(str(ROOT / 'hostcmsfiles/xsl' / (url[7:] + '.ru.dtd')), context)
+        if url.startswith('import://'):
+            return self.resolve_filename(str(ROOT / 'hostcmsfiles/xsl' / (url[9:] + '.xsl')), context)
 
 
 def transform(xsl_id, xml):
@@ -59,6 +61,25 @@ def check():
     assert fallback.xpath('//img[@class="information-detail__image"]/@src') == ['/images/service-small.jpg']
     item.find('image_small').text = ''
     assert not transform(4, xml).xpath('//img[@class="information-detail__image"]')
+    xml.getroot().set('id', '2')
+    article = transform(4, xml)
+    assert not article.xpath('//aside | //form')
+    assert article.xpath('//div[contains(@class, "information-detail--article")]')
+    shop = etree.ElementTree(etree.fromstring(b'<shop id="1"><name>Catalog</name><url>/septiki/</url><group>0</group><total>1</total><limit>20</limit><page>0</page></shop>'))
+    catalog = transform(55, shop)
+    assert not catalog.xpath('//aside[contains(@class, "catalog__sidebar")]')
+    assert catalog.xpath('//div[contains(@class, "catalog--single")]')
+    shop.getroot().set('id', '6')
+    shop.find('url').text = '/obsluzhivanie-po-gorodam/'
+    service_catalog = transform(55, shop)
+    assert 'Обслуживание по городам' in service_catalog.text_content()
+    assert 'Все модели септиков' not in service_catalog.text_content()
+    prices = transform(83, shop)
+    assert len(prices.xpath('//h1')) == 1
+    quiz = transform(282, shop)
+    assert not quiz.xpath('//script')
+    assert quiz.xpath('//form[@id="form_quiz"]/@method') == ['post']
+    assert quiz.xpath('//input[@name="count"]/@value') == ['1-6', '7-9', '10-15', '16-50', '50+', 'Другое']
     print('OK: list/group pagination, unique cards, CMS content, breadcrumbs, SEO/image fallback, lead form contract.')
 
 if __name__ == '__main__':
