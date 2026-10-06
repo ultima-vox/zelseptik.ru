@@ -1,4 +1,4 @@
-name: Inspect dev SEO (read only)
+name: Inspect dev SEO structure (read only)
 on:
   push:
     branches: [chore/seo-dev-2026-10-06]

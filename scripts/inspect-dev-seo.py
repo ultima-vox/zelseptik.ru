@@ -21,7 +21,7 @@ for path in ["/modules/core/sitemap.php", "/hostcmsfiles/lib/lib_29/lib_config_2
     s=data.decode("utf-8",errors="replace")
     if path.endswith("sitemap.php"):
         lines=s.splitlines()
-        starts=[i for i,l in enumerate(lines) if re.search(r"function (execute|_execute|_write|_save|_create|_getCache|_getFile)",l)]
+        starts=[i for i,l in enumerate(lines) if re.search(r"function (execute|_close|_getIndexFilePath|_getSitemapDir|createSitemapDir)",l)]
         for start in starts:
             end=next((i for i in range(start+1,len(lines)) if re.search(r"function \w+",lines[i])), min(len(lines),start+240))
             print("method",start+1,lines[start].strip())
@@ -29,9 +29,11 @@ for path in ["/modules/core/sitemap.php", "/hostcmsfiles/lib/lib_29/lib_config_2
                 l=lines[i]
                 calls=re.findall(r"(?:[A-Za-z_]+::|->)?[A-Za-z_]\w*(?=\s*\()",l)
                 if calls: print("calls",i+1,calls)
-                if re.search(r"throw |catch |ob_|readfile|file_put_contents|->filename|->_file|->_cache",l):
+                if True:
                     print("structure",i+1,re.sub(r"(['\"])(.*?)(?<!\\)\1","'literal'",l).strip())
         print("exceptions", [(i+1,re.findall(r"new ([A-Za-z_]+)",l)) for i,l in enumerate(lines) if "throw " in l])
     elif path.endswith("template.htm"):
         print("catalog_heading",s.count('<h1 class="h-2">Каталог продукции:</h1>'))
+ftp.cwd('/hostcmsfiles/logs')
+print('log_inventory',ftp.nlst()[-10:])
 ftp.quit()
