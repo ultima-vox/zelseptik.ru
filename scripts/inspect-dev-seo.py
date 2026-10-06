@@ -11,17 +11,17 @@ def read(path):
         buffer.write(data)
     ftp.retrbinary("RETR " + path, collect)
     return buffer.getvalue()
-for path in ["/modules/core", "/hostcmsfiles"]:
+for path in ["/modules/core", "/hostcmsfiles", "/modules/core/command/controller"]:
     ftp.cwd(path)
     names=ftp.nlst()
     print("inventory", path, [n for n in names if re.search(r"sitemap|log|cache", n, re.I)])
-for path in ["/modules/core/sitemap.php", "/hostcmsfiles/lib/lib_29/lib_config_29.php", "/templates/template13/template.htm"]:
+for path in ["/modules/core/command/controller/sitemap.php", "/modules/core/sitemap.php", "/hostcmsfiles/lib/lib_29/lib_config_29.php", "/templates/template13/template.htm"]:
     data=read(path)
     print("file", path, "sha256",hashlib.sha256(data).hexdigest(),"bytes",len(data))
     s=data.decode("utf-8",errors="replace")
     if path.endswith("sitemap.php"):
         lines=s.splitlines()
-        starts=[i for i,l in enumerate(lines) if re.search(r"function (execute|_close|_getIndexFilePath|_getSitemapDir|createSitemapDir)",l)]
+        starts=[i for i,l in enumerate(lines) if re.search(r"function (execute|showAction|_close|_getIndexFilePath|_getSitemapDir|createSitemapDir)",l)]
         for start in starts:
             end=next((i for i in range(start+1,len(lines)) if re.search(r"function \w+",lines[i])), min(len(lines),start+240))
             print("method",start+1,lines[start].strip())
@@ -34,6 +34,10 @@ for path in ["/modules/core/sitemap.php", "/hostcmsfiles/lib/lib_29/lib_config_2
         print("exceptions", [(i+1,re.findall(r"new ([A-Za-z_]+)",l)) for i,l in enumerate(lines) if "throw " in l])
     elif path.endswith("template.htm"):
         print("catalog_heading",s.count('<h1 class="h-2">Каталог продукции:</h1>'))
+# Only inspect observed project bootstrap files for hook registrations.
+ftp.cwd('/')
+rootnames=ftp.nlst()
+print('bootstrap_inventory',[n for n in rootnames if re.search(r'bootstrap|main.php|index.php',n)])
 ftp.cwd('/hostcmsfiles/logs')
 print('log_inventory',ftp.nlst()[-10:])
 path='/hostcmsfiles/logs/06_10_2026.log.csv'

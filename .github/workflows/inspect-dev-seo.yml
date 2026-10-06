@@ -1,4 +1,4 @@
-name: Inspect dev SEO error classifications in binary mode (read only)
+name: Inspect dev SEO route handler (read only)
 on:
   push:
     branches: [chore/seo-dev-2026-10-06]
