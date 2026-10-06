@@ -1,5 +1,10 @@
 name: Deploy dev UI
 on:
+  push:
+    branches:
+      - chore/deploy-information-ui-2026-10-06
+    paths:
+      - .github/workflows/deploy-dev-ui.yml
   workflow_dispatch:
     inputs:
       mode:
@@ -26,7 +31,7 @@ jobs:
       - name: Check out reviewed UI stage
         uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
         with:
-          ref: 9f2c67284445a153c4228d21113a0739e4b4f680
+          ref: ebd769c322ec88ee59a4b1d75a8cfece7025a321
           path: ui-source
           persist-credentials: false
       - name: Test backup and rollback behavior
@@ -34,5 +39,5 @@ jobs:
       - name: Inspect or deploy with verified encrypted backup
         env:
           DEV_FTP_PASSWORD: ${{ secrets.DEV_FTP_PASSWORD }}
-          DEPLOY_MODE: ${{ inputs.mode }}
+          DEPLOY_MODE: ${{ inputs.mode || 'deploy' }}
         run: python3 scripts/deploy-dev-ui.py --source ui-source --mode "$DEPLOY_MODE"
