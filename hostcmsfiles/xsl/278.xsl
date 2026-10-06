@@ -96,6 +96,7 @@
 						<img class="catalog-card__img" src="{dir}{image_large}" decoding="async" loading="lazy" alt="{name}" />
 						<meta itemprop="image" content="{dir}{image_large}" />
 					</xsl:when>
+<xsl:when test="image_small != ''"><img class="catalog-card__img" src="{dir}{image_small}" alt="{name}" decoding="async" loading="lazy"/><meta itemprop="image" content="{dir}{image_small}"/></xsl:when>
 					<xsl:otherwise>
 						<img class="catalog-card__img" src="/images/no-image.png" alt="{name}" title="{name}" itemprop="image" decoding="async" loading="lazy"/>
 					</xsl:otherwise>

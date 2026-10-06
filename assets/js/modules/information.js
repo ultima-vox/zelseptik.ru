@@ -61,6 +61,7 @@ export function initInformationPages(scope = document) {
   const path = scope.defaultView?.location.pathname || '';
   const view = {'/politika-konfidencialnosti/': 'legal', '/map/': 'map', '/404/': 'error'}[path];
   if (view) scope.documentElement.setAttribute('data-information-view', view);
+  if (scope.querySelector('main > .area-catalog .regional-catalog-grid')) scope.documentElement.setAttribute('data-regional-catalog', '');
   // HostCMS renders the same error document at the requested URL, not just /404/.
   const error = scope.querySelector('main > .area-404');
   if (error) {

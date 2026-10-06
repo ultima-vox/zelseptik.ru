@@ -1053,3 +1053,24 @@ html[data-information-view="error"] .area-404 .err404__txt > .h-2 { font-size: v
 html[data-information-view="error"] .area-404 p { color: #394A42; line-height: 1.65; }
 html[data-information-view="error"] .area-404 .btn { margin: 12px 0; }
 @media (max-width: 767px) { html[data-information-view="error"] .area-404 .err404-wrap { padding: 20px; } }
+
+/* Legacy regional documents keep their content, inside the shared container. */
+html[data-regional-catalog] main > :is(.area-catalog, .area-text, .area-category, .area-quiz-new, .area-questions) > .page-bl,
+.information-detail--regional > [data-service-section],
+.information-detail--regional > .information-service-layout {
+  width: calc(100% - 64px); max-width: var(--container-max); margin-inline: auto;
+}
+html[data-regional-catalog] .area-category.page-services .cities-list { list-style: none; padding-left: 0; }
+html[data-regional-catalog] .area-catalog .page-row > .col { min-width: 0; width: auto; }
+html[data-regional-catalog] .area-catalog .page-row > .col-medium .regional-catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+html[data-regional-catalog] .area-catalog .catalog__sidebar { position: static; }
+html[data-regional-catalog] .area-catalog .cat-links { display: block; margin-bottom: 20px; color: #214B3F; }
+@media (min-width: 1101px) {
+  html[data-regional-catalog] .area-catalog .page-row:has(> .col-small) { display: grid; grid-template-columns: 280px minmax(0, 1fr); align-items: start; gap: 24px; }
+}
+@media (max-width: 767px) {
+  html[data-regional-catalog] main > :is(.area-catalog, .area-text, .area-category, .area-quiz-new, .area-questions) > .page-bl,
+  .information-detail--regional > [data-service-section],
+  .information-detail--regional > .information-service-layout { width: calc(100% - 32px); }
+  html[data-regional-catalog] .area-catalog .page-row > .col-medium .regional-catalog-grid { grid-template-columns: minmax(0, 1fr); }
+}
