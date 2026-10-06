@@ -726,7 +726,7 @@ html[data-information-view="error"] main > .area-404 img {
 
 /* Keep navigation at the viewport edge without changing document flow. */
 .site-header {
-  position: sticky;
+  position: sticky !important;
   top: 0;
   z-index: var(--z-header);
 }
@@ -753,7 +753,7 @@ html[data-information-view="error"] main > .area-404 img {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,.95), rgba(255,255,255,.62));
+  background: linear-gradient(90deg, rgba(255,255,255,.86), rgba(255,255,255,.62));
 }
 .hero-section.grid-blueprint::before {
   z-index: 1;
