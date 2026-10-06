@@ -657,6 +657,10 @@ html[data-information-view="error"] main > .area-404 img {
   animation: none;
   overflow-y: auto;
   overscroll-behavior: contain;
+  backface-visibility: hidden;
+}
+.mobile-drawer--moving .mobile-drawer__dialog {
+  will-change: transform;
 }
 .mobile-drawer.mobile-drawer--open .mobile-drawer__dialog {
   transform: translate3d(0, 0, 0);
@@ -747,13 +751,15 @@ html[data-information-view="error"] main > .area-404 img {
   border-radius: 0;
   object-fit: cover;
   object-position: center;
-  filter: grayscale(.9) contrast(.85);
+  filter: grayscale(1) invert(1) contrast(1.2);
+  mix-blend-mode: screen;
+  opacity: .32;
 }
 .hero-section > .hero__media::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(255,255,255,.86), rgba(255,255,255,.62));
+  background: linear-gradient(90deg, rgba(6,49,105,.82), rgba(6,49,105,.18));
 }
 .hero-section.grid-blueprint::before {
   z-index: 1;
@@ -840,7 +846,7 @@ html[data-information-view="error"] main > .area-404 img {
 }
 @media (max-width: 767px) {
   .hero-section > .hero__media::after {
-    background: rgba(255,255,255,.84);
+    background: rgba(6,49,105,.62);
   }
   #catalog .catalog-carousel,
   #catalog .catalog-carousel__track,
@@ -864,3 +870,32 @@ html[data-information-view="error"] main > .area-404 img {
     overflow-wrap: anywhere;
   }
 }
+
+/* Blueprint paper, with a photographic approximation of light drawing strokes. */
+:is(.hero-section, .catalog-hero).grid-blueprint {
+  background: #063169;
+  color: #fff;
+  isolation: isolate;
+}
+:is(.hero-section, .catalog-hero).grid-blueprint::before {
+  background-image:
+    linear-gradient(rgba(178,217,255,.23) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(178,217,255,.23) 1px, transparent 1px),
+    linear-gradient(rgba(178,217,255,.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(178,217,255,.15) 1px, transparent 1px);
+  background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
+  opacity: 1;
+}
+:is(.hero-section, .catalog-hero).grid-blueprint :is(h1, .hero-offer__title, .catalog-hero__title) {
+  color: #fff;
+}
+:is(.hero-section, .catalog-hero).grid-blueprint :is(.hero-offer__subtitle, .catalog-hero__text, .breadcrumbs__list, .breadcrumbs__list a, .breadcrumbs__list > li:last-child, .breadcrumbs__list > li::after) {
+  color: #e0edfc;
+}
+.hero-section > .hero__media { background: #063169; }
+.information-category-hero { padding-block: clamp(40px, 6vw, 80px); }
+.information-category-hero .hero-offer__title { margin: 0; }
+
+:is(.hero-section, .catalog-hero).grid-blueprint :is(.hero-offer__benefits, .hero-offer__benefit, .stats-strip__value, .stats-strip__label, .hero-offer__eyebrow, .hero-offer__note, ul.breadcrumbs, ul.breadcrumbs a, ul.breadcrumbs > li:last-child, ul.breadcrumbs > li::after) { color: #e0edfc; }
+
+:is(.hero-section, .catalog-hero).grid-blueprint :is(.hero__proof-list, .hero__proof-item, .hero-offer__tag, .premium-slogan) { color: #e0edfc; }

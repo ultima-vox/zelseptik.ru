@@ -37,24 +37,82 @@
 
     if (!burger || !drawer) return;
 
+    let isOpen = false;
+    let finishTimer = null;
+    let frame = null;
+    let savedOverflow = '';
+    let savedPadding = '';
+    drawer.inert = true;
+
+    function focusWithoutScroll(element) {
+      if (element && typeof element.focus === 'function') element.focus({ preventScroll: true });
+    }
+
+    function settle() {
+      window.clearTimeout(finishTimer);
+      finishTimer = null;
+      drawer.classList.remove('mobile-drawer--moving');
+      if (isOpen) {
+        focusWithoutScroll(closeBtn);
+      } else {
+        document.body.style.overflow = savedOverflow;
+        document.body.style.paddingRight = savedPadding;
+      }
+    }
+
+    function waitForMotion() {
+      window.clearTimeout(finishTimer);
+      const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      finishTimer = window.setTimeout(settle, reduced ? 0 : 300);
+    }
+
     function open() {
-      lastFocused = document.activeElement;
-      drawer.classList.add('mobile-drawer--open');
+      if (isOpen) return;
+      // A reversal retains the original lock; do not overwrite saved styles.
+      if (finishTimer === null) {
+        lastFocused = document.activeElement;
+        savedOverflow = document.body.style.overflow;
+        savedPadding = document.body.style.paddingRight;
+        const scrollbar = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
+        if (scrollbar) document.body.style.paddingRight = (parseFloat(window.getComputedStyle(document.body).paddingRight) + scrollbar) + 'px';
+      }
+      isOpen = true;
+      window.clearTimeout(finishTimer);
+      if (frame !== null) window.cancelAnimationFrame(frame);
+      drawer.inert = false;
       drawer.setAttribute('aria-hidden', 'false');
       burger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-      if (closeBtn) closeBtn.focus();
+      drawer.classList.add('mobile-drawer--moving');
+      // Promote the panel before its transform changes; never scroll to an offscreen control.
+      frame = window.requestAnimationFrame(function () {
+        frame = window.requestAnimationFrame(function () {
+          frame = null;
+          if (!isOpen) return;
+          drawer.classList.add('mobile-drawer--open');
+          waitForMotion();
+        });
+      });
     }
 
     function close() {
-      if (!drawer.classList.contains('mobile-drawer--open')) return;
-
-      drawer.classList.remove('mobile-drawer--open');
+      if (!isOpen) return;
+      isOpen = false;
+      if (frame !== null) window.cancelAnimationFrame(frame);
+      frame = null;
+      focusWithoutScroll(lastFocused);
+      drawer.inert = true;
       drawer.setAttribute('aria-hidden', 'true');
       burger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
+      drawer.classList.add('mobile-drawer--moving');
+      drawer.classList.remove('mobile-drawer--open');
+      // Keep the background stationary for the entire closing transition.
+      waitForMotion();
     }
+
+    if (dialog) dialog.addEventListener('transitionend', function (event) {
+      if (event.target === dialog && event.propertyName === 'transform' && frame === null) settle();
+    });
 
     burger.addEventListener('click', open);
     if (closeBtn) closeBtn.addEventListener('click', close);
@@ -86,10 +144,10 @@
 
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
-        last.focus();
+        focusWithoutScroll(last);
       } else if (!event.shiftKey && document.activeElement === last) {
         event.preventDefault();
-        first.focus();
+        focusWithoutScroll(first);
       }
     });
   }
@@ -652,10 +710,10 @@ openModal(leadModal, title, {
 
         if (event.shiftKey && document.activeElement === first) {
           event.preventDefault();
-          last.focus();
+          focusWithoutScroll(last);
         } else if (!event.shiftKey && document.activeElement === last) {
           event.preventDefault();
-          first.focus();
+          focusWithoutScroll(first);
         }
       }
 

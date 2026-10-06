@@ -17,12 +17,10 @@
 
 	<xsl:template match="/informationsystem">
 		<xsl:variable name="seo-h1" select="/informationsystem/seo-h1"/>
-		<div class="page-services"><section class="area-category no-bg">
-			<div class="page-bl">
-
-				<!-- Store parent id in a variable -->
-				<xsl:variable name="group" select="group"/>
-				<div class="txt">
+		<xsl:variable name="group" select="group"/>
+		<div class="page-services">
+		<section class="section hero-section grid-blueprint information-category-hero"><div class="container">
+				<div class="information-category-hero__content">
 					<xsl:if test="group = 0">
 						<ol class="breadcrumbs__list">
 							<li><a href="/">Главная</a></li>
@@ -30,10 +28,10 @@
 						</ol>
 						<xsl:choose>
 							<xsl:when test="$seo-h1 !=''">
-								<h1 class="h-2"><xsl:value-of select="$seo-h1" disable-output-escaping="yes"/></h1>
+								<h1 class="hero-offer__title"><xsl:value-of select="$seo-h1" disable-output-escaping="yes"/></h1>
 							</xsl:when>
 							<xsl:otherwise>
-								<h1 class="h-2"><xsl:value-of select="name"/></h1>
+								<h1 class="hero-offer__title"><xsl:value-of select="name"/></h1>
 							</xsl:otherwise>
 						</xsl:choose>
 
@@ -43,9 +41,15 @@
 							<li><a href="/">Главная</a></li>
 							<xsl:apply-templates select=".//informationsystem_group[@id=$group]" mode="breadCrumbs"/>
 						</ol>
-						<h1 class="h-2"><xsl:value-of select=".//informationsystem_group[@id=$group]/name"/></h1>
+						<h1 class="hero-offer__title"><xsl:value-of select=".//informationsystem_group[@id=$group]/name"/></h1>
 					</xsl:if>
 				</div>
+		</div></section>
+<section class="area-category no-bg">
+			<div class="page-bl">
+
+				<!-- Store parent id in a variable -->
+
 
 
 

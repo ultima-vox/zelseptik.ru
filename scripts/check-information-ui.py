@@ -24,6 +24,7 @@ def check():
     xml = etree.parse(str(ROOT / 'tests/fixtures/information.xml'))
     listing = transform(13, xml)
     assert len(listing.xpath('//h1')) == 1
+    assert listing.xpath('//section[contains(@class, "information-category-hero")]//h1')
     links = listing.xpath('//a[@class="category-bl"]/@href')
     assert links == ['/services/montazh/', '/services/servis/', '/services/podbor-septikov/'], links
     assert not listing.xpath('//span[@class="h-3_mobile"]')
