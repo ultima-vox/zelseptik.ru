@@ -105,3 +105,9 @@ CSS, поэтому её хеш отличается от экспортиров
    проверить сброс её кеша и версионирование ресурсов; не разворачивать экспорт целиком.
 
 Этот этап не считается завершением унификации всего сайта и не опубликован на production.
+
+## Shared rich service content — 2026-10-06
+
+The common information module enhances existing `.area-text`, `.area-paragraph` and `.area-why` sections on information detail pages and regional service pages. Articles are excluded. Existing class names remain; content nodes, photos, prices, links and forms are preserved. Known legacy number SVGs use the existing `process-card__step` and `process-card__number-bg` components. Section navigation uses existing headings; the original price section moves near the beginning without duplication. Valid normalized tables retain semantic headers and expose real column labels on mobile cards; malformed tables keep the existing scroll fallback. Rules are visible together rather than hidden in a slider.
+
+Validation: section regression test covers 8 numbers, source node preservation, prices/labels, heading anchors, article isolation and idempotence. Baseline (324 checksums), information XSL, price-table and quiz checks passed. No live forms submitted. Mobile CSS is implemented but physical phone verification remains outstanding. Pages lacking these legacy section wrappers need separate inspection; this change does not claim every service page has been visually checked.

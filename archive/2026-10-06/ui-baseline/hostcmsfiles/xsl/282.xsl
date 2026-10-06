@@ -90,10 +90,7 @@
 					</div>
 				</div-->
 				<div class="quiz_overlay">
-					<form class="quiz-slider form-quiz" id="form_quiz" method="post" action="./" enctype="multipart/form-data" data-lead-form="">
-<input type="hidden" name="_zs_action" value="lead"/>
-<input type="hidden" name="form_type" value="Подбор септика: квиз"/>
-<input type="hidden" name="g-recaptcha-response"/>
+					<form class="quiz-slider form-quiz" id="form_quiz" method="post" action="./" enctype="multipart/form-data">
 						<div class="swiper-box sw-quiz" id="sw-quiz24">
 							<div class="swiper swiper-container-horizontal swiper-container-autoheight">
 								<div class="swiper-wrapper">
@@ -519,7 +516,7 @@
 												<div class="center">
 													<div class="h-2">Супер! Уже начинаем считать
 													</div>
-													<p>Оставьте телефон и выберите удобный способ связи. Выбранный способ передадим инженеру.
+													<p>Оставьте контакты и выберите удобный способ для обратной связи. Звонить не будем, если не выберете пункт "телефон"
 													</p>
 												</div>
 												<div class="quiz-form">
@@ -598,7 +595,7 @@
 											<div class="quiz-farea">
 												<div class="center">
 													<div class="h-2">Все расскажем</div>
-													<p>Оставьте телефон и выберите удобный способ связи. Выбранный способ передадим инженеру.</p>
+													<p>Оставьте контакты и выберите удобный способ для связи. Звонить не будем, если не выберете пункт "телефон"</p>
 												</div>
 												<div class="quiz-form">
 													<div class="inp-bl">
@@ -696,7 +693,62 @@
 							</div>
 						</div>
 
-						
+						<script>
+							<xsl:comment>
+								<xsl:text disable-output-escaping="yes">
+<![CDATA[
+		document.addEventListener("DOMContentLoaded", () => {
+		const swiper_quiz24 = new Swiper('#sw-quiz24 .swiper', {
+			slidesPerView: 1, spaceBetween: 0, centeredSlides: false, loop: false, autoHeight: true,allowTouchMove:false,
+			navigation: {
+				nextEl: '#sw-quiz24 .swiper-button.next',
+				prevEl: '#sw-quiz24 .swiper-button.prev',
+			},
+			on: {
+				init: function () {
+					let totalSlides = $('#sw-quiz24 .swiper-slide:not(.swiper-slide-duplicate)').length;
+					if(totalSlides == 1){
+						$('.quiz-slider').addClass('result');
+					}
+				},
+				slideChange: function () {
+					let price = 1000;
+					if(swiper_quiz24.activeIndex > 0){
+						price = 1000 + (swiper_quiz24.activeIndex * 500)
+					}
+					if(swiper_quiz24.activeIndex == (swiper_quiz24.slides.length-1)){
+						$('.quiz-slider').addClass('result');
+					}else{
+						$('.quiz-slider').removeClass('result');
+					}
+					$('.change_price24').text(price + ' ₽');
+					$('.change_price_hidden24').val(price + ' ₽');
+
+				},
+			},
+		});
+
+
+		$('#sw-quiz24').on('click','.next_slide', function (){
+			swiper_quiz24.slideNext();
+		});
+
+		$.fn.setCursorPosition = function (pos) {
+			if ($(this).get(0).setSelectionRange && $(this).val().replace(/\D/g, '').length != 11) {
+				$(this).get(0).setSelectionRange(pos, pos);
+			}
+		};
+
+		$.mask.definitions['N'] = '[/0-6|9/]';
+
+		$(".phone_mask").click(function () {
+			$(this).setCursorPosition(2);
+		}).mask("+7 N99 999-99-99");
+        });
+									]]>
+								</xsl:text>
+							</xsl:comment>
+						</script>
 
 					</form>
 					<div class="quiz_thanks" style="display: none;">

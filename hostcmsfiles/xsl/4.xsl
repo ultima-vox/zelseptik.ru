@@ -14,7 +14,15 @@
 	</xsl:template>
 	<xsl:template match="/informationsystem">
         <div class="information-detail page-legacy-content">
+            <xsl:if test="@id = 2"><xsl:attribute name="class">information-detail page-legacy-content information-detail--article</xsl:attribute></xsl:if>
             <section class="section hero-section grid-blueprint">
+                <xsl:if test="@id != 2 and (informationsystem_item/image_large != '' or informationsystem_item/image_small != '')">
+                    <div class="hero__media" aria-hidden="true">
+                        <img class="hero__media-image" alt="" decoding="async">
+                            <xsl:attribute name="src"><xsl:value-of select="informationsystem_item/dir"/><xsl:choose><xsl:when test="informationsystem_item/image_large != ''"><xsl:value-of select="informationsystem_item/image_large"/></xsl:when><xsl:otherwise><xsl:value-of select="informationsystem_item/image_small"/></xsl:otherwise></xsl:choose></xsl:attribute>
+                        </img>
+                    </div>
+                </xsl:if>
                 <div class="container">
                     <nav class="breadcrumbs" aria-label="Хлебные крошки">
                         <ol class="breadcrumbs__list">
@@ -42,12 +50,13 @@
                                     <xsl:for-each select="informationsystem_item/property_value[tag_name='main-inf'][position() &lt; 4]"><li><xsl:value-of select="value"/></li></xsl:for-each>
                                 </ul>
                             </xsl:if>
-                            <xsl:if test="informationsystem_item/image_large != '' or informationsystem_item/image_small != ''">
+                            <xsl:if test="@id = 2 and (informationsystem_item/image_large != '' or informationsystem_item/image_small != '')">
                                 <img class="information-detail__image" alt="{informationsystem_item/name}">
                                     <xsl:attribute name="src"><xsl:value-of select="informationsystem_item/dir"/><xsl:choose><xsl:when test="informationsystem_item/image_large != ''"><xsl:value-of select="informationsystem_item/image_large"/></xsl:when><xsl:otherwise><xsl:value-of select="informationsystem_item/image_small"/></xsl:otherwise></xsl:choose></xsl:attribute>
                                 </img>
                             </xsl:if>
                         </div>
+                        <xsl:if test="@id != 2">
                         <aside class="grid-blueprint__aside" aria-label="Консультация по услуге">
                             <div class="cta-card">
                                 <div class="cta-card__header">
@@ -74,6 +83,7 @@
                                 <p class="cta-card__disclaimer">Нажимая кнопку, вы соглашаетесь на обработку персональных данных.</p>
                             </div>
                         </aside>
+                        </xsl:if>
                     </div>
                 </div>
             </section>

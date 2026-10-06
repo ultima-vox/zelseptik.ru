@@ -93,7 +93,7 @@
 								</div>
 
 								<div class="hero-actions">
-									<a class="btn btn--primary" href="#catalog-products"><xsl:choose><xsl:when test="/shop/@id = 6">Выбрать город обслуживания</xsl:when><xsl:otherwise>Смотреть подходящие модели</xsl:otherwise></xsl:choose></a>
+									<a class="btn btn--primary" href="#catalog-products">Смотреть подходящие модели</a>
 									<button class="btn btn--secondary js-btn-callback" type="button">Получить подбор инженера</button>
 								</div>
 							</div>
@@ -223,11 +223,11 @@
 					<div>
 						<xsl:attribute name="class">
 							<xsl:text>catalog</xsl:text>
-							<xsl:if test="not(contains(/shop/url, '/septiki/')) or not(count(/shop/shop_filter_seos/shop_filter_seo[active = 1]) &gt; 0)">
+							<xsl:if test="not(contains(/shop/url, '/septiki/'))">
 								<xsl:text> catalog--single</xsl:text>
 							</xsl:if>
 						</xsl:attribute>
-						<xsl:if test="contains(/shop/url, '/septiki/') and count(/shop/shop_filter_seos/shop_filter_seo[active = 1]) &gt; 0">
+						<xsl:if test="contains(/shop/url, '/septiki/')">
 						<aside class="catalog__sidebar" aria-label="Фильтры каталога">
 							<div class="catalog-filter">
 								<div class="catalog-filter__header">
@@ -365,8 +365,7 @@
 										<xsl:when test="$group != 0">
 											<xsl:value-of select=".//shop_group[@id=$group]/name"/>
 										</xsl:when>
-										<xsl:when test="/shop/@id = 6">Обслуживание по городам</xsl:when>
-<xsl:when test="contains(/shop/url, '/kessony/')">Все модели кессонов</xsl:when>
+										<xsl:when test="contains(/shop/url, '/kessony/')">Все модели кессонов</xsl:when>
 										<xsl:when test="contains(/shop/url, '/pogreba/')">Все модели погребов</xsl:when>
 										<xsl:otherwise>Все модели септиков</xsl:otherwise>
 										</xsl:choose>
@@ -376,7 +375,7 @@
 										<xsl:value-of select="total"/>
 										<xsl:text> </xsl:text>
 										<xsl:choose>
-											<xsl:when test="/shop/@id = 6">вариантов обслуживания</xsl:when><xsl:when test="total = 1">модель</xsl:when>
+											<xsl:when test="total = 1">модель</xsl:when>
 											<xsl:otherwise>моделей</xsl:otherwise>
 										</xsl:choose>
 									</div>
@@ -640,7 +639,7 @@
 					<button class="btn btn--primary btn--full js-catalog-order" data-name="{name}" type="button">
 						Заказать монтаж
 					</button>
-					<a href="{url}" class="link link--muted link--center"><xsl:choose><xsl:when test="/shop/@id = 6">Подробнее об обслуживании</xsl:when><xsl:otherwise>Подробнее о модели</xsl:otherwise></xsl:choose></a>
+					<a href="{url}" class="link link--muted link--center">Подробнее о модели</a>
 				</div>
 			</div>
 

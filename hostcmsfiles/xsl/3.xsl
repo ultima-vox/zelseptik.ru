@@ -20,12 +20,9 @@
 		<xsl:variable name="group" select="group"/>
 		<xsl:variable name="seo-h1" select="/informationsystem/seo-h1"/>
 
-		<div class="section area-articles no-bg">
-			<div class="page-bl">
 
-
-
-				<div class="txt">
+		<section class="section hero-section grid-blueprint information-category-hero"><div class="container">
+				<div class="information-category-hero__content">
 					<xsl:if test="group = 0">
 						<ol class="breadcrumbs__list" itemscope="" itemtype="http://schema.org/BreadcrumbList">
 							<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">Главная</span></a><meta itemprop="position" content="1"/></li>
@@ -33,12 +30,12 @@
 						</ol>
 						<xsl:choose>
 							<xsl:when test="property_value[tag_name='seo-h1']/value !=''">
-								<h1 class="h-2"><xsl:value-of select="property_value[tag_name='seo-h1']/value"/></h1>
+								<h1 class="hero-offer__title"><xsl:value-of select="property_value[tag_name='seo-h1']/value"/></h1>
 							</xsl:when>
 							<xsl:when test="$seo-h1 !=''">
-								<h1 class="h-2"><xsl:value-of select="$seo-h1"/></h1>
+								<h1 class="hero-offer__title"><xsl:value-of select="$seo-h1"/></h1>
 							</xsl:when>
-							<xsl:otherwise><h1 class="h-2"><xsl:value-of select="name"/></h1></xsl:otherwise>
+							<xsl:otherwise><h1 class="hero-offer__title"><xsl:value-of select="name"/></h1></xsl:otherwise>
 						</xsl:choose>
 					</xsl:if>
 					<xsl:if test="group != 0">
@@ -46,9 +43,16 @@
 							<li><a href="/">Главная</a></li>
 							<xsl:apply-templates select=".//informationsystem_group[@id=$group]" mode="breadCrumbs"/>
 						</ol>
-						<h1 class="h-2"> <xsl:value-of select=".//informationsystem_group[@id=$group]/name"/></h1>
+						<h1 class="hero-offer__title"> <xsl:value-of select=".//informationsystem_group[@id=$group]/name"/></h1>
 					</xsl:if>
 				</div>
+		</div></section>
+		<div class="section area-articles no-bg">
+			<div class="page-bl">
+
+
+
+
 
 
 				<div class="page-row fl-row">
@@ -274,7 +278,7 @@
 							</xsl:if>
 						</div>
 						<div class="txt">
-							<span class="date">
+							<xsl:if test="/informationsystem/@id = 2"><span class="date">
 								<xsl:value-of select="substring-before(date, '.')"/>
 								<xsl:variable name="month_year" select="substring-after(date, '.')"/>
 								<xsl:variable name="month" select="substring-before($month_year, '.')"/>
@@ -292,7 +296,7 @@
 									<xsl:when test="$month = 11"> &labelMonth11; </xsl:when>
 									<xsl:otherwise> &labelMonth12; </xsl:otherwise>
 								</xsl:choose>
-							<xsl:value-of select="substring-after($month_year, '.')"/></span>
+							<xsl:value-of select="substring-after($month_year, '.')"/></span></xsl:if>
 
 
 							<div class="h-3">

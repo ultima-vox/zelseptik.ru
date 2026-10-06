@@ -1,6 +1,21 @@
 (function () {
   'use strict';
 
+  if (window.location.pathname.indexOf('/services/') === 0) {
+    document.documentElement.classList.add('page-services');
+  }
+
+  const legacyContentSections = [
+    '/montazh-septika/',
+    '/obsluzhivanie-septikov/',
+    '/remont-septikov/',
+    '/articles/',
+  ];
+
+  if (legacyContentSections.some((path) => window.location.pathname.indexOf(path) === 0)) {
+    document.documentElement.classList.add('page-legacy-content');
+  }
+
   const $ = (selector, scope) => (scope || document).querySelector(selector);
   const $$ = (selector, scope) => Array.from((scope || document).querySelectorAll(selector));
 
@@ -37,82 +52,24 @@
 
     if (!burger || !drawer) return;
 
-    let isOpen = false;
-    let finishTimer = null;
-    let frame = null;
-    let savedOverflow = '';
-    let savedPadding = '';
-    drawer.inert = true;
-
-    function focusWithoutScroll(element) {
-      if (element && typeof element.focus === 'function') element.focus({ preventScroll: true });
-    }
-
-    function settle() {
-      window.clearTimeout(finishTimer);
-      finishTimer = null;
-      drawer.classList.remove('mobile-drawer--moving');
-      if (isOpen) {
-        focusWithoutScroll(closeBtn);
-      } else {
-        document.body.style.overflow = savedOverflow;
-        document.body.style.paddingRight = savedPadding;
-      }
-    }
-
-    function waitForMotion() {
-      window.clearTimeout(finishTimer);
-      const reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      finishTimer = window.setTimeout(settle, reduced ? 0 : 300);
-    }
-
     function open() {
-      if (isOpen) return;
-      // A reversal retains the original lock; do not overwrite saved styles.
-      if (finishTimer === null) {
-        lastFocused = document.activeElement;
-        savedOverflow = document.body.style.overflow;
-        savedPadding = document.body.style.paddingRight;
-        const scrollbar = Math.max(0, window.innerWidth - document.documentElement.clientWidth);
-        if (scrollbar) document.body.style.paddingRight = (parseFloat(window.getComputedStyle(document.body).paddingRight) + scrollbar) + 'px';
-      }
-      isOpen = true;
-      window.clearTimeout(finishTimer);
-      if (frame !== null) window.cancelAnimationFrame(frame);
-      drawer.inert = false;
+      lastFocused = document.activeElement;
+      drawer.classList.add('mobile-drawer--open');
       drawer.setAttribute('aria-hidden', 'false');
       burger.setAttribute('aria-expanded', 'true');
       document.body.style.overflow = 'hidden';
-      drawer.classList.add('mobile-drawer--moving');
-      // Promote the panel before its transform changes; never scroll to an offscreen control.
-      frame = window.requestAnimationFrame(function () {
-        frame = window.requestAnimationFrame(function () {
-          frame = null;
-          if (!isOpen) return;
-          drawer.classList.add('mobile-drawer--open');
-          waitForMotion();
-        });
-      });
+      if (closeBtn) closeBtn.focus();
     }
 
     function close() {
-      if (!isOpen) return;
-      isOpen = false;
-      if (frame !== null) window.cancelAnimationFrame(frame);
-      frame = null;
-      focusWithoutScroll(lastFocused);
-      drawer.inert = true;
+      if (!drawer.classList.contains('mobile-drawer--open')) return;
+
+      drawer.classList.remove('mobile-drawer--open');
       drawer.setAttribute('aria-hidden', 'true');
       burger.setAttribute('aria-expanded', 'false');
-      drawer.classList.add('mobile-drawer--moving');
-      drawer.classList.remove('mobile-drawer--open');
-      // Keep the background stationary for the entire closing transition.
-      waitForMotion();
+      document.body.style.overflow = '';
+      if (lastFocused && typeof lastFocused.focus === 'function') lastFocused.focus();
     }
-
-    if (dialog) dialog.addEventListener('transitionend', function (event) {
-      if (event.target === dialog && event.propertyName === 'transform' && frame === null) settle();
-    });
 
     burger.addEventListener('click', open);
     if (closeBtn) closeBtn.addEventListener('click', close);
@@ -144,10 +101,10 @@
 
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
-        focusWithoutScroll(last);
+        last.focus();
       } else if (!event.shiftKey && document.activeElement === last) {
         event.preventDefault();
-        focusWithoutScroll(first);
+        first.focus();
       }
     });
   }
@@ -277,7 +234,7 @@
     });
 
     function getCardsPerPage() {
-      return window.innerWidth < 768 ? 1 : (window.innerWidth < 1024 ? 2 : 4);
+      return window.innerWidth < 768 ? 2 : 4;
     }
 
     function getTotalPages() {
@@ -336,7 +293,7 @@
   page = ((nextPage % totalPages) + totalPages) % totalPages;
 
   track.scrollTo({
-    left: page * ((slides[0].offsetWidth || track.clientWidth) + 24) * perPage,
+    left: page * track.clientWidth,
     behavior: 'smooth'
   });
 
@@ -361,7 +318,7 @@
       if (!firstSlide) return;
 
       const slideWidth = firstSlide.offsetWidth || 1;
-      const newPage = Math.round(track.scrollLeft / ((slideWidth + 24) * perPage));
+      const newPage = Math.round(track.scrollLeft / (slideWidth * perPage));
 
       if (newPage !== page) {
         page = Math.max(0, Math.min(newPage, getTotalPages() - 1));
@@ -710,10 +667,10 @@ openModal(leadModal, title, {
 
         if (event.shiftKey && document.activeElement === first) {
           event.preventDefault();
-          focusWithoutScroll(last);
+          last.focus();
         } else if (!event.shiftKey && document.activeElement === last) {
           event.preventDefault();
-          focusWithoutScroll(first);
+          first.focus();
         }
       }
 
@@ -1672,35 +1629,4 @@ document.addEventListener('click', function (event) {
     initGeoButtons();
     initLazyMap();
   });
-})();
-
-// Dismiss the notice without recording cookie consent.
-(function () {
-  'use strict';
-  const storageKey = 'zelseptik:cookie-notice-dismissed:v1';
-  function initCookieNotice() {
-    document.querySelectorAll('.alert-fz').forEach(function (notice) {
-      if (notice.hasAttribute('data-cookie-close-ready')) return;
-      notice.setAttribute('data-cookie-close-ready', '');
-      try {
-        if (window.localStorage.getItem(storageKey) === '1') { notice.hidden = true; return; }
-      } catch (_) { /* Closing still works when storage is unavailable. */ }
-      let close = notice.querySelector('button.alert-fz-close');
-      if (!close) {
-        close = document.createElement('button');
-        close.className = 'alert-fz-close';
-        close.textContent = '\u00d7';
-        notice.append(close);
-      }
-      close.type = 'button';
-      close.setAttribute('aria-label', '\u0417\u0430\u043a\u0440\u044b\u0442\u044c \u0443\u0432\u0435\u0434\u043e\u043c\u043b\u0435\u043d\u0438\u0435 \u043e cookie');
-      close.addEventListener('click', function (event) {
-        event.preventDefault();
-        notice.hidden = true;
-        try { window.localStorage.setItem(storageKey, '1'); } catch (_) {}
-      });
-    });
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCookieNotice);
-  else initCookieNotice();
 })();

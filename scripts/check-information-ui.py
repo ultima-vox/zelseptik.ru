@@ -9,6 +9,8 @@ class LocalLanguages(etree.Resolver):
     def resolve(self, url, pubid, context):
         if url.startswith('lang://'):
             return self.resolve_filename(str(ROOT / 'hostcmsfiles/xsl' / (url[7:] + '.ru.dtd')), context)
+        if url.startswith('import://'):
+            return self.resolve_filename(str(ROOT / 'hostcmsfiles/xsl' / (url[9:] + '.xsl')), context)
 
 
 def transform(xsl_id, xml):
@@ -22,6 +24,7 @@ def check():
     xml = etree.parse(str(ROOT / 'tests/fixtures/information.xml'))
     listing = transform(13, xml)
     assert len(listing.xpath('//h1')) == 1
+    assert listing.xpath('//section[contains(@class, "information-category-hero")]//h1')
     links = listing.xpath('//a[@class="category-bl"]/@href')
     assert links == ['/services/montazh/', '/services/servis/', '/services/podbor-septikov/'], links
     assert not listing.xpath('//span[@class="h-3_mobile"]')
@@ -34,7 +37,11 @@ def check():
     assert body.xpath('./section[@class="section area-text"]/div[@class="page-bl"]/div[@class="txt"]/h2')[0].text == 'Состав работ'
     assert body.xpath('.//a/@href') == ['/contacts/']
     assert not body.xpath('.//form | .//h1 | .//nav')
-    assert detail.xpath('//img[@class="information-detail__image"]/@src') == ['/images/service.jpg']
+    assert detail.xpath('//img[@class="hero__media-image"]/@src') == ['/images/service.jpg']
+    hero = detail.xpath('//section[contains(@class, "hero-section")]')[0]
+    assert hero[0].get('class') == 'hero__media'
+    assert hero[1].get('class') == 'container'
+    assert not detail.xpath('//img[@class="information-detail__image"]')
     form = detail.xpath('//form[@data-lead-form]')[0]
     assert form.get('method') == 'post'
     assert form.xpath('.//input[@name="_zs_action"]/@value') == ['lead']
@@ -56,9 +63,49 @@ def check():
     item.find('property_value/value').text = ''
     fallback = transform(4, xml)
     assert fallback.xpath('//h1')[0].text == 'Подбор септика'
-    assert fallback.xpath('//img[@class="information-detail__image"]/@src') == ['/images/service-small.jpg']
+    assert fallback.xpath('//img[@class="hero__media-image"]/@src') == ['/images/service-small.jpg']
     item.find('image_small').text = ''
-    assert not transform(4, xml).xpath('//img[@class="information-detail__image"]')
+    assert not transform(4, xml).xpath('//img[@class="hero__media-image"]')
+    xml.getroot().set('id', '2')
+    article = transform(4, xml)
+    assert not article.xpath('//aside | //form')
+    assert article.xpath('//div[contains(@class, "information-detail--article")]')
+    shop = etree.ElementTree(etree.fromstring(b'<shop id="1"><name>Catalog</name><url>/septiki/</url><group>0</group><total>1</total><limit>20</limit><page>0</page></shop>'))
+    catalog = transform(55, shop)
+    assert not catalog.xpath('//aside[contains(@class, "catalog__sidebar")]')
+    assert catalog.xpath('//div[contains(@class, "catalog--single")]')
+    shop.getroot().set('id', '6')
+    shop.find('url').text = '/obsluzhivanie-po-gorodam/'
+    service_catalog = transform(55, shop)
+    assert 'Обслуживание по городам' in service_catalog.text_content()
+    assert 'Все модели септиков' not in service_catalog.text_content()
+    prices = transform(83, shop)
+    assert len(prices.xpath('//h1')) == 1
+    quiz = transform(282, shop)
+    assert not quiz.xpath('//script')
+    assert quiz.xpath('//form[@id="form_quiz"]/@method') == ['post']
+    assert quiz.xpath('//input[@name="count"]/@value') == ['1-6', '7-9', '10-15', '16-50', '50+', 'Другое']
+    regional = transform(280, xml)
+    assert regional.xpath('//div[contains(@class,"grid-blueprint")]//h1')
+    region_list = transform(279, xml)
+    assert len(region_list.xpath('//h1')) == 1
+    shop.getroot().set('id', '1')
+    item = etree.SubElement(shop.getroot(), 'shop_item', id='42')
+    for tag, value in [('name','CMS model'),('url','/septiki/cms-model/'),('dir','/images/'),('image_large','model.jpg'),('price','6000'),('discount','1000')]:
+        etree.SubElement(item,tag).text=value
+    currency=etree.SubElement(shop.getroot(),'shop_currency'); etree.SubElement(currency,'code').text='RUB'
+    prop=etree.SubElement(item,'property_value'); etree.SubElement(prop,'tag_name').text='long'; etree.SubElement(prop,'value').text='1'
+    cards=transform(278,shop)
+    assert len(cards.xpath('//article[@class="catalog-card"]')) == 1
+    assert not cards.xpath('//div[@class="pr-small"]')
+    assert cards.xpath('//a[@href="/septiki/cms-model/"]')
+    assert cards.xpath('//meta[@itemprop="price"]/@content') == ['6000']
+    assert 'Лонг' in cards.text_content()
+    shop.getroot().set('id','6')
+    service=transform(56,shop)
+    assert 'Стоимость обслуживания от' in service.text_content()
+    assert 'Плановое обслуживание и ремонт' in service.text_content()
+    assert 'Цена оборудования от' not in service.text_content()
     print('OK: list/group pagination, unique cards, CMS content, breadcrumbs, SEO/image fallback, lead form contract.')
 
 if __name__ == '__main__':

@@ -1,0 +1,30 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const {JSDOM} = require('jsdom');
+const source = fs.readFileSync('templates/template1/script.js', 'utf8');
+const start = source.indexOf('  function initCatalog() {');
+const end = source.indexOf('  function initSoilAdvisor()', start);
+assert(start >= 0 && end > start);
+for (const [width, perPage] of [[375,1],[820,2],[1363,4]]) {
+  const dom = new JSDOM(`<section id="catalog"><span class="js-catalog-count"></span><span class="js-catalog-indicator"></span><button class="js-catalog-prev"></button><button class="js-catalog-next"></button><div class="js-catalog-track">${'<div class="js-catalog-slide"></div>'.repeat(12)}</div></section>`);
+  const window = dom.window, document = window.document;
+  window.innerWidth = width;
+  const track = document.querySelector('.js-catalog-track');
+  Object.defineProperty(track,'clientWidth',{value:600});
+  for (const slide of track.children) Object.defineProperty(slide,'offsetWidth',{value:280});
+  let lastScroll;
+  track.scrollTo = options => {lastScroll=options;track.scrollLeft=options.left;};
+  const init = new Function('window','document','const $=(s,c)=> (c||document).querySelector(s);const $$=(s,c)=> Array.from((c||document).querySelectorAll(s));'+source.slice(start,end)+';return initCatalog;')(window,document);
+  init();
+  assert.equal(document.querySelector('.js-catalog-indicator').textContent, `1 / ${12/perPage}`);
+  const reference = document.createElement('div');
+  reference.style.maxWidth = `calc((100% - ${24*(perPage-1)}px) / ${perPage})`;
+  assert.equal(track.firstElementChild.style.maxWidth, reference.style.maxWidth);
+  document.querySelector('.js-catalog-next').click();
+  assert.equal(lastScroll.left, (280+24)*perPage);
+  track.dispatchEvent(new window.Event('scroll'));
+  assert.equal(document.querySelector('.js-catalog-indicator').textContent, `2 / ${12/perPage}`);
+  document.querySelector('.js-catalog-prev').click();assert.equal(lastScroll.left,0);
+  dom.window.close();
+}
+console.log('OK: mobile/tablet/desktop card counts, controls and gap-aware scroll offsets. No network.');
