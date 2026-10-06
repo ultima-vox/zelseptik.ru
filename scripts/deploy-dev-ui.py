@@ -15,6 +15,7 @@ FILES = (
     'assets/css/information-pages.css',
     'assets/js/modules/information.js',
     'assets/js/app.js',
+    'templates/template1/script.js',
     'templates/template3/script.js',
     'hostcmsfiles/xsl/13.xsl',
     'hostcmsfiles/xsl/4.xsl',
@@ -36,6 +37,7 @@ TEMPLATE1 = 'templates/template1/template.htm'
 DEV_TEMPLATE1_SHA = '696f886b5d2b140a58e5a04609ea5b5992a14734686b9cbb722fa6eb8979de8a'
 # Accept only the original files and previously verified UI stage bytes.
 PREVIOUS_STAGE_HASHES = {
+    'templates/template1/script.js': ('a31020470633ee8b2a1447eda2eaa592a4bfd973fa76a98bce72c546724ed9bc',),
     'assets/css/information-pages.css': (
         '9a9635374631b7eb20022ef54540be0a98f4a4d2862cafa4a750c58f2ec14455',
         '367155eda6b308ffc58f93146834fdd8b4c38b19d6dd538b24bf89b0885409eb',
@@ -44,10 +46,13 @@ PREVIOUS_STAGE_HASHES = {
         '59e8459b2fe2ddf512f50e2a44994a13c23106579cf289eca8712708705b99a5',
         'a02e7765191809823bdd65e2a6a96c426f81c649f344843d8d6995fd1d801ad7',
         'b4d9775efb4e91a1ce21cdd9326f6720119357190d4e5613b054131bdb416b0c',
+        '7149b84bb45097a1b0cbe1ce090ccd7066385971a304832ebc7f86ab8cad9972',
+        '0b741df1d27358a221c4d2f93bba15b3896116e68c05268f91599a67437af9c2',
     ),
     'hostcmsfiles/xsl/4.xsl': (
         'a5603c5d340bd49bd03afd52ab1964120eaab85de9b886a16ab3cea3f508249c',
         '399fbaa155b4fbe6968c2074c14274d35646bcb7f47b15b83b884d0f7590c9af',
+        '974965842bec5e026148921a738ee6e2c6dde55346428939dbca9c75cfed640b',
     ),
     'assets/js/modules/information.js': ('6bb7cb69d9c2d8153c7cb5a39c1ca350e8e1194cf741580e7f90e8635f9d338b', '12509feaec8470ffaa7f04c6fb29521cdd36bf786ea4285b1ce780aa6618a912'),
     'hostcmsfiles/xsl/282.xsl': ('d871b02aaaa510baf35532751c2a491dc3a251e910257dc27eba6f12cb326cd8',),
@@ -216,7 +221,7 @@ def deploy(ftp, source, mode):
         else:
             print('All attempted replacements rolled back.')
         raise
-    print('Deployed and verified eight UI files. Browser/CMS validation is still required.')
+    print('Deployed and verified selected UI files. Browser/CMS validation is still required.')
 
 
 def main():
