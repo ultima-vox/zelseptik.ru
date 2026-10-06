@@ -1074,3 +1074,21 @@ html[data-regional-catalog] .area-catalog .cat-links { display: block; margin-bo
   .information-detail--regional > .information-service-layout { width: calc(100% - 32px); }
   html[data-regional-catalog] .area-catalog .page-row > .col-medium .regional-catalog-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+html[data-regional-catalog] .information-prices > [data-service-section] { padding: 32px; border: 1px solid #DCE8E1; border-radius: 24px; background: #E5EFE9; }
+html[data-regional-catalog] .information-prices [data-information-table] { border-radius: 16px; }
+html[data-regional-catalog] .area-questions .fl-row { display: grid; grid-template-columns: minmax(0, 1fr); gap: 24px; }
+html[data-regional-catalog] .area-questions .col { width: auto; min-width: 0; }
+html[data-regional-catalog] .area-questions .swiper { overflow: visible; }
+html[data-regional-catalog] .area-questions .swiper-wrapper { display: grid; gap: 16px; width: 100%; height: auto !important; transform: none !important; }
+html[data-regional-catalog] .area-questions .swiper-slide { width: 100% !important; height: auto; margin: 0 !important; }
+html[data-regional-catalog] .area-questions .sw-btns-bl { display: none; }
+html[data-regional-catalog] .area-questions .faq-item { background: #fff; border-color: #DCE8E1; }
+html[data-regional-catalog] .area-questions summary { cursor: pointer; list-style: none; }
+html[data-regional-catalog] .area-questions summary::-webkit-details-marker { display: none; }
+html[data-regional-catalog] .area-questions summary::after { content: '+'; color: #007A53; font-size: 24px; }
+html[data-regional-catalog] .area-questions details[open] summary::after { content: '−'; }
+html[data-regional-catalog] .area-questions summary:focus-visible { outline: 2px solid #009966; outline-offset: -4px; }
+html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom: 12px; font-size: 16px; line-height: 1.65; }
+@media (min-width: 1101px) { html[data-regional-catalog] .area-questions .fl-row { grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); align-items: start; } }
+@media (max-width: 767px) { html[data-regional-catalog] .information-prices > [data-service-section] { padding: 20px; } }

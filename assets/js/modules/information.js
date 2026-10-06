@@ -52,6 +52,15 @@ export function initInformationTables(scope = document) {
     container.setAttribute('aria-label', title?.textContent.trim() || 'Стоимость услуг');
     container.tabIndex = 0;
     container.setAttribute('data-information-table', '');
+    table.classList.add('information-price-table');
+    table.setAttribute('role', 'table');
+    Array.from(table.tBodies[0].rows).forEach((row) => {
+      row.setAttribute('role', 'row');
+      Array.from(row.cells).forEach((cell, index) => {
+        cell.dataset.label = table.tHead.rows[0].cells[index].textContent.trim();
+        if (/цен|стоим/i.test(cell.dataset.label)) cell.classList.add('information-price-value');
+      });
+    });
     container.replaceChildren(table);
   });
 }
@@ -62,6 +71,27 @@ export function initInformationPages(scope = document) {
   const view = {'/politika-konfidencialnosti/': 'legal', '/map/': 'map', '/404/': 'error'}[path];
   if (view) scope.documentElement.setAttribute('data-information-view', view);
   if (scope.querySelector('main > .area-catalog .regional-catalog-grid')) scope.documentElement.setAttribute('data-regional-catalog', '');
+  if (scope.documentElement.hasAttribute('data-regional-catalog')) {
+    scope.querySelectorAll('main > .area-text').forEach((section) => {
+      if (!section.querySelector('.tbl-wrap')) return;
+      section.classList.add('information-prices', 'information-service-content');
+      section.querySelector('.page-bl')?.setAttribute('data-service-section', '');
+    });
+    scope.querySelectorAll('main > .area-questions .quest-bl').forEach((card) => {
+      const question = card.querySelector('.q-head .h-3');
+      const answer = card.querySelector('.q-body');
+      if (!question || !answer) return;
+      const details = scope.createElement('details');
+      details.className = 'faq-item';
+      const summary = scope.createElement('summary');
+      summary.className = 'faq-item__header';
+      question.className = 'faq-item__question';
+      summary.append(question);
+      answer.className = 'faq-item__content-inner faq-item__answer';
+      details.append(summary, answer);
+      card.replaceWith(details);
+    });
+  }
   // HostCMS renders the same error document at the requested URL, not just /404/.
   const error = scope.querySelector('main > .area-404');
   if (error) {

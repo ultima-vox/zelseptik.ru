@@ -16,3 +16,7 @@ Existing XML fields and XSL slots are used; no new shop or information system.
 Validation: rendered XSL fixtures, original checksums, prices/links/lead forms, DOM node preservation, true-error isolation and repeated initialization. FTP deployment preserves drift detection, encrypted backup, readback and rollback; 278 is the only addition to the fixed allowlist (18 paths total).
 
 Mobile layout uses 3/2/1 catalog columns. Physical device animation verification remains outside the available browser capabilities. No live lead form is submitted.
+
+Live review follow-up: regional container width and sidebar alignment are fixed. Regional price columns now use the existing semantic table normalizer; FAQ uses the approved FAQ classes and native details, retaining original answers and form nodes. All 24 regional paths returned 200 and 270 approved cards; 204 same-model prices matched the previous audit by URL, 66 dynamically selected cards had no same-model reference in that sample. Source DB was not edited.
+
+SEO baseline started (read only): both production and dev sitemap.xml fail strict XML parsing because content follows the root element. Dev remains noindex,nofollow; production samples remain index,follow. Regional catalog has a client-side H1-to-H2 correction; move this to server output during SEO work. No SEO configuration changed in this UI deployment.
