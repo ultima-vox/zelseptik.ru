@@ -899,3 +899,15 @@ html[data-information-view="error"] main > .area-404 img {
 :is(.hero-section, .catalog-hero).grid-blueprint :is(.hero-offer__benefits, .hero-offer__benefit, .stats-strip__value, .stats-strip__label, .hero-offer__eyebrow, .hero-offer__note, ul.breadcrumbs, ul.breadcrumbs a, ul.breadcrumbs > li:last-child, ul.breadcrumbs > li::after) { color: #e0edfc; }
 
 :is(.hero-section, .catalog-hero).grid-blueprint :is(.hero__proof-list, .hero__proof-item, .hero-offer__tag, .premium-slogan) { color: #e0edfc; }
+
+:is(.hero-section, .catalog-hero).grid-blueprint :is(.breadcrumbs__list, ul.breadcrumbs) [aria-current="page"] { color: #fff; }
+.hero-section.grid-blueprint .hero-offer__tag {
+  background: rgba(224,237,252,.12);
+  border-color: rgba(224,237,252,.35);
+  color: #e0edfc;
+}
+.hero-section.grid-blueprint .premium-slogan span {
+  background: none;
+  color: #b9e8ff;
+  -webkit-text-fill-color: #b9e8ff;
+}
