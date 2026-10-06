@@ -6,9 +6,7 @@ Core_Session::close();
 ob_get_clean();
 
 // Создавать индекс
-// Installed Core_Sitemap::_close requires a file-backed output (filePath).
-// Use the documented sitemap index mode instead of the failing stdout mode.
-$createIndex = TRUE;
+$createIndex = Core_Array::get(Core_Page::instance()->libParams, 'createIndex', FALSE);
 
 // Количество страниц в каждый файл
 $perFile = 50000;
@@ -41,9 +39,6 @@ if (is_null($oSite_Alias))
 		}
 	}
 }*/
-
-// Keep partial XML out of the response if generation fails.
-ob_start();
 
 try
 {
@@ -84,16 +79,9 @@ try
 		//->limit(10000)
 		->fillNodes()
 		->execute();
-
-	echo ob_get_clean();
 }
 catch (Exception $e) {
-	ob_end_clean();
-	http_response_code(503);
-	header('Content-Type: text/plain; charset=UTF-8');
-	header('Retry-After: 3600');
-	error_log('Zelseptik: sitemap generation failed; see HostCMS log.');
-	echo 'Sitemap temporarily unavailable.';
+	echo "\nSitemap error. See Log.";
 }
 
 exit();
