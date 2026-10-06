@@ -37,6 +37,7 @@ for path in ["/modules/core/sitemap.php", "/hostcmsfiles/lib/lib_29/lib_config_2
 ftp.cwd('/hostcmsfiles/logs')
 print('log_inventory',ftp.nlst()[-10:])
 path='/hostcmsfiles/logs/06_10_2026.log.csv'
+ftp.voidcmd('TYPE I')
 size=ftp.size(path)
 logbuf=io.BytesIO()
 ftp.retrbinary('RETR '+path,logbuf.write,rest=max(0,size-1000000))
