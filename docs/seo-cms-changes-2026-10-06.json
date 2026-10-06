@@ -30,6 +30,24 @@
         "seo_description": "Прайс-лист септиков для дома и дачи: сравните модели и цены. Доставка и монтаж в Зеленограде и Московской области. Уточните стоимость выбранной комплектации."
       },
       "note": "Saved through existing Structure SEO fields; lib 11 configuration restores nonempty title/description for Structure 36 after parseUrl, before HTML head. Public HTTP 200 and exact metadata verified; catalog metadata unchanged."
+    },
+    {
+      "entity": "Informationsystem_Item",
+      "id": 187,
+      "informationsystem_id": 7,
+      "path": "/montazh-septika/montazh-septika-topas/",
+      "original": {
+        "seo_description": "&#128295; Установка септика Топас по доступной цене от 25 000₽ в Зеленограде и Московской области. Монтаж станции под ключ.",
+        "seo_keywords": "на 6 человек, на 9 человек, на 10 человек, на 12 человек, long, лонг, септик",
+        "seo_title": "&#128295;Монтаж септика Топас по выгодной цене от 25 000₽ - Установка под ключ"
+      },
+      "new": {
+        "seo_title": "Монтаж септика ТОПАС в Зеленограде и МО — ЗЕЛСЕПТИК",
+        "seo_description": "Монтаж септиков ТОПАС в Зеленограде и Московской области. Подбор станции, подготовка котлована, подключение и запуск. Уточните стоимость работ для вашего участка."
+      },
+      "status": "saved_and_verified",
+      "verified_at": "2026-10-07T00:12:00+03:00",
+      "note": "Live CMS ID and path confirmed. Exact title/description verified via HTTP 200 and reopened CMS form. Keywords, content and H1 unchanged. Prices conflict: SEO 25000 RUB, content 24000 RUB; price removed from metadata pending validation."
     }
   ],
   "price_handler": {

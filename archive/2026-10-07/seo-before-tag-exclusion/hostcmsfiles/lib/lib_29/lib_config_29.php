@@ -63,7 +63,7 @@ try
 			// Показывать элементы информационных систем в карте сайта
 			->showInformationsystemItems(Core_Page::instance()->libParams['showInformationsystemItems'])
 			// Показывать метки информационных систем
-			->showInformationsystemTags(FALSE);
+			->showInformationsystemTags(TRUE);
 	}
 
 	if (Core::moduleIsActive('shop'))
@@ -76,7 +76,7 @@ try
 			// Показывать модификации в карте сайта
 			->showModifications(Core_Array::get(Core_Page::instance()->libParams, 'showModifications', 1))
 			// Показывать метки магазина
-			->showShopTags(FALSE);
+			->showShopTags(TRUE);
 	}
 
 	$oCore_Sitemap
