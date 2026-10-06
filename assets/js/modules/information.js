@@ -201,3 +201,110 @@ export function initInformationQuiz(scope = document) {
     show();
   });
 }
+
+
+/** Present existing service HTML consistently; no CMS text, prices or forms are generated. */
+export function initInformationSections(scope = document) {
+  scope.querySelectorAll('.information-detail:not(.information-detail--article)').forEach((root, rootIndex) => {
+    const content = root.querySelector('.information-detail__body') || root;
+    if (content.hasAttribute('data-service-content')) return;
+    const sections = Array.from(content.children).filter((node) => node.matches('.area-text, .area-paragraph, .area-why'));
+    if (!sections.length) return;
+    content.classList.add('information-service-content');
+    content.setAttribute('data-service-content', '');
+    sections.forEach((section) => section.setAttribute('data-service-section', ''));
+
+    // Keep heading hierarchy and actual rich nodes, including links and editor IDs.
+    sections.forEach((section) => section.querySelectorAll('.txt').forEach((text) => {
+      const headings = Array.from(text.children).filter((node) => node.tagName === 'H2');
+      if (headings.length > 1 && !text.querySelector('form')) {
+        let block = null;
+        Array.from(text.childNodes).forEach((node) => {
+          if (node.nodeType === 1 && node.tagName === 'H2') {
+            block = scope.createElement('section');
+            block.className = 'information-content-block';
+            text.insertBefore(block, node);
+          }
+          if (block) block.append(node);
+        });
+      }
+      text.querySelectorAll('p').forEach((paragraph) => {
+        const first = paragraph.firstElementChild;
+        if (first?.tagName === 'STRONG' && paragraph.textContent.trim().startsWith(first.textContent.trim()) && first.textContent.trim().length > 0) {
+          paragraph.classList.add('information-topic-card');
+        }
+      });
+    }));
+
+    content.querySelectorAll('.punkt-bl > img').forEach((image) => {
+      const match = (image.getAttribute('src') || '').match(/\/Icons\/numbers\/(\d{1,2})\.svg(?:[?#].*)?$/i);
+      if (!match) return;
+      const number = match[1].padStart(2, '0');
+      const card = image.parentElement;
+      card.classList.add('process-card');
+      const watermark = scope.createElement('span');
+      watermark.className = 'process-card__number-bg';
+      watermark.setAttribute('aria-hidden', 'true');
+      watermark.textContent = number;
+      const badge = scope.createElement('span');
+      badge.className = 'process-card__step';
+      badge.textContent = number;
+      image.replaceWith(badge);
+      card.prepend(watermark);
+    });
+
+    content.querySelectorAll('img').forEach((image) => {
+      if (!image.closest('[data-service-section]')) return;
+      if (image.closest('.punkt-bl, .why-info') || /\.(?:svg)(?:[?#].*)?$/i.test(image.getAttribute('src') || '')) return;
+      image.classList.add('information-service-photo');
+      image.loading = 'lazy';
+      image.decoding = 'async';
+    });
+    content.querySelectorAll('.tbl-row[data-information-table] table').forEach((table) => {
+      const headers = Array.from(table.tHead?.rows[0]?.cells || []).map((cell) => cell.textContent.trim());
+      if (!headers.length || Array.from(table.tBodies).some((body) => Array.from(body.rows).some((row) => row.cells.length !== headers.length))) return;
+      table.classList.add('information-price-table');
+      table.setAttribute('role', 'table');
+      Array.from(table.tBodies).forEach((body) => Array.from(body.rows).forEach((row) => {
+        row.setAttribute('role', 'row');
+        Array.from(row.cells).forEach((cell, index) => {
+          cell.setAttribute('data-label', headers[index]);
+          cell.setAttribute('role', cell.tagName === 'TH' ? 'rowheader' : 'cell');
+          if (/цен|стоим/i.test(headers[index])) cell.classList.add('information-price-value');
+        });
+      }));
+    });
+    // Surface the existing price section near the start, rather than duplicating prices.
+    const priceSection = sections.find((section) => section.querySelector('.tbl-wrap .information-price-table'));
+    if (priceSection) {
+      priceSection.classList.add('information-service-section--prices');
+      content.insertBefore(priceSection, sections[0]);
+    }
+    const headings = Array.from(content.querySelectorAll('[data-service-section] h2, [data-service-section] .h-2')).filter((heading) => !heading.closest('form, table, .punkt-bl') && heading.textContent.trim());
+    if (headings.length > 1) {
+      const nav = scope.createElement('nav');
+      nav.className = 'information-service-nav';
+      nav.setAttribute('aria-label', 'Разделы услуги');
+      const label = scope.createElement('p');
+      label.textContent = 'На странице';
+      nav.append(label);
+      const list = scope.createElement('ul');
+      headings.forEach((heading, index) => {
+        if (!heading.id) {
+          let id = `service-section-${rootIndex + 1}-${index + 1}`;
+          while (scope.getElementById(id)) id += '-content';
+          heading.id = id;
+        }
+        const item = scope.createElement('li');
+        const link = scope.createElement('a');
+        link.setAttribute('href', '#' + heading.id);
+        link.textContent = heading.textContent.trim();
+        item.append(link);
+        list.append(item);
+      });
+      nav.append(list);
+      const firstSection = Array.from(content.children).find((node) => node.hasAttribute('data-service-section'));
+      content.insertBefore(nav, firstSection);
+    }
+  });
+}

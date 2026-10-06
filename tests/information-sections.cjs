@@ -1,0 +1,26 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const { JSDOM } = require('jsdom');
+(async () => {
+  const source = fs.readFileSync(require('node:path').join(__dirname, '../assets/js/modules/information.js'), 'utf8');
+  const { initInformationSections } = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+  const steps = Array.from({length:8}, (_,i)=>`<div class="punkt-bl"><img src="/assets/images/Icons/numbers/${i+1}.svg" alt="${i+1}"><p>Этап ${i+1}</p></div>`).join('');
+  const dom = new JSDOM(`<div class="information-detail"><div class="information-detail__body"><div class="area-text"><div class="txt"><h2 id="original">Работы</h2><p><strong>Важно</strong> сохранить <a href="/contact/">ссылку</a></p><h2>Правила</h2><p>Описание</p></div>${steps}<img src="/photo.jpg" alt="Станция"><form action="/send"><input name="phone"></form></div><div class="area-text"><div class="tbl-wrap"><h2>Стоимость</h2><div class="tbl-row" data-information-table><table><thead><tr><th>Услуга</th><th>Цена</th></tr></thead><tbody><tr><th>Сервис</th><td>6 000 ₽</td></tr></tbody></table></div></div></div></div></div><div class="information-detail information-detail--article"><div class="area-text"><h2>Статья</h2></div></div>`);
+  const d = dom.window.document;
+  const form = d.querySelector('form'); const article = d.querySelector('.information-detail--article').outerHTML;
+  initInformationSections(d);
+  assert.deepEqual([...d.querySelectorAll('.process-card__step')].map(n=>n.textContent), ['01','02','03','04','05','06','07','08']);
+  assert.equal(d.querySelectorAll('.punkt-bl img').length,0);
+  assert.equal(d.querySelectorAll('.information-content-block').length,2);
+  assert.equal(d.querySelector('form'),form); assert.equal(form.action,'/send');
+  assert.equal(d.querySelector('#original').textContent,'Работы');
+  assert.equal(d.querySelector('.information-topic-card a').getAttribute('href'),'/contact/');
+  assert.equal(d.querySelector('.information-price-value').textContent,'6 000 ₽');
+  assert.equal(d.querySelector('.information-price-value').dataset.label,'Цена');
+  assert.equal(d.querySelector('[data-service-section]').querySelector('h2').textContent,'Стоимость');
+  assert.equal(d.querySelector('.information-detail--article').outerHTML,article);
+  assert.equal(d.querySelector('.information-service-photo').getAttribute('src'),'/photo.jpg');
+  for (const a of d.querySelectorAll('.information-service-nav a')) assert.ok(d.getElementById(a.hash.slice(1)));
+  const once = d.body.innerHTML; initInformationSections(d); assert.equal(d.body.innerHTML,once);
+  console.log('Service sections: numbering, prices, node preservation, article isolation and idempotence passed.');
+})().catch(e=>{console.error(e);process.exit(1);});
