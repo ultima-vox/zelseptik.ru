@@ -911,3 +911,14 @@ html[data-information-view="error"] main > .area-404 img {
   color: #b9e8ff;
   -webkit-text-fill-color: #b9e8ff;
 }
+
+/* Light panels retain their own text palette inside the blue hero. */
+:is(.hero-section, .catalog-hero).grid-blueprint :is(.grid-blueprint__aside, .catalog-card, .calculator-card, .feature-card, .media-card) {
+  color: var(--color-text-main);
+}
+.hero-section.grid-blueprint .premium-slogan {
+  background: none;
+  color: #b9e8ff;
+  -webkit-text-fill-color: #b9e8ff;
+}
+.hero-section.grid-blueprint .premium-slogan::after { background-color: #b9e8ff; }
