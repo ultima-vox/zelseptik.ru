@@ -1,0 +1,110 @@
+{
+  "environment": "dev.zelseptik.ru",
+  "informationsystem_id": 4,
+  "verified_at": "2026-10-07T07:52:00+03:00",
+  "status": "saved_cms_verified_xml_refresh_pending",
+  "live_verified_fields": [
+    "id",
+    "path",
+    "closed"
+  ],
+  "reason": "Structure 24 serves Shop 6; Informationsystem 4 exports legacy overlapping paths.",
+  "changes": [
+    {
+      "id": 174,
+      "path": "servisnoe-obsluzhivanie-septikov-v-zelenograde",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 175,
+      "path": "servisnoe-obsluzhivanie-septikov-v-istre",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 176,
+      "path": "servisnoe-obsluzhivanie-septikov-v-ximkax",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 177,
+      "path": "servisnoe-obsluzhivanie-septikov-v-krasnogorske",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 178,
+      "path": "servisnoe-obsluzhivanie-septikov-v-solnechnogorske",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 179,
+      "path": "servisnoe-obsluzhivanie-septikov-v-klinu",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 180,
+      "path": "servisnoe-obsluzhivanie-septikov-v-zvenigorode",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 181,
+      "path": "servisnoe-obsluzhivanie-septikov-v-lobne",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 182,
+      "path": "servisnoe-obsluzhivanie-septikov-v-dmitrove",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 183,
+      "path": "servisnoe-obsluzhivanie-septikov-v-volokolamske",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 184,
+      "path": "servisnoe-obsluzhivanie-septikov-v-korolyove",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 185,
+      "path": "servisnoe-obsluzhivanie-septikov-v-dolgoprudnom",
+      "original_closed": 0,
+      "new_closed": 1
+    },
+    {
+      "id": 186,
+      "path": "obsluzhivanie-septikov-v-moskve",
+      "original_closed": 0,
+      "new_closed": 1
+    }
+  ],
+  "cms_verification": {
+    "forms_reopened": 13,
+    "all_closed": true
+  },
+  "public_verification": {
+    "entries": 345,
+    "unique": 335,
+    "duplicates": 10,
+    "old_city_urls_present": true,
+    "strict_xml_valid": true
+  },
+  "expected_after_refresh": {
+    "entries": 332,
+    "unique": 332,
+    "duplicates": 0
+  },
+  "sitemap_interval_seconds": 259200,
+  "limitation": "Browser credential protection prevents keyboard interaction with Ace editor. No temporary interval was saved; original three-day interval confirmed. Cached XML not yet refreshed."
+}
