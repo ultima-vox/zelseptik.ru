@@ -296,8 +296,8 @@
 		</div>
 
 		<div class="catalog-card__actions">
-			<button class="catalog-card__btn-order js-catalog-order" data-name="{name}" type="button">
-				Заказать монтаж
+			<button class="catalog-card__btn-order js-catalog-order" data-name="{name}" type="button"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
+				<xsl:choose><xsl:when test="/shop/@id = 6">Заказать обслуживание</xsl:when><xsl:otherwise>Заказать монтаж</xsl:otherwise></xsl:choose>
 			</button>
 			<a href="{url}" class="link link--muted link--center">Подробнее о модели</a>
 		</div>

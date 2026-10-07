@@ -166,9 +166,9 @@
 				<div class="media-card">
 					<xsl:choose>
 						<xsl:when test="image_large != ''">
-							<a class="media-card__link" href="{dir}{image_large}" data-fancybox="images">
+							<xsl:choose><xsl:when test="$shop_id = 6"><img class="media-card__content" itemprop="image" src="{dir}{image_large}" alt="{name}" loading="eager" decoding="async"/></xsl:when><xsl:otherwise><a class="media-card__link" href="{dir}{image_large}" data-fancybox="images">
 								<img class="media-card__content" itemprop="image" src="{dir}{image_large}" alt="{name}" loading="eager" decoding="async"/>
-							</a>
+							</a></xsl:otherwise></xsl:choose>
 						</xsl:when>
 						<xsl:otherwise>
 							<img class="media-card__content" itemprop="image" src="/images/no-image.png" alt="{name}" loading="eager" decoding="async"/>
@@ -176,7 +176,7 @@
 					</xsl:choose>
 				</div>
 
-				<xsl:if test="image_small != '' or count(property_value[tag_name='pic'][file != ''])">
+				<xsl:if test="$shop_id != 6 and (image_small != '' or count(property_value[tag_name='pic'][file != '']))">
 					<div class="media-strip">
 						<div class="media-strip__list">
 							<xsl:if test="image_small != ''">
@@ -316,7 +316,7 @@
 							</div>
 						</xsl:if>
 						<div class="catalog-card__actions">
-							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}">
+							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
 								Получить смету
 							</button>
 							<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>
@@ -405,7 +405,7 @@
 						</div>
 
 						<div class="cta-card__form">
-							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}">
+							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
 								Рассчитать монтаж
 							</button>
 							<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>

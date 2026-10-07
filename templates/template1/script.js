@@ -566,6 +566,20 @@ function initModal() {
     setTitle(modal, title);
     setInput(modal, 'model', options.model || '');
     setInput(modal, 'comment', options.comment || '');
+    const serviceOrder = options.orderKind === 'service';
+    const requestSelect = modal.querySelector('.js-modal-select-bonus');
+    if (requestSelect) {
+      Array.from(requestSelect.options).forEach(function (option) {
+        const serviceOption = option.value === 'Обслуживание или ремонт';
+        option.hidden = options.orderKind ? serviceOption !== serviceOrder : false;
+        option.disabled = option.hidden;
+      });
+      requestSelect.value = serviceOrder ? 'Обслуживание или ремонт' : 'Оборудование и монтаж';
+    }
+    const subtitle = modal.querySelector('.modal__subtitle');
+    if (subtitle) subtitle.textContent = serviceOrder
+      ? 'Оставьте контакты. Инженер уточнит модель септика и необходимые работы по обслуживанию.'
+      : 'Оставьте контакты. Специалист уточнит задачу и подготовит расчёт.';
 
     if (options.contextHtml !== undefined) {
       setContext(modal, options.contextHtml);
@@ -634,19 +648,24 @@ function initModal() {
       event.preventDefault();
 
 const catalogData = getCatalogCardData(catalogTrigger);
-const title = catalogData.model
-  ? 'Заказать монтаж: ' + catalogData.model
-  : 'Заказать монтаж';
-
+const orderKind = catalogTrigger.getAttribute('data-order-kind') || 'installation';
+const serviceOrder = orderKind === 'service';
+const action = serviceOrder ? 'Заказать обслуживание' : 'Заказать монтаж';
+const title = catalogData.model ? action + ': ' + catalogData.model : action;
+if (serviceOrder) {
+  catalogData.capacity = '';
+  catalogData.specs = [];
+  catalogData.orderKind = orderKind;
+}
 openModal(leadModal, title, {
+  orderKind: orderKind,
   model: catalogData.model,
-  comment:
-    'Заявка из каталога. ' +
-    'Модель: ' + catalogData.model + '. ' +
-    'Проживающих: ' + catalogData.capacity + '. ' +
-    'Цена от: ' + catalogData.price + '.',
+  comment: serviceOrder
+    ? 'Заявка на обслуживание. Услуга: ' + catalogData.model + '. Цена от: ' + catalogData.price + '.'
+    : 'Заявка на монтаж. Модель: ' + catalogData.model + '. Проживающих: ' + catalogData.capacity + '. Цена от: ' + catalogData.price + '.',
   contextHtml: buildCatalogContextHtml(catalogData)
 });
+return;
     }
 
     if (estimateTrigger) {
@@ -848,7 +867,7 @@ function buildCatalogContextHtml(data) {
   if (data.model) {
     rows.push(`
       <div class="modal__rec-row">
-        <span class="modal__rec-label">Модель:</span>
+        <span class="modal__rec-label">${data.orderKind === 'service' ? 'Услуга:' : 'Модель:'}</span>
         <span class="modal__rec-val">${data.model}</span>
       </div>
     `);
