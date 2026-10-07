@@ -1205,3 +1205,12 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 }
 .site-header .site-header__phone .icon svg { display: block; width: 100%; height: 100%; }
 .site-header .site-header__phone:hover { color: var(--color-primary); }
+
+/* Landing copy uses the existing typography and muted blueprint palette. */
+[data-seo-landing] { background: var(--color-bg-body, #f4f7f5); }
+[data-seo-landing] .legal-page__content { max-width: 860px; color: var(--color-text-main, #1a1f26); font-size: 16px; line-height: 1.75; }
+[data-seo-landing] h3 { margin: 32px 0 12px; padding-left: 16px; border-left: 3px solid var(--color-primary, #32745d); font-size: clamp(20px, 2vw, 24px); line-height: 1.35; color: var(--color-text-main, #1a1f26); }
+[data-seo-landing] p { margin: 0 0 16px; }
+[data-seo-landing] a { color: var(--color-primary, #32745d); text-decoration: underline; text-underline-offset: 3px; }
+[data-seo-landing] a:hover { color: var(--color-text-main, #1a1f26); }
+@media (max-width: 767px) { [data-seo-landing] .legal-page__content { font-size: 15px; line-height: 1.7; } }
