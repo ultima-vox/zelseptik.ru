@@ -64,7 +64,7 @@ def encrypted_backup(before):
 
 
 
-EXPECTED = {'assets/css/information-pages.css': 'dc3726e7d4fc5ac516fdf5ce8e26a1738d8602d843e2aadfb0f637d2a9b30165', 'assets/js/modules/information.js': '79f70212ad1732b66913fc363dbcea651fe29f4cbf494192c7f98d640522b498', 'assets/js/app.js': 'c8cf6859acf06a75b2e64e5059dc5899c8f669716b4082c9b65150221d68095f'}
+EXPECTED = {'assets/js/modules/information.js': 'a1be7f28f8c92302b7d173013049238a00ecf1301059c2c33fd1e86b4373e8c2', 'assets/js/app.js': '4fc624f673013fea0b1f095d2f5bc34ee0606ee8aed65d963bf63ba19b3229e3', 'assets/css/information-pages.css': 'c784895a67281298ac26accb1e0c4d8ea2d04302e10b0c61fc0df0926e68d03f'}
 
 def main():
     target = {p: Path(p).read_bytes() for p in EXPECTED}

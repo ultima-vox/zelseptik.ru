@@ -1282,3 +1282,8 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 .information-rich-table thead th { background: #123D35; color: #F4F8F5; }
 .information-rich-table tbody tr:nth-child(even) { background: #F2F6F3; }
 .information-rich-panel table caption { padding: 12px 0; color: var(--color-text-secondary); text-align: left; }
+
+/* Preserve legible columns in wide legacy price matrices. */
+.information-rich-table { min-width: 960px; }
+.information-rich-table tr > :first-child { min-width: 130px; }
+.information-rich-table thead th { min-width: 120px; }
