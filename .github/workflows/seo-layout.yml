@@ -29,4 +29,4 @@ jobs:
 
 # Correct the dedicated homepage catalog and case XSL renderers as well.
 
-# Keep legacy merged price matrix columns readable inside their scrolling container.
+# Finish service price matrix spacing and preserve whole words.

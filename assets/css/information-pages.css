@@ -1287,3 +1287,7 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 .information-rich-table { min-width: 960px; }
 .information-rich-table tr > :first-child { min-width: 130px; }
 .information-rich-table thead th { min-width: 120px; }
+
+.information-rich-panel .table-responsive { margin-bottom: 24px; }
+.information-rich-table :is(th,td) { overflow-wrap: normal; word-break: normal; }
+.information-rich-table tr > :first-child { min-width: 150px; }
