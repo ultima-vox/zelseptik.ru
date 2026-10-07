@@ -1,24 +1,16 @@
-"""Deploy the fixed SEO stage to isolated dev; no arbitrary paths or force mode."""
-import argparse
+"""Deploy the reviewed landing-description XSL/CSS to isolated dev with drift guards."""
 import ftplib
 import hashlib
 import io
 import json
 import os
 from pathlib import Path
-import re
 import subprocess
 import tarfile
 import uuid
-import urllib.request
-import urllib.parse
-import xml.etree.ElementTree as ET
 
-FILES = ('templates/template13/template.htm', 'hostcmsfiles/lib/lib_29/lib_config_29.php')
 MAX_BYTES = 4 * 1024 * 1024
 BACKUP_DIRECTORY = '.ui-deploy-backups'
-TEMPLATE1 = 'templates/template1/template.htm'
-PREVIOUS_STAGE_HASHES = {}
 
 
 def digest(data):
