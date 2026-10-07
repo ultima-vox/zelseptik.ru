@@ -1,0 +1,69 @@
+{
+  "checked_at": "2026-10-07T05:31:00.622427+00:00",
+  "environment": "dev",
+  "status": "public_http_verified",
+  "official_documentation": "https://www.hostcms.ru/shop/market/modules/seo/hostdev_redirect/",
+  "module": {
+    "name": "hostdev_redirect",
+    "id": 118,
+    "version": "1.35",
+    "existing": true
+  },
+  "shop_item": {
+    "id": 240,
+    "shop_id": 6,
+    "before": {
+      "name": "Обслуживание септика в в Красногорске",
+      "seo_title": "Обслуживание, очистка, ремонт септиков ТОПАС, АСТРА, Биодека, ТОПОЛЬ в в Красногорске Московской области. Устранение засоров канализации."
+    },
+    "after": {
+      "name": "Обслуживание септика в Красногорске",
+      "seo_title": "Обслуживание, очистка, ремонт септиков ТОПАС, АСТРА, Биодека, ТОПОЛЬ в Красногорске Московской области. Устранение засоров канализации."
+    },
+    "path_unchanged": "servisnoe-obsluzhivanie-septika-v-v-krasnogorske",
+    "description_and_keywords_unchanged": true
+  },
+  "redirects": [
+    {
+      "old_url": "/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septikov-v-istre/",
+      "new_url": "/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septika-v-istre/",
+      "type": 0,
+      "active": 1,
+      "referer": ""
+    },
+    {
+      "old_url": "/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septikov-v-krasnogorske/",
+      "new_url": "/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septika-v-v-krasnogorske/",
+      "type": 0,
+      "active": 1,
+      "referer": ""
+    }
+  ],
+  "http_evidence": [
+    {
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septikov-v-istre/",
+      "status": 301,
+      "location": "/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septika-v-istre/",
+      "headings": []
+    },
+    {
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septikov-v-krasnogorske/",
+      "status": 301,
+      "location": "/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septika-v-v-krasnogorske/",
+      "headings": []
+    },
+    {
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septika-v-v-krasnogorske/",
+      "status": 200,
+      "location": null,
+      "headings": [
+        "Обслуживание, очистка, ремонт септиков ТОПАС, АСТРА, Биодека, ТОПОЛЬ в Красногорске Московской области. Устранение засоров канализации.",
+        "Обслуживание септика в Красногорске"
+      ]
+    }
+  ],
+  "pending": [
+    "Normalize Krasnogorsk doubled-v path together with direct 301 from both legacy URLs, then regenerate sitemap cache."
+  ],
+  "production_changed": false
+}
