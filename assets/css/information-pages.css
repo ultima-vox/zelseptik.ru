@@ -1158,6 +1158,6 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 }
 
 @media (min-width: 768px) {
-  .catalog-scenario-bar > .ds-select { display: none; }
+  .catalog-scenario-bar .ds-select { display: none; }
   .catalog-toolbar > .ds-select { max-width: 260px; }
 }
