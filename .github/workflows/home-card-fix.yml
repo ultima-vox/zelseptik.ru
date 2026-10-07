@@ -22,3 +22,5 @@ jobs:
         run: python3 scripts/deploy-dev-home-card-fix.py
 
 # Preserve the scenario control through its container wrapper.
+
+# Override the live runtime card align-self: start rule.
