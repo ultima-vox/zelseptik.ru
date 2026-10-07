@@ -64,7 +64,7 @@ def encrypted_backup(before):
 
 
 
-EXPECTED = {'templates/template1/template.htm': '53c491c7c5c20153849e231c2a75d0ebfe38b41bf0e5a6dd21fcb2a712f337d3', 'hostcmsfiles/xsl/55.xsl': '5e546874dbc3215cb9ac5c06dafc2c7c5e93d39389c943921a57fcfb87d63e00', 'hostcmsfiles/xsl/3.xsl': '128b7bfc18fbe425a8a81518d64bf17d41409cff7dd32a17d410f58f690bc2b4', 'assets/css/information-pages.css': 'dc3726e7d4fc5ac516fdf5ce8e26a1738d8602d843e2aadfb0f637d2a9b30165', 'hostcmsfiles/xsl/6.xsl': 'f75b00d2e1f3c69d03655c4e804b0c3d58d1ac3e4d7af4dbb5b54c8acf8b8ab2', 'hostcmsfiles/xsl/176.xsl': 'f6b47b751b86e0d7a81a299932acb76ad2f2d159c5fad30729f8e53cf7aa6bf6'}
+EXPECTED = {'assets/css/information-pages.css': 'dc3726e7d4fc5ac516fdf5ce8e26a1738d8602d843e2aadfb0f637d2a9b30165', 'assets/js/modules/information.js': '79f70212ad1732b66913fc363dbcea651fe29f4cbf494192c7f98d640522b498', 'assets/js/app.js': 'c8cf6859acf06a75b2e64e5059dc5899c8f669716b4082c9b65150221d68095f'}
 
 def main():
     target = {p: Path(p).read_bytes() for p in EXPECTED}

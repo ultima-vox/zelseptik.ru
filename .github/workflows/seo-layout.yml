@@ -28,3 +28,5 @@ jobs:
 # Include the actual general montage landing after redirect verification.
 
 # Correct the dedicated homepage catalog and case XSL renderers as well.
+
+# Apply the existing service panels to native rich-text items and space selector legends.
