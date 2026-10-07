@@ -1182,3 +1182,26 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
   height: 100%;
   align-self: stretch;
 }
+
+/* Keep the phone icon and number together; override stacked runtime contacts. */
+.site-header .site-header__phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  color: var(--color-text-main);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+.site-header .site-header__phone > span { color: inherit; }
+.site-header .site-header__phone > .icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+.site-header .site-header__phone .icon svg { display: block; width: 100%; height: 100%; }
+.site-header .site-header__phone:hover { color: var(--color-primary); }
