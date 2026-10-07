@@ -26,3 +26,7 @@ for ident in [7,8,9]:
  for extra in ['<group>1</group><page>0</page>','<group>0</group><page>1</page>','<group>0</group><page>0</page><tag/>']:
   assert 'Landing copy' not in render(3,'informationsystem',ident,extra+'<landing_description>1</landing_description>'),(ident,extra)
 print('Native descriptions verified on root pages; absent on groups, pagination, tags, producer and SEO filters.')
+
+for xsl,entity,ident in [(176,'shop',1),(6,'informationsystem',7)]:
+ assert 'Landing copy' not in render(xsl,entity,ident,'<group>0</group><page>0</page>'), 'Homepage blocks must never output full landing descriptions'
+print('Homepage catalog and case templates keep root SEO descriptions out of their output.')
