@@ -1214,3 +1214,53 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 [data-seo-landing] a { color: var(--color-primary, #32745d); text-decoration: underline; text-underline-offset: 3px; }
 [data-seo-landing] a:hover { color: var(--color-text-main, #1a1f26); }
 @media (max-width: 767px) { [data-seo-landing] .legal-page__content { font-size: 15px; line-height: 1.7; } }
+
+/* Separate landing copy from cards, tabs, pagination and the next CTA. */
+[data-seo-landing] {
+  margin-block: clamp(24px, 4vw, 48px);
+  padding-block: clamp(32px, 5vw, 64px);
+}
+
+/* Reserve enough desktop footer space for an unbroken telephone number. */
+.site-footer .site-footer__phone {
+  white-space: nowrap;
+  flex-shrink: 0;
+  gap: 8px;
+  line-height: 1.4;
+}
+.site-footer .site-footer__phone::before {
+  flex: none;
+  line-height: 1;
+}
+@media (min-width: 1024px) {
+  .site-footer .site-footer__col--brands { grid-column: span 2; }
+  .site-footer .site-footer__col--contacts { grid-column: span 3; }
+}
+
+/* Reuse the framed service-panel treatment for all landing text blocks. */
+[data-seo-landing] { padding-block: 0; background: transparent; }
+[data-seo-landing] > .container {
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid var(--color-border-soft, #dce8e1);
+  border-radius: var(--radius-xl, 24px);
+  background: #E5EFE9;
+}
+[data-seo-landing] .section-title-block { text-align: left; margin-bottom: 24px; }
+[data-seo-landing] .section-title-block__title { color: #214B3F; text-align: left; }
+
+/* Service landing cards share the borderless rounded-photo treatment. */
+.information-service-index .articles-item,
+.information-service-index .item-bl { display: flex; flex-direction: column; height: 100%; }
+.information-service-index .article-box {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.information-service-index .article-box .img { overflow: hidden; border-radius: var(--radius-lg); }
+.information-service-index .article-box img { display: block; margin: 0; }
+.information-service-index .article-box .txt { padding: var(--space-md) 4px 0; }
+.information-service-index .article-box .h-3 { color: var(--color-text-main); font-family: var(--font-family-heading); }
+.information-service-index .article-box .txt p { color: var(--color-text-secondary); line-height: var(--line-height-base); }
+.information-service-index .article-box:hover .h-3 { color: var(--color-primary); }
+.information-service-index .article-box:hover .img { box-shadow: var(--shadow-sm); }
