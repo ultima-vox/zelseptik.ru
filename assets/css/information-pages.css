@@ -1132,3 +1132,27 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 .ds-select__option { padding: 10px 12px; border-radius: var(--radius-md); color: var(--color-text-main); font: inherit; font-size: 14px; line-height: 1.5; cursor: pointer; overflow-wrap: anywhere; }
 .ds-select__option:hover, .ds-select__option.is-active { background: var(--color-primary-soft); }
 .ds-select__option[aria-selected='true'] { color: var(--color-primary); font-weight: 600; background: var(--color-bg-page); }
+
+/* Existing Shop 6 area cards: photographs without inset media frames. */
+.catalog-card:has(.catalog-card__img[src^="/upload/shop_6/"]) .catalog-card__media {
+  aspect-ratio: auto;
+  padding: 0;
+  min-height: 0;
+  border: 0;
+  border-radius: var(--radius-2xl);
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+.catalog-card .catalog-card__img[src^="/upload/shop_6/"] {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border: 0;
+  border-radius: var(--radius-2xl);
+  box-shadow: 0 12px 22px -18px rgba(8, 35, 26, .45);
+}
