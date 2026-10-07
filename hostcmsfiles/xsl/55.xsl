@@ -444,6 +444,13 @@
 			</div>
 		</xsl:if>
 
+		<!-- Native shop description belongs only to the first unfiltered root page. -->
+		<xsl:if test="(@id = 1 or @id = 6) and group = 0 and (not(page) or page = 0) and not(tag) and not(shop_producer) and not(shop_filter_seo) and not(filter = 1) and normalize-space(description) != ''">
+			<div hostcms:id="{@id}" hostcms:field="description" hostcms:entity="shop" hostcms:type="wysiwyg">
+				<xsl:value-of select="description" disable-output-escaping="yes"/>
+			</div>
+		</xsl:if>
+
 		<section class="catalog-advice-section">
 			<div class="container">
 				<div class="catalog-advice">
