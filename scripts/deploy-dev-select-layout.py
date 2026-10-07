@@ -73,7 +73,7 @@ def encrypted_backup(before):
 
 
 PATH = 'assets/css/information-pages.css'
-EXPECTED = '4cd0fe546480ed1df12f54acbb4e841f3479e3836474ffd4e8cfa00bf58ff2d9'
+EXPECTED = '656d2ca08b79315b901a389916a8afe9a86bec4d9ee819277f76d12d1ce844ee'
 
 def main():
     target = Path(PATH).read_bytes()
