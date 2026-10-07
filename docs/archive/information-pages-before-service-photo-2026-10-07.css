@@ -1092,28 +1092,3 @@ html[data-regional-catalog] .area-questions summary:focus-visible { outline: 2px
 html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom: 12px; font-size: 16px; line-height: 1.65; }
 @media (min-width: 1101px) { html[data-regional-catalog] .area-questions .fl-row { grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); align-items: start; } }
 @media (max-width: 767px) { html[data-regional-catalog] .information-prices > [data-service-section] { padding: 20px; } }
-
-/* Service photographs: existing Shop 6 media, separate from equipment cutouts. */
-.product-page .hero-section .media-card:has(.media-card__content[src^="/upload/shop_6/"]) {
-  min-height: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  box-shadow: none;
-  overflow: visible;
-  justify-items: start;
-}
-.product-page .hero-section .media-card:has(.media-card__content[src^="/upload/shop_6/"]) .media-card__link {
-  height: auto;
-  max-width: 540px;
-}
-.product-page .hero-section .media-card .media-card__content[src^="/upload/shop_6/"] {
-  width: 100%;
-  height: auto;
-  max-width: 540px;
-  max-height: none;
-  border-radius: var(--radius-2xl);
-  border: 1px solid rgba(255, 255, 255, 0.24);
-  box-shadow: 0 14px 30px -16px rgba(8, 35, 26, 0.65),
-              0 22px 24px -24px rgba(255, 255, 255, 0.7);
-}
