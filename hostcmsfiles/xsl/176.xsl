@@ -44,7 +44,12 @@
 	</xsl:if>
 	<div class="container">
 
-		<xsl:value-of disable-output-escaping="yes" select="description"/>
+		<!-- The homepage carousel has its own heading, not the shop landing copy. -->
+        <div class="section-title-block">
+            <span class="section-title-block__tag">Каталог оборудования</span>
+            <h2 class="section-title-block__title">Септики для дома и дачи</h2>
+            <p class="section-title-block__desc">Сравните модели и характеристики, затем уточните подходящий вариант для вашего участка.</p>
+        </div>
 
 		<div class="catalog-controls">
 			<div class="catalog-controls__status">
