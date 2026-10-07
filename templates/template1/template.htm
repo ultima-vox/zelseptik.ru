@@ -362,7 +362,7 @@ body {
     <?php
         Core_Page::instance()
         ->fileTimestamp(TRUE)
-        ->prependCss('/assets/css/runtime.min.css')
+        ->prependCss('/assets/css/runtime.0b2e4fda.min.css')
         ->prependCss('/assets/css/app.min.css')
         ->css('/assets/css/information-pages.css')
         ->showCss();
@@ -640,6 +640,16 @@ body {
         <?php
             $oPage = Core_Page::instance();
             $oPageObject = $oPage->object;
+
+            // Only the main page controller may output the landing description.
+            // Embedded catalog/case controllers must keep their compact output.
+            if ($oPageObject instanceof Shop_Controller_Show
+                || $oPageObject instanceof Informationsystem_Controller_Show) {
+                $oPageObject->addEntity(
+                    Core::factory('Core_Xml_Entity')
+                        ->name('landing_description')->value(1)
+                )->addCacheSignature('landing_description=1');
+            }
 
             if ($oPageObject instanceof Shop_Controller_Show) {
                 $oPageObject->seoFilters(TRUE);
