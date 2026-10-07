@@ -557,7 +557,7 @@
 				</h3>
 
 
-				<div class="catalog-card__specs">
+				<xsl:if test="/shop/@id != 6"><div class="catalog-card__specs">
 					<xsl:if test="property_value[tag_name='performance']/value != ''">
 						<div class="catalog-card__spec-row">
 							<span class="catalog-card__spec-label">Производительность:</span>
@@ -590,7 +590,7 @@
 						<span class="catalog-card__spec-label">Очистка:</span>
 						<span class="catalog-card__spec-value catalog-card__spec-value--highlight">до 98%</span>
 					</div>
-				</div>
+				</div></xsl:if>
 			</div>
 
 			<div class="catalog-card__footer">

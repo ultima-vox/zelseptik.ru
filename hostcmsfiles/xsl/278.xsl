@@ -121,7 +121,7 @@
 				</h3>
 
 
-				<div class="catalog-card__specs">
+				<xsl:if test="/shop/@id != 6"><div class="catalog-card__specs">
 					<xsl:if test="property_value[tag_name='performance']/value != ''">
 						<div class="catalog-card__spec-row">
 							<span class="catalog-card__spec-label">Производительность:</span>
@@ -151,7 +151,7 @@
 					</div>
 
 <div class="catalog-card__spec-row"><span class="catalog-card__spec-label">Модификация:</span><span class="catalog-card__spec-value"><xsl:choose><xsl:when test="property_value[tag_name='long']/value = 1">Лонг</xsl:when><xsl:when test="property_value[tag_name='midi']/value = 1">Миди</xsl:when><xsl:otherwise>Стандарт</xsl:otherwise></xsl:choose></span></div>
-				</div>
+				</div></xsl:if>
 			</div>
 
 			<div class="catalog-card__footer">
