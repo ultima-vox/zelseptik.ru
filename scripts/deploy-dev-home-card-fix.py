@@ -72,7 +72,7 @@ def encrypted_backup(before):
 
 
 
-EXPECTED = {'hostcmsfiles/xsl/286.xsl': '52cb919cc9015a63de1244014fba6bdbb149cb313560ab60efbdf526d64ffb66', 'assets/css/information-pages.css': '4e72ed8865c9ed08cd53286bfb75c01243492cad02eb0b5565ecfa3043bae59d', 'templates/template2/template.htm': 'c2feec8c092dbb8afcac5892f54de8abe416d16e4834207062c03e90a81a575e'}
+EXPECTED = {'hostcmsfiles/xsl/286.xsl': '52cb919cc9015a63de1244014fba6bdbb149cb313560ab60efbdf526d64ffb66', 'assets/css/information-pages.css': '435b47d06740d18013d20d6591e69c07163f01a1830bccb9c0085b7d4ce7be3d', 'templates/template2/template.htm': 'c2feec8c092dbb8afcac5892f54de8abe416d16e4834207062c03e90a81a575e'}
 
 def main():
     target = {p: Path(p).read_bytes() for p in EXPECTED}

@@ -1177,3 +1177,8 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 .catalog-advice-section {
   padding-bottom: clamp(32px, 5vw, 64px);
 }
+
+.catalog-card:has(.js-catalog-order[data-order-kind="service"]) {
+  height: 100%;
+  align-self: stretch;
+}
