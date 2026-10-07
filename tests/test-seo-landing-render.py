@@ -19,7 +19,7 @@ for ident in [1,6]:
  for extra in ['<group>1</group><page>0</page>','<group>0</group><page>1</page>','<group>0</group><page>0</page><tag/>','<group>0</group><page>0</page><shop_producer/>','<group>0</group><page>0</page><shop_filter_seo/>','<group>0</group><page>0</page><filter>1</filter>']:
   assert 'Landing copy' not in render(55,'shop',ident,extra),(ident,extra)
 assert 'Landing copy' not in render(55,'shop',3,'<group>0</group><page>0</page>')
-for ident in [8,9]:
+for ident in [7,8,9]:
  assert 'Landing copy' in render(3,'informationsystem',ident,'<group>0</group><page>0</page>')
  for extra in ['<group>1</group><page>0</page>','<group>0</group><page>1</page>','<group>0</group><page>0</page><tag/>']:
   assert 'Landing copy' not in render(3,'informationsystem',ident,extra),(ident,extra)

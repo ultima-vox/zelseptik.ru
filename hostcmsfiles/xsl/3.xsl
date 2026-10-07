@@ -108,7 +108,7 @@
 					</div>
 				</div>
 			</div>
-			<xsl:if test="$group = 0 and (not(@id = 8 or @id = 9) or ((not(page) or page = 0) and not(tag)))"><div hostcms:id="{@id}" hostcms:field="description" hostcms:entity="informationsystem" hostcms:type="wysiwyg"><xsl:value-of select="description" disable-output-escaping="yes"/></div></xsl:if>
+			<xsl:if test="$group = 0 and (not(@id = 7 or @id = 8 or @id = 9) or ((not(page) or page = 0) and not(tag)))"><div hostcms:id="{@id}" hostcms:field="description" hostcms:entity="informationsystem" hostcms:type="wysiwyg"><xsl:value-of select="description" disable-output-escaping="yes"/></div></xsl:if>
 			<div class="section area-text no-bg">
 
 				<div class="page-bl">

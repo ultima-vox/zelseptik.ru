@@ -22,3 +22,5 @@ jobs:
         run: python3 scripts/deploy-dev-seo-landings.py
 
 # Preserve the scenario control through its container wrapper.
+
+# Include the actual general montage landing after redirect verification.
