@@ -1,5 +1,5 @@
 {
-  "status": "draft_not_applied",
+  "status": "applied_verified_on_dev",
   "environment": "dev",
   "shop_id": 6,
   "records": [
@@ -38,5 +38,8 @@
       "seo_title": "Обслуживание септиков в Солнечногорске | ЗЕЛСЕПТИК",
       "seo_description": "Обслуживание септиков в Солнечногорске. Какие данные о станции и участке нужны для заявки, согласования выезда и расчёта стоимости работ."
     }
-  ]
+  ],
+  "applied_at": "2026-10-08",
+  "deployment_commit": "74bb68f33bc370e76cbfb1f973e43953c9c26a93",
+  "production_applied": false
 }
