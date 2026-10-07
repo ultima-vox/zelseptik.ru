@@ -1161,3 +1161,19 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
   .catalog-scenario-bar .ds-select { display: none; }
   .catalog-toolbar > .ds-select { max-width: 260px; }
 }
+
+/* Service destination cards: equal tracks and a shared footer baseline. */
+.catalog__products:has(.js-catalog-order[data-order-kind="service"]),
+.regional-catalog-grid:has(.js-catalog-order[data-order-kind="service"]) {
+  grid-auto-rows: 1fr;
+  align-items: stretch;
+}
+.catalog-card:has(.js-catalog-order[data-order-kind="service"]) .catalog-card__body {
+  flex: 1;
+}
+.catalog-card:has(.js-catalog-order[data-order-kind="service"]) .catalog-card__footer {
+  margin-top: var(--space-lg);
+}
+.catalog-advice-section {
+  padding-bottom: clamp(32px, 5vw, 64px);
+}
