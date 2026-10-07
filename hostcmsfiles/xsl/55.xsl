@@ -64,7 +64,7 @@
 					<xsl:choose>
 						<xsl:when test="$group = 0">
 							<div class="grid-blueprint__content catalog-hero__content">
-								<span class="badge">Инженерный каталог</span>
+								<span class="badge"><xsl:choose><xsl:when test="/shop/@id = 6">Сервис септиков</xsl:when><xsl:otherwise>Инженерный каталог</xsl:otherwise></xsl:choose></span>
 
 								<h1 class="catalog-hero__title">
 									<xsl:choose>
@@ -75,26 +75,26 @@
 									</xsl:choose>
 								</h1>
 
-								<p class="catalog-hero__text">Подберите станцию по количеству проживающих, режиму использования и способу сброса. Вместо длинного списка моделей сразу показываем подходящие варианты и понятный следующий шаг.</p>
+								<p class="catalog-hero__text"><xsl:choose><xsl:when test="/shop/@id = 6">Выберите город обслуживания и оставьте заявку. Инженер уточнит модель септика, его состояние и необходимые работы.</xsl:when><xsl:otherwise>Подберите станцию по количеству проживающих, режиму использования и способу сброса. Вместо длинного списка моделей сразу показываем подходящие варианты и понятный следующий шаг.</xsl:otherwise></xsl:choose></p>
 
 								<div class="stats-strip catalog-hero__stats" aria-label="Ключевые факты каталога">
 									<div class="stats-strip__item">
 										<strong><xsl:value-of select="total"/></strong>
-										<span>моделей в каталоге</span>
+										<span><xsl:choose><xsl:when test="/shop/@id = 6">районов обслуживания</xsl:when><xsl:otherwise>моделей в каталоге</xsl:otherwise></xsl:choose></span>
 									</div>
 									<div class="stats-strip__item">
-										<strong>3 шага</strong>
-										<span>до подходящей модели</span>
+										<strong><xsl:choose><xsl:when test="/shop/@id = 6">Сервис</xsl:when><xsl:otherwise>3 шага</xsl:otherwise></xsl:choose></strong>
+										<span><xsl:choose><xsl:when test="/shop/@id = 6">обслуживание и ремонт</xsl:when><xsl:otherwise>до подходящей модели</xsl:otherwise></xsl:choose></span>
 									</div>
 									<div class="stats-strip__item">
-										<strong>1-2 дня</strong>
-										<span>типовой монтаж</span>
+										<strong><xsl:choose><xsl:when test="/shop/@id = 6">Смета</xsl:when><xsl:otherwise>1-2 дня</xsl:otherwise></xsl:choose></strong>
+										<span><xsl:choose><xsl:when test="/shop/@id = 6">по вашей заявке</xsl:when><xsl:otherwise>типовой монтаж</xsl:otherwise></xsl:choose></span>
 									</div>
 								</div>
 
 								<div class="hero-actions">
 									<a class="btn btn--primary" href="#catalog-products"><xsl:choose><xsl:when test="/shop/@id = 6">Выбрать город обслуживания</xsl:when><xsl:otherwise>Смотреть подходящие модели</xsl:otherwise></xsl:choose></a>
-									<button class="btn btn--secondary js-btn-callback" type="button">Получить подбор инженера</button>
+									<button class="btn btn--secondary js-btn-callback" type="button"><xsl:choose><xsl:when test="/shop/@id = 6">Обсудить обслуживание</xsl:when><xsl:otherwise>Получить подбор инженера</xsl:otherwise></xsl:choose></button>
 								</div>
 							</div>
 							<xsl:if test="contains(/shop/url, '/septiki/')">

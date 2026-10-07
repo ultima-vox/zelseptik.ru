@@ -1117,3 +1117,18 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
   box-shadow: 0 14px 30px -16px rgba(8, 35, 26, 0.65),
               0 22px 24px -24px rgba(255, 255, 255, 0.7);
 }
+/* The original select remains the submitted field; the popup follows DS tokens. */
+.ds-select { position: relative; width: 100%; min-width: 0; }
+.ds-select select.ds-select__native { position: absolute; width: 1px; height: 1px; padding: 0; margin: 0; opacity: 0; pointer-events: none; }
+.ds-select__trigger { display: block; position: relative; width: 100%; min-height: 48px; padding: 12px 42px 12px 16px; border: 1px solid var(--color-border-soft); border-radius: var(--radius-xl); background: var(--color-bg-base); color: var(--color-text-main); font: inherit; font-size: 14px; line-height: 1.5; text-align: left; cursor: pointer; }
+.ds-select__trigger::after { content: ''; position: absolute; top: 50%; right: 18px; width: 7px; height: 7px; border-right: 1.5px solid var(--color-text-muted); border-bottom: 1.5px solid var(--color-text-muted); transform: translateY(-70%) rotate(45deg); }
+.ds-select__trigger:focus-visible, .ds-select--open .ds-select__trigger { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.ds-select__trigger:disabled { opacity: .55; cursor: default; }
+.ds-select__trigger[aria-invalid='true'] { border-color: #b42318; }
+.ds-select--open { z-index: 30; }
+.ds-select__list { position: absolute; top: calc(100% + 8px); left: 0; right: 0; z-index: 40; padding: 6px; max-height: min(240px, 40vh); overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: var(--color-border-soft) transparent; border: 1px solid var(--color-border-soft); border-radius: var(--radius-xl); background: var(--color-bg-base); box-shadow: var(--shadow-lg); }
+.ds-select__list[hidden] { display: none; }
+.ds-select--up .ds-select__list { top: auto; bottom: calc(100% + 8px); }
+.ds-select__option { padding: 10px 12px; border-radius: var(--radius-md); color: var(--color-text-main); font: inherit; font-size: 14px; line-height: 1.5; cursor: pointer; overflow-wrap: anywhere; }
+.ds-select__option:hover, .ds-select__option.is-active { background: var(--color-primary-soft); }
+.ds-select__option[aria-selected='true'] { color: var(--color-primary); font-weight: 600; background: var(--color-bg-page); }
