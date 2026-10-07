@@ -21,6 +21,9 @@ for i in [55,56,176,278]:
   result=html.fromstring(str(transform(etree.fromstring(fixture.encode()))))
   buttons=result.cssselect('.js-catalog-order') if False else result.xpath('//button[contains(@class,"js-catalog-order")]')
   assert buttons,(i,shop,'No trigger')
+  if i!=56:
+   specs=result.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," catalog-card__specs ")]')
+   assert bool(specs)==(shop!=6),(i,shop,'equipment specifications visibility')
   assert all(b.get('data-order-kind')==('service' if shop==6 else 'installation') for b in buttons)
   if i!=56:assert all(('Заказать обслуживание' if shop==6 else 'Заказать монтаж') in b.text_content() for b in buttons)
   if i==56:
