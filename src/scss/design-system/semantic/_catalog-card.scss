@@ -37,7 +37,7 @@
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-extra-bold);
   line-height: 1;
-  letter-spacing: .04em;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -70,7 +70,7 @@
   gap: 6px;
   padding: 5px 9px;
   border-radius: var(--radius-sm);
-  background: rgba(26, 31, 38, .9);
+  background: rgb(26 31 38 / 90%);
   color: var(--color-text-inverse);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);

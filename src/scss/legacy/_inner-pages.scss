@@ -65,7 +65,7 @@
   margin: 0;
   font-size: clamp(2.25rem, 5vw, var(--font-size-4xl));
   line-height: var(--line-height-tight);
-  letter-spacing: -.045em;
+  letter-spacing: -0.045em;
 }
 
 .inner-hero__text,
@@ -166,7 +166,7 @@
   margin: 0;
   font-size: clamp(1.75rem, 3vw, var(--font-size-3xl));
   line-height: var(--line-height-heading);
-  letter-spacing: -.03em;
+  letter-spacing: -0.03em;
 }
 
 .inner-section__text,

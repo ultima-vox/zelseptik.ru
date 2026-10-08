@@ -23,7 +23,7 @@
 }
 
 .card--dark {
-  border-color: rgba(148, 163, 184, .16);
+  border-color: rgb(148 163 184 / 16%);
   background: var(--color-secondary);
   color: var(--color-text-inverse);
 }
@@ -52,5 +52,5 @@
 }
 
 .card--dark .card__text {
-  color: rgba(255, 255, 255, .72);
+  color: rgb(255 255 255 / 72%);
 }

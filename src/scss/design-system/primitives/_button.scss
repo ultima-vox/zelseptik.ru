@@ -24,7 +24,7 @@
 .btn:disabled,
 .btn[aria-disabled='true'] {
   pointer-events: none;
-  opacity: .65;
+  opacity: 0.65;
 }
 
 .btn--primary {

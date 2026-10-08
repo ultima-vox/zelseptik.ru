@@ -111,3 +111,10 @@
   font-weight: var(--font-weight-bold);
   text-align: right;
 }
+
+.calculator-card__row-tip {
+  margin-top: var(--space-md);
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-base);
+}

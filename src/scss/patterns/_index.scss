@@ -1,0 +1,12 @@
+/* ==========================================================================
+   PROJECT PATTERN LAYER
+   Compositions that have no design-system equivalent yet. Anything covered by
+   src/scss/design-system/patterns/ must NOT be redefined here.
+   ========================================================================== */
+
+@forward 'trust';
+@forward 'steps';
+@forward 'comparison';
+@forward 'contacts';
+@forward 'article';
+@forward 'product';
