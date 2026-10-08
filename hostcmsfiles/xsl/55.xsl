@@ -270,7 +270,7 @@
 </select>
 </div>
 </div>
-  <div class="catalog-filter__group">
+  <div class="catalog-filter__group" data-catalog-range="" data-range-min="{/shop/min_price}" data-range-max="{/shop/max_price}">
     <span class="catalog-filter__group-title">Цена, ₽</span>
     <div class="catalog-filter__price-grid">
       <input class="catalog-filter__input" name="price_from" type="number" min="0" step="1" placeholder="от" aria-label="Цена от, рублей">
@@ -280,6 +280,7 @@
         <xsl:if test="/shop/price_to &gt; 0"><xsl:attribute name="value"><xsl:value-of select="/shop/price_to"/></xsl:attribute></xsl:if>
       </input>
     </div>
+    <xsl:call-template name="catalogRangeSlider"><xsl:with-param name="label" select="'Цена'"/></xsl:call-template>
   </div>
   <xsl:apply-templates select="shop_item_properties//property[@id = 5 or @id = 4]" mode="catalogRangeFilter">
     <xsl:sort select="@id" data-type="number" order="descending"/>
@@ -861,17 +862,30 @@
 	</xsl:template>
 
 
+<xsl:template name="catalogRangeSlider">
+  <xsl:param name="label"/>
+  <div class="catalog-range" hidden="hidden">
+    <svg class="catalog-range__track" viewBox="0 0 100 4" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <line x1="0" y1="2" x2="100" y2="2"/>
+      <line class="catalog-range__selection" x1="0" y1="2" x2="100" y2="2"/>
+    </svg>
+    <input class="catalog-range__handle catalog-range__handle--from" type="range" data-catalog-range-handle="from" aria-label="{$label}: нижняя граница"/>
+    <input class="catalog-range__handle catalog-range__handle--to" type="range" data-catalog-range-handle="to" aria-label="{$label}: верхняя граница"/>
+  </div>
+</xsl:template>
+
 <!-- Native HostCMS numeric property ranges: existing properties 4 and 5. -->
 <xsl:template match="property" mode="catalogRangeFilter">
   <xsl:variable name="from">property_<xsl:value-of select="@id"/>_from</xsl:variable>
   <xsl:variable name="to">property_<xsl:value-of select="@id"/>_to</xsl:variable>
   <xsl:variable name="unit"><xsl:choose><xsl:when test="@id = 4">л/сутки</xsl:when><xsl:otherwise>л</xsl:otherwise></xsl:choose></xsl:variable>
-  <div class="catalog-filter__group">
+  <div class="catalog-filter__group" data-catalog-range="" data-range-min="{filter_counts/min}" data-range-max="{filter_counts/max}">
     <span class="catalog-filter__group-title"><xsl:value-of select="name"/>, <xsl:value-of select="$unit"/></span>
     <div class="catalog-filter__price-grid">
       <input class="catalog-filter__input" name="{$from}" type="number" min="0" step="any" placeholder="от" value="{/shop/*[name()=$from]}" aria-label="{name} от, {$unit}"/>
       <input class="catalog-filter__input" name="{$to}" type="number" min="0" step="any" placeholder="до" value="{/shop/*[name()=$to]}" aria-label="{name} до, {$unit}"/>
     </div>
+    <xsl:call-template name="catalogRangeSlider"><xsl:with-param name="label" select="name"/></xsl:call-template>
   </div>
 </xsl:template>
 

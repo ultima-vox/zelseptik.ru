@@ -1174,6 +1174,66 @@ function initGiftsSelector() {
   setBonus(activeButton);
 }
 
+function initCatalogRangeSliders() {
+  document.querySelectorAll('[data-catalog-range]').forEach(function (group) {
+    const fields = Array.from(group.querySelectorAll('input[type="number"]'));
+    const track = group.querySelector('.catalog-range');
+    const handles = Array.from(group.querySelectorAll('[data-catalog-range-handle]'));
+    const selection = group.querySelector('.catalog-range__selection');
+    if (fields.length !== 2 || handles.length !== 2 || !track || !selection) return;
+    const numeric = value => value.trim() === '' ? NaN : Number(value);
+    const originalMin = numeric(group.dataset.rangeMin || '');
+    const originalMax = numeric(group.dataset.rangeMax || '');
+    if (!Number.isFinite(originalMin) || !Number.isFinite(originalMax) || originalMax <= originalMin) return;
+    // Preserve explicit GET values even when they exceed the current category bounds.
+    const lower = numeric(fields[0].value);
+    const upper = numeric(fields[1].value);
+    const min = Math.min(originalMin, Number.isFinite(lower) ? lower : originalMin);
+    const max = Math.max(originalMax, Number.isFinite(upper) ? upper : originalMax);
+    const clamp = value => Math.max(min, Math.min(max, value));
+    handles.forEach(function (handle, index) {
+      handle.min = String(min);
+      handle.max = String(max);
+      handle.step = fields[index].step || 'any';
+    });
+    function sync() {
+      const from = numeric(fields[0].value);
+      const to = numeric(fields[1].value);
+      handles[0].value = String(clamp(Number.isFinite(from) ? from : min));
+      handles[1].value = String(clamp(Number.isFinite(to) ? to : max));
+      const reversed = Number.isFinite(from) && Number.isFinite(to) && from > to;
+      fields[1].setCustomValidity(reversed ? 'Значение «до» должно быть не меньше значения «от».' : '');
+      const start = Number(handles[0].value);
+      const end = Number(handles[1].value);
+      selection.setAttribute('x1', String((Math.min(start, end) - min) / (max - min) * 100));
+      selection.setAttribute('x2', String((Math.max(start, end) - min) / (max - min) * 100));
+      handles[0].setAttribute('aria-valuetext', start.toLocaleString('ru-RU'));
+      handles[1].setAttribute('aria-valuetext', end.toLocaleString('ru-RU'));
+    }
+    handles.forEach(function (handle, index) {
+      handle.addEventListener('input', function () {
+        const other = Number(handles[1 - index].value);
+        const value = index === 0 ? Math.min(Number(handle.value), other) : Math.max(Number(handle.value), other);
+        fields[index].value = String(value);
+        fields[index].dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    });
+    fields.forEach(field => field.addEventListener('input', sync));
+    // Clicking the track moves its nearest boundary; dragging stays native.
+    track.addEventListener('pointerdown', function (event) {
+      if (handles.includes(event.target)) return;
+      const rect = track.getBoundingClientRect();
+      const value = clamp(min + (event.clientX - rect.left) / rect.width * (max - min));
+      const index = Math.abs(value - Number(handles[0].value)) <= Math.abs(value - Number(handles[1].value)) ? 0 : 1;
+      handles[index].value = String(value);
+      handles[index].dispatchEvent(new Event('input', { bubbles: true }));
+      handles[index].focus();
+    });
+    sync();
+    track.hidden = false;
+  });
+}
+
 function initExclusiveFilters() {
   document.querySelectorAll('[data-exclusive-filter]').forEach(function (group) {
     const options = Array.from(group.querySelectorAll('[data-exclusive-filter-option]'));
@@ -1376,6 +1436,7 @@ function initFaqAccordion() {
     initGiftsSelector();
     initExclusiveFilters();
     initRangeFilters();
+    initCatalogRangeSliders();
     initFaqAccordion();
   }
   
