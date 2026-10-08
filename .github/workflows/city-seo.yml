@@ -28,3 +28,4 @@ jobs:
         run: python3 scripts/deploy-dev-native-catalog-filter.py
 
 # Existing HostCMS shop 1: numeric ranges and drain properties.
+# Guard uses exact CRLF bytes emitted by the CMS editor.
