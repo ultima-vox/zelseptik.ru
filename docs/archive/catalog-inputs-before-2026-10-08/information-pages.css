@@ -1331,11 +1331,3 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 .catalog-range__handle:focus-visible::-moz-range-thumb { outline: 3px solid var(--color-primary-soft); outline-offset: 2px; }
 .catalog-range__handle:active::-webkit-slider-thumb { cursor: grabbing; }
 .catalog-range__handle:active::-moz-range-thumb { cursor: grabbing; }
-
-/* Exact numeric entry: compact desktop fields without native spin buttons. */
-.catalog__sidebar .catalog-filter__input[type="number"] { appearance: textfield; -moz-appearance: textfield; min-height: 40px; padding: 9px 10px; font-size: 14px; line-height: 20px; }
-.catalog__sidebar .catalog-filter__input[type="number"]::-webkit-inner-spin-button,
-.catalog__sidebar .catalog-filter__input[type="number"]::-webkit-outer-spin-button { -webkit-appearance: none; appearance: none; margin: 0; }
-@media (max-width: 767px) {
-  .catalog__sidebar .catalog-filter__input[type="number"] { min-height: 44px; }
-}
