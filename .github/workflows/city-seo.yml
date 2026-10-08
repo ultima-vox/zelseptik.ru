@@ -1,4 +1,4 @@
-name: Publish reviewed city SEO on isolated dev
+name: Publish reviewed card layout and form routing on dev
 on:
   push:
     branches: [chore/seo-dev-2026-10-06]
@@ -16,9 +16,15 @@ jobs:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
         with:
           persist-credentials: false
-      - name: Deploy reviewed native city text renderer
+      - name: Validate routing without sending mail
+        run: |
+          php -l templates/template1/template.htm
+          php tests/test-lead-routing.php
+          node --check templates/template1/script.js
+          node tests/test-lead-routing.cjs
+      - name: Deploy reviewed card layout and form routing
         env:
           DEV_FTP_PASSWORD: ${{ secrets.DEV_FTP_PASSWORD }}
-        run: python3 scripts/deploy-dev-city-seo.py
+        run: python3 scripts/deploy-dev-card-forms.py
 
-# Extend the reviewed native text renderer to all 13 main city landings.
+# Reviewed equal card heights, unbroken measurements and explicit lead routing.

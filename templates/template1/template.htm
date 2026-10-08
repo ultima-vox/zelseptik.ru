@@ -118,6 +118,23 @@ function zs_has_valid_phone(array $post): bool
     return (bool) preg_match('/^[78]\d{10}$/', $phone);
 }
 
+function zs_is_lead_request(array $post): bool
+{
+    if (($post['_zs_action'] ?? '') !== 'lead') {
+        return false;
+    }
+
+    // Catalog controls are never email submissions, even if mislabelled.
+    foreach (array_keys($post) as $name) {
+        if (in_array($name, ['filter', 'sorting', 'price_from', 'price_to', 'producer_id', 'on_page'], true)
+            || strpos($name, 'property_') === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 function zs_handle_any_form(): void
 {
     if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -127,7 +144,7 @@ function zs_handle_any_form(): void
     // Only ZELSEPTIK lead forms belong to this mail handler. HostCMS also uses
     // POST for comments, quizzes and filter previews; those requests must keep
     // flowing to their native controllers.
-    if (($_POST['_zs_action'] ?? '') !== 'lead') {
+    if (!zs_is_lead_request($_POST)) {
         return;
     }
 
