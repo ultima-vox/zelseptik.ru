@@ -459,17 +459,6 @@
 			</xsl:for-each>
 		</xsl:if>
 
-		<!-- Native SEO-filter text, first page only (HostCMS SEO-filter documentation). -->
-		<xsl:if test="@id = 1 and shop_filter_seo/node() and (not(page) or page = 0) and normalize-space(shop_filter_seo/text) != ''">
-			<section class="section area-text no-bg" data-seo-landing="catalog-filter">
-				<div class="container">
-					<div class="legal-page__content">
-						<xsl:value-of select="shop_filter_seo/text" disable-output-escaping="yes"/>
-					</div>
-				</div>
-			</section>
-		</xsl:if>
-
 		<!-- Native shop description belongs only to the first unfiltered root page. -->
 		<xsl:if test="landing_description = 1 and (@id = 1 or @id = 6) and group = 0 and (not(page) or page = 0) and not(tag) and not(shop_producer) and not(shop_filter_seo) and not(filter = 1) and normalize-space(description) != ''">
 			<div hostcms:id="{@id}" hostcms:field="description" hostcms:entity="shop" hostcms:type="wysiwyg">

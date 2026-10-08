@@ -1,0 +1,314 @@
+{
+  "date": "2026-10-08",
+  "environment": "dev",
+  "pages": [
+    {
+      "id": 1,
+      "path": "/septiki/dacha/",
+      "http": 200,
+      "title": "Септики для дачи — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики для дачи",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/dom/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": [
+        "/septiki/dacha/page-2/"
+      ]
+    },
+    {
+      "id": 2,
+      "path": "/septiki/dom/",
+      "http": 200,
+      "title": "Септики для частного дома — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики для частного дома",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/dacha/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": [
+        "/septiki/dom/page-2/"
+      ]
+    },
+    {
+      "id": 7,
+      "path": "/septiki/men/4/",
+      "http": 200,
+      "title": "Септики на 4 человека — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики на 4 человека",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/men/6/",
+        "/septiki/dom/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": []
+    },
+    {
+      "id": 9,
+      "path": "/septiki/men/6/",
+      "http": 200,
+      "title": "Септики на 6 человек — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики на 6 человек",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/men/9/",
+        "/septiki/dom/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": []
+    },
+    {
+      "id": 8,
+      "path": "/septiki/men/9/",
+      "http": 200,
+      "title": "Септики на 9 человек — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики на 9 человек",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/men/10/",
+        "/septiki/dom/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": []
+    },
+    {
+      "id": 5,
+      "path": "/septiki/men/10/",
+      "http": 200,
+      "title": "Септики на 10 человек — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики на 10 человек",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/men/12/",
+        "/septiki/dom/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": []
+    },
+    {
+      "id": 6,
+      "path": "/septiki/men/12/",
+      "http": 200,
+      "title": "Септики на 12 человек — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики на 12 человек",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/men/10/",
+        "/septiki/dom/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": []
+    },
+    {
+      "id": 3,
+      "path": "/septiki/nopr/",
+      "http": 200,
+      "title": "Септики с самотечным отводом воды — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики с самотечным отводом воды",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/pr/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": [
+        "/septiki/nopr/page-2/"
+      ]
+    },
+    {
+      "id": 4,
+      "path": "/septiki/pr/",
+      "http": 200,
+      "title": "Септики с принудительным отводом воды — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики с принудительным отводом воды",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/nopr/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": [
+        "/septiki/pr/page-2/"
+      ]
+    },
+    {
+      "id": 10,
+      "path": "/septiki/long/",
+      "http": 200,
+      "title": "Септики Long — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики Long",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/midi/",
+        "/septiki/pr/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": [
+        "/septiki/long/page-2/"
+      ]
+    },
+    {
+      "id": 11,
+      "path": "/septiki/midi/",
+      "http": 200,
+      "title": "Септики Midi — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": "Септики Midi",
+      "seo_blocks": 1,
+      "links": [
+        "/montazh-septika/",
+        "/dostavka/",
+        "/septiki/long/",
+        "/septiki/nopr/",
+        "/septiki/",
+        "/obsluzhivanie-septikov/"
+      ],
+      "pagination": []
+    }
+  ],
+  "link_targets": [
+    {
+      "path": "/dostavka/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/dostavka/"
+    },
+    {
+      "path": "/montazh-septika/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/montazh-septika/"
+    },
+    {
+      "path": "/obsluzhivanie-septikov/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/obsluzhivanie-septikov/"
+    },
+    {
+      "path": "/septiki/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/"
+    },
+    {
+      "path": "/septiki/dacha/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/dacha/"
+    },
+    {
+      "path": "/septiki/dom/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/dom/"
+    },
+    {
+      "path": "/septiki/long/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/long/"
+    },
+    {
+      "path": "/septiki/men/10/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/men/10/"
+    },
+    {
+      "path": "/septiki/men/12/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/men/12/"
+    },
+    {
+      "path": "/septiki/men/6/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/men/6/"
+    },
+    {
+      "path": "/septiki/men/9/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/men/9/"
+    },
+    {
+      "path": "/septiki/midi/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/midi/"
+    },
+    {
+      "path": "/septiki/nopr/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/nopr/"
+    },
+    {
+      "path": "/septiki/pr/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/pr/"
+    }
+  ],
+  "isolation_checks": [
+    {
+      "path": "/septiki/",
+      "http": 200,
+      "filter_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/topas/",
+      "http": 200,
+      "filter_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/topas/topas-4/",
+      "http": 200,
+      "filter_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/dacha/page-2/",
+      "http": 200,
+      "filter_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/dom/page-2/",
+      "http": 200,
+      "filter_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/nopr/page-2/",
+      "http": 200,
+      "filter_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/pr/page-2/",
+      "http": 200,
+      "filter_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/long/page-2/",
+      "http": 200,
+      "filter_seo_blocks": 0
+    }
+  ],
+  "production_modified": false
+}
