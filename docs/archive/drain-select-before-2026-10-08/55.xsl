@@ -254,6 +254,12 @@
 												<xsl:with-param name="modifier" select="'body'"/>
 												<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 39 or shop_filter_seo_property/property_id = 40)]"/>
 											</xsl:call-template>
+
+											<xsl:call-template name="seoSidebarGroup">
+												<xsl:with-param name="title" select="'Тип сброса'"/>
+												<xsl:with-param name="modifier" select="'drain'"/>
+												<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 2 or shop_filter_seo_property/property_id = 3)]"/>
+											</xsl:call-template>
 										</nav>
 									</xsl:if>
 
@@ -275,19 +281,10 @@
   <xsl:if test="count(shop_item_properties//property[@id = 2 or @id = 3])">
     <div class="catalog-filter__group">
       <span class="catalog-filter__group-title">Тип сброса</span>
-      <div data-exclusive-filter="">
-        <input type="hidden" name="property_3" value="1" data-exclusive-filter-input="property_3">
-          <xsl:if test="not(/shop/property_3 != '')"><xsl:attribute name="disabled">disabled</xsl:attribute></xsl:if>
-        </input>
-        <input type="hidden" name="property_2" value="1" data-exclusive-filter-input="property_2">
-          <xsl:if test="not(/shop/property_2 != '')"><xsl:attribute name="disabled">disabled</xsl:attribute></xsl:if>
-        </input>
-        <select class="catalog-filter__select" aria-label="Тип сброса" data-exclusive-filter-select="">
-          <option value="">Любой</option>
-          <option value="property_3"><xsl:if test="/shop/property_3 != ''"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>Самотечный</option>
-          <option value="property_2"><xsl:if test="/shop/property_2 != ''"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>Принудительный</option>
-        </select>
-      </div>
+      <xsl:call-template name="drainTypeOptions">
+        <xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
+        <xsl:with-param name="showAny" select="1"/>
+      </xsl:call-template>
     </div>
   </xsl:if>
   <button class="catalog-filter__submit" type="submit">Применить фильтры</button>

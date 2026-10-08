@@ -1294,14 +1294,3 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 .information-rich-panel .table-responsive { margin-bottom: 24px; }
 .information-rich-table :is(th,td) { overflow-wrap: normal; word-break: normal; }
 .information-rich-table tr > :first-child { min-width: 150px; }
-
-/* Keep the existing catalog filter accessible below the sticky header. */
-@media (min-width: 1200px) {
-  .catalog__sidebar {
-    max-height: calc(100dvh - var(--header-height, 96px) - 2 * var(--space-lg));
-    overflow-y: auto;
-    overscroll-behavior: contain;
-    scrollbar-width: thin;
-    scrollbar-color: var(--color-border-soft) transparent;
-  }
-}

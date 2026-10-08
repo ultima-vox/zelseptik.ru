@@ -18,6 +18,11 @@ for shop, url, expected in [(1, '/septiki/', True), (6, '/obsluzhivanie-po-gorod
         fields = panel.xpath(f'.//input[@name="{name}"]')
         assert len(fields) == 1 and fields[0].get('value') == value, (name, value)
         assert fields[0].get('type') == 'number' and fields[0].get('aria-label')
+    selects = panel.xpath('.//select[@data-exclusive-filter-select]')
+    assert len(selects) == 1
+    assert selects[0].xpath('./option/@value') == ['', 'property_3', 'property_2']
+    assert selects[0].xpath('./option[@selected]/@value') == ['property_2']
+    assert not panel.xpath('.//*[contains(@class, "catalog-seo-filter__group--drain")]')
     assert panel.xpath('.//input[@name="property_2" and not(@disabled)]')
     assert panel.xpath('.//input[@name="property_3" and @disabled]')
     assert panel.xpath('ancestor::form[1]')[0].get('method') == 'get'
