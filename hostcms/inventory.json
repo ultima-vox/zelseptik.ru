@@ -1,0 +1,1349 @@
+{
+  "checked_at": "2026-10-05",
+  "site_id": 1,
+  "environment_from_user_screenshot": {
+    "hostcms": "7.1.6",
+    "edition": "Старт",
+    "php": "7.2.34",
+    "mysql": "8.0.45-36",
+    "memory": "128M"
+  },
+  "approved_pages": [
+    "/",
+    "/contacts/",
+    "/about/",
+    "/promotion/",
+    "/dostavka/",
+    "/septiki/"
+  ],
+  "structures": [
+    {
+      "id": 1,
+      "name": "Главная",
+      "parent_id": 0,
+      "template_id": 2,
+      "document_id": 6,
+      "lib_id": 0,
+      "active": 1,
+      "show": 1,
+      "type": 0,
+      "url": "/",
+      "integration": {}
+    },
+    {
+      "id": 2,
+      "name": "Ошибка 404",
+      "parent_id": 0,
+      "template_id": 0,
+      "document_id": 3,
+      "lib_id": 0,
+      "active": 1,
+      "show": 0,
+      "type": 0,
+      "url": "/404/",
+      "integration": {}
+    },
+    {
+      "id": 3,
+      "name": "Ошибка 403",
+      "parent_id": 0,
+      "template_id": 0,
+      "document_id": 2,
+      "lib_id": 0,
+      "active": 1,
+      "show": 0,
+      "type": 0,
+      "url": "/403/",
+      "integration": {}
+    },
+    {
+      "id": 4,
+      "name": "Сайт временно недоступен",
+      "parent_id": 0,
+      "template_id": 0,
+      "document_id": 4,
+      "lib_id": 0,
+      "active": 1,
+      "show": 0,
+      "type": 0,
+      "url": "/503/",
+      "integration": {}
+    },
+    {
+      "id": 5,
+      "name": "Септики",
+      "parent_id": 0,
+      "template_id": 5,
+      "document_id": 0,
+      "lib_id": 6,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/septiki/",
+      "integration": {
+        "shopId": "1",
+        "shopXsl": "МагазинКаталогТоваров",
+        "shopItemXsl": "МагазинТовар",
+        "addCommentAdminMailXsl": "ПисьмоАдминистраторуОДобавленииКомментарияВФорматеHTML",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария",
+        "orderAdminNotificationXsl": "ПисьмоАдминистратору",
+        "orderUserNotificationXsl": "ПисьмоПользователю"
+      }
+    },
+    {
+      "id": 6,
+      "name": "Услуги",
+      "parent_id": 0,
+      "template_id": 3,
+      "document_id": 10,
+      "lib_id": 1,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/services/",
+      "integration": {
+        "informationsystemId": "3",
+        "informationsystemXsl": "СписокУслуг",
+        "informationsystemItemXsl": "ВыводЕдиницыИнформационнойСистемы",
+        "addCommentAdminMailXsl": "ОтправкаПисьмаАдминистраторуДобавлениеКомментария",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария"
+      }
+    },
+    {
+      "id": 7,
+      "name": "Статьи",
+      "parent_id": 0,
+      "template_id": 3,
+      "document_id": 0,
+      "lib_id": 1,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/articles/",
+      "integration": {
+        "informationsystemId": "2",
+        "informationsystemXsl": "СписокЭлементовИнфосистемы",
+        "informationsystemItemXsl": "ВыводЕдиницыИнформационнойСистемы",
+        "addCommentAdminMailXsl": "ОтправкаПисьмаАдминистраторуДобавлениеКомментария",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария"
+      }
+    },
+    {
+      "id": 8,
+      "name": "Карта сайта",
+      "parent_id": 0,
+      "template_id": 4,
+      "document_id": 0,
+      "lib_id": 5,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/map/",
+      "integration": {
+        "xsl": "КартаСайта"
+      }
+    },
+    {
+      "id": 9,
+      "name": "Google map",
+      "parent_id": 0,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 29,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/sitemap/",
+      "integration": {
+        "xsl": "GoogleSiteMap"
+      }
+    },
+    {
+      "id": 10,
+      "name": "Доставка",
+      "parent_id": 0,
+      "template_id": 4,
+      "document_id": 11,
+      "lib_id": 0,
+      "active": 1,
+      "show": 1,
+      "type": 0,
+      "url": "/dostavka/",
+      "integration": {}
+    },
+    {
+      "id": 11,
+      "name": "Экспорт в Яндекс.Маркет",
+      "parent_id": 5,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 12,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/septiki/yandex_market/",
+      "integration": {
+        "shopId": "1"
+      }
+    },
+    {
+      "id": 12,
+      "name": "Контакты",
+      "parent_id": 0,
+      "template_id": 6,
+      "document_id": 12,
+      "lib_id": 0,
+      "active": 1,
+      "show": 1,
+      "type": 0,
+      "url": "/contacts/",
+      "integration": {}
+    },
+    {
+      "id": 13,
+      "name": "О нас",
+      "parent_id": 0,
+      "template_id": 7,
+      "document_id": 13,
+      "lib_id": 0,
+      "active": 1,
+      "show": 1,
+      "type": 0,
+      "url": "/about/",
+      "integration": {}
+    },
+    {
+      "id": 14,
+      "name": "Политика конфиденциальности",
+      "parent_id": 0,
+      "template_id": 1,
+      "document_id": 16,
+      "lib_id": 0,
+      "active": 1,
+      "show": 0,
+      "type": 0,
+      "url": "/politika-konfidencialnosti/",
+      "integration": {}
+    },
+    {
+      "id": 15,
+      "name": "Акция",
+      "parent_id": 0,
+      "template_id": 4,
+      "document_id": 17,
+      "lib_id": 0,
+      "active": 1,
+      "show": 1,
+      "type": 0,
+      "url": "/promotion/",
+      "integration": {}
+    },
+    {
+      "id": 16,
+      "name": "rss",
+      "parent_id": 7,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 14,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/articles/rss/",
+      "integration": {
+        "informationsystemId": "2"
+      }
+    },
+    {
+      "id": 17,
+      "name": "rss",
+      "parent_id": 6,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 14,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/services/rss/",
+      "integration": {
+        "informationsystemId": "3"
+      }
+    },
+    {
+      "id": 18,
+      "name": "rss",
+      "parent_id": 5,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 51,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/septiki/rss/",
+      "integration": {
+        "shopId": "1"
+      }
+    },
+    {
+      "id": 23,
+      "name": "Кессоны",
+      "parent_id": 0,
+      "template_id": 5,
+      "document_id": 0,
+      "lib_id": 6,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/kessony/",
+      "integration": {
+        "shopId": "3",
+        "shopXsl": "МагазинКаталогТоваров",
+        "shopItemXsl": "МагазинТовар",
+        "addCommentAdminMailXsl": "ПисьмоАдминистраторуОДобавленииКомментарияВФорматеHTML",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария",
+        "orderAdminNotificationXsl": "ПисьмоАдминистратору",
+        "orderUserNotificationXsl": "ПисьмоПользователю"
+      }
+    },
+    {
+      "id": 24,
+      "name": "Районы",
+      "parent_id": 0,
+      "template_id": 5,
+      "document_id": 0,
+      "lib_id": 6,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/obsluzhivanie-po-gorodam/",
+      "integration": {
+        "shopId": "6",
+        "shopXsl": "МагазинКаталогТоваров",
+        "shopItemXsl": "МагазинТовар",
+        "addCommentAdminMailXsl": "ОтправкаПисьмаАдминистраторуДобавлениеКомментария",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария",
+        "orderAdminNotificationXsl": "ПисьмоАдминистратору",
+        "orderUserNotificationXsl": "ПисьмоПользователю"
+      }
+    },
+    {
+      "id": 25,
+      "name": "Монтаж септиков",
+      "parent_id": 0,
+      "template_id": 3,
+      "document_id": 0,
+      "lib_id": 1,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/montazh-septika/",
+      "integration": {
+        "informationsystemId": "7",
+        "informationsystemXsl": "СписокЭлементовИнфосистемы",
+        "informationsystemItemXsl": "ВыводЕдиницыИнформационнойСистемы",
+        "addCommentAdminMailXsl": "ОтправкаПисьмаАдминистраторуДобавлениеКомментария",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария"
+      }
+    },
+    {
+      "id": 26,
+      "name": "Обслуживание септиков",
+      "parent_id": 0,
+      "template_id": 3,
+      "document_id": 0,
+      "lib_id": 1,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/obsluzhivanie-septikov/",
+      "integration": {
+        "informationsystemId": "8",
+        "informationsystemXsl": "СписокЭлементовИнфосистемы",
+        "informationsystemItemXsl": "ВыводЕдиницыИнформационнойСистемы",
+        "addCommentAdminMailXsl": "ОтправкаПисьмаАдминистраторуДобавлениеКомментария",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария"
+      }
+    },
+    {
+      "id": 27,
+      "name": "Ремонт септиков",
+      "parent_id": 0,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 1,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/remont-septikov/",
+      "integration": {
+        "informationsystemId": "9",
+        "informationsystemXsl": "СписокЭлементовИнфосистемы",
+        "informationsystemItemXsl": "ВыводЕдиницыИнформационнойСистемы",
+        "addCommentAdminMailXsl": "ОтправкаПисьмаАдминистраторуДобавлениеКомментария",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария"
+      }
+    },
+    {
+      "id": 28,
+      "name": "rss",
+      "parent_id": 25,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 14,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/montazh-septika/rss/",
+      "integration": {
+        "informationsystemId": "7"
+      }
+    },
+    {
+      "id": 29,
+      "name": "rss",
+      "parent_id": 24,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 14,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/obsluzhivanie-po-gorodam/rss/",
+      "integration": {
+        "informationsystemId": "4"
+      }
+    },
+    {
+      "id": 30,
+      "name": "rss",
+      "parent_id": 26,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 14,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/obsluzhivanie-septikov/rss/",
+      "integration": {
+        "informationsystemId": "8"
+      }
+    },
+    {
+      "id": 31,
+      "name": "rss",
+      "parent_id": 27,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 14,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/remont-septikov/rss/",
+      "integration": {
+        "informationsystemId": "9"
+      }
+    },
+    {
+      "id": 32,
+      "name": "Установка по городам",
+      "parent_id": 0,
+      "template_id": 13,
+      "document_id": 0,
+      "lib_id": 53,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/catalog/",
+      "integration": {
+        "informationsystemId": "10",
+        "informationsystemXsl": "СписокУстановкиГорода",
+        "informationsystemItemXsl": "ВыводГорода",
+        "addCommentAdminMailXsl": "ОтправкаПисьмаАдминистраторуДобавлениеКомментария",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария"
+      }
+    },
+    {
+      "id": 33,
+      "name": "rss",
+      "parent_id": 32,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 14,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/catalog/rss/",
+      "integration": {
+        "informationsystemId": "10"
+      }
+    },
+    {
+      "id": 35,
+      "name": "Погреба",
+      "parent_id": 0,
+      "template_id": 5,
+      "document_id": 0,
+      "lib_id": 6,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/pogreba/",
+      "integration": {
+        "shopId": "5",
+        "shopXsl": "МагазинКаталогТоваров",
+        "shopItemXsl": "МагазинТовар",
+        "addCommentAdminMailXsl": "ПисьмоАдминистраторуОДобавленииКомментарияВФорматеHTML",
+        "addCommentNoticeXsl": "УведомлениеДобавлениеКомментария",
+        "orderAdminNotificationXsl": "ПисьмоАдминистратору",
+        "orderUserNotificationXsl": "ПисьмоПользователю"
+      }
+    },
+    {
+      "id": 36,
+      "name": "Прайс-лист",
+      "parent_id": 5,
+      "template_id": 5,
+      "document_id": 0,
+      "lib_id": 11,
+      "active": 1,
+      "show": 1,
+      "type": 2,
+      "url": "/septiki/price/",
+      "integration": {
+        "xsl": "МагазинПрайс",
+        "shopId": "1"
+      }
+    },
+    {
+      "id": 37,
+      "name": "Экспорт в Маркет",
+      "parent_id": 23,
+      "template_id": 4,
+      "document_id": 0,
+      "lib_id": 12,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/kessony/yandex_market/",
+      "integration": {
+        "shopId": "3"
+      }
+    },
+    {
+      "id": 38,
+      "name": "Экспорт в yandex маркет",
+      "parent_id": 35,
+      "template_id": 1,
+      "document_id": 0,
+      "lib_id": 12,
+      "active": 1,
+      "show": 0,
+      "type": 2,
+      "url": "/pogreba/yandex_market/",
+      "integration": {
+        "shopId": "5"
+      }
+    }
+  ],
+  "templates": [
+    {
+      "id": 1,
+      "template_id": 0,
+      "name": "Основной макет сайта"
+    },
+    {
+      "id": 2,
+      "template_id": 1,
+      "name": "Макет для главной страницы"
+    },
+    {
+      "id": 3,
+      "template_id": 1,
+      "name": "Макет для Информационной системы"
+    },
+    {
+      "id": 4,
+      "template_id": 1,
+      "name": "Основной макет сайта"
+    },
+    {
+      "id": 5,
+      "template_id": 1,
+      "name": "Макет интернет-магазина"
+    },
+    {
+      "id": 6,
+      "template_id": 1,
+      "name": "Макет Контакты"
+    },
+    {
+      "id": 7,
+      "template_id": 1,
+      "name": "Макет сайта о нас"
+    },
+    {
+      "id": 10,
+      "template_id": 1,
+      "name": "Единица товара"
+    },
+    {
+      "id": 11,
+      "template_id": 1,
+      "name": "Макет интернет-магазина Группа"
+    },
+    {
+      "id": 12,
+      "template_id": 1,
+      "name": "Макет для ПРОМО"
+    },
+    {
+      "id": 13,
+      "template_id": 1,
+      "name": "Макет установка по городам"
+    },
+    {
+      "id": 14,
+      "template_id": 1,
+      "name": "Макет установка город"
+    },
+    {
+      "id": 15,
+      "template_id": 1,
+      "name": "Макет интернет-магазина [Копия от 22.06.2026 15:18:19]"
+    }
+  ],
+  "shops": [
+    {
+      "id": 1,
+      "name": "Септики",
+      "structure_id": 5
+    },
+    {
+      "id": 3,
+      "name": "Кессоны",
+      "structure_id": 23
+    },
+    {
+      "id": 5,
+      "name": "Погреба",
+      "structure_id": 35
+    },
+    {
+      "id": 6,
+      "name": "Районы обслуживания",
+      "structure_id": 24
+    }
+  ],
+  "informationsystems": [
+    {
+      "id": 1,
+      "name": "Слайдшоу",
+      "structure_id": 0
+    },
+    {
+      "id": 2,
+      "name": "Статьи",
+      "structure_id": 7
+    },
+    {
+      "id": 3,
+      "name": "Услуги",
+      "structure_id": 6
+    },
+    {
+      "id": 4,
+      "name": "Районы обслуживания",
+      "structure_id": 24
+    },
+    {
+      "id": 6,
+      "name": "FAQ",
+      "structure_id": 0
+    },
+    {
+      "id": 7,
+      "name": "Монтаж септиков",
+      "structure_id": 25
+    },
+    {
+      "id": 8,
+      "name": "Обслуживание септиков",
+      "structure_id": 26
+    },
+    {
+      "id": 9,
+      "name": "Ремонт септиков",
+      "structure_id": 27
+    },
+    {
+      "id": 10,
+      "name": "Установка по городам",
+      "structure_id": 32
+    }
+  ],
+  "documents": [
+    {
+      "id": 2,
+      "name": "Ошибка 403",
+      "template_id": 1
+    },
+    {
+      "id": 3,
+      "name": "Ошибка 404",
+      "template_id": 1
+    },
+    {
+      "id": 4,
+      "name": "Сайт отключен",
+      "template_id": 1
+    },
+    {
+      "id": 5,
+      "name": "Траст бар",
+      "template_id": 2
+    },
+    {
+      "id": 6,
+      "name": "Почему выбирают нас",
+      "template_id": 2
+    },
+    {
+      "id": 7,
+      "name": " FINAL HIGH-CONVERTING CALL TO ACTION SECTION",
+      "template_id": 2
+    },
+    {
+      "id": 8,
+      "name": "Сотрудничество с нами",
+      "template_id": 1
+    },
+    {
+      "id": 9,
+      "name": "Как работаем",
+      "template_id": 1
+    },
+    {
+      "id": 10,
+      "name": "Услуги",
+      "template_id": 1
+    },
+    {
+      "id": 11,
+      "name": "Доставка",
+      "template_id": 4
+    },
+    {
+      "id": 12,
+      "name": "Контакты",
+      "template_id": 6
+    },
+    {
+      "id": 13,
+      "name": "О нас",
+      "template_id": 7
+    },
+    {
+      "id": 15,
+      "name": "Преимущества",
+      "template_id": 1
+    },
+    {
+      "id": 16,
+      "name": "Политика конфиденциальности",
+      "template_id": 1
+    },
+    {
+      "id": 17,
+      "name": "Акция",
+      "template_id": 4
+    },
+    {
+      "id": 19,
+      "name": "CTA",
+      "template_id": 1
+    },
+    {
+      "id": 25,
+      "name": "Стоимость монтажа",
+      "template_id": 1
+    },
+    {
+      "id": 26,
+      "name": "Цены",
+      "template_id": 1
+    },
+    {
+      "id": 27,
+      "name": "Работы и материалы, включенные в монтаж «под ключ» (Септик)",
+      "template_id": 1
+    },
+    {
+      "id": 28,
+      "name": "Свяжитесь с нами (зеленый фон)",
+      "template_id": 1
+    },
+    {
+      "id": 29,
+      "name": "Квиз (?)",
+      "template_id": 1
+    },
+    {
+      "id": 33,
+      "name": "Самый верх - выезд инженера",
+      "template_id": 1
+    },
+    {
+      "id": 34,
+      "name": "Лого в футер",
+      "template_id": 1
+    },
+    {
+      "id": 36,
+      "name": "Связаться с нами футер",
+      "template_id": 1
+    },
+    {
+      "id": 37,
+      "name": "Подбор септика по типу грунта",
+      "template_id": 1
+    },
+    {
+      "id": 38,
+      "name": "Как проходит монтаж септика под ключ",
+      "template_id": 1
+    },
+    {
+      "id": 42,
+      "name": "Быстрый расчёт логистики",
+      "template_id": 1
+    },
+    {
+      "id": 43,
+      "name": "Контакты 1",
+      "template_id": 1
+    }
+  ],
+  "xsls": [
+    {
+      "id": 2,
+      "name": "ВерхнееМеню"
+    },
+    {
+      "id": 3,
+      "name": "СписокЭлементовИнфосистемы"
+    },
+    {
+      "id": 4,
+      "name": "ВыводЕдиницыИнформационнойСистемы"
+    },
+    {
+      "id": 5,
+      "name": "УведомлениеДобавлениеКомментария"
+    },
+    {
+      "id": 6,
+      "name": "СписокУслугНаГлавной"
+    },
+    {
+      "id": 7,
+      "name": "ОтправкаПисьмаАдминистраторуДобавлениеКомментария"
+    },
+    {
+      "id": 13,
+      "name": "СписокУслуг"
+    },
+    {
+      "id": 15,
+      "name": "ПисьмоАдминистраторуОДобавленииКомментарияВФорматеHTML"
+    },
+    {
+      "id": 47,
+      "name": "КартаСайта"
+    },
+    {
+      "id": 55,
+      "name": "МагазинКаталогТоваров"
+    },
+    {
+      "id": 56,
+      "name": "МагазинТовар"
+    },
+    {
+      "id": 76,
+      "name": "ПисьмоАдминистратору"
+    },
+    {
+      "id": 77,
+      "name": "ПисьмоПользователю"
+    },
+    {
+      "id": 83,
+      "name": "МагазинПрайс"
+    },
+    {
+      "id": 176,
+      "name": "МагазинКаталогТоваровНаГлавной"
+    },
+    {
+      "id": 177,
+      "name": "GoogleSiteMap"
+    },
+    {
+      "id": 180,
+      "name": "ОблакоТэговМагазин"
+    },
+    {
+      "id": 224,
+      "name": "НижнееМеню"
+    },
+    {
+      "id": 230,
+      "name": "МагазинФильтр"
+    },
+    {
+      "id": 247,
+      "name": "ХлебныеКрошкиRev1"
+    },
+    {
+      "id": 271,
+      "name": "FAQГлавная"
+    },
+    {
+      "id": 272,
+      "name": "МагазинКаталогТоваровТексты"
+    },
+    {
+      "id": 278,
+      "name": "МагазинКаталогТоваровГорода"
+    },
+    {
+      "id": 279,
+      "name": "СписокУстановкиГорода"
+    },
+    {
+      "id": 280,
+      "name": "ВыводГорода"
+    },
+    {
+      "id": 281,
+      "name": "УслугиСписокГородов"
+    },
+    {
+      "id": 282,
+      "name": "МагазинКаталогТоваровКвиз"
+    },
+    {
+      "id": 284,
+      "name": "МагазинСеоФильтр"
+    },
+    {
+      "id": 285,
+      "name": "ВерхнееМенюМобильное"
+    },
+    {
+      "id": 286,
+      "name": "СписокРайоныОбслуживанияНаГлавной"
+    },
+    {
+      "id": 288,
+      "name": "СписокВопросовНаГлавной"
+    },
+    {
+      "id": 277,
+      "name": "-----Секции Магазинов-----"
+    }
+  ],
+  "unresolved_xsl_names": [
+    "МагазинГруппыТоваровНаГлавнойСайт2"
+  ],
+  "limitations": [
+    "Literal references and structure parameters were traced statically, including possible commented code. Runtime and property-based overrides must be checked in CMS.",
+    "No shop items, orders, users, credentials, or full SQL dump are included.",
+    "Document exports use documents.text; document_versions has no rows in this dump."
+  ],
+  "property_definitions": [
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 2,
+      "name": "Принудительный",
+      "tag_name": "pr",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 3,
+      "name": "Самотечный",
+      "tag_name": "nopr",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 4,
+      "name": "Производительность",
+      "tag_name": "performance",
+      "type": 11
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 5,
+      "name": "Залповый сброс",
+      "tag_name": "zalp",
+      "type": 0
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 6,
+      "name": "Количество человек",
+      "tag_name": "men",
+      "type": 0
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 7,
+      "name": "Гарантия производителя",
+      "tag_name": "guarantee_man",
+      "type": 0
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 8,
+      "name": "Гарантия на работы",
+      "tag_name": "guarantee_chef",
+      "type": 0
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 9,
+      "name": "Гарантия при монтаже под ключ",
+      "tag_name": "guarantee",
+      "type": 0
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 10,
+      "name": "Для дачи",
+      "tag_name": "dacha",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 11,
+      "name": "Для частного дома",
+      "tag_name": "dom",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 12,
+      "name": "Вывести на главной",
+      "tag_name": "pop",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 13,
+      "name": "Новинка",
+      "tag_name": "spec",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 14,
+      "name": "Распродажа",
+      "tag_name": "sale",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 15,
+      "name": "Дополнительные фотографии",
+      "tag_name": "pic",
+      "type": 2
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 16,
+      "name": "Модификация",
+      "tag_name": "uosv-mod",
+      "type": 0
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 17,
+      "name": "Преимущества",
+      "tag_name": "benefits",
+      "type": 6
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 18,
+      "name": "Лучшее",
+      "tag_name": "best",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 39,
+      "name": "Long",
+      "tag_name": "long",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 1,
+      "id": 40,
+      "name": "Миди",
+      "tag_name": "midi",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 6,
+      "id": 65,
+      "name": "Удлиненная горловина",
+      "tag_name": "long",
+      "type": 7
+    },
+    {
+      "relation": "shop_item_properties",
+      "shop_id": 6,
+      "id": 66,
+      "name": "Дополнительные фотографии",
+      "tag_name": "pic",
+      "type": 2
+    },
+    {
+      "relation": "shop_group_properties",
+      "shop_id": 1,
+      "id": 74,
+      "name": "SEO описание",
+      "tag_name": "seo-desc",
+      "type": 6
+    },
+    {
+      "relation": "shop_group_properties",
+      "shop_id": 1,
+      "id": 75,
+      "name": "SEO название группы",
+      "tag_name": "seo-h1",
+      "type": 1
+    },
+    {
+      "relation": "shop_group_properties",
+      "shop_id": 1,
+      "id": 76,
+      "name": "Описание на главной",
+      "tag_name": "index-seo-desc",
+      "type": 6
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 1,
+      "id": 1,
+      "name": "Текст",
+      "tag_name": "text",
+      "type": 6
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 3,
+      "id": 36,
+      "name": "SEO H1",
+      "tag_name": "seo-h1",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 3,
+      "id": 37,
+      "name": "Дополнительные свойства",
+      "tag_name": "main-inf",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 3,
+      "id": 38,
+      "name": "Иконка в меню",
+      "tag_name": "icon",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 4,
+      "id": 60,
+      "name": "Город",
+      "tag_name": "city",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 4,
+      "id": 61,
+      "name": "Брошюры",
+      "tag_name": "brochure",
+      "type": 2
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 4,
+      "id": 62,
+      "name": "SEO H1",
+      "tag_name": "seo-h1",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 4,
+      "id": 63,
+      "name": "Заказ услуги",
+      "tag_name": "service-order",
+      "type": 6
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 64,
+      "name": "SEO H1",
+      "tag_name": "seo-h1",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 77,
+      "name": "Место монтажа",
+      "tag_name": "location",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 78,
+      "name": "Грунт",
+      "tag_name": "soil",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 79,
+      "name": "Время монтажа",
+      "tag_name": "time",
+      "type": 0
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 80,
+      "name": "Станция",
+      "tag_name": "station",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 81,
+      "name": "quote-header",
+      "tag_name": "quote-header",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 82,
+      "name": "quote-text",
+      "tag_name": "quote-text",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 83,
+      "name": "Клиент ",
+      "tag_name": "client",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 84,
+      "name": "Цена",
+      "tag_name": "price",
+      "type": 0
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 7,
+      "id": 85,
+      "name": "Насос",
+      "tag_name": "nasos",
+      "type": 7
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 8,
+      "id": 67,
+      "name": "SEO H1",
+      "tag_name": "seo-h1",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 8,
+      "id": 68,
+      "name": "Заказ сервиса",
+      "tag_name": "service-order",
+      "type": 6
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 8,
+      "id": 69,
+      "name": "Дополнительная информация",
+      "tag_name": "main-inf",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 9,
+      "id": 70,
+      "name": "SEO H1",
+      "tag_name": "seo-h1",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 10,
+      "id": 71,
+      "name": "Seo H1",
+      "tag_name": "seo-h1",
+      "type": 1
+    },
+    {
+      "relation": "informationsystem_item_properties",
+      "informationsystem_id": 10,
+      "id": 72,
+      "name": "Информация с pointами",
+      "tag_name": "main-inf",
+      "type": 1
+    }
+  ]
+}

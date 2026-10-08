@@ -1,0 +1,620 @@
+{
+  "source_commit": "66bac3a08a3dfde7843321e7da46772178117ec6",
+  "files": [
+    {
+      "original_path": ".editorconfig",
+      "archived_path": ".editorconfig",
+      "sha256": "3a151560c443f6fe8a734313554126e8625ff1ae0642d44115f9bd097b873390"
+    },
+    {
+      "original_path": ".gitignore",
+      "archived_path": "archive/2026-10-05/repository-before-sync/.gitignore",
+      "sha256": "3ed6ab2c8fc3ba2959af0709570d83b7044c920cf3d916e7e5a7324824e204a2"
+    },
+    {
+      "original_path": ".prettierrc",
+      "archived_path": "archive/2026-10-05/repository-before-sync/.prettierrc",
+      "sha256": "0b0ec1c6246acfd40118965341abdb83b0935d8ab7bab0a24197ddaf9331864f"
+    },
+    {
+      "original_path": ".stylelintrc.json",
+      "archived_path": "archive/2026-10-05/repository-before-sync/.stylelintrc.json",
+      "sha256": "64deee3e9d4f8582b927144eb7d9e748e2e8d680b91ddd2b4dc7aff6f7c12a69"
+    },
+    {
+      "original_path": "README.md",
+      "archived_path": "archive/2026-10-05/repository-before-sync/README.md",
+      "sha256": "1685bef22b2c437ec88c42077926a68b5bc9f1a61849ea0608b07cb7f24d780c"
+    },
+    {
+      "original_path": "core/base.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/base.css",
+      "sha256": "8035997f37a17875c00387c84cc178e852032eb1cdcce3d3ecb6d7cade9d26d5"
+    },
+    {
+      "original_path": "core/catalog.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/catalog.css",
+      "sha256": "3eb2a1fcc0969a4e828b5469bf820951251e119e6803ad9135994d669ebbefbc"
+    },
+    {
+      "original_path": "core/comparison.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/comparison.css",
+      "sha256": "27a6b14d8faf3b03fd75e1791495403d62d94490af2950ece7eb45f6336b0288"
+    },
+    {
+      "original_path": "core/cta.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/cta.css",
+      "sha256": "700a721d8765560f20d062e6d2b26945bf3400a951a4109549d3267f46f9e035"
+    },
+    {
+      "original_path": "core/faq.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/faq.css",
+      "sha256": "0f650dbb3e32ee45be205bde8021a33ee88a18c1d433ad7258ab2888dba5d847"
+    },
+    {
+      "original_path": "core/footer.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/footer.css",
+      "sha256": "164c7fa4abee71fe8ba6ab28f4eb3d2bb7f9944f6a89103d8c2efb3399af3f00"
+    },
+    {
+      "original_path": "core/header.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/header.css",
+      "sha256": "0b4ff4effdda6556019c3b016c8f4b94c979108faa88edf3c39e6688898058a0"
+    },
+    {
+      "original_path": "core/hero.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/hero.css",
+      "sha256": "d397284815e4211f9b662353030304c5f54e9658f3d2d4da3223d09ab53e73b2"
+    },
+    {
+      "original_path": "core/home-sections.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/home-sections.css",
+      "sha256": "6d663873d940b1ec8ce37b736afbed34322fbb4403e5f8084ec977f85b6256de"
+    },
+    {
+      "original_path": "core/layout.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/layout.css",
+      "sha256": "6b3b8a2394ccfac431f3bc0b63d9623a940cebc67a093b2958f698d5bcaecbbc"
+    },
+    {
+      "original_path": "core/modal.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/modal.css",
+      "sha256": "8edbfdb27a49b75f287cc2e913f49468915b872f2bede37b6c1312978201464e"
+    },
+    {
+      "original_path": "core/tokens.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/tokens.css",
+      "sha256": "fe38612bacef9cd84651b76aec1736ad1424aba5e217b38064a3eb6fe52cd6ed"
+    },
+    {
+      "original_path": "core/trust.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/trust.css",
+      "sha256": "928df43379543d7f63963f218fc189d0f1d17ef029554da3cb21a8204007e236"
+    },
+    {
+      "original_path": "core/typography.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/core/typography.css",
+      "sha256": "000e312ca6a93fef309f8f77c7eb1a95ae714267a5f049bf2760b4e628e1406f"
+    },
+    {
+      "original_path": "design system/design-system (1).css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/design system/design-system (1).css",
+      "sha256": "bcfb0378984894094a24f586adaa8b78fa7073a6cda33a7be03e98f49f062adc"
+    },
+    {
+      "original_path": "design system/design-system (1).html",
+      "archived_path": "archive/2026-10-05/repository-before-sync/design system/design-system (1).html",
+      "sha256": "ec2199e9ccd09702566fb210763c8a00736edf41ab76a0e0fdf54cca0e049bb0"
+    },
+    {
+      "original_path": "design system/design-system (2).html",
+      "archived_path": "archive/2026-10-05/repository-before-sync/design system/design-system (2).html",
+      "sha256": "ba011129c2ac9a1f22961c937f422073b95b42e47dec9d5c14e79e9cb7ed4a93"
+    },
+    {
+      "original_path": "design system/design-system.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/design system/design-system.css",
+      "sha256": "06fb70a6541f5bdc365cf29fdda6cc328bde66300a7c951e4c1db4cb53fef022"
+    },
+    {
+      "original_path": "design system/design-system.html",
+      "archived_path": "archive/2026-10-05/repository-before-sync/design system/design-system.html",
+      "sha256": "e00af61e7c3e570cde55b6d47a90f02b43da55cfcc87b1e626a160fa6db308ca"
+    },
+    {
+      "original_path": "design system/design-system2.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/design system/design-system2.css",
+      "sha256": "e664429ddbe91270206b1bf06ae5ac5d1956dea257e00d6931630d472fcd66cb"
+    },
+    {
+      "original_path": "dist/css/app.css",
+      "archived_path": "archive/2026-10-05/repository-before-sync/dist/css/app.css",
+      "sha256": "a954f6c4f17452d702b47ec4874209e26021bccf7d6f0adbcf86ea9932662c6f"
+    },
+    {
+      "original_path": "docs/component-map.md",
+      "archived_path": "archive/2026-10-05/repository-before-sync/docs/component-map.md",
+      "sha256": "74af41e12c06ead50c5929c3eabdb88b324d3fae0282a9a4c55d6b874c7f5ad5"
+    },
+    {
+      "original_path": "docs/foundation.md",
+      "archived_path": "archive/2026-10-05/repository-before-sync/docs/foundation.md",
+      "sha256": "ccdc45be0012d6b158f28624cb66ce5d1c6382413c8476b4d7b1cad71be36c7f"
+    },
+    {
+      "original_path": "docs/inner-pages-legacy-mapping.md",
+      "archived_path": "archive/2026-10-05/repository-before-sync/docs/inner-pages-legacy-mapping.md",
+      "sha256": "08f9d392ceeddc3d3ff7fada97b2e4af5504527911ad26a19342c565d4114480"
+    },
+    {
+      "original_path": "docs/legacy-mapping.md",
+      "archived_path": "archive/2026-10-05/repository-before-sync/docs/legacy-mapping.md",
+      "sha256": "b24cf4348c9e83bb5d58dd428b5855c946f22ed6aeed66c4f7eef3ec6726156d"
+    },
+    {
+      "original_path": "docs/patterns.md",
+      "archived_path": "archive/2026-10-05/repository-before-sync/docs/patterns.md",
+      "sha256": "451adddc5d8d2792c7dcf911d6defef8a5eb7b340bd7b86aac02cb8901b7a278"
+    },
+    {
+      "original_path": "docs/primitives.md",
+      "archived_path": "archive/2026-10-05/repository-before-sync/docs/primitives.md",
+      "sha256": "1d582301292735132b9d5e6546ddcc2ba0143683519e16220f92bdace35d0e43"
+    },
+    {
+      "original_path": "docs/semantic-components.md",
+      "archived_path": "archive/2026-10-05/repository-before-sync/docs/semantic-components.md",
+      "sha256": "82794f58c264d6a91cf3d30da9f4106cca98be012525bd87b101ce00562c8e16"
+    },
+    {
+      "original_path": "docs/ui-kit/index.html",
+      "archived_path": "archive/2026-10-05/repository-before-sync/docs/ui-kit/index.html",
+      "sha256": "67132aff9ab94080e01d32924655fcc18ed54366522c72ec6a9cefbda695fc8c"
+    },
+    {
+      "original_path": "eslint.config.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/eslint.config.js",
+      "sha256": "545a11147bbb673899da2d0c7271310a9a8f041c13e65d3c8557f735ad7492b3"
+    },
+    {
+      "original_path": "package.json",
+      "archived_path": "archive/2026-10-05/repository-before-sync/package.json",
+      "sha256": "16d2c63e138191f65a18d0b251a7f53cf352c281c711d677c9548e7bc30344ec"
+    },
+    {
+      "original_path": "scripts/clean.mjs",
+      "archived_path": "archive/2026-10-05/repository-before-sync/scripts/clean.mjs",
+      "sha256": "26d0190debc9095713de294cc9a93f763a22c2d253c55ec43edc56f04737714d"
+    },
+    {
+      "original_path": "src/js/app.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/app.js",
+      "sha256": "52dadd15e5d3ec9fef7188149c6b500bce355c8361f984ef4111821e8796078b"
+    },
+    {
+      "original_path": "src/js/modules/accordion.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/modules/accordion.js",
+      "sha256": "1e8e38a6fb044b71c628cf363b39e3a325929239b597403a32a69f9949f7b450"
+    },
+    {
+      "original_path": "src/js/modules/calculator.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/modules/calculator.js",
+      "sha256": "1e13c0988ad9e24f02abf90f53aed78e0639dac8cbb169825f11009f246bb5a2"
+    },
+    {
+      "original_path": "src/js/modules/catalog.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/modules/catalog.js",
+      "sha256": "3cd89ae72702769f997d24f47826128bfada4a613e09a8ded5585a968cb9ea39"
+    },
+    {
+      "original_path": "src/js/modules/dropdown.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/modules/dropdown.js",
+      "sha256": "2be5077074724513f6d95e18285f5330da456a80172495238aa6c0c8ab9e383b"
+    },
+    {
+      "original_path": "src/js/modules/form.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/modules/form.js",
+      "sha256": "1fb9112e459845291b871fe5c0df0ce2e4bb37fccf2ec01c06167cca59f56524"
+    },
+    {
+      "original_path": "src/js/modules/lazyload.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/modules/lazyload.js",
+      "sha256": "a5ec7e4cc16a632565e5aa1b34038abc9e1e2468486c08636a66071b3de43a4c"
+    },
+    {
+      "original_path": "src/js/modules/map.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/modules/map.js",
+      "sha256": "cc60db9353b6f7306a32f3bce19c9d52e872a76dbd6d210bcbe770dd97d0908f"
+    },
+    {
+      "original_path": "src/js/modules/modal.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/modules/modal.js",
+      "sha256": "38bbedcd442440c08b5bdfb8a68ceb11bbba37870edb692f328cde29c8ad7e0f"
+    },
+    {
+      "original_path": "src/js/modules/tabs.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/modules/tabs.js",
+      "sha256": "48c366cfcaacd8e416f327a377f57198b53617c434c2d720b02a7fc1ccf8e2d6"
+    },
+    {
+      "original_path": "src/js/utils/debounce.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/utils/debounce.js",
+      "sha256": "78d4352b31711cdb49d174e6cdbb6e6575725ff278a1147b5856e8f4c4c8fe3f"
+    },
+    {
+      "original_path": "src/js/utils/dom.js",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/js/utils/dom.js",
+      "sha256": "f5dc1cc5fdf70a2452af8e376b4e16db1766da25342264075603dee8725563e8"
+    },
+    {
+      "original_path": "src/scss/abstracts/_mixins.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/abstracts/_mixins.scss",
+      "sha256": "896171af8fc2b26cb93f367769b1641195981f9eec74fe69f77cb0a8d78b485e"
+    },
+    {
+      "original_path": "src/scss/abstracts/_tokens.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/abstracts/_tokens.scss",
+      "sha256": "3bd218f84dcd9d77ccfbfc7fa3aad969406b2f70987d4e8fec46ed710fe77bde"
+    },
+    {
+      "original_path": "src/scss/base/_content.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/base/_content.scss",
+      "sha256": "08e803283f333948105d64ab0ad02d3b74c458cceba64c14a335bc0cacddfb49"
+    },
+    {
+      "original_path": "src/scss/base/_reset.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/base/_reset.scss",
+      "sha256": "313aa45495d8603b9138674a28d0cba43520fb444f994c9afbaa975d7eb75886"
+    },
+    {
+      "original_path": "src/scss/base/_typography.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/base/_typography.scss",
+      "sha256": "9558eba6beb074064545788a4467d952f9863a0ad43ac6c40ab8423589d07548"
+    },
+    {
+      "original_path": "src/scss/components/_accordion.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_accordion.scss",
+      "sha256": "8fe31f07a44c23d9f45825d871520e94aae0d9b5c140f258b833deceb0a0c22c"
+    },
+    {
+      "original_path": "src/scss/components/_badge.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_badge.scss",
+      "sha256": "58d9e2024c007d437bb183335bc6dcb5e5fe93879ea614f2af9da299b30b5907"
+    },
+    {
+      "original_path": "src/scss/components/_button.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_button.scss",
+      "sha256": "84dfaa016d11ced820f03de5668051552e0fb90bce4c4edef58714c00b6a7af8"
+    },
+    {
+      "original_path": "src/scss/components/_calculator.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_calculator.scss",
+      "sha256": "e44f69445cf44e8cd2997715719108bb100ec1d513bf7be673dbda66e9d3558f"
+    },
+    {
+      "original_path": "src/scss/components/_catalog-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_catalog-card.scss",
+      "sha256": "2d559fb20687cacc3bb00ee4eaf8cf2a4deff2be7998b9a516d8b04b5d5b0f3c"
+    },
+    {
+      "original_path": "src/scss/components/_cta.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_cta.scss",
+      "sha256": "2c981cdeddbd9d70935d056ffc75a75b4a8f7b3caaa0c51bb7dd30d4a13d10b5"
+    },
+    {
+      "original_path": "src/scss/components/_dropdown.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_dropdown.scss",
+      "sha256": "8fe31f07a44c23d9f45825d871520e94aae0d9b5c140f258b833deceb0a0c22c"
+    },
+    {
+      "original_path": "src/scss/components/_faq.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_faq.scss",
+      "sha256": "8fe31f07a44c23d9f45825d871520e94aae0d9b5c140f258b833deceb0a0c22c"
+    },
+    {
+      "original_path": "src/scss/components/_feature-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_feature-card.scss",
+      "sha256": "2200e5d0801dbf34ac5bb995d1f9400d7447075105919eebd9f6bc1eac93e522"
+    },
+    {
+      "original_path": "src/scss/components/_form.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_form.scss",
+      "sha256": "751c4ed374ebbede914f5f50e9bc811d29a51d9c738c85d26fff986e81dfe11c"
+    },
+    {
+      "original_path": "src/scss/components/_hero.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_hero.scss",
+      "sha256": "d4829567b8618f7f16c3f9611306e85bf701c3dcfee64bb38ad14ca3a1d087b3"
+    },
+    {
+      "original_path": "src/scss/components/_map.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_map.scss",
+      "sha256": "8fe31f07a44c23d9f45825d871520e94aae0d9b5c140f258b833deceb0a0c22c"
+    },
+    {
+      "original_path": "src/scss/components/_modal.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_modal.scss",
+      "sha256": "8fe31f07a44c23d9f45825d871520e94aae0d9b5c140f258b833deceb0a0c22c"
+    },
+    {
+      "original_path": "src/scss/components/_pagination.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_pagination.scss",
+      "sha256": "8fe31f07a44c23d9f45825d871520e94aae0d9b5c140f258b833deceb0a0c22c"
+    },
+    {
+      "original_path": "src/scss/components/_process-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_process-card.scss",
+      "sha256": "149af596cf73f91ce7e5151393223aa77932212a7d789c58cdf6c0a8970b9bd1"
+    },
+    {
+      "original_path": "src/scss/components/_table.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_table.scss",
+      "sha256": "8fe31f07a44c23d9f45825d871520e94aae0d9b5c140f258b833deceb0a0c22c"
+    },
+    {
+      "original_path": "src/scss/components/_tabs.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/components/_tabs.scss",
+      "sha256": "8fe31f07a44c23d9f45825d871520e94aae0d9b5c140f258b833deceb0a0c22c"
+    },
+    {
+      "original_path": "src/scss/design-system/_index.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/_index.scss",
+      "sha256": "3403bef0209ac5f50fe22d53569200270d872e4cc51f6d273ec916faf65c13e2"
+    },
+    {
+      "original_path": "src/scss/design-system/foundation/_index.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/foundation/_index.scss",
+      "sha256": "a21489a6ddb609dbb6319c61b28190b899179596869e67e6c2a1de3a4a442b14"
+    },
+    {
+      "original_path": "src/scss/design-system/patterns/_catalog-grid.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/patterns/_catalog-grid.scss",
+      "sha256": "bc1ace30d99094fa4b1a5119334309c39772383c19383d4bb0091764f69fbd9f"
+    },
+    {
+      "original_path": "src/scss/design-system/patterns/_contact-grid.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/patterns/_contact-grid.scss",
+      "sha256": "b2180bf0664dcc038cc3087aee588f76dc8150936e60926d695874f838130e26"
+    },
+    {
+      "original_path": "src/scss/design-system/patterns/_content-grid.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/patterns/_content-grid.scss",
+      "sha256": "adae6a7949ae00eb8c27c0d4d9a5f709bca407bd12dd0406f6e6f3ea98846338"
+    },
+    {
+      "original_path": "src/scss/design-system/patterns/_cta.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/patterns/_cta.scss",
+      "sha256": "09fed1221df07a59ab8df62e92559e7eace2d42df1b5d3d53b6d765648f93113"
+    },
+    {
+      "original_path": "src/scss/design-system/patterns/_faq-list.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/patterns/_faq-list.scss",
+      "sha256": "3090cce2af1db89b5525a3c8bed0564b27e86b9f599bf015ef9c68cd09da6587"
+    },
+    {
+      "original_path": "src/scss/design-system/patterns/_hero.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/patterns/_hero.scss",
+      "sha256": "28197d088403fc4154566cb95d259129c17c9125d2f02c717cd1d89336d75b4b"
+    },
+    {
+      "original_path": "src/scss/design-system/patterns/_index.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/patterns/_index.scss",
+      "sha256": "525696ba7effcc13157ebc43f15021c5bbad8f31ab2026388a5fa2f7a28a5593"
+    },
+    {
+      "original_path": "src/scss/design-system/patterns/_section-header.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/patterns/_section-header.scss",
+      "sha256": "97467cdd98bb2be74ac9b3c35940bcd6f9f8b09f094a2404f69aaca91b7256a5"
+    },
+    {
+      "original_path": "src/scss/design-system/primitives/_badge.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/primitives/_badge.scss",
+      "sha256": "0c407547977d394b062551b28613422b2d36492019b6e0aa6e6b8cab71f8ce2b"
+    },
+    {
+      "original_path": "src/scss/design-system/primitives/_button.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/primitives/_button.scss",
+      "sha256": "e9b309588c30a4439f199b275522377ad9264cc35ad2ca4b55eddf396d88a9ea"
+    },
+    {
+      "original_path": "src/scss/design-system/primitives/_card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/primitives/_card.scss",
+      "sha256": "62f7027d08c4844d219f8d31e4c2344e16f543ed205844cf5a5ccc2032c08cd4"
+    },
+    {
+      "original_path": "src/scss/design-system/primitives/_field.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/primitives/_field.scss",
+      "sha256": "4e36edd6618853e3d3c8f2c780d598327c868c75bcf5811a37339520dc204b09"
+    },
+    {
+      "original_path": "src/scss/design-system/primitives/_icon.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/primitives/_icon.scss",
+      "sha256": "6fa6933510911e0b0e67c78e728f1b06db337f0f7978a09c243ae31e8f3cb101"
+    },
+    {
+      "original_path": "src/scss/design-system/primitives/_index.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/primitives/_index.scss",
+      "sha256": "53387f79b0127c83556dc2fe62fe9a376ae0e1aa82cfbed73d029b464629f187"
+    },
+    {
+      "original_path": "src/scss/design-system/primitives/_input.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/primitives/_input.scss",
+      "sha256": "f424e582d54aae0e661784955f4c9f814cebc6e4457b99fc6b686527e95e31a9"
+    },
+    {
+      "original_path": "src/scss/design-system/primitives/_link.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/primitives/_link.scss",
+      "sha256": "e4f6b4354fef3a3dfc9dfe854383a5256542c7e9028b700cbe56909a81246225"
+    },
+    {
+      "original_path": "src/scss/design-system/primitives/_surface.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/primitives/_surface.scss",
+      "sha256": "95d63ea6762a4faab80fd9c88b4193f275dbf7a5b4ae7fca82bda3d1d211bd0b"
+    },
+    {
+      "original_path": "src/scss/design-system/semantic/_article-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/semantic/_article-card.scss",
+      "sha256": "352561cad917dd971c98863353466c243411bece55f798cf3c8139e4f9f2c294"
+    },
+    {
+      "original_path": "src/scss/design-system/semantic/_calculator-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/semantic/_calculator-card.scss",
+      "sha256": "0c7d3bb151539812b258d6bf7a66ef8de44699b93678153296687a55837eded5"
+    },
+    {
+      "original_path": "src/scss/design-system/semantic/_catalog-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/semantic/_catalog-card.scss",
+      "sha256": "3100ea0fe8ef0aff87576b2205b0af1c521bbed9b445a758e3fb135fa7ca752b"
+    },
+    {
+      "original_path": "src/scss/design-system/semantic/_contact-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/semantic/_contact-card.scss",
+      "sha256": "cd3144db3831c13b39112556d45cef6693127b36b9e60dc7481117e0eabfdd0b"
+    },
+    {
+      "original_path": "src/scss/design-system/semantic/_faq-item.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/semantic/_faq-item.scss",
+      "sha256": "39f62e1fc5b9080da94a37fbd66a249b74f2f7b48d9045af3cccc8a3524529ca"
+    },
+    {
+      "original_path": "src/scss/design-system/semantic/_feature-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/semantic/_feature-card.scss",
+      "sha256": "c0a4750fc18671892b623603456a04b129ec46f5ab5e6fbfb89edf2c7278dc75"
+    },
+    {
+      "original_path": "src/scss/design-system/semantic/_index.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/semantic/_index.scss",
+      "sha256": "1a0bcfed18aee8af2c9f68a3ed19f9157c060c213eeb34099e1bcea3f99dfdfb"
+    },
+    {
+      "original_path": "src/scss/design-system/semantic/_process-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/semantic/_process-card.scss",
+      "sha256": "1dbcb35f6206dbacf775ae04732a5be78b4d639c02c4135428a047584aed11d3"
+    },
+    {
+      "original_path": "src/scss/design-system/semantic/_review-card.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/design-system/semantic/_review-card.scss",
+      "sha256": "b9952c19d2ec4d775ca91231945f561e671f729707cd054fe84c07f859507e03"
+    },
+    {
+      "original_path": "src/scss/layouts/_catalog-layout.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/layouts/_catalog-layout.scss",
+      "sha256": "e30e62d245ef5211eec89a0165456fd820679a7e95c6b09b56f8887d072f2e20"
+    },
+    {
+      "original_path": "src/scss/layouts/_container.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/layouts/_container.scss",
+      "sha256": "555fd82fb634a9344cbd215f53267c69106ea1368f1e0b295af6c35553aba46e"
+    },
+    {
+      "original_path": "src/scss/layouts/_grid-blueprint.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/layouts/_grid-blueprint.scss",
+      "sha256": "c1ee15fe553a3a634a7a983873a6415e9436049f6a05bd170e6e4df3ca9c78f2"
+    },
+    {
+      "original_path": "src/scss/layouts/_grid.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/layouts/_grid.scss",
+      "sha256": "3033e964871a537f3dd731c2cfbe143c2c8aa9ff13b72a391544c870be7d177a"
+    },
+    {
+      "original_path": "src/scss/layouts/_section.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/layouts/_section.scss",
+      "sha256": "ef2c829ff303d68a1b3c3371471abc0bf048afd7ff4ea8ca93e7b14a432cd692"
+    },
+    {
+      "original_path": "src/scss/layouts/_sidebar-layout.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/layouts/_sidebar-layout.scss",
+      "sha256": "4c99a3282a3dcbc6f4b6f1ea2a4c49d2a456947fba85d2d51f7fda7526d79e29"
+    },
+    {
+      "original_path": "src/scss/legacy/_aliases.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/legacy/_aliases.scss",
+      "sha256": "3f2ef8ad1f0a03178e1c1e18864641cc8bb99eb6239a90dc0356ac8ef41cb5d5"
+    },
+    {
+      "original_path": "src/scss/legacy/_inner-pages.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/legacy/_inner-pages.scss",
+      "sha256": "85e3e81029bb1d9f68cd30a5f9f65e10e3e9425ac1b7d7efa219ead2e5eddaf4"
+    },
+    {
+      "original_path": "src/scss/main.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/main.scss",
+      "sha256": "7afb81ba484dd0a14944217d51e65ff8a323481d6fcc69bd5f1fdec0f8ace242"
+    },
+    {
+      "original_path": "src/scss/pages/_about.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/pages/_about.scss",
+      "sha256": "ea90503067f5d4f9c5a9ab9b937fc7fe52e9c3546ecb947dc0bf195abdbd363c"
+    },
+    {
+      "original_path": "src/scss/pages/_article-page.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/pages/_article-page.scss",
+      "sha256": "ea90503067f5d4f9c5a9ab9b937fc7fe52e9c3546ecb947dc0bf195abdbd363c"
+    },
+    {
+      "original_path": "src/scss/pages/_catalog.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/pages/_catalog.scss",
+      "sha256": "ea90503067f5d4f9c5a9ab9b937fc7fe52e9c3546ecb947dc0bf195abdbd363c"
+    },
+    {
+      "original_path": "src/scss/pages/_contacts.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/pages/_contacts.scss",
+      "sha256": "ea90503067f5d4f9c5a9ab9b937fc7fe52e9c3546ecb947dc0bf195abdbd363c"
+    },
+    {
+      "original_path": "src/scss/pages/_delivery.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/pages/_delivery.scss",
+      "sha256": "ea90503067f5d4f9c5a9ab9b937fc7fe52e9c3546ecb947dc0bf195abdbd363c"
+    },
+    {
+      "original_path": "src/scss/pages/_home.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/pages/_home.scss",
+      "sha256": "ea90503067f5d4f9c5a9ab9b937fc7fe52e9c3546ecb947dc0bf195abdbd363c"
+    },
+    {
+      "original_path": "src/scss/pages/_product.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/pages/_product.scss",
+      "sha256": "ea90503067f5d4f9c5a9ab9b937fc7fe52e9c3546ecb947dc0bf195abdbd363c"
+    },
+    {
+      "original_path": "src/scss/pages/_service.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/pages/_service.scss",
+      "sha256": "ea90503067f5d4f9c5a9ab9b937fc7fe52e9c3546ecb947dc0bf195abdbd363c"
+    },
+    {
+      "original_path": "src/scss/patterns/_article.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/patterns/_article.scss",
+      "sha256": "db0a5e9d9030537642f50ad39b6533d8789fe2c8c44c99cf06cae0b3211c0ef2"
+    },
+    {
+      "original_path": "src/scss/patterns/_comparison.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/patterns/_comparison.scss",
+      "sha256": "015c2beea4b52ba80154e3aaf0f091c4e27ded9a31ccf48cb58e9aa37194dfdf"
+    },
+    {
+      "original_path": "src/scss/patterns/_contacts.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/patterns/_contacts.scss",
+      "sha256": "cb10a5f7f05961b202e66445a8bbce29108a73165c07eb29a7f220f24d617958"
+    },
+    {
+      "original_path": "src/scss/patterns/_product.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/patterns/_product.scss",
+      "sha256": "7e7c437d14181afded4123c00a9e191a7ad7c88615800864bc1def5c40ad63c1"
+    },
+    {
+      "original_path": "src/scss/patterns/_section-header.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/patterns/_section-header.scss",
+      "sha256": "0956c74e536642945eefb0da370c5f22421c6a52e8fdea81574c6434f116030b"
+    },
+    {
+      "original_path": "src/scss/patterns/_steps.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/patterns/_steps.scss",
+      "sha256": "2627ecdb888e544d213bef802d52e0654ffcf9271ec5493677192935980654df"
+    },
+    {
+      "original_path": "src/scss/patterns/_trust.scss",
+      "archived_path": "archive/2026-10-05/repository-before-sync/src/scss/patterns/_trust.scss",
+      "sha256": "3fb992e8c49999d511dc23620d021aa2d3be5fb1f157a03f9cf434f5b4a76056"
+    }
+  ]
+}

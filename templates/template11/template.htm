@@ -1,0 +1,511 @@
+<section class="area-catalog no-bg">
+	<div class="page-bl">
+	    
+	<?php
+	class My_Structure_Controller_Breadcrumbs extends Structure_Controller_Breadcrumbs{
+    public function show()
+    {
+        Core_Event::notify(get_class($this) . '.onBeforeRedeclaredShow', $this);
+
+        if (is_object(Core_Page::instance()->object))
+        {
+            if ($this->showInformationsystem && Core_Page::instance()->object instanceof Informationsystem_Controller_Show)
+            {
+                if (Core_Page::instance()->object->item)
+                {
+                    $this->informationsystem_item_id = Core_Page::instance()->object->item;
+                }
+
+                if (Core_Page::instance()->object->group)
+                {
+                    $this->informationsystem_group_id = Core_Page::instance()->object->group;
+                }
+            }
+
+            if ($this->showShop && Core_Page::instance()->object instanceof Shop_Controller_Show)
+            {
+                if (Core_Page::instance()->object->item)
+                {
+                    $this->shop_item_id = Core_Page::instance()->object->item;
+                }
+
+                if (Core_Page::instance()->object->group)
+                {
+                    $this->shop_group_id = Core_Page::instance()->object->group;
+                }
+            }
+        }
+
+        if ($this->cache && Core::moduleIsActive('cache'))
+        {
+            $oCore_Cache = Core_Cache::instance(Core::$mainConfig['defaultCache']);
+            $inCache = $oCore_Cache->get($cacheKey = strval($this), $cacheName = 'structure_breadcrumbs');
+
+            if (!is_null($inCache))
+            {
+                echo $inCache;
+                return $this;
+            }
+        }
+
+        $this->addEntity(
+            Core::factory('Core_Xml_Entity')
+                ->name('current_structure_id')
+                ->value($this->current)
+        );
+
+        $aStructures = array();
+
+        if (is_object(Core_Page::instance()->object))
+        {
+            if ($this->showInformationsystem && Core_Page::instance()->object instanceof Informationsystem_Controller_Show)
+            {
+                if ($this->informationsystem_item_id)
+                {
+                    $oInformationsystem_Item = Core_Entity::factory('Informationsystem_Item', $this->informationsystem_item_id);
+
+                    $oInformationsystem_Item
+                        ->clearEntities()
+                        ->addForbiddenTag('url')
+                        ->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('link')
+                                ->value(
+                                    $oInformationsystem_Item->Informationsystem->Structure->getPath() . $oInformationsystem_Item->getPath()
+                                )
+                        )->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('show')
+                                ->value($oInformationsystem_Item->active)
+                        );
+
+                    $aStructures[] = $oInformationsystem_Item;
+                }
+
+                if ($this->informationsystem_group_id)
+                {
+                    $groupId = $this->informationsystem_group_id;
+
+                    $aGroups = array();
+
+                    while ($groupId)
+                    {
+                        $oInformationsystem_Group = Core_Entity::factory('Informationsystem_Group', $groupId);
+
+                        $oInformationsystem_Group
+                            ->clearEntities()
+                            ->addForbiddenTag('url')
+                            ->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('link')
+                                    ->value(
+                                        $oInformationsystem_Group->Informationsystem->Structure->getPath() . $oInformationsystem_Group->getPath()
+                                    )
+                            )->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('show')
+                                    ->value($oInformationsystem_Group->active)
+                            );
+
+                        $groupId = $oInformationsystem_Group->parent_id;
+                        $aGroups[] = $oInformationsystem_Group;
+                    }
+
+                    $aStructures = array_merge($aStructures, $aGroups);
+                }
+            }
+
+            if ($this->showShop && Core_Page::instance()->object instanceof Shop_Controller_Show)
+            {
+                if ($this->shop_item_id)
+                {
+                    $oShop_Item = Core_Entity::factory('Shop_Item', $this->shop_item_id);
+
+                    $oShop_Item
+                        ->clearEntities()
+                        ->addForbiddenTag('url')
+                        ->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('link')
+                                ->value(
+                                    $oShop_Item->Shop->Structure->getPath() . $oShop_Item->getPath()
+                                )
+                        )->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('show')
+                                ->value($oShop_Item->active)
+                        );
+
+                    // Если модификация, то сначала идет родительский товар, а в нем модификация
+                    if ($oShop_Item->modification_id)
+                    {
+                        $oShop_Item = $oShop_Item->Modification
+                            ->clearEntities()
+                            ->addEntity($oShop_Item);
+                    }
+
+                    $aStructures[] = $oShop_Item;
+                }
+
+                if ($this->shop_group_id)
+                {
+                    $groupId = $this->shop_group_id;
+
+                    $aGroups = array();
+
+                    while ($groupId)
+                    {
+                        $oShop_Group = Core_Entity::factory('Shop_Group', $groupId);
+
+                        $oShop_Group
+                            ->clearEntities()
+                            ->addForbiddenTag('url')
+                            ->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('link')
+                                    ->value(
+                                        $oShop_Group->Shop->Structure->getPath() . $oShop_Group->getPath()
+                                    )
+                            )->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('show')
+                                    ->value($oShop_Group->active)
+                            );
+
+                        $groupId = $oShop_Group->parent_id;
+                        $aGroups[] = $oShop_Group;
+                    }
+
+                    $aStructures = array_merge($aStructures, $aGroups);
+                }
+            }
+        }
+
+        $oStructure = Core_Entity::factory('Structure', $this->current)
+            ->clearEntities()
+            ->showXmlProperties(true);
+
+        do {
+            $aStructures[] = $oStructure->clearEntities();
+        } while($oStructure = $oStructure->getParent());
+
+        $aStructures = array_reverse($aStructures);
+
+        $object = $this;
+        foreach ($aStructures as $oStructure)
+        {
+            $this->applyForbiddenTags($oStructure);
+            $object->addEntity($oStructure);
+            $object = $oStructure;
+        }
+
+        $oSite = $this->getEntity();
+
+        // Показывать дополнительные свойства
+        if ($this->showProperties)
+        {
+            $oStructure_Property_List = Core_Entity::factory('Structure_Property_List', $oSite->id);
+
+            $aProperties = $oStructure_Property_List->Properties->findAll();
+            foreach ($aProperties as $oProperty)
+            {
+                $this->_aProperties[$oProperty->property_dir_id][] = $oProperty;
+
+                // Load all values for property
+                $oProperty->loadAllValues();
+            }
+
+            $aProperty_Dirs = $oStructure_Property_List->Property_Dirs->findAll();
+            foreach ($aProperty_Dirs as $oProperty_Dir)
+            {
+                $oProperty_Dir->clearEntities();
+                $this->_aProperty_Dirs[$oProperty_Dir->parent_id][] = $oProperty_Dir;
+            }
+
+            $this->_addPropertyList(0, $this);
+        }
+
+        // Clear
+        $this->_aProperty_Dirs = $this->_aProperties = array();
+
+        echo $content = parent::get();
+        $this->cache && Core::moduleIsActive('cache') && $oCore_Cache->set($cacheKey, $content, $cacheName);
+
+        return $this;
+    }
+}
+
+$Structure_Controller_Breadcrumbs = new My_Structure_Controller_Breadcrumbs(Core_Entity::factory('Site', CURRENT_SITE));
+$Structure_Controller_Breadcrumbs
+    ->xsl(Core_Entity::factory('Xsl')->getByName('ХлебныеКрошкиRev1'))
+    ->showProperties(true)
+    ->show();
+	?>
+<?php
+	//Метки
+		if (Core::moduleIsActive('shop') && Core::moduleIsActive('tag'))
+		{
+			$Shop_Controller_Tag_Show = new Shop_Controller_Tag_Show(
+				Core_Entity::factory('Shop', 1)
+			);
+			$Shop_Controller_Tag_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('ОблакоТэговМагазин')
+				);
+
+			if (is_object(Core_Page::instance()->object)
+			&& get_class(Core_Page::instance()->object) == 'My_Shop_Controller_Show'
+			&& Core_Page::instance()->object->group)
+			{
+				$Shop_Controller_Tag_Show->group(Core_Page::instance()->object->group);
+			}
+
+			$Shop_Controller_Tag_Show->show();
+		}  
+		?>
+
+<div class="page-row fl-row">
+			<!--div class="mobile-filter">
+				<button type="button" class="filter-button-open open-link">
+					<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2 6L6 6" stroke="#405460" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M16 6H22" stroke="#405460" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<circle cx="9" cy="6" r="3" stroke="#405460" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M22 17L18 17" stroke="#405460" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M8 17H2" stroke="#405460" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<circle r="3" transform="matrix(-1 0 0 1 15 17)" stroke="#405460" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+					Фильтры
+				</button>
+			</div-->
+			<div class="col col-small">
+            <?php
+		// Разделы магазина
+
+/*
+		// Разделы магазина
+		if (Core::moduleIsActive('shop'))
+		{
+			$Shop_Controller_Show = new Shop_Controller_Show(
+				Core_Entity::factory('Shop', Core_Page::instance()->libParams['shopId'])
+			);
+			$Shop_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('МагазинГруппыТоваровНаГлавнойСайт2')
+				)
+				->groupsMode('tree')
+				->group(0)
+				->limit(0)
+				->show();
+		}
+
+*/
+$oShop = Core_Entity::factory('Shop', 1);
+$Shop_Controller_Show = new Shop_Controller_Show($oShop);
+if (is_object(Core_Page::instance()->object)
+&& get_class(Core_Page::instance()->object) == 'Shop_Controller_Show') {
+   $Shop_Controller_Show->addEntity(
+      Core::factory('Core_Xml_Entity')
+      ->name('current_group_id')->value(intval(Core_Page::instance()->object->group))
+   );
+}
+    
+$Shop_Controller_Show
+	->xsl(
+		Core_Entity::factory('Xsl')->getByName('МагазинФильтр')
+	)
+->groupsMode('all')
+//->itemsForbiddenTags(array('text'))
+->limit(0)
+->itemsProperties(TRUE);
+							if (is_object(Core_Page::instance()->object)
+							&& get_class(Core_Page::instance()->object) == 'Shop_Controller_Show')
+							{
+								$mCurrentShopGroup = Core_Page::instance()->object->group;
+
+								$Shop_Controller_Show->setFilterProperties(Core_Page::instance()->object->getFilterProperties());
+								$Shop_Controller_Show->setFilterPrices(Core_Page::instance()->object->getFilterPrices());
+
+								Core_Page::instance()->object->producer
+									&& $Shop_Controller_Show->producer(Core_Page::instance()->object->producer);
+
+								!is_null(Core_Page::instance()->object->tag)
+									&& $Shop_Controller_Show->tag(Core_Page::instance()->object->tag);
+							}
+							else
+							{
+								$mCurrentShopGroup = 0;
+							}
+
+							$Shop_Controller_Show
+								->group($mCurrentShopGroup)
+								->applyGroupCondition();
+
+							if ($Shop_Controller_Show->group == 0)
+							{
+								$Shop_Controller_Show->group(FALSE);
+							}
+
+							//Sorting
+							if (Core_Array::getGet('sorting'))
+							{
+								$sorting = intval(Core_Array::getGet('sorting'));
+								$Shop_Controller_Show->addEntity(
+									Core::factory('Core_Xml_Entity')
+										->name('sorting')->value($sorting)
+								);
+								$Shop_Controller_Show->addCacheSignature('sorting=' . $sorting);
+							}
+
+							/* Количество */
+							$on_page = intval(Core_Array::getGet('on_page'));
+							if ($on_page > 0 && $on_page < 150)
+							{
+								$Shop_Controller_Show->addEntity(
+									Core::factory('Core_Xml_Entity')
+										->name('on_page')->value($on_page)
+								);
+							}
+
+							$Shop_Controller_Show
+								//Фильтровать по ярлыкам
+								->subgroups(true)
+								->filterShortcuts(TRUE)
+								->modificationsList(TRUE)
+								->favorite(FALSE)
+								->viewed(FALSE)
+								->addProducers()
+								->filterCounts(TRUE)
+								->addMinMaxPrice()
+								->show();
+		?>
+		</div>
+		    <div class="col col-medium">
+		    <a href="/services/podbor-septikov/" class="cat-links">
+					<div class="how-link">
+						<div class="i-btn">
+							<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd" clip-rule="evenodd" d="M8 16C12.4183 16 16 12.4183 16 8C16 3.58172 12.4183 0 8 0C3.58172 0 0 3.58172 0 8C0 12.4183 3.58172 16 8 16ZM11.258 5.95746C11.258 4.26376 9.72769 3.55566 8.17335 3.55566C6.69151 3.55566 5.33174 4.59967 5.33203 5.77774C5.33203 6.25793 5.69683 6.51022 6.12181 6.51022C6.66959 6.51022 6.83106 6.167 7.00373 5.79998C7.20215 5.37825 7.41534 4.92508 8.24642 4.92508C8.97545 4.92508 9.4116 5.30946 9.4116 5.95774C9.4116 6.51806 8.93076 6.88508 8.42657 7.26991C7.87095 7.69401 7.28699 8.13973 7.28699 8.88962C7.28699 9.274 7.54204 9.6941 8.06416 9.6941C8.63512 9.6941 8.74993 9.39477 8.87418 9.07082C8.92435 8.93999 8.97607 8.80516 9.05999 8.68439C9.1771 8.5143 9.42327 8.34091 9.71006 8.1389C10.3749 7.67065 11.258 7.04863 11.258 5.95746ZM9.1087 11.4592C9.1087 10.9178 8.6585 10.4739 8.11288 10.4739C7.5664 10.4739 7.11677 10.9181 7.11677 11.4592C7.11677 12.0012 7.5664 12.4446 8.11288 12.4446C8.65936 12.4446 9.1087 12.0006 9.1087 11.4592Z" fill="#7abf18"/>
+							</svg>
+						</div>
+						КАК ВЫБРАТЬ СЕПТИК					</div>
+				</a>
+<?php
+Core_Page::instance()->execute();
+	?></div>
+</div>
+    </div>
+    </section>
+    <?php
+
+		if (Core::moduleIsActive('shop'))
+		{
+			$Shop_Controller_Show = new Shop_Controller_Show(
+				Core_Entity::factory('Shop', Core_Page::instance()->libParams['shopId'])
+			);
+			$Shop_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('МагазинКаталогТоваровТексты')
+				)
+				->groupsMode('tree')
+				//->group(0)
+				->limit(0)
+				->show();
+		}
+		
+		if ($oShop->id != 6 && $oShop->id != 5 && $oShop->id != 3) {
+		Core_Entity::factory('Document', '26')->Document_Versions->getCurrent()->execute();	
+		Core_Entity::factory('Document', '27')->Document_Versions->getCurrent()->execute();
+		}
+		if ($oShop->id != 6) {
+		?>
+<div class="section area-questions bg type2">
+  <div class="page-bl">
+    <div class="fl-row">
+        <div class="col">
+        <?
+	if (Core::moduleIsActive('informationsystem'))
+		{
+			$Informationsystem_Controller_Show = new Informationsystem_Controller_Show(
+				Core_Entity::factory('Informationsystem', 6)
+			);
+
+		/*	$Informationsystem_Controller_Show
+				->informationsystemItems()
+				->queryBuilder()
+				->clearOrderBy()
+				->orderBy('RAND()'); */
+
+			$Informationsystem_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('FAQГлавная')
+				)
+				->groupsMode('none')
+				->itemsProperties(TRUE)
+				//->itemsForbiddenTags(array('text'))
+				->group(FALSE)
+				->limit(6)
+				->show();
+		}
+?></div>
+	<script>
+document.addEventListener("DOMContentLoaded", () => {
+	    if (window.matchMedia("(max-width: 720px)").matches) {
+	        var swiperquestion = new Swiper('#swiper-que .swiper', {
+	            slidesPerView: 1,
+	            spaceBetween: 0,
+	            centeredSlides: false,
+	            loop: false,
+	            autoHeight: true,
+	            navigation: {
+	                nextEl: '#swiper-que .swiper-button.next',
+	                prevEl: '#swiper-que .swiper-button.prev',
+	            },
+	            pagination: {
+	                el: '#swiper-que .swiper-pagination',
+	                clickable: true,
+	                type: 'fraction',
+	            },
+	            breakpoints: {
+	                720: {
+	                    slidesPerView: 1,
+	                    spaceBetween: 0,
+	                },
+	            },
+	        });
+	    }
+	    var swiper=new Swiper('#swiper-tb1 .swiper',{slidesPerView:'auto',spaceBetween:0,centeredSlides:false,loop:false,scrollbar:{el:'#swiper-tb1 .swiper-scrollbar',draggable:true,},});
+	     var swiper=new Swiper('#swiper-tb2 .swiper',{slidesPerView:'auto',spaceBetween:0,centeredSlides:false,loop:false,scrollbar:{el:'#swiper-tb2 .swiper-scrollbar',draggable:true,},});
+	});
+		</script>
+ <div class="col">
+        <form class="answ-form form-submit-question" method="post" enctype="multipart/form-data">
+          <img loading="lazy" class="answ-form__image" src="/assets/favicon/favicon.svg" alt="Есть вопрос?">
+          <div class="h-2">Есть вопрос?</div>
+          <input type="hidden" name="subject" value="Есть вопрос?">
+          <p>Заполните форму и наш специалист свяжется с вами. Обычно перезваниваем в течение 3-4х минут</p>
+          <div class="form-row">
+            <p>
+              <input type="text" value="" name="name" placeholder="Ваше имя" autocomplete="off">
+            </p>
+            <p>
+              <input class="phone_mask" type="tel" minlength="15" value="" name="phone" placeholder="Ваш телефон" required autocomplete="off">
+            </p>
+          </div>
+          <div class="form-row">
+            <p>
+              <textarea name="message" placeholder="Задайте ваш вопрос"></textarea>
+            </p>
+          </div> <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+          <button class="btn" value="Отправить" name="form_question">Отправить</button>
+        </form>
+      </div>
+</div>
+  </div>
+</div>
+<?php 
+		}
+
+	    Core_Entity::factory('Document', '28')->Document_Versions->getCurrent()->execute();
+        Core_Entity::factory('Document', '19')->Document_Versions->getCurrent()->execute(); 
+    ?>

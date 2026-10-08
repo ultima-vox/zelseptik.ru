@@ -1,0 +1,262 @@
+<?php
+	class My_Structure_Controller_Breadcrumbs extends Structure_Controller_Breadcrumbs{
+    public function show()
+    {
+        Core_Event::notify(get_class($this) . '.onBeforeRedeclaredShow', $this);
+
+        if (is_object(Core_Page::instance()->object))
+        {
+            if ($this->showInformationsystem && Core_Page::instance()->object instanceof Informationsystem_Controller_Show)
+            {
+                if (Core_Page::instance()->object->item)
+                {
+                    $this->informationsystem_item_id = Core_Page::instance()->object->item;
+                }
+
+                if (Core_Page::instance()->object->group)
+                {
+                    $this->informationsystem_group_id = Core_Page::instance()->object->group;
+                }
+            }
+
+            if ($this->showShop && Core_Page::instance()->object instanceof Shop_Controller_Show)
+            {
+                if (Core_Page::instance()->object->item)
+                {
+                    $this->shop_item_id = Core_Page::instance()->object->item;
+                }
+
+                if (Core_Page::instance()->object->group)
+                {
+                    $this->shop_group_id = Core_Page::instance()->object->group;
+                }
+            }
+        }
+
+        if ($this->cache && Core::moduleIsActive('cache'))
+        {
+            $oCore_Cache = Core_Cache::instance(Core::$mainConfig['defaultCache']);
+            $inCache = $oCore_Cache->get($cacheKey = strval($this), $cacheName = 'structure_breadcrumbs');
+
+            if (!is_null($inCache))
+            {
+                echo $inCache;
+                return $this;
+            }
+        }
+
+        $this->addEntity(
+            Core::factory('Core_Xml_Entity')
+                ->name('current_structure_id')
+                ->value($this->current)
+        );
+
+        $aStructures = array();
+
+        if (is_object(Core_Page::instance()->object))
+        {
+            if ($this->showInformationsystem && Core_Page::instance()->object instanceof Informationsystem_Controller_Show)
+            {
+                if ($this->informationsystem_item_id)
+                {
+                    $oInformationsystem_Item = Core_Entity::factory('Informationsystem_Item', $this->informationsystem_item_id);
+
+                    $oInformationsystem_Item
+                        ->clearEntities()
+                        ->addForbiddenTag('url')
+                        ->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('link')
+                                ->value(
+                                    $oInformationsystem_Item->Informationsystem->Structure->getPath() . $oInformationsystem_Item->getPath()
+                                )
+                        )->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('show')
+                                ->value($oInformationsystem_Item->active)
+                        );
+
+                    $aStructures[] = $oInformationsystem_Item;
+                }
+
+                if ($this->informationsystem_group_id)
+                {
+                    $groupId = $this->informationsystem_group_id;
+
+                    $aGroups = array();
+
+                    while ($groupId)
+                    {
+                        $oInformationsystem_Group = Core_Entity::factory('Informationsystem_Group', $groupId);
+
+                        $oInformationsystem_Group
+                            ->clearEntities()
+                            ->addForbiddenTag('url')
+                            ->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('link')
+                                    ->value(
+                                        $oInformationsystem_Group->Informationsystem->Structure->getPath() . $oInformationsystem_Group->getPath()
+                                    )
+                            )->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('show')
+                                    ->value($oInformationsystem_Group->active)
+                            );
+
+                        $groupId = $oInformationsystem_Group->parent_id;
+                        $aGroups[] = $oInformationsystem_Group;
+                    }
+
+                    $aStructures = array_merge($aStructures, $aGroups);
+                }
+            }
+
+            if ($this->showShop && Core_Page::instance()->object instanceof Shop_Controller_Show)
+            {
+                if ($this->shop_item_id)
+                {
+                    $oShop_Item = Core_Entity::factory('Shop_Item', $this->shop_item_id);
+
+                    $oShop_Item
+                        ->clearEntities()
+                        ->addForbiddenTag('url')
+                        ->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('link')
+                                ->value(
+                                    $oShop_Item->Shop->Structure->getPath() . $oShop_Item->getPath()
+                                )
+                        )->addEntity(
+                            Core::factory('Core_Xml_Entity')
+                                ->name('show')
+                                ->value($oShop_Item->active)
+                        );
+
+                    // Если модификация, то сначала идет родительский товар, а в нем модификация
+                    if ($oShop_Item->modification_id)
+                    {
+                        $oShop_Item = $oShop_Item->Modification
+                            ->clearEntities()
+                            ->addEntity($oShop_Item);
+                    }
+
+                    $aStructures[] = $oShop_Item;
+                }
+
+                if ($this->shop_group_id)
+                {
+                    $groupId = $this->shop_group_id;
+
+                    $aGroups = array();
+
+                    while ($groupId)
+                    {
+                        $oShop_Group = Core_Entity::factory('Shop_Group', $groupId);
+
+                        $oShop_Group
+                            ->clearEntities()
+                            ->addForbiddenTag('url')
+                            ->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('link')
+                                    ->value(
+                                        $oShop_Group->Shop->Structure->getPath() . $oShop_Group->getPath()
+                                    )
+                            )->addEntity(
+                                Core::factory('Core_Xml_Entity')
+                                    ->name('show')
+                                    ->value($oShop_Group->active)
+                            );
+
+                        $groupId = $oShop_Group->parent_id;
+                        $aGroups[] = $oShop_Group;
+                    }
+
+                    $aStructures = array_merge($aStructures, $aGroups);
+                }
+            }
+        }
+
+        $oStructure = Core_Entity::factory('Structure', $this->current)
+            ->clearEntities()
+            ->showXmlProperties(true);
+
+        do {
+            $aStructures[] = $oStructure->clearEntities();
+        } while($oStructure = $oStructure->getParent());
+
+        $aStructures = array_reverse($aStructures);
+
+        $object = $this;
+        foreach ($aStructures as $oStructure)
+        {
+            $this->applyForbiddenTags($oStructure);
+            $object->addEntity($oStructure);
+            $object = $oStructure;
+        }
+
+        $oSite = $this->getEntity();
+
+        // Показывать дополнительные свойства
+        if ($this->showProperties)
+        {
+            $oStructure_Property_List = Core_Entity::factory('Structure_Property_List', $oSite->id);
+
+            $aProperties = $oStructure_Property_List->Properties->findAll();
+            foreach ($aProperties as $oProperty)
+            {
+                $this->_aProperties[$oProperty->property_dir_id][] = $oProperty;
+
+                // Load all values for property
+                $oProperty->loadAllValues();
+            }
+
+            $aProperty_Dirs = $oStructure_Property_List->Property_Dirs->findAll();
+            foreach ($aProperty_Dirs as $oProperty_Dir)
+            {
+                $oProperty_Dir->clearEntities();
+                $this->_aProperty_Dirs[$oProperty_Dir->parent_id][] = $oProperty_Dir;
+            }
+
+            $this->_addPropertyList(0, $this);
+        }
+
+        // Clear
+        $this->_aProperty_Dirs = $this->_aProperties = array();
+
+        echo $content = parent::get();
+        $this->cache && Core::moduleIsActive('cache') && $oCore_Cache->set($cacheKey, $content, $cacheName);
+
+        return $this;
+    }
+}
+
+$Structure_Controller_Breadcrumbs = new My_Structure_Controller_Breadcrumbs(Core_Entity::factory('Site', CURRENT_SITE));
+$Structure_Controller_Breadcrumbs
+    ->xsl(Core_Entity::factory('Xsl')->getByName('ХлебныеКрошкиRev1'))
+    ->showProperties(true)
+    ->show();
+
+        Core_Page::instance()->execute(); 
+        Core_Entity::factory('Document', '43')->Document_Versions->getCurrent()->execute();	
+?>
+  <section class="section section--white contacts-map-section">
+    <div class="container">
+      <div class="delivery-section__header">
+        <span class="delivery-badge">Адрес</span>
+        <h2 class="delivery-section__title">Офис и склад в Зеленограде</h2>
+        <p class="delivery-section__text">
+          г. Зеленоград, ул. Летчицы Тарасовой, корпус 2024.
+          Перед визитом лучше позвонить — инженер может быть на выезде.
+        </p>
+      </div>
+
+      <div class="geography-map">
+        <div class="geography-map__title">Карта проезда</div>
+        <div class="geography-map__container">
+            <script type="text/javascript" charset="utf-8" async defer src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Asx2pRaBpT-60MiEI03xy65syDomEa4xt&amp;width=100%&height=500&lang=ru_RU&sourceType=constructor&scroll=false"></script>
+        </div>
+      </div>
+    </div>
+  </section>
