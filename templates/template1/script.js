@@ -1179,6 +1179,21 @@ function initExclusiveFilters() {
     const options = Array.from(group.querySelectorAll('[data-exclusive-filter-option]'));
     const filterInputs = Array.from(group.querySelectorAll('[data-exclusive-filter-input]'));
 
+    const select = group.querySelector('[data-exclusive-filter-select]');
+    if (select && filterInputs.length) {
+      const params = new URLSearchParams(window.location.search);
+      const active = filterInputs.find(function (input) { return params.has(input.name); });
+      if (active) select.value = active.dataset.exclusiveFilterInput;
+      function syncSelect() {
+        filterInputs.forEach(function (input) {
+          input.disabled = input.dataset.exclusiveFilterInput !== select.value;
+        });
+      }
+      select.addEventListener('change', syncSelect);
+      syncSelect();
+      return;
+    }
+
     if (!options.length || !filterInputs.length) return;
 
     function syncFilter(option) {
