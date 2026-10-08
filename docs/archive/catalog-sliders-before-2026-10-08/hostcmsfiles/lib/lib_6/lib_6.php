@@ -348,11 +348,4 @@ $Shop_Controller_Show
 	->addMinMaxWidth()
 	->addMinMaxLength();
 
-// Native bounds for catalog sliders; existing shop only.
-if ($Shop_Controller_Show->item == 0 && $Shop_Controller_Show->getEntity()->id == 1)
-{
-	$Shop_Controller_Show->group == 0 && $Shop_Controller_Show->group(FALSE);
-	$Shop_Controller_Show->filterCounts(TRUE)->addMinMaxPrice();
-}
-
 $Shop_Controller_Show->show();
