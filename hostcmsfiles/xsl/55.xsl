@@ -98,45 +98,45 @@
 								</div>
 							</div>
 							<xsl:if test="contains(/shop/url, '/septiki/')">
-							<aside class="grid-blueprint__aside">
-								<form class="catalog-selector" action="{$path}" method="get">
-									<input type="hidden" name="filter" value="1"/>
+								<aside class="grid-blueprint__aside">
+									<form class="catalog-selector" action="{$path}" method="get">
+										<input type="hidden" name="filter" value="1"/>
 
-									<div class="catalog-selector__header">
-										<span class="badge badge--outline">Подбор за 30 секунд</span>
-										<h2 class="catalog-selector__title">Ответьте на 3 вопроса</h2>
-										<p class="catalog-selector__text">Покажем модели, которые подходят под участок, без лишних технических терминов.</p>
-									</div>
+										<div class="catalog-selector__header">
+											<span class="badge badge--outline">Подбор за 30 секунд</span>
+											<h2 class="catalog-selector__title">Ответьте на 3 вопроса</h2>
+											<p class="catalog-selector__text">Покажем модели, которые подходят под участок, без лишних технических терминов.</p>
+										</div>
 
-									<fieldset class="catalog-selector__group">
-										<legend class="catalog-selector__legend">Сколько человек?</legend>
-										<xsl:call-template name="peopleRangeOptions"/>
-									</fieldset>
+										<fieldset class="catalog-selector__group">
+											<legend class="catalog-selector__legend">Сколько человек?</legend>
+											<xsl:call-template name="peopleRangeOptions"/>
+										</fieldset>
 
-									<fieldset class="catalog-selector__group">
-										<legend class="catalog-selector__legend">Как живете?</legend>
-										<xsl:call-template name="exclusivePropertyOptions">
-											<xsl:with-param name="radioName" select="'usage_type'"/>
-											<xsl:with-param name="primaryName" select="'property_10'"/>
-											<xsl:with-param name="primaryLabel" select="'Дача'"/>
-											<xsl:with-param name="secondaryName" select="'property_11'"/>
-											<xsl:with-param name="secondaryLabel" select="'Постоянно'"/>
-											<xsl:with-param name="layoutClass" select="'catalog-selector__options catalog-selector__options--2'"/>
-											<xsl:with-param name="showAny" select="0"/>
-										</xsl:call-template>
-									</fieldset>
+										<fieldset class="catalog-selector__group">
+											<legend class="catalog-selector__legend">Как живете?</legend>
+											<xsl:call-template name="exclusivePropertyOptions">
+												<xsl:with-param name="radioName" select="'usage_type'"/>
+												<xsl:with-param name="primaryName" select="'property_10'"/>
+												<xsl:with-param name="primaryLabel" select="'Дача'"/>
+												<xsl:with-param name="secondaryName" select="'property_11'"/>
+												<xsl:with-param name="secondaryLabel" select="'Постоянно'"/>
+												<xsl:with-param name="layoutClass" select="'catalog-selector__options catalog-selector__options--2'"/>
+												<xsl:with-param name="showAny" select="0"/>
+											</xsl:call-template>
+										</fieldset>
 
-									<fieldset class="catalog-selector__group">
-										<legend class="catalog-selector__legend">Куда отводить воду?</legend>
-										<xsl:call-template name="drainTypeOptions">
-											<xsl:with-param name="showAny" select="0"/>
-										</xsl:call-template>
-									</fieldset>
+										<fieldset class="catalog-selector__group">
+											<legend class="catalog-selector__legend">Куда отводить воду?</legend>
+											<xsl:call-template name="drainTypeOptions">
+												<xsl:with-param name="showAny" select="0"/>
+											</xsl:call-template>
+										</fieldset>
 
-									<button class="btn btn--primary btn--full" type="submit">Показать подходящие модели</button>
-									<p class="catalog-selector__hint">Если ответ неизвестен, инженер уточнит его по адресу и уклону участка.</p>
-								</form>
-							</aside>
+										<button class="btn btn--primary btn--full" type="submit">Показать подходящие модели</button>
+										<p class="catalog-selector__hint">Если ответ неизвестен, инженер уточнит его по адресу и уклону участка.</p>
+									</form>
+								</aside>
 							</xsl:if>
 						</xsl:when>
 
@@ -228,133 +228,133 @@
 							</xsl:if>
 						</xsl:attribute>
 						<xsl:if test="contains(/shop/url, '/septiki/') and count(/shop/shop_filter_seos/shop_filter_seo[active = 1]) &gt; 0">
-						<aside class="catalog__sidebar" aria-label="Фильтры каталога">
-							<div class="catalog-filter">
-								<div class="catalog-filter__header">
-									<h2 class="catalog-filter__title">Подбор септика</h2>
-									<a class="catalog-filter__reset" href="{$path}{$form_tag_url}">Сбросить</a>
-								</div>
+							<aside class="catalog__sidebar" aria-label="Фильтры каталога">
+								<div class="catalog-filter">
+									<div class="catalog-filter__header">
+										<h2 class="catalog-filter__title">Подбор септика</h2>
+										<a class="catalog-filter__reset" href="{$path}{$form_tag_url}">Сбросить</a>
+									</div>
 
-								<xsl:if test="count(/shop/shop_filter_seos/shop_filter_seo[active = 1]) &gt; 0">
-									<nav class="catalog-seo-filter" aria-label="Популярные варианты подбора">
-										<xsl:call-template name="seoSidebarGroup">
-											<xsl:with-param name="title" select="'Количество человек'"/>
-											<xsl:with-param name="modifier" select="'people'"/>
-											<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and shop_filter_seo_property/property_id = 6]"/>
-										</xsl:call-template>
+									<xsl:if test="count(/shop/shop_filter_seos/shop_filter_seo[active = 1]) &gt; 0">
+										<nav class="catalog-seo-filter" aria-label="Популярные варианты подбора">
+											<xsl:call-template name="seoSidebarGroup">
+												<xsl:with-param name="title" select="'Количество человек'"/>
+												<xsl:with-param name="modifier" select="'people'"/>
+												<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and shop_filter_seo_property/property_id = 6]"/>
+											</xsl:call-template>
 
-										<xsl:call-template name="seoSidebarGroup">
-											<xsl:with-param name="title" select="'Режим проживания'"/>
-											<xsl:with-param name="modifier" select="'usage'"/>
-											<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 10 or shop_filter_seo_property/property_id = 11)]"/>
-										</xsl:call-template>
+											<xsl:call-template name="seoSidebarGroup">
+												<xsl:with-param name="title" select="'Режим проживания'"/>
+												<xsl:with-param name="modifier" select="'usage'"/>
+												<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 10 or shop_filter_seo_property/property_id = 11)]"/>
+											</xsl:call-template>
 
-										<xsl:call-template name="seoSidebarGroup">
-											<xsl:with-param name="title" select="'Исполнение'"/>
-											<xsl:with-param name="modifier" select="'body'"/>
-											<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 39 or shop_filter_seo_property/property_id = 40)]"/>
-										</xsl:call-template>
+											<xsl:call-template name="seoSidebarGroup">
+												<xsl:with-param name="title" select="'Исполнение'"/>
+												<xsl:with-param name="modifier" select="'body'"/>
+												<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 39 or shop_filter_seo_property/property_id = 40)]"/>
+											</xsl:call-template>
 
-										<xsl:call-template name="seoSidebarGroup">
-											<xsl:with-param name="title" select="'Тип сброса'"/>
-											<xsl:with-param name="modifier" select="'drain'"/>
-											<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 2 or shop_filter_seo_property/property_id = 3)]"/>
-										</xsl:call-template>
-									</nav>
-								</xsl:if>
-
-								<!-- Точная настройка временно отключена. Заменить false() на true() для возврата. -->
-								<xsl:if test="false()">
-								<details class="catalog-filter__advanced">
-									<xsl:if test="not(count(/shop/shop_filter_seos/shop_filter_seo[active = 1]) &gt; 0) or /shop/filter = 1">
-										<xsl:attribute name="open">open</xsl:attribute>
+											<xsl:call-template name="seoSidebarGroup">
+												<xsl:with-param name="title" select="'Тип сброса'"/>
+												<xsl:with-param name="modifier" select="'drain'"/>
+												<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 2 or shop_filter_seo_property/property_id = 3)]"/>
+											</xsl:call-template>
+										</nav>
 									</xsl:if>
-									<summary class="catalog-filter__advanced-summary">Точная настройка</summary>
-									<div class="catalog-filter__advanced-body">
 
-								<xsl:if test="count(producers/shop_producer) &gt; 0">
-									<div class="catalog-filter__group">
-										<span class="catalog-filter__group-title">Производитель</span>
-										<div class="catalog-filter__options">
-											<xsl:apply-templates select="producers/shop_producer" mode="producerFilter"/>
-										</div>
-									</div>
-								</xsl:if>
+									<!-- Точная настройка временно отключена. Заменить false() на true() для возврата. -->
+									<xsl:if test="false()">
+										<details class="catalog-filter__advanced">
+											<xsl:if test="not(count(/shop/shop_filter_seos/shop_filter_seo[active = 1]) &gt; 0) or /shop/filter = 1">
+												<xsl:attribute name="open">open</xsl:attribute>
+											</xsl:if>
+											<summary class="catalog-filter__advanced-summary">Точная настройка</summary>
+											<div class="catalog-filter__advanced-body">
 
-								<div class="catalog-filter__group">
-									<span class="catalog-filter__group-title">Цена</span>
-									<div class="catalog-filter__price-grid">
-										<input class="catalog-filter__input" name="price_from" type="number" placeholder="от">
-											<xsl:if test="/shop/price_from != 0">
-												<xsl:attribute name="value"><xsl:value-of select="/shop/price_from"/></xsl:attribute>
-											</xsl:if>
-										</input>
-										<input class="catalog-filter__input" name="price_to" type="number" placeholder="до">
-											<xsl:if test="/shop/price_to != 0">
-												<xsl:attribute name="value"><xsl:value-of select="/shop/price_to"/></xsl:attribute>
-											</xsl:if>
-										</input>
-									</div>
+												<xsl:if test="count(producers/shop_producer) &gt; 0">
+													<div class="catalog-filter__group">
+														<span class="catalog-filter__group-title">Производитель</span>
+														<div class="catalog-filter__options">
+															<xsl:apply-templates select="producers/shop_producer" mode="producerFilter"/>
+														</div>
+													</div>
+												</xsl:if>
+
+												<div class="catalog-filter__group">
+													<span class="catalog-filter__group-title">Цена</span>
+													<div class="catalog-filter__price-grid">
+														<input class="catalog-filter__input" name="price_from" type="number" placeholder="от">
+															<xsl:if test="/shop/price_from != 0">
+																<xsl:attribute name="value"><xsl:value-of select="/shop/price_from"/></xsl:attribute>
+															</xsl:if>
+														</input>
+														<input class="catalog-filter__input" name="price_to" type="number" placeholder="до">
+															<xsl:if test="/shop/price_to != 0">
+																<xsl:attribute name="value"><xsl:value-of select="/shop/price_to"/></xsl:attribute>
+															</xsl:if>
+														</input>
+													</div>
+												</div>
+
+												<xsl:if test="count(shop_item_properties//property[@id = 6])">
+													<div class="catalog-filter__group">
+														<span class="catalog-filter__group-title">Количество человек</span>
+														<xsl:call-template name="peopleRangeOptions">
+															<xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
+															<xsl:with-param name="showAny" select="1"/>
+														</xsl:call-template>
+													</div>
+												</xsl:if>
+
+												<xsl:if test="count(shop_item_properties//property[@id = 10 or @id = 11])">
+													<div class="catalog-filter__group">
+														<span class="catalog-filter__group-title">Режим эксплуатации</span>
+														<xsl:call-template name="exclusivePropertyOptions">
+															<xsl:with-param name="radioName" select="'usage_type'"/>
+															<xsl:with-param name="primaryName" select="'property_10'"/>
+															<xsl:with-param name="primaryLabel" select="'Для дачи'"/>
+															<xsl:with-param name="secondaryName" select="'property_11'"/>
+															<xsl:with-param name="secondaryLabel" select="'Для частного дома'"/>
+															<xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
+														</xsl:call-template>
+													</div>
+												</xsl:if>
+
+												<xsl:if test="count(shop_item_properties//property[@id = 2 or @id = 3])">
+													<div class="catalog-filter__group">
+														<span class="catalog-filter__group-title">Тип сброса</span>
+														<xsl:call-template name="drainTypeOptions">
+															<xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
+														</xsl:call-template>
+													</div>
+												</xsl:if>
+
+												<xsl:if test="count(shop_item_properties//property[@id = 39 or @id = 40])">
+													<div class="catalog-filter__group">
+														<span class="catalog-filter__group-title">Исполнение</span>
+														<xsl:call-template name="exclusivePropertyOptions">
+															<xsl:with-param name="radioName" select="'body_type'"/>
+															<xsl:with-param name="primaryName" select="'property_40'"/>
+															<xsl:with-param name="primaryLabel" select="'Миди'"/>
+															<xsl:with-param name="secondaryName" select="'property_39'"/>
+															<xsl:with-param name="secondaryLabel" select="'Long'"/>
+															<xsl:with-param name="anyLabel" select="'Любое'"/>
+															<xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
+														</xsl:call-template>
+													</div>
+												</xsl:if>
+
+												<xsl:if test="count(shop_item_properties//property[filter != 0 and not(@id = 2 or @id = 3 or @id = 6 or @id = 10 or @id = 11 or @id = 39 or @id = 40)])">
+													<xsl:apply-templates select="shop_item_properties//property[filter != 0 and not(@id = 2 or @id = 3 or @id = 6 or @id = 10 or @id = 11 or @id = 39 or @id = 40)]" mode="catalogFilter"/>
+												</xsl:if>
+
+												<button class="catalog-filter__submit" type="submit">Применить фильтры</button>
+											</div>
+										</details>
+									</xsl:if>
 								</div>
-
-								<xsl:if test="count(shop_item_properties//property[@id = 6])">
-									<div class="catalog-filter__group">
-										<span class="catalog-filter__group-title">Количество человек</span>
-										<xsl:call-template name="peopleRangeOptions">
-											<xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
-											<xsl:with-param name="showAny" select="1"/>
-										</xsl:call-template>
-									</div>
-								</xsl:if>
-
-								<xsl:if test="count(shop_item_properties//property[@id = 10 or @id = 11])">
-									<div class="catalog-filter__group">
-										<span class="catalog-filter__group-title">Режим эксплуатации</span>
-										<xsl:call-template name="exclusivePropertyOptions">
-											<xsl:with-param name="radioName" select="'usage_type'"/>
-											<xsl:with-param name="primaryName" select="'property_10'"/>
-											<xsl:with-param name="primaryLabel" select="'Для дачи'"/>
-											<xsl:with-param name="secondaryName" select="'property_11'"/>
-											<xsl:with-param name="secondaryLabel" select="'Для частного дома'"/>
-											<xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
-										</xsl:call-template>
-									</div>
-								</xsl:if>
-
-								<xsl:if test="count(shop_item_properties//property[@id = 2 or @id = 3])">
-									<div class="catalog-filter__group">
-										<span class="catalog-filter__group-title">Тип сброса</span>
-										<xsl:call-template name="drainTypeOptions">
-											<xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
-										</xsl:call-template>
-									</div>
-								</xsl:if>
-
-								<xsl:if test="count(shop_item_properties//property[@id = 39 or @id = 40])">
-									<div class="catalog-filter__group">
-										<span class="catalog-filter__group-title">Исполнение</span>
-										<xsl:call-template name="exclusivePropertyOptions">
-											<xsl:with-param name="radioName" select="'body_type'"/>
-											<xsl:with-param name="primaryName" select="'property_40'"/>
-											<xsl:with-param name="primaryLabel" select="'Миди'"/>
-											<xsl:with-param name="secondaryName" select="'property_39'"/>
-											<xsl:with-param name="secondaryLabel" select="'Long'"/>
-											<xsl:with-param name="anyLabel" select="'Любое'"/>
-											<xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
-										</xsl:call-template>
-									</div>
-								</xsl:if>
-
-								<xsl:if test="count(shop_item_properties//property[filter != 0 and not(@id = 2 or @id = 3 or @id = 6 or @id = 10 or @id = 11 or @id = 39 or @id = 40)])">
-									<xsl:apply-templates select="shop_item_properties//property[filter != 0 and not(@id = 2 or @id = 3 or @id = 6 or @id = 10 or @id = 11 or @id = 39 or @id = 40)]" mode="catalogFilter"/>
-								</xsl:if>
-
-										<button class="catalog-filter__submit" type="submit">Применить фильтры</button>
-									</div>
-								</details>
-								</xsl:if>
-							</div>
-						</aside>
+							</aside>
 						</xsl:if>
 
 						<div class="catalog__content">
@@ -362,13 +362,13 @@
 								<div>
 									<h2 class="catalog-toolbar__title">
 										<xsl:choose>
-										<xsl:when test="$group != 0">
-											<xsl:value-of select=".//shop_group[@id=$group]/name"/>
-										</xsl:when>
-										<xsl:when test="/shop/@id = 6">Обслуживание по городам</xsl:when>
-<xsl:when test="contains(/shop/url, '/kessony/')">Все модели кессонов</xsl:when>
-										<xsl:when test="contains(/shop/url, '/pogreba/')">Все модели погребов</xsl:when>
-										<xsl:otherwise>Все модели септиков</xsl:otherwise>
+											<xsl:when test="$group != 0">
+												<xsl:value-of select=".//shop_group[@id=$group]/name"/>
+											</xsl:when>
+											<xsl:when test="/shop/@id = 6">Обслуживание по городам</xsl:when>
+											<xsl:when test="contains(/shop/url, '/kessony/')">Все модели кессонов</xsl:when>
+											<xsl:when test="contains(/shop/url, '/pogreba/')">Все модели погребов</xsl:when>
+											<xsl:otherwise>Все модели септиков</xsl:otherwise>
 										</xsl:choose>
 									</h2>
 									<div class="catalog-toolbar__count">
@@ -457,6 +457,17 @@
 					</section>
 				</xsl:if>
 			</xsl:for-each>
+		</xsl:if>
+
+		<!-- Native SEO-filter text, first page only (HostCMS SEO-filter documentation). -->
+		<xsl:if test="@id = 1 and shop_filter_seo/node() and (not(page) or page = 0) and normalize-space(shop_filter_seo/text) != ''">
+			<section class="section area-text no-bg" data-seo-landing="catalog-filter">
+				<div class="container">
+					<div class="legal-page__content">
+						<xsl:value-of select="shop_filter_seo/text" disable-output-escaping="yes"/>
+					</div>
+				</div>
+			</section>
 		</xsl:if>
 
 		<!-- Native shop description belongs only to the first unfiltered root page. -->
@@ -580,38 +591,38 @@
 
 
 				<xsl:if test="/shop/@id != 6"><div class="catalog-card__specs">
-					<xsl:if test="property_value[tag_name='performance']/value != ''">
+						<xsl:if test="property_value[tag_name='performance']/value != ''">
+							<div class="catalog-card__spec-row">
+								<span class="catalog-card__spec-label">Производительность:</span>
+								<span class="catalog-card__spec-value">
+									<xsl:value-of select="property_value[tag_name='performance']/value"/> л/сутки
+								</span>
+							</div>
+						</xsl:if>
+
+						<xsl:if test="property_value[tag_name='zalp']/value != '' and property_value[tag_name='zalp']/value != 0">
+							<div class="catalog-card__spec-row">
+								<span class="catalog-card__spec-label">Залповый сброс:</span>
+								<span class="catalog-card__spec-value">
+									<xsl:value-of select="property_value[tag_name='zalp']/value"/> л
+								</span>
+							</div>
+						</xsl:if>
+
 						<div class="catalog-card__spec-row">
-							<span class="catalog-card__spec-label">Производительность:</span>
+							<span class="catalog-card__spec-label">Тип сброса:</span>
 							<span class="catalog-card__spec-value">
-								<xsl:value-of select="property_value[tag_name='performance']/value"/> л/сутки
+								<xsl:choose>
+									<xsl:when test="property_value[tag_name='nopr']/value = 1">Самотечный</xsl:when>
+									<xsl:otherwise>Принудительный</xsl:otherwise>
+								</xsl:choose>
 							</span>
 						</div>
-					</xsl:if>
 
-					<xsl:if test="property_value[tag_name='zalp']/value != '' and property_value[tag_name='zalp']/value != 0">
 						<div class="catalog-card__spec-row">
-							<span class="catalog-card__spec-label">Залповый сброс:</span>
-							<span class="catalog-card__spec-value">
-								<xsl:value-of select="property_value[tag_name='zalp']/value"/> л
-							</span>
+							<span class="catalog-card__spec-label">Очистка:</span>
+							<span class="catalog-card__spec-value catalog-card__spec-value--highlight">до 98%</span>
 						</div>
-					</xsl:if>
-
-					<div class="catalog-card__spec-row">
-						<span class="catalog-card__spec-label">Тип сброса:</span>
-						<span class="catalog-card__spec-value">
-							<xsl:choose>
-								<xsl:when test="property_value[tag_name='nopr']/value = 1">Самотечный</xsl:when>
-								<xsl:otherwise>Принудительный</xsl:otherwise>
-							</xsl:choose>
-						</span>
-					</div>
-
-					<div class="catalog-card__spec-row">
-						<span class="catalog-card__spec-label">Очистка:</span>
-						<span class="catalog-card__spec-value catalog-card__spec-value--highlight">до 98%</span>
-					</div>
 				</div></xsl:if>
 			</div>
 
