@@ -242,34 +242,22 @@
 												<xsl:with-param name="modifier" select="'people'"/>
 												<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and shop_filter_seo_property/property_id = 6]"/>
 											</xsl:call-template>
+
+											<xsl:call-template name="seoSidebarGroup">
+												<xsl:with-param name="title" select="'Режим проживания'"/>
+												<xsl:with-param name="modifier" select="'usage'"/>
+												<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 10 or shop_filter_seo_property/property_id = 11)]"/>
+											</xsl:call-template>
+
+											<xsl:call-template name="seoSidebarGroup">
+												<xsl:with-param name="title" select="'Исполнение'"/>
+												<xsl:with-param name="modifier" select="'body'"/>
+												<xsl:with-param name="items" select="/shop/shop_filter_seos/shop_filter_seo[active = 1 and (shop_filter_seo_property/property_id = 39 or shop_filter_seo_property/property_id = 40)]"/>
+											</xsl:call-template>
 										</nav>
 									</xsl:if>
 
 <div class="catalog-filter__advanced-body">
-<div class="catalog-filter__group">
-<span class="catalog-filter__group-title">Режим проживания</span>
-<div data-exclusive-filter="">
-<input type="hidden" name="property_10" value="1" data-exclusive-filter-input="property_10"><xsl:if test="not(/shop/property_10 != '')"><xsl:attribute name="disabled">disabled</xsl:attribute></xsl:if></input>
-<input type="hidden" name="property_11" value="1" data-exclusive-filter-input="property_11"><xsl:if test="not(/shop/property_11 != '')"><xsl:attribute name="disabled">disabled</xsl:attribute></xsl:if></input>
-<select class="catalog-filter__select" aria-label="Режим проживания" data-exclusive-filter-select="">
-<option value="">Любой</option>
-<option value="property_10"><xsl:if test="/shop/property_10 != ''"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>Для дачи</option>
-<option value="property_11"><xsl:if test="/shop/property_11 != ''"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>Для дома</option>
-</select>
-</div>
-</div>
-<div class="catalog-filter__group">
-<span class="catalog-filter__group-title">Исполнение</span>
-<div data-exclusive-filter="">
-<input type="hidden" name="property_39" value="1" data-exclusive-filter-input="property_39"><xsl:if test="not(/shop/property_39 != '')"><xsl:attribute name="disabled">disabled</xsl:attribute></xsl:if></input>
-<input type="hidden" name="property_40" value="1" data-exclusive-filter-input="property_40"><xsl:if test="not(/shop/property_40 != '')"><xsl:attribute name="disabled">disabled</xsl:attribute></xsl:if></input>
-<select class="catalog-filter__select" aria-label="Исполнение" data-exclusive-filter-select="">
-<option value="">Любое</option>
-<option value="property_39"><xsl:if test="/shop/property_39 != ''"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>Long</option>
-<option value="property_40"><xsl:if test="/shop/property_40 != ''"><xsl:attribute name="selected">selected</xsl:attribute></xsl:if>Миди</option>
-</select>
-</div>
-</div>
   <div class="catalog-filter__group">
     <span class="catalog-filter__group-title">Цена, ₽</span>
     <div class="catalog-filter__price-grid">

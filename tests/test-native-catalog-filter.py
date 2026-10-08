@@ -19,10 +19,14 @@ for shop, url, expected in [(1, '/septiki/', True), (6, '/obsluzhivanie-po-gorod
         assert len(fields) == 1 and fields[0].get('value') == value, (name, value)
         assert fields[0].get('type') == 'number' and fields[0].get('aria-label')
     selects = panel.xpath('.//select[@data-exclusive-filter-select]')
-    assert len(selects) == 1
-    assert selects[0].xpath('./option/@value') == ['', 'property_3', 'property_2']
-    assert selects[0].xpath('./option[@selected]/@value') == ['property_2']
+    assert len(selects) == 3
+    assert selects[2].xpath('./option/@value') == ['', 'property_3', 'property_2']
+    assert selects[2].xpath('./option[@selected]/@value') == ['property_2']
     assert not panel.xpath('.//*[contains(@class, "catalog-seo-filter__group--drain")]')
+    assert selects[0].xpath('./option/@value') == ['', 'property_10', 'property_11']
+    assert selects[1].xpath('./option/@value') == ['', 'property_39', 'property_40']
+    assert not panel.xpath('.//*[contains(@class, "catalog-seo-filter__group--usage") or contains(@class, "catalog-seo-filter__group--body")]')
+
     assert panel.xpath('.//input[@name="property_2" and not(@disabled)]')
     assert panel.xpath('.//input[@name="property_3" and @disabled]')
     assert panel.xpath('ancestor::form[1]')[0].get('method') == 'get'
