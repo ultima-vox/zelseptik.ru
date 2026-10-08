@@ -1,4 +1,4 @@
-name: Publish native HostCMS catalog sliders on dev
+name: Publish compact catalog number fields on dev
 on:
   push:
     branches: [chore/seo-dev-2026-10-06]
@@ -28,7 +28,7 @@ jobs:
       - name: Deploy reviewed native HostCMS catalog filter
         env:
           DEV_FTP_PASSWORD: ${{ secrets.DEV_FTP_PASSWORD }}
-        run: python3 scripts/deploy-dev-catalog-sliders.py
+        run: python3 scripts/deploy-dev-catalog-inputs.py
 
 # Existing HostCMS shop 1: numeric ranges and drain properties.
 # Guard uses exact CRLF bytes emitted by the CMS editor.
