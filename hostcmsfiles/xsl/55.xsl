@@ -879,7 +879,7 @@
   <xsl:variable name="from">property_<xsl:value-of select="@id"/>_from</xsl:variable>
   <xsl:variable name="to">property_<xsl:value-of select="@id"/>_to</xsl:variable>
   <xsl:variable name="unit"><xsl:choose><xsl:when test="@id = 4">л/сутки</xsl:when><xsl:otherwise>л</xsl:otherwise></xsl:choose></xsl:variable>
-  <div class="catalog-filter__group" data-catalog-range="" data-range-min="{filter_counts/min}" data-range-max="{filter_counts/max}">
+  <div class="catalog-filter__group" data-catalog-range="" data-range-min="{(min | filter_counts/min)[1]}" data-range-max="{(max | filter_counts/max)[1]}">
     <span class="catalog-filter__group-title"><xsl:value-of select="name"/>, <xsl:value-of select="$unit"/></span>
     <div class="catalog-filter__price-grid">
       <input class="catalog-filter__input" name="{$from}" type="number" min="0" step="any" placeholder="от" value="{/shop/*[name()=$from]}" aria-label="{name} от, {$unit}"/>

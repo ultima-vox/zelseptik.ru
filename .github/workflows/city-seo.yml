@@ -34,3 +34,5 @@ jobs:
 # Guard uses exact CRLF bytes emitted by the CMS editor.
 # Single drain dropdown and scrollable desktop sidebar.
 # Usage and body dropdowns reuse existing HostCMS properties.
+
+# Native root bounds include all shop groups.

@@ -1308,8 +1308,8 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 
 /* Compact catalog controls, with native dual range handles. */
 .catalog__sidebar .catalog-filter { padding: 16px; gap: 14px; }
-.catalog__sidebar .catalog-filter__advanced-body { gap: 14px; padding-top: 0; }
-.catalog__sidebar .catalog-filter__group { gap: 6px; margin: 0; }
+.catalog__sidebar .catalog-filter__advanced-body { gap: 12px; padding-top: 0; }
+.catalog__sidebar .catalog-filter__group { gap: 4px; margin: 0; }
 .catalog__sidebar .catalog-seo-filter { margin: 0; }
 .catalog__sidebar .catalog-filter__group-title { line-height: 1.3; }
 .catalog__sidebar .catalog-filter__input { min-height: 44px; padding: 9px 12px; }

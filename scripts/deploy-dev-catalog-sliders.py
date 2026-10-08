@@ -64,12 +64,7 @@ def encrypted_backup(before):
 
 
 
-FILES = {
-    'hostcmsfiles/xsl/55.xsl': '87e63ec44f84138eb708cc61f976264ea101c8b542aca29aa83953b1b444b703',
-    'templates/template1/script.js': 'e3d0f797502c6d666a46134f160841e9523b6cec3d7e5cc6359d29271fad71ef',
-    'assets/css/information-pages.css': '948647f686bca5e3a4432713a15bbf89e6430e7bd3eb8f7e30811f05bf0d9744',
-    'hostcmsfiles/lib/lib_6/lib_6.php': '16c18e65f77d38858b75870e2a3062894e095d12baa441718cde4284bdfa9ea0',
-}
+FILES = {'hostcmsfiles/xsl/55.xsl': '1e063e26d9fd6f68dbcb27ef1ed600a18c7ec1806a0cf398c821bc38ee0bb63e', 'templates/template1/script.js': '55b385b00bcbcd9bc04457ee27cb109725108068eb334a115f4a986cde4750d9', 'assets/css/information-pages.css': '762e25bfa2038b0e0029be16f6349f7feca87ade3d81a542c2a58f350e11be32', 'hostcmsfiles/lib/lib_6/lib_6.php': '002ee0942d0eb262ca9ea6b0393b7e0a8dd863895f81940a273f47ff042e923e'}
 
 def main():
     targets = {path: Path(path).read_bytes() for path in FILES}
