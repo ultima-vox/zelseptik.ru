@@ -227,7 +227,7 @@
 								<xsl:text> catalog--single</xsl:text>
 							</xsl:if>
 						</xsl:attribute>
-						<xsl:if test="contains(/shop/url, '/septiki/') and count(/shop/shop_filter_seos/shop_filter_seo[active = 1]) &gt; 0">
+						<xsl:if test="@id = 1 and contains(/shop/url, '/septiki/')">
 							<aside class="catalog__sidebar" aria-label="Фильтры каталога">
 								<div class="catalog-filter">
 									<div class="catalog-filter__header">
@@ -262,6 +262,33 @@
 											</xsl:call-template>
 										</nav>
 									</xsl:if>
+
+<div class="catalog-filter__advanced-body">
+  <div class="catalog-filter__group">
+    <span class="catalog-filter__group-title">Цена, ₽</span>
+    <div class="catalog-filter__price-grid">
+      <input class="catalog-filter__input" name="price_from" type="number" min="0" step="1" placeholder="от" aria-label="Цена от, рублей">
+        <xsl:if test="/shop/price_from &gt; 0"><xsl:attribute name="value"><xsl:value-of select="/shop/price_from"/></xsl:attribute></xsl:if>
+      </input>
+      <input class="catalog-filter__input" name="price_to" type="number" min="0" step="1" placeholder="до" aria-label="Цена до, рублей">
+        <xsl:if test="/shop/price_to &gt; 0"><xsl:attribute name="value"><xsl:value-of select="/shop/price_to"/></xsl:attribute></xsl:if>
+      </input>
+    </div>
+  </div>
+  <xsl:apply-templates select="shop_item_properties//property[@id = 5 or @id = 4]" mode="catalogRangeFilter">
+    <xsl:sort select="@id" data-type="number" order="descending"/>
+  </xsl:apply-templates>
+  <xsl:if test="count(shop_item_properties//property[@id = 2 or @id = 3])">
+    <div class="catalog-filter__group">
+      <span class="catalog-filter__group-title">Тип сброса</span>
+      <xsl:call-template name="drainTypeOptions">
+        <xsl:with-param name="layoutClass" select="'catalog-filter__options'"/>
+        <xsl:with-param name="showAny" select="1"/>
+      </xsl:call-template>
+    </div>
+  </xsl:if>
+  <button class="catalog-filter__submit" type="submit">Применить фильтры</button>
+</div>
 
 									<!-- Точная настройка временно отключена. Заменить false() на true() для возврата. -->
 									<xsl:if test="false()">
@@ -817,6 +844,21 @@
 			<span><xsl:value-of select="name"/></span>
 		</label>
 	</xsl:template>
+
+
+<!-- Native HostCMS numeric property ranges: existing properties 4 and 5. -->
+<xsl:template match="property" mode="catalogRangeFilter">
+  <xsl:variable name="from">property_<xsl:value-of select="@id"/>_from</xsl:variable>
+  <xsl:variable name="to">property_<xsl:value-of select="@id"/>_to</xsl:variable>
+  <xsl:variable name="unit"><xsl:choose><xsl:when test="@id = 4">л/сутки</xsl:when><xsl:otherwise>л</xsl:otherwise></xsl:choose></xsl:variable>
+  <div class="catalog-filter__group">
+    <span class="catalog-filter__group-title"><xsl:value-of select="name"/>, <xsl:value-of select="$unit"/></span>
+    <div class="catalog-filter__price-grid">
+      <input class="catalog-filter__input" name="{$from}" type="number" min="0" step="any" placeholder="от" value="{/shop/*[name()=$from]}" aria-label="{name} от, {$unit}"/>
+      <input class="catalog-filter__input" name="{$to}" type="number" min="0" step="any" placeholder="до" value="{/shop/*[name()=$to]}" aria-label="{name} до, {$unit}"/>
+    </div>
+  </div>
+</xsl:template>
 
 	<xsl:template match="property" mode="catalogFilter">
 		<xsl:variable name="nodename">property_<xsl:value-of select="@id"/></xsl:variable>

@@ -1,4 +1,4 @@
-name: Publish reviewed card layout and form routing on dev
+name: Publish native HostCMS catalog filter on dev
 on:
   push:
     branches: [chore/seo-dev-2026-10-06]
@@ -22,9 +22,9 @@ jobs:
           php tests/test-lead-routing.php
           node --check templates/template1/script.js
           node tests/test-lead-routing.cjs
-      - name: Deploy reviewed card layout and form routing
+      - name: Deploy reviewed native HostCMS catalog filter
         env:
           DEV_FTP_PASSWORD: ${{ secrets.DEV_FTP_PASSWORD }}
-        run: python3 scripts/deploy-dev-card-forms.py
+        run: python3 scripts/deploy-dev-native-catalog-filter.py
 
-# Reviewed equal card heights, unbroken measurements and explicit lead routing.
+# Existing HostCMS shop 1: numeric ranges and drain properties.
