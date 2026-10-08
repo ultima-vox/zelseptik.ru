@@ -64,7 +64,7 @@ def encrypted_backup(before):
 
 
 
-EXPECTED = {'hostcmsfiles/xsl/56.xsl': 'c44c71abf7f4df93b116fab1d10bf3866b0fcb94f6b87028aa54a7d01092ebe6'}
+EXPECTED = {'hostcmsfiles/xsl/56.xsl': '19b6eebebe4cb9f2784be8d8cbe974df57612f129c8b48f2c881dddae174e2d8'}
 
 def main():
     target = {p: Path(p).read_bytes() for p in EXPECTED}

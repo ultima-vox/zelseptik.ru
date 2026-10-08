@@ -23,7 +23,7 @@ for broken in [rows[:-1], rows + [rows[0]], [dict(r, shop_id=1) for r in rows], 
 spec = importlib.util.spec_from_file_location('servicecheck', root / 'tests/test-service-order-render.py')
 t = importlib.util.module_from_spec(spec); spec.loader.exec_module(t)
 transform = etree.XSLT(etree.fromstring(t.clean((root / 'hostcmsfiles/xsl/56.xsl').read_bytes()), t.parser))
-for shop, item, value, shown in [(6,240,'<h2>City content</h2>',True),(6,233,'<h2>City content</h2>',True),(6,243,'<h2>City content</h2>',False),(1,240,'<h2>City content</h2>',False),(6,240,'',False)]:
+for shop, item, value, shown in [(6,240,'<h2>City content</h2>',True),(6,233,'<h2>City content</h2>',True),(6,243,'<h2>City content</h2>',True),(6,250,'<h2>City content</h2>',True),(6,241,'<h2>City content</h2>',False),(1,240,'<h2>City content</h2>',False),(6,240,'',False)]:
     doc = etree.fromstring(f'<shop id="{shop}"><group>0</group><shop_item id="{item}"><name>Service</name><price>6000</price><text/></shop_item></shop>')
     doc.find('shop_item/text').text = value
     output = html.fromstring(str(transform(doc)))
