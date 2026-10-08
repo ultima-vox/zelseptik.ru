@@ -20,3 +20,5 @@ jobs:
         env:
           DEV_FTP_PASSWORD: ${{ secrets.DEV_FTP_PASSWORD }}
         run: python3 scripts/deploy-dev-city-seo.py
+
+# Extend the reviewed native text renderer to all 13 main city landings.

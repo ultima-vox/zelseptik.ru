@@ -369,7 +369,7 @@
 	</section>
 </xsl:if>
 <!-- Reviewed city landing text: native Shop 6 field, available without JS. -->
-<xsl:if test="/shop/@id = 6 and (@id = 233 or @id = 236 or @id = 238 or @id = 240 or @id = 242) and normalize-space(text) != ''">
+<xsl:if test="/shop/@id = 6 and (@id = 233 or @id = 236 or @id = 238 or @id = 240 or @id = 242 or @id = 243 or @id = 244 or @id = 245 or @id = 246 or @id = 247 or @id = 248 or @id = 249 or @id = 250) and normalize-space(text) != ''">
   <section class="section" data-seo-landing="city-service">
     <div class="container">
       <div class="legal-page__content" hostcms:id="{@id}" hostcms:field="text" hostcms:entity="shop_item" hostcms:type="wysiwyg">
