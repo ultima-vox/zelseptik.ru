@@ -1062,17 +1062,9 @@ function initAjaxForms() {
 
   waitForRecaptcha(function () {
     document
-      .querySelectorAll('form[data-lead-form], form.js-modal-form, form.js-cta-form')
+      .querySelectorAll('form[data-lead-form], form.js-modal-form, form.js-cta-form, form[data-ajax-form]')
       .forEach(function (form) {
-      // GET forms and catalog controls must keep their native submit behavior.
-      const isCatalogControl = Array.from(form.elements).some(function (field) {
-        return ['filter', 'sorting', 'price_from', 'price_to', 'producer_id', 'on_page'].includes(field.name)
-          || field.name.indexOf('property_') === 0;
-      });
-      if (form.method.toLowerCase() !== 'post' || isCatalogControl
-        || !form.querySelector('input[name="phone"]')) return;
       form.addEventListener('submit', function (event) {
-        if (!form.reportValidity()) return;
         event.preventDefault();
         setLeadAction(form);
 

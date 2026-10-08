@@ -859,6 +859,16 @@ html[data-information-view="error"] main > .area-404 img {
   .hero__actions {
     flex-wrap: wrap;
   }
+  #catalog .catalog-card__spec-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--space-xs);
+  }
+  #catalog .catalog-card__spec-label,
+  #catalog .catalog-card__spec-value {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
 }
 
 /* Blueprint paper, with a photographic approximation of light drawing strokes. */
@@ -1153,14 +1163,13 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 }
 
 /* Service destination cards: equal tracks and a shared footer baseline. */
-.catalog__products,
-.regional-catalog-grid {
+.catalog__products:has(.js-catalog-order[data-order-kind="service"]),
+.regional-catalog-grid:has(.js-catalog-order[data-order-kind="service"]) {
   grid-auto-rows: 1fr;
   align-items: stretch;
 }
-.catalog-card .catalog-card__body {
+.catalog-card:has(.js-catalog-order[data-order-kind="service"]) .catalog-card__body {
   flex: 1;
-  padding-inline: 0;
 }
 .catalog-card:has(.js-catalog-order[data-order-kind="service"]) .catalog-card__footer {
   margin-top: var(--space-lg);
@@ -1169,21 +1178,9 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
   padding-bottom: clamp(32px, 5vw, 64px);
 }
 
-.catalog-card {
+.catalog-card:has(.js-catalog-order[data-order-kind="service"]) {
   height: 100%;
   align-self: stretch;
-}
-
-/* Use the full card width and keep the measurement and unit together. */
-.catalog-card .catalog-card__spec-row {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: var(--space-xs);
-  align-items: baseline;
-}
-.catalog-card .catalog-card__spec-value {
-  white-space: nowrap;
-  overflow-wrap: normal;
 }
 
 /* Keep the phone icon and number together; override stacked runtime contacts. */
