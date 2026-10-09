@@ -1339,19 +1339,3 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 @media (max-width: 767px) {
   .catalog__sidebar .catalog-filter__input[type="number"] { min-height: 44px; }
 }
-
-/* Native HostCMS product variants: links beside specifications and estimate CTA. */
-.product-variants { margin-block: 20px; padding-top: 18px; border-top: 1px solid var(--color-border-soft); }
-.product-variants__title { margin: 0 0 12px; color: var(--color-text-main); font-family: var(--font-family-heading); font-size: 1rem; line-height: 1.4; }
-.product-variants__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-.product-variant { display: flex; flex-direction: column; justify-content: center; gap: 4px; min-width: 0; padding: 12px; border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); background: var(--color-bg-base); color: var(--color-text-main); text-decoration: none; transition: border-color .15s ease, background-color .15s ease; }
-.product-variant:hover { border-color: var(--color-primary); background: var(--color-primary-soft); color: var(--color-text-main); text-decoration: none; }
-.product-variant:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; }
-.product-variant--current { border-color: var(--color-primary); background: var(--color-primary-soft); }
-.product-variant__name { font-size: .9rem; font-weight: 600; line-height: 1.4; overflow-wrap: anywhere; }
-.product-variant__hint { color: var(--color-text-muted); font-size: .75rem; line-height: 1.4; }
-.product-variant--current .product-variant__hint { color: var(--color-primary); font-weight: 600; }
-.product-description { max-width: 960px; margin-inline: auto; }
-.product-description .info-panel__text { margin-bottom: 0; }
-@media (max-width: 359px) { .product-variants__list { grid-template-columns: minmax(0, 1fr); } }
-@media (prefers-reduced-motion: reduce) { .product-variant { transition: none; } }

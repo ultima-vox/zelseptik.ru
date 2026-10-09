@@ -129,8 +129,6 @@
 
 <xsl:template match="shop_item" >
 <xsl:variable name="shop_id" select="/shop/@id"/>
-<xsl:variable name="current_id" select="@id"/>
-<xsl:variable name="variants" select="associated/shop_item[@id != $current_id and not(@id = preceding-sibling::shop_item/@id)] | modifications/shop_item[@id != $current_id and not(@id = ../../associated/shop_item/@id) and not(@id = preceding-sibling::shop_item/@id)]"/>
 <div class="product-page" itemscope="" itemtype="https://schema.org/Product">
 <section class="hero-section grid-blueprint">
 	<div class="container">
@@ -317,21 +315,7 @@
 								</xsl:if>
 							</div>
 						</xsl:if>
-						<xsl:if test="$shop_id = 1 and count($variants) &gt; 0">
-                            <nav class="product-variants" aria-label="Исполнения станции">
-                                <h2 class="product-variants__title">Выберите исполнение</h2>
-                                <div class="product-variants__list">
-                                    <a class="product-variant product-variant--current" href="{url}" aria-current="page">
-                                        <span class="product-variant__name"><xsl:value-of select="name"/></span>
-                                        <span class="product-variant__hint">Выбрано</span>
-                                    </a>
-                                    <xsl:apply-templates select="$variants" mode="product-modification-link">
-                                        <xsl:sort select="name"/>
-                                    </xsl:apply-templates>
-                                </div>
-                            </nav>
-                        </xsl:if>
-                        <div class="catalog-card__actions">
+						<div class="catalog-card__actions">
 							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
 								Получить смету
 							</button>
@@ -344,7 +328,7 @@
 	</div>
 </section>
 
-<xsl:if test="description != ''">
+<xsl:if test="description != '' or count(associated/shop_item) &gt; 0 or count(modifications/shop_item) &gt; 0">
 	<section class="section section--white" id="description">
 		<div class="container">
 			<header class="section-header">
@@ -352,7 +336,7 @@
 				<h2 class="section-header__title"><xsl:choose><xsl:when test="/shop/@id = 6">Об услуге</xsl:when><xsl:otherwise>О модели <xsl:value-of select="name"/></xsl:otherwise></xsl:choose></h2>
 			</header>
 
-			<div class="product-description">
+			<div class="info-split">
 				<xsl:if test="description != ''">
 					<article class="info-panel">
 						<span class="badge">Основная информация</span>
@@ -363,6 +347,23 @@
 					</article>
 				</xsl:if>
 
+				<xsl:if test="count(associated/shop_item) &gt; 0 or count(modifications/shop_item) &gt; 0">
+					<article class="info-panel info-panel--soft">
+						<span class="badge">Дополнительно</span>
+						<h2 class="info-panel__title">Модификации <xsl:value-of select="name"/></h2>
+						<p class="info-panel__text">Выберите исполнение станции по типу сброса и глубине подключения.</p>
+
+						<div class="nav-pills">
+							<div class="nav-pills__list">
+								<xsl:apply-templates select="associated/shop_item" mode="product-modification-link"/>
+								<xsl:apply-templates select="modifications/shop_item" mode="product-modification-link"/>
+								<a class="nav-pills__item nav-pills__item--active" href="{url}" aria-current="page">
+									<xsl:value-of select="name"/>
+								</a>
+							</div>
+						</div>
+					</article>
+				</xsl:if>
 			</div>
 		</div>
 	</section>
@@ -429,10 +430,7 @@
 </xsl:template>
 
 <xsl:template match="associated/shop_item | modifications/shop_item" mode="product-modification-link">
-<a class="product-variant" href="{url}">
-    <span class="product-variant__name"><xsl:value-of select="name"/></span>
-    <span class="product-variant__hint">Посмотреть исполнение <span aria-hidden="true">↗</span></span>
-</a>
+<a class="nav-pills__item" href="{url}"><xsl:value-of select="name"/></a>
 </xsl:template>
 
 <xsl:template match="shop_item" mode="product-septik-v2">
