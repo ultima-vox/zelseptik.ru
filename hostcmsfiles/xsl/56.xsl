@@ -321,12 +321,9 @@
                             <nav class="product-variants" aria-label="Исполнения станции">
                                 <h2 class="product-variants__title">Выберите исполнение</h2>
                                 <div class="product-variants__list">
-                                    <a class="product-variant product-variant--current" href="{url}" aria-current="page">
-                                        <span class="product-variant__name"><xsl:value-of select="name"/></span>
-                                        <span class="product-variant__hint">Выбрано</span>
-                                    </a>
-                                    <xsl:apply-templates select="$variants" mode="product-modification-link">
+                                    <xsl:apply-templates select=". | $variants" mode="product-modification-link">
                                         <xsl:sort select="name"/>
+                                        <xsl:with-param name="current_id" select="$current_id"/>
                                     </xsl:apply-templates>
                                 </div>
                             </nav>
@@ -428,10 +425,13 @@
 </div>
 </xsl:template>
 
-<xsl:template match="associated/shop_item | modifications/shop_item" mode="product-modification-link">
-<a class="product-variant" href="{url}">
+<xsl:template match="shop_item" mode="product-modification-link">
+<xsl:param name="current_id"/>
+<a href="{url}">
+    <xsl:attribute name="class">product-variant<xsl:if test="@id = $current_id"> product-variant--current</xsl:if></xsl:attribute>
+    <xsl:if test="@id = $current_id"><xsl:attribute name="aria-current">page</xsl:attribute></xsl:if>
     <span class="product-variant__name"><xsl:value-of select="name"/></span>
-    <span class="product-variant__hint">Посмотреть исполнение <span aria-hidden="true">↗</span></span>
+    <span class="product-variant__hint"><xsl:choose><xsl:when test="@id = $current_id">Выбрано</xsl:when><xsl:otherwise>Посмотреть исполнение <span aria-hidden="true">↗</span></xsl:otherwise></xsl:choose></span>
 </a>
 </xsl:template>
 
