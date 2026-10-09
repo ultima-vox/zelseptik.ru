@@ -1807,3 +1807,106 @@ document.addEventListener('click', function (event) {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCookieNotice);
   else initCookieNotice();
 })();
+
+
+// Existing HostCMS image links enhanced with a native accessible modal gallery.
+(function () {
+  'use strict';
+  function initImageGallery() {
+    if (!window.HTMLDialogElement || !HTMLDialogElement.prototype.showModal) return;
+    let dialog, image, status, previous, next, counter, opener;
+    let items = [], index = 0, backdropPress = false;
+    function button(label, text, action) {
+      const element = document.createElement('button');
+      element.type = 'button';
+      element.className = 'image-gallery__button';
+      element.setAttribute('aria-label', label);
+      element.textContent = text;
+      element.addEventListener('click', action);
+      return element;
+    }
+    function createDialog() {
+      dialog = document.createElement('dialog');
+      dialog.className = 'image-gallery';
+      dialog.setAttribute('aria-label', 'Просмотр фотографий');
+      const toolbar = document.createElement('div');
+      toolbar.className = 'image-gallery__toolbar';
+      counter = document.createElement('span');
+      counter.className = 'image-gallery__counter';
+      counter.setAttribute('aria-live', 'polite');
+      const close = button('Закрыть галерею', '×', () => dialog.close());
+      close.autofocus = true;
+      toolbar.append(counter, close);
+      const stage = document.createElement('div');
+      stage.className = 'image-gallery__stage';
+      image = document.createElement('img');
+      image.className = 'image-gallery__image';
+      status = document.createElement('p');
+      status.className = 'image-gallery__status';
+      status.setAttribute('role', 'status');
+      image.addEventListener('load', () => { image.hidden = false; status.hidden = true; });
+      image.addEventListener('error', () => { image.hidden = true; status.hidden = false; status.textContent = 'Не удалось загрузить фотографию.'; });
+      stage.append(image, status);
+      const controls = document.createElement('div');
+      controls.className = 'image-gallery__controls';
+      previous = button('Предыдущая фотография', '←', () => show(index - 1));
+      next = button('Следующая фотография', '→', () => show(index + 1));
+      controls.append(previous, next);
+      dialog.append(toolbar, stage, controls);
+      dialog.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          show(index + (event.key === 'ArrowLeft' ? -1 : 1));
+        }
+      });
+      function outside(event) {
+        const rect = dialog.getBoundingClientRect();
+        return event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom);
+      }
+      dialog.addEventListener('pointerdown', event => { backdropPress = outside(event); });
+      dialog.addEventListener('click', event => { if (backdropPress && outside(event)) dialog.close(); backdropPress = false; });
+      dialog.addEventListener('close', () => {
+        document.documentElement.classList.remove('has-image-gallery');
+        image.removeAttribute('src');
+        if (opener && opener.isConnected) opener.focus({preventScroll: true});
+      });
+      document.body.append(dialog);
+    }
+    function show(position) {
+      if (position < 0 || position >= items.length) return;
+      index = position;
+      image.hidden = true;
+      status.hidden = false;
+      status.textContent = 'Загрузка фотографии…';
+      image.alt = items[index].alt;
+      image.src = items[index].src;
+      counter.textContent = 'Фото ' + (index + 1) + ' из ' + items.length;
+      previous.disabled = index === 0;
+      next.disabled = index === items.length - 1;
+      previous.hidden = next.hidden = items.length < 2;
+    }
+    document.addEventListener('click', event => {
+      const link = event.target.closest('a[data-fancybox]');
+      if (!link || !link.querySelector('img') || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || link.hasAttribute('download') || link.target === '_blank') return;
+      const source = new URL(link.href, location.href);
+      if (!['http:', 'https:'].includes(source.protocol)) return;
+      const group = link.getAttribute('data-fancybox');
+      const links = group ? Array.from(document.querySelectorAll('a[data-fancybox]')).filter(element => element.getAttribute('data-fancybox') === group && element.querySelector('img')) : [link];
+      items = [];
+      links.forEach(element => {
+        const src = element.href;
+        if (!items.some(item => item.src === src)) items.push({src, alt: element.querySelector('img').alt || 'Фотография'});
+      });
+      if (!items.length) return;
+      if (!dialog) createDialog();
+      opener = link;
+      opener.focus({preventScroll: true});
+      show(items.findIndex(item => item.src === link.href));
+      dialog.showModal();
+      document.documentElement.classList.add('has-image-gallery');
+      event.preventDefault();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initImageGallery);
+  else initImageGallery();
+})();

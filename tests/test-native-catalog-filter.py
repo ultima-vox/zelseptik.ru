@@ -9,6 +9,8 @@ spec.loader.exec_module(m)
 for shop, url, expected in [(1, '/septiki/', True), (6, '/obsluzhivanie-po-gorodam/', False)]:
     d = etree.fromstring(f'''<shop id="{shop}"><group>0</group><url>{url}</url><name>Catalog</name><filter>1</filter><min_price>85000</min_price><max_price>900000</max_price><price_from>90000</price_from><price_to>200000</price_to><property_4_from>750</property_4_from><property_4_to>1500</property_4_to><property_5_from>160</property_5_from><property_5_to>300</property_5_to><property_2>1</property_2><shop_item_properties><property id="4"><name>Производительность</name><filter>6</filter><min>200</min><max>20000</max></property><property id="5"><name>Залповый сброс</name><filter>6</filter><min>50</min><max>5000</max></property><property id="2"><name>Принудительный</name></property><property id="3"><name>Самотечный</name></property></shop_item_properties></shop>''')
     h = html.fromstring(str(m.t(d)))
+    layout = h.xpath('//*[contains(concat(" ",normalize-space(@class)," ")," catalog ")]')[0]
+    assert ('catalog--single' not in layout.get('class')) == expected
     panels = h.xpath('//*[@class="catalog-filter"]')
     assert bool(panels) == expected
     if not expected:

@@ -1356,3 +1356,18 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 .product-description .info-panel__text { margin-bottom: 0; }
 @media (max-width: 359px) { .product-variants__list { grid-template-columns: minmax(0, 1fr); } }
 @media (prefers-reduced-motion: reduce) { .product-variant { transition: none; } }
+
+/* Native modal image viewer for existing HostCMS gallery links. */
+html.has-image-gallery { overflow: hidden; }
+.image-gallery { width: min(1100px, calc(100% - 24px)); max-width: calc(100% - 24px); max-height: calc(100dvh - 24px); margin: auto; padding: 16px; border: 1px solid var(--color-border-soft); border-radius: var(--radius-xl); background: var(--color-bg-base); color: var(--color-text-main); box-sizing: border-box; }
+.image-gallery::backdrop { background: rgb(10 28 23 / .82); }
+.image-gallery__toolbar, .image-gallery__controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.image-gallery__counter { font-size: .875rem; }
+.image-gallery__button { display: inline-flex; justify-content: center; align-items: center; min-width: 44px; min-height: 44px; padding: 8px; border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); background: var(--color-primary-soft); color: var(--color-text-main); font-size: 1.5rem; line-height: 1; cursor: pointer; }
+.image-gallery__button:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.image-gallery__button:disabled { opacity: .4; cursor: default; }
+.image-gallery__stage { display: grid; place-items: center; min-height: 180px; margin-block: 12px; }
+.image-gallery__image { display: block; max-width: 100%; max-height: calc(100dvh - 190px); width: auto; height: auto; object-fit: contain; }
+.image-gallery__status { color: var(--color-text-muted); }
+.image-gallery [hidden] { display: none; }
+@media (max-width: 480px) { .image-gallery { padding: 12px; } }
