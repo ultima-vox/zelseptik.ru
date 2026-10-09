@@ -1341,7 +1341,8 @@ html[data-regional-catalog] .area-questions .faq-item__answer p { margin-bottom:
 }
 
 /* Native HostCMS product variants: links beside specifications and estimate CTA. */
-.product-variants { margin-block: 20px; padding-top: 18px; border-top: 1px solid var(--color-border-soft); }
+.product-page .catalog-card__specs:has(+ .product-variants) { margin-bottom: 0; padding-bottom: 12px; }
+.product-variants { margin: 0 0 8px; padding: 0; border: 0; }
 .product-variants__title { margin: 0 0 12px; color: var(--color-text-main); font-family: var(--font-family-heading); font-size: 1rem; line-height: 1.4; }
 .product-variants__list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .product-variant { display: flex; flex-direction: column; justify-content: center; gap: 4px; min-width: 0; padding: 12px; border: 1px solid var(--color-border-soft); border-radius: var(--radius-md); background: var(--color-bg-base); color: var(--color-text-main); text-decoration: none; transition: border-color .15s ease, background-color .15s ease; }
