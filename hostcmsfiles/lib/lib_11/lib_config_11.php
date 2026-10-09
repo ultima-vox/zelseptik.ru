@@ -28,3 +28,17 @@ $Shop_Controller_Show
 // /Excel
 
 Core_Page::instance()->object = $Shop_Controller_Show;
+
+// Keep the price-list structure SEO after the shop controller renders.
+$oPriceStructure = Core_Page::instance()->structure;
+if ((int) $oPriceStructure->id === 36)
+{
+	if (trim((string) $oPriceStructure->seo_title) !== '')
+	{
+		Core_Page::instance()->title($oPriceStructure->seo_title);
+	}
+	if (trim((string) $oPriceStructure->seo_description) !== '')
+	{
+		Core_Page::instance()->description($oPriceStructure->seo_description);
+	}
+}

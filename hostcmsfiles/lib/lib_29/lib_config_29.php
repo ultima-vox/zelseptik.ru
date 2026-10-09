@@ -6,7 +6,9 @@ Core_Session::close();
 ob_get_clean();
 
 // Создавать индекс
-$createIndex = Core_Array::get(Core_Page::instance()->libParams, 'createIndex', FALSE);
+// Installed Core_Sitemap::_close requires a file-backed output (filePath).
+// Use the documented sitemap index mode instead of the failing stdout mode.
+$createIndex = TRUE;
 
 // Количество страниц в каждый файл
 $perFile = 50000;
@@ -40,6 +42,9 @@ if (is_null($oSite_Alias))
 	}
 }*/
 
+// Keep partial XML out of the response if generation fails.
+ob_start();
+
 try
 {
 	$oCore_Sitemap = new Core_Sitemap($oSite);
@@ -58,7 +63,7 @@ try
 			// Показывать элементы информационных систем в карте сайта
 			->showInformationsystemItems(Core_Page::instance()->libParams['showInformationsystemItems'])
 			// Показывать метки информационных систем
-			->showInformationsystemTags(TRUE);
+			->showInformationsystemTags(FALSE);
 	}
 
 	if (Core::moduleIsActive('shop'))
@@ -71,7 +76,7 @@ try
 			// Показывать модификации в карте сайта
 			->showModifications(Core_Array::get(Core_Page::instance()->libParams, 'showModifications', 1))
 			// Показывать метки магазина
-			->showShopTags(TRUE);
+			->showShopTags(FALSE);
 	}
 
 	$oCore_Sitemap
@@ -79,9 +84,16 @@ try
 		//->limit(10000)
 		->fillNodes()
 		->execute();
+
+	echo ob_get_clean();
 }
 catch (Exception $e) {
-	echo "\nSitemap error. See Log.";
+	ob_end_clean();
+	http_response_code(503);
+	header('Content-Type: text/plain; charset=UTF-8');
+	header('Retry-After: 3600');
+	error_log('Zelseptik: sitemap generation failed; see HostCMS log.');
+	echo 'Sitemap temporarily unavailable.';
 }
 
 exit();

@@ -566,6 +566,20 @@ function initModal() {
     setTitle(modal, title);
     setInput(modal, 'model', options.model || '');
     setInput(modal, 'comment', options.comment || '');
+    const serviceOrder = options.orderKind === 'service';
+    const requestSelect = modal.querySelector('.js-modal-select-bonus');
+    if (requestSelect) {
+      Array.from(requestSelect.options).forEach(function (option) {
+        const serviceOption = option.value === 'Обслуживание или ремонт';
+        option.hidden = options.orderKind ? serviceOption !== serviceOrder : false;
+        option.disabled = option.hidden;
+      });
+      requestSelect.value = serviceOrder ? 'Обслуживание или ремонт' : 'Оборудование и монтаж';
+    }
+    const subtitle = modal.querySelector('.modal__subtitle');
+    if (subtitle) subtitle.textContent = serviceOrder
+      ? 'Оставьте контакты. Инженер уточнит модель септика и необходимые работы по обслуживанию.'
+      : 'Оставьте контакты. Специалист уточнит задачу и подготовит расчёт.';
 
     if (options.contextHtml !== undefined) {
       setContext(modal, options.contextHtml);
@@ -634,19 +648,24 @@ function initModal() {
       event.preventDefault();
 
 const catalogData = getCatalogCardData(catalogTrigger);
-const title = catalogData.model
-  ? 'Заказать монтаж: ' + catalogData.model
-  : 'Заказать монтаж';
-
+const orderKind = catalogTrigger.getAttribute('data-order-kind') || 'installation';
+const serviceOrder = orderKind === 'service';
+const action = serviceOrder ? 'Заказать обслуживание' : 'Заказать монтаж';
+const title = catalogData.model ? action + ': ' + catalogData.model : action;
+if (serviceOrder) {
+  catalogData.capacity = '';
+  catalogData.specs = [];
+  catalogData.orderKind = orderKind;
+}
 openModal(leadModal, title, {
+  orderKind: orderKind,
   model: catalogData.model,
-  comment:
-    'Заявка из каталога. ' +
-    'Модель: ' + catalogData.model + '. ' +
-    'Проживающих: ' + catalogData.capacity + '. ' +
-    'Цена от: ' + catalogData.price + '.',
+  comment: serviceOrder
+    ? 'Заявка на обслуживание. Услуга: ' + catalogData.model + '. Цена от: ' + catalogData.price + '.'
+    : 'Заявка на монтаж. Модель: ' + catalogData.model + '. Проживающих: ' + catalogData.capacity + '. Цена от: ' + catalogData.price + '.',
   contextHtml: buildCatalogContextHtml(catalogData)
 });
+return;
     }
 
     if (estimateTrigger) {
@@ -848,7 +867,7 @@ function buildCatalogContextHtml(data) {
   if (data.model) {
     rows.push(`
       <div class="modal__rec-row">
-        <span class="modal__rec-label">Модель:</span>
+        <span class="modal__rec-label">${data.orderKind === 'service' ? 'Услуга:' : 'Модель:'}</span>
         <span class="modal__rec-val">${data.model}</span>
       </div>
     `);
@@ -1043,9 +1062,17 @@ function initAjaxForms() {
 
   waitForRecaptcha(function () {
     document
-      .querySelectorAll('form[data-lead-form], form.js-modal-form, form.js-cta-form, form[data-ajax-form]')
+      .querySelectorAll('form[data-lead-form], form.js-modal-form, form.js-cta-form')
       .forEach(function (form) {
+      // GET forms and catalog controls must keep their native submit behavior.
+      const isCatalogControl = Array.from(form.elements).some(function (field) {
+        return ['filter', 'sorting', 'price_from', 'price_to', 'producer_id', 'on_page'].includes(field.name)
+          || field.name.indexOf('property_') === 0;
+      });
+      if (form.method.toLowerCase() !== 'post' || isCatalogControl
+        || !form.querySelector('input[name="phone"]')) return;
       form.addEventListener('submit', function (event) {
+        if (!form.reportValidity()) return;
         event.preventDefault();
         setLeadAction(form);
 
@@ -1147,10 +1174,85 @@ function initGiftsSelector() {
   setBonus(activeButton);
 }
 
+function initCatalogRangeSliders() {
+  document.querySelectorAll('[data-catalog-range]').forEach(function (group) {
+    const fields = Array.from(group.querySelectorAll('input[type="number"]'));
+    const track = group.querySelector('.catalog-range');
+    const handles = Array.from(group.querySelectorAll('[data-catalog-range-handle]'));
+    const selection = group.querySelector('.catalog-range__selection');
+    if (fields.length !== 2 || handles.length !== 2 || !track || !selection) return;
+    const numeric = value => value.trim() === '' ? NaN : Number(value);
+    const originalMin = numeric(group.dataset.rangeMin || '');
+    const originalMax = numeric(group.dataset.rangeMax || '');
+    if (!Number.isFinite(originalMin) || !Number.isFinite(originalMax) || originalMax <= originalMin) return;
+    // Preserve explicit GET values even when they exceed the current category bounds.
+    const lower = numeric(fields[0].value);
+    const upper = numeric(fields[1].value);
+    const min = Math.min(originalMin, Number.isFinite(lower) ? lower : originalMin);
+    const max = Math.max(originalMax, Number.isFinite(upper) ? upper : originalMax);
+    const clamp = value => Math.max(min, Math.min(max, value));
+    handles.forEach(function (handle, index) {
+      handle.min = String(min);
+      handle.max = String(max);
+      handle.step = fields[index].step || 'any';
+    });
+    function sync() {
+      const from = numeric(fields[0].value);
+      const to = numeric(fields[1].value);
+      handles[0].value = String(clamp(Number.isFinite(from) ? from : min));
+      handles[1].value = String(clamp(Number.isFinite(to) ? to : max));
+      const reversed = Number.isFinite(from) && Number.isFinite(to) && from > to;
+      fields[1].setCustomValidity(reversed ? 'Значение «до» должно быть не меньше значения «от».' : '');
+      const start = Number(handles[0].value);
+      const end = Number(handles[1].value);
+      selection.setAttribute('x1', String((Math.min(start, end) - min) / (max - min) * 100));
+      selection.setAttribute('x2', String((Math.max(start, end) - min) / (max - min) * 100));
+      handles[0].setAttribute('aria-valuetext', start.toLocaleString('ru-RU'));
+      handles[1].setAttribute('aria-valuetext', end.toLocaleString('ru-RU'));
+    }
+    handles.forEach(function (handle, index) {
+      handle.addEventListener('input', function () {
+        const other = Number(handles[1 - index].value);
+        const value = index === 0 ? Math.min(Number(handle.value), other) : Math.max(Number(handle.value), other);
+        fields[index].value = String(value);
+        fields[index].dispatchEvent(new Event('input', { bubbles: true }));
+      });
+    });
+    fields.forEach(field => field.addEventListener('input', sync));
+    // Clicking the track moves its nearest boundary; dragging stays native.
+    track.addEventListener('pointerdown', function (event) {
+      if (handles.includes(event.target)) return;
+      const rect = track.getBoundingClientRect();
+      const value = clamp(min + (event.clientX - rect.left) / rect.width * (max - min));
+      const index = Math.abs(value - Number(handles[0].value)) <= Math.abs(value - Number(handles[1].value)) ? 0 : 1;
+      handles[index].value = String(value);
+      handles[index].dispatchEvent(new Event('input', { bubbles: true }));
+      handles[index].focus();
+    });
+    sync();
+    track.hidden = false;
+  });
+}
+
 function initExclusiveFilters() {
   document.querySelectorAll('[data-exclusive-filter]').forEach(function (group) {
     const options = Array.from(group.querySelectorAll('[data-exclusive-filter-option]'));
     const filterInputs = Array.from(group.querySelectorAll('[data-exclusive-filter-input]'));
+
+    const select = group.querySelector('[data-exclusive-filter-select]');
+    if (select && filterInputs.length) {
+      const params = new URLSearchParams(window.location.search);
+      const active = filterInputs.find(function (input) { return params.has(input.name); });
+      if (active) select.value = active.dataset.exclusiveFilterInput;
+      function syncSelect() {
+        filterInputs.forEach(function (input) {
+          input.disabled = input.dataset.exclusiveFilterInput !== select.value;
+        });
+      }
+      select.addEventListener('change', syncSelect);
+      syncSelect();
+      return;
+    }
 
     if (!options.length || !filterInputs.length) return;
 
@@ -1334,6 +1436,7 @@ function initFaqAccordion() {
     initGiftsSelector();
     initExclusiveFilters();
     initRangeFilters();
+    initCatalogRangeSliders();
     initFaqAccordion();
   }
   
@@ -1703,4 +1806,107 @@ document.addEventListener('click', function (event) {
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initCookieNotice);
   else initCookieNotice();
+})();
+
+
+// Existing HostCMS image links enhanced with a native accessible modal gallery.
+(function () {
+  'use strict';
+  function initImageGallery() {
+    if (!window.HTMLDialogElement || !HTMLDialogElement.prototype.showModal) return;
+    let dialog, image, status, previous, next, counter, opener;
+    let items = [], index = 0, backdropPress = false;
+    function button(label, text, action) {
+      const element = document.createElement('button');
+      element.type = 'button';
+      element.className = 'image-gallery__button';
+      element.setAttribute('aria-label', label);
+      element.textContent = text;
+      element.addEventListener('click', action);
+      return element;
+    }
+    function createDialog() {
+      dialog = document.createElement('dialog');
+      dialog.className = 'image-gallery';
+      dialog.setAttribute('aria-label', 'Просмотр фотографий');
+      const toolbar = document.createElement('div');
+      toolbar.className = 'image-gallery__toolbar';
+      counter = document.createElement('span');
+      counter.className = 'image-gallery__counter';
+      counter.setAttribute('aria-live', 'polite');
+      const close = button('Закрыть галерею', '×', () => dialog.close());
+      close.autofocus = true;
+      toolbar.append(counter, close);
+      const stage = document.createElement('div');
+      stage.className = 'image-gallery__stage';
+      image = document.createElement('img');
+      image.className = 'image-gallery__image';
+      status = document.createElement('p');
+      status.className = 'image-gallery__status';
+      status.setAttribute('role', 'status');
+      image.addEventListener('load', () => { image.hidden = false; status.hidden = true; });
+      image.addEventListener('error', () => { image.hidden = true; status.hidden = false; status.textContent = 'Не удалось загрузить фотографию.'; });
+      stage.append(image, status);
+      const controls = document.createElement('div');
+      controls.className = 'image-gallery__controls';
+      previous = button('Предыдущая фотография', '←', () => show(index - 1));
+      next = button('Следующая фотография', '→', () => show(index + 1));
+      controls.append(previous, next);
+      dialog.append(toolbar, stage, controls);
+      dialog.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          show(index + (event.key === 'ArrowLeft' ? -1 : 1));
+        }
+      });
+      function outside(event) {
+        const rect = dialog.getBoundingClientRect();
+        return event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom);
+      }
+      dialog.addEventListener('pointerdown', event => { backdropPress = outside(event); });
+      dialog.addEventListener('click', event => { if (backdropPress && outside(event)) dialog.close(); backdropPress = false; });
+      dialog.addEventListener('close', () => {
+        document.documentElement.classList.remove('has-image-gallery');
+        image.removeAttribute('src');
+        if (opener && opener.isConnected) opener.focus({preventScroll: true});
+      });
+      document.body.append(dialog);
+    }
+    function show(position) {
+      if (position < 0 || position >= items.length) return;
+      index = position;
+      image.hidden = true;
+      status.hidden = false;
+      status.textContent = 'Загрузка фотографии…';
+      image.alt = items[index].alt;
+      image.src = items[index].src;
+      counter.textContent = 'Фото ' + (index + 1) + ' из ' + items.length;
+      previous.disabled = index === 0;
+      next.disabled = index === items.length - 1;
+      previous.hidden = next.hidden = items.length < 2;
+    }
+    document.addEventListener('click', event => {
+      const link = event.target.closest('a[data-fancybox]');
+      if (!link || !link.querySelector('img') || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || link.hasAttribute('download') || link.target === '_blank') return;
+      const source = new URL(link.href, location.href);
+      if (!['http:', 'https:'].includes(source.protocol)) return;
+      const group = link.getAttribute('data-fancybox');
+      const links = group ? Array.from(document.querySelectorAll('a[data-fancybox]')).filter(element => element.getAttribute('data-fancybox') === group && element.querySelector('img')) : [link];
+      items = [];
+      links.forEach(element => {
+        const src = element.href;
+        if (!items.some(item => item.src === src)) items.push({src, alt: element.querySelector('img').alt || 'Фотография'});
+      });
+      if (!items.length) return;
+      if (!dialog) createDialog();
+      opener = link;
+      opener.focus({preventScroll: true});
+      show(items.findIndex(item => item.src === link.href));
+      dialog.showModal();
+      document.documentElement.classList.add('has-image-gallery');
+      event.preventDefault();
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initImageGallery);
+  else initImageGallery();
 })();

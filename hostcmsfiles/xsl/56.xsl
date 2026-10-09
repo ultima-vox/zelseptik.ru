@@ -129,6 +129,8 @@
 
 <xsl:template match="shop_item" >
 <xsl:variable name="shop_id" select="/shop/@id"/>
+<xsl:variable name="current_id" select="@id"/>
+<xsl:variable name="variants" select="associated/shop_item[@id != $current_id and not(@id = preceding-sibling::shop_item/@id)] | modifications/shop_item[@id != $current_id and not(@id = ../../associated/shop_item/@id) and not(@id = preceding-sibling::shop_item/@id)]"/>
 <div class="product-page" itemscope="" itemtype="https://schema.org/Product">
 <section class="hero-section grid-blueprint">
 	<div class="container">
@@ -166,9 +168,9 @@
 				<div class="media-card">
 					<xsl:choose>
 						<xsl:when test="image_large != ''">
-							<a class="media-card__link" href="{dir}{image_large}" data-fancybox="images">
+							<xsl:choose><xsl:when test="$shop_id = 6"><img class="media-card__content" itemprop="image" src="{dir}{image_large}" alt="{name}" loading="eager" decoding="async"/></xsl:when><xsl:otherwise><a class="media-card__link" href="{dir}{image_large}" data-fancybox="images">
 								<img class="media-card__content" itemprop="image" src="{dir}{image_large}" alt="{name}" loading="eager" decoding="async"/>
-							</a>
+							</a></xsl:otherwise></xsl:choose>
 						</xsl:when>
 						<xsl:otherwise>
 							<img class="media-card__content" itemprop="image" src="/images/no-image.png" alt="{name}" loading="eager" decoding="async"/>
@@ -176,7 +178,7 @@
 					</xsl:choose>
 				</div>
 
-				<xsl:if test="image_small != '' or count(property_value[tag_name='pic'][file != ''])">
+				<xsl:if test="$shop_id != 6 and (image_small != '' or count(property_value[tag_name='pic'][file != '']))">
 					<div class="media-strip">
 						<div class="media-strip__list">
 							<xsl:if test="image_small != ''">
@@ -315,8 +317,19 @@
 								</xsl:if>
 							</div>
 						</xsl:if>
-						<div class="catalog-card__actions">
-							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}">
+						<xsl:if test="$shop_id = 1 and count($variants) &gt; 0">
+                            <nav class="product-variants" aria-label="Исполнения станции">
+                                <h2 class="product-variants__title">Выберите исполнение</h2>
+                                <div class="product-variants__list">
+                                    <xsl:apply-templates select=". | $variants" mode="product-modification-link">
+                                        <xsl:sort select="name"/>
+                                        <xsl:with-param name="current_id" select="$current_id"/>
+                                    </xsl:apply-templates>
+                                </div>
+                            </nav>
+                        </xsl:if>
+                        <div class="catalog-card__actions">
+							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
 								Получить смету
 							</button>
 							<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>
@@ -328,7 +341,7 @@
 	</div>
 </section>
 
-<xsl:if test="description != '' or count(associated/shop_item) &gt; 0 or count(modifications/shop_item) &gt; 0">
+<xsl:if test="description != ''">
 	<section class="section section--white" id="description">
 		<div class="container">
 			<header class="section-header">
@@ -336,7 +349,7 @@
 				<h2 class="section-header__title"><xsl:choose><xsl:when test="/shop/@id = 6">Об услуге</xsl:when><xsl:otherwise>О модели <xsl:value-of select="name"/></xsl:otherwise></xsl:choose></h2>
 			</header>
 
-			<div class="info-split">
+			<div class="product-description">
 				<xsl:if test="description != ''">
 					<article class="info-panel">
 						<span class="badge">Основная информация</span>
@@ -347,26 +360,19 @@
 					</article>
 				</xsl:if>
 
-				<xsl:if test="count(associated/shop_item) &gt; 0 or count(modifications/shop_item) &gt; 0">
-					<article class="info-panel info-panel--soft">
-						<span class="badge">Дополнительно</span>
-						<h2 class="info-panel__title">Модификации <xsl:value-of select="name"/></h2>
-						<p class="info-panel__text">Выберите исполнение станции по типу сброса и глубине подключения.</p>
-
-						<div class="nav-pills">
-							<div class="nav-pills__list">
-								<xsl:apply-templates select="associated/shop_item" mode="product-modification-link"/>
-								<xsl:apply-templates select="modifications/shop_item" mode="product-modification-link"/>
-								<a class="nav-pills__item nav-pills__item--active" href="{url}" aria-current="page">
-									<xsl:value-of select="name"/>
-								</a>
-							</div>
-						</div>
-					</article>
-				</xsl:if>
 			</div>
 		</div>
 	</section>
+</xsl:if>
+<!-- Reviewed city landing text: native Shop 6 field, available without JS. -->
+<xsl:if test="/shop/@id = 6 and (@id = 233 or @id = 236 or @id = 238 or @id = 240 or @id = 242 or @id = 243 or @id = 244 or @id = 245 or @id = 246 or @id = 247 or @id = 248 or @id = 249 or @id = 250) and normalize-space(text) != ''">
+  <section class="section" data-seo-landing="city-service">
+    <div class="container">
+      <div class="legal-page__content" hostcms:id="{@id}" hostcms:field="text" hostcms:entity="shop_item" hostcms:type="wysiwyg">
+        <xsl:value-of select="text" disable-output-escaping="yes"/>
+      </div>
+    </div>
+  </section>
 </xsl:if>
 <xsl:if test="$shop_id = 1">
 	<section class="cta-section" id="mounting">
@@ -405,7 +411,7 @@
 						</div>
 
 						<div class="cta-card__form">
-							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}">
+							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
 								Рассчитать монтаж
 							</button>
 							<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>
@@ -419,8 +425,14 @@
 </div>
 </xsl:template>
 
-<xsl:template match="associated/shop_item | modifications/shop_item" mode="product-modification-link">
-<a class="nav-pills__item" href="{url}"><xsl:value-of select="name"/></a>
+<xsl:template match="shop_item" mode="product-modification-link">
+<xsl:param name="current_id"/>
+<a href="{url}">
+    <xsl:attribute name="class">product-variant<xsl:if test="@id = $current_id"> product-variant--current</xsl:if></xsl:attribute>
+    <xsl:if test="@id = $current_id"><xsl:attribute name="aria-current">page</xsl:attribute></xsl:if>
+    <span class="product-variant__name"><xsl:value-of select="name"/></span>
+    <span class="product-variant__hint"><xsl:choose><xsl:when test="@id = $current_id">Выбрано</xsl:when><xsl:otherwise>Посмотреть исполнение <span aria-hidden="true">↗</span></xsl:otherwise></xsl:choose></span>
+</a>
 </xsl:template>
 
 <xsl:template match="shop_item" mode="product-septik-v2">

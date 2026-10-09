@@ -1,0 +1,108 @@
+{
+  "pages": [
+    {
+      "id": 240,
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septika-v-krasnogorske/",
+      "status": 200,
+      "h1_count": 1,
+      "seo_blocks": 1,
+      "title": "Обслуживание септиков в Красногорске | ЗЕЛСЕПТИК",
+      "description": "Уточните обслуживание септика в Красногорске: диагностику, состав работ и стоимость. Подготовьте модель станции и адрес участка для заявки в ЗЕЛСЕПТИК.",
+      "links": [
+        "/remont-septikov/",
+        "/contacts/",
+        "/obsluzhivanie-septikov/"
+      ]
+    },
+    {
+      "id": 233,
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septika-v-zelenograde/",
+      "status": 200,
+      "h1_count": 1,
+      "seo_blocks": 1,
+      "title": "Обслуживание септиков в Зеленограде | ЗЕЛСЕПТИК",
+      "description": "Обслуживание септиков в Зеленограде. Плановый сервис и обращения по неисправностям: какие сведения подготовить и что согласовать перед выездом.",
+      "links": [
+        "/remont-septikov/",
+        "/contacts/",
+        "/obsluzhivanie-po-gorodam/"
+      ]
+    },
+    {
+      "id": 236,
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septika-v-istre/",
+      "status": 200,
+      "h1_count": 1,
+      "seo_blocks": 1,
+      "title": "Обслуживание септиков в Истре | ЗЕЛСЕПТИК",
+      "description": "Обслуживание септиков в Истре при постоянном и сезонном проживании. Подготовка заявки, обсуждение консервации, диагностики и стоимости работ.",
+      "links": [
+        "/obsluzhivanie-septikov/konservacziya-topas/",
+        "/obsluzhivanie-septikov/konservacziya-yunilos-astra/",
+        "/contacts/",
+        "/remont-septikov/"
+      ]
+    },
+    {
+      "id": 238,
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septikov-v-ximkax/",
+      "status": 200,
+      "h1_count": 1,
+      "seo_blocks": 1,
+      "title": "Обслуживание септиков в Химках | ЗЕЛСЕПТИК",
+      "description": "Обслуживание септиков в Химках: как согласовать состав сервиса, расходные материалы и диагностику. Оставьте заявку с моделью станции и адресом участка.",
+      "links": [
+        "/remont-septikov/",
+        "/contacts/",
+        "/obsluzhivanie-septikov/"
+      ]
+    },
+    {
+      "id": 242,
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-po-gorodam/servisnoe-obsluzhivanie-septikov-v-solnechnogorske/",
+      "status": 200,
+      "h1_count": 1,
+      "seo_blocks": 1,
+      "title": "Обслуживание септиков в Солнечногорске | ЗЕЛСЕПТИК",
+      "description": "Обслуживание септиков в Солнечногорске. Какие данные о станции и участке нужны для заявки, согласования выезда и расчёта стоимости работ.",
+      "links": [
+        "/remont-septikov/",
+        "/contacts/",
+        "/obsluzhivanie-septikov/",
+        "/obsluzhivanie-po-gorodam/"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "path": "/contacts/",
+      "status": 200,
+      "url": "https://dev.zelseptik.ru/contacts/"
+    },
+    {
+      "path": "/obsluzhivanie-po-gorodam/",
+      "status": 200,
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-po-gorodam/"
+    },
+    {
+      "path": "/obsluzhivanie-septikov/",
+      "status": 200,
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-septikov/"
+    },
+    {
+      "path": "/obsluzhivanie-septikov/konservacziya-topas/",
+      "status": 200,
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-septikov/konservacziya-topas/"
+    },
+    {
+      "path": "/obsluzhivanie-septikov/konservacziya-yunilos-astra/",
+      "status": 200,
+      "url": "https://dev.zelseptik.ru/obsluzhivanie-septikov/konservacziya-yunilos-astra/"
+    },
+    {
+      "path": "/remont-septikov/",
+      "status": 200,
+      "url": "https://dev.zelseptik.ru/remont-septikov/"
+    }
+  ]
+}

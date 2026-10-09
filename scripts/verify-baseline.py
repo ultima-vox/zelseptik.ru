@@ -9,6 +9,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 errors = []
 checked = 0
 originals = {row['path']: row for row in json.loads((ROOT / 'docs/ui-originals.json').read_text())['files']} if (ROOT / 'docs/ui-originals.json').is_file() else {}
+originals.update({row['path']: row for row in json.loads((ROOT / 'docs/seo-originals.json').read_text())['files']} if (ROOT / 'docs/seo-originals.json').is_file() else {})
 for manifest, key in [('docs/production-assets.json', 'path'), ('archive/2026-10-05/manifest.json', 'archived_path')]:
     for row in json.loads((ROOT / manifest).read_text(encoding='utf-8'))['files']:
         path = ROOT / (originals[row[key]]['original_path'] if manifest == 'docs/production-assets.json' and row[key] in originals else row[key])

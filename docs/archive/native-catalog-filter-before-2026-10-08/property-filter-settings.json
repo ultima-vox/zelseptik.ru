@@ -1,0 +1,23 @@
+{
+  "shop_id": 1,
+  "properties": [
+    {
+      "id": 4,
+      "name": "Производительность",
+      "tag_name": "performance",
+      "before_filter": 0,
+      "after_filter": 6
+    },
+    {
+      "id": 5,
+      "name": "Залповый сброс",
+      "tag_name": "zalp",
+      "before_filter": 0,
+      "after_filter": 6
+    }
+  ],
+  "drain_properties": {
+    "2": "Принудительный",
+    "3": "Самотечный"
+  }
+}

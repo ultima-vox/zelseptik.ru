@@ -12,7 +12,11 @@
 
 		<div class="container">
 
-			<xsl:value-of select="/informationsystem/description" disable-output-escaping="yes"/>
+			<!-- Keep the case-section heading separate from the montage landing description. -->
+<div class="section-title-block"><span class="section-title-block__tag">Наши реальные работы</span>
+<h2 class="section-title-block__title">Фото монтажа и отзывы клиентов</h2>
+<p class="section-title-block__desc">Никаких стоковых картинок. Показываем реальный процесс инженерных работ и отзывы жителей г. Зеленограда и соседних поселков.</p>
+</div>
 
 			<!-- Case Selection Tabs -->
 			<div class="cases-section__tabs js-cases-tabs">
