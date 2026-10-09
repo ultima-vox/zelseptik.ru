@@ -16,3 +16,9 @@ assert doc.xpath('//div[@class="catalog-card__body"]/nav/following-sibling::div[
 for shop, variants in [(6,True),(1,False)]:
     assert not render(shop,variants).xpath('//nav[@class="product-variants"]')
 print('Native product variants: deduplication, links, placement, services and empty states passed')
+
+xml = '<shop id="1"><group>0</group><shop_currency><code>RUB</code></shop_currency><shop_item id="2"><name>Other</name><url>/other/</url><price>100</price><discount>0</discount><description>Text</description><associated><shop_item id="1"><name>Current</name><url>/current/</url></shop_item><shop_item id="3"><name>Third</name><url>/third/</url></shop_item></associated></shop_item></shop>'
+second=html.fromstring(str(transform(etree.fromstring(xml.encode()))))
+assert second.xpath('//nav[@class="product-variants"]//a/@href') == [a.get('href') for a in links]
+assert second.xpath('//nav[@class="product-variants"]//a[@aria-current="page"]/@href') == ['/other/']
+print('Variant order remains stable after choosing another model')
