@@ -1,0 +1,340 @@
+<?php
+$zsCalculatorInstallPrice = 25000;
+$zsCalculatorRanges = array(
+  array('label' => '2–3', 'capacity' => 3, 'tip' => 'Компактное решение для дачи или небольшой семьи.'),
+  array('label' => '4–5', 'capacity' => 5, 'tip' => 'Базовый вариант для постоянного проживания семьи.'),
+  array('label' => '6–8', 'capacity' => 8, 'tip' => 'Запас производительности для большого дома и нескольких санузлов.'),
+  array('label' => '9+', 'capacity' => 10, 'tip' => 'Решение для большого дома, гостевого блока или двух семей.')
+);
+$zsCalculatorModels = array();
+
+if (Core::moduleIsActive('shop'))
+{
+  try
+  {
+    $oDatabase = Core_DataBase::instance();
+
+    foreach ($zsCalculatorRanges as $aRange)
+    {
+      $iCapacity = intval($aRange['capacity']);
+      $aRow = $oDatabase
+        ->setQueryType(0)
+        ->query(
+          "SELECT `shop_items`.`id`, `shop_items`.`name`, `property_value_ints`.`value` AS `capacity` " .
+          "FROM `shop_items` " .
+          "INNER JOIN `property_value_ints` ON `property_value_ints`.`entity_id` = `shop_items`.`id` " .
+          "AND `property_value_ints`.`property_id` = 6 " .
+          "WHERE `shop_items`.`shop_id` = 1 " .
+          "AND `shop_items`.`active` = 1 " .
+          "AND `shop_items`.`deleted` = 0 " .
+          "AND `shop_items`.`shortcut_id` = 0 " .
+          "AND `shop_items`.`price` > 0 " .
+          "AND `property_value_ints`.`value` >= {$iCapacity} " .
+          "ORDER BY `shop_items`.`price` ASC, `shop_items`.`sorting` ASC, `shop_items`.`id` ASC " .
+          "LIMIT 1"
+        )
+        ->asAssoc()
+        ->current();
+
+      if (!is_array($aRow))
+      {
+        continue;
+      }
+
+      $oShopItem = Core_Entity::factory('Shop_Item', intval($aRow['id']));
+      $aPrices = $oShopItem->getPrices();
+      $fEquipmentPrice = floatval($aPrices['price_discount']);
+      $fPerformance = 0;
+
+      foreach ($oShopItem->getPropertyValues(TRUE, array(4)) as $oPropertyValue)
+      {
+        $fPerformance = floatval($oPropertyValue->value);
+        break;
+      }
+
+      if ($fEquipmentPrice <= 0)
+      {
+        continue;
+      }
+
+      $aRange['name'] = $oShopItem->name;
+      $aRange['price'] = intval(round($fEquipmentPrice));
+      $aRange['performance'] = $fPerformance > 0
+        ? number_format($fPerformance, 0, ',', ' ') . ' л/сутки'
+        : 'Уточняется';
+      $zsCalculatorModels[] = $aRange;
+    }
+  }
+  catch (Exception $oException)
+  {
+    $zsCalculatorModels = array();
+  }
+}
+?>
+<section id="hero" class="section hero-section grid-blueprint">
+  <div class="hero__media" aria-hidden="true">
+    <img
+      class="hero__media-image"
+      src="/assets/images/HaRdM-tCqcE.jpg"
+      alt=""
+      width="2048"
+      height="1371"
+      fetchpriority="high"
+    />
+  </div>
+
+  <div class="container">
+    <div class="grid-blueprint__grid">
+      <div class="grid-blueprint__content">
+        <div class="hero-offer__tag"><span>Инженерный подбор для участка</span></div>
+        <div class="premium-slogan"><span>Чистота без компромиссов</span></div>
+        <h1 class="hero-offer__title">Автономная канализация под ключ в Зеленограде и Московской области</h1>
+        <p class="hero-offer__subtitle">Подберём станцию по числу жителей, режиму использования, грунту и способу отвода воды. До выезда покажем предварительный расчёт, после осмотра участка зафиксируем состав работ.</p>
+
+        <ul class="hero__proof-list" aria-label="Что входит в работу">
+          <li class="hero__proof-item">Подбор оборудования под условия участка</li>
+          <li class="hero__proof-item">Расчёт монтажа и необходимых материалов</li>
+          <li class="hero__proof-item">Монтаж, запуск и дальнейшее обслуживание</li>
+        </ul>
+
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#hero-selector">Подобрать решение</a>
+          <button class="btn btn--secondary js-btn-callback" type="button" data-title="Вызвать инженера">Вызвать инженера</button>
+        </div>
+      </div>
+
+      <aside class="grid-blueprint__aside" id="hero-selector" aria-labelledby="hero-selector-title">
+        <?php if (count($zsCalculatorModels)) { ?>
+        <?php $aInitialModel = $zsCalculatorModels[0]; ?>
+        <div class="calculator-card" data-calculator-card="" data-install-price="<?php echo $zsCalculatorInstallPrice ?>">
+          <div class="calculator-card__header">
+            <div>
+              <span class="calculator-card__badge">Расчёт за 1 минуту</span>
+              <h2 class="calculator-card__title" id="hero-selector-title">Инженерный калькулятор</h2>
+              <p class="calculator-card__subtitle">Выберите число пользователей — покажем модель и базовую стоимость под ключ.</p>
+            </div>
+          </div>
+
+          <div class="calculator-card__group">
+            <span class="calculator-card__label">Сколько человек пользуются канализацией?</span>
+            <div class="calculator-card__options calculator-card__options--4">
+              <?php foreach ($zsCalculatorModels as $iModelIndex => $aModel) { ?>
+              <button
+                class="calculator-card__option<?php echo $iModelIndex === 0 ? ' calculator-card__option--active' : '' ?>"
+                type="button"
+                data-calculator-option=""
+                data-model-name="<?php echo htmlspecialchars($aModel['name'], ENT_QUOTES, SITE_CODING) ?>"
+                data-equipment-price="<?php echo intval($aModel['price']) ?>"
+                data-performance="<?php echo htmlspecialchars($aModel['performance'], ENT_QUOTES, SITE_CODING) ?>"
+                data-tip="<?php echo htmlspecialchars($aModel['tip'], ENT_QUOTES, SITE_CODING) ?>"
+                aria-pressed="<?php echo $iModelIndex === 0 ? 'true' : 'false' ?>"
+              ><?php echo htmlspecialchars($aModel['label'], ENT_QUOTES, SITE_CODING) ?> чел.</button>
+              <?php } ?>
+            </div>
+          </div>
+
+          <div class="calculator-card__display" aria-live="polite">
+            <div class="calculator-card__row">
+              <span class="calculator-card__row-label">Рекомендуемая модель:</span>
+              <span class="calculator-card__row-value js-calc-rec" data-calculator-model=""><?php echo htmlspecialchars($aInitialModel['name'], ENT_QUOTES, SITE_CODING) ?></span>
+            </div>
+            <div class="calculator-card__row">
+              <span class="calculator-card__row-label">Производительность:</span>
+              <span class="calculator-card__row-value js-calc-volume" data-calculator-performance=""><?php echo htmlspecialchars($aInitialModel['performance'], ENT_QUOTES, SITE_CODING) ?></span>
+            </div>
+            <div class="calculator-card__divider"></div>
+            <div class="calculator-card__row">
+              <span class="calculator-card__row-label">Оборудование:</span>
+              <span class="calculator-card__row-value js-calc-equipment" data-calculator-equipment=""><?php echo number_format($aInitialModel['price'], 0, ',', ' ') ?> ₽</span>
+            </div>
+            <div class="calculator-card__row">
+              <span class="calculator-card__row-label">Стандартный монтаж:</span>
+              <span class="calculator-card__row-value js-calc-install" data-calculator-install=""><?php echo number_format($zsCalculatorInstallPrice, 0, ',', ' ') ?> ₽</span>
+            </div>
+            <div class="calculator-card__divider"></div>
+            <div class="calculator-card__row calculator-card__row--total">
+              <span class="calculator-card__row-label">Итого под ключ:</span>
+              <span class="calculator-card__total-price js-calc-turnkey" data-calculator-total=""><?php echo number_format($aInitialModel['price'] + $zsCalculatorInstallPrice, 0, ',', ' ') ?> ₽</span>
+            </div>
+            <p class="calculator-card__row-tip" data-calculator-tip=""><?php echo htmlspecialchars($aInitialModel['tip'], ENT_QUOTES, SITE_CODING) ?></p>
+          </div>
+
+          <button class="btn btn--primary btn--full js-btn-estimate" type="button">Получить точный расчёт</button>
+          <p class="calculator-card__note">Базовый расчёт. Грунт, глубина подводящей трубы и дополнительные работы уточняются после осмотра.</p>
+        </div>
+        <?php } else { ?>
+        <div class="calculator-card">
+          <h2 class="calculator-card__title" id="hero-selector-title">Подбор модели</h2>
+          <p class="calculator-card__subtitle">Каталог временно обновляется. Инженер подберёт модель и проверит смету.</p>
+          <button class="btn btn--primary btn--full js-btn-callback" type="button" data-title="Подбор септика">Получить подбор</button>
+        </div>
+        <?php } ?>
+      </aside>
+    </div>
+  </div>
+</section>
+<!-- SERTIFIED PARTNERS / TRUST BAR -->
+        <section class="trust-bar">
+<?php 
+Core_Entity::factory('Document', '5')->Document_Versions->getCurrent()->execute();	
+?>
+</section>
+<section id="catalog" class="catalog-section">
+<?php
+	if (Core::moduleIsActive('shop')) {
+	    
+    $Shop_Controller_Show = new Shop_Controller_Show(
+				Core_Entity::factory('Shop', 1)
+			);
+			$Shop_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('МагазинКаталогТоваровНаГлавной')
+				)
+				->groupsMode('all')
+				->itemsProperties(TRUE)
+				->groupsProperties(TRUE)
+				->itemsForbiddenTags(array('text'))
+				->group(false)
+				->limit(999);
+// Ajax upload items
+if (!is_null(Core_Array::getRequest('ajaxLoadItems')))
+{
+    $xslName = Core_Entity::factory('Xsl')->getByName('МагазинКаталогТоваровНаГлавной');
+
+    ob_start();
+
+    $Shop_Controller_Show
+        ->xsl(
+            Core_Entity::factory('Xsl')->getByName($xslName)
+        );
+
+        $Shop_Controller_Show->addEntity(
+            Core::factory('Core_Xml_Entity')
+                ->name('ajax')
+                ->value(1)
+        );
+
+        $Shop_Controller_Show->show();
+
+    Core::showJson(ob_get_clean());
+}				
+
+$Shop_Controller_Show
+		->shopGroups()
+		->queryBuilder()
+		->clearOrderBy()
+		->orderBy('RAND()');
+
+ $Shop_Controller_Show->show();
+
+}
+?>
+</section>
+<!-- INTERACTIVE SOIL ADVISOR -->
+<section id="soil-advisor" class="soil-section">
+    <?php
+        Core_Entity::factory('Document', '37')->Document_Versions->getCurrent()->execute();	
+    ?>
+</section>
+    <?php
+        Core_Page::instance()->execute(); 
+    ?>
+    <!-- TURNKEY WORK STAGES -->
+<section class="stages-section">
+<?php
+ Core_Entity::factory('Document', '38')->Document_Versions->getCurrent()->execute();
+ ?>
+</section>
+<!-- FINISHED CASE STUDIES & REVIEWS -->
+<section id="cases" class="cases-section">
+    <?php
+        if (Core::moduleIsActive('informationsystem'))
+		{
+			$Informationsystem_Controller_Show = new Informationsystem_Controller_Show(
+				Core_Entity::factory('Informationsystem', 7)
+			);
+
+		/*	$Informationsystem_Controller_Show
+				->informationsystemItems()
+				->queryBuilder()
+				->clearOrderBy()
+				->orderBy('RAND()'); */
+
+			$Informationsystem_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('СписокУслугНаГлавной')
+				)
+				->groupsMode('none')
+				->itemsProperties(TRUE)
+				//->itemsForbiddenTags(array('text'))
+				->group(FALSE)
+				->limit(3);
+	$Informationsystem_Controller_Show
+		->informationsystemItems()
+		->queryBuilder()
+		->clearOrderBy()
+		->orderBy('RAND()');
+
+    $Informationsystem_Controller_Show->show();
+		} 
+		?>
+ </section>
+<!-- GEOGRAPHY & REGIONAL MAP -->
+<section id="geography" class="geography-section">
+<?php
+if (Core::moduleIsActive('shop'))
+{
+    // Reuse the active service destinations, not the closed legacy city pages.
+    $Geography_Controller_Show = new Shop_Controller_Show(Core_Entity::factory('Shop', 6));
+    $Geography_Controller_Show
+        ->xsl(Core_Entity::factory('Xsl')->getByName('СписокРайоныОбслуживанияНаГлавной'))
+        ->groupsMode('none')
+        ->itemsProperties(TRUE)
+        ->group(FALSE)
+        ->limit(100);
+    $Geography_Controller_Show->shopItems()->queryBuilder()->clearOrderBy()->orderBy('sorting', 'ASC');
+    $Geography_Controller_Show->show();
+}
+?>
+</section>
+<!-- INTERACTIVE FAQ ACCORDION -->
+<section id="faq" class="faq-section">
+    <?php
+        if (Core::moduleIsActive('informationsystem'))
+		{
+			$Informationsystem_Controller_Show = new Informationsystem_Controller_Show(
+				Core_Entity::factory('Informationsystem', 6)
+			);
+
+		/*	$Informationsystem_Controller_Show
+				->informationsystemItems()
+				->queryBuilder()
+				->clearOrderBy()
+				->orderBy('RAND()'); */
+
+			$Informationsystem_Controller_Show
+				->xsl(
+					Core_Entity::factory('Xsl')->getByName('СписокВопросовНаГлавной')
+				)
+				->groupsMode('none')
+				->itemsProperties(TRUE)
+				//->itemsForbiddenTags(array('text'))
+				->group(FALSE)
+				->limit(3);
+	$Informationsystem_Controller_Show
+		->informationsystemItems()
+		->queryBuilder()
+		->clearOrderBy()
+		->orderBy('RAND()');
+
+    $Informationsystem_Controller_Show->show();
+		} 
+		?>        
+ </section>
+ <!-- FINAL HIGH-CONVERTING CALL TO ACTION SECTION -->
+ <section class="cta-section">
+          <div class="cta-section__bg-overlay grid-blueprint"></div>
+     <?php 
+    Core_Entity::factory('Document', '7')->Document_Versions->getCurrent()->execute();	
+        ?>
+         </section>

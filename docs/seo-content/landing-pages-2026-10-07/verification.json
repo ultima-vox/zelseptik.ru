@@ -1,0 +1,63 @@
+{
+  "environment": "https://dev.zelseptik.ru",
+  "date": "2026-10-07",
+  "pages": [
+    {
+      "page": "/",
+      "status": 200,
+      "h1": [
+        "Автономная канализация под ключ в Зеленограде и Московской области"
+      ],
+      "blocks": 1
+    },
+    {
+      "page": "/septiki/",
+      "status": 200,
+      "h1": [
+        "Септики"
+      ],
+      "blocks": 1
+    },
+    {
+      "page": "/montazh-septika/",
+      "status": 200,
+      "h1": [
+        "Монтаж септиков"
+      ],
+      "blocks": 1
+    },
+    {
+      "page": "/obsluzhivanie-septikov/",
+      "status": 200,
+      "h1": [
+        "Обслуживание септиков"
+      ],
+      "blocks": 1
+    },
+    {
+      "page": "/remont-septikov/",
+      "status": 200,
+      "h1": [
+        "Ремонт септиков"
+      ],
+      "blocks": 1
+    },
+    {
+      "page": "/obsluzhivanie-po-gorodam/",
+      "status": 200,
+      "h1": [
+        "Районы обслуживания"
+      ],
+      "blocks": 1
+    }
+  ],
+  "dev_workflows": [
+    37622857073,
+    37623511115
+  ],
+  "xsl_tests": "passed",
+  "card_context_regression_tests": "passed",
+  "internal_links": "200, direct montage links confirmed after final CMS edits",
+  "visual_check": "desktop service block",
+  "robots": "noindex, nofollow retained"
+}
