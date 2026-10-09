@@ -155,7 +155,7 @@
 									</xsl:choose>
 								</h1>
 
-								<p class="section-title-block__desc">
+								<p class="catalog-hero__text">
 									<xsl:text>Септики </xsl:text>
 									<xsl:value-of select=".//shop_group[@id=$group]/name"/>
 									<xsl:text> для дома и дачи с монтажом под ключ в Зеленограде и Московской области.</xsl:text>
@@ -223,7 +223,7 @@
 					<div>
 						<xsl:attribute name="class">
 							<xsl:text>catalog</xsl:text>
-							<xsl:if test="not(contains(/shop/url, '/septiki/')) or not(count(/shop/shop_filter_seos/shop_filter_seo[active = 1]) &gt; 0)">
+							<xsl:if test="not(@id = 1 and contains(/shop/url, '/septiki/'))">
 								<xsl:text> catalog--single</xsl:text>
 							</xsl:if>
 						</xsl:attribute>
