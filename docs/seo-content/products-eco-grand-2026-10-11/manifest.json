@@ -1,0 +1,59 @@
+[
+  {
+    "id": 259,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-2-pr",
+    "name": "Эко-Гранд 2 Пр",
+    "file": "eko-grand-2-pr.html",
+    "seo_title": "Эко-Гранд 2 Пр — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 2 Пр: до 2 пользователей, 200 л/сутки, залповый сброс 50 л, принудительный отвод. Сравнение исполнений, подбор и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 2,
+      "capacity_l_day": 200,
+      "burst_l": 50,
+      "drainage": "принудительный"
+    },
+    "source": "https://eco-grand.ru/eko-grand-2-pr.html",
+    "status": "prepared_not_published"
+  },
+  {
+    "id": 260,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-3",
+    "name": "Эко-Гранд 3",
+    "file": "eko-grand-3.html",
+    "seo_title": "Эко-Гранд 3 — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 3: до 3 пользователей, 650 л/сутки, залповый сброс 170 л, самотечный отвод. Сравнение исполнений, подбор и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 3,
+      "capacity_l_day": 650,
+      "burst_l": 170,
+      "drainage": "самотечный"
+    },
+    "source": "https://eco-grand.ru/septik-eko-grand-3.html",
+    "status": "prepared_not_published"
+  },
+  {
+    "id": 261,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-3-pr",
+    "name": "Эко-Гранд 3 Пр",
+    "file": "eko-grand-3-pr.html",
+    "seo_title": "Эко-Гранд 3 Пр — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 3 Пр: до 3 пользователей, 650 л/сутки, залповый сброс 170 л, принудительный отвод. Сравнение исполнений, подбор и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 3,
+      "capacity_l_day": 650,
+      "burst_l": 170,
+      "drainage": "принудительный"
+    },
+    "source": "https://www.eco-grand.ru/septik-eko-grand-3-pr.html",
+    "status": "prepared_not_published"
+  }
+]
