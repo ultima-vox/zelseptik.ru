@@ -1,0 +1,40 @@
+[
+  {
+    "id": 274,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-10",
+    "name": "Эко-Гранд 10",
+    "file": "eko-grand-10.html",
+    "seo_title": "Эко-Гранд 10 — цена, характеристики и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 10: до 10 пользователей, 3300 л/сутки, залповый сброс 790 л, самотечный отвод. Сравнение исполнений и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 10,
+      "capacity_l_day": 3300,
+      "burst_l": 790,
+      "drainage": "самотечный"
+    },
+    "source": "https://eco-grand.ru/eko-grand-10.html",
+    "status": "prepared_not_published"
+  },
+  {
+    "id": 275,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-10-pr",
+    "name": "Эко-Гранд 10 Пр",
+    "file": "eko-grand-10-pr.html",
+    "seo_title": "Эко-Гранд 10 Пр — цена, характеристики и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 10 Пр: до 10 пользователей, 3300 л/сутки, залповый сброс 790 л, принудительный отвод. Сравнение исполнений и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 10,
+      "capacity_l_day": 3300,
+      "burst_l": 790,
+      "drainage": "принудительный"
+    },
+    "source": "https://eco-grand.ru/eko-grand-10-pr.html",
+    "status": "prepared_not_published"
+  }
+]
