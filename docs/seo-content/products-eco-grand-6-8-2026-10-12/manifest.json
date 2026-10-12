@@ -16,7 +16,8 @@
       "drainage": "самотечный"
     },
     "source": "https://eco-grand.ru/eko-grand-6.html",
-    "status": "prepared_not_published"
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
   },
   {
     "id": 269,
@@ -35,7 +36,8 @@
       "drainage": "принудительный"
     },
     "source": "https://eco-grand.ru/eko-grand-6-universal.html",
-    "status": "prepared_not_published"
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
   },
   {
     "id": 270,
@@ -54,7 +56,16 @@
       "drainage": "самотечный"
     },
     "source": "https://eco-grand.ru/eko-grand-8.html",
-    "status": "prepared_not_published"
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12",
+    "property_changes": [
+      {
+        "property_id": 4,
+        "before": 1800,
+        "after": 1900,
+        "source": "https://eco-grand.ru/eko-grand-8.html"
+      }
+    ]
   },
   {
     "id": 271,
@@ -73,6 +84,7 @@
       "drainage": "принудительный"
     },
     "source": "https://eco-grand.ru/eko-grand-8-pr.html",
-    "status": "prepared_not_published"
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
   }
 ]

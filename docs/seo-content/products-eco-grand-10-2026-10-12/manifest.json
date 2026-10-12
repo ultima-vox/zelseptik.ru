@@ -16,7 +16,8 @@
       "drainage": "самотечный"
     },
     "source": "https://eco-grand.ru/eko-grand-10.html",
-    "status": "prepared_not_published"
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
   },
   {
     "id": 275,
@@ -35,6 +36,7 @@
       "drainage": "принудительный"
     },
     "source": "https://eco-grand.ru/eko-grand-10-pr.html",
-    "status": "prepared_not_published"
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
   }
 ]
