@@ -16,7 +16,8 @@
       "drainage": "принудительный"
     },
     "source": "https://eco-grand.ru/eko-grand-2-pr.html",
-    "status": "prepared_not_published"
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
   },
   {
     "id": 260,
@@ -35,7 +36,8 @@
       "drainage": "самотечный"
     },
     "source": "https://eco-grand.ru/septik-eko-grand-3.html",
-    "status": "prepared_not_published"
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
   },
   {
     "id": 261,
@@ -54,6 +56,7 @@
       "drainage": "принудительный"
     },
     "source": "https://www.eco-grand.ru/septik-eko-grand-3-pr.html",
-    "status": "prepared_not_published"
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
   }
 ]
