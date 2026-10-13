@@ -1,0 +1,123 @@
+[
+  {
+    "id": 174,
+    "name": "Астра 3",
+    "current_price_rub": 120000,
+    "vendor_price_rub": 140500,
+    "proposed_price_rub": 140500,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 175,
+    "name": "Астра 4",
+    "current_price_rub": 125000,
+    "vendor_price_rub": 147000,
+    "proposed_price_rub": 147000,
+    "status": "needs_drainage_confirmation",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 176,
+    "name": "Астра 5",
+    "current_price_rub": 145000,
+    "vendor_price_rub": 172300,
+    "proposed_price_rub": 172300,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 177,
+    "name": "Астра 5 Миди",
+    "current_price_rub": 148000,
+    "vendor_price_rub": 174500,
+    "proposed_price_rub": 174500,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 178,
+    "name": "Астра 5 Лонг",
+    "current_price_rub": 167000,
+    "vendor_price_rub": 206900,
+    "proposed_price_rub": 206900,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 183,
+    "name": "Астра 8",
+    "current_price_rub": 176000,
+    "vendor_price_rub": 203000,
+    "proposed_price_rub": 203000,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 179,
+    "name": "Астра 8 Миди",
+    "current_price_rub": 179000,
+    "vendor_price_rub": 206300,
+    "proposed_price_rub": 206300,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 180,
+    "name": "Астра 8 Long",
+    "current_price_rub": 204000,
+    "vendor_price_rub": 245900,
+    "proposed_price_rub": 245900,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 184,
+    "name": "Астра 10",
+    "current_price_rub": 231000,
+    "vendor_price_rub": 276500,
+    "proposed_price_rub": 276500,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 181,
+    "name": "Астра 10 Миди",
+    "current_price_rub": 234000,
+    "vendor_price_rub": 279700,
+    "proposed_price_rub": 279700,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  },
+  {
+    "id": 182,
+    "name": "Астра 10 Лонг",
+    "current_price_rub": 260000,
+    "vendor_price_rub": 322200,
+    "proposed_price_rub": 322200,
+    "status": "ready_pending_fresh_cms_check",
+    "vendor_source": "https://sbm-group.ru/price-test-2026",
+    "vendor_effective_date": "2026-09-01",
+    "applied": false
+  }
+]
