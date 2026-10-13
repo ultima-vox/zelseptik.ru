@@ -1,0 +1,79 @@
+[
+  {
+    "id": 174,
+    "n": 3,
+    "kind": "standard",
+    "name": "Астра 3",
+    "rows": []
+  },
+  {
+    "id": 175,
+    "n": 4,
+    "kind": "standard",
+    "name": "Астра 4",
+    "rows": []
+  },
+  {
+    "id": 176,
+    "n": 5,
+    "kind": "standard",
+    "name": "Астра 5",
+    "rows": []
+  },
+  {
+    "id": 177,
+    "n": 5,
+    "kind": "midi",
+    "name": "Астра 5 Миди",
+    "rows": []
+  },
+  {
+    "id": 178,
+    "n": 5,
+    "kind": "long",
+    "name": "Астра 5 Лонг",
+    "rows": []
+  },
+  {
+    "id": 183,
+    "n": 8,
+    "kind": "standard",
+    "name": "Астра 8",
+    "rows": []
+  },
+  {
+    "id": 179,
+    "n": 8,
+    "kind": "midi",
+    "name": "Астра 8 Миди",
+    "rows": []
+  },
+  {
+    "id": 180,
+    "n": 8,
+    "kind": "long",
+    "name": "Астра 8 Long",
+    "rows": []
+  },
+  {
+    "id": 184,
+    "n": 10,
+    "kind": "standard",
+    "name": "Астра 10",
+    "rows": []
+  },
+  {
+    "id": 181,
+    "n": 10,
+    "kind": "midi",
+    "name": "Астра 10 Миди",
+    "rows": []
+  },
+  {
+    "id": 182,
+    "n": 10,
+    "kind": "long",
+    "name": "Астра 10 Лонг",
+    "rows": []
+  }
+]
