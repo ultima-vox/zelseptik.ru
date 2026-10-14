@@ -18,10 +18,13 @@
     "current_price_rub": 125000,
     "vendor_price_rub": 147000,
     "proposed_price_rub": 147000,
-    "status": "needs_drainage_confirmation",
+    "status": "applied_on_dev_user_approved_gravity",
     "vendor_source": "https://sbm-group.ru/price-test-2026",
     "vendor_effective_date": "2026-09-01",
-    "applied": false
+    "applied": true,
+    "applied_at": "2026-10-14",
+    "current_price_after_rub": 147000,
+    "mapping_authority": "user_approval"
   },
   {
     "id": 176,
