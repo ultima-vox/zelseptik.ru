@@ -1,0 +1,162 @@
+[
+  {
+    "id": 258,
+    "path": "/septiki/eko-grand/eko-grand-2/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 259,
+    "path": "/septiki/eko-grand/eko-grand-2-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 260,
+    "path": "/septiki/eko-grand/eko-grand-3/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 261,
+    "path": "/septiki/eko-grand/eko-grand-3-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 262,
+    "path": "/septiki/eko-grand/eko-grand-4/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 263,
+    "path": "/septiki/eko-grand/eko-grand-4-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 264,
+    "path": "/septiki/eko-grand/eko-grand-5/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 265,
+    "path": "/septiki/eko-grand/eko-grand-5-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 266,
+    "path": "/septiki/eko-grand/eko-grand-5-long/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 267,
+    "path": "/septiki/eko-grand/eko-grand-5-long-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 268,
+    "path": "/septiki/eko-grand/eko-grand-6-universal/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 269,
+    "path": "/septiki/eko-grand/eko-grand-6-universal-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 270,
+    "path": "/septiki/eko-grand/eko-grand-8/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 271,
+    "path": "/septiki/eko-grand/eko-grand-8-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 272,
+    "path": "/septiki/eko-grand/eko-grand-5-long-kopiya-ot-09032023-113145/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 273,
+    "path": "/septiki/eko-grand/eko-grand-8-long-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 274,
+    "path": "/septiki/eko-grand/eko-grand-10/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 275,
+    "path": "/septiki/eko-grand/eko-grand-10-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 276,
+    "path": "/septiki/eko-grand/eko-grand-10-long/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  },
+  {
+    "id": 277,
+    "path": "/septiki/eko-grand/eko-grand-10-long-pr/",
+    "status": 200,
+    "config_present": true,
+    "compressor_present": true,
+    "valve_present": true
+  }
+]
