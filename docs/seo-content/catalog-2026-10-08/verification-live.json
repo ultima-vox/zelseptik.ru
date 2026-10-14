@@ -1,0 +1,458 @@
+{
+  "date": "2026-10-08",
+  "environment": "dev",
+  "pages": [
+    {
+      "path": "/septiki/biodevice/",
+      "http": 200,
+      "title": "Септики Biodevice — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Biodevice"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/biodevice/biodevice-eko-3/",
+        "/septiki/biodevice/biodevice-eko-5/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/aeroboks/",
+      "http": 200,
+      "title": "Септики Аэробокс — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Аэробокс"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/aeroboks/aeroboks-2-bio/",
+        "/septiki/aeroboks/aeroboks-4-bio/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/lotos/",
+      "http": 200,
+      "title": "Септики Лотос — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Лотос"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/lotos/lotos-aerolotos-aero-3/",
+        "/septiki/lotos/lotos-aerolotos-aero-3-pr/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/glosen/",
+      "http": 200,
+      "title": "Септики Glosen — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Glosen"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/glosen/glosen-3s/",
+        "/septiki/glosen/glosen-3s-mini/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/aqualos/",
+      "http": 200,
+      "title": "Септики Aqualos — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Aqualos"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/aqualos/aqualos-al-2-un/",
+        "/septiki/aqualos/aqualos-al-3-un/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/ital/",
+      "http": 200,
+      "title": "Септики Итал — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Итал"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/ital/ital-antej-3/",
+        "/septiki/ital/ital-antej-4/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/eko-grand/",
+      "http": 200,
+      "title": "Септики Эко-Гранд — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Эко-Гранд"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/eko-grand/eko-grand-2/",
+        "/septiki/eko-grand/eko-grand-2-pr/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/yunilos-astra/",
+      "http": 200,
+      "title": "Септики Юнилос Астра — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Юнилос Астра"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/yunilos-astra/astra-3/",
+        "/septiki/yunilos-astra/astra-4/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/topol/",
+      "http": 200,
+      "title": "Септики Тополь — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Тополь"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/topol/topol-4/",
+        "/septiki/topol/topol-4-pr/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/topas-s/",
+      "http": 200,
+      "title": "Септики Топас-С — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Топас-С"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/topas-s/topas-s-4/",
+        "/septiki/topas-s/topas-s-4-pr/",
+        "/septiki/topas/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/topas/",
+      "http": 200,
+      "title": "Септики Топас — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Топас"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/topas/topas-4/",
+        "/septiki/topas/topas-4-pr/",
+        "/septiki/topas-s/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/biodeka/",
+      "http": 200,
+      "title": "Септики БиоДека — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "БиоДека"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/biodeka/biodeka-3-c600/",
+        "/septiki/biodeka/biodeka-3-p600/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/bio-s/",
+      "http": 200,
+      "title": "Септики Био-С — каталог и цены | ЗЕЛСЕПТИК",
+      "h1": [
+        "Био-С"
+      ],
+      "seo_blocks": 1,
+      "links": [
+        "/septiki/bio-s/bio-s-komfort-3/",
+        "/septiki/bio-s/bio-s-komfort-3-pr/",
+        "/septiki/",
+        "/montazh-septika/",
+        "/obsluzhivanie-septikov/",
+        "/dostavka/"
+      ]
+    },
+    {
+      "path": "/septiki/",
+      "http": 200,
+      "title": "Септики для дома и дачи — каталог и цены | ЗЕЛСЕПТИК",
+      "seo_blocks": 1
+    }
+  ],
+  "link_targets": [
+    {
+      "path": "/dostavka/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/dostavka/"
+    },
+    {
+      "path": "/montazh-septika/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/montazh-septika/"
+    },
+    {
+      "path": "/obsluzhivanie-septikov/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/obsluzhivanie-septikov/"
+    },
+    {
+      "path": "/septiki/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/"
+    },
+    {
+      "path": "/septiki/aeroboks/aeroboks-2-bio/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/aeroboks/aeroboks-2-bio/"
+    },
+    {
+      "path": "/septiki/aeroboks/aeroboks-4-bio/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/aeroboks/aeroboks-4-bio/"
+    },
+    {
+      "path": "/septiki/aqualos/aqualos-al-2-un/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/aqualos/aqualos-al-2-un/"
+    },
+    {
+      "path": "/septiki/aqualos/aqualos-al-3-un/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/aqualos/aqualos-al-3-un/"
+    },
+    {
+      "path": "/septiki/bio-s/bio-s-komfort-3-pr/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/bio-s/bio-s-komfort-3-pr/"
+    },
+    {
+      "path": "/septiki/bio-s/bio-s-komfort-3/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/bio-s/bio-s-komfort-3/"
+    },
+    {
+      "path": "/septiki/biodeka/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/biodeka/"
+    },
+    {
+      "path": "/septiki/biodeka/biodeka-3-c600/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/biodeka/biodeka-3-c600/"
+    },
+    {
+      "path": "/septiki/biodeka/biodeka-3-p600/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/biodeka/biodeka-3-p600/"
+    },
+    {
+      "path": "/septiki/biodevice/biodevice-eko-3/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/biodevice/biodevice-eko-3/"
+    },
+    {
+      "path": "/septiki/biodevice/biodevice-eko-5/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/biodevice/biodevice-eko-5/"
+    },
+    {
+      "path": "/septiki/dacha/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/dacha/"
+    },
+    {
+      "path": "/septiki/dom/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/dom/"
+    },
+    {
+      "path": "/septiki/eko-grand/eko-grand-2-pr/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/eko-grand/eko-grand-2-pr/"
+    },
+    {
+      "path": "/septiki/eko-grand/eko-grand-2/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/eko-grand/eko-grand-2/"
+    },
+    {
+      "path": "/septiki/glosen/glosen-3s-mini/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/glosen/glosen-3s-mini/"
+    },
+    {
+      "path": "/septiki/glosen/glosen-3s/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/glosen/glosen-3s/"
+    },
+    {
+      "path": "/septiki/ital/ital-antej-3/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/ital/ital-antej-3/"
+    },
+    {
+      "path": "/septiki/ital/ital-antej-4/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/ital/ital-antej-4/"
+    },
+    {
+      "path": "/septiki/lotos/lotos-aerolotos-aero-3-pr/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/lotos/lotos-aerolotos-aero-3-pr/"
+    },
+    {
+      "path": "/septiki/lotos/lotos-aerolotos-aero-3/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/lotos/lotos-aerolotos-aero-3/"
+    },
+    {
+      "path": "/septiki/topas-s/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/topas-s/"
+    },
+    {
+      "path": "/septiki/topas-s/topas-s-4-pr/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-4-pr/"
+    },
+    {
+      "path": "/septiki/topas-s/topas-s-4/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-4/"
+    },
+    {
+      "path": "/septiki/topas/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/topas/"
+    },
+    {
+      "path": "/septiki/topas/topas-4-pr/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-4-pr/"
+    },
+    {
+      "path": "/septiki/topas/topas-4/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-4/"
+    },
+    {
+      "path": "/septiki/topol/topol-4-pr/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/topol/topol-4-pr/"
+    },
+    {
+      "path": "/septiki/topol/topol-4/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/topol/topol-4/"
+    },
+    {
+      "path": "/septiki/yunilos-astra/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/yunilos-astra/"
+    },
+    {
+      "path": "/septiki/yunilos-astra/astra-3/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-3/"
+    },
+    {
+      "path": "/septiki/yunilos-astra/astra-4/",
+      "http": 200,
+      "final_url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-4/"
+    }
+  ],
+  "isolation_checks": [
+    {
+      "path": "/septiki/page-2/",
+      "http": 200,
+      "title": [
+        "Септики для дома и дачи — каталог и цены | ЗЕЛСЕПТИК - страница 2"
+      ],
+      "catalog_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/page-3/",
+      "http": 200,
+      "title": [
+        "Септики для дома и дачи — каталог и цены | ЗЕЛСЕПТИК - страница 3"
+      ],
+      "catalog_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/men/4/",
+      "http": 200,
+      "title": [
+        "Купить септик на 4 человека недорого с монтажом под ключ станции биологической очистки "
+      ],
+      "catalog_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/dom/",
+      "http": 200,
+      "title": [
+        "Купить септик для постоянного проживания недорого с монтажом под ключ станции биологической очистки"
+      ],
+      "catalog_seo_blocks": 0
+    },
+    {
+      "path": "/septiki/topas/topas-4/",
+      "http": 200,
+      "title": [
+        "Септик ТОПАС 4 купить с установкой под ключ - цена станции 125100.00 руб."
+      ],
+      "catalog_seo_blocks": 0
+    }
+  ],
+  "production_modified": false
+}

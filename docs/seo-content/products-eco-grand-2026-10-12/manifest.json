@@ -1,0 +1,82 @@
+[
+  {
+    "id": 262,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-4",
+    "name": "Эко-Гранд 4",
+    "file": "eko-grand-4.html",
+    "seo_title": "Эко-Гранд 4 — цена, характеристики и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 4: до 4 пользователей, 850 л/сутки, залповый сброс 210 л, самотечный отвод. Сравнение моделей, подбор и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 4,
+      "capacity_l_day": 850,
+      "burst_l": 210,
+      "drainage": "самотечный"
+    },
+    "source": "https://eco-grand.ru/eko-grand-4.html",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
+  },
+  {
+    "id": 263,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-4-pr",
+    "name": "Эко-Гранд 4 Пр",
+    "file": "eko-grand-4-pr.html",
+    "seo_title": "Эко-Гранд 4 Пр — цена, характеристики и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 4 Пр: до 4 пользователей, 850 л/сутки, залповый сброс 210 л, принудительный отвод. Сравнение моделей, подбор и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 4,
+      "capacity_l_day": 850,
+      "burst_l": 210,
+      "drainage": "принудительный"
+    },
+    "source": "https://eco-grand.ru/eko-grand-4-pr.html",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
+  },
+  {
+    "id": 264,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-5",
+    "name": "Эко-Гранд 5",
+    "file": "eko-grand-5.html",
+    "seo_title": "Эко-Гранд 5 — цена, характеристики и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 5: до 5 пользователей, 1100 л/сутки, залповый сброс 250 л, самотечный отвод. Сравнение моделей, подбор и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 5,
+      "capacity_l_day": 1100,
+      "burst_l": 250,
+      "drainage": "самотечный"
+    },
+    "source": "https://eco-grand.ru/ceptik-eko-grand-5.html",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
+  },
+  {
+    "id": 265,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-5-pr",
+    "name": "Эко-Гранд 5 Пр",
+    "file": "eko-grand-5-pr.html",
+    "seo_title": "Эко-Гранд 5 Пр — цена, характеристики и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 5 Пр: до 5 пользователей, 1100 л/сутки, залповый сброс 250 л, принудительный отвод. Сравнение моделей, подбор и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 5,
+      "capacity_l_day": 1100,
+      "burst_l": 250,
+      "drainage": "принудительный"
+    },
+    "source": "https://eco-grand.ru/ceptik-eko-grand-5-pr.html",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
+  }
+]

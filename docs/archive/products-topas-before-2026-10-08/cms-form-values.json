@@ -1,0 +1,1526 @@
+[
+  {
+    "id": 111,
+    "name": "ТОПАС 10 Лонг",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "properties": [
+      {
+        "name": "property_6_1797",
+        "value": "3",
+        "type": "text"
+      },
+      {
+        "name": "property_5_1796",
+        "value": "0",
+        "type": "text"
+      },
+      {
+        "name": "property_4_156",
+        "value": "1",
+        "type": "text"
+      },
+      {
+        "name": "property_3_1795",
+        "checked": true,
+        "type": "checkbox"
+      },
+      {
+        "name": "property_2_1794",
+        "checked": false,
+        "type": "checkbox"
+      },
+      {
+        "name": "property_39[]",
+        "checked": false,
+        "type": "checkbox"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p>\n<p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p>\n<p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС 10, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>"
+  },
+  {
+    "id": 115,
+    "name": "ТОПАС 6 Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p><span>Чтобы Вы в полной мере могли наслаждаться жизнью в загородном доме, необходимо создать там комфортные условия. Одним из важных этапов для этого является организация автономной канализации. ТОПАС – это оптимальный выбор для тех, кто ценит свое время, бережно относится к окружающей среде и любит комфорт во всем.</span></p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1840",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1840",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1839",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1839",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1842",
+        "type": "text",
+        "value": "6"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1841",
+        "type": "text",
+        "value": "250"
+      },
+      {
+        "checked": false,
+        "name": "property_4_160",
+        "type": "text",
+        "value": "1150"
+      }
+    ]
+  },
+  {
+    "id": 126,
+    "name": "ТОПАС 5 Long",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный&nbsp;или&nbsp;загородный дом, а&nbsp;также здания без&nbsp;доступа к&nbsp;централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту&nbsp;проблему решают лишь частично, так&nbsp;как&nbsp;они&nbsp;не&nbsp;являются полностью автономными и&nbsp;требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и&nbsp;пр.).</p><p>Единственно верным решением в&nbsp;данном случае будет использование устройства очистки стоков ТОПАС-С 5, которую производит и&nbsp;реализует ГК&nbsp;ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1961",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1961",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1960",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1960",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39_2685",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_39_2685",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1963",
+        "type": "text",
+        "value": "5"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1962",
+        "type": "text",
+        "value": "220"
+      },
+      {
+        "checked": false,
+        "name": "property_4_171",
+        "type": "text",
+        "value": "1000"
+      }
+    ]
+  },
+  {
+    "id": 105,
+    "name": "ТОПАС 9",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС 9, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1729",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1729",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1728",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1728",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1731",
+        "type": "text",
+        "value": "9"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1730",
+        "type": "text",
+        "value": "510"
+      },
+      {
+        "checked": false,
+        "name": "property_4_150",
+        "type": "text",
+        "value": "1700"
+      }
+    ]
+  },
+  {
+    "id": 116,
+    "name": "ТОПАС 6 Лонг Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p><span>Чтобы Вы&nbsp;в&nbsp;полной мере могли наслаждаться жизнью в&nbsp;загородном доме, необходимо создать там&nbsp;комфортные условия. Одним из&nbsp;важных этапов для&nbsp;этого является организация автономной канализации. ТОПАС – это&nbsp;оптимальный выбор для&nbsp;тех, кто&nbsp;ценит свое время, бережно относится к&nbsp;окружающей среде и&nbsp;любит комфорт во&nbsp;всем.</span></p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1851",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1851",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1850",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1850",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39_2688",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_39_2688",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1853",
+        "type": "text",
+        "value": "6"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1852",
+        "type": "text",
+        "value": "250"
+      },
+      {
+        "checked": false,
+        "name": "property_4_161",
+        "type": "text",
+        "value": "1150"
+      }
+    ]
+  },
+  {
+    "id": 103,
+    "name": "ТОПАС 4",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p><strong>ТОПАС 4</strong> — аэрационная установка для очистки сточных вод в условиях отсутствия центральной канализации.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1706",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1706",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1705",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1705",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1708",
+        "type": "text",
+        "value": "4"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1707",
+        "type": "text",
+        "value": "175"
+      },
+      {
+        "checked": false,
+        "name": "property_4_148",
+        "type": "text",
+        "value": "800"
+      }
+    ]
+  },
+  {
+    "id": 112,
+    "name": "ТОПАС 4 Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p><strong>ТОПАС 4</strong> — аэрационная установка для очистки сточных вод в условиях отсутствия центральной канализации.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1806",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1806",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1805",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1805",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1808",
+        "type": "text",
+        "value": "4"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1807",
+        "type": "text",
+        "value": "175"
+      },
+      {
+        "checked": false,
+        "name": "property_4_157",
+        "type": "text",
+        "value": "800"
+      }
+    ]
+  },
+  {
+    "id": 101,
+    "name": "ТОПАС 5",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС-С 5, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1683",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1683",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1682",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1682",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1685",
+        "type": "text",
+        "value": "5"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1684",
+        "type": "text",
+        "value": "220"
+      },
+      {
+        "checked": false,
+        "name": "property_4_146",
+        "type": "text",
+        "value": "1000"
+      }
+    ]
+  },
+  {
+    "id": 109,
+    "name": "ТОПАС 6",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p><span>Чтобы Вы в полной мере могли наслаждаться жизнью в загородном доме, необходимо создать там комфортные условия. Одним из важных этапов для этого является организация автономной канализации. ТОПАС – это оптимальный выбор для тех, кто ценит свое время, бережно относится к окружающей среде и любит комфорт во всем.</span></p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1773",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1773",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1772",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1772",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1775",
+        "type": "text",
+        "value": "6"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1774",
+        "type": "text",
+        "value": "250"
+      },
+      {
+        "checked": false,
+        "name": "property_4_154",
+        "type": "text",
+        "value": "1150"
+      }
+    ]
+  },
+  {
+    "id": 113,
+    "name": "ТОПАС 5 Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС-С 5, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1818",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1818",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1817",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1817",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1820",
+        "type": "text",
+        "value": "5"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1819",
+        "type": "text",
+        "value": "220"
+      },
+      {
+        "checked": false,
+        "name": "property_4_158",
+        "type": "text",
+        "value": "1000"
+      }
+    ]
+  },
+  {
+    "id": 117,
+    "name": "ТОПАС 6 Лонг",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p><span>Чтобы Вы&nbsp;в&nbsp;полной мере могли наслаждаться жизнью в&nbsp;загородном доме, необходимо создать там&nbsp;комфортные условия. Одним из&nbsp;важных этапов для&nbsp;этого является организация автономной канализации. ТОПАС – это&nbsp;оптимальный выбор для&nbsp;тех, кто&nbsp;ценит свое время, бережно относится к&nbsp;окружающей среде и&nbsp;любит комфорт во&nbsp;всем.</span></p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1862",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1862",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1861",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1861",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39_2686",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_39_2686",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1864",
+        "type": "text",
+        "value": "6"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1863",
+        "type": "text",
+        "value": "250"
+      },
+      {
+        "checked": false,
+        "name": "property_4_162",
+        "type": "text",
+        "value": "1150"
+      }
+    ]
+  },
+  {
+    "id": 107,
+    "name": "ТОПАС 8",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС-С 5, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1751",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1751",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1750",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1750",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1753",
+        "type": "text",
+        "value": "8"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1752",
+        "type": "text",
+        "value": "440"
+      },
+      {
+        "checked": false,
+        "name": "property_4_152",
+        "type": "text",
+        "value": "1500"
+      }
+    ]
+  },
+  {
+    "id": 114,
+    "name": "ТОПАС 5 Long Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный&nbsp;или&nbsp;загородный дом, а&nbsp;также здания без&nbsp;доступа к&nbsp;централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту&nbsp;проблему решают лишь частично, так&nbsp;как&nbsp;они&nbsp;не&nbsp;являются полностью автономными и&nbsp;требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и&nbsp;пр.).</p><p>Единственно верным решением в&nbsp;данном случае будет использование устройства очистки стоков ТОПАС-С 5, которую производит и&nbsp;реализует ГК&nbsp;ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1829",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1829",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1828",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1828",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39_2687",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_39_2687",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1831",
+        "type": "text",
+        "value": "5"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1830",
+        "type": "text",
+        "value": "220"
+      },
+      {
+        "checked": false,
+        "name": "property_4_159",
+        "type": "text",
+        "value": "1000"
+      }
+    ]
+  },
+  {
+    "id": 119,
+    "name": "ТОПАС 8 Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС-С 5, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1884",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1884",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1883",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1883",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1886",
+        "type": "text",
+        "value": "8"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1885",
+        "type": "text",
+        "value": "440"
+      },
+      {
+        "checked": false,
+        "name": "property_4_164",
+        "type": "text",
+        "value": "1500"
+      }
+    ]
+  },
+  {
+    "id": 122,
+    "name": "ТОПАС 9 Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС 9, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1917",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1917",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1916",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1916",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1919",
+        "type": "text",
+        "value": "9"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1918",
+        "type": "text",
+        "value": "510"
+      },
+      {
+        "checked": false,
+        "name": "property_4_167",
+        "type": "text",
+        "value": "1700"
+      }
+    ]
+  },
+  {
+    "id": 118,
+    "name": "ТОПАС 8 Лонг",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС-С 5, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1873",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1873",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1872",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1872",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1875",
+        "type": "text",
+        "value": "8"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1874",
+        "type": "text",
+        "value": "440"
+      },
+      {
+        "checked": false,
+        "name": "property_4_163",
+        "type": "text",
+        "value": "1500"
+      }
+    ]
+  },
+  {
+    "id": 121,
+    "name": "ТОПАС 9 Long",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС 9, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1906",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1906",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1905",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1905",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1908",
+        "type": "text",
+        "value": "9"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1907",
+        "type": "text",
+        "value": "510"
+      },
+      {
+        "checked": false,
+        "name": "property_4_166",
+        "type": "text",
+        "value": "1700"
+      }
+    ]
+  },
+  {
+    "id": 123,
+    "name": "ТОПАС 9 Лонг Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС 9, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1928",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1928",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1927",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1927",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1930",
+        "type": "text",
+        "value": "9"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1929",
+        "type": "text",
+        "value": "510"
+      },
+      {
+        "checked": false,
+        "name": "property_4_168",
+        "type": "text",
+        "value": "1700"
+      }
+    ]
+  },
+  {
+    "id": 120,
+    "name": "ТОПАС 8 Лонг Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС-С 5, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1895",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1895",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1894",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1894",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1897",
+        "type": "text",
+        "value": "8"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1896",
+        "type": "text",
+        "value": "440"
+      },
+      {
+        "checked": false,
+        "name": "property_4_165",
+        "type": "text",
+        "value": "1500"
+      }
+    ]
+  },
+  {
+    "id": 99,
+    "name": "ТОПАС 10",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС 10, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1660",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_3_1660",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1659",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1659",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1662",
+        "type": "text",
+        "value": "10"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1661",
+        "type": "text",
+        "value": "760"
+      },
+      {
+        "checked": false,
+        "name": "property_4_144",
+        "type": "text",
+        "value": "2000"
+      }
+    ]
+  },
+  {
+    "id": 124,
+    "name": "ТОПАС 10 Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС 10, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1939",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1939",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1938",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1938",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1941",
+        "type": "text",
+        "value": "10"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1940",
+        "type": "text",
+        "value": "760"
+      },
+      {
+        "checked": false,
+        "name": "property_4_169",
+        "type": "text",
+        "value": "2000"
+      }
+    ]
+  },
+  {
+    "id": 125,
+    "name": "ТОПАС 10 Лонг Пр",
+    "seo": [
+      {
+        "name": "seo_title",
+        "value": ""
+      },
+      {
+        "name": "seo_description",
+        "value": ""
+      },
+      {
+        "name": "seo_keywords",
+        "value": "топас-с,топас-с 4"
+      }
+    ],
+    "description": "<p>Любой дачный или загородный дом, а также здания без доступа к централизованной системе канализации, должны быть обустроены локальными системами переработки стоков.</p><p>Классические септики эту проблему решают лишь частично, так как они не являются полностью автономными и требуют постоянного контроля своей работы (очистка полей фильтрации, пополнение микрофлоры и пр.).</p><p>Единственно верным решением в данном случае будет использование устройства очистки стоков ТОПАС 10, которую производит и реализует ГК ТОПОЛ-ЭКО.</p>",
+    "properties": [
+      {
+        "checked": false,
+        "name": "property_3_1950",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": false,
+        "name": "property_3_1950",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_1949",
+        "type": "hidden",
+        "value": "<redacted>"
+      },
+      {
+        "checked": true,
+        "name": "property_2_1949",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_39[]",
+        "type": "checkbox",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_6_1952",
+        "type": "text",
+        "value": "10"
+      },
+      {
+        "checked": false,
+        "name": "property_5_1951",
+        "type": "text",
+        "value": "760"
+      },
+      {
+        "checked": false,
+        "name": "property_4_170",
+        "type": "text",
+        "value": "2000"
+      }
+    ]
+  }
+]

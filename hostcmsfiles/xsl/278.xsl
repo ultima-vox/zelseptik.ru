@@ -121,7 +121,7 @@
 				</h3>
 
 
-				<div class="catalog-card__specs">
+				<xsl:if test="/shop/@id != 6"><div class="catalog-card__specs">
 					<xsl:if test="property_value[tag_name='performance']/value != ''">
 						<div class="catalog-card__spec-row">
 							<span class="catalog-card__spec-label">Производительность:</span>
@@ -151,7 +151,7 @@
 					</div>
 
 <div class="catalog-card__spec-row"><span class="catalog-card__spec-label">Модификация:</span><span class="catalog-card__spec-value"><xsl:choose><xsl:when test="property_value[tag_name='long']/value = 1">Лонг</xsl:when><xsl:when test="property_value[tag_name='midi']/value = 1">Миди</xsl:when><xsl:otherwise>Стандарт</xsl:otherwise></xsl:choose></span></div>
-				</div>
+				</div></xsl:if>
 			</div>
 
 			<div class="catalog-card__footer">
@@ -198,8 +198,8 @@
 				</div>
 
 				<div class="catalog-card__actions">
-					<button class="btn btn--primary btn--full js-catalog-order" data-name="{name}" type="button">
-						Заказать монтаж
+					<button class="btn btn--primary btn--full js-catalog-order" data-name="{name}" type="button"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
+						<xsl:choose><xsl:when test="/shop/@id = 6">Заказать обслуживание</xsl:when><xsl:otherwise>Заказать монтаж</xsl:otherwise></xsl:choose>
 					</button>
 					<a href="{url}" class="link link--muted link--center"><xsl:choose><xsl:when test="/shop/@id = 6">Подробнее об обслуживании</xsl:when><xsl:otherwise>Подробнее о модели</xsl:otherwise></xsl:choose></a>
 				</div>

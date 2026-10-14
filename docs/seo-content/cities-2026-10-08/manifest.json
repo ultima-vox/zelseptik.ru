@@ -1,0 +1,76 @@
+{
+  "status": "applied_verified_on_dev",
+  "environment": "dev",
+  "shop_id": 6,
+  "records": [
+    {
+      "id": 243,
+      "city": "Клину",
+      "path": "servisnoe-obsluzhivanie-septikov-v-klinu",
+      "file": "klin.html",
+      "seo_title": "Обслуживание септиков в Клину | ЗЕЛСЕПТИК",
+      "seo_description": "Обслуживание септиков в Клину: плановый сервис и обращения по неисправностям. Уточните состав работ, стоимость выезда и подготовку станции.",
+      "description_file": "klin-short-description.html"
+    },
+    {
+      "id": 244,
+      "city": "Звенигороде",
+      "path": "servisnoe-obsluzhivanie-septikov-v-zvenigorode",
+      "file": "zvenigorod.html",
+      "seo_title": "Обслуживание септиков в Звенигороде | ЗЕЛСЕПТИК",
+      "seo_description": "Обслуживание септиков в Звенигороде при постоянном и сезонном проживании. Плановый сервис, подготовка заявки и обсуждение консервации станции."
+    },
+    {
+      "id": 245,
+      "city": "Лобне",
+      "path": "servisnoe-obsluzhivanie-septikov-v-lobne",
+      "file": "lobnya.html",
+      "seo_title": "Обслуживание септиков в Лобне | ЗЕЛСЕПТИК",
+      "seo_description": "Обслуживание септиков в Лобне. Какие сведения подготовить, если модель или история обслуживания неизвестны, и как согласовать работы и стоимость."
+    },
+    {
+      "id": 246,
+      "city": "Дмитрове",
+      "path": "servisnoe-obsluzhivanie-septikov-v-dmitrove",
+      "file": "dmitrov.html",
+      "seo_title": "Обслуживание септиков в Дмитрове | ЗЕЛСЕПТИК",
+      "seo_description": "Обслуживание септиков в Дмитрове: плановый сервис, сведения о предыдущих работах и согласование диагностики. Оставьте заявку с моделью и адресом."
+    },
+    {
+      "id": 247,
+      "city": "Волоколамске",
+      "path": "servisnoe-obsluzhivanie-septikov-v-volokolamske",
+      "file": "volokolamsk.html",
+      "seo_title": "Обслуживание септиков в Волоколамске | ЗЕЛСЕПТИК",
+      "seo_description": "Обслуживание септиков в Волоколамске. Подготовка заявки, организация доступа к станции и согласование выезда, материалов и состава работ."
+    },
+    {
+      "id": 248,
+      "city": "Королёве",
+      "path": "servisnoe-obsluzhivanie-septikov-v-korolyove",
+      "file": "korolyov.html",
+      "seo_title": "Обслуживание септиков в Королёве | ЗЕЛСЕПТИК",
+      "seo_description": "Обслуживание септиков в Королёве: плановый сервис и обращения при изменениях в работе станции. Уточните перечень операций и стоимость по вашей модели."
+    },
+    {
+      "id": 249,
+      "city": "Долгопрудном",
+      "path": "servisnoe-obsluzhivanie-septikov-v-dolgoprudnom",
+      "file": "dolgoprudny.html",
+      "seo_title": "Обслуживание септиков в Долгопрудном | ЗЕЛСЕПТИК",
+      "seo_description": "Обслуживание септиков в Долгопрудном. Как сравнить состав услуг, согласовать стоимость и подготовить сведения о станции для заявки."
+    },
+    {
+      "id": 250,
+      "city": "Москве",
+      "path": "obsluzhivanie-septikov-v-moskve",
+      "file": "moskva.html",
+      "seo_title": "Обслуживание септиков в Москве | ЗЕЛСЕПТИК",
+      "seo_description": "Обслуживание септиков в Москве: уточнение адреса, модели станции и задачи. Согласуйте состав сервиса, стоимость и условия выезда с ЗЕЛСЕПТИК."
+    }
+  ],
+  "production_applied": false,
+  "deployment_commit": "f56ad8041a137e152d5f5d6e011410be65195c6e",
+  "applied_at": "2026-10-08",
+  "workflow_run": 37730231676
+}

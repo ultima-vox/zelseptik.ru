@@ -1,0 +1,90 @@
+[
+  {
+    "id": 268,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-6-universal",
+    "name": "Эко-Гранд 6 \"универсал\"",
+    "file": "eko-grand-6-universal.html",
+    "seo_title": "Эко-Гранд 6 — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 6: до 6 пользователей, 1400 л/сутки, залповый сброс 320 л, самотечный отвод. Сравнение исполнений и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 6,
+      "capacity_l_day": 1400,
+      "burst_l": 320,
+      "drainage": "самотечный"
+    },
+    "source": "https://eco-grand.ru/eko-grand-6.html",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
+  },
+  {
+    "id": 269,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-6-universal-pr",
+    "name": "Эко-Гранд 6 \"универсал\" Пр",
+    "file": "eko-grand-6-universal-pr.html",
+    "seo_title": "Эко-Гранд 6 Пр — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 6 Пр: до 6 пользователей, 1400 л/сутки, залповый сброс 320 л, принудительный отвод. Сравнение исполнений и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 6,
+      "capacity_l_day": 1400,
+      "burst_l": 320,
+      "drainage": "принудительный"
+    },
+    "source": "https://eco-grand.ru/eko-grand-6-universal.html",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
+  },
+  {
+    "id": 270,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-8",
+    "name": "Эко-Гранд 8",
+    "file": "eko-grand-8.html",
+    "seo_title": "Эко-Гранд 8 — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 8: до 8 пользователей, 1900 л/сутки, залповый сброс 470 л, самотечный отвод. Сравнение исполнений и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 8,
+      "capacity_l_day": 1900,
+      "burst_l": 470,
+      "drainage": "самотечный"
+    },
+    "source": "https://eco-grand.ru/eko-grand-8.html",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12",
+    "property_changes": [
+      {
+        "property_id": 4,
+        "before": 1800,
+        "after": 1900,
+        "source": "https://eco-grand.ru/eko-grand-8.html"
+      }
+    ]
+  },
+  {
+    "id": 271,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-8-pr",
+    "name": "Эко-Гранд 8 Пр",
+    "file": "eko-grand-8-pr.html",
+    "seo_title": "Эко-Гранд 8 Пр — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 8 Пр: до 8 пользователей, 1900 л/сутки, залповый сброс 470 л, принудительный отвод. Сравнение исполнений и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 8,
+      "capacity_l_day": 1900,
+      "burst_l": 470,
+      "drainage": "принудительный"
+    },
+    "source": "https://eco-grand.ru/eko-grand-8-pr.html",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-12"
+  }
+]

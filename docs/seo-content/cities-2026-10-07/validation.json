@@ -1,0 +1,57 @@
+{
+  "status": "local_drafts_validated_not_published",
+  "checks": [
+    {
+      "id": 240,
+      "file": "krasnogorsk.html",
+      "words": 193,
+      "links": [
+        "/remont-septikov/",
+        "/contacts/",
+        "/obsluzhivanie-septikov/"
+      ]
+    },
+    {
+      "id": 233,
+      "file": "zelenograd.html",
+      "words": 204,
+      "links": [
+        "/remont-septikov/",
+        "/contacts/",
+        "/obsluzhivanie-po-gorodam/"
+      ]
+    },
+    {
+      "id": 236,
+      "file": "istra.html",
+      "words": 203,
+      "links": [
+        "/obsluzhivanie-septikov/konservacziya-topas/",
+        "/obsluzhivanie-septikov/konservacziya-yunilos-astra/",
+        "/contacts/",
+        "/remont-septikov/"
+      ]
+    },
+    {
+      "id": 238,
+      "file": "khimki.html",
+      "words": 205,
+      "links": [
+        "/remont-septikov/",
+        "/contacts/",
+        "/obsluzhivanie-septikov/"
+      ]
+    },
+    {
+      "id": 242,
+      "file": "solnechnogorsk.html",
+      "words": 191,
+      "links": [
+        "/remont-septikov/",
+        "/contacts/",
+        "/obsluzhivanie-septikov/",
+        "/obsluzhivanie-po-gorodam/"
+      ]
+    }
+  ]
+}

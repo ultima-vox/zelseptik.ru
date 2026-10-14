@@ -1,0 +1,142 @@
+[
+  {
+    "id": 258,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-2",
+    "name": "Эко-Гранд 2",
+    "file": "eko-grand-2.html",
+    "seo_title": "Эко-Гранд 2 — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 2: до 2 пользователей, 200 л/сутки, залповый сброс 50 л, самотечный отвод. Сравнение моделей, подбор и расчет монтажа в Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 2,
+      "capacity_l_day": 200,
+      "burst_l": 50,
+      "drainage": "самотечный",
+      "long": false
+    },
+    "source": "https://eco-grand.ru/eko-grand-2.html",
+    "status": "prepared_not_published"
+  },
+  {
+    "id": 266,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-5-long",
+    "name": "Эко-Гранд 5 Лонг",
+    "file": "eko-grand-5-long.html",
+    "seo_title": "Эко-Гранд 5 Лонг — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 5 Лонг: до 5 пользователей, 1100 л/сутки, залповый сброс 250 л, самотечный отвод. Ввод трубы 900–1400 мм. Подбор и расчет монтажа.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 5,
+      "capacity_l_day": 1100,
+      "burst_l": 250,
+      "drainage": "самотечный",
+      "long": true
+    },
+    "source": "https://eco-grand.ru/ceptik-eko-grand-5-long.html",
+    "status": "prepared_not_published"
+  },
+  {
+    "id": 267,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-5-long-pr",
+    "name": "Эко-Гранд 5 Лонг Пр",
+    "file": "eko-grand-5-long-pr.html",
+    "seo_title": "Эко-Гранд 5 Лонг Пр — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 5 Лонг Пр: до 5 пользователей, 1100 л/сутки, залповый сброс 250 л, принудительный отвод. Ввод трубы 900–1400 мм. Подбор и расчет монтажа.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 5,
+      "capacity_l_day": 1100,
+      "burst_l": 250,
+      "drainage": "принудительный",
+      "long": true
+    },
+    "source": "https://eco-grand.ru/ceptik-eko-grand-5-long-pr.html",
+    "status": "prepared_not_published"
+  },
+  {
+    "id": 272,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-5-long-kopiya-ot-09032023-113145",
+    "name": "Эко-Гранд 8 Лонг",
+    "file": "eko-grand-8-long.html",
+    "seo_title": "Эко-Гранд 8 Лонг — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 8 Лонг: до 8 пользователей, 1900 л/сутки, залповый сброс 470 л, самотечный отвод. Ввод трубы 900–1400 мм. Подбор и расчет монтажа.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 8,
+      "capacity_l_day": 1900,
+      "burst_l": 470,
+      "drainage": "самотечный",
+      "long": true
+    },
+    "source": "https://eco-grand.ru/eko-grand-8-long.html",
+    "status": "prepared_not_published"
+  },
+  {
+    "id": 273,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-8-long-pr",
+    "name": "Эко-Гранд 8 Лонг Пр",
+    "file": "eko-grand-8-long-pr.html",
+    "seo_title": "Эко-Гранд 8 Лонг Пр — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 8 Лонг Пр: до 8 пользователей, 1900 л/сутки, залповый сброс 470 л, принудительный отвод. Ввод трубы 900–1400 мм. Подбор и расчет монтажа.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 8,
+      "capacity_l_day": 1900,
+      "burst_l": 470,
+      "drainage": "принудительный",
+      "long": true
+    },
+    "source": "https://eco-grand.ru/eko-grand-8-long-pr.html",
+    "status": "prepared_not_published"
+  },
+  {
+    "id": 276,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-10-long",
+    "name": "Эко-Гранд 10 Лонг",
+    "file": "eko-grand-10-long.html",
+    "seo_title": "Эко-Гранд 10 Лонг — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 10 Лонг: до 10 пользователей, 3300 л/сутки, залповый сброс 790 л, самотечный отвод. Ввод трубы 900–1400 мм. Подбор и расчет монтажа.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 10,
+      "capacity_l_day": 3300,
+      "burst_l": 790,
+      "drainage": "самотечный",
+      "long": true
+    },
+    "source": "https://eco-grand.ru/eko-grand-10-long.html",
+    "status": "prepared_not_published"
+  },
+  {
+    "id": 277,
+    "shop_id": 1,
+    "shop_group_id": 15,
+    "path": "eko-grand-10-long-pr",
+    "name": "Эко-Гранд 10 Лонг Пр",
+    "file": "eko-grand-10-long-pr.html",
+    "seo_title": "Эко-Гранд 10 Лонг Пр — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Эко-Гранд 10 Лонг Пр: до 10 пользователей, 3300 л/сутки, залповый сброс 790 л, принудительный отвод. Ввод трубы 900–1400 мм. Подбор и расчет монтажа.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 10,
+      "capacity_l_day": 3300,
+      "burst_l": 790,
+      "drainage": "принудительный",
+      "long": true
+    },
+    "source": "https://eco-grand.ru/eko-grand-10-long-pr.html",
+    "status": "prepared_not_published"
+  }
+]

@@ -280,38 +280,21 @@ $Shop_Controller_Show
 		?>
  </section>
 <!-- GEOGRAPHY & REGIONAL MAP -->
-<section id="geography" class="geography-section"> 
-		<?php
-if (Core::moduleIsActive('informationsystem'))
-		{
-			$Informationsystem_Controller_Show = new Informationsystem_Controller_Show(
-				Core_Entity::factory('Informationsystem', 4)
-			);
-
-		/*	$Informationsystem_Controller_Show
-				->informationsystemItems()
-				->queryBuilder()
-				->clearOrderBy()
-				->orderBy('RAND()'); */
-
-			$Informationsystem_Controller_Show
-				->xsl(
-					Core_Entity::factory('Xsl')->getByName('СписокРайоныОбслуживанияНаГлавной')
-				)
-				->groupsMode('none')
-				->itemsProperties(TRUE)
-				//->itemsForbiddenTags(array('text'))
-				->group(FALSE)
-				->limit(10);
-			$Informationsystem_Controller_Show
-		->informationsystemItems()
-		->queryBuilder()
-		->clearOrderBy()
-		->orderBy('sorting', 'ASC');
-
-    $Informationsystem_Controller_Show->show();
-		  
-		}
+<section id="geography" class="geography-section">
+<?php
+if (Core::moduleIsActive('shop'))
+{
+    // Reuse the active service destinations, not the closed legacy city pages.
+    $Geography_Controller_Show = new Shop_Controller_Show(Core_Entity::factory('Shop', 6));
+    $Geography_Controller_Show
+        ->xsl(Core_Entity::factory('Xsl')->getByName('СписокРайоныОбслуживанияНаГлавной'))
+        ->groupsMode('none')
+        ->itemsProperties(TRUE)
+        ->group(FALSE)
+        ->limit(100);
+    $Geography_Controller_Show->shopItems()->queryBuilder()->clearOrderBy()->orderBy('sorting', 'ASC');
+    $Geography_Controller_Show->show();
+}
 ?>
 </section>
 <!-- INTERACTIVE FAQ ACCORDION -->

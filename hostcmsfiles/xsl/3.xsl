@@ -47,7 +47,11 @@
 					</xsl:if>
 				</div>
 		</div></section>
-		<div class="section area-articles no-bg">
+		<div>
+            <xsl:attribute name="class">
+                <xsl:text>section area-articles no-bg</xsl:text>
+                <xsl:if test="landing_description = 1 and (@id = 7 or @id = 8 or @id = 9)"><xsl:text> information-service-index</xsl:text></xsl:if>
+            </xsl:attribute>
 			<div class="page-bl">
 
 
@@ -108,7 +112,7 @@
 					</div>
 				</div>
 			</div>
-			<xsl:if test="$group = 0"><xsl:value-of select="description" disable-output-escaping="yes"/></xsl:if>
+			<xsl:if test="$group = 0 and (not(@id = 7 or @id = 8 or @id = 9) or (landing_description = 1 and (not(page) or page = 0) and not(tag)))"><div hostcms:id="{@id}" hostcms:field="description" hostcms:entity="informationsystem" hostcms:type="wysiwyg"><xsl:value-of select="description" disable-output-escaping="yes"/></div></xsl:if>
 			<div class="section area-text no-bg">
 
 				<div class="page-bl">

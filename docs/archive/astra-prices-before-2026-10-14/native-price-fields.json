@@ -1,0 +1,782 @@
+[
+  {
+    "id": 174,
+    "name": "Астра 3",
+    "path": "astra-3",
+    "price": 120000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 3"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-3"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "120000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2499",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2498",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "174"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": 176,
+    "name": "Астра 5",
+    "path": "astra-5",
+    "price": 145000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 5"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-5"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "145000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2523",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2522",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "176"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": 177,
+    "name": "Астра 5 Миди",
+    "path": "astra-5-midi",
+    "price": 148000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 5 Миди"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-5-midi"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "148000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2535",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2534",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "177"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": 178,
+    "name": "Астра 5 Лонг",
+    "path": "astra-5-long",
+    "price": 167000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 5 Лонг"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-5-long"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "167000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2547",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2546",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "178"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": 183,
+    "name": "Астра 8",
+    "path": "astra-8",
+    "price": 176000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 8"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-8"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "176000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2603",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2602",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "183"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": 179,
+    "name": "Астра 8 Миди",
+    "path": "astra-8-midi",
+    "price": 179000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 8 Миди"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-8-midi"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "179000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2559",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2558",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "179"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": 180,
+    "name": "Астра 8 Long",
+    "path": "astra-8-long",
+    "price": 204000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 8 Long"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-8-long"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "204000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2570",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2569",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "180"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": 184,
+    "name": "Астра 10",
+    "path": "astra-10",
+    "price": 231000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 10"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-10"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "231000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2614",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2613",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "184"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": 181,
+    "name": "Астра 10 Миди",
+    "path": "astra-10-midi",
+    "price": 234000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 10 Миди"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-10-midi"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "234000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2581",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2580",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "181"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  },
+  {
+    "id": 182,
+    "name": "Астра 10 Лонг",
+    "path": "astra-10-long",
+    "price": 260000,
+    "fields": [
+      {
+        "checked": false,
+        "name": "name",
+        "value": "Астра 10 Лонг"
+      },
+      {
+        "checked": false,
+        "name": "modification_name",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "path",
+        "value": "astra-10-long"
+      },
+      {
+        "checked": true,
+        "name": "apply_purchase_discount",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "price",
+        "value": "260000.00"
+      },
+      {
+        "checked": false,
+        "name": "apply_price_for_modification",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "specMinQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specMaxQuantity_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPrice_[]",
+        "value": ""
+      },
+      {
+        "checked": false,
+        "name": "specPercent_[]",
+        "value": ""
+      },
+      {
+        "checked": true,
+        "name": "property_3_2592",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "property_2_2591",
+        "value": "1"
+      },
+      {
+        "checked": false,
+        "name": "id",
+        "value": "182"
+      },
+      {
+        "checked": false,
+        "name": "shop_id",
+        "value": "1"
+      }
+    ]
+  }
+]

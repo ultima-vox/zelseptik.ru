@@ -121,6 +121,7 @@ export function initInformationPages(scope = document) {
   const contexts = [
     ['/kessony/', 'Подберём кессон для вашей скважины', 'Поможем выбрать кессон и уточнить состав работ по установке.', 'Рассчитать кессон', ['Подбор кессона', 'Предварительную смету установки', 'Уточнение условий участка', 'Ответ по срокам и гарантии']],
     ['/pogreba/', 'Подберём погреб для вашего участка', 'Поможем выбрать погреб и уточнить условия доставки и установки.', 'Рассчитать погреб', ['Подбор погреба', 'Предварительную смету установки', 'Уточнение условий участка', 'Ответ по срокам и гарантии']],
+    ['/obsluzhivanie-septikov/', 'Обсудим обслуживание вашего септика', 'Уточним модель станции, её состояние и состав необходимых работ.', 'Обсудить обслуживание', ['Уточнение модели станции', 'Согласование состава работ', 'Расчёт стоимости обслуживания', 'Ответ по срокам выезда']],
     ['/obsluzhivanie-po-gorodam/', 'Обсудим обслуживание вашего септика', 'Уточним модель станции, её состояние и состав необходимых работ.', 'Обсудить обслуживание', ['Уточнение модели станции', 'Согласование состава работ', 'Расчёт стоимости обслуживания', 'Ответ по срокам выезда']],
   ];
   const context = contexts.find(([prefix]) => path.startsWith(prefix));
@@ -130,7 +131,7 @@ export function initInformationPages(scope = document) {
   const setText = (selector, text) => { const node = cta.querySelector(selector); if (node) node.textContent = text; };
   setText('.cta-section__title', title);
   setText('.cta-section__desc', description);
-  setText('.cta-card__title', path.startsWith('/obsluzhivanie-po-gorodam/') ? 'Обсудить обслуживание' : 'Получить расчёт');
+  setText('.cta-card__title', path.startsWith('/obsluzhivanie-po-gorodam/') || path.startsWith('/obsluzhivanie-septikov/') ? 'Обсудить обслуживание' : 'Получить расчёт');
   setText('.cta-card__subtitle', 'Оставьте телефон — инженер свяжется и уточнит детали заявки.');
   setText('button[type="submit"]', button);
   cta.querySelectorAll('.cta-section__gift-name').forEach((node, index) => {
@@ -265,6 +266,21 @@ export function initInformationSections(scope = document) {
   scope.querySelectorAll('.information-detail:not(.information-detail--article)').forEach((root, rootIndex) => {
     const content = root.querySelector('.information-detail__body') || root;
     if (content.hasAttribute('data-service-content')) return;
+    // Older native information items contain direct rich text instead of area wrappers.
+    // Move the original nodes into panels, keeping IDs, links, tables and forms intact.
+    if (root.querySelector('.hero-section') && content.querySelector(':scope > h2, :scope > h3')
+        && !content.querySelector(':scope > .area-text, :scope > .area-paragraph, :scope > .area-why')) {
+      let panel = null;
+      Array.from(content.childNodes).forEach((node) => {
+        if (node.nodeType === 3 && !node.textContent.trim()) return;
+        if (!panel || (node.nodeType === 1 && node.matches('h2, h3'))) {
+          panel = scope.createElement('section');
+          panel.className = 'area-text information-rich-panel';
+          content.insertBefore(panel, node);
+        }
+        panel.append(node);
+      });
+    }
     const sections = Array.from(content.children).filter((node) => node.matches('.area-text, .area-paragraph, .area-why'));
     if (!sections.length) return;
     content.classList.add('information-service-content');
@@ -317,8 +333,12 @@ export function initInformationSections(scope = document) {
       image.loading = 'lazy';
       image.decoding = 'async';
     });
-    content.querySelectorAll('.tbl-row[data-information-table] table').forEach((table) => {
+    content.querySelectorAll('.tbl-row[data-information-table] table, .information-rich-panel table').forEach((table) => {
       const headers = Array.from(table.tHead?.rows[0]?.cells || []).map((cell) => cell.textContent.trim());
+      if (table.querySelector('[rowspan], [colspan]')) {
+        table.classList.add('information-rich-table');
+        return;
+      }
       if (!headers.length || Array.from(table.tBodies).some((body) => Array.from(body.rows).some((row) => row.cells.length !== headers.length))) return;
       table.classList.add('information-price-table');
       table.setAttribute('role', 'table');
@@ -332,12 +352,12 @@ export function initInformationSections(scope = document) {
       }));
     });
     // Surface the existing price section near the start, rather than duplicating prices.
-    const priceSection = sections.find((section) => section.querySelector('.tbl-wrap .information-price-table'));
+    const priceSection = sections.find((section) => section.querySelector('.tbl-wrap .information-price-table, .information-rich-panel .information-price-table, .information-rich-table') || (section.classList.contains('information-rich-panel') && section.querySelector('table')));
     if (priceSection) {
       priceSection.classList.add('information-service-section--prices');
       content.insertBefore(priceSection, sections[0]);
     }
-    const headings = Array.from(content.querySelectorAll('[data-service-section] h2, [data-service-section] .h-2')).filter((heading) => !heading.closest('form, table, .punkt-bl') && heading.textContent.trim());
+    const headings = Array.from(content.querySelectorAll('[data-service-section] h2, [data-service-section] .h-2, .information-rich-panel > h3')).filter((heading) => !heading.closest('form, table, .punkt-bl') && heading.textContent.trim());
     if (headings.length > 1) {
       const nav = scope.createElement('nav');
       nav.className = 'information-service-nav';

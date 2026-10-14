@@ -1,0 +1,14 @@
+{
+  "files": [
+    {
+      "path": "templates/template13/template.htm",
+      "original_path": "archive/2026-10-06/seo-baseline/templates/template13/template.htm",
+      "sha256": "eb73b4b8ba9f725663d8503dbc16889fd9395cb9ceb8fd23253b5283f5bfb798"
+    },
+    {
+      "path": "hostcmsfiles/lib/lib_29/lib_config_29.php",
+      "original_path": "archive/2026-10-06/seo-baseline/hostcmsfiles/lib/lib_29/lib_config_29.php",
+      "sha256": "0487a2d5c020317cfc0a09771ff59a4cb18d9578db51004a77bdea063d67a912"
+    }
+  ]
+}

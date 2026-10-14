@@ -1,0 +1,87 @@
+{
+  "before": [
+    {
+      "checked": false,
+      "name": "name",
+      "value": "Астра 4"
+    },
+    {
+      "checked": false,
+      "name": "modification_name",
+      "value": ""
+    },
+    {
+      "checked": false,
+      "name": "path",
+      "value": "astra-4"
+    },
+    {
+      "checked": false,
+      "name": "price",
+      "value": "125000.00"
+    },
+    {
+      "checked": false,
+      "name": "apply_price_for_modification",
+      "value": "1"
+    },
+    {
+      "checked": false,
+      "name": "specMinQuantity_[]",
+      "value": ""
+    },
+    {
+      "checked": false,
+      "name": "specMaxQuantity_[]",
+      "value": ""
+    },
+    {
+      "checked": false,
+      "name": "specPrice_[]",
+      "value": ""
+    },
+    {
+      "checked": false,
+      "name": "specPercent_[]",
+      "value": ""
+    },
+    {
+      "checked": false,
+      "name": "property_3_2511",
+      "value": "1"
+    },
+    {
+      "checked": false,
+      "name": "property_2_2510",
+      "value": "1"
+    },
+    {
+      "checked": false,
+      "name": "id",
+      "value": "175"
+    },
+    {
+      "checked": false,
+      "name": "shop_id",
+      "value": "1"
+    }
+  ],
+  "after": {
+    "id": 175,
+    "price": 147000,
+    "gravity": true,
+    "forced": false
+  },
+  "verification": {
+    "gravity_visible": true,
+    "price": "147000.00",
+    "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-4/"
+  },
+  "forced_variant": {
+    "id": 373,
+    "price_policy": "on_request",
+    "forced": true,
+    "gravity": false
+  },
+  "user_approved_mapping": true
+}

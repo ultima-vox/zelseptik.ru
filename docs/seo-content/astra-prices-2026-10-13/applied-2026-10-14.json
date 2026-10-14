@@ -1,0 +1,311 @@
+{
+  "priceChanges": [
+    {
+      "id": 174,
+      "name": "Астра 3",
+      "path": "astra-3",
+      "before_price": 120000,
+      "target_price": 140500,
+      "save_clicked": true
+    },
+    {
+      "id": 176,
+      "name": "Астра 5",
+      "path": "astra-5",
+      "before_price": 145000,
+      "target_price": 172300,
+      "save_clicked": true
+    },
+    {
+      "id": 177,
+      "name": "Астра 5 Миди",
+      "path": "astra-5-midi",
+      "before_price": 148000,
+      "target_price": 174500,
+      "save_clicked": true
+    },
+    {
+      "id": 178,
+      "name": "Астра 5 Лонг",
+      "path": "astra-5-long",
+      "before_price": 167000,
+      "target_price": 206900,
+      "save_clicked": true
+    },
+    {
+      "id": 183,
+      "name": "Астра 8",
+      "path": "astra-8",
+      "before_price": 176000,
+      "target_price": 203000,
+      "save_clicked": true
+    },
+    {
+      "id": 179,
+      "name": "Астра 8 Миди",
+      "path": "astra-8-midi",
+      "before_price": 179000,
+      "target_price": 206300,
+      "save_clicked": true
+    },
+    {
+      "id": 180,
+      "name": "Астра 8 Long",
+      "path": "astra-8-long",
+      "before_price": 204000,
+      "target_price": 245900,
+      "save_clicked": true
+    },
+    {
+      "id": 184,
+      "name": "Астра 10",
+      "path": "astra-10",
+      "before_price": 231000,
+      "target_price": 276500,
+      "save_clicked": true
+    },
+    {
+      "id": 181,
+      "name": "Астра 10 Миди",
+      "path": "astra-10-midi",
+      "before_price": 234000,
+      "target_price": 279700,
+      "save_clicked": true
+    },
+    {
+      "id": 182,
+      "name": "Астра 10 Лонг",
+      "path": "astra-10-long",
+      "before_price": 260000,
+      "target_price": 322200,
+      "save_clicked": true
+    }
+  ],
+  "livePriceChecks": [
+    {
+      "id": 174,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-3/",
+      "expected_price": 140500,
+      "observed": {
+        "prices": [
+          {
+            "content": "140500.00",
+            "text": ""
+          }
+        ],
+        "title": "Юнилос Астра 3 — характеристики, цена и монтаж | ЗелСептик"
+      }
+    },
+    {
+      "id": 176,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-5/",
+      "expected_price": 172300,
+      "observed": {
+        "prices": [
+          {
+            "content": "172300.00",
+            "text": ""
+          }
+        ],
+        "title": "Юнилос Астра 5 — характеристики, цена и монтаж | ЗелСептик"
+      }
+    },
+    {
+      "id": 177,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-5-midi/",
+      "expected_price": 174500,
+      "observed": {
+        "prices": [
+          {
+            "content": "174500.00",
+            "text": ""
+          }
+        ],
+        "title": "Септик Астра 5 Миди купить с установкой под ключ - цена станции 174500.00 руб."
+      }
+    },
+    {
+      "id": 178,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-5-long/",
+      "expected_price": 206900,
+      "observed": {
+        "prices": [
+          {
+            "content": "206900.00",
+            "text": ""
+          }
+        ],
+        "title": "Септик Астра 5 Лонг купить с установкой под ключ - цена станции 206900.00 руб."
+      }
+    },
+    {
+      "id": 183,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-8/",
+      "expected_price": 203000,
+      "observed": {
+        "prices": [
+          {
+            "content": "203000.00",
+            "text": ""
+          }
+        ],
+        "title": "Септик Астра 8 купить с установкой под ключ - цена станции 203000.00 руб."
+      }
+    },
+    {
+      "id": 179,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-8-midi/",
+      "expected_price": 206300,
+      "observed": {
+        "prices": [
+          {
+            "content": "206300.00",
+            "text": ""
+          }
+        ],
+        "title": "Септик Астра 8 Миди купить с установкой под ключ - цена станции 206300.00 руб."
+      }
+    },
+    {
+      "id": 180,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-8-long/",
+      "expected_price": 245900,
+      "observed": {
+        "prices": [
+          {
+            "content": "245900.00",
+            "text": ""
+          }
+        ],
+        "title": "Септик Астра 8 Long купить с установкой под ключ - цена станции 245900.00 руб."
+      }
+    },
+    {
+      "id": 184,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-10/",
+      "expected_price": 276500,
+      "observed": {
+        "prices": [
+          {
+            "content": "276500.00",
+            "text": ""
+          }
+        ],
+        "title": "Септик Астра 10 купить с установкой под ключ - цена станции 276500.00 руб."
+      }
+    },
+    {
+      "id": 181,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-10-midi/",
+      "expected_price": 279700,
+      "observed": {
+        "prices": [
+          {
+            "content": "279700.00",
+            "text": ""
+          }
+        ],
+        "title": "Септик Астра 10 Миди купить с установкой под ключ - цена станции 279700.00 руб."
+      }
+    },
+    {
+      "id": 182,
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-10-long/",
+      "expected_price": 322200,
+      "observed": {
+        "prices": [
+          {
+            "content": "322200.00",
+            "text": ""
+          }
+        ],
+        "title": "Септик Астра 10 Лонг купить с установкой под ключ - цена станции 322200.00 руб."
+      }
+    }
+  ],
+  "catalogPriceChecks": [
+    {
+      "expected": 140500,
+      "id": 174,
+      "name": "Астра 3",
+      "visible_price_matches": true
+    },
+    {
+      "expected": 172300,
+      "id": 176,
+      "name": "Астра 5",
+      "visible_price_matches": true
+    },
+    {
+      "expected": 174500,
+      "id": 177,
+      "name": "Астра 5 Миди",
+      "visible_price_matches": true
+    },
+    {
+      "expected": 206900,
+      "id": 178,
+      "name": "Астра 5 Лонг",
+      "visible_price_matches": true
+    },
+    {
+      "expected": 203000,
+      "id": 183,
+      "name": "Астра 8",
+      "visible_price_matches": true
+    },
+    {
+      "expected": 206300,
+      "id": 179,
+      "name": "Астра 8 Миди",
+      "visible_price_matches": true
+    },
+    {
+      "expected": 245900,
+      "id": 180,
+      "name": "Астра 8 Long",
+      "visible_price_matches": true
+    },
+    {
+      "expected": 276500,
+      "id": 184,
+      "name": "Астра 10",
+      "visible_price_matches": true
+    },
+    {
+      "expected": 279700,
+      "id": 181,
+      "name": "Астра 10 Миди",
+      "visible_price_matches": true
+    },
+    {
+      "expected": 322200,
+      "id": 182,
+      "name": "Астра 10 Лонг",
+      "visible_price_matches": true
+    }
+  ],
+  "backlinkChecks": [
+    {
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-10-long/astra-10-long-kns-pr/",
+      "parent_link": 1
+    },
+    {
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-10-long/astra-10-long-pr/",
+      "parent_link": 1
+    },
+    {
+      "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-10-long/astra-10-long-kns/",
+      "parent_link": 1
+    }
+  ],
+  "applied_at": "2026-10-14",
+  "environment": "dev",
+  "method": "native_hostcms_item_form",
+  "source": "https://sbm-group.ru/price-test-2026",
+  "vendor_effective_date": "2026-09-01",
+  "source_retrieved_at": "2026-10-14",
+  "source_html_sha256": "55a7aedb9c69c7d9067eb3380bafde3787d8adb17b4ad4a97413a5e2b9704f86",
+  "production_changed": false,
+  "cart_checked": false
+}

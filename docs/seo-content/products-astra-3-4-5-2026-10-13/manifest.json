@@ -1,0 +1,56 @@
+[
+  {
+    "id": 174,
+    "shop_id": 1,
+    "shop_group_id": 13,
+    "name": "Астра 3",
+    "path": "astra-3",
+    "file": "astra-3.html",
+    "seo_title": "Юнилос Астра 3 — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Септик Юнилос Астра 3 для 3 пользователей, производительность 600 л/сутки. Подбор комплектации, расчет доставки и монтажа в Зеленограде и Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 3,
+      "capacity_l_day": 600
+    },
+    "source": "https://sbm-group.ru/products/unilos-astra/unilos-astra-3",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-13"
+  },
+  {
+    "id": 175,
+    "shop_id": 1,
+    "shop_group_id": 13,
+    "name": "Астра 4",
+    "path": "astra-4",
+    "file": "astra-4.html",
+    "seo_title": "Юнилос Астра 4 — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Септик Юнилос Астра 4 для 4 пользователей, производительность 800 л/сутки. Подбор комплектации, расчет доставки и монтажа в Зеленограде и Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 4,
+      "capacity_l_day": 800
+    },
+    "source": "https://sbm-group.ru/products/unilos-astra/unilos-astra-4",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-13"
+  },
+  {
+    "id": 176,
+    "shop_id": 1,
+    "shop_group_id": 13,
+    "name": "Астра 5",
+    "path": "astra-5",
+    "file": "astra-5.html",
+    "seo_title": "Юнилос Астра 5 — характеристики, цена и монтаж | ЗелСептик",
+    "seo_description": "Септик Юнилос Астра 5 для 5 пользователей, производительность 1000 л/сутки. Подбор комплектации, расчет доставки и монтажа в Зеленограде и Московской области.",
+    "seo_keywords": "",
+    "verified_facts": {
+      "users_max": 5,
+      "capacity_l_day": 1000
+    },
+    "source": "https://sbm-group.ru/products/unilos-astra/unilos-astra-5",
+    "status": "applied_verified_on_dev",
+    "applied_at": "2026-10-13"
+  }
+]

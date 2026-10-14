@@ -1,0 +1,1997 @@
+[
+  {
+    "group_id": 10,
+    "before": [
+      {
+        "id": 126,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_126",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_126_fv_243",
+            "name": "apply_check_1_126_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_126_fv_244",
+            "name": "apply_check_1_126_fv_244",
+            "type": "text",
+            "value": "170900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_126_fv_239",
+            "name": "apply_check_1_126_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 125,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_125",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_125_fv_243",
+            "name": "apply_check_1_125_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_125_fv_244",
+            "name": "apply_check_1_125_fv_244",
+            "type": "text",
+            "value": "282500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_125_fv_239",
+            "name": "apply_check_1_125_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 124,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_124",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_124_fv_243",
+            "name": "apply_check_1_124_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_124_fv_244",
+            "name": "apply_check_1_124_fv_244",
+            "type": "text",
+            "value": "254900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_124_fv_239",
+            "name": "apply_check_1_124_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 123,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_123",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_123_fv_243",
+            "name": "apply_check_1_123_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_123_fv_244",
+            "name": "apply_check_1_123_fv_244",
+            "type": "text",
+            "value": "214500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_123_fv_239",
+            "name": "apply_check_1_123_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 122,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_122",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_122_fv_243",
+            "name": "apply_check_1_122_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_122_fv_244",
+            "name": "apply_check_1_122_fv_244",
+            "type": "text",
+            "value": "194900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_122_fv_239",
+            "name": "apply_check_1_122_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 121,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_121",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_121_fv_243",
+            "name": "apply_check_1_121_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_121_fv_244",
+            "name": "apply_check_1_121_fv_244",
+            "type": "text",
+            "value": "202700.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_121_fv_239",
+            "name": "apply_check_1_121_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 120,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_120",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_120_fv_243",
+            "name": "apply_check_1_120_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_120_fv_244",
+            "name": "apply_check_1_120_fv_244",
+            "type": "text",
+            "value": "230900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_120_fv_239",
+            "name": "apply_check_1_120_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 119,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_119",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_119_fv_243",
+            "name": "apply_check_1_119_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_119_fv_244",
+            "name": "apply_check_1_119_fv_244",
+            "type": "text",
+            "value": "191500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_119_fv_239",
+            "name": "apply_check_1_119_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 118,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_118",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_118_fv_243",
+            "name": "apply_check_1_118_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_118_fv_244",
+            "name": "apply_check_1_118_fv_244",
+            "type": "text",
+            "value": "201300.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_118_fv_239",
+            "name": "apply_check_1_118_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 117,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_117",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_117_fv_243",
+            "name": "apply_check_1_117_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_117_fv_244",
+            "name": "apply_check_1_117_fv_244",
+            "type": "text",
+            "value": "171500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_117_fv_239",
+            "name": "apply_check_1_117_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 116,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_116",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_116_fv_243",
+            "name": "apply_check_1_116_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_116_fv_244",
+            "name": "apply_check_1_116_fv_244",
+            "type": "text",
+            "value": "184300.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_116_fv_239",
+            "name": "apply_check_1_116_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 115,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_115",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_115_fv_243",
+            "name": "apply_check_1_115_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_115_fv_244",
+            "name": "apply_check_1_115_fv_244",
+            "type": "text",
+            "value": "163300.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_115_fv_239",
+            "name": "apply_check_1_115_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 114,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_114",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_114_fv_243",
+            "name": "apply_check_1_114_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_114_fv_244",
+            "name": "apply_check_1_114_fv_244",
+            "type": "text",
+            "value": "182900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_114_fv_239",
+            "name": "apply_check_1_114_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 113,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_113",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_113_fv_243",
+            "name": "apply_check_1_113_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_113_fv_244",
+            "name": "apply_check_1_113_fv_244",
+            "type": "text",
+            "value": "162900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_113_fv_239",
+            "name": "apply_check_1_113_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 112,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_112",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_112_fv_243",
+            "name": "apply_check_1_112_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_112_fv_244",
+            "name": "apply_check_1_112_fv_244",
+            "type": "text",
+            "value": "141500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_112_fv_239",
+            "name": "apply_check_1_112_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 111,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_111",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_111_fv_243",
+            "name": "apply_check_1_111_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_111_fv_244",
+            "name": "apply_check_1_111_fv_244",
+            "type": "text",
+            "value": "270100.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_111_fv_239",
+            "name": "apply_check_1_111_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 109,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_109",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_109_fv_243",
+            "name": "apply_check_1_109_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_109_fv_244",
+            "name": "apply_check_1_109_fv_244",
+            "type": "text",
+            "value": "151300.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_109_fv_239",
+            "name": "apply_check_1_109_fv_239",
+            "type": "text",
+            "value": "20"
+          }
+        ]
+      },
+      {
+        "id": 107,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_107",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_107_fv_243",
+            "name": "apply_check_1_107_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_107_fv_244",
+            "name": "apply_check_1_107_fv_244",
+            "type": "text",
+            "value": "177500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_107_fv_239",
+            "name": "apply_check_1_107_fv_239",
+            "type": "text",
+            "value": "30"
+          }
+        ]
+      },
+      {
+        "id": 105,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_105",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_105_fv_243",
+            "name": "apply_check_1_105_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_105_fv_244",
+            "name": "apply_check_1_105_fv_244",
+            "type": "text",
+            "value": "178900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_105_fv_239",
+            "name": "apply_check_1_105_fv_239",
+            "type": "text",
+            "value": "40"
+          }
+        ]
+      },
+      {
+        "id": 103,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_103",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_103_fv_243",
+            "name": "apply_check_1_103_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_103_fv_244",
+            "name": "apply_check_1_103_fv_244",
+            "type": "text",
+            "value": "125100.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_103_fv_239",
+            "name": "apply_check_1_103_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 101,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_101",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_101_fv_243",
+            "name": "apply_check_1_101_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_101_fv_244",
+            "name": "apply_check_1_101_fv_244",
+            "type": "text",
+            "value": "148900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_101_fv_239",
+            "name": "apply_check_1_101_fv_239",
+            "type": "text",
+            "value": "10"
+          }
+        ]
+      },
+      {
+        "id": 99,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_99",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_99_fv_243",
+            "name": "apply_check_1_99_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_99_fv_244",
+            "name": "apply_check_1_99_fv_244",
+            "type": "text",
+            "value": "240700.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_99_fv_239",
+            "name": "apply_check_1_99_fv_239",
+            "type": "text",
+            "value": "50"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group_id": 11,
+    "before": [
+      {
+        "id": 153,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_153",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_153_fv_243",
+            "name": "apply_check_1_153_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_153_fv_244",
+            "name": "apply_check_1_153_fv_244",
+            "type": "text",
+            "value": "234900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_153_fv_239",
+            "name": "apply_check_1_153_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 152,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_152",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_152_fv_243",
+            "name": "apply_check_1_152_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_152_fv_244",
+            "name": "apply_check_1_152_fv_244",
+            "type": "text",
+            "value": "234900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_152_fv_239",
+            "name": "apply_check_1_152_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 151,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_151",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_151_fv_243",
+            "name": "apply_check_1_151_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_151_fv_244",
+            "name": "apply_check_1_151_fv_244",
+            "type": "text",
+            "value": "249700.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_151_fv_239",
+            "name": "apply_check_1_151_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 150,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_150",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_150_fv_243",
+            "name": "apply_check_1_150_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_150_fv_244",
+            "name": "apply_check_1_150_fv_244",
+            "type": "text",
+            "value": "152700.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_150_fv_239",
+            "name": "apply_check_1_150_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 149,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_149",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_149_fv_243",
+            "name": "apply_check_1_149_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_149_fv_244",
+            "name": "apply_check_1_149_fv_244",
+            "type": "text",
+            "value": "174300.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_149_fv_239",
+            "name": "apply_check_1_149_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 148,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_148",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_148_fv_243",
+            "name": "apply_check_1_148_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_148_fv_244",
+            "name": "apply_check_1_148_fv_244",
+            "type": "text",
+            "value": "161500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_148_fv_239",
+            "name": "apply_check_1_148_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 146,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_146",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_146_fv_243",
+            "name": "apply_check_1_146_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_146_fv_244",
+            "name": "apply_check_1_146_fv_244",
+            "type": "text",
+            "value": "139300.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_146_fv_239",
+            "name": "apply_check_1_146_fv_239",
+            "type": "text",
+            "value": "10"
+          }
+        ]
+      },
+      {
+        "id": 145,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_145",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_145_fv_243",
+            "name": "apply_check_1_145_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_145_fv_244",
+            "name": "apply_check_1_145_fv_244",
+            "type": "text",
+            "value": "153900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_145_fv_239",
+            "name": "apply_check_1_145_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 144,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_144",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_144_fv_243",
+            "name": "apply_check_1_144_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_144_fv_244",
+            "name": "apply_check_1_144_fv_244",
+            "type": "text",
+            "value": "174700.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_144_fv_239",
+            "name": "apply_check_1_144_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 143,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_143",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_143_fv_243",
+            "name": "apply_check_1_143_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_143_fv_244",
+            "name": "apply_check_1_143_fv_244",
+            "type": "text",
+            "value": "161900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_143_fv_239",
+            "name": "apply_check_1_143_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 142,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_142",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_142_fv_243",
+            "name": "apply_check_1_142_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_142_fv_244",
+            "name": "apply_check_1_142_fv_244",
+            "type": "text",
+            "value": "181500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_142_fv_239",
+            "name": "apply_check_1_142_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 141,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_141",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_141_fv_243",
+            "name": "apply_check_1_141_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_141_fv_244",
+            "name": "apply_check_1_141_fv_244",
+            "type": "text",
+            "value": "202900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_141_fv_239",
+            "name": "apply_check_1_141_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 140,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_140",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_140_fv_243",
+            "name": "apply_check_1_140_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_140_fv_244",
+            "name": "apply_check_1_140_fv_244",
+            "type": "text",
+            "value": "190700.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_140_fv_239",
+            "name": "apply_check_1_140_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 139,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_139",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_139_fv_243",
+            "name": "apply_check_1_139_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_139_fv_244",
+            "name": "apply_check_1_139_fv_244",
+            "type": "text",
+            "value": "182900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_139_fv_239",
+            "name": "apply_check_1_139_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 138,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_138",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_138_fv_243",
+            "name": "apply_check_1_138_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_138_fv_244",
+            "name": "apply_check_1_138_fv_244",
+            "type": "text",
+            "value": "204500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_138_fv_239",
+            "name": "apply_check_1_138_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 137,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_137",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_137_fv_243",
+            "name": "apply_check_1_137_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_137_fv_244",
+            "name": "apply_check_1_137_fv_244",
+            "type": "text",
+            "value": "192500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_137_fv_239",
+            "name": "apply_check_1_137_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 136,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_136",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_136_fv_243",
+            "name": "apply_check_1_136_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_136_fv_244",
+            "name": "apply_check_1_136_fv_244",
+            "type": "text",
+            "value": "131700.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_136_fv_239",
+            "name": "apply_check_1_136_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 134,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_134",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_134_fv_243",
+            "name": "apply_check_1_134_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_134_fv_244",
+            "name": "apply_check_1_134_fv_244",
+            "type": "text",
+            "value": "116700.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_134_fv_239",
+            "name": "apply_check_1_134_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 132,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_132",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_132_fv_243",
+            "name": "apply_check_1_132_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_132_fv_244",
+            "name": "apply_check_1_132_fv_244",
+            "type": "text",
+            "value": "221500.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_132_fv_239",
+            "name": "apply_check_1_132_fv_239",
+            "type": "text",
+            "value": "50"
+          }
+        ]
+      },
+      {
+        "id": 130,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_130",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_130_fv_243",
+            "name": "apply_check_1_130_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_130_fv_244",
+            "name": "apply_check_1_130_fv_244",
+            "type": "text",
+            "value": "168900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_130_fv_239",
+            "name": "apply_check_1_130_fv_239",
+            "type": "text",
+            "value": "40"
+          }
+        ]
+      },
+      {
+        "id": 128,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_128",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_128_fv_243",
+            "name": "apply_check_1_128_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_128_fv_244",
+            "name": "apply_check_1_128_fv_244",
+            "type": "text",
+            "value": "166900.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_128_fv_239",
+            "name": "apply_check_1_128_fv_239",
+            "type": "text",
+            "value": "30"
+          }
+        ]
+      },
+      {
+        "id": 127,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_127",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_127_fv_243",
+            "name": "apply_check_1_127_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_127_fv_244",
+            "name": "apply_check_1_127_fv_244",
+            "type": "text",
+            "value": "142300.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_127_fv_239",
+            "name": "apply_check_1_127_fv_239",
+            "type": "text",
+            "value": "20"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "group_id": 12,
+    "before": [
+      {
+        "id": 173,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_173",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_173_fv_243",
+            "name": "apply_check_1_173_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_173_fv_244",
+            "name": "apply_check_1_173_fv_244",
+            "type": "text",
+            "value": "249000.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_173_fv_239",
+            "name": "apply_check_1_173_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 172,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_172",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_172_fv_243",
+            "name": "apply_check_1_172_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_172_fv_244",
+            "name": "apply_check_1_172_fv_244",
+            "type": "text",
+            "value": "239100.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_172_fv_239",
+            "name": "apply_check_1_172_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 171,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_171",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_171_fv_243",
+            "name": "apply_check_1_171_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_171_fv_244",
+            "name": "apply_check_1_171_fv_244",
+            "type": "text",
+            "value": "229800.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_171_fv_239",
+            "name": "apply_check_1_171_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 170,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_170",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_170_fv_243",
+            "name": "apply_check_1_170_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_170_fv_244",
+            "name": "apply_check_1_170_fv_244",
+            "type": "text",
+            "value": "193700.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_170_fv_239",
+            "name": "apply_check_1_170_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 169,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_169",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_169_fv_243",
+            "name": "apply_check_1_169_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_169_fv_244",
+            "name": "apply_check_1_169_fv_244",
+            "type": "text",
+            "value": "177000.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_169_fv_239",
+            "name": "apply_check_1_169_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 168,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_168",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_168_fv_243",
+            "name": "apply_check_1_168_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_168_fv_244",
+            "name": "apply_check_1_168_fv_244",
+            "type": "text",
+            "value": "182200.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_168_fv_239",
+            "name": "apply_check_1_168_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 167,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_167",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_167_fv_243",
+            "name": "apply_check_1_167_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_167_fv_244",
+            "name": "apply_check_1_167_fv_244",
+            "type": "text",
+            "value": "155200.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_167_fv_239",
+            "name": "apply_check_1_167_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 166,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_166",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_166_fv_243",
+            "name": "apply_check_1_166_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_166_fv_244",
+            "name": "apply_check_1_166_fv_244",
+            "type": "text",
+            "value": "167800.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_166_fv_239",
+            "name": "apply_check_1_166_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 165,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_165",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_165_fv_243",
+            "name": "apply_check_1_165_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_165_fv_244",
+            "name": "apply_check_1_165_fv_244",
+            "type": "text",
+            "value": "148800.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_165_fv_239",
+            "name": "apply_check_1_165_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 164,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_164",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_164_fv_243",
+            "name": "apply_check_1_164_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_164_fv_244",
+            "name": "apply_check_1_164_fv_244",
+            "type": "text",
+            "value": "135800.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_164_fv_239",
+            "name": "apply_check_1_164_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 163,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_163",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_163_fv_243",
+            "name": "apply_check_1_163_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_163_fv_244",
+            "name": "apply_check_1_163_fv_244",
+            "type": "text",
+            "value": "125800.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_163_fv_239",
+            "name": "apply_check_1_163_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 162,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_162",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_162_fv_243",
+            "name": "apply_check_1_162_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_162_fv_244",
+            "name": "apply_check_1_162_fv_244",
+            "type": "text",
+            "value": "119800.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_162_fv_239",
+            "name": "apply_check_1_162_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "id": 160,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_160",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_160_fv_243",
+            "name": "apply_check_1_160_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_160_fv_244",
+            "name": "apply_check_1_160_fv_244",
+            "type": "text",
+            "value": "217400.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_160_fv_239",
+            "name": "apply_check_1_160_fv_239",
+            "type": "text",
+            "value": "30"
+          }
+        ]
+      },
+      {
+        "id": 158,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_158",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_158_fv_243",
+            "name": "apply_check_1_158_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_158_fv_244",
+            "name": "apply_check_1_158_fv_244",
+            "type": "text",
+            "value": "167100.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_158_fv_239",
+            "name": "apply_check_1_158_fv_239",
+            "type": "text",
+            "value": "20"
+          }
+        ]
+      },
+      {
+        "id": 156,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_156",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_156_fv_243",
+            "name": "apply_check_1_156_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_156_fv_244",
+            "name": "apply_check_1_156_fv_244",
+            "type": "text",
+            "value": "138200.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_156_fv_239",
+            "name": "apply_check_1_156_fv_239",
+            "type": "text",
+            "value": "10"
+          }
+        ]
+      },
+      {
+        "id": 154,
+        "inputs": [
+          {
+            "checked": false,
+            "id": "check_1_154",
+            "name": "",
+            "type": "checkbox",
+            "value": "on"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_154_fv_243",
+            "name": "apply_check_1_154_fv_243",
+            "type": "text",
+            "value": "10.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_154_fv_244",
+            "name": "apply_check_1_154_fv_244",
+            "type": "text",
+            "value": "112600.00"
+          },
+          {
+            "checked": false,
+            "id": "apply_check_1_154_fv_239",
+            "name": "apply_check_1_154_fv_239",
+            "type": "text",
+            "value": "0"
+          }
+        ]
+      }
+    ]
+  }
+]
