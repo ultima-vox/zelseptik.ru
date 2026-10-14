@@ -1,0 +1,1726 @@
+[
+  {
+    "group_id": 21,
+    "brand_slug": "biodevice",
+    "id": 356,
+    "name": "BIODEVICE ЭКО 3",
+    "path": "/septiki/biodevice/biodevice-eko-3/",
+    "before_price": 89900.0
+  },
+  {
+    "group_id": 21,
+    "brand_slug": "biodevice",
+    "id": 366,
+    "name": "BIODEVICE ЭКО 5",
+    "path": "/septiki/biodevice/biodevice-eko-5/",
+    "before_price": 109900.0
+  },
+  {
+    "group_id": 21,
+    "brand_slug": "biodevice",
+    "id": 368,
+    "name": "BIODEVICE Стандарт 2",
+    "path": "/septiki/biodevice/biodevice-standart-2/",
+    "before_price": 111900.0
+  },
+  {
+    "group_id": 21,
+    "brand_slug": "biodevice",
+    "id": 369,
+    "name": "BIODEVICE Стандарт 3",
+    "path": "/septiki/biodevice/biodevice-standart-3/",
+    "before_price": 125900.0
+  },
+  {
+    "group_id": 21,
+    "brand_slug": "biodevice",
+    "id": 367,
+    "name": "BIODEVICE ЭКО 8",
+    "path": "/septiki/biodevice/biodevice-eko-8/",
+    "before_price": 128500.0
+  },
+  {
+    "group_id": 21,
+    "brand_slug": "biodevice",
+    "id": 370,
+    "name": "BIODEVICE Стандарт 5",
+    "path": "/septiki/biodevice/biodevice-standart-5/",
+    "before_price": 139800.0
+  },
+  {
+    "group_id": 21,
+    "brand_slug": "biodevice",
+    "id": 371,
+    "name": "BIODEVICE Стандарт 8",
+    "path": "/septiki/biodevice/biodevice-standart-8/",
+    "before_price": 178900.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 337,
+    "name": "Аэробокс 2 Био",
+    "path": "/septiki/aeroboks/aeroboks-2-bio/",
+    "before_price": 89300.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 338,
+    "name": "Аэробокс 4 Био",
+    "path": "/septiki/aeroboks/aeroboks-4-bio/",
+    "before_price": 113800.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 340,
+    "name": "А230-5 max",
+    "path": "/septiki/aeroboks/a230-5-max/",
+    "before_price": 124850.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 341,
+    "name": "А230-5 max-80",
+    "path": "/septiki/aeroboks/a230-5-max-80/",
+    "before_price": 135560.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 344,
+    "name": "А230-6 max",
+    "path": "/septiki/aeroboks/a230-6-max/",
+    "before_price": 136737.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 342,
+    "name": "А230-5 max-90",
+    "path": "/septiki/aeroboks/a230-5-max-90/",
+    "before_price": 137350.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 339,
+    "name": "Аэробокс 7 Био",
+    "path": "/septiki/aeroboks/aeroboks-7-bio/",
+    "before_price": 139217.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 343,
+    "name": "А230-5 max-110",
+    "path": "/septiki/aeroboks/a230-5-max-110/",
+    "before_price": 145415.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 345,
+    "name": "A320-6 max-80",
+    "path": "/septiki/aeroboks/a320-6-max-80/",
+    "before_price": 150178.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 348,
+    "name": "A410-8 max",
+    "path": "/septiki/aeroboks/a410-8-max/",
+    "before_price": 152735.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 346,
+    "name": "A320-6 max-90",
+    "path": "/septiki/aeroboks/a320-6-max-90/",
+    "before_price": 157333.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 349,
+    "name": "A410-8 max-80",
+    "path": "/septiki/aeroboks/a410-8-max-80/",
+    "before_price": 160173.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 347,
+    "name": "A320-6 max-110",
+    "path": "/septiki/aeroboks/a320-6-max-110/",
+    "before_price": 165295.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 352,
+    "name": "A500-9 max",
+    "path": "/septiki/aeroboks/a500-9-max/",
+    "before_price": 174259.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 350,
+    "name": "A410-8 max-90",
+    "path": "/septiki/aeroboks/a410-8-max-90/",
+    "before_price": 175521.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 353,
+    "name": "A500-9 max-80",
+    "path": "/septiki/aeroboks/a500-9-max-80/",
+    "before_price": 184719.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 351,
+    "name": "A410-8 max-110",
+    "path": "/septiki/aeroboks/a410-8-max-110/",
+    "before_price": 195398.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 354,
+    "name": "A500-9 max-90",
+    "path": "/septiki/aeroboks/a500-9-max-90/",
+    "before_price": 200048.0
+  },
+  {
+    "group_id": 20,
+    "brand_slug": "aeroboks",
+    "id": 355,
+    "name": "A500-9 max-110",
+    "path": "/septiki/aeroboks/a500-9-max-110/",
+    "before_price": 219938.0
+  },
+  {
+    "group_id": 19,
+    "brand_slug": "lotos",
+    "id": 319,
+    "name": "ЛОТОС АЭРО/LOTOS AERO 3",
+    "path": "/septiki/lotos/lotos-aerolotos-aero-3/",
+    "before_price": 98700.0
+  },
+  {
+    "group_id": 19,
+    "brand_slug": "lotos",
+    "id": 320,
+    "name": "ЛОТОС АЭРО/LOTOS AERO 3 ПР",
+    "path": "/septiki/lotos/lotos-aerolotos-aero-3-pr/",
+    "before_price": 99700.0
+  },
+  {
+    "group_id": 19,
+    "brand_slug": "lotos",
+    "id": 321,
+    "name": "ЛОТОС АЭРО/LOTOS AERO 4",
+    "path": "/septiki/lotos/lotos-aerolotos-aero-4/",
+    "before_price": 105900.0
+  },
+  {
+    "group_id": 19,
+    "brand_slug": "lotos",
+    "id": 322,
+    "name": "ЛОТОС АЭРО/LOTOS AERO 4 ПР",
+    "path": "/septiki/lotos/lotos-aerolotos-aero-4-pr/",
+    "before_price": 105900.0
+  },
+  {
+    "group_id": 19,
+    "brand_slug": "lotos",
+    "id": 323,
+    "name": "ЛОТОС АЭРО/LOTOS AERO 5",
+    "path": "/septiki/lotos/lotos-aerolotos-aero-5/",
+    "before_price": 123700.0
+  },
+  {
+    "group_id": 19,
+    "brand_slug": "lotos",
+    "id": 324,
+    "name": "ЛОТОС АЭРО/LOTOS AERO 5 ПР",
+    "path": "/septiki/lotos/lotos-aerolotos-aero-5-pr/",
+    "before_price": 123700.0
+  },
+  {
+    "group_id": 19,
+    "brand_slug": "lotos",
+    "id": 325,
+    "name": "ЛОТОС АЭРО/LOTOS AERO 8",
+    "path": "/septiki/lotos/lotos-aerolotos-aero-8/",
+    "before_price": 153700.0
+  },
+  {
+    "group_id": 19,
+    "brand_slug": "lotos",
+    "id": 326,
+    "name": "ЛОТОС АЭРО/LOTOS AERO 8 ПР",
+    "path": "/septiki/lotos/lotos-aerolotos-aero-8-pr/",
+    "before_price": 153700.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 307,
+    "name": "GLOSEN 3С",
+    "path": "/septiki/glosen/glosen-3s/",
+    "before_price": 112613.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 317,
+    "name": "GLOSEN 3С мини",
+    "path": "/septiki/glosen/glosen-3s-mini/",
+    "before_price": 115137.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 308,
+    "name": "GLOSEN 3П",
+    "path": "/septiki/glosen/glosen-3p/",
+    "before_price": 119625.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 318,
+    "name": "GLOSEN 3П мини",
+    "path": "/septiki/glosen/glosen-3p-mini/",
+    "before_price": 123937.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 309,
+    "name": "GLOSEN 5С",
+    "path": "/septiki/glosen/glosen-5s/",
+    "before_price": 129938.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 327,
+    "name": "GLOSEN 5С  mini",
+    "path": "/septiki/glosen/glosen-5s-mini/",
+    "before_price": 133238.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 310,
+    "name": "GLOSEN 5П",
+    "path": "/septiki/glosen/glosen-5p/",
+    "before_price": 137225.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 328,
+    "name": "GLOSEN 5П mini",
+    "path": "/septiki/glosen/glosen-5p-mini/",
+    "before_price": 142038.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 311,
+    "name": "GLOSEN 6С",
+    "path": "/septiki/glosen/glosen-6s/",
+    "before_price": 165825.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 329,
+    "name": "GLOSEN 6С mini",
+    "path": "/septiki/glosen/glosen-6s-mini/",
+    "before_price": 167728.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 312,
+    "name": "GLOSEN 6П",
+    "path": "/septiki/glosen/glosen-6p/",
+    "before_price": 174625.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 330,
+    "name": "GLOSEN 6П mini",
+    "path": "/septiki/glosen/glosen-6p-mini/",
+    "before_price": 185328.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 313,
+    "name": "GLOSEN 8С",
+    "path": "/septiki/glosen/glosen-8s/",
+    "before_price": 193050.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 331,
+    "name": "GLOSEN 8С mini",
+    "path": "/septiki/glosen/glosen-8s-mini/",
+    "before_price": 196350.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 314,
+    "name": "GLOSEN 8П",
+    "path": "/septiki/glosen/glosen-8p/",
+    "before_price": 204380.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 315,
+    "name": "GLOSEN  10С",
+    "path": "/septiki/glosen/glosen-10s/",
+    "before_price": 215325.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 332,
+    "name": "GLOSEN 8П mini",
+    "path": "/septiki/glosen/glosen-8p-mini/",
+    "before_price": 218350.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 316,
+    "name": "GLOSEN 10П",
+    "path": "/septiki/glosen/glosen-10p/",
+    "before_price": 228525.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 333,
+    "name": "GLOSEN  10С mini",
+    "path": "/septiki/glosen/glosen-10s-mini/",
+    "before_price": 228625.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 335,
+    "name": "GLOSEN  12С mini",
+    "path": "/septiki/glosen/glosen-12s-mini/",
+    "before_price": 262000.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 334,
+    "name": "GLOSEN 10П mini",
+    "path": "/septiki/glosen/glosen-10p-mini/",
+    "before_price": 288200.0
+  },
+  {
+    "group_id": 18,
+    "brand_slug": "glosen",
+    "id": 336,
+    "name": "GLOSEN 12П mini",
+    "path": "/septiki/glosen/glosen-12p-mini/",
+    "before_price": 319000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 288,
+    "name": "Aqualos AL-2 UN",
+    "path": "/septiki/aqualos/aqualos-al-2-un/",
+    "before_price": 89000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 289,
+    "name": "Aqualos AL-3 UN",
+    "path": "/septiki/aqualos/aqualos-al-3-un/",
+    "before_price": 99900.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 290,
+    "name": "Aqualos AL-4 UN",
+    "path": "/septiki/aqualos/aqualos-al-4-un/",
+    "before_price": 114000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 291,
+    "name": "Aqualos AL-5 UN",
+    "path": "/septiki/aqualos/aqualos-al-5-un/",
+    "before_price": 124500.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 292,
+    "name": "Aqualos AL-5 UN Midi",
+    "path": "/septiki/aqualos/aqualos-al-5-un-midi/",
+    "before_price": 129000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 303,
+    "name": "Aqualos AL-4  Горизонтальный",
+    "path": "/septiki/aqualos/aqualos-al-4-gorizontalnyj/",
+    "before_price": 129000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 304,
+    "name": "Aqualos AL-5 Горизонтальный",
+    "path": "/septiki/aqualos/aqualos-al-5-gorizontalnyj/",
+    "before_price": 139000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 293,
+    "name": "Aqualos AL-5 UN Лонг",
+    "path": "/septiki/aqualos/aqualos-al-5-un-midi-kopiya-ot-26062023-125341/",
+    "before_price": 144500.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 294,
+    "name": "Aqualos AL-7 UN",
+    "path": "/septiki/aqualos/aqualos-al-7-un/",
+    "before_price": 149000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 295,
+    "name": "Aqualos AL-7 UN Миди",
+    "path": "/septiki/aqualos/aqualos-al-7-un-midi/",
+    "before_price": 153400.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 297,
+    "name": "Aqualos AL-8 UN",
+    "path": "/septiki/aqualos/aqualos-al-8-un/",
+    "before_price": 159000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 298,
+    "name": "Aqualos AL-8 UN Миди",
+    "path": "/septiki/aqualos/aqualos-al-8-un-midi/",
+    "before_price": 164700.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 305,
+    "name": "Aqualos AL-7 Горизонтальный",
+    "path": "/septiki/aqualos/aqualos-al-7-gorizontalnyj/",
+    "before_price": 169000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 296,
+    "name": "Aqualos AL-7 UN Лонг",
+    "path": "/septiki/aqualos/aqualos-al-7-un-long/",
+    "before_price": 170000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 299,
+    "name": "Aqualos AL-8 UN Лонг",
+    "path": "/septiki/aqualos/aqualos-al-8-un-long/",
+    "before_price": 178700.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 300,
+    "name": "Aqualos AL-10 UN",
+    "path": "/septiki/aqualos/aqualos-al-10-un/",
+    "before_price": 208000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 301,
+    "name": "Aqualos AL-10 UN Миди",
+    "path": "/septiki/aqualos/aqualos-al-10-un-midi/",
+    "before_price": 214000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 306,
+    "name": "Aqualos AL-10 Горизонтальный",
+    "path": "/septiki/aqualos/aqualos-al-10-gorizontalnyj/",
+    "before_price": 215000.0
+  },
+  {
+    "group_id": 17,
+    "brand_slug": "aqualos",
+    "id": 302,
+    "name": "Aqualos AL-10 UN Лонг",
+    "path": "/septiki/aqualos/aqualos-al-10-un-long/",
+    "before_price": 236000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 278,
+    "name": "Итал Антей 3",
+    "path": "/septiki/ital/ital-antej-3/",
+    "before_price": 86000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 279,
+    "name": "Итал Антей 4",
+    "path": "/septiki/ital/ital-antej-4/",
+    "before_price": 92000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 281,
+    "name": "Итал Био 3",
+    "path": "/septiki/ital/ital-bio-3/",
+    "before_price": 105000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 280,
+    "name": "Итал Антей 5",
+    "path": "/septiki/ital/ital-antej-5/",
+    "before_price": 106000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 282,
+    "name": "Итал Био 4",
+    "path": "/septiki/ital/ital-bio-4/",
+    "before_price": 112000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 283,
+    "name": "Итал Био 5",
+    "path": "/septiki/ital/ital-bio-5/",
+    "before_price": 118000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 284,
+    "name": "Итал Био 7",
+    "path": "/septiki/ital/ital-bio-7/",
+    "before_price": 129000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 285,
+    "name": "Итал Био 8",
+    "path": "/septiki/ital/ital-bio-8/",
+    "before_price": 175000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 286,
+    "name": "Итал Био 10",
+    "path": "/septiki/ital/ital-bio-10/",
+    "before_price": 205000.0
+  },
+  {
+    "group_id": 16,
+    "brand_slug": "ital",
+    "id": 287,
+    "name": "Итал Био 15",
+    "path": "/septiki/ital/ital-bio-15/",
+    "before_price": 250000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 258,
+    "name": "Эко-Гранд 2",
+    "path": "/septiki/eko-grand/eko-grand-2/",
+    "before_price": 85000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 259,
+    "name": "Эко-Гранд 2 Пр",
+    "path": "/septiki/eko-grand/eko-grand-2-pr/",
+    "before_price": 91000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 260,
+    "name": "Эко-Гранд 3",
+    "path": "/septiki/eko-grand/eko-grand-3/",
+    "before_price": 110000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 262,
+    "name": "Эко-Гранд 4",
+    "path": "/septiki/eko-grand/eko-grand-4/",
+    "before_price": 113000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 261,
+    "name": "Эко-Гранд 3 Пр",
+    "path": "/septiki/eko-grand/eko-grand-3-pr/",
+    "before_price": 116000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 263,
+    "name": "Эко-Гранд 4 Пр",
+    "path": "/septiki/eko-grand/eko-grand-4-pr/",
+    "before_price": 119000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 264,
+    "name": "Эко-Гранд 5",
+    "path": "/septiki/eko-grand/eko-grand-5/",
+    "before_price": 125000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 265,
+    "name": "Эко-Гранд 5 Пр",
+    "path": "/septiki/eko-grand/eko-grand-5-pr/",
+    "before_price": 131000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 268,
+    "name": "Эко-Гранд 6 \"универсал\"",
+    "path": "/septiki/eko-grand/eko-grand-6-universal/",
+    "before_price": 143000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 266,
+    "name": "Эко-Гранд 5 Лонг",
+    "path": "/septiki/eko-grand/eko-grand-5-long/",
+    "before_price": 145000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 269,
+    "name": "Эко-Гранд 6 \"универсал\" Пр",
+    "path": "/septiki/eko-grand/eko-grand-6-universal-pr/",
+    "before_price": 149000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 270,
+    "name": "Эко-Гранд 8",
+    "path": "/septiki/eko-grand/eko-grand-8/",
+    "before_price": 151000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 267,
+    "name": "Эко-Гранд 5 Лонг Пр",
+    "path": "/septiki/eko-grand/eko-grand-5-long-pr/",
+    "before_price": 151000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 271,
+    "name": "Эко-Гранд 8 Пр",
+    "path": "/septiki/eko-grand/eko-grand-8-pr/",
+    "before_price": 157000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 272,
+    "name": "Эко-Гранд 8 Лонг",
+    "path": "/septiki/eko-grand/eko-grand-5-long-kopiya-ot-09032023-113145/",
+    "before_price": 171000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 273,
+    "name": "Эко-Гранд 8 Лонг Пр",
+    "path": "/septiki/eko-grand/eko-grand-8-long-pr/",
+    "before_price": 177000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 274,
+    "name": "Эко-Гранд 10",
+    "path": "/septiki/eko-grand/eko-grand-10/",
+    "before_price": 204000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 275,
+    "name": "Эко-Гранд 10 Пр",
+    "path": "/septiki/eko-grand/eko-grand-10-pr/",
+    "before_price": 210000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 276,
+    "name": "Эко-Гранд 10 Лонг",
+    "path": "/septiki/eko-grand/eko-grand-10-long/",
+    "before_price": 230000.0
+  },
+  {
+    "group_id": 15,
+    "brand_slug": "eko-grand",
+    "id": 277,
+    "name": "Эко-Гранд 10 Лонг Пр",
+    "path": "/septiki/eko-grand/eko-grand-10-long-pr/",
+    "before_price": 236000.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 174,
+    "name": "Астра 3",
+    "path": "/septiki/yunilos-astra/astra-3/",
+    "before_price": 140500.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 175,
+    "name": "Астра 4",
+    "path": "/septiki/yunilos-astra/astra-4/",
+    "before_price": 147000.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 176,
+    "name": "Астра 5",
+    "path": "/septiki/yunilos-astra/astra-5/",
+    "before_price": 172300.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 177,
+    "name": "Астра 5 Миди",
+    "path": "/septiki/yunilos-astra/astra-5-midi/",
+    "before_price": 174500.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 183,
+    "name": "Астра 8",
+    "path": "/septiki/yunilos-astra/astra-8/",
+    "before_price": 203000.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 179,
+    "name": "Астра 8 Миди",
+    "path": "/septiki/yunilos-astra/astra-8-midi/",
+    "before_price": 206300.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 178,
+    "name": "Астра 5 Лонг",
+    "path": "/septiki/yunilos-astra/astra-5-long/",
+    "before_price": 206900.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 180,
+    "name": "Астра 8 Long",
+    "path": "/septiki/yunilos-astra/astra-8-long/",
+    "before_price": 245900.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 184,
+    "name": "Астра 10",
+    "path": "/septiki/yunilos-astra/astra-10/",
+    "before_price": 276500.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 181,
+    "name": "Астра 10 Миди",
+    "path": "/septiki/yunilos-astra/astra-10-midi/",
+    "before_price": 279700.0
+  },
+  {
+    "group_id": 13,
+    "brand_slug": "yunilos-astra",
+    "id": 182,
+    "name": "Астра 10 Лонг",
+    "path": "/septiki/yunilos-astra/astra-10-long/",
+    "before_price": 322200.0
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 154,
+    "name": "Тополь 4",
+    "path": "/septiki/topol/topol-4/",
+    "before_price": 112600.0,
+    "list_price": 136500,
+    "moscow_recommended_price": 122850,
+    "target_price": 122850
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 162,
+    "name": "Тополь 4 Пр",
+    "path": "/septiki/topol/topol-4-pr/",
+    "before_price": 119800.0,
+    "list_price": 149300,
+    "moscow_recommended_price": 134370,
+    "target_price": 134370
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 163,
+    "name": "Тополь 4 Плюс",
+    "path": "/septiki/topol/topol-4-plyus/",
+    "before_price": 125800.0
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 164,
+    "name": "Тополь 4 Плюс Пр",
+    "path": "/septiki/topol/topol-4-plyus-pr/",
+    "before_price": 135800.0
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 156,
+    "name": "Тополь 6",
+    "path": "/septiki/topol/topol-6/",
+    "before_price": 138200.0,
+    "list_price": 174500,
+    "moscow_recommended_price": 157050,
+    "target_price": 157050
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 165,
+    "name": "Тополь 6 Пр",
+    "path": "/septiki/topol/topol-6-pr/",
+    "before_price": 148800.0,
+    "list_price": 188300,
+    "moscow_recommended_price": 169470,
+    "target_price": 169470
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 167,
+    "name": "Тополь 6 Плюс",
+    "path": "/septiki/topol/topol-6-plyus/",
+    "before_price": 155200.0
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 158,
+    "name": "Тополь 9",
+    "path": "/septiki/topol/topol-9/",
+    "before_price": 167100.0,
+    "list_price": 198900,
+    "moscow_recommended_price": 179010,
+    "target_price": 179010
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 166,
+    "name": "Тополь 6 Плюс Пр",
+    "path": "/septiki/topol/topol-6-plyus-pr/",
+    "before_price": 167800.0
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 169,
+    "name": "Тополь 9 Пр",
+    "path": "/septiki/topol/topol-9-pr/",
+    "before_price": 177000.0,
+    "list_price": 213700,
+    "moscow_recommended_price": 192330,
+    "target_price": 192330
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 168,
+    "name": "Тополь 9 Плюс",
+    "path": "/septiki/topol/topol-9-plyus/",
+    "before_price": 182200.0
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 170,
+    "name": "Тополь 9 Плюс Пр",
+    "path": "/septiki/topol/topol-9-plyus-pr/",
+    "before_price": 193700.0
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 160,
+    "name": "Тополь 12",
+    "path": "/septiki/topol/topol-12/",
+    "before_price": 217400.0,
+    "list_price": 278300,
+    "moscow_recommended_price": 250470,
+    "target_price": 250470
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 171,
+    "name": "Тополь 12 Пр",
+    "path": "/septiki/topol/topol-12-pr/",
+    "before_price": 229800.0,
+    "list_price": 294000,
+    "moscow_recommended_price": 264600,
+    "target_price": 264600
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 172,
+    "name": "Тополь 12 Плюс",
+    "path": "/septiki/topol/topol-12-plyus/",
+    "before_price": 239100.0
+  },
+  {
+    "group_id": 12,
+    "brand_slug": "topol",
+    "id": 173,
+    "name": "Тополь 12 Плюс Пр",
+    "path": "/septiki/topol/topol-12-plyus-pr/",
+    "before_price": 249000.0
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 134,
+    "name": "ТОПАС-С 4",
+    "path": "/septiki/topas-s/topas-s-4/",
+    "before_price": 116700.0,
+    "list_price": 155900,
+    "moscow_recommended_price": 140310,
+    "target_price": 140310
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 136,
+    "name": "ТОПАС-С 4 Пр",
+    "path": "/septiki/topas-s/topas-s-4-pr/",
+    "before_price": 131700.0,
+    "list_price": 170900,
+    "moscow_recommended_price": 153810,
+    "target_price": 153810
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 146,
+    "name": "ТОПАС-С 5",
+    "path": "/septiki/topas-s/topas-s-5/",
+    "before_price": 139300.0,
+    "list_price": 183500,
+    "moscow_recommended_price": 165150,
+    "target_price": 165150
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 127,
+    "name": "ТОПАС-С 6",
+    "path": "/septiki/topas-s/topas-6/",
+    "before_price": 142300.0,
+    "list_price": 186500,
+    "moscow_recommended_price": 167850,
+    "target_price": 167850
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 150,
+    "name": "ТОПАС-С 5 Пр",
+    "path": "/septiki/topas-s/topas-s-5-pr/",
+    "before_price": 152700.0,
+    "list_price": 201700,
+    "moscow_recommended_price": 181530,
+    "target_price": 181530
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 145,
+    "name": "ТОПАС-С 6 Пр",
+    "path": "/septiki/topas-s/topas-s-6-pr/",
+    "before_price": 153900.0,
+    "list_price": 205300,
+    "moscow_recommended_price": 184770,
+    "target_price": 184770
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 148,
+    "name": "ТОПАС-С 5 Long",
+    "path": "/septiki/topas-s/topas-s-5-long/",
+    "before_price": 161500.0,
+    "list_price": 215500,
+    "moscow_recommended_price": 193950,
+    "target_price": 193950
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 143,
+    "name": "ТОПАС-С 6 Long",
+    "path": "/septiki/topas-s/topas-s-6-long/",
+    "before_price": 161900.0,
+    "list_price": 219700,
+    "moscow_recommended_price": 197730,
+    "target_price": 197730
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 128,
+    "name": "ТОПАС-С 8",
+    "path": "/septiki/topas-s/topas-8/",
+    "before_price": 166900.0,
+    "list_price": 218900,
+    "moscow_recommended_price": 197010,
+    "target_price": 197010
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 130,
+    "name": "ТОПАС-С 9",
+    "path": "/septiki/topas-s/topas-9/",
+    "before_price": 168900.0,
+    "list_price": 219100,
+    "moscow_recommended_price": 197190,
+    "target_price": 197190
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 149,
+    "name": "ТОПАС-С 5 Long Пр",
+    "path": "/septiki/topas-s/topas-s-5-long-pr/",
+    "before_price": 174300.0,
+    "list_price": 226900,
+    "moscow_recommended_price": 204210,
+    "target_price": 204210
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 144,
+    "name": "ТОПАС-С 6 Long Пр",
+    "path": "/septiki/topas-s/topas-s-6-long-pr/",
+    "before_price": 174700.0,
+    "list_price": 236900,
+    "moscow_recommended_price": 213210,
+    "target_price": 213210
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 142,
+    "name": "ТОПАС-С 8 Пр",
+    "path": "/septiki/topas-s/topas-s-8-pr/",
+    "before_price": 181500.0,
+    "list_price": 232300,
+    "moscow_recommended_price": 209070,
+    "target_price": 209070
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 139,
+    "name": "ТОПАС-С 9 Пр",
+    "path": "/septiki/topas-s/topas-s-9-pr/",
+    "before_price": 182900.0,
+    "list_price": 235000,
+    "moscow_recommended_price": 211500,
+    "target_price": 211500
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 140,
+    "name": "ТОПАС-С 8 Long",
+    "path": "/septiki/topas-s/topas-s-8-long/",
+    "before_price": 190700.0,
+    "list_price": 254700,
+    "moscow_recommended_price": 229230,
+    "target_price": 229230
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 137,
+    "name": "ТОПАС-С 9 Long",
+    "path": "/septiki/topas-s/topas-s-9-long/",
+    "before_price": 192500.0,
+    "list_price": 257500,
+    "moscow_recommended_price": 231750,
+    "target_price": 231750
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 141,
+    "name": "ТОПАС-С 8 Long Пр",
+    "path": "/septiki/topas-s/topas-s-8-long-pr/",
+    "before_price": 202900.0,
+    "list_price": 265700,
+    "moscow_recommended_price": 239130,
+    "target_price": 239130
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 138,
+    "name": "ТОПАС-С 9 Long Пр",
+    "path": "/septiki/topas-s/topas-s-9-long-pr/",
+    "before_price": 204500.0,
+    "list_price": 269000,
+    "moscow_recommended_price": 242100,
+    "target_price": 242100
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 132,
+    "name": "ТОПАС-С 10",
+    "path": "/septiki/topas-s/topas-10/",
+    "before_price": 221500.0,
+    "list_price": 294700,
+    "moscow_recommended_price": 265230,
+    "target_price": 265230
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 152,
+    "name": "ТОПАС-С 10 Пр",
+    "path": "/septiki/topas-s/topas-s-10-pr/",
+    "before_price": 234900.0,
+    "list_price": 309700,
+    "moscow_recommended_price": 278730,
+    "target_price": 278730
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 153,
+    "name": "ТОПАС-С 10 Лонг Пр",
+    "path": "/septiki/topas-s/topas-s-10-long-pr/",
+    "before_price": 234900.0,
+    "list_price": 349500,
+    "moscow_recommended_price": 314550,
+    "target_price": 314550
+  },
+  {
+    "group_id": 11,
+    "brand_slug": "topas-s",
+    "id": 151,
+    "name": "ТОПАС-С 10 Лонг",
+    "path": "/septiki/topas-s/topas-s-10-long/",
+    "before_price": 249700.0,
+    "list_price": 334500,
+    "moscow_recommended_price": 301050,
+    "target_price": 301050
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 103,
+    "name": "ТОПАС 4",
+    "path": "/septiki/topas/topas-4/",
+    "before_price": 125100.0,
+    "list_price": 174300,
+    "moscow_recommended_price": 156870,
+    "target_price": 156870
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 112,
+    "name": "ТОПАС 4 Пр",
+    "path": "/septiki/topas/topas-4-pr/",
+    "before_price": 141500.0,
+    "list_price": 191900,
+    "moscow_recommended_price": 172710,
+    "target_price": 172710
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 101,
+    "name": "ТОПАС 5",
+    "path": "/septiki/topas/topas-5/",
+    "before_price": 148900.0,
+    "list_price": 204500,
+    "moscow_recommended_price": 184050,
+    "target_price": 184050
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 109,
+    "name": "ТОПАС 6",
+    "path": "/septiki/topas/topas-6/",
+    "before_price": 151300.0,
+    "list_price": 206000,
+    "moscow_recommended_price": 185400,
+    "target_price": 185400
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 113,
+    "name": "ТОПАС 5 Пр",
+    "path": "/septiki/topas/topas-5-pr/",
+    "before_price": 162900.0,
+    "list_price": 219700,
+    "moscow_recommended_price": 197730,
+    "target_price": 197730
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 115,
+    "name": "ТОПАС 6 Пр",
+    "path": "/septiki/topas/topas-6-pr/",
+    "before_price": 163300.0,
+    "list_price": 225100,
+    "moscow_recommended_price": 202590,
+    "target_price": 202590
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 126,
+    "name": "ТОПАС 5 Long",
+    "path": "/septiki/topas/topas-5-long/",
+    "before_price": 170900.0,
+    "list_price": 241700,
+    "moscow_recommended_price": 217530,
+    "target_price": 217530
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 117,
+    "name": "ТОПАС 6 Лонг",
+    "path": "/septiki/topas/topas-6-long/",
+    "before_price": 171500.0,
+    "list_price": 242100,
+    "moscow_recommended_price": 217890,
+    "target_price": 217890
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 107,
+    "name": "ТОПАС 8",
+    "path": "/septiki/topas/topas-8/",
+    "before_price": 177500.0,
+    "list_price": 237100,
+    "moscow_recommended_price": 213390,
+    "target_price": 213390
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 105,
+    "name": "ТОПАС 9",
+    "path": "/septiki/topas/topas-9/",
+    "before_price": 178900.0,
+    "list_price": 240000,
+    "moscow_recommended_price": 216000,
+    "target_price": 216000
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 114,
+    "name": "ТОПАС 5 Long Пр",
+    "path": "/septiki/topas/topas-5-long-pr/",
+    "before_price": 182900.0,
+    "list_price": 257300,
+    "moscow_recommended_price": 231570,
+    "target_price": 231570
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 116,
+    "name": "ТОПАС 6 Лонг Пр",
+    "path": "/septiki/topas/topas-6-long-pr/",
+    "before_price": 184300.0,
+    "list_price": 258500,
+    "moscow_recommended_price": 232650,
+    "target_price": 232650
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 119,
+    "name": "ТОПАС 8 Пр",
+    "path": "/septiki/topas/topas-8-pr/",
+    "before_price": 191500.0,
+    "list_price": 255000,
+    "moscow_recommended_price": 229500,
+    "target_price": 229500
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 122,
+    "name": "ТОПАС 9 Пр",
+    "path": "/septiki/topas/topas-9-pr/",
+    "before_price": 194900.0,
+    "list_price": 257100,
+    "moscow_recommended_price": 231390,
+    "target_price": 231390
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 118,
+    "name": "ТОПАС 8 Лонг",
+    "path": "/septiki/topas/topas-8-long/",
+    "before_price": 201300.0,
+    "list_price": 278900,
+    "moscow_recommended_price": 251010,
+    "target_price": 251010
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 121,
+    "name": "ТОПАС 9 Long",
+    "path": "/septiki/topas/topas-9-long/",
+    "before_price": 202700.0,
+    "list_price": 280300,
+    "moscow_recommended_price": 252270,
+    "target_price": 252270
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 123,
+    "name": "ТОПАС 9 Лонг Пр",
+    "path": "/septiki/topas/topas-9-long-pr/",
+    "before_price": 214500.0,
+    "list_price": 293500,
+    "moscow_recommended_price": 264150,
+    "target_price": 264150
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 120,
+    "name": "ТОПАС 8 Лонг Пр",
+    "path": "/septiki/topas/topas-8-long-pr/",
+    "before_price": 230900.0,
+    "list_price": 290500,
+    "moscow_recommended_price": 261450,
+    "target_price": 261450
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 99,
+    "name": "ТОПАС 10",
+    "path": "/septiki/topas/topas-10/",
+    "before_price": 240700.0,
+    "list_price": 324000,
+    "moscow_recommended_price": 291600,
+    "target_price": 291600
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 124,
+    "name": "ТОПАС 10 Пр",
+    "path": "/septiki/topas/topas-10-pr/",
+    "before_price": 254900.0,
+    "list_price": 339900,
+    "moscow_recommended_price": 305910,
+    "target_price": 305910
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 111,
+    "name": "ТОПАС 10 Лонг",
+    "path": "/septiki/topas/topas-10-long/",
+    "before_price": 270100.0,
+    "list_price": 367100,
+    "moscow_recommended_price": 330390,
+    "target_price": 330390
+  },
+  {
+    "group_id": 10,
+    "brand_slug": "topas",
+    "id": 125,
+    "name": "ТОПАС 10 Лонг Пр",
+    "path": "/septiki/topas/topas-10-long-pr/",
+    "before_price": 282500.0,
+    "list_price": 377700,
+    "moscow_recommended_price": 339930,
+    "target_price": 339930
+  },
+  {
+    "group_id": 9,
+    "brand_slug": "biodeka",
+    "id": 93,
+    "name": "BioDeka-3 C-600",
+    "path": "/septiki/biodeka/biodeka-3-c600/",
+    "before_price": 105500.0
+  },
+  {
+    "group_id": 9,
+    "brand_slug": "biodeka",
+    "id": 94,
+    "name": "BioDeka-3 П-600",
+    "path": "/septiki/biodeka/biodeka-3-p600/",
+    "before_price": 109200.0
+  },
+  {
+    "group_id": 9,
+    "brand_slug": "biodeka",
+    "id": 96,
+    "name": "BioDeka-5 С-800",
+    "path": "/septiki/biodeka/biodeka-5-s800/",
+    "before_price": 121600.0
+  },
+  {
+    "group_id": 9,
+    "brand_slug": "biodeka",
+    "id": 95,
+    "name": "BioDeka-5 П-800",
+    "path": "/septiki/biodeka/biodeka-5-p800/",
+    "before_price": 125400.0
+  },
+  {
+    "group_id": 9,
+    "brand_slug": "biodeka",
+    "id": 97,
+    "name": "BioDeka-8 C-800",
+    "path": "/septiki/biodeka/biodeka-8-c-800/",
+    "before_price": 179000.0
+  },
+  {
+    "group_id": 9,
+    "brand_slug": "biodeka",
+    "id": 98,
+    "name": "BioDeka-8 П-800",
+    "path": "/septiki/biodeka/biodeka-8-p-800/",
+    "before_price": 182700.0
+  },
+  {
+    "group_id": 9,
+    "brand_slug": "biodeka",
+    "id": 92,
+    "name": "BioDeka-10 C-800",
+    "path": "/septiki/biodeka/biodeka-10-c-800/",
+    "before_price": 211000.0
+  },
+  {
+    "group_id": 9,
+    "brand_slug": "biodeka",
+    "id": 91,
+    "name": "BioDeka-10 П-800",
+    "path": "/septiki/biodeka/biodeka-10-p-800/",
+    "before_price": 214700.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 70,
+    "name": "БИО-С Комфорт 3",
+    "path": "/septiki/bio-s/bio-s-komfort-3/",
+    "before_price": 89200.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 71,
+    "name": "БИО-С Комфорт 3 Пр",
+    "path": "/septiki/bio-s/bio-s-komfort-3-pr/",
+    "before_price": 94200.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 72,
+    "name": "БИО-С Комфорт 5",
+    "path": "/septiki/bio-s/bio-s-komfort-5/",
+    "before_price": 103100.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 74,
+    "name": "БИО-С Комфорт 5 Пр",
+    "path": "/septiki/bio-s/bio-s-komfort-5-pr/",
+    "before_price": 108100.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 75,
+    "name": "БИО-С Комфорт 7",
+    "path": "/septiki/bio-s/bio-s-komfort-7/",
+    "before_price": 124600.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 77,
+    "name": "БИО-С Комфорт 7 Пр",
+    "path": "/septiki/bio-s/bio-s-komfort-7-pr/",
+    "before_price": 129600.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 78,
+    "name": "БИО-С Комфорт 9",
+    "path": "/septiki/bio-s/bio-s-komfort-9/",
+    "before_price": 155400.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 80,
+    "name": "БИО-С Комфорт 9 Пр",
+    "path": "/septiki/bio-s/bio-s-komfort-9-pr/",
+    "before_price": 160400.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 81,
+    "name": "БИО-С Комфорт 12",
+    "path": "/septiki/bio-s/bio-s-komfort-12/",
+    "before_price": 213000.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 83,
+    "name": "БИО-С Комфорт 12 Пр",
+    "path": "/septiki/bio-s/bio-s-komfort-12-pr/",
+    "before_price": 222500.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 84,
+    "name": "БИО-С Комфорт 15",
+    "path": "/septiki/bio-s/bio-s-komfort-15/",
+    "before_price": 281000.0
+  },
+  {
+    "group_id": 8,
+    "brand_slug": "bio-s",
+    "id": 86,
+    "name": "БИО-С Комфорт 15 Пр",
+    "path": "/septiki/bio-s/bio-s-komfort-15-pr/",
+    "before_price": 290500.0
+  }
+]

@@ -1,0 +1,964 @@
+{
+  "environment": "dev",
+  "applied_at": "2026-10-14",
+  "source": "https://www.topol-eco.ru/prices/",
+  "price_basis": "moscow_recommended_user_selected",
+  "changes": [
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 103,
+      "name": "ТОПАС 4",
+      "path": "/septiki/topas/topas-4/",
+      "before_price": 125100,
+      "list_price": 174300,
+      "moscow_recommended_price": 156870,
+      "target_price": 156870
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 112,
+      "name": "ТОПАС 4 Пр",
+      "path": "/septiki/topas/topas-4-pr/",
+      "before_price": 141500,
+      "list_price": 191900,
+      "moscow_recommended_price": 172710,
+      "target_price": 172710
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 101,
+      "name": "ТОПАС 5",
+      "path": "/septiki/topas/topas-5/",
+      "before_price": 148900,
+      "list_price": 204500,
+      "moscow_recommended_price": 184050,
+      "target_price": 184050
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 109,
+      "name": "ТОПАС 6",
+      "path": "/septiki/topas/topas-6/",
+      "before_price": 151300,
+      "list_price": 206000,
+      "moscow_recommended_price": 185400,
+      "target_price": 185400
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 113,
+      "name": "ТОПАС 5 Пр",
+      "path": "/septiki/topas/topas-5-pr/",
+      "before_price": 162900,
+      "list_price": 219700,
+      "moscow_recommended_price": 197730,
+      "target_price": 197730
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 115,
+      "name": "ТОПАС 6 Пр",
+      "path": "/septiki/topas/topas-6-pr/",
+      "before_price": 163300,
+      "list_price": 225100,
+      "moscow_recommended_price": 202590,
+      "target_price": 202590
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 126,
+      "name": "ТОПАС 5 Long",
+      "path": "/septiki/topas/topas-5-long/",
+      "before_price": 170900,
+      "list_price": 241700,
+      "moscow_recommended_price": 217530,
+      "target_price": 217530
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 117,
+      "name": "ТОПАС 6 Лонг",
+      "path": "/septiki/topas/topas-6-long/",
+      "before_price": 171500,
+      "list_price": 242100,
+      "moscow_recommended_price": 217890,
+      "target_price": 217890
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 107,
+      "name": "ТОПАС 8",
+      "path": "/septiki/topas/topas-8/",
+      "before_price": 177500,
+      "list_price": 237100,
+      "moscow_recommended_price": 213390,
+      "target_price": 213390
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 105,
+      "name": "ТОПАС 9",
+      "path": "/septiki/topas/topas-9/",
+      "before_price": 178900,
+      "list_price": 240000,
+      "moscow_recommended_price": 216000,
+      "target_price": 216000
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 114,
+      "name": "ТОПАС 5 Long Пр",
+      "path": "/septiki/topas/topas-5-long-pr/",
+      "before_price": 182900,
+      "list_price": 257300,
+      "moscow_recommended_price": 231570,
+      "target_price": 231570
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 116,
+      "name": "ТОПАС 6 Лонг Пр",
+      "path": "/septiki/topas/topas-6-long-pr/",
+      "before_price": 184300,
+      "list_price": 258500,
+      "moscow_recommended_price": 232650,
+      "target_price": 232650
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 119,
+      "name": "ТОПАС 8 Пр",
+      "path": "/septiki/topas/topas-8-pr/",
+      "before_price": 191500,
+      "list_price": 255000,
+      "moscow_recommended_price": 229500,
+      "target_price": 229500
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 122,
+      "name": "ТОПАС 9 Пр",
+      "path": "/septiki/topas/topas-9-pr/",
+      "before_price": 194900,
+      "list_price": 257100,
+      "moscow_recommended_price": 231390,
+      "target_price": 231390
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 118,
+      "name": "ТОПАС 8 Лонг",
+      "path": "/septiki/topas/topas-8-long/",
+      "before_price": 201300,
+      "list_price": 278900,
+      "moscow_recommended_price": 251010,
+      "target_price": 251010
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 121,
+      "name": "ТОПАС 9 Long",
+      "path": "/septiki/topas/topas-9-long/",
+      "before_price": 202700,
+      "list_price": 280300,
+      "moscow_recommended_price": 252270,
+      "target_price": 252270
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 123,
+      "name": "ТОПАС 9 Лонг Пр",
+      "path": "/septiki/topas/topas-9-long-pr/",
+      "before_price": 214500,
+      "list_price": 293500,
+      "moscow_recommended_price": 264150,
+      "target_price": 264150
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 120,
+      "name": "ТОПАС 8 Лонг Пр",
+      "path": "/septiki/topas/topas-8-long-pr/",
+      "before_price": 230900,
+      "list_price": 290500,
+      "moscow_recommended_price": 261450,
+      "target_price": 261450
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 99,
+      "name": "ТОПАС 10",
+      "path": "/septiki/topas/topas-10/",
+      "before_price": 240700,
+      "list_price": 324000,
+      "moscow_recommended_price": 291600,
+      "target_price": 291600
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 124,
+      "name": "ТОПАС 10 Пр",
+      "path": "/septiki/topas/topas-10-pr/",
+      "before_price": 254900,
+      "list_price": 339900,
+      "moscow_recommended_price": 305910,
+      "target_price": 305910
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 111,
+      "name": "ТОПАС 10 Лонг",
+      "path": "/septiki/topas/topas-10-long/",
+      "before_price": 270100,
+      "list_price": 367100,
+      "moscow_recommended_price": 330390,
+      "target_price": 330390
+    },
+    {
+      "group_id": 10,
+      "brand_slug": "topas",
+      "id": 125,
+      "name": "ТОПАС 10 Лонг Пр",
+      "path": "/septiki/topas/topas-10-long-pr/",
+      "before_price": 282500,
+      "list_price": 377700,
+      "moscow_recommended_price": 339930,
+      "target_price": 339930
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 134,
+      "name": "ТОПАС-С 4",
+      "path": "/septiki/topas-s/topas-s-4/",
+      "before_price": 116700,
+      "list_price": 155900,
+      "moscow_recommended_price": 140310,
+      "target_price": 140310
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 136,
+      "name": "ТОПАС-С 4 Пр",
+      "path": "/septiki/topas-s/topas-s-4-pr/",
+      "before_price": 131700,
+      "list_price": 170900,
+      "moscow_recommended_price": 153810,
+      "target_price": 153810
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 146,
+      "name": "ТОПАС-С 5",
+      "path": "/septiki/topas-s/topas-s-5/",
+      "before_price": 139300,
+      "list_price": 183500,
+      "moscow_recommended_price": 165150,
+      "target_price": 165150
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 127,
+      "name": "ТОПАС-С 6",
+      "path": "/septiki/topas-s/topas-6/",
+      "before_price": 142300,
+      "list_price": 186500,
+      "moscow_recommended_price": 167850,
+      "target_price": 167850
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 150,
+      "name": "ТОПАС-С 5 Пр",
+      "path": "/septiki/topas-s/topas-s-5-pr/",
+      "before_price": 152700,
+      "list_price": 201700,
+      "moscow_recommended_price": 181530,
+      "target_price": 181530
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 145,
+      "name": "ТОПАС-С 6 Пр",
+      "path": "/septiki/topas-s/topas-s-6-pr/",
+      "before_price": 153900,
+      "list_price": 205300,
+      "moscow_recommended_price": 184770,
+      "target_price": 184770
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 148,
+      "name": "ТОПАС-С 5 Long",
+      "path": "/septiki/topas-s/topas-s-5-long/",
+      "before_price": 161500,
+      "list_price": 215500,
+      "moscow_recommended_price": 193950,
+      "target_price": 193950
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 143,
+      "name": "ТОПАС-С 6 Long",
+      "path": "/septiki/topas-s/topas-s-6-long/",
+      "before_price": 161900,
+      "list_price": 219700,
+      "moscow_recommended_price": 197730,
+      "target_price": 197730
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 128,
+      "name": "ТОПАС-С 8",
+      "path": "/septiki/topas-s/topas-8/",
+      "before_price": 166900,
+      "list_price": 218900,
+      "moscow_recommended_price": 197010,
+      "target_price": 197010
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 130,
+      "name": "ТОПАС-С 9",
+      "path": "/septiki/topas-s/topas-9/",
+      "before_price": 168900,
+      "list_price": 219100,
+      "moscow_recommended_price": 197190,
+      "target_price": 197190
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 149,
+      "name": "ТОПАС-С 5 Long Пр",
+      "path": "/septiki/topas-s/topas-s-5-long-pr/",
+      "before_price": 174300,
+      "list_price": 226900,
+      "moscow_recommended_price": 204210,
+      "target_price": 204210
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 144,
+      "name": "ТОПАС-С 6 Long Пр",
+      "path": "/septiki/topas-s/topas-s-6-long-pr/",
+      "before_price": 174700,
+      "list_price": 236900,
+      "moscow_recommended_price": 213210,
+      "target_price": 213210
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 142,
+      "name": "ТОПАС-С 8 Пр",
+      "path": "/septiki/topas-s/topas-s-8-pr/",
+      "before_price": 181500,
+      "list_price": 232300,
+      "moscow_recommended_price": 209070,
+      "target_price": 209070
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 139,
+      "name": "ТОПАС-С 9 Пр",
+      "path": "/septiki/topas-s/topas-s-9-pr/",
+      "before_price": 182900,
+      "list_price": 235000,
+      "moscow_recommended_price": 211500,
+      "target_price": 211500
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 140,
+      "name": "ТОПАС-С 8 Long",
+      "path": "/septiki/topas-s/topas-s-8-long/",
+      "before_price": 190700,
+      "list_price": 254700,
+      "moscow_recommended_price": 229230,
+      "target_price": 229230
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 137,
+      "name": "ТОПАС-С 9 Long",
+      "path": "/septiki/topas-s/topas-s-9-long/",
+      "before_price": 192500,
+      "list_price": 257500,
+      "moscow_recommended_price": 231750,
+      "target_price": 231750
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 141,
+      "name": "ТОПАС-С 8 Long Пр",
+      "path": "/septiki/topas-s/topas-s-8-long-pr/",
+      "before_price": 202900,
+      "list_price": 265700,
+      "moscow_recommended_price": 239130,
+      "target_price": 239130
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 138,
+      "name": "ТОПАС-С 9 Long Пр",
+      "path": "/septiki/topas-s/topas-s-9-long-pr/",
+      "before_price": 204500,
+      "list_price": 269000,
+      "moscow_recommended_price": 242100,
+      "target_price": 242100
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 132,
+      "name": "ТОПАС-С 10",
+      "path": "/septiki/topas-s/topas-10/",
+      "before_price": 221500,
+      "list_price": 294700,
+      "moscow_recommended_price": 265230,
+      "target_price": 265230
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 152,
+      "name": "ТОПАС-С 10 Пр",
+      "path": "/septiki/topas-s/topas-s-10-pr/",
+      "before_price": 234900,
+      "list_price": 309700,
+      "moscow_recommended_price": 278730,
+      "target_price": 278730
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 153,
+      "name": "ТОПАС-С 10 Лонг Пр",
+      "path": "/septiki/topas-s/topas-s-10-long-pr/",
+      "before_price": 234900,
+      "list_price": 349500,
+      "moscow_recommended_price": 314550,
+      "target_price": 314550
+    },
+    {
+      "group_id": 11,
+      "brand_slug": "topas-s",
+      "id": 151,
+      "name": "ТОПАС-С 10 Лонг",
+      "path": "/septiki/topas-s/topas-s-10-long/",
+      "before_price": 249700,
+      "list_price": 334500,
+      "moscow_recommended_price": 301050,
+      "target_price": 301050
+    },
+    {
+      "group_id": 12,
+      "brand_slug": "topol",
+      "id": 154,
+      "name": "Тополь 4",
+      "path": "/septiki/topol/topol-4/",
+      "before_price": 112600,
+      "list_price": 136500,
+      "moscow_recommended_price": 122850,
+      "target_price": 122850
+    },
+    {
+      "group_id": 12,
+      "brand_slug": "topol",
+      "id": 162,
+      "name": "Тополь 4 Пр",
+      "path": "/septiki/topol/topol-4-pr/",
+      "before_price": 119800,
+      "list_price": 149300,
+      "moscow_recommended_price": 134370,
+      "target_price": 134370
+    },
+    {
+      "group_id": 12,
+      "brand_slug": "topol",
+      "id": 156,
+      "name": "Тополь 6",
+      "path": "/septiki/topol/topol-6/",
+      "before_price": 138200,
+      "list_price": 174500,
+      "moscow_recommended_price": 157050,
+      "target_price": 157050
+    },
+    {
+      "group_id": 12,
+      "brand_slug": "topol",
+      "id": 165,
+      "name": "Тополь 6 Пр",
+      "path": "/septiki/topol/topol-6-pr/",
+      "before_price": 148800,
+      "list_price": 188300,
+      "moscow_recommended_price": 169470,
+      "target_price": 169470
+    },
+    {
+      "group_id": 12,
+      "brand_slug": "topol",
+      "id": 158,
+      "name": "Тополь 9",
+      "path": "/septiki/topol/topol-9/",
+      "before_price": 167100,
+      "list_price": 198900,
+      "moscow_recommended_price": 179010,
+      "target_price": 179010
+    },
+    {
+      "group_id": 12,
+      "brand_slug": "topol",
+      "id": 169,
+      "name": "Тополь 9 Пр",
+      "path": "/septiki/topol/topol-9-pr/",
+      "before_price": 177000,
+      "list_price": 213700,
+      "moscow_recommended_price": 192330,
+      "target_price": 192330
+    },
+    {
+      "group_id": 12,
+      "brand_slug": "topol",
+      "id": 160,
+      "name": "Тополь 12",
+      "path": "/septiki/topol/topol-12/",
+      "before_price": 217400,
+      "list_price": 278300,
+      "moscow_recommended_price": 250470,
+      "target_price": 250470
+    },
+    {
+      "group_id": 12,
+      "brand_slug": "topol",
+      "id": 171,
+      "name": "Тополь 12 Пр",
+      "path": "/septiki/topol/topol-12-pr/",
+      "before_price": 229800,
+      "list_price": 294000,
+      "moscow_recommended_price": 264600,
+      "target_price": 264600
+    }
+  ],
+  "verification": [
+    {
+      "group_id": 10,
+      "url": "https://dev.zelseptik.ru/septiki/topas/",
+      "checks": [
+        {
+          "id": 103,
+          "name": "ТОПАС 4",
+          "expected": 156870,
+          "price": 156870,
+          "matches": true
+        },
+        {
+          "id": 112,
+          "name": "ТОПАС 4 Пр",
+          "expected": 172710,
+          "price": 172710,
+          "matches": true
+        },
+        {
+          "id": 101,
+          "name": "ТОПАС 5",
+          "expected": 184050,
+          "price": 184050,
+          "matches": true
+        },
+        {
+          "id": 109,
+          "name": "ТОПАС 6",
+          "expected": 185400,
+          "price": 185400,
+          "matches": true
+        },
+        {
+          "id": 113,
+          "name": "ТОПАС 5 Пр",
+          "expected": 197730,
+          "price": 197730,
+          "matches": true
+        },
+        {
+          "id": 115,
+          "name": "ТОПАС 6 Пр",
+          "expected": 202590,
+          "price": 202590,
+          "matches": true
+        },
+        {
+          "id": 126,
+          "name": "ТОПАС 5 Long",
+          "expected": 217530,
+          "price": 217530,
+          "matches": true
+        },
+        {
+          "id": 117,
+          "name": "ТОПАС 6 Лонг",
+          "expected": 217890,
+          "price": 217890,
+          "matches": true
+        },
+        {
+          "id": 107,
+          "name": "ТОПАС 8",
+          "expected": 213390,
+          "price": 213390,
+          "matches": true
+        },
+        {
+          "id": 105,
+          "name": "ТОПАС 9",
+          "expected": 216000,
+          "price": 216000,
+          "matches": true
+        },
+        {
+          "id": 114,
+          "name": "ТОПАС 5 Long Пр",
+          "expected": 231570,
+          "price": 231570,
+          "matches": true
+        },
+        {
+          "id": 116,
+          "name": "ТОПАС 6 Лонг Пр",
+          "expected": 232650,
+          "price": 232650,
+          "matches": true
+        },
+        {
+          "id": 119,
+          "name": "ТОПАС 8 Пр",
+          "expected": 229500,
+          "price": 229500,
+          "matches": true
+        },
+        {
+          "id": 122,
+          "name": "ТОПАС 9 Пр",
+          "expected": 231390,
+          "price": 231390,
+          "matches": true
+        },
+        {
+          "id": 118,
+          "name": "ТОПАС 8 Лонг",
+          "expected": 251010,
+          "price": 251010,
+          "matches": true
+        },
+        {
+          "id": 121,
+          "name": "ТОПАС 9 Long",
+          "expected": 252270,
+          "price": 252270,
+          "matches": true
+        },
+        {
+          "id": 123,
+          "name": "ТОПАС 9 Лонг Пр",
+          "expected": 264150,
+          "price": 264150,
+          "matches": true
+        },
+        {
+          "id": 120,
+          "name": "ТОПАС 8 Лонг Пр",
+          "expected": 261450,
+          "price": 261450,
+          "matches": true
+        },
+        {
+          "id": 99,
+          "name": "ТОПАС 10",
+          "expected": 291600,
+          "price": 291600,
+          "matches": true
+        },
+        {
+          "id": 124,
+          "name": "ТОПАС 10 Пр",
+          "expected": 305910,
+          "price": 305910,
+          "matches": true
+        },
+        {
+          "id": 111,
+          "name": "ТОПАС 10 Лонг",
+          "expected": 330390,
+          "price": 330390,
+          "matches": true
+        },
+        {
+          "id": 125,
+          "name": "ТОПАС 10 Лонг Пр",
+          "expected": 339930,
+          "price": 339930,
+          "matches": true
+        }
+      ]
+    },
+    {
+      "group_id": 11,
+      "url": "https://dev.zelseptik.ru/septiki/topas-s/",
+      "checks": [
+        {
+          "id": 134,
+          "name": "ТОПАС-С 4",
+          "expected": 140310,
+          "price": 140310,
+          "matches": true
+        },
+        {
+          "id": 136,
+          "name": "ТОПАС-С 4 Пр",
+          "expected": 153810,
+          "price": 153810,
+          "matches": true
+        },
+        {
+          "id": 146,
+          "name": "ТОПАС-С 5",
+          "expected": 165150,
+          "price": 165150,
+          "matches": true
+        },
+        {
+          "id": 127,
+          "name": "ТОПАС-С 6",
+          "expected": 167850,
+          "price": 167850,
+          "matches": true
+        },
+        {
+          "id": 150,
+          "name": "ТОПАС-С 5 Пр",
+          "expected": 181530,
+          "price": 181530,
+          "matches": true
+        },
+        {
+          "id": 145,
+          "name": "ТОПАС-С 6 Пр",
+          "expected": 184770,
+          "price": 184770,
+          "matches": true
+        },
+        {
+          "id": 148,
+          "name": "ТОПАС-С 5 Long",
+          "expected": 193950,
+          "price": 193950,
+          "matches": true
+        },
+        {
+          "id": 143,
+          "name": "ТОПАС-С 6 Long",
+          "expected": 197730,
+          "price": 197730,
+          "matches": true
+        },
+        {
+          "id": 128,
+          "name": "ТОПАС-С 8",
+          "expected": 197010,
+          "price": 197010,
+          "matches": true
+        },
+        {
+          "id": 130,
+          "name": "ТОПАС-С 9",
+          "expected": 197190,
+          "price": 197190,
+          "matches": true
+        },
+        {
+          "id": 149,
+          "name": "ТОПАС-С 5 Long Пр",
+          "expected": 204210,
+          "price": 204210,
+          "matches": true
+        },
+        {
+          "id": 144,
+          "name": "ТОПАС-С 6 Long Пр",
+          "expected": 213210,
+          "price": 213210,
+          "matches": true
+        },
+        {
+          "id": 142,
+          "name": "ТОПАС-С 8 Пр",
+          "expected": 209070,
+          "price": 209070,
+          "matches": true
+        },
+        {
+          "id": 139,
+          "name": "ТОПАС-С 9 Пр",
+          "expected": 211500,
+          "price": 211500,
+          "matches": true
+        },
+        {
+          "id": 140,
+          "name": "ТОПАС-С 8 Long",
+          "expected": 229230,
+          "price": 229230,
+          "matches": true
+        },
+        {
+          "id": 137,
+          "name": "ТОПАС-С 9 Long",
+          "expected": 231750,
+          "price": 231750,
+          "matches": true
+        },
+        {
+          "id": 141,
+          "name": "ТОПАС-С 8 Long Пр",
+          "expected": 239130,
+          "price": 239130,
+          "matches": true
+        },
+        {
+          "id": 138,
+          "name": "ТОПАС-С 9 Long Пр",
+          "expected": 242100,
+          "price": 242100,
+          "matches": true
+        },
+        {
+          "id": 132,
+          "name": "ТОПАС-С 10",
+          "expected": 265230,
+          "price": 265230,
+          "matches": true
+        },
+        {
+          "id": 152,
+          "name": "ТОПАС-С 10 Пр",
+          "expected": 278730,
+          "price": 278730,
+          "matches": true
+        },
+        {
+          "id": 153,
+          "name": "ТОПАС-С 10 Лонг Пр",
+          "expected": 314550,
+          "price": 314550,
+          "matches": true
+        },
+        {
+          "id": 151,
+          "name": "ТОПАС-С 10 Лонг",
+          "expected": 301050,
+          "price": 301050,
+          "matches": true
+        }
+      ]
+    },
+    {
+      "group_id": 12,
+      "url": "https://dev.zelseptik.ru/septiki/topol/",
+      "checks": [
+        {
+          "id": 154,
+          "name": "Тополь 4",
+          "expected": 122850,
+          "price": 122850,
+          "matches": true
+        },
+        {
+          "id": 162,
+          "name": "Тополь 4 Пр",
+          "expected": 134370,
+          "price": 134370,
+          "matches": true
+        },
+        {
+          "id": 156,
+          "name": "Тополь 6",
+          "expected": 157050,
+          "price": 157050,
+          "matches": true
+        },
+        {
+          "id": 165,
+          "name": "Тополь 6 Пр",
+          "expected": 169470,
+          "price": 169470,
+          "matches": true
+        },
+        {
+          "id": 158,
+          "name": "Тополь 9",
+          "expected": 179010,
+          "price": 179010,
+          "matches": true
+        },
+        {
+          "id": 169,
+          "name": "Тополь 9 Пр",
+          "expected": 192330,
+          "price": 192330,
+          "matches": true
+        },
+        {
+          "id": 160,
+          "name": "Тополь 12",
+          "expected": 250470,
+          "price": 250470,
+          "matches": true
+        },
+        {
+          "id": 171,
+          "name": "Тополь 12 Пр",
+          "expected": 264600,
+          "price": 264600,
+          "matches": true
+        }
+      ]
+    }
+  ]
+}
