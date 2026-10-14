@@ -559,11 +559,13 @@
     "source": "https://sbm-group.ru/products/unilos-astra/unilos-astra-10",
     "price_policy": "on_request_user_selected",
     "stock_policy": "do_not_copy_parent_stock",
-    "status": "published_verified_with_pending_parent_link",
+    "status": "published_verified_on_dev",
     "id": 412,
     "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-10-long/astra-10-long-pr/",
     "applied_at": "2026-10-13",
-    "backlink_verified": false
+    "backlink_verified": true,
+    "backlink_added": true,
+    "backlink_verified_at": "2026-10-14"
   },
   {
     "parent_item_id": 182,
@@ -585,11 +587,13 @@
     "source": "https://sbm-group.ru/products/unilos-astra/unilos-astra-10",
     "price_policy": "on_request_user_selected",
     "stock_policy": "do_not_copy_parent_stock",
-    "status": "published_verified_with_pending_parent_link",
+    "status": "published_verified_on_dev",
     "id": 413,
     "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-10-long/astra-10-long-kns/",
     "applied_at": "2026-10-13",
-    "backlink_verified": false
+    "backlink_verified": true,
+    "backlink_added": true,
+    "backlink_verified_at": "2026-10-14"
   },
   {
     "parent_item_id": 182,
@@ -611,10 +615,12 @@
     "source": "https://sbm-group.ru/products/unilos-astra/unilos-astra-10",
     "price_policy": "on_request_user_selected",
     "stock_policy": "do_not_copy_parent_stock",
-    "status": "published_verified_with_pending_parent_link",
+    "status": "published_verified_on_dev",
     "id": 415,
     "url": "https://dev.zelseptik.ru/septiki/yunilos-astra/astra-10-long/astra-10-long-kns-pr/",
     "applied_at": "2026-10-13",
-    "backlink_verified": false
+    "backlink_verified": true,
+    "backlink_added": true,
+    "backlink_verified_at": "2026-10-14"
   }
 ]
