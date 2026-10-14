@@ -671,12 +671,12 @@
 
 			<div class="catalog-card__footer">
 				<div class="catalog-card__price-row">
-					<span class="catalog-card__price-label">Цена от:</span>
+					<span class="catalog-card__price-label">Цена<xsl:if test="price &gt; 0"> от</xsl:if>:</span>
 
 					<div itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
 						<xsl:choose>
 							<xsl:when test="price = 0 or  price =''">
-								<span class="catalog-card__price-actual">Под заказ</span>
+								<span class="catalog-card__price-actual">Цена по запросу</span>
 							</xsl:when>
 
 							<xsl:when test="discount != 0">

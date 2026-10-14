@@ -132,306 +132,306 @@
 <xsl:variable name="current_id" select="@id"/>
 <xsl:variable name="variants" select="associated/shop_item[@id != $current_id and not(@id = preceding-sibling::shop_item/@id)] | modifications/shop_item[@id != $current_id and not(@id = ../../associated/shop_item/@id) and not(@id = preceding-sibling::shop_item/@id)]"/>
 <div class="product-page" itemscope="" itemtype="https://schema.org/Product">
-<section class="hero-section grid-blueprint">
-	<div class="container">
-		<div class="hero-section__grid">
-			<xsl:if test="/shop/message/node()">
-				<xsl:value-of disable-output-escaping="yes" select="/shop/message"/>
-			</xsl:if>
-			<div class="hero-offer">
-				<div class="product-summary__badges">
-					<span class="badge"><xsl:choose><xsl:when test="$shop_id = 6">Сервис септиков</xsl:when><xsl:otherwise>Монтаж под ключ</xsl:otherwise></xsl:choose></span>
-					<xsl:if test="shop_producer/name != ''">
-						<span class="badge badge--outline">
-							<xsl:value-of select="shop_producer/name"/>
-						</span>
-					</xsl:if>
-				</div>
-				<div class="hero-offer__title-block">
-					<div class="premium-slogan"><xsl:choose><xsl:when test="$shop_id = 6">Плановое обслуживание и ремонт</xsl:when><xsl:otherwise>Инженерный подбор и монтаж</xsl:otherwise></xsl:choose></div>
-					<h1 class="hero-offer__title hero-offer__title-2xl" itemprop="name" hostcms:id="{@id}" hostcms:field="name" hostcms:entity="shop_item">
-						<xsl:if test="$shop_id = 1"><xsl:text>Септик </xsl:text></xsl:if>
-						<xsl:value-of select="name"/>
-					</h1>
-				</div>
-				<xsl:if test="$shop_id = 1">
-					<p class="hero-offer__subtitle">
-						<xsl:text>Автономная канализация для дома или дачи</xsl:text>
-						<xsl:if test="property_value[tag_name='men']/value != ''">
-							<xsl:text> до </xsl:text>
-							<xsl:value-of select="property_value[tag_name='men']/value"/>
-							<xsl:text> человек</xsl:text>
-						</xsl:if>
-						<xsl:text> с подбором, доставкой и монтажом в Зеленограде и Московской области.</xsl:text>
-					</p>
-				</xsl:if>
-				<div class="media-card">
-					<xsl:choose>
-						<xsl:when test="image_large != ''">
-							<xsl:choose><xsl:when test="$shop_id = 6"><img class="media-card__content" itemprop="image" src="{dir}{image_large}" alt="{name}" loading="eager" decoding="async"/></xsl:when><xsl:otherwise><a class="media-card__link" href="{dir}{image_large}" data-fancybox="images">
-								<img class="media-card__content" itemprop="image" src="{dir}{image_large}" alt="{name}" loading="eager" decoding="async"/>
-							</a></xsl:otherwise></xsl:choose>
-						</xsl:when>
-						<xsl:otherwise>
-							<img class="media-card__content" itemprop="image" src="/images/no-image.png" alt="{name}" loading="eager" decoding="async"/>
-						</xsl:otherwise>
-					</xsl:choose>
-				</div>
-
-				<xsl:if test="$shop_id != 6 and (image_small != '' or count(property_value[tag_name='pic'][file != '']))">
-					<div class="media-strip">
-						<div class="media-strip__list">
-							<xsl:if test="image_small != ''">
-								<a class="media-strip__item" href="{dir}{image_large}" data-fancybox="images" aria-current="true">
-									<img class="media-strip__thumb" src="{dir}{image_small}" alt="{name}" loading="lazy"/>
-								</a>
-							</xsl:if>
-
-							<xsl:for-each select="property_value[tag_name='pic'][file != '']">
-								<a class="media-strip__item" href="{../dir}{file}" data-fancybox="images">
-									<img class="media-strip__thumb" src="{../dir}{file}" alt="{/shop/shop_item/name}" loading="lazy"/>
-								</a>
-							</xsl:for-each>
-						</div>
-					</div>
-				</xsl:if>
-
-			</div>
-
-			<div class="hero-calculator-wrapper">
-				<article class="catalog-card" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
-					<div class="catalog-card__body">
-						<div class="catalog-card__price">
-							<span class="catalog-card__price-label"><xsl:choose><xsl:when test="$shop_id = 6">Стоимость обслуживания от</xsl:when><xsl:otherwise>Цена оборудования от</xsl:otherwise></xsl:choose></span>
-
-							<div class="catalog-card__price-row">
-								<xsl:choose>
-									<xsl:when test="price = 0">
-										<strong class="catalog-card__price-actual">Под заказ</strong>
-									</xsl:when>
-
-									<xsl:when test="discount != 0">
-										<span class="catalog-card__price-original">
-											<xsl:apply-templates select="/shop/shop_currency/code">
-												<xsl:with-param name="value" select="price + discount"/>
-											</xsl:apply-templates>
-										</span>
-										<strong class="catalog-card__price-actual">
-											<xsl:apply-templates select="/shop/shop_currency/code">
-												<xsl:with-param name="value" select="price"/>
-											</xsl:apply-templates>
-										</strong>
-									</xsl:when>
-
-									<xsl:otherwise>
-										<strong class="catalog-card__price-actual">
-											<xsl:apply-templates select="/shop/shop_currency/code">
-												<xsl:with-param name="value" select="price"/>
-											</xsl:apply-templates>
-										</strong>
-									</xsl:otherwise>
-								</xsl:choose>
-							</div>
-
-							<xsl:if test="price != 0">
-								<meta itemprop="price" content="{price}"/>
-								<meta itemprop="priceCurrency" content="RUB"/>
-								<link itemprop="availability" href="https://schema.org/InStock"/>
-							</xsl:if>
-						</div>
-						<xsl:if test="$shop_id = 1">
-							<div class="catalog-card__specs">
-								<xsl:if test="property_value[tag_name='men']/value != ''">
-									<div class="catalog-card__spec">
-										<span>Проживающих</span>
-										<strong>до <xsl:value-of select="property_value[tag_name='men']/value"/> чел.</strong>
-									</div>
-								</xsl:if>
-
-								<xsl:if test="property_value[tag_name='performance']/value != ''">
-									<div class="catalog-card__spec">
-										<span>Производительность</span>
-										<strong><xsl:value-of select="property_value[tag_name='performance']/value"/> л/сутки</strong>
-									</div>
-								</xsl:if>
-
-								<xsl:if test="property_value[tag_name='zalp']/value != '' and property_value[tag_name='zalp']/value != 0">
-									<div class="catalog-card__spec">
-										<span>Залповый сброс</span>
-										<strong><xsl:value-of select="property_value[tag_name='zalp']/value"/> л</strong>
-									</div>
-								</xsl:if>
-
-								<div class="catalog-card__spec">
-									<span>Водоотведение</span>
-									<strong>
-										<xsl:choose>
-											<xsl:when test="property_value[tag_name='pr']/value = 1">Принудительный</xsl:when>
-											<xsl:otherwise>Самотечный</xsl:otherwise>
-										</xsl:choose>
-									</strong>
-								</div>
-
-								<div class="catalog-card__spec">
-									<span>Горловина</span>
-									<strong>
-										<xsl:choose>
-											<xsl:when test="property_value[tag_name='long']/value = 1">Удлиненная</xsl:when>
-											<xsl:when test="property_value[tag_name='midi']/value = 1">Миди</xsl:when>
-											<xsl:otherwise>Стандартная</xsl:otherwise>
-										</xsl:choose>
-									</strong>
-								</div>
-
-								<xsl:if test="shop_producer/node()">
-									<div class="catalog-card__spec">
-										<span>Производитель</span>
-										<strong><xsl:value-of select="shop_producer/name"/></strong>
-									</div>
-								</xsl:if>
-
-								<xsl:if test="weight != '' and weight != 0">
-									<div class="catalog-card__spec">
-										<span>Вес</span>
-										<strong>
-											<xsl:value-of select="format-number(weight, '#####0', 'my')"/>
-											<xsl:text> </xsl:text>
-											<xsl:value-of select="/shop/shop_measure/name"/>
-										</strong>
-									</div>
-								</xsl:if>
-
-								<xsl:if test="length != 0 or width != 0 or height != 0">
-									<div class="catalog-card__spec">
-										<span>Габариты</span>
-										<strong>
-											<xsl:value-of select="format-number(length, '#####0', 'my')"/>
-											<xsl:text> × </xsl:text>
-											<xsl:value-of select="format-number(width, '#####0', 'my')"/>
-											<xsl:text> × </xsl:text>
-											<xsl:value-of select="format-number(height, '#####0', 'my')"/>
-											<xsl:text> </xsl:text>
-											<xsl:value-of select="/shop/size_measure/name"/>
-										</strong>
-									</div>
-								</xsl:if>
-							</div>
-						</xsl:if>
-						<xsl:if test="$shop_id = 1 and count($variants) &gt; 0">
-                            <nav class="product-variants" aria-label="Исполнения станции">
-                                <h2 class="product-variants__title">Выберите исполнение</h2>
-                                <div class="product-variants__list">
-                                    <xsl:apply-templates select=". | $variants" mode="product-modification-link">
-                                        <xsl:sort select="name"/>
-                                        <xsl:with-param name="current_id" select="$current_id"/>
-                                    </xsl:apply-templates>
-                                </div>
-                            </nav>
-                        </xsl:if>
-                        <div class="catalog-card__actions">
-							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
-								Получить смету
-							</button>
-							<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>
-						</div>
-					</div>
-				</article>
-			</div>
-		</div>
-	</div>
-</section>
-
-<xsl:if test="description != ''">
-	<section class="section section--white" id="description">
+	<section class="hero-section grid-blueprint">
 		<div class="container">
-			<header class="section-header">
-				<span class="badge">Информация</span>
-				<h2 class="section-header__title"><xsl:choose><xsl:when test="/shop/@id = 6">Об услуге</xsl:when><xsl:otherwise>О модели <xsl:value-of select="name"/></xsl:otherwise></xsl:choose></h2>
-			</header>
+			<div class="hero-section__grid">
+				<xsl:if test="/shop/message/node()">
+					<xsl:value-of disable-output-escaping="yes" select="/shop/message"/>
+				</xsl:if>
+				<div class="hero-offer">
+					<div class="product-summary__badges">
+						<span class="badge"><xsl:choose><xsl:when test="$shop_id = 6">Сервис септиков</xsl:when><xsl:otherwise>Монтаж под ключ</xsl:otherwise></xsl:choose></span>
+						<xsl:if test="shop_producer/name != ''">
+							<span class="badge badge--outline">
+								<xsl:value-of select="shop_producer/name"/>
+							</span>
+						</xsl:if>
+					</div>
+					<div class="hero-offer__title-block">
+						<div class="premium-slogan"><xsl:choose><xsl:when test="$shop_id = 6">Плановое обслуживание и ремонт</xsl:when><xsl:otherwise>Инженерный подбор и монтаж</xsl:otherwise></xsl:choose></div>
+						<h1 class="hero-offer__title hero-offer__title-2xl" itemprop="name" hostcms:id="{@id}" hostcms:field="name" hostcms:entity="shop_item">
+							<xsl:if test="$shop_id = 1"><xsl:text>Септик </xsl:text></xsl:if>
+							<xsl:value-of select="name"/>
+						</h1>
+					</div>
+					<xsl:if test="$shop_id = 1">
+						<p class="hero-offer__subtitle">
+							<xsl:text>Автономная канализация для дома или дачи</xsl:text>
+							<xsl:if test="property_value[tag_name='men']/value != ''">
+								<xsl:text> до </xsl:text>
+								<xsl:value-of select="property_value[tag_name='men']/value"/>
+								<xsl:text> человек</xsl:text>
+							</xsl:if>
+							<xsl:text> с подбором, доставкой и монтажом в Зеленограде и Московской области.</xsl:text>
+						</p>
+					</xsl:if>
+					<div class="media-card">
+						<xsl:choose>
+							<xsl:when test="image_large != ''">
+								<xsl:choose><xsl:when test="$shop_id = 6"><img class="media-card__content" itemprop="image" src="{dir}{image_large}" alt="{name}" loading="eager" decoding="async"/></xsl:when><xsl:otherwise><a class="media-card__link" href="{dir}{image_large}" data-fancybox="images">
+											<img class="media-card__content" itemprop="image" src="{dir}{image_large}" alt="{name}" loading="eager" decoding="async"/>
+								</a></xsl:otherwise></xsl:choose>
+							</xsl:when>
+							<xsl:otherwise>
+								<img class="media-card__content" itemprop="image" src="/images/no-image.png" alt="{name}" loading="eager" decoding="async"/>
+							</xsl:otherwise>
+						</xsl:choose>
+					</div>
 
-			<div class="product-description">
-				<xsl:if test="description != ''">
-					<article class="info-panel">
-						<span class="badge">Основная информация</span>
-						<h2 class="info-panel__title">Описание <xsl:value-of select="name"/></h2>
-						<div class="info-panel__text" itemprop="description" hostcms:id="{@id}" hostcms:field="description" hostcms:entity="shop_item" hostcms:type="wysiwyg">
-							<xsl:value-of select="description" disable-output-escaping="yes"/>
+					<xsl:if test="$shop_id != 6 and (image_small != '' or count(property_value[tag_name='pic'][file != '']))">
+						<div class="media-strip">
+							<div class="media-strip__list">
+								<xsl:if test="image_small != ''">
+									<a class="media-strip__item" href="{dir}{image_large}" data-fancybox="images" aria-current="true">
+										<img class="media-strip__thumb" src="{dir}{image_small}" alt="{name}" loading="lazy"/>
+									</a>
+								</xsl:if>
+
+								<xsl:for-each select="property_value[tag_name='pic'][file != '']">
+									<a class="media-strip__item" href="{../dir}{file}" data-fancybox="images">
+										<img class="media-strip__thumb" src="{../dir}{file}" alt="{/shop/shop_item/name}" loading="lazy"/>
+									</a>
+								</xsl:for-each>
+							</div>
+						</div>
+					</xsl:if>
+
+				</div>
+
+				<div class="hero-calculator-wrapper">
+					<article class="catalog-card" itemprop="offers" itemscope="" itemtype="http://schema.org/Offer">
+						<div class="catalog-card__body">
+							<div class="catalog-card__price">
+								<span class="catalog-card__price-label"><xsl:choose><xsl:when test="$shop_id = 6">Стоимость обслуживания</xsl:when><xsl:otherwise>Цена оборудования</xsl:otherwise></xsl:choose><xsl:if test="price &gt; 0"> от</xsl:if></span>
+
+								<div class="catalog-card__price-row">
+									<xsl:choose>
+										<xsl:when test="price = 0">
+											<strong class="catalog-card__price-actual">Цена по запросу</strong>
+										</xsl:when>
+
+										<xsl:when test="discount != 0">
+											<span class="catalog-card__price-original">
+												<xsl:apply-templates select="/shop/shop_currency/code">
+													<xsl:with-param name="value" select="price + discount"/>
+												</xsl:apply-templates>
+											</span>
+											<strong class="catalog-card__price-actual">
+												<xsl:apply-templates select="/shop/shop_currency/code">
+													<xsl:with-param name="value" select="price"/>
+												</xsl:apply-templates>
+											</strong>
+										</xsl:when>
+
+										<xsl:otherwise>
+											<strong class="catalog-card__price-actual">
+												<xsl:apply-templates select="/shop/shop_currency/code">
+													<xsl:with-param name="value" select="price"/>
+												</xsl:apply-templates>
+											</strong>
+										</xsl:otherwise>
+									</xsl:choose>
+								</div>
+
+								<xsl:if test="price != 0">
+									<meta itemprop="price" content="{price}"/>
+									<meta itemprop="priceCurrency" content="RUB"/>
+									<link itemprop="availability" href="https://schema.org/InStock"/>
+								</xsl:if>
+							</div>
+							<xsl:if test="$shop_id = 1">
+								<div class="catalog-card__specs">
+									<xsl:if test="property_value[tag_name='men']/value != ''">
+										<div class="catalog-card__spec">
+											<span>Проживающих</span>
+											<strong>до <xsl:value-of select="property_value[tag_name='men']/value"/> чел.</strong>
+										</div>
+									</xsl:if>
+
+									<xsl:if test="property_value[tag_name='performance']/value != ''">
+										<div class="catalog-card__spec">
+											<span>Производительность</span>
+											<strong><xsl:value-of select="property_value[tag_name='performance']/value"/> л/сутки</strong>
+										</div>
+									</xsl:if>
+
+									<xsl:if test="property_value[tag_name='zalp']/value != '' and property_value[tag_name='zalp']/value != 0">
+										<div class="catalog-card__spec">
+											<span>Залповый сброс</span>
+											<strong><xsl:value-of select="property_value[tag_name='zalp']/value"/> л</strong>
+										</div>
+									</xsl:if>
+
+									<div class="catalog-card__spec">
+										<span>Водоотведение</span>
+										<strong>
+											<xsl:choose>
+												<xsl:when test="property_value[tag_name='pr']/value = 1">Принудительный</xsl:when>
+												<xsl:otherwise>Самотечный</xsl:otherwise>
+											</xsl:choose>
+										</strong>
+									</div>
+
+									<div class="catalog-card__spec">
+										<span>Горловина</span>
+										<strong>
+											<xsl:choose>
+												<xsl:when test="property_value[tag_name='long']/value = 1">Удлиненная</xsl:when>
+												<xsl:when test="property_value[tag_name='midi']/value = 1">Миди</xsl:when>
+												<xsl:otherwise>Стандартная</xsl:otherwise>
+											</xsl:choose>
+										</strong>
+									</div>
+
+									<xsl:if test="shop_producer/node()">
+										<div class="catalog-card__spec">
+											<span>Производитель</span>
+											<strong><xsl:value-of select="shop_producer/name"/></strong>
+										</div>
+									</xsl:if>
+
+									<xsl:if test="weight != '' and weight != 0">
+										<div class="catalog-card__spec">
+											<span>Вес</span>
+											<strong>
+												<xsl:value-of select="format-number(weight, '#####0', 'my')"/>
+												<xsl:text> </xsl:text>
+												<xsl:value-of select="/shop/shop_measure/name"/>
+											</strong>
+										</div>
+									</xsl:if>
+
+									<xsl:if test="length != 0 or width != 0 or height != 0">
+										<div class="catalog-card__spec">
+											<span>Габариты</span>
+											<strong>
+												<xsl:value-of select="format-number(length, '#####0', 'my')"/>
+												<xsl:text> × </xsl:text>
+												<xsl:value-of select="format-number(width, '#####0', 'my')"/>
+												<xsl:text> × </xsl:text>
+												<xsl:value-of select="format-number(height, '#####0', 'my')"/>
+												<xsl:text> </xsl:text>
+												<xsl:value-of select="/shop/size_measure/name"/>
+											</strong>
+										</div>
+									</xsl:if>
+								</div>
+							</xsl:if>
+							<xsl:if test="$shop_id = 1 and count($variants) &gt; 0">
+								<nav class="product-variants" aria-label="Исполнения станции">
+									<h2 class="product-variants__title">Выберите исполнение</h2>
+									<div class="product-variants__list">
+										<xsl:apply-templates select=". | $variants" mode="product-modification-link">
+											<xsl:sort select="name"/>
+											<xsl:with-param name="current_id" select="$current_id"/>
+										</xsl:apply-templates>
+									</div>
+								</nav>
+							</xsl:if>
+							<div class="catalog-card__actions">
+								<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
+									Получить смету
+								</button>
+								<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>
+							</div>
 						</div>
 					</article>
-				</xsl:if>
-
-			</div>
-		</div>
-	</section>
-</xsl:if>
-<!-- Reviewed city landing text: native Shop 6 field, available without JS. -->
-<xsl:if test="/shop/@id = 6 and (@id = 233 or @id = 236 or @id = 238 or @id = 240 or @id = 242 or @id = 243 or @id = 244 or @id = 245 or @id = 246 or @id = 247 or @id = 248 or @id = 249 or @id = 250) and normalize-space(text) != ''">
-  <section class="section" data-seo-landing="city-service">
-    <div class="container">
-      <div class="legal-page__content" hostcms:id="{@id}" hostcms:field="text" hostcms:entity="shop_item" hostcms:type="wysiwyg">
-        <xsl:value-of select="text" disable-output-escaping="yes"/>
-      </div>
-    </div>
-  </section>
-</xsl:if>
-<xsl:if test="$shop_id = 1">
-	<section class="cta-section" id="mounting">
-		<div class="container">
-			<div class="cta-section__grid">
-				<div class="cta-section__info">
-					<span class="cta-section__tag">Монтаж</span>
-					<h2 class="cta-section__title">Что входит в установку септика</h2>
-					<p class="cta-section__desc">Доставка, монтаж, подключение и запуск станции на участке.</p>
-
-					<div class="cta-section__gifts-grid">
-						<div class="cta-section__gift-btn">
-							<span class="cta-section__gift-icon"></span>
-							<span class="cta-section__gift-name">Выезд инженера на участок</span>
-						</div>
-						<div class="cta-section__gift-btn">
-							<span class="cta-section__gift-icon"></span>
-							<span class="cta-section__gift-name">Доставка станции и комплектующих</span>
-						</div>
-						<div class="cta-section__gift-btn">
-							<span class="cta-section__gift-icon"></span>
-							<span class="cta-section__gift-name">Монтаж, подключение и запуск</span>
-						</div>
-						<div class="cta-section__gift-btn">
-							<span class="cta-section__gift-icon"></span>
-							<span class="cta-section__gift-name">Инструктаж по эксплуатации</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="cta-form-wrapper">
-					<div class="cta-card">
-						<div class="cta-card__header">
-							<h3 class="cta-card__title">Получить смету</h3>
-							<p class="cta-card__subtitle">Инженер уточнит грунт, глубину трубы и способ отвода воды.</p>
-						</div>
-
-						<div class="cta-card__form">
-							<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
-								Рассчитать монтаж
-							</button>
-							<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-</xsl:if>
+
+	<xsl:if test="description != ''">
+		<section class="section section--white" id="description">
+			<div class="container">
+				<header class="section-header">
+					<span class="badge">Информация</span>
+					<h2 class="section-header__title"><xsl:choose><xsl:when test="/shop/@id = 6">Об услуге</xsl:when><xsl:otherwise>О модели <xsl:value-of select="name"/></xsl:otherwise></xsl:choose></h2>
+				</header>
+
+				<div class="product-description">
+					<xsl:if test="description != ''">
+						<article class="info-panel">
+							<span class="badge">Основная информация</span>
+							<h2 class="info-panel__title">Описание <xsl:value-of select="name"/></h2>
+							<div class="info-panel__text" itemprop="description" hostcms:id="{@id}" hostcms:field="description" hostcms:entity="shop_item" hostcms:type="wysiwyg">
+								<xsl:value-of select="description" disable-output-escaping="yes"/>
+							</div>
+						</article>
+					</xsl:if>
+
+				</div>
+			</div>
+		</section>
+	</xsl:if>
+	<!-- Reviewed city landing text: native Shop 6 field, available without JS. -->
+	<xsl:if test="/shop/@id = 6 and (@id = 233 or @id = 236 or @id = 238 or @id = 240 or @id = 242 or @id = 243 or @id = 244 or @id = 245 or @id = 246 or @id = 247 or @id = 248 or @id = 249 or @id = 250) and normalize-space(text) != ''">
+		<section class="section" data-seo-landing="city-service">
+			<div class="container">
+				<div class="legal-page__content" hostcms:id="{@id}" hostcms:field="text" hostcms:entity="shop_item" hostcms:type="wysiwyg">
+					<xsl:value-of select="text" disable-output-escaping="yes"/>
+				</div>
+			</div>
+		</section>
+	</xsl:if>
+	<xsl:if test="$shop_id = 1">
+		<section class="cta-section" id="mounting">
+			<div class="container">
+				<div class="cta-section__grid">
+					<div class="cta-section__info">
+						<span class="cta-section__tag">Монтаж</span>
+						<h2 class="cta-section__title">Что входит в установку септика</h2>
+						<p class="cta-section__desc">Доставка, монтаж, подключение и запуск станции на участке.</p>
+
+						<div class="cta-section__gifts-grid">
+							<div class="cta-section__gift-btn">
+								<span class="cta-section__gift-icon"></span>
+								<span class="cta-section__gift-name">Выезд инженера на участок</span>
+							</div>
+							<div class="cta-section__gift-btn">
+								<span class="cta-section__gift-icon"></span>
+								<span class="cta-section__gift-name">Доставка станции и комплектующих</span>
+							</div>
+							<div class="cta-section__gift-btn">
+								<span class="cta-section__gift-icon"></span>
+								<span class="cta-section__gift-name">Монтаж, подключение и запуск</span>
+							</div>
+							<div class="cta-section__gift-btn">
+								<span class="cta-section__gift-icon"></span>
+								<span class="cta-section__gift-name">Инструктаж по эксплуатации</span>
+							</div>
+						</div>
+					</div>
+
+					<div class="cta-form-wrapper">
+						<div class="cta-card">
+							<div class="cta-card__header">
+								<h3 class="cta-card__title">Получить смету</h3>
+								<p class="cta-card__subtitle">Инженер уточнит грунт, глубину трубы и способ отвода воды.</p>
+							</div>
+
+							<div class="cta-card__form">
+								<button class="btn btn--primary btn--full js-catalog-order" type="button" data-name="{name}"><xsl:attribute name="data-order-kind"><xsl:choose><xsl:when test="/shop/@id = 6">service</xsl:when><xsl:otherwise>installation</xsl:otherwise></xsl:choose></xsl:attribute>
+									Рассчитать монтаж
+								</button>
+								<a class="btn btn--secondary btn--full" href="/contacts/">Обсудить с инженером</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</xsl:if>
 </div>
 </xsl:template>
 
 <xsl:template match="shop_item" mode="product-modification-link">
 <xsl:param name="current_id"/>
 <a href="{url}">
-    <xsl:attribute name="class">product-variant<xsl:if test="@id = $current_id"> product-variant--current</xsl:if></xsl:attribute>
-    <xsl:if test="@id = $current_id"><xsl:attribute name="aria-current">page</xsl:attribute></xsl:if>
-    <span class="product-variant__name"><xsl:value-of select="name"/></span>
-    <span class="product-variant__hint"><xsl:choose><xsl:when test="@id = $current_id">Выбрано</xsl:when><xsl:otherwise>Посмотреть исполнение <span aria-hidden="true">↗</span></xsl:otherwise></xsl:choose></span>
+	<xsl:attribute name="class">product-variant<xsl:if test="@id = $current_id"> product-variant--current</xsl:if></xsl:attribute>
+	<xsl:if test="@id = $current_id"><xsl:attribute name="aria-current">page</xsl:attribute></xsl:if>
+	<span class="product-variant__name"><xsl:value-of select="name"/></span>
+	<span class="product-variant__hint"><xsl:choose><xsl:when test="@id = $current_id">Выбрано</xsl:when><xsl:otherwise>Посмотреть исполнение <span aria-hidden="true">↗</span></xsl:otherwise></xsl:choose></span>
 </a>
 </xsl:template>
 
@@ -473,7 +473,7 @@
 							<xsl:choose>
 								<xsl:when test="price = 0">
 									<a href="#" data-toggle="modal" data-target="#productModal" data-description="{name}" onclick="lalal(this);">
-										Под заказ
+										Цена по запросу
 									</a>
 
 								</xsl:when>
@@ -739,7 +739,7 @@
 			<xsl:choose>
 				<xsl:when test="price = 0">
 					<a href="#" data-toggle="modal" data-target="#productModal" data-description="{name}" onclick="lalal(this);">
-						Под заказ
+						Цена по запросу
 					</a>
 
 				</xsl:when>
@@ -799,7 +799,7 @@
 				<xsl:choose>
 					<xsl:when test="price = 0">
 						<span class="price_no">	<a href="#" data-toggle="modal" data-target="#productModal" data-description="{name}" onclick="lalal(this);">
-								Под заказ
+								Цена по запросу
 						</a></span>
 
 					</xsl:when>
@@ -939,7 +939,7 @@ Quick View Modal End
 			<!--xsl:choose>
 			<xsl:when test="price = 0">
 				<a href="#" data-toggle="modal" data-target="#productModal" data-description="{name}" onclick="lalal(this);">
-					Под заказ
+					Цена по запросу
 				</a>
 
 			</xsl:when>
@@ -1059,7 +1059,7 @@ Quick View Modal End
 <xsl:choose>
 <xsl:when test="price = 0">
 <span class="prd_price wdt_100">	<a href="#" data-toggle="modal" data-target="#productModal" data-description="{name}" onclick="lalal(this);">
-Под заказ
+Цена по запросу
 </a></span>
 
 </xsl:when>

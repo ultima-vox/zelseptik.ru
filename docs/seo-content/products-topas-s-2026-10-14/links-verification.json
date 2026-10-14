@@ -1,0 +1,242 @@
+[
+  {
+    "path": "/dostavka/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/dostavka/"
+  },
+  {
+    "path": "/montazh-septika/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/montazh-septika/"
+  },
+  {
+    "path": "/obsluzhivanie-septikov/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/obsluzhivanie-septikov/"
+  },
+  {
+    "path": "/septiki/topas-s/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-10/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-10/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-6/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-6/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-8/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-8/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-9/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-9/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-10-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-10-long-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-10-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-10-long/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-10-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-10-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-4-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-4-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-4/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-4/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-5-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-5-long-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-5-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-5-long/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-5-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-5-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-5/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-5/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-6-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-6-long-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-6-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-6-long/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-6-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-6-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-8-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-8-long-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-8-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-8-long/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-8-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-8-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-9-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-9-long-pr/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-9-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-9-long/"
+  },
+  {
+    "path": "/septiki/topas-s/topas-s-9-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas-s/topas-s-9-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-10-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-10-long-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-10-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-10-long/"
+  },
+  {
+    "path": "/septiki/topas/topas-10-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-10-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-10/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-10/"
+  },
+  {
+    "path": "/septiki/topas/topas-4-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-4-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-4/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-4/"
+  },
+  {
+    "path": "/septiki/topas/topas-5-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-5-long-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-5-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-5-long/"
+  },
+  {
+    "path": "/septiki/topas/topas-5-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-5-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-5/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-5/"
+  },
+  {
+    "path": "/septiki/topas/topas-6-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-6-long-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-6-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-6-long/"
+  },
+  {
+    "path": "/septiki/topas/topas-6-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-6-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-6/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-6/"
+  },
+  {
+    "path": "/septiki/topas/topas-8-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-8-long-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-8-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-8-long/"
+  },
+  {
+    "path": "/septiki/topas/topas-8-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-8-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-8/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-8/"
+  },
+  {
+    "path": "/septiki/topas/topas-9-long-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-9-long-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-9-long/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-9-long/"
+  },
+  {
+    "path": "/septiki/topas/topas-9-pr/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-9-pr/"
+  },
+  {
+    "path": "/septiki/topas/topas-9/",
+    "status": 200,
+    "final_url": "https://dev.zelseptik.ru/septiki/topas/topas-9/"
+  }
+]
